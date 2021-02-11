@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+       <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+
+            natures = ["Hardy",
+"Lonely",
+"Brave",
+"Adamant",
+"Naughty",
+"Bold",
+"Docile",
+"Relaxed",
+"Impish",
+"Lax",
+"Timid",
+"Hasty",
+"Serious",
+"Jolly",
+"Naive",
+"Modest",
+"Mild",
+"Quiet",
+"Bashful",
+"Rash",
+"Calm",
+"Gentle",
+"Sassy",
+"Careful",
+"Quirky"]
+
+
+
+function prng(level, species, difficulty, trainer_id, trainer_class, gender){
+
+    var seed = (parseInt(level) + parseInt(species) + parseInt(difficulty) + parseInt(trainer_id)).toString(16)
+
+
+
+    for (i = 0; i < parseInt(trainer_class); i++) {
+        seed = parseInt(seed, 16)
+        result = bigInt(0x41C64E6D).times(seed).plus(0x00006073)
+
+        seed = result.toString(16)
+
+        seed = seed.slice(-8)
+
+    }
+
+    result = seed.slice(0,-4)
+
+    var mid_bytes = result.slice(-4)
+
+    if (gender =="m") {
+        low_bytes = "88"
+    } else {
+        low_bytes = "78"
+    }
+
+    high_bytes = "00"
+
+    pid =  high_bytes + mid_bytes + low_bytes
+
+    nature_index = parseInt(parseInt(pid , 16).toString().slice(-2)) % 25
+
+    $('#natures').append("<p>" + difficulty + "IV: " + natures[nature_index] + "</p>"         )
+    console.log(difficulty + "IV: " + natures[nature_index])
+}
+
+      
+
+$(document).ready (function(){
+    $("#calculate").click(function(){
+        pkmn_id =  parseInt($('#pkmn_id').val())
+        level = parseInt($('#level').val())
+        t_id =  parseInt($('#t_id').val())
+        tc_id =  parseInt($('#tc_id').val())
+        gender = $('#gender').val()
+
+
+        var iv = 255
+            while (iv > 0) {
+                prng(level, pkmn_id, iv, t_id, tc_id, gender)
+                iv -= 1
+            } 
+    })
+
+})
+                
+</script>
+
+
+
+    </head>
+     <body>
+          <label for="fname">Pokemon ID:</label>
+          <input type="text" id="pkmn_id" name="fname"><br><br>
+          <label for="lname">Level:</label>
+          <input type="text" id="level" name="lname"><br><br>
+          <label for="lname">Trainer ID:</label>
+          <input type="text" id="t_id" name="lname"><br><br>
+          <label for="lname">Trainer Class ID:</label>
+          <input type="text" id="tc_id" name="lname"><br><br>
+          <label for="lname">Gender (use m or f):</label>
+          <input type="text" id="gender" name="lname"><br><br>
+          <input type="submit" value="Submit" id="calculate">
+
+          <p id="natures"></p>
+    </body>
+</html>
