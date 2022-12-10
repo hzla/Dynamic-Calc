@@ -1466,7 +1466,7 @@
 
             var jsonMoves = pwMoves
             var jsonMove 
-          
+            console.log(data.contents)
             for (move in moves) {
 
                 if (jsonMoves[move]) {
@@ -1496,7 +1496,14 @@
                 }
                 pokedex[pok]["bs"] = jsonPok["bs"]
                 pokedex[pok]["types"] = jsonPok["types"]
-            }   
+            }
+            function load_js()
+               {
+                  var head= document.getElementsByTagName('head')[0];
+                  var script= document.createElement('script');
+                  script.src= './js/shared_controls.js?0b3ea005';
+                  head.appendChild(script);
+               }   
        })
 
         // import moves
@@ -1568,7 +1575,7 @@
     <script type="text/javascript" src="./calc/result.js?d5c7552b"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?0b3ea005"></script>
+
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f1"></script>
     <script type="text/javascript" src="./js/moveset_import.js?a7071f5b"></script>
 </div>
