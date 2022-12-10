@@ -1455,18 +1455,14 @@
     <script type="text/javascript" src="./js/data/sets/gen8.js?6f60aa5c"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?b8c1b790"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
-    <<!-- script type="text/javascript" src="./js/data/sets/gen5.js?0e47243c"></script>
 
-
-<! -->--     <script type="text/javascript" src="./moves.js"></script>
-    <script type="text/javascript" src="./poks.js"></script> -->
 
     <script>
     $(document).ready(function() {
        const params = new URLSearchParams(window.location.search)
        pastebin = 'https://api.allorigins.win/get?url=' + `https://pastebin.com/raw/${params.get('data')}`
        $.get(pastebin, function(data){
-            eval(data)
+            eval(data.contents)
 
             var jsonMoves = pwMoves
             var jsonMove 
@@ -1575,7 +1571,6 @@
     <script type="text/javascript" src="./js/shared_controls.js?0b3ea005"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f1"></script>
     <script type="text/javascript" src="./js/moveset_import.js?a7071f5b"></script>
-    <script type="text/javascript" src="./moves.js"></script>
 </div>
 
 <div class="credits">Created by Honko, maintained by Austin and Kris, modified for Pokeweb
