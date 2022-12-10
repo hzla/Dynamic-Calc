@@ -1471,6 +1471,7 @@
        pastebin = 'https://api.allorigins.win/get?url=' + `https://pastebin.com/raw/${params.get('data')}`
        $.get(pastebin, function(data){
             eval(data.contents)
+            console.log("retrieving data")
 
             var jsonMoves = pwMoves
             var jsonMove 
