@@ -1306,7 +1306,7 @@ $(document).ready(function () {
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
 		}
 	});
-	$(".set-selector").val(getFirstValidSetOption().id);
-	$(".set-selector").change();
+	// $(".set-selector").val(getFirstValidSetOption().id);
+	// $(".set-selector").change();
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 });
