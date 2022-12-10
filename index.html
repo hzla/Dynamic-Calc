@@ -1458,6 +1458,14 @@
 
 
     <script>
+        function load_js()
+           {
+              var head= document.getElementsByTagName('head')[0];
+              var script= document.createElement('script');
+              script.src= './js/shared_controls.js?0b3ea005';
+              head.appendChild(script);
+           }
+
     $(document).ready(function() {
        const params = new URLSearchParams(window.location.search)
        pastebin = 'https://api.allorigins.win/get?url=' + `https://pastebin.com/raw/${params.get('data')}`
@@ -1497,12 +1505,9 @@
                 pokedex[pok]["bs"] = jsonPok["bs"]
                 pokedex[pok]["types"] = jsonPok["types"]
             }
+            load_js()
 
                
-              var head= document.getElementsByTagName('head')[0];
-              var script= document.createElement('script');
-              script.src= './js/shared_controls.js?0b3ea005';
-              head.appendChild(script);
                
        })
 
