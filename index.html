@@ -1468,12 +1468,14 @@
 
     $(document).ready(function() {
        const params = new URLSearchParams(window.location.search)
-       pastebin = 'https://api.allorigins.win/get?url=' + `https://pastebin.com/raw/${params.get('data')}`
-       $.get(pastebin, function(data){
-            eval(data.contents)
-            console.log("retrieving data")
 
-            var jsonMoves = pwMoves
+       npoint = `https://api.npoint.io/${params.get('data')}`
+       $.get(npoint, function(data){
+            // data = JSON.parse(data)
+            npoint_data = data
+
+            SETDEX_BW = data["formatted_sets"]
+            var jsonMoves = data["moves"]
             var jsonMove 
             for (move in moves) {
 
@@ -1492,7 +1494,7 @@
                 }
             }
 
-            var jsonPoks = pwPoks
+            var jsonPoks = data["poks"]
             var jsonPok 
           
             for (pok in pokedex) {
