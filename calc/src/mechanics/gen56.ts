@@ -227,9 +227,7 @@ export function calculateBWXY(
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') &&
-        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
-      (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
-      (move.flags.sound && defender.hasAbility('Soundproof'))
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
