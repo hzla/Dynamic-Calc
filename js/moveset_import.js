@@ -228,6 +228,7 @@ function addToDex(poke) {
 }
 
 function updateDex(customsets) {
+	console.log(customsets)
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
 			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};
@@ -279,6 +280,7 @@ function addSets(pokes, name) {
 		}
 	}
 	if (addedpokes > 0) {
+		get_box()
 		alert("Successfully imported " + addedpokes + " set(s)");
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
@@ -352,7 +354,7 @@ $(document).ready(function () {
 	placeBsBtn();
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
-		updateDex(customSets);
+		// updateDex(customSets);
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		loadDefaultLists();

@@ -448,11 +448,11 @@ $(".set-selector").change(function () {
 			continue
 		}
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-")
-		var pok = `<img class="trainer-pok" src="http://fishbowlweb.cloud:3000/images/pokesprite/${pok_name}.png" data-id="${CURRENT_TRAINER_POKS[i].split("[")[0]}" title="${next_poks[i][2]}, ${next_poks[i][1]} BP">`
+		var pok = `<img class="trainer-pok right-side" src="http://fishbowlweb.cloud:3000/images/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}" title="${next_poks[i][2]}, ${next_poks[i][1]} BP">`
 		trpok_html += pok
 	}
 
-	$('.trainer-pok-list').html(trpok_html)
+	$('.opposing.trainer-pok-list').html(trpok_html)
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	var pokemon = pokedex[pokemonName];

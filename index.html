@@ -105,7 +105,7 @@
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
             <legend align="center">Pok&eacute;mon 1</legend>
-            <input type="text" class="set-selector calc-trigger" />
+            <input type="text" class="set-selector calc-trigger player" />
             <span id="importedSetsOptions" style="width:auto;">
                 <input type="checkbox" id="importedSets" /> Only show imported sets <br />
                 <button id="clearSets">Clear Imported Sets</button>
@@ -590,6 +590,15 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
+            <div class="trainer-poks ">
+                <div class="trainer-poks-label">My Box</div>
+
+                <div class="trainer-pok-list player-poks">
+
+                        <img class="trainer-pok left-side" src="http://fishbowlweb.cloud:3000/images/pokesprite/crawdaunt.png">
+      
+                </div>
+            </div>
         </fieldset>
     </div>
 
@@ -917,7 +926,7 @@
                 <legend align="center">Import / Export</legend>
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
-                        <input class="import-name-text" value="Custom Set"></input>
+                        <input class="import-name-text" value="My Box"></input>
                         <textarea class="import-team-text"></textarea>
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
@@ -1414,9 +1423,9 @@
             <div class="trainer-poks">
                 <div class="trainer-poks-label">Next In</div>
 
-                <div class="trainer-pok-list">
+                <div class="trainer-pok-list opposing">
                     <div class="trainer-pok-container">
-                        <img class="trainer-pok" src="http://fishbowlweb.cloud:3000/images/pokesprite/crawdaunt.png" title="Focus Blast 120">
+                        <img class="trainer-pok right-side" src="http://fishbowlweb.cloud:3000/images/pokesprite/crawdaunt.png" title="Focus Blast 120">
 
                     </div>
                     

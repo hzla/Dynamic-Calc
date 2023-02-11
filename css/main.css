@@ -143,7 +143,7 @@ html, body {
 
 .trainer-pok-list {
     display: flex;
-    height:  48px;
+    flex-wrap: wrap;
 }
 
 .trainer-pok {
@@ -152,6 +152,7 @@ html, body {
     margin-right:  10px;
     cursor: pointer;
     box-sizing: border-box;
+    border: 1px solid #282a36;
 }
 
 .trainer-pok:hover {

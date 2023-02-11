@@ -22,6 +22,31 @@ function get_trainer_names() {
     return trainer_names
 }
 
+
+function get_box() {
+    var names = get_trainer_names()
+
+    var box = []
+
+    var box_html = ""
+
+    for (i in names) {
+        if (names[i].includes("My Box")) {
+            box.push(names[i].split("[")[0])
+
+            var pok_name = names[i].split(" (")[0].toLowerCase().replace(" ","-")
+            var pok = `<img class="trainer-pok left-side" src="http://fishbowlweb.cloud:3000/images/pokesprite/${pok_name}.png" data-id="${names[i].split("[")[0]}">`
+
+            box_html += pok
+        }   
+    }
+
+    $('.player-poks').html(box_html)
+
+
+    return box
+}
+
 function get_trainer_poks(trainer_name)
 {
     var all_poks = SETDEX_BW
@@ -177,7 +202,6 @@ $(document).ready(function() {
             if (jsonMoves[move]) {
                 jsonMove = jsonMoves[move]
             } else {
-                console.log(move)
                 continue //skip unsupported moves like hidden power
             }
 
@@ -203,15 +227,29 @@ $(document).ready(function() {
             pokedex[pok]["bs"] = jsonPok["bs"]
             pokedex[pok]["types"] = jsonPok["types"]
         }
-        load_js()           
+        load_js() 
+        customSets = JSON.parse(localStorage.customsets);
+        updateDex(customSets)   
+        get_box()      
    })
 
-   $(document).on('click', '.trainer-pok', function() {
+   $(document).on('click', '.trainer-pok.right-side', function() {
         var set = $(this).attr('data-id')
         $('.opposing').val(set)
 
 
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+   })
+
+   $(document).on('click', '.trainer-pok.left-side', function() {
+        var set = $(this).attr('data-id')
+        $('.player').val(set)
+
+
+
+        $('.player').change()
+        $('.player .select2-chosen').text(set)
+        get_box()
    })
 })
