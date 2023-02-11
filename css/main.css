@@ -130,12 +130,35 @@ a img {
 /* general page styling */
 html, body {
     font: 10pt Verdana, sans-serif;
-    background-color: white;
-    color: black;
+    background-color: #282a36;
+    color: #f8f8f2;
     margin: 0;
     padding: 0;
     min-width: 100em;
 }
+
+.trainer-poks-label {
+    margin:  10px 0px;
+}
+
+.trainer-pok-list {
+    display: flex;
+    height:  48px;
+}
+
+.trainer-pok {
+    height:  100%;
+    width:  auto;
+    margin-right:  10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.trainer-pok:hover {
+    border:  1px solid #1abc9c;
+    border-radius: 5px;
+}
+
 .wrapper {
     padding: 0 1em;
     max-width: 1285px;
@@ -152,8 +175,7 @@ div.wrapper > div > span {
 }
 fieldset {
     float: left;
-    background-color: #F1F4F9;
-    border: 1px solid #AAAAAA;
+    border: 1px solid #44475a;
 }
 legend {
     font-weight: bold;

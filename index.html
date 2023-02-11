@@ -452,17 +452,6 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group">
-                <label for="currentHpL1">Current HP</label>
-                <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
-                <input class="percent-hp calc-trigger" value="100" />%)
-					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
-					 <label class="btn btn-xwide gen-specific g8" for="maxL"
-					 title="Use the corresponding Max Move?">Dynamax</label>
-					 <br />
-                <br />
-                Health <div class="hpbar"></div>
-            </div>
             <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
             <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
             <div class="move1">
@@ -939,7 +928,7 @@
     <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
         <fieldset class="poke-info" id="p2">
             <legend align="center">Pok&eacute;mon 2</legend>
-            <input type="text" class="set-selector calc-trigger" />
+            <input type="text" class="set-selector calc-trigger opposing" />
             <span id="importedSetsOptions" style="width:auto;">
                 <input type="checkbox" id="importedSets" /> Only show imported sets <br />
                 <button id="clearSets">Clear Imported Sets</button>
@@ -1286,17 +1275,6 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group">
-                <label for="currentHpR1">Current HP</label>
-                <input class="current-hp calc-trigger" id="currentHpR1" value="341" />/<span class="max-hp">341</span> (
-                <input class="percent-hp calc-trigger" value="100" />%)
-					 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
-					 <label class="btn btn-xwide gen-specific g8" for="maxR"
-					 title="Use the corresponding Max Move?">Dynamax</label>
-					 <br />
-                <br />
-                Health <div class="hpbar"></div>
-            </div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
@@ -1433,6 +1411,19 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
+            <div class="trainer-poks">
+                <div class="trainer-poks-label">Next In</div>
+
+                <div class="trainer-pok-list">
+                    <div class="trainer-pok-container">
+                        <img class="trainer-pok" src="http://fishbowlweb.cloud:3000/images/pokesprite/crawdaunt.png" title="Focus Blast 120">
+
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
         </fieldset>
     </div>
     </div>
@@ -1456,111 +1447,10 @@
     <script type="text/javascript" src="./js/data/sets/gen7.js?b8c1b790"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
 
+    <script type="text/javascript" src="./js/showdown_hooks.js?100000"></script>
 
-    <script>
-        function load_js()
-           {
-              var head= document.getElementsByTagName('head')[0];
-              var script= document.createElement('script');
-              script.src= './js/shared_controls.js?0b3ea005';
-              head.appendChild(script);
-           }
 
-    $(document).ready(function() {
-       const params = new URLSearchParams(window.location.search)
-
-       npoint = `https://api.npoint.io/${params.get('data')}`
-       $.get(npoint, function(data){
-            // data = JSON.parse(data)
-            npoint_data = data
-
-            SETDEX_BW = data["formatted_sets"]
-            SETDEX_ADV = data["formatted_sets"]
-            SETDEX_DPP = data["formatted_sets"]
-            SETDEX_SM = data["formatted_sets"]
-            SETDEX_SS = data["formatted_sets"]
-            SETDEX_XY = data["formatted_sets"]
-            var jsonMoves = data["moves"]
-            var jsonMove 
-            for (move in moves) {
-
-                if (jsonMoves[move]) {
-                    jsonMove = jsonMoves[move]
-                } else {
-                    continue //skip unsupported moves like hidden power
-                }
-
-                moves[move]["bp"] = jsonMove["basePower"]
-                moves[move]["type"] = jsonMove["type"]
-                moves[move]["category"] = jsonMove["category"]
-
-                if (moves[move]["multihit"]) {
-                    moves[move]["multihit"] = jsonMove["multihit"]
-                }
-            }
-
-            var jsonPoks = data["poks"]
-            var jsonPok 
-          
-            for (pok in pokedex) {
-
-                if (jsonPoks[pok]) {
-                    jsonPok = jsonPoks[pok]
-                } else {
-                    continue //skip weird smogon pokemon and arceus forms
-                }
-                pokedex[pok]["bs"] = jsonPok["bs"]
-                pokedex[pok]["types"] = jsonPok["types"]
-            }
-            load_js()
-
-               
-               
-       })
-
-        // import moves
-        // $(document).ready(function() {
-        //     var jsonMoves = pwMoves
-        //     var jsonMove 
-          
-        //     for (move in moves) {
-
-        //         if (jsonMoves[move]) {
-        //             jsonMove = jsonMoves[move]
-        //         } else {
-        //             continue //skip unsupported moves like hidden power
-        //         }
-
-        //         moves[move]["bp"] = jsonMove["basePower"]
-        //         moves[move]["type"] = jsonMove["type"]
-        //         moves[move]["category"] = jsonMove["category"]
-
-        //         if (moves[move]["multihit"]) {
-        //             moves[move]["multihit"] = jsonMove["multihit"]
-        //         }
-        //     }  
-        // })
-                       
-        //   // import poks
-
-        // $(document).ready(function() {
-        //     var jsonPoks = pwPoks
-        //     var jsonPok 
-          
-        //     for (pok in pokedex) {
-
-        //         if (jsonPoks[pok]) {
-        //             jsonPok = jsonPoks[pok]
-        //         } else {
-        //             continue //skip weird smogon pokemon and arceus forms
-        //         }
-        //         pokedex[pok]["bs"] = jsonPok["bs"]
-        //         pokedex[pok]["types"] = jsonPok["types"]
-        //     }         
-        // })
-    })
-
-</script>
+    
 
     <script type="text/javascript" src="./js/data/sets/gen4.js?57f6a821"></script>
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5f"></script>
