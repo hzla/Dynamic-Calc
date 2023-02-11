@@ -54,9 +54,9 @@ function get_trainer_poks(trainer_name)
 
     var og_trainer_name = trainer_name.split(/Lvl \d+ /)[1]
 
-    // if (og_trainer_name) {
-    //     og_trainer_name = og_trainer_name.replace(")", "")
-    // }
+    if (og_trainer_name) {
+        og_trainer_name = og_trainer_name.replace(/.?\)/, "")
+    }
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name)) {
