@@ -238,7 +238,7 @@ th {
     display: inline-block; /* required for honkaculate to work */
 }
 .poke-info {
-    width: 30em;
+    width: 100%;
 }
 .field-info, .poke-import {
     text-align: center;
@@ -254,6 +254,7 @@ th {
 
 .panel-wrapper {
     display:flex;
+    justify-content: space-between;
 }
 
 /* general button styling */
@@ -477,6 +478,16 @@ table.field {
 /* Bootstrap */
 .panel-group > .panel {
     clear: left;
+}
+
+
+
+.panel:not(.panel-mid) {
+    flex-grow:  2;
+}
+
+.panel.panel-mid {
+    display: none;
 }
 
 .panel-wrapper {
