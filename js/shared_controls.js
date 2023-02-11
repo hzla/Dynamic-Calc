@@ -723,6 +723,7 @@ function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
+		console.log(setName)
 		var isRandoms = $("#randoms").prop("checked");
 		var set = isRandoms ? randdex[name] : setdex[name][setName];
 

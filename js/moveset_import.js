@@ -214,10 +214,12 @@ function addToDex(poke) {
 	} else {
 		customsets = {};
 	}
+	console.log(poke.nameProp)
+
 	if (!customsets[poke.name]) {
 		customsets[poke.name] = {};
 	}
-	customsets[poke.name][poke.nameProp] = dexObject;
+	customsets[poke.name]["My Box"] = dexObject;
 	if (poke.name === "Aegislash-Blade") {
 		if (!customsets["Aegislash-Shield"]) {
 			customsets["Aegislash-Shield"] = {};
@@ -266,9 +268,9 @@ function addSets(pokes, name) {
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
-					currentPoke.nameProp = currentRow[0].trim();
+					currentPoke.nameProp = "My Box";
 				} else {
-					currentPoke.nameProp = name;
+					currentPoke.nameProp = "My Box";
 				}
 				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));
