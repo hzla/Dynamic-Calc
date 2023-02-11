@@ -15,6 +15,12 @@ a img {
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .6), 0px 2px 2px rgba(0, 0, 0, .15);
     min-height: 50px;
 }
+
+.pokeweb-link {
+    color: #f8f8f2;
+    margin-left:  20px;
+    text-decoration: none;
+}
 .header-inner {
     max-width: 605px;
     margin: 0 auto;
@@ -144,18 +150,19 @@ html, body {
 .trainer-pok-list {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .trainer-pok {
-    height:  100%;
-    width:  auto;
-    margin-right:  10px;
+    height:  48px;
+    width:  48px;
     cursor: pointer;
     box-sizing: border-box;
     border: 1px solid #282a36;
+
 }
 
-.trainer-pok:hover {
+.left-side:hover {
     border:  1px solid #1abc9c;
     border-radius: 5px;
 }
@@ -163,6 +170,14 @@ html, body {
 .trainer-pok-container {
     display: flex;
     flex-direction: column;
+    margin-left:  10px;
+    align-items: center;
+    border:  1px solid #282a36;
+}
+
+.trainer-pok-container:hover {
+    border: 1px solid #1abc9c;
+    border-radius: 5px;
 }
 
 .bp-info {
