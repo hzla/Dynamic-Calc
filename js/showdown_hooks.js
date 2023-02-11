@@ -177,6 +177,7 @@ $(document).ready(function() {
             if (jsonMoves[move]) {
                 jsonMove = jsonMoves[move]
             } else {
+                console.log(move)
                 continue //skip unsupported moves like hidden power
             }
 

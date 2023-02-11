@@ -992,7 +992,7 @@ $(".gen").change(function () {
 	setdex = SETDEX[gen];
 	randdex = RANDDEX[gen];
 	typeChart = calc.TYPE_CHART[gen];
-	moves = calc.MOVES[gen];
+	moves = calc.MOVES[8];
 	items = calc.ITEMS[gen];
 	abilities = calc.ABILITIES[gen];
 	clearField();
