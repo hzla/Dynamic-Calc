@@ -448,7 +448,11 @@ $(".set-selector").change(function () {
 			continue
 		}
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-")
-		var pok = `<img class="trainer-pok right-side" src="http://fishbowlweb.cloud:3000/images/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}" title="${next_poks[i][2]}, ${next_poks[i][1]} BP">`
+		var pok = `<div class="trainer-pok-container">
+			<img class="trainer-pok right-side" src="./img/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
+			<div class="bp-info">${next_poks[i][2]}</div>
+
+		</div>`
 		trpok_html += pok
 	}
 
@@ -992,7 +996,7 @@ $(".gen").change(function () {
 	setdex = SETDEX[gen];
 	randdex = RANDDEX[gen];
 	typeChart = calc.TYPE_CHART[gen];
-	moves = calc.MOVES[8];
+	moves = calc.MOVES[9];
 	items = calc.ITEMS[gen];
 	abilities = calc.ABILITIES[gen];
 	clearField();

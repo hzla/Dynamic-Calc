@@ -160,6 +160,15 @@ html, body {
     border-radius: 5px;
 }
 
+.trainer-pok-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bp-info {
+    text-align: center;
+}
+
 .wrapper {
     padding: 0 1em;
     max-width: 1285px;
