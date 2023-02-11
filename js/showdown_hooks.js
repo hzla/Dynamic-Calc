@@ -94,10 +94,6 @@ function get_next_in() {
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
 
 
-        console.log(pok_name)
-        console.log(tr_name)
-    
-
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
 
@@ -123,7 +119,7 @@ function get_next_in() {
         }
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index])
     }
-
+    console.log(ranked_trainer_poks.sort(sort_trpoks))
     return ranked_trainer_poks.sort(sort_trpoks)
 }
 

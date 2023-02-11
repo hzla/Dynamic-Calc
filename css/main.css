@@ -52,6 +52,11 @@ a img {
     top: -8px;
     left: -150px;
 }
+
+input {
+    background-color: #f8f8f2;
+}
+
 .nav .button.cur,
 .nav .button.cur:hover {
     color: #777777;
@@ -405,7 +410,9 @@ select.toxic-counter {
 }
 .move-selector {
     width: 15.5em;
-    font-size: 16px;
+    font-size: 18px;
+    height: 24px;
+    margin: 5px 0px;
 }
 .poke-info input.move-bp {
     width: 2em;
@@ -457,8 +464,8 @@ table.field {
 }
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;
-    height: 18px;
-    line-height: 18px;
+    height: 24px;
+    line-height: 24px;
 }
 .small-select.select2-container .select2-choice .select2-arrow b {
     background-position: 0 -4px;
