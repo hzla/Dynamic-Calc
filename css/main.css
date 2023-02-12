@@ -34,6 +34,10 @@ select {
     color: rgb(248, 248, 242);
     font-size: 16px;
 }
+
+option {
+    color: black;
+}
 .boost,.totalMod {
     margin-left: 4px;
 }
