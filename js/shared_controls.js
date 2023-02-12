@@ -463,13 +463,19 @@ $(".set-selector").change(function () {
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	
 	if ($(this).hasClass('opposing')) {
-		if (SETDEX_BW) {
-			var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
-			$('#trainer-sprite').attr('src', `./img/${sprite}`)
-
-			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
-			$('#p2 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
+			if (setName != "Blank Set") {
+				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
+				$('#trainer-sprite').attr('src', `./img/${sprite}`)
+				$('#trainer-sprite').show()
+			}
+		} else {
+			$('#trainer-sprite').hide()
 		}
+		var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
+		$('#p2 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+
+
 	} else {
 		if (SETDEX_BW) {
 			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
