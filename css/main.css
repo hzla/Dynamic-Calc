@@ -16,6 +16,92 @@ a img {
     min-height: 50px;
 }
 
+
+.select2-container .select2-choice {
+    background: none;
+    border: none;
+    color: rgb(248, 248, 242);
+    font-size:  24px;
+    margin-bottom: 20px;
+    border:  2px solid rgb(248, 248, 242);
+    height: 40px;
+    line-height: 40px;
+}
+
+select {
+    background: none;
+    border: 1px solid rgb(248, 248, 242);
+    color: rgb(248, 248, 242);
+    font-size: 16px;
+}
+.boost,.totalMod {
+    margin-left: 4px;
+}
+
+input {
+    font-size: 18px;
+    border: none;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 2px;
+    background: none;
+    border: 1px solid rgb(248, 248, 242);
+    color: rgb(248, 248, 242);
+}
+
+.select2-input {
+    color: black;
+}
+.select2-drop {
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.move-result-subgroup {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.btn.btn-xxxwide {
+    height:  30px;
+    font-size: 20px;
+    line-height: 30px;
+} 
+
+#show-mid {
+    position:  fixed;
+    background: #bd93f9;
+    height:  40px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    width:  200px;
+    right: 40px;
+    top: 30px;
+    border-radius: 5px;
+    z-index:  10;
+}
+
+#trainer-sprite {
+    width:  210px;
+    height:  auto;
+    position: absolute;
+    right: 40px;
+    top:  88px;
+}
+
+.poke-sprite {
+    position: absolute;
+    height: auto;
+    width: 128px;
+    right: 0;
+    top:  -10px;
+    background: url("../img/bg.jpeg");
+    border-bottom-left-radius: 10px;
+    min-height: 128px;
+}
+
 .pokeweb-link {
     color: #f8f8f2;
     margin-left:  20px;
@@ -53,9 +139,6 @@ a img {
     left: -150px;
 }
 
-input {
-    background-color: #f8f8f2;
-}
 
 .nav .button.cur,
 .nav .button.cur:hover {
@@ -148,6 +231,10 @@ html, body {
     min-width: 100em;
 }
 
+.importedSetsOptions {
+    display: block;
+}
+
 .trainer-poks-label {
     margin:  10px 0px;
 }
@@ -155,12 +242,13 @@ html, body {
 .trainer-pok-list {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
 
 }
 
 .trainer-pok {
-    height:  48px;
-    width:  48px;
+    height:  96px;
+    width:  96px;
     cursor: pointer;
     box-sizing: border-box;
     border: 1px solid #282a36;
@@ -191,7 +279,7 @@ html, body {
 
 .wrapper {
     padding: 0 1em;
-    max-width: 1285px;
+    max-width: calc(100vw - 80px);
     margin: 0 auto;
 }
 .credits {
@@ -206,6 +294,7 @@ div.wrapper > div > span {
 fieldset {
     float: left;
     border: 1px solid #44475a;
+    position: relative;
 }
 legend {
     font-weight: bold;
@@ -236,6 +325,7 @@ th {
 .panel {
     float: left;
     display: inline-block; /* required for honkaculate to work */
+    font-size:  18px;
 }
 .poke-info {
     width: 100%;
@@ -386,7 +476,7 @@ th {
     display: inline-block;
     width: 5em;
 }
-.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span {
+.poke-info input:not([type]), .poke-info input[type="text"] {
     display: inline-block;
     width: 2.5em;
 }
@@ -397,9 +487,14 @@ th {
 .info-group {
     margin: 1em 0;
 }
-.set-selector {
-    width: 100%;
+
+.info-group.top.opp {
+    margin-top:  70px;
 }
+.set-selector {
+    width: calc(100% - 168px);
+}
+
 .info-selectors select {
     width: 12em;
 }

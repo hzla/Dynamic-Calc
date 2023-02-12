@@ -62,7 +62,7 @@ function get_trainer_poks(trainer_name)
         if (TR_NAMES[i].includes(og_trainer_name)) {
             console.log(og_trainer_name.split(" "))
             console.log(TR_NAMES[i].split(" "))
-            if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2)) {
+            if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                matches.push(TR_NAMES[i])
             }    
         }
@@ -184,6 +184,12 @@ $(document).ready(function() {
 
 
    npoint = `https://api.npoint.io/${params.get('data')}`
+
+   if (params.get('data').includes("Pokeweb")) {
+    npoint = `http://fishbowlweb.cloud:3000/${params.get('data').split("Pokeweb-")[1]}_calc.json`
+   }
+
+
    $.get(npoint, function(data){
         // data = JSON.parse(data)
         npoint_data = data
@@ -230,7 +236,10 @@ $(document).ready(function() {
         load_js() 
         customSets = JSON.parse(localStorage.customsets);
         updateDex(customSets)   
-        get_box()      
+        get_box()
+        // var first_set = TR_NAMES[100].split("[")[0]
+        // $(".set-selector").val(first_set);
+        // $(".set-selector").change();      
    })
 
    $(document).on('click', '.trainer-pok.right-side', function() {
@@ -240,6 +249,10 @@ $(document).ready(function() {
 
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+   })
+
+   $(document).on('click', '#show-mid', function() {
+        $('.panel-mid').toggle()
    })
 
    $(document).on('click', '.trainer-pok.left-side', function() {

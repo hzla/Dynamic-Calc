@@ -438,6 +438,8 @@ $(".set-selector").change(function () {
 
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
+		var sprite = SETDEX_BW
+		$('#trainer-sprite').attr('src',  )
 	}
 
 	var next_poks = get_next_in()
@@ -459,6 +461,24 @@ $(".set-selector").change(function () {
 	$('.opposing.trainer-pok-list').html(trpok_html)
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+	
+	if ($(this).hasClass('opposing')) {
+		if (SETDEX_BW) {
+			var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
+			$('#trainer-sprite').attr('src', `./img/${sprite}`)
+
+			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
+			$('#p2 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+		}
+	} else {
+		if (SETDEX_BW) {
+			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
+			$('#p1 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+		}
+	}
+
+
+
 	var pokemon = pokedex[pokemonName];
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");

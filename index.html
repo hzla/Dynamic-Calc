@@ -43,13 +43,13 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
         </span>
-        <a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Make your own Gen V Hack!</span></a>
+        <a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V!</span></a>
     </div>
     <hr />
+
+    <div id="show-mid">Import/Options</div>
     <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
         <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
-            </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL1" checked="checked" aria-describedby="resultDamageL1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveL1">Loading...</label>
@@ -72,8 +72,6 @@
             </div>
         </div>
         <div aria-labelledby="resultHeaderR" class="move-result-subgroup" role="radiogroup">
-            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
-            </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR1" aria-describedby="resultDamageR1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveR1">Loading...</label>
@@ -102,20 +100,23 @@
         <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
         </div>
     </div>
+
+    <img id="trainer-sprite" src="./img/trainer_sprites/shadow.png">
     <div class="panel-wrapper">
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
+            <img class="poke-sprite" src="./img/pokesprite/abomasnow.png">
             <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger player" />
-            <span id="importedSetsOptions" style="width:auto;">
+            <span class="importedSetsOptions" style="width:auto;">
                 <input type="checkbox" id="importedSets" /> Only show imported sets <br />
                 <button id="clearSets">Clear Imported Sets</button>
             </span>
             <div class="info-group top">
                 <div>
                     <label>Type</label>
-                    <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
-                    <select aria-label="type2" class="type2 terrain-trigger calc-trigger"></select>
+                    <select aria-label="type1" class="type1 terrain-trigger calc-trigger" ></select>
+                    <select aria-label="type2" class="type2 terrain-trigger calc-trigger" ></select>
                 </div>
                 <div class="hide">
                     <label>Forme</label>
@@ -564,7 +565,6 @@
                 </select>
             </div>
             <div class="trainer-poks ">
-                <div class="trainer-poks-label">My Box</div>
 
                 <div class="trainer-pok-list player-poks">
 
@@ -894,13 +894,10 @@
     </div>
     <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
         <fieldset class="poke-info" id="p2">
+            <img class="poke-sprite" src="./img/pokesprite/abomasnow.png">
             <legend align="center">Pok&eacute;mon 2</legend>
             <input type="text" class="set-selector calc-trigger opposing" />
-            <span id="importedSetsOptions" style="width:auto;">
-                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
-                <button id="clearSets">Clear Imported Sets</button>
-            </span>
-            <div class="info-group top">
+            <div class="info-group top opp">
                 <div>
                     <label>Type</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>
@@ -1351,7 +1348,6 @@
                 </select>
             </div>
             <div class="trainer-poks">
-                <div class="trainer-poks-label">Next In</div>
 
                 <div class="trainer-pok-list opposing">
                     <div class="trainer-pok-container">
