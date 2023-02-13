@@ -330,6 +330,7 @@ th {
     float: left;
     display: inline-block; /* required for honkaculate to work */
     font-size:  18px;
+    max-width:  calc(50vw - 40px);
 }
 .poke-info {
     width: 100%;
