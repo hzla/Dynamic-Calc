@@ -123,7 +123,6 @@ function get_next_in() {
         }
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index])
     }
-    console.log(ranked_trainer_poks.sort(sort_trpoks))
     return ranked_trainer_poks.sort(sort_trpoks)
 }
 
@@ -249,6 +248,14 @@ $(document).ready(function() {
 
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+   })
+
+   $(document).on('change', '.calc-select', function() {
+        var calc_url = $('.calc-select option:selected').attr('data-source')
+        if (calc_url) {
+            location.href = $('.calc-select option:selected').attr('data-source')
+        }
+        
    })
 
    $(document).on('click', '#show-mid', function() {

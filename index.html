@@ -30,7 +30,7 @@
 
 <div class="wrapper" style="margin-top: 50px;">
 
-    <div aria-label="Settings" role="region">
+    <div aria-label="Settings" role="region" class="header-settings">
         <span class="title-text">Pokeweb Damage Calculator</span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
@@ -44,6 +44,14 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
         </span>
         <a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V!</span></a>
+
+        <select class="calc-select">
+            <option selected="selected">Other Romhacks</option>
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=9aa37533b7c000992d92&gen=5">Blaze Black</option>
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=11c4eeca5a94f8edf413&gen=7">Blaze Black 2 Redux</option>
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=da1eedc0e39ea07b75bf&gen=5">Vintage White</option>
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=d5cab597ccca21f19049&gen=5">Black 2 Kaizo</option>
+        </select>
     </div>
     <hr />
 
