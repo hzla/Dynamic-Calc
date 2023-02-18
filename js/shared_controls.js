@@ -1346,6 +1346,12 @@ function loadCustomList(id) {
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var g = params.get('gen');
+	damageGen = parseInt(params.get('dmgGen'))
+
+	if (!damageGen) {
+		damageGen = Math.min(parseInt(g),5)
+	} 
+	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
