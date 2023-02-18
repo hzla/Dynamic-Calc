@@ -466,6 +466,13 @@ $(".set-selector").change(function () {
 		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
 			if (setName != "Blank Set") {
 				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
+				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
+				console.log(battle_type)
+				if (battle_type == "Singles") {
+					$('#singles-format').click()
+				} else {
+					$('#doubles-format').click()
+				}
 				$('#trainer-sprite').attr('src', `./img/${sprite}`)
 				$('#trainer-sprite').show()
 			}
@@ -486,6 +493,8 @@ $(".set-selector").change(function () {
 
 
 	var pokemon = pokedex[pokemonName];
+
+
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
