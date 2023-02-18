@@ -271,12 +271,15 @@ html, body {
     cursor: pointer;
     box-sizing: border-box;
     border: 1px solid #282a36;
+    background: #6272a4;
+    border-radius: 10px;
+    margin:  10px;
 
 }
 
 .left-side:hover {
     border:  1px solid #1abc9c;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .trainer-pok-container {
@@ -289,7 +292,7 @@ html, body {
 
 .trainer-pok-container:hover {
     border: 1px solid #1abc9c;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .bp-info {
