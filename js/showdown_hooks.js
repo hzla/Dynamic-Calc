@@ -121,7 +121,7 @@ function get_next_in() {
 
             }
         }
-        ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index])
+        ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
     return ranked_trainer_poks.sort(sort_trpoks)
 }

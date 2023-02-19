@@ -450,9 +450,10 @@ $(".set-selector").change(function () {
 			continue
 		}
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-")
+
 		var pok = `<div class="trainer-pok-container">
 			<img class="trainer-pok right-side" src="./img/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
-			<div class="bp-info">${next_poks[i][2]}</div>
+			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][0])}">${next_poks[i][4][0]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][3])}">${next_poks[i][4][3]}</div>
 
 		</div>`
 		trpok_html += pok
@@ -1356,9 +1357,14 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var g = params.get('gen');
 	damageGen = parseInt(params.get('dmgGen'))
+	type_chart = parseInt(params.get('types'))
 
 	if (!damageGen) {
 		damageGen = Math.min(parseInt(g),5)
+	} 
+
+	if (!type_chart) {
+		type_chart = 6
 	} 
 	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)
 	$("#gen" + g).prop("checked", true);

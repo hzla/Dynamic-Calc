@@ -402,6 +402,9 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
 var ADV = GSC;
 var DPP = GSC;
 var BW = GSC;
+
+
+
 var XY = (0, util_1.extend)(true, {}, GSC, {
     '???': { Fairy: 1 },
     Normal: { Fairy: 1 },
@@ -510,4 +513,30 @@ finally {
     }
     finally { if (e_1) throw e_1.error; }
 }
+
+if (type_chart != 6) {
+    exports.TYPE_CHART[3].Dark.Steel = 1
+    exports.TYPE_CHART[3].Ghost.Steel = 1
+
+    exports.TYPE_CHART[4].Dark.Steel = 1
+    exports.TYPE_CHART[4].Ghost.Steel = 1
+
+    exports.TYPE_CHART[5].Dark.Steel = 1
+    exports.TYPE_CHART[5].Ghost.Steel = 1
+
+    exports.TYPE_CHART[6].Dark.Steel = 1
+    exports.TYPE_CHART[6].Ghost.Steel = 1
+
+    exports.TYPE_CHART[7].Dark.Steel = 1
+    exports.TYPE_CHART[7].Ghost.Steel = 1
+
+    exports.TYPE_CHART[8].Dark.Steel = 1
+    exports.TYPE_CHART[8].Ghost.Steel = 1
+
+}
+
+
+
+
+
 //# sourceMappingURL=types.js.map

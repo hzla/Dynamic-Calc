@@ -19,6 +19,7 @@ a img {
 .header-settings {
     display: flex;
     line-height: 40px;
+    align-items: center;
 }
 
 .title-text {
@@ -288,6 +289,7 @@ html, body {
     margin-left:  10px;
     align-items: center;
     border:  1px solid #282a36;
+    padding:  10px;
 }
 
 .trainer-pok-container:hover {
@@ -297,6 +299,15 @@ html, body {
 
 .bp-info {
     text-align: center;
+}
+
+.bp-info[data-strong="true"] {
+    color: #ff5555;
+}
+
+.trainer-pok-container:first-child {
+    border: 1px solid #ff5555;
+    border-radius:  10px;
 }
 
 .wrapper {

@@ -26,3 +26,4 @@ function calculate(gen, attacker, defender, move, field) {
 }
 exports.calculate = calculate;
 //# sourceMappingURL=calc.js.map
+
