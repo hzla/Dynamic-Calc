@@ -15,13 +15,13 @@ var MECHANICS = [
     gen4_1.calculateDPP,
     gen56_1.calculateBWXY,
     gen56_1.calculateBWXY,
-    gen56_1.calculateBWXY,
-    gen56_1.calculateBWXY
+    gen78_1.calculateBWXY,
+    gen78_1.calculateBWXY
 ];
 function calculate(gen, attacker, defender, move, field) {
-    if (gen.num > 5) {
-        gen.num = 5
-    }
+    // if (gen.num > 5) {
+    //     gen.num = 5
+    // }
     return MECHANICS[gen.num](gen, attacker.clone(), defender.clone(), move.clone(), field ? field.clone() : new field_1.Field());
 }
 exports.calculate = calculate;

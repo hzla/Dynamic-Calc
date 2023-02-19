@@ -443,6 +443,8 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
         Fairy: 1
     }
 });
+var DPP = XY;
+var BW = XY;
 var SM = XY;
 var SS = SM;
 exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
