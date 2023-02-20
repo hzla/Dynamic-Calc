@@ -104,14 +104,10 @@ function get_next_in_g4() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
-
         var effectiveness = type_info[type1] + type_info[type2]
         if (effectiveness == 8) {
             effectiveness = 1.75
         }
-
-
-
         // check moves for SE
         var isSE = false
         for (j in pok_data["moves"]) {
@@ -165,8 +161,6 @@ function get_next_in_g4() {
     var p1field = createField();
     var p2field = p1field.clone().swap();
 
-
-    console.log(trainer_poks)
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
@@ -180,16 +174,9 @@ function get_next_in_g4() {
         }
 
         p2 = createPokemon(p2info, pok_data["moves"])
-
-        // console.log(p2)
         var results = calculateAllMoves(4, p1, p1field, p2, p2field)[1];
 
-
-
         var highestDamage = 0
-        // console.log(pok_data["moves"])
-        // console.log(results)
-
         for (n in results) {
             var dmg = 0
             if (typeof results[n].damage === 'number') {
@@ -206,21 +193,10 @@ function get_next_in_g4() {
                 highestDamage = 1000
             }   
         }
-
-        
-        console.log("pushing other")  
         other_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], highestDamage])
-
-
-
     }
-
-    // console.log(other_mons.sort(sort_trpoks_g4) + se_mons.sort(sort_trpoks_g4))
-
+    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
-
-
-
 }
 
 
@@ -435,6 +411,10 @@ $(document).ready(function() {
 
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
+   })
+
+   $(document).on('change', '.current-hp', function() {
+        $($('.set-selector')[1]).change()
    })
 
    $(document).on('click', '.trainer-pok.left-side', function() {

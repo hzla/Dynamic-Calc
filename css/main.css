@@ -275,7 +275,11 @@ html, body {
     background: #6272a4;
     border-radius: 10px;
     margin:  10px;
+}
 
+.trainer-pok.right-side {
+    height: 100%;
+    width:  100%;
 }
 
 .left-side:hover {
@@ -290,6 +294,7 @@ html, body {
     align-items: center;
     border:  1px solid #282a36;
     padding:  10px;
+    flex-basis: calc(33% - 30px);
 }
 
 .trainer-pok-container:hover {
@@ -344,7 +349,6 @@ th {
     font-size: 1.5em;
     margin: 0.5em 1em 0.5em 0;
     position: relative;
-    top: -5px;
 }
 .big-text {
     text-align: left;
@@ -366,7 +370,9 @@ th {
 }
 .field-info, .poke-import {
     text-align: center;
-    width: 95%;
+    max-width:  510px;
+    box-sizing: border-box;
+    padding:  10px;
 }
 .holder-0 {
     position: absolute;
@@ -522,7 +528,7 @@ th {
 }
 
 .info-group.top.opp {
-    margin-top:  70px;
+    margin-top:  20px;
 }
 .set-selector {
     width: calc(100% - 168px);
@@ -616,6 +622,7 @@ table.field {
 
 .panel.panel-mid {
     display: none;
+    max-width: 510px;
 }
 
 .panel-wrapper {
