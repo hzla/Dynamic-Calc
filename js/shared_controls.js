@@ -755,11 +755,10 @@ function correctHiddenPower(pokemon) {
 	return pokemon;
 }
 
-function createPokemon(pokeInfo) {
+function createPokemon(pokeInfo, customMoves=false) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		console.log(setName)
 		var isRandoms = $("#randoms").prop("checked");
 		var set = isRandoms ? randdex[name] : setdex[name][setName];
 
@@ -775,7 +774,13 @@ function createPokemon(pokeInfo) {
 
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
-			var moveName = set.moves[i];
+			var moveName = ""
+			if (customMoves) {
+				console.log(customMoves[i])
+				moveName = customMoves[i]
+			} else {
+				moveName = set.moves[i];
+			}
 			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
 		}
 
@@ -828,6 +833,15 @@ function createPokemon(pokeInfo) {
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
 		if (isDynamaxed) curHP = Math.floor(curHP / 2);
 		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
+		
+		if (customMoves) {
+			var move1 = customMoves[0]
+			var move2 = customMoves[1]
+			var move3 = customMoves[2]
+			var move4 = customMoves[3]
+		} 
+
+
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
@@ -843,10 +857,10 @@ function createPokemon(pokeInfo) {
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed)
+				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed, move1),
+				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed, move2),
+				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed, move3),
+				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed, move4)
 			],
 			overrides: {
 				baseStats: baseStats,
@@ -862,8 +876,14 @@ function getGender(gender) {
 	return 'F';
 }
 
-function getMoveDetails(moveInfo, species, ability, item, useMax) {
-	var moveName = moveInfo.find("select.move-selector").val();
+function getMoveDetails(moveInfo, species, ability, item, useMax, moveName=false) {
+	if (moveName) {
+
+	} else {
+		var moveName = moveInfo.find("select.move-selector").val();
+	}
+
+	
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
@@ -1358,6 +1378,7 @@ $(document).ready(function () {
 	var g = params.get('gen');
 	damageGen = parseInt(params.get('dmgGen'))
 	type_chart = parseInt(params.get('types'))
+	switchIn = parseInt(params.get('switchIn'))
 
 	if (!damageGen) {
 		damageGen = Math.min(parseInt(g),5)
@@ -1365,6 +1386,10 @@ $(document).ready(function () {
 
 	if (!type_chart) {
 		type_chart = 6
+	}
+
+	if (!switchIn) {
+		switchIn = 5
 	} 
 	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)
 	$("#gen" + g).prop("checked", true);

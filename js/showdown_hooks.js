@@ -60,8 +60,6 @@ function get_trainer_poks(trainer_name)
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name)) {
-            console.log(og_trainer_name.split(" "))
-            console.log(TR_NAMES[i].split(" "))
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                matches.push(TR_NAMES[i])
             }    
@@ -70,8 +68,167 @@ function get_trainer_poks(trainer_name)
     return matches
 }
 
+function get_next_in_g4() {
+    if (typeof CURRENT_TRAINER_POKS === "undefined") {
+        return
+    }
+
+    var ranked_trainer_poks = []
+    
+
+    var trainer_poks = CURRENT_TRAINER_POKS
+
+    var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
+    var player_type1 = $('.type1').first().val()
+    var player_type2 = $('.type2').first().val() 
+
+    var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
+
+
+    if (player_type2 == ""){
+        player_type2 = player_type1
+    }
+
+    // get type chart
+    var type_info = get_type_info([player_type1, player_type2])
+
+    // get mons with SE moves and sort by type matchup and trainer order
+    var se_mons = []
+    var se_indexes = []
+
+    for (i in trainer_poks) {
+        var pok_name = trainer_poks[i].split(" (")[0]
+        var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        var type1 = pokedex[pok_name]["types"][0]
+        var type2 = pokedex[pok_name]["types"][1] || type1
+        var pok_data = SETDEX_BW[pok_name][tr_name]
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+
+
+        var effectiveness = type_info[type1] + type_info[type2]
+        if (effectiveness == 8) {
+            effectiveness = 1.75
+        }
+
+
+
+        // check moves for SE
+        var isSE = false
+        for (j in pok_data["moves"]) {
+            var mov_data = moves[pok_data["moves"][j]]
+
+            if (!mov_data) {
+                continue
+            }
+
+            if (mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
+                isSE = true
+            }
+
+            if (mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
+                isSE = true
+            }
+
+            if (player_pok == "Altaria" && mov_data["type"] == "Dragon") {
+                isSE = true
+            }
+
+            if (player_pok == "Mawile" && mov_data["type"] == "Poison") {
+                isSE = true
+            }
+
+            if (player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
+                isSE = true
+            }
+
+            if (type_info[mov_data["type"]] >= 2) {
+                isSE = true
+            }
+
+            if (isSE) {   
+                se_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], effectiveness])
+                se_indexes.push(sub_index)
+                break
+            }           
+        }
+    }
+
+    // sort rest of mons by using other mons moves with current mon stats
+    var other_mons = []
+
+    var currentHp = parseInt($('.current-hp').first().val())
+
+    var p1info = $("#p1");
+    var p2info = $("#p2");
+    var p1 = createPokemon(p1info);
+    var p2 = createPokemon(p2info);
+    var p1field = createField();
+    var p2field = p1field.clone().swap();
+
+
+    console.log(trainer_poks)
+    for (i in trainer_poks) {
+        var pok_name = trainer_poks[i].split(" (")[0]
+        var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        var type1 = pokedex[pok_name]["types"][0]
+        var type2 = pokedex[pok_name]["types"][1] || type1
+        var pok_data = SETDEX_BW[pok_name][tr_name]
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+
+        if (se_indexes.includes(sub_index)) {
+            continue
+        }
+
+        p2 = createPokemon(p2info, pok_data["moves"])
+
+        // console.log(p2)
+        var results = calculateAllMoves(4, p1, p1field, p2, p2field)[1];
+
+
+
+        var highestDamage = 0
+        // console.log(pok_data["moves"])
+        // console.log(results)
+
+        for (n in results) {
+            var dmg = 0
+            if (typeof results[n].damage === 'number') {
+                dmg = results[n].damage
+            } else {
+                dmg = results[n].damage[0]
+            }
+            // console.log(dmg)
+
+            if (dmg > highestDamage) {
+                highestDamage = dmg
+            }
+            if (highestDamage >= currentHp) {
+                highestDamage = 1000
+            }   
+        }
+
+        
+        console.log("pushing other")  
+        other_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], highestDamage])
+
+
+
+    }
+
+    // console.log(other_mons.sort(sort_trpoks_g4) + se_mons.sort(sort_trpoks_g4))
+
+    return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+
+
+
+}
+
+
 function get_next_in() {
 
+    if (switchIn == 4) {
+        return get_next_in_g4()
+    }
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
@@ -135,6 +292,17 @@ function sort_trpoks(a, b) {
     }
 }
 
+
+function sort_trpoks_g4(a, b) {
+    if (a[5] === b[5]) {
+        return (b[3] > a[3]) ? -1 : 1;
+    }
+    else {
+        return (b[5] < a[5]) ? -1 : 1;
+    }
+}
+
+
 function get_type_info(pok_types) {
     if (pok_types[1] == pok_types[0]) {
         pok_types[1] = "None"
@@ -165,6 +333,13 @@ function get_type_info(pok_types) {
             [1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2,1],
             [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+
+    
+
+    if (type_chart != 6) {
+        types[13][16] = 1
+        types[15][16] = 1
+    }
 
     var type1 = type_name.indexOf(pok_types[0])
     var type2 = type_name.indexOf(pok_types[1])
