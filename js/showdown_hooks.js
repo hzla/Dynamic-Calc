@@ -427,4 +427,19 @@ $(document).ready(function() {
         $('.player .select2-chosen').text(set)
         get_box()
    })
+
+   SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
+   "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
+   "da1eedc0e39ea07b75bf": "Vintage White",
+   "bd7fc78f8fa2500dfcca": "Renegade Platinum"
+    }
+
+    if (SOURCES[params.get('data')]) {
+        TITLE = SOURCES[params.get('data')]
+
+        $('.genSelection').hide()
+
+        $('#rom-title').text(TITLE).show()
+    }
+
 })

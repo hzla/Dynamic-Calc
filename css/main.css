@@ -20,6 +20,12 @@ a img {
     display: flex;
     line-height: 40px;
     align-items: center;
+    width: calc(100vw - 320px);
+    justify-content: space-between;
+}
+
+#rom-title {
+    font-size: 30px;
 }
 
 .title-text {
@@ -115,8 +121,8 @@ input {
     position: absolute;
     height: auto;
     width: 128px;
-    right: 0;
-    top:  -10px;
+    right: 13px;
+    top:  80px;
     background: url("../img/bg.jpeg");
     border-bottom-left-radius: 10px;
     min-height: 128px;
@@ -124,8 +130,8 @@ input {
 
 .pokeweb-link {
     color: #f8f8f2;
-    margin-left:  20px;
     text-decoration: none;
+    margin-top:  20px;
 }
 .header-inner {
     max-width: 605px;
@@ -373,6 +379,7 @@ th {
     max-width:  510px;
     box-sizing: border-box;
     padding:  10px;
+    width: calc(100% - 5px);
 }
 .holder-0 {
     position: absolute;
@@ -531,7 +538,7 @@ th {
     margin-top:  20px;
 }
 .set-selector {
-    width: calc(100% - 168px);
+    width: 100%;
 }
 
 .info-selectors select {
