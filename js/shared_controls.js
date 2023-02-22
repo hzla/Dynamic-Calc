@@ -480,16 +480,14 @@ $(".set-selector").change(function () {
 		} else {
 			$('#trainer-sprite').hide()
 		}
-		var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
-
-
+		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
 
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite}.${suffix}`)
 
 
 	} else {
 		if (SETDEX_BW) {
-			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
+			var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
 			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
 		}
 	}
