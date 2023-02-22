@@ -481,13 +481,16 @@ $(".set-selector").change(function () {
 			$('#trainer-sprite').hide()
 		}
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
-		$('#p2 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+
+
+
+		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite}.${suffix}`)
 
 
 	} else {
 		if (SETDEX_BW) {
 			var pokesprite = pokemonName.toLowerCase().replace(" ", "-")
-			$('#p1 .poke-sprite').attr('src', `./img/pokesprite/${pokesprite}.png`)
+			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
 		}
 	}
 
@@ -1392,6 +1395,16 @@ $(document).ready(function () {
 	if (!switchIn) {
 		switchIn = 5
 	} 
+
+	if (damageGen <= 5) {
+		trainerSprites = "front"
+		playerSprites = "back"
+		suffix = "gif"
+	} else {
+		trainerSprites = "pokesprite"
+		playerSprites = "pokesprite"
+		suffix = "png"
+	}
 	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
