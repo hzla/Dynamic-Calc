@@ -34,7 +34,7 @@ function get_box() {
         if (names[i].includes("My Box")) {
             box.push(names[i].split("[")[0])
 
-            var pok_name = names[i].split(" (")[0].toLowerCase().replace(" ","-")
+            var pok_name = names[i].split(" (")[0].toLowerCase().replace(" ","-").replace(".","")
             var pok = `<img class="trainer-pok left-side" src="./img/pokesprite/${pok_name}.png" data-id="${names[i].split("[")[0]}">`
 
             box_html += pok
