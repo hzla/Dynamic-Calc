@@ -625,7 +625,28 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.defenderAbility = defender.ability;
     }
     defense = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((defense * (0, util_2.chainMods)(dfMods, 410, 131072)) / 4096)));
-    var baseDamage = (0, util_2.getBaseDamage)(attacker.level, basePower, attack, defense);
+    
+    var levelCaps = [[20, 1], [36, 2], [52, 3]]
+    var delta = 0
+
+
+
+    // Check if challenge mode, if calculating trainer pok, and if trainer pok is in challenge mode exception list
+    if (challengeMode && !get_current_in()["noCh"] && $('.set-selector')[3].value.includes(attacker.name) && $('.set-selector')[3].value.includes(attacker.level) ) {
+        var delta = 4
+        for (n in levelCaps) {
+            if (attacker.level <= levelCaps[n][0]) {
+                delta = levelCaps[n][1]
+                break
+            }
+        }
+    } else {
+        console.log("no challenge mode")
+    }
+
+
+
+    var baseDamage = (0, util_2.getBaseDamage)(attacker.level + delta, basePower, attack, defense);
     var isSpread = field.gameType !== 'Singles' &&
         ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
     if (isSpread) {

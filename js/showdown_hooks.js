@@ -199,6 +199,14 @@ function get_next_in_g4() {
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }
 
+function get_current_in() {
+    var setInfo = $('.set-selector')[3].value
+    var pok_name = setInfo.split(" (")[0]
+    var tr_name = setInfo.split(" (")[1].replace(")", "").split("[")[0]
+
+    return SETDEX_BW[pok_name][tr_name]
+}
+
 
 function get_next_in() {
 
@@ -328,7 +336,7 @@ function get_type_info(pok_types) {
 }
 
 $(document).ready(function() {
-   const params = new URLSearchParams(window.location.search)
+   params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
    TR_NAMES = null
 

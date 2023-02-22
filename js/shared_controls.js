@@ -1379,6 +1379,7 @@ $(document).ready(function () {
 	damageGen = parseInt(params.get('dmgGen'))
 	type_chart = parseInt(params.get('types'))
 	switchIn = parseInt(params.get('switchIn'))
+	challengeMode = params.get('challengeMode')
 
 	if (!damageGen) {
 		damageGen = Math.min(parseInt(g),5)

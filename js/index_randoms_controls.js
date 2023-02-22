@@ -33,7 +33,6 @@ function performCalculations() {
 	var p1field = createField();
 	var p2field = p1field.clone().swap();
 
-	console.log(damageGen)
 
 	
 	damageResults = calculateAllMoves(damageGen, p1, p1field, p2, p2field);
