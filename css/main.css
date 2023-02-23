@@ -32,6 +32,41 @@ a img {
     font-size: 30px;
 }
 
+#battle-bg {
+    position: absolute;
+    z-index: 11;
+    border-radius: 20px;
+    left: calc(50vw - 330px);
+    width: 660px;
+    top: 450px;
+}
+
+#p2 div {
+    text-align: right;
+}
+
+#p1 .poke-sprite {
+    z-index: 13;
+    right: 53px;
+    top: 210px;
+    height: auto;
+    width: auto;
+    transform: scale(1.75)
+}
+
+#p2 .poke-sprite {
+    left: 30px;
+    top: 123px;
+    height: auto;
+    transform:  scale(1.5);
+    width: auto;
+
+}
+
+.right-table {
+    height: 205px;
+}
+
 .title-text {
     line-height: 40px;
     height:  40px;
@@ -126,18 +161,18 @@ input {
 
 .poke-sprite { 
     position: absolute;
-    height: auto;
+    height: 280px;
     width: calc(40% - 80px);
     right: 13px;
     top: 80px;
-    background: url(../img/battle_bg.png);
+    /*background: url(../img/battle_bg.png);*/
     border-bottom-left-radius: 10px;
     min-height: 128px;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid #1e2136;
     border-radius:  20px;
     padding: 20px;
+    z-index:  12;
 }
 
 .pokeweb-link {
@@ -558,7 +593,7 @@ th {
 }
 
 .results-right > div > span {
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 

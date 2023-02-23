@@ -420,6 +420,7 @@ $(document).ready(function() {
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
         $('.panel:not(.panel-mid)').toggleClass('third')
+        $('#battle-bg').toggle()
    })
 
    $(document).on('change', '.current-hp', function() {

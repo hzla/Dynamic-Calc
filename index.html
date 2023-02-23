@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96d" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96e" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -114,16 +114,16 @@
     </div>
 
     <img id="trainer-sprite" src="./img/trainer_sprites/shadow.png">
+    
+    <img src="./img/bg.webp" id="battle-bg">
+
     <div class="panel-wrapper">
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
             <img class="poke-sprite" src="./img/pokesprite/abomasnow.png">
             <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger player" />
-            <span class="importedSetsOptions" style="width:auto;">
-                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
-                <button id="clearSets">Clear Imported Sets</button>
-            </span>
+            
             <div class="info-group top">
                 <div>
                     <label>Type</label>
@@ -371,7 +371,7 @@
                             <td class="gen-specific g1 g2 hide">
                                 <input class="dvs calc-trigger" value="15" />
                             </td>
-                            <td><span class="total">236</span>
+                            <td><span class="total totalMod">236</span>
                             </td>
                             <td>
                                 <select class="boost calc-trigger">
@@ -389,8 +389,6 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
-                            </td>
-                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                     </tbody>
@@ -964,6 +962,10 @@
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
                 </div>
+                <span class="importedSetsOptions" style="width:auto;">
+                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
+                <button id="clearSets">Clear Imported Sets</button>
+            </span>
             </fieldset>
         </div>
     </div>
@@ -995,8 +997,8 @@
                     <input class="weight calc-trigger" id="weightR1" value="10.0" />
                 </div>
             </div>
-            <div class="info-group">
-                <table>
+            <div class="info-group right-table">
+                <table align="right">
                     <thead>
                         <tr>
                             <th></th>
@@ -1219,7 +1221,7 @@
                             <td class="gen-specific g1 g2 hide">
                                 <input class="dvs calc-trigger" value="15" />
                             </td>
-                            <td><span class="total">236</span>
+                            <td><span class="total totalMod">236</span>
                             </td>
                             <td>
                                 <select class="boost calc-trigger">
@@ -1237,8 +1239,6 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
-                            </td>
-                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                     </tbody>
@@ -1474,7 +1474,7 @@
     <script type="text/javascript" src="./js/data/sets/gen7.js?b8c1b790"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
 
-    <script type="text/javascript" src="./js/showdown_hooks.js?100012"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100013"></script>
 
 
     
@@ -1507,7 +1507,7 @@
     <script type="text/javascript" src="./js/shared_controls.js?0b3ea014"></script>
 
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f4"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?a7071f5c"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?a7071f5d"></script>
 </div>
 
 <div class="credits"><a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V or auto-generate your own Gen V Damage Calculator!</span></a> <br>Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla. <br>Message hzla#2906 on discord if you wish to add your romhack to the Pokeweb calc collection.
