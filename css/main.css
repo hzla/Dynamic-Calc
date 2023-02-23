@@ -24,7 +24,7 @@ a img {
     display: flex;
     line-height: 40px;
     align-items: center;
-    width: calc(100vw - 320px);
+    width: calc(100vw - 80px);
     justify-content: space-between;
 }
 
@@ -97,9 +97,12 @@ input {
     font-size: 20px;
     line-height: 30px;
 } 
+#damageValues {
+    font-size: 15px;
+}
 
 #show-mid {
-    position:  fixed;
+    position:  absolute;
     background: #bd93f9;
     height:  40px;
     font-size: 20px;
@@ -108,9 +111,9 @@ input {
     cursor: pointer;
     width:  200px;
     right: 40px;
-    top: 30px;
     border-radius: 5px;
     z-index:  10;
+    top: 290px;
 }
 
 #trainer-sprite {
@@ -351,15 +354,15 @@ html, body {
 }
 
 .wrapper {
-    padding: 0 1em;
     max-width: calc(100vw - 80px);
     margin-left: 40px;
+    margin-right: 40px;
 }
 .credits {
     clear: both;
-    padding: 20px;
+    padding: 20px 0px;
     max-width: 1285px;
-    margin: 0px auto;
+    margin-left: 40px;
 }
 div.wrapper > div > span {
     padding-right: 5px;
@@ -384,6 +387,7 @@ th {
     font-size: 1.5em;
     margin: 0.5em 1em 0.5em 0;
     position: relative;
+    width: 311px;
 }
 .big-text {
     text-align: left;

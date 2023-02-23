@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96a" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96b" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -805,6 +805,51 @@
                                 <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                             </div></td>
                         </tr>
+                        <tr class="gen-specific g3">
+                            <td><div class="left" title="Has this Pokémon's power been boosted by Roxxane badge?">
+                                <div hidden="" id="selectAtkBadgeInstruction">Has this Pokémon's power been boosted by Roxxane badge?</div>
+                                <input aria-describedby="selectAtkBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="AtkL">
+                                <label class="btn btn-xxwide" for="AtkL">Attack Boost</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pokémon's power been boosted by Roxxane badge?">
+                                <input aria-describedby="selectAtkBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="AtkR">
+                                <label class="btn btn-xxwide" for="AtkR">Attack Boost</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g3">
+                            <td><div class="left" title="Has this Pokémon's power been boosted by Wattsons badge?">
+                                <div hidden="" id="selectSpeedBadgeInstruction">Has this Pokémon's power been boosted by Wattsons badge?</div>
+                                <input aria-describedby="selectSpeedBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="SpeL">
+                                <label class="btn btn-xxwide" for="SpeL">Speed Boost</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pokémon's power been boosted by Wattsons badge?">
+                                <input aria-describedby="selectAtkBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="SpeR">
+                                <label class="btn btn-xxwide" for="SpeR">Speed Boost</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g3">
+                            <td><div class="left" title="Has this Pokémon's power been boosted by Tate and Lizas Badge?">
+                                <div hidden="" id="SelectSpecBadgeInstruction">Has this Pokémon's power been boosted by Tate and Lizas Badge?</div>
+                                <input aria-describedby="SelectSpecBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="SpecL">
+                                <label class="btn btn-xxwide" for="SpecL">Special Boost</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pokémon's power been boosted by Tate and Lizas Badge?">
+                                <input aria-describedby="SelectSpecBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="SpecR">
+                                <label class="btn btn-xxwide" for="SpecR">Special Boost</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g3">
+                            <td><div class="left" title="Has this Pokémon's power been boosted by Normans Badge?">
+                                <div hidden="" id="SelectSpecBadgeInstruction">Has this Pokémon's power been boosted by Brawlys Badge?</div>
+                                <input aria-describedby="SelectDefBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="DefL">
+                                <label class="btn btn-xxwide" for="DefL">Defense Boost</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pokémon's power been boosted by Normans Badge?">
+                                <input aria-describedby="SelectDefBadgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="DefR">
+                                <label class="btn btn-xxwide" for="DefR">Defense Boost</label>
+                            </div></td>
+                        </tr>
+
                         <tr class="gen-specific g4 g5 g6 g7 g8">
                             <td><div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
                                 <div hidden id="selectTailwindInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
@@ -1461,8 +1506,8 @@
     <script type="text/javascript" src="./js/moveset_import.js?a7071f5c"></script>
 </div>
 
-<div class="credits">Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla. <br>Message hzla#2906 on discord if you wish to add your romhack to the Pokeweb calc collection.<br>
-    <a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V or auto-generate your own Gen V Damage Calculator!</span></a>
+<div class="credits"><a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V or auto-generate your own Gen V Damage Calculator!</span></a> <br>Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla. <br>Message hzla#2906 on discord if you wish to add your romhack to the Pokeweb calc collection.
+    
 
 </div>
 
