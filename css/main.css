@@ -117,10 +117,10 @@ input {
 }
 
 #trainer-sprite {
-    width:  210px;
+    width:  180px;
     height:  auto;
     position: absolute;
-    right: 40px;
+    right: calc(50vw - 90px);
     top:  88px;
 }
 
@@ -545,6 +545,17 @@ th {
     font-weight: bold;
     margin: 0 0 5px;
 }
+
+.results-right > div  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.results-right > div > span {
+    margin-right: 1em;
+}
+
 
 /* pokemon info */
 .poke-info label {
