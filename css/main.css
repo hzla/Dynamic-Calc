@@ -2,6 +2,10 @@
 a img {
     border: 0;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
 .header {
     margin: 0 0 30px 0;
 
@@ -274,8 +278,23 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-
 }
+
+.trainer-pok-list.opposing {
+    /*margin-top:  70px;*/
+}
+
+
+.player-poks {
+    background: url(../img/box_bg_city.png);
+    background-size: 100% 595px;
+    background-repeat: no-repeat;
+    height:  595px;
+    min-width:  100%;
+    overflow: scroll;
+}
+
+
 
 .trainer-pok {
     height:  96px;
@@ -286,6 +305,11 @@ html, body {
     background: #6272a4;
     border-radius: 10px;
     margin:  10px;
+}
+
+.trainer-pok.left-side {
+    background: none;
+    border:  1px solid rgb(0,0,0,0);
 }
 
 .trainer-pok.right-side {

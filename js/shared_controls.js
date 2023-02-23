@@ -449,7 +449,7 @@ $(".set-selector").change(function () {
 		if (next_poks[i][0].includes($('input.opposing').val())){
 			continue
 		}
-		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","")
+		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","")
 
 		var pok = `<div class="trainer-pok-container">
 			<img class="trainer-pok right-side" src="./img/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
