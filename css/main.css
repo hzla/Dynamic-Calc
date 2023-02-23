@@ -596,6 +596,16 @@ th {
     justify-content: flex-end;
 }
 
+#img-toggle {
+    font-size: 16px;
+    font-weight: 400;
+    background: #bd93f9;
+    padding: 5px;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .results-right > div > span {
     margin-right: 2em;
 }

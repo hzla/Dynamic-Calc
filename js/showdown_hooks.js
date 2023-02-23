@@ -423,6 +423,11 @@ $(document).ready(function() {
         $('#battle-bg').toggle()
    })
 
+   $(document).on('click', '#img-toggle', function() {
+        $('#battle-bg,.poke-sprite, #trainer-sprite').toggle()
+
+   })
+
    $(document).on('change', '.current-hp', function() {
         $($('.set-selector')[1]).change()
    })
