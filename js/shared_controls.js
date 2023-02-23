@@ -936,13 +936,18 @@ function createField() {
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 
+	var isBadgeAtk = [$("#AtkL").prop("checked"), $("#AtkR").prop("checked")];
+	var isBadgeSpec = [$("#SpecL").prop("checked"), $("#SpecR").prop("checked")];
+	var isBadgeDef = [$("#DefL").prop("checked"), $("#DefR").prop("checked")];
+	var isBadgeSpeed = [$("#SpeL").prop("checked"), $("#SpeR").prop("checked")];
+
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i],
 			vinelash: vinelash[i], wildfire: wildfire[i], cannonade: cannonade[i], volcalith: volcalith[i],
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
-			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
+			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i], isBadgeAtk: isBadgeAtk[i],isBadgeSpec: isBadgeSpec[i], isBadgeDef: isBadgeDef[i], isBadgeSpeed: isBadgeSpeed[i],
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
 		});
 	};
@@ -1060,8 +1065,8 @@ $(".gen").change(function () {
 	clearField();
 	$("#importedSets").prop("checked", false);
 	loadDefaultLists();
-	$(".gen-specific.g" + gen).show();
-	$(".gen-specific").not(".g" + gen).hide();
+	$(".gen-specific.g" + damageGen).show();
+	$(".gen-specific").not(".g" + damageGen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
 	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);

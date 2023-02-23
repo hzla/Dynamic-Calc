@@ -329,7 +329,7 @@ html, body {
     align-items: center;
     border:  1px solid #282a36;
     padding:  10px;
-    flex-basis: calc(33% - 30px);
+    width: calc(33% - 32px);
 }
 
 .trainer-pok-container:hover {
@@ -353,7 +353,7 @@ html, body {
 .wrapper {
     padding: 0 1em;
     max-width: calc(100vw - 80px);
-    margin: 0 auto;
+    margin-left: 40px;
 }
 .credits {
     clear: both;
@@ -652,13 +652,23 @@ table.field {
 
 
 
+
 .panel:not(.panel-mid) {
     flex-grow:  2;
 }
 
+.panel.third:not(.panel-mid) {
+    max-width:  calc(50vw - 275px);
+}
+
 .panel.panel-mid {
     display: none;
-    max-width: 510px;
+    max-width: 450px;
+}
+
+.poke-import {
+    min-width:  450px;
+    width:  450px;
 }
 
 .panel-wrapper {
@@ -672,13 +682,13 @@ table.field {
 }
 
 .import-team-text {
-    min-width: 27em;
+    width: calc(100% - 20px);
     min-height: 10em;
     resize: vertical;
 }
 
 .import-name-text {
-	min-width: 26.3em;
+	width: calc(100% - 20px);
     min-height: 1em;
     overflow: auto;
     display: inline;
