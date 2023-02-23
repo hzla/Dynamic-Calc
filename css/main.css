@@ -127,7 +127,7 @@ input {
     width: calc(40% - 80px);
     right: 13px;
     top: 80px;
-    background: url(../img/bg.jpeg);
+    background: url(../img/battle_bg.png);
     border-bottom-left-radius: 10px;
     min-height: 128px;
     background-size: cover;
