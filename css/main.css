@@ -36,7 +36,7 @@ a img {
     position: absolute;
     z-index: 11;
     border-radius: 20px;
-    left: calc(35vw + 50px);
+    left: calc(35vw - 50px);
     width: 30vw;
     top: 80px;
 }
