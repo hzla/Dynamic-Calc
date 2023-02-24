@@ -1038,11 +1038,11 @@ $(".gen").change(function () {
 	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
 	if (gen === 8) {
-		params.delete('gen');
-		params = '' + params;
-		if (window.history && window.history.replaceState) {
-			window.history.replaceState({}, document.title, window.location.pathname + (params.length ? '?' + params : ''));
-		}
+		// params.delete('gen');
+		// params = '' + params;
+		// if (window.history && window.history.replaceState) {
+		// 	window.history.replaceState({}, document.title, window.location.pathname + (params.length ? '?' + params : ''));
+		// }
 	} else {
 		params.set('gen', gen);
 		if (window.history && window.history.pushState) {

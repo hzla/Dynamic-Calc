@@ -540,6 +540,7 @@ var ADV_PATCH = {
     'Cosmic Power': { bp: 0, category: 'Status', type: 'Psychic' },
     'Crush Claw': { bp: 75, type: 'Normal', makesContact: true },
     'Dragon Claw': { bp: 80, type: 'Dragon', makesContact: true },
+    'Scorching Sands': { bp: 70, type: 'Ground', makesContact: true },
     'Dragon Dance': { bp: 0, category: 'Status', type: 'Dragon' },
     Eruption: { bp: 150, type: 'Fire', target: 'allAdjacentFoes' },
     'Fake Tears': { bp: 0, category: 'Status', type: 'Dark' },
@@ -4113,6 +4114,7 @@ var SS_PATCH = {
     'Zing Zap': { maxPower: 130 }
 };
 var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
+var BW = SS
 var LGPE_MOVES = [
     'Baddy Bad',
     'Bouncy Bubble',

@@ -347,6 +347,7 @@ $(document).ready(function() {
     npoint = `http://fishbowlweb.cloud:3000/${params.get('data').split("Pokeweb-")[1]}_calc.json`
    }
 
+   jsonMoves = moves
 
    $.get(npoint, function(data){
         // data = JSON.parse(data)
@@ -359,7 +360,7 @@ $(document).ready(function() {
         SETDEX_SS = data["formatted_sets"]
         SETDEX_XY = data["formatted_sets"]
         TR_NAMES = get_trainer_names()
-        var jsonMoves = data["moves"]
+        jsonMoves = data["moves"]
         var jsonMove 
         for (move in moves) {
 
