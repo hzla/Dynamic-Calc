@@ -469,7 +469,7 @@ $(".set-selector").change(function () {
 				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				console.log(battle_type)
-				if (battle_type == "Singles") {
+				if (battle_type == "Singles" || battle_type == undefined) {
 					$('#singles-format').click()
 				} else {
 					$('#doubles-format').click()

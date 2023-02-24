@@ -54,6 +54,14 @@ a img {
     transform: scale(1.75)
 }
 
+#p1 .poke-sprite.shifted {
+    transform:  translate(-225px) !important;
+}
+
+#p2 .poke-sprite.shifted{
+    transform:  translate(225px) !important;
+}
+
 #p2 .poke-sprite {
     right: calc(40vw - 80px);
     top: 5vw;

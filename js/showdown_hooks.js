@@ -54,9 +54,13 @@ function get_trainer_poks(trainer_name)
 
     var og_trainer_name = trainer_name.split(/Lvl \d+ /)[1]
 
+    console.log(trainer_name)
+
     if (og_trainer_name) {
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
+
+    console.log(og_trainer_name)
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name)) {
@@ -67,6 +71,158 @@ function get_trainer_poks(trainer_name)
     }
     return matches
 }
+
+// only phase 1
+function get_next_in_g3() {
+    if (typeof CURRENT_TRAINER_POKS === "undefined") {
+        return
+    }
+
+    var type_names = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
+             "Fighting", "Poison", "Ground", "Flying", "Psychic",
+             "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","None"]
+
+    var type_chart = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1,1],
+            [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1,1],
+            [1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1,1],
+            [1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1,1],
+            [1, 0.5, 2, 1, 0.5, 1, 1, 0.5, 2, 0.5, 1, 0.5, 2, 1, 0.5, 1, 0.5, 1,1],
+            [1, 0.5, 0.5, 1, 2, 0.5, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 0.5, 1,1],
+            [2, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 0.5, 2, 0, 1, 2, 2, 0.5,1],
+            [1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 0, 2,1],
+            [1, 2, 1, 2, 0.5, 1, 1, 2, 1, 0, 1, 0.5, 2, 1, 1, 1, 2, 1,1],
+            [1, 1, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 0.5, 1,1],
+            [1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0.5, 1, 1, 1, 1, 0, 0.5, 1,1],
+            [1, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 0.5, 2, 1, 1, 0.5, 1, 2, 0.5, 0.5,1],
+            [1, 2, 1, 1, 1, 2, 0.5, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 0.5, 1,1],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 0.5, 1,1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0.5, 0,1],
+            [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 0.5, 0.5,1],
+            [1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2,1],
+            [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+
+    var ranked_trainer_poks = []
+    
+
+    var trainer_poks = CURRENT_TRAINER_POKS
+
+    var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
+    var player_type1 = $('.type1').first().val()
+    var player_type1_index = type_names.indexOf(player_type1)
+    var player_type2 = $('.type2').first().val() 
+    
+
+    var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
+
+
+    if (player_type2 == ""){
+        player_type2 = player_type1
+    }
+    var player_type2_index = type_names.indexOf(player_type2)
+
+
+    var dead_mon_type1 = $('.type1').last().val()
+    var dead_mon_type2 = $('.type2').last().val()
+    if (dead_mon_type2 == "") {
+        dead_mon_type2 = dead_mon_type1
+    }
+
+    // get type chart
+    var type_info = get_type_info([player_type1, player_type2])
+
+    // get mons with SE moves and sort by type matchup and trainer order
+    var se_mons = []
+    var se_status_mons = []
+    var stab_mons = []
+    var se_indexes = []
+
+
+    // check for se non status moves
+    for (i in trainer_poks) {
+        var pok_name = trainer_poks[i].split(" (")[0]
+        var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        var type1 = pokedex[pok_name]["types"][0]
+        var type1_index = type_names.indexOf(type1)
+
+
+        var type2 = pokedex[pok_name]["types"][1] || type1
+        var type2_index = type_names.indexOf(type2)
+
+        var pok_data = SETDEX_BW[pok_name][tr_name]
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+
+        var effectiveness = 10
+
+        effectiveness = Math.floor(effectiveness * type_chart[player_type1_index][type1_index])
+        effectiveness = Math.floor(effectiveness * type_chart[player_type1_index][type2_index])
+        effectiveness = Math.floor(effectiveness * type_chart[player_type2_index][type1_index])
+        effectiveness = Math.floor(effectiveness * type_chart[player_type2_index][type2_index])
+
+
+
+        // check moves for SE
+        var isSE = false
+        var isSEStatus = false
+        var isStab = false
+        var statusPushed = false
+        var stabPushed = false
+
+
+        // if has SE move, add to list of SE mons and break, if has SE status move, add to list of SE status mons and keep searching
+        for (j in pok_data["moves"]) {
+
+            var mov_data = moves[pok_data["moves"][j]]
+
+            if (!mov_data) {
+                continue
+            }
+
+            if (type_info[mov_data["type"]] >= 2) {
+                if (mov_data['category'] == "Status") {
+                    isSEStatus = true
+                } else {
+                    isSE = true
+                }
+            }
+
+            if (mov_data["type"] == dead_mon_type1 || mov_data["type"] == dead_mon_type2 ) {
+                isStab = true
+            }
+
+            if (isSE) {  
+                se_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"]], effectiveness)
+                se_indexes.push(sub_index)
+
+                // remove from se_status if found se move after already pushing to se_status
+                if (statusPushed) {
+                    se_status_mons.pop()
+                }
+                if (stabPushed) {
+                    stab_mons.pop()
+                }
+                break
+            } else if (isSEStatus && !statusPushed) {
+                se_status_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"]], effectiveness)
+                statusPushed = true
+
+                if (stabPushed) {
+                    stab_mons.pop()
+                }
+               
+            } else if (isStab) {
+                stab_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"]], effectiveness)
+                stabPushed = true
+            }  else {
+
+            }     
+        }
+    }
+
+    return [se_mons, se_status_mons, stab_mons]
+}
+
+
 
 function get_next_in_g4() {
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
@@ -437,6 +593,9 @@ $(document).ready(function() {
         $('.panel-mid').toggle()
         $('.panel:not(.panel-mid)').toggleClass('third')
         $('#battle-bg').toggle()
+
+        $('#p1 .poke-sprite').toggleClass('shifted')
+        $('#p2 .poke-sprite').toggleClass('shifted')
    })
 
    $(document).on('click', '#img-toggle', function() {
