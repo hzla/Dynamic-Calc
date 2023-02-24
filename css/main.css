@@ -36,9 +36,9 @@ a img {
     position: absolute;
     z-index: 11;
     border-radius: 20px;
-    left: calc(50vw - 330px);
-    width: 660px;
-    top: 450px;
+    left: calc(35vw + 50px);
+    width: 30vw;
+    top: 80px;
 }
 
 #p2 div {
@@ -47,16 +47,16 @@ a img {
 
 #p1 .poke-sprite {
     z-index: 13;
-    right: 53px;
-    top: 210px;
+    left: calc(41vw - 80px);
+    top: 10vw;
     height: auto;
     width: auto;
     transform: scale(1.75)
 }
 
 #p2 .poke-sprite {
-    left: 30px;
-    top: 123px;
+    right: calc(40vw - 80px);
+    top: 5vw;
     height: auto;
     transform:  scale(1.5);
     width: auto;
@@ -312,6 +312,10 @@ html, body {
     display: block;
 }
 
+.trainer-poks {
+    margin-bottom: 20px;
+}
+
 .trainer-poks-label {
     margin:  10px 0px;
 }
@@ -324,6 +328,7 @@ html, body {
 
 .trainer-pok-list.opposing {
     /*margin-top:  70px;*/
+    justify-content: flex-end;
 }
 
 
@@ -347,6 +352,7 @@ html, body {
     background: #6272a4;
     border-radius: 10px;
     margin:  10px;
+/*    min-height:  96px;*/
 }
 
 .trainer-pok.left-side {
@@ -370,8 +376,8 @@ html, body {
     margin-left:  10px;
     align-items: center;
     border:  1px solid #282a36;
-    padding:  10px;
-    width: calc(33% - 32px);
+    padding:  5px;
+    width: calc(20% - 22px);
 }
 
 .trainer-pok-container:hover {
@@ -379,8 +385,14 @@ html, body {
     border-radius: 10px;
 }
 
-.bp-info {
+.info-group.hp-cntrl {
+    margin-bottom: 0;
+    height: 40px;
+}
+
+#p2 .bp-info {
     text-align: center;
+    white-space: nowrap;
 }
 
 .bp-info[data-strong="true"] {

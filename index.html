@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96a" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96b" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -115,11 +115,12 @@
 
     <img id="trainer-sprite" src="./img/trainer_sprites/shadow.png">
     
-    <img src="./img/bg.webp" id="battle-bg">
+    
 
     <div class="panel-wrapper">
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
+            <img src="./img/bg.webp" id="battle-bg">
             <img class="poke-sprite" src="./img/pokesprite/abomasnow.png">
             <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger player" />
@@ -464,7 +465,7 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group">
+            <div class="info-group hp-cntrl">
                 <label for="currentHpL1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
@@ -476,6 +477,13 @@
             </div>
             <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
             <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
+
+            <div class="trainer-poks ">
+
+                <div class="trainer-pok-list player-poks">
+
+                </div>
+            </div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
@@ -592,12 +600,7 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class="trainer-poks ">
-
-                <div class="trainer-pok-list player-poks">
-
-                </div>
-            </div>
+            
         </fieldset>
     </div>
 
@@ -1314,7 +1317,7 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group">
+            <div class="info-group hp-cntrl">
                 <label for="currentHpL1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
@@ -1324,7 +1327,19 @@
                      <br />
                 <br />
             </div>
-            <div class="move1">
+           
+            <div class="trainer-poks">
+
+                <div class="trainer-pok-list opposing">
+                    <div class="trainer-pok-container">
+
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
                 <select class="move-type calc-trigger"></select>
@@ -1440,17 +1455,6 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class="trainer-poks">
-
-                <div class="trainer-pok-list opposing">
-                    <div class="trainer-pok-container">
-
-                    </div>
-                    
-                    
-                </div>
-
-            </div>
         </fieldset>
     </div>
     </div>
@@ -1474,7 +1478,7 @@
     <script type="text/javascript" src="./js/data/sets/gen7.js?b8c1b790"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
 
-    <script type="text/javascript" src="./js/showdown_hooks.js?100015"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100016"></script>
 
 
     
@@ -1509,6 +1513,7 @@
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f5"></script>
     <script type="text/javascript" src="./js/moveset_import.js?a7071f5d"></script>
 </div>
+
 
 <div class="credits"><a href="http://fishbowlweb.cloud:3000" class="pokeweb-link" target="_blank"><span class="title-text">Click here to romhack Gen V or auto-generate your own Gen V Damage Calculator!</span></a> <br>Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla. <br>Message hzla#2906 on discord if you wish to add your romhack to the Pokeweb calc collection.
     
