@@ -42,26 +42,26 @@ a img {
 }
 
 #p2 div {
-    text-align: right;
+    /*text-align: right;*/
 }
 
-#p1 .poke-sprite {
+/*#p1 .poke-sprite {
     z-index: 13;
-    left: calc(41vw - 80px);
-    top: 10vw;
+    
+    top: 40px;
     height: auto;
     width: auto;
     transform: scale(1.75)
 }
-
-#p1 .poke-sprite.shifted {
+*/
+/*#p1 .poke-sprite.shifted {
     transform:  translate(-225px) !important;
 }
 
 #p2 .poke-sprite.shifted{
     transform:  translate(225px) !important;
-}
-
+}*/
+/*
 #p2 .poke-sprite {
     right: calc(40vw - 80px);
     top: 5vw;
@@ -69,7 +69,7 @@ a img {
     transform:  scale(1.5);
     width: auto;
 
-}
+}*/
 
 .right-table {
     height: 205px;
@@ -173,11 +173,10 @@ input {
 
 .poke-sprite { 
     position: absolute;
-    height: 280px;
     width: calc(40% - 80px);
     right: 13px;
     top: 80px;
-    /*background: url(../img/battle_bg.png);*/
+    background: url(../img/battle_bg.png);
     border-bottom-left-radius: 10px;
     min-height: 128px;
     background-size: cover;
@@ -336,7 +335,6 @@ html, body {
 
 .trainer-pok-list.opposing {
     /*margin-top:  70px;*/
-    justify-content: flex-end;
 }
 
 
@@ -344,9 +342,11 @@ html, body {
     background: url(../img/box_bg_city.png);
     background-size: 100% 595px;
     background-repeat: no-repeat;
-    height:  595px;
+    height: auto;
     min-width:  100%;
     overflow: scroll;
+    min-height: 96px;
+    max-height: 595px;
 }
 
 
@@ -357,9 +357,12 @@ html, body {
     cursor: pointer;
     box-sizing: border-box;
     border: 1px solid #282a36;
-    background: #6272a4;
+    /*background: #6272a4;*/
+    background: url(../img/box_bg_city.png);
     border-radius: 10px;
     margin:  10px;
+    background-position-x: -20px;
+    background-position-y: -20px ;
 /*    min-height:  96px;*/
 }
 
@@ -465,6 +468,11 @@ th {
 }
 .poke-info {
     width: 100%;
+    padding:  0;
+}
+
+.info-group, .move1, .move2, .move3, .move4 {
+    padding:  0px 12px;
 }
 .field-info, .poke-import {
     text-align: center;
@@ -635,6 +643,7 @@ th {
 .poke-info label {
     display: inline-block;
     width: 6em;
+    text-align: left;
 }
 .top label, .info-selectors label {
     display: inline-block;
@@ -657,6 +666,10 @@ th {
 }
 .set-selector {
     width: 100%;
+}
+
+.select2-container {
+    padding:  0 12px;
 }
 
 .info-selectors select {

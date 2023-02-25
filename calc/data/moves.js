@@ -4299,7 +4299,7 @@ var SV_PATCH = {
         maxPower: 90,
         secondaries: true
     },
-    Comeuppance: {
+    'Comeuppance': {
         bp: 0,
         type: 'Dark',
         category: 'Physical',
@@ -4307,7 +4307,7 @@ var SV_PATCH = {
         maxPower: 100,
         makesContact: true
     },
-    Doodle: {
+    'Doodle': {
         bp: 0,
         type: 'Normal',
         category: 'Status'
@@ -4515,7 +4515,7 @@ var SV_PATCH = {
         isSlicing: true,
         multihit: 10
     },
-    Pounce: {
+    'Pounce': {
         bp: 50,
         type: 'Bug',
         category: 'Physical',
@@ -4567,7 +4567,7 @@ var SV_PATCH = {
         type: 'Normal',
         category: 'Status'
     },
-    Ruination: {
+    'Ruination': {
         bp: 0,
         type: 'Dark',
         category: 'Special',
@@ -4597,7 +4597,7 @@ var SV_PATCH = {
         type: 'Normal',
         category: 'Status'
     },
-    Shelter: {
+    'Shelter': {
         bp: 0,
         type: 'Steel',
         category: 'Status'
@@ -4608,7 +4608,7 @@ var SV_PATCH = {
         category: 'Status',
         priority: 4
     },
-    Snowscape: {
+    'Snowscape': {
         bp: 0,
         type: 'Ice',
         category: 'Status'
@@ -4672,7 +4672,7 @@ var SV_PATCH = {
         secondaries: true,
         isSound: true
     },
-    Trailblaze: {
+    'Trailblaze': {
         bp: 50,
         type: 'Grass',
         category: 'Physical',
@@ -4740,6 +4740,9 @@ var SV_PATCH = {
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
+var BW = SV
+var SM = SV
+var SS = SV
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Moves = (function () {
     function Moves(gen) {

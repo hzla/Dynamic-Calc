@@ -491,22 +491,22 @@ function get_type_info(pok_types) {
     return result
 }
 
-function scale_sprites() {
-    var width = window.innerWidth
+// function scale_sprites() {
+//     var width = window.innerWidth
 
-    var scale1 = width / 1137
-    var scale2 = width / 1327
+//     var scale1 = width / 1137
+//     var scale2 = width / 1327
 
-    $('#p1 .poke-sprite').css('transform', `scale(${scale1})`)
-    $('#p2 .poke-sprite').css('transform', `scale(${scale2})`)
-}
+//     $('#p1 .poke-sprite').css('transform', `scale(${scale1})`)
+//     $('#p2 .poke-sprite').css('transform', `scale(${scale2})`)
+// }
 
-$(window).resize( ()=> {
-    scale_sprites()
-})
+// $(window).resize( ()=> {
+//     scale_sprites()
+// })
 
 $(document).ready(function() {
-    scale_sprites()
+
    params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
    TR_NAMES = null
