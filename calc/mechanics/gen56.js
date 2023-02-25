@@ -641,7 +641,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             }
         }
     } else {
-        console.log("no challenge mode")
+
     }
 
 

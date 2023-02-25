@@ -77,6 +77,15 @@ function performCalculations() {
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(result.moveDesc(notation));
 
+		var dmgInfo = $(resultLocations[1][i].damage).text()
+
+		if (moveProbabilities[i] != 0) {
+			var probability = `  (${(Math.round(moveProbabilities[i] * 1000) / 10).toString()}% top roll)` 
+
+			$(resultLocations[1][i].damage).text(dmgInfo + probability)
+		}
+		
+
 		// BOTH
 		var bestMove;
 		if (fastestSide === "tie") {
@@ -153,41 +162,60 @@ function checkStatBoost(p1, p2) {
 }
 
 
-function rolls_less_than(rolls, k) {
+function rolls_less_than(rolls, k, winsTie) {
+
 	if (k == 0) {
 		return 0
 	}
 
-	for (n in rolls) {
-		if (rolls[n] >= k) {
-			return parseInt(n)
-		} 
+	if (rolls == 0) {
+		return 16
 	}
+
+	for (n in rolls) {
+		
+		if (winsTie) {
+			if (rolls[n] > k) {
+				return parseInt(n)
+			} 
+		} else {
+			if (rolls[n] >= k) {
+				return parseInt(n)
+			} 
+		}
+		
+	}
+
+	return 16
 }
 
 function calculate_probabilities(results) {
 	// for each move's damage range
 	var probabilities = []
 
-	for (i in results) {
+	for (let i = 0; i < 4; i++) {
 		var probability = 0
 		// for each damage roll
-		for (n in results.damage) {
+
+		for (let n = 0; n < 16; n++) {
 			// get number of rolls in other moves that are less than current roll
 
-			m1_roll_count = rolls_less_than(results[(i + 1) % 4].damage, results.damage[n])
+			if (results[i].damage == 0) {
+				break
+			}
+
+			m1_roll_count = rolls_less_than(results[(i + 1) % 4].damage, results[i].damage[n], (i < 3))
 			if (m1_roll_count == 0) {
 				continue
 			}
-			m2_roll_count = rolls_less_than(results[(i + 2) % 4].damage, results.damage[n])
+			m2_roll_count = rolls_less_than(results[(i + 2) % 4].damage, results[i].damage[n], (i < 2))
 			if (m2_roll_count == 0) {
 				continue
 			}
-			m3_roll_count = rolls_less_than(results[(i + 3) % 4].damage, results.damage[n])
+			m3_roll_count = rolls_less_than(results[(i + 3) % 4].damage, results[i].damage[n], (i < 1))
 			if (m3_roll_count == 0) {
 				continue
 			}
-
 			probability += (1/16) * (m1_roll_count / 16) * (m2_roll_count / 16) * (m3_roll_count / 16)
 		}
 		probabilities.push(probability)
@@ -205,13 +233,14 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 		p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
 		p2.moves[i].overrides = {}
 
-		console.log([gen, p1, p2, p1.moves[i], p1field])
+
 		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
 		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
 	}
-	// if (displayProbabilities) {
-	// 	// console.log(calculate_probabilities(results[1]))
-	// }
+	if (displayProbabilities) {
+
+		moveProbabilities = calculate_probabilities(results[1])
+	}
 	return results;
 }
 
