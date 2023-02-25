@@ -605,9 +605,9 @@ $(".set-selector").change(function () {
 			baseForme = pokedex[pokemon.baseSpecies];
 		}
 		if (pokemon.otherFormes) {
-			// showFormes(formeObj, pokemonName, pokemon, pokemonName);
+			showFormes(formeObj, pokemonName, pokemon, pokemonName);
 		} else if (baseForme && baseForme.otherFormes) {
-			// showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
+			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
 		} else {
 			formeObj.hide();
 		}
@@ -616,7 +616,7 @@ $(".set-selector").change(function () {
 		abilityObj.change();
 		itemObj.change();
 		if (pokemon.gender === "N") {
-			// pokeObj.find(".gender").parent().hide();
+			pokeObj.find(".gender").parent().hide();
 			pokeObj.find(".gender").val("");
 		} else pokeObj.find(".gender").parent().show();
 	}
