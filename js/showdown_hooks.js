@@ -330,7 +330,7 @@ function get_next_in_g4() {
         }
 
         p2 = createPokemon(p2info, pok_data["moves"])
-        var results = calculateAllMoves(4, p1, p1field, p2, p2field)[1];
+        var results = calculateAllMoves(4, p1, p1field, p2, p2field, false)[1];
 
         var highestDamage = 0
         for (n in results) {

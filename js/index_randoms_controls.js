@@ -152,16 +152,66 @@ function checkStatBoost(p1, p2) {
 	}
 }
 
-function calculateAllMoves(gen, p1, p1field, p2, p2field) {
+
+function rolls_less_than(rolls, k) {
+	if (k == 0) {
+		return 0
+	}
+
+	for (n in rolls) {
+		if (rolls[n] >= k) {
+			return parseInt(n)
+		} 
+	}
+}
+
+function calculate_probabilities(results) {
+	// for each move's damage range
+	var probabilities = []
+
+	for (i in results) {
+		var probability = 0
+		// for each damage roll
+		for (n in results.damage) {
+			// get number of rolls in other moves that are less than current roll
+
+			m1_roll_count = rolls_less_than(results[(i + 1) % 4].damage, results.damage[n])
+			if (m1_roll_count == 0) {
+				continue
+			}
+			m2_roll_count = rolls_less_than(results[(i + 2) % 4].damage, results.damage[n])
+			if (m2_roll_count == 0) {
+				continue
+			}
+			m3_roll_count = rolls_less_than(results[(i + 3) % 4].damage, results.damage[n])
+			if (m3_roll_count == 0) {
+				continue
+			}
+
+			probability += (1/16) * (m1_roll_count / 16) * (m2_roll_count / 16) * (m3_roll_count / 16)
+		}
+		probabilities.push(probability)
+	}
+	return probabilities
+}
+
+
+
+function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=true) {
 
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
 		p2.moves[i].overrides = {}
+
+		console.log([gen, p1, p2, p1.moves[i], p1field])
 		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
 		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
 	}
+	// if (displayProbabilities) {
+	// 	// console.log(calculate_probabilities(results[1]))
+	// }
 	return results;
 }
 

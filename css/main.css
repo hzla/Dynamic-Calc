@@ -395,6 +395,7 @@ html, body {
 #p2 .bp-info {
     text-align: center;
     white-space: nowrap;
+    font-size: 14px;
 }
 
 .bp-info[data-strong="true"] {

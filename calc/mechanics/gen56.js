@@ -369,17 +369,17 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }
-    if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
-        if (attacker.gender === defender.gender) {
-            bpMods.push(5120);
-            desc.rivalry = 'buffed';
-        }
-        else {
-            bpMods.push(3072);
-            desc.rivalry = 'nerfed';
-        }
-        desc.attackerAbility = attacker.ability;
-    }
+    // if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
+    //     if (attacker.gender === defender.gender) {
+    //         bpMods.push(5120);
+    //         desc.rivalry = 'buffed';
+    //     }
+    //     else {
+    //         bpMods.push(3072);
+    //         desc.rivalry = 'nerfed';
+    //     }
+    //     desc.attackerAbility = attacker.ability;
+    // }
     if (attacker.item && (0, items_1.getItemBoostType)(attacker.item) === move.type) {
         bpMods.push(4915);
         desc.attackerItem = attacker.item;
@@ -632,17 +632,17 @@ function calculateBWXY(gen, attacker, defender, move, field) {
 
 
     // Check if challenge mode, if calculating trainer pok, and if trainer pok is in challenge mode exception list
-    if (challengeMode && !get_current_in()["noCh"] && $('.set-selector')[3].value.includes(attacker.name) && $('.set-selector')[3].value.includes(attacker.level) ) {
-        var delta = 4
-        for (n in levelCaps) {
-            if (attacker.level <= levelCaps[n][0]) {
-                delta = levelCaps[n][1]
-                break
-            }
-        }
-    } else {
-        console.log("no challenge mode")
-    }
+    // if (challengeMode && !get_current_in()["noCh"] && $('.set-selector')[3].value.includes(attacker.name) && $('.set-selector')[3].value.includes(attacker.level) ) {
+    //     var delta = 4
+    //     for (n in levelCaps) {
+    //         if (attacker.level <= levelCaps[n][0]) {
+    //             delta = levelCaps[n][1]
+    //             break
+    //         }
+    //     }
+    // } else {
+    //     console.log("no challenge mode")
+    // }
 
 
 
