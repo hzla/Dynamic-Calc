@@ -22,6 +22,54 @@ function get_trainer_names() {
     return trainer_names
 }
 
+function get_custom_trainer_names() {
+    var all_poks = SETDEX_BW
+    var trainer_names = [] 
+
+    for (const [pok_name, poks] of Object.entries(all_poks)) {
+        var pok_tr_names = Object.keys(poks)
+        for (i in pok_tr_names) {
+           var trainer_name = pok_tr_names[i]
+           var sub_index = poks[trainer_name]["sub_index"]
+
+           if (poks[trainer_name]['ivs'] && poks[trainer_name]['ivs']['at'] > 0 && sub_index == 0) {
+                trainer_names.push([poks[trainer_name]["level"], `${pok_name} (${trainer_name})[${sub_index}]`]) 
+           }     
+        }      
+    }
+
+    return trainer_names.sort(function (a,b) {
+        if (a[0] < b[0]) {
+            return -1
+        }
+        if (a[0] > b[0]) {
+            return 1
+        }
+        return 0
+    })
+}
+
+
+
+function get_similar_trainers() {
+     if (typeof customLeads === "undefined") {
+        return
+    }
+
+    var level = parseInt($("#levelR1").val())
+
+    var similar = []
+    for (n in customLeads) {
+        if (customLeads[n][0] >= level && customLeads[n][0] <= level + 3) {
+            var tr_info = customLeads[n][1].slice(0,-3)
+
+            var tr_name = tr_info.split("(")[1].slice(0, -1)
+            similar.push([tr_name, tr_info])
+        }
+    }
+    return similar
+}
+
 
 function get_box() {
     var names = get_trainer_names()
@@ -567,12 +615,22 @@ $(document).ready(function() {
         customSets = JSON.parse(localStorage.customsets);
         updateDex(customSets)   
         get_box()
+        customLeads = get_custom_trainer_names()
         // var first_set = TR_NAMES[100].split("[")[0]
         // $(".set-selector").val(first_set);
         // $(".set-selector").change();      
    })
 
    $(document).on('click', '.trainer-pok.right-side', function() {
+        var set = $(this).attr('data-id')
+        $('.opposing').val(set)
+
+
+        $('.opposing').change()
+        $('.opposing .select2-chosen').text(set)
+   })
+
+   $(document).on('click', '.sim-trainer', function() {
         var set = $(this).attr('data-id')
         $('.opposing').val(set)
 
@@ -606,6 +664,17 @@ $(document).ready(function() {
    $(document).on('change', '.current-hp', function() {
         $($('.set-selector')[1]).change()
    })
+
+   // $(document).on('change', '#levelR1', function() {
+   //      var simTrainers = get_similar_trainers()
+
+   //      var trainer_html = ""
+
+   //      for (n in simTrainers) {
+   //          trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
+   //      }
+   //      $("#simTrainers").html(trainer_html)
+   // })
 
    $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')

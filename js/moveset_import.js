@@ -1,3 +1,49 @@
+moveChanges = {
+	'Blaze Black 2/Volt White 2 Redux':
+
+		{"Sand Tomb": "Accelerock",
+		"Horn Drill": "Boomburst",
+		"Spike Cannon": "Breaking Swipe",
+		"Slam": "Brutal Swing",
+		"Luster Purge": "Dazzling Gleam",
+		"Round": "Disarming Voice",
+		"Sweet Kiss": "Draining Kiss",
+		"Vise Grip": "Dual Wingbeat",
+		"Bubble": "Esper Wing",
+		"Razorwind": "Fire Lash",
+		"Constrict": "Infestation",
+		"Rolling Kick": "Headlong Rush",
+		"Mega Kick": "High Horsepower",
+		"Barrage": "Lunge",
+		"Mist Ball": "Moonblast",
+		"Sacred Fire": "Mystical Fire",
+		"Sharpen": "Nuzzle",
+		"Submisson": "Play Rough",
+		"Comet Punch": "Power-Up Punch",
+		"Egg Bomb": "Psychic Fangs",
+		"Smelling Salts": "Psyshield Bash",
+		"Thrash": "Raging Fury",
+		"Metal Sound": "Scorching Sands",
+		"Mega Punch": "Smart Strike",
+		"Triple Kick": "Triple Axel",
+		"Punishment": "Wave Crash"},
+
+
+
+	"Renegade Platinum": 
+		{"Barrage":     "Draining Kiss",
+		"Brine":        "Scald",
+		"Constrict":    "Icicle Crash",
+		"Horn Drill":   "Drill Run",
+		"Lunar Dance":  "Moonblast",
+		"Luster Purge": "Dazzling Gleam",
+		"Mist Ball":    "Disarming Voice",
+		"Sand Tomb":    "Bulldoze",
+		"Submission":   "Play Rough",
+		"Twister":      "Hurricane",
+		"Volt Tackle":  "Wild Charge"}
+}
+
 function placeBsBtn() {
 	var importBtn = "<button id='import' class='bs-btn bs-btn-default'>Import</button>";
 	$("#import-1_wrapper").append(importBtn);
@@ -165,6 +211,13 @@ function getMoves(currentPoke, rows, offset) {
 			if (rows[x][0] == "-") {
 				movesFound = true;
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
+
+				if (moveChanges[TITLE]) {
+					if (moveChanges[TITLE][move]) {
+						move = moveChanges[TITLE][move]
+						console.log(`changed to ${move}`)
+					}
+				}
 				moves.push(move);
 			} else {
 				if (movesFound == true) {
@@ -289,6 +342,12 @@ function addSets(pokes, name) {
 		alert("No sets imported, please check your syntax and try again");
 	}
 }
+
+
+
+
+
+
 
 function checkExeptions(poke) {
 	switch (poke) {
