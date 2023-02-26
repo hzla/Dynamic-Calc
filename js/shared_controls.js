@@ -440,15 +440,6 @@ $(".set-selector").change(function () {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
 		$('#trainer-sprite').attr('src',  )
-
-		var simTrainers = get_similar_trainers()
-
-        var trainer_html = ""
-
-        for (n in simTrainers) {
-            trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
-        }
-        $("#similarTrainers").html(trainer_html)
 	}
 
 	var next_poks = get_next_in()
@@ -628,6 +619,17 @@ $(".set-selector").change(function () {
 			pokeObj.find(".gender").parent().hide();
 			pokeObj.find(".gender").val("");
 		} else pokeObj.find(".gender").parent().show();
+	}
+
+	if ($(this).hasClass('opposing')) {
+		var simTrainers = get_similar_trainers()
+
+        var trainer_html = ""
+
+        for (n in simTrainers) {
+            trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
+        }
+        $("#similarTrainers").html(trainer_html)
 	}
 });
 
