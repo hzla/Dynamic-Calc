@@ -48,6 +48,8 @@ function performCalculations() {
 	var result, maxDamage;
 	var bestResult;
 	var zProtectAlerted = false;
+	var is100 = false
+	
 	for (var i = 0; i < 4; i++) {
 		// P1
 		result = damageResults[0][i];
@@ -79,10 +81,18 @@ function performCalculations() {
 
 		var dmgInfo = $(resultLocations[1][i].damage).text()
 
+		
 		if (moveProbabilities[i] != 0) {
-			var probability = `  (${(Math.round(moveProbabilities[i] * 1000) / 10).toString()}% top roll)` 
+			
+			if (!is100) {
+				var probability = `  (${(Math.round(moveProbabilities[i] * 1000) / 10).toString()}% top roll)` 
+				if (moveProbabilities[i] == 1) {
+					is100 = true
+				}
+				$(resultLocations[1][i].damage).text(dmgInfo + probability)
+			}
 
-			$(resultLocations[1][i].damage).text(dmgInfo + probability)
+			
 		}
 		
 
