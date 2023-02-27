@@ -468,6 +468,18 @@ $(".set-selector").change(function () {
 			if (setName != "Blank Set") {
 				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
+				var ai = SETDEX_BW[pokemonName][setName]["ai"]
+				console.log(ai)
+				for (n in [1,2,3,4,5,6]) {
+					console.log(n)
+					n = parseInt(n)
+					if (ai & (1 << n)) {
+						console.log(`#ai${n + 1}`)
+						$(`#ai${n + 1}`).show()
+					} else {
+						$(`#ai${n + 1}`).hide()
+					}
+				}
 				console.log(battle_type)
 				if (battle_type == "Singles" || battle_type == undefined) {
 					$('#singles-format').click()
@@ -630,6 +642,7 @@ $(".set-selector").change(function () {
             trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
         }
         $("#similarTrainers").html(trainer_html)
+
 	}
 });
 
