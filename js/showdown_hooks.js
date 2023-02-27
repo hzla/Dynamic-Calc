@@ -559,7 +559,7 @@ $(document).ready(function() {
 
 
             moves[move]["type"] = jsonMove["type"]
-            MOVES_BY_ID[g][move_id].type = jsonMove["type"].toLowerCase()
+            MOVES_BY_ID[g][move_id].type = jsonMove["type"]
 
             moves[move]["category"] = jsonMove["category"]
             MOVES_BY_ID[g][move_id].category = jsonMove["category"]
