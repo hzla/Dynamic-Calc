@@ -1,11 +1,10 @@
- function load_js()
-   {
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.src= './js/shared_controls.js?0b3ea005';
-      head.appendChild(script);
-   }
+function load_js() {
 
+  var head= document.getElementsByTagName('head')[0];
+  var script= document.createElement('script');
+  script.src= './js/shared_controls.js?0b3ea005';
+  head.appendChild(script);
+}
 
 function get_trainer_names() {
     var all_poks = SETDEX_BW
@@ -49,15 +48,12 @@ function get_custom_trainer_names() {
     })
 }
 
-
-
 function get_similar_trainers() {
      if (typeof customLeads === "undefined") {
         return
     }
 
     var level = parseInt($("#levelR1").val())
-
     var similar = []
     for (n in customLeads) {
         if (customLeads[n][0] >= level && customLeads[n][0] <= level + 3) {
@@ -69,7 +65,6 @@ function get_similar_trainers() {
     }
     return similar
 }
-
 
 function get_box() {
     var names = get_trainer_names()
@@ -90,8 +85,6 @@ function get_box() {
     }
 
     $('.player-poks').html(box_html)
-
-
     return box
 }
 
@@ -208,7 +201,6 @@ function get_next_in_g3() {
         effectiveness = Math.floor(effectiveness * type_chart[player_type2_index][type2_index])
 
 
-
         // check moves for SE
         var isSE = false
         var isSEStatus = false
@@ -266,11 +258,8 @@ function get_next_in_g3() {
             }     
         }
     }
-
     return [se_mons, se_status_mons, stab_mons]
 }
-
-
 
 function get_next_in_g4() {
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
@@ -281,13 +270,10 @@ function get_next_in_g4() {
     
 
     var trainer_poks = CURRENT_TRAINER_POKS
-
     var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
     var player_type1 = $('.type1').first().val()
     var player_type2 = $('.type2').first().val() 
-
     var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
-
 
     if (player_type2 == ""){
         player_type2 = player_type1
@@ -411,7 +397,6 @@ function get_current_in() {
     return SETDEX_BW[pok_name][tr_name]
 }
 
-
 function get_next_in() {
 
     if (switchIn == 4) {
@@ -421,7 +406,6 @@ function get_next_in() {
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
-
 
     var trainer_poks = CURRENT_TRAINER_POKS
     var player_type1 = $('.type1').first().val()
@@ -445,7 +429,6 @@ function get_next_in() {
 
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
-
         for (j in pok_data["moves"]) {
             var mov_data = moves[pok_data["moves"][j]]
 
@@ -455,7 +438,6 @@ function get_next_in() {
 
             var bp = mov_data["bp"] * type_info[mov_data["type"]]
             
-
             if (bp > strongest_move_bp) {
                 strongest_move_bp = bp
                 strongest_move = pok_data["moves"][j]
@@ -480,7 +462,6 @@ function sort_trpoks(a, b) {
     }
 }
 
-
 function sort_trpoks_g4(a, b) {
     if (a[5] === b[5]) {
         return (b[3] > a[3]) ? -1 : 1;
@@ -489,7 +470,6 @@ function sort_trpoks_g4(a, b) {
         return (b[5] < a[5]) ? -1 : 1;
     }
 }
-
 
 function get_type_info(pok_types) {
     if (pok_types[1] == pok_types[0]) {
@@ -522,8 +502,6 @@ function get_type_info(pok_types) {
             [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 
-    
-
     if (type_chart != 6) {
         types[13][16] = 1
         types[15][16] = 1
@@ -539,37 +517,19 @@ function get_type_info(pok_types) {
     return result
 }
 
-// function scale_sprites() {
-//     var width = window.innerWidth
-
-//     var scale1 = width / 1137
-//     var scale2 = width / 1327
-
-//     $('#p1 .poke-sprite').css('transform', `scale(${scale1})`)
-//     $('#p2 .poke-sprite').css('transform', `scale(${scale2})`)
-// }
-
-// $(window).resize( ()=> {
-//     scale_sprites()
-// })
-
 $(document).ready(function() {
-
    params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
    TR_NAMES = null
-
 
    npoint = `https://api.npoint.io/${params.get('data')}`
 
    if (params.get('data').includes("Pokeweb")) {
     npoint = `http://fishbowlweb.cloud:3000/${params.get('data').split("Pokeweb-")[1]}_calc.json`
    }
-
    jsonMoves = moves
 
    $.get(npoint, function(data){
-        // data = JSON.parse(data)
         npoint_data = data
 
         SETDEX_BW = data["formatted_sets"]
@@ -579,8 +539,10 @@ $(document).ready(function() {
         SETDEX_SS = data["formatted_sets"]
         SETDEX_XY = data["formatted_sets"]
         TR_NAMES = get_trainer_names()
+        
         jsonMoves = data["moves"]
-        var jsonMove 
+        var jsonMove
+
         for (move in moves) {
 
             if (jsonMoves[move]) {
@@ -615,72 +577,37 @@ $(document).ready(function() {
         customSets = JSON.parse(localStorage.customsets);
         updateDex(customSets)   
         get_box()
-        customLeads = get_custom_trainer_names()
-        // var first_set = TR_NAMES[100].split("[")[0]
-        // $(".set-selector").val(first_set);
-        // $(".set-selector").change();      
+        customLeads = get_custom_trainer_names()    
    })
 
-   $(document).on('click', '.trainer-pok.right-side', function() {
+   $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
         var set = $(this).attr('data-id')
         $('.opposing').val(set)
-
-
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
    })
 
-   $(document).on('click', '.sim-trainer', function() {
-        var set = $(this).attr('data-id')
-        $('.opposing').val(set)
-
-
-        $('.opposing').change()
-        $('.opposing .select2-chosen').text(set)
-   })
 
    $(document).on('change', '.calc-select', function() {
-        var calc_url = $('.calc-select option:selected').attr('data-source')
-        if (calc_url) {
-            location.href = $('.calc-select option:selected').attr('data-source')
-        }
-        
+        location.href = $('.calc-select option:selected').attr('data-source')
    })
 
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
         $('.panel:not(.panel-mid)').toggleClass('third')
-        $('#battle-bg').toggle()
-
-        $('#p1 .poke-sprite').toggleClass('shifted')
-        $('#p2 .poke-sprite').toggleClass('shifted')
    })
 
    $(document).on('click', '#img-toggle', function() {
         $('#battle-bg,.poke-sprite, #trainer-sprite').toggle()
-
    })
 
    $(document).on('change', '.current-hp', function() {
         $($('.set-selector')[1]).change()
    })
 
-   // $(document).on('change', '#levelR1', function() {
-   //      var simTrainers = get_similar_trainers()
-
-   //      var trainer_html = ""
-
-   //      for (n in simTrainers) {
-   //          trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
-   //      }
-   //      $("#simTrainers").html(trainer_html)
-   // })
-
    $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
         $('.player').val(set)
-
-
 
         $('.player').change()
         $('.player .select2-chosen').text(set)
@@ -695,10 +622,7 @@ $(document).ready(function() {
 
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')]
-
         $('.genSelection').hide()
-
         $('#rom-title').text(TITLE).show()
     }
-
 })

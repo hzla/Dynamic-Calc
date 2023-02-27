@@ -818,7 +818,8 @@ function createPokemon(pokeInfo, customMoves=false) {
 		if (setName.indexOf("(") === -1) {
 			name = setName;
 		} else {
-			var pokemonName = setName.substring(0, setName.indexOf(" ("));
+			var pokemonName = setName.substring(0, setName.indexOf(" (")).replace("n Z", "n-Z").replace("o o", "o-o");
+			
 			var species = pokedex[pokemonName];
 			name = (species.otherFormes || (species.baseSpecies && species.baseSpecies !== pokemonName)) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
