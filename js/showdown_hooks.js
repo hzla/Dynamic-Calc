@@ -529,6 +529,7 @@ $(document).ready(function() {
    }
    jsonMoves = moves
 
+   var g =  parseInt(params.get('gen'));
    $.get(npoint, function(data){
         npoint_data = data
 
@@ -551,13 +552,23 @@ $(document).ready(function() {
                 continue //skip unsupported moves like hidden power
             }
 
+            var move_id = move.replace(/-|,| /g, "").toLowerCase()
+
             moves[move]["bp"] = jsonMove["basePower"]
+            MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+
+
             moves[move]["type"] = jsonMove["type"]
+            MOVES_BY_ID[g][move_id].type = jsonMove["type"].toLowerCase()
+
             moves[move]["category"] = jsonMove["category"]
+            MOVES_BY_ID[g][move_id].category = jsonMove["category"]
 
             if (moves[move]["multihit"]) {
                 moves[move]["multihit"] = jsonMove["multihit"]
             }
+
+
         }
 
         var jsonPoks = data["poks"]
