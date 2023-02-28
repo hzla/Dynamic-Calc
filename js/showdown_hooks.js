@@ -544,7 +544,7 @@ $(document).ready(function() {
         jsonMoves = data["moves"]
         var jsonMove
 
-        if (!jsonMoves["Cut"]["e_id"]){
+        if (!jsonMoves["Explosion"]["e_id"]){
             $("#show-ai").hide()
         }
 
