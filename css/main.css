@@ -144,7 +144,7 @@ input {
     font-size: 15px;
 }
 
-#show-mid {
+#show-mid, #show-ai {
     position:  absolute;
     background: #bd93f9;
     height:  40px;
@@ -157,6 +157,28 @@ input {
     border-radius: 5px;
     z-index:  10;
     top: 290px;
+}
+
+#show-ai {
+    right: 250px;
+    width: 180px;
+}
+
+#ai-container {
+    position: fixed;
+    z-index: 100;
+    background: rgb(248, 248, 242);
+    color:  black;
+    width: 600px;
+    left: calc(50vw - 300px);
+    top:  20px;
+    padding: 40px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: none;
+    max-height: calc(100vh - 40px);
+    overflow: scroll;
 }
 
 #trainer-sprite {

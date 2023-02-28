@@ -130,6 +130,27 @@ $(".result-move").change(function () {
 			$("#damageValues").text("Possible damage amounts: (" + displayDamageHits(result.damage) + ")");
 		}
 	}
+
+	var move = $(".results-right .visually-hidden:checked + .btn").text()
+    if (move != "") {
+
+	    var effect_code = parseInt(jsonMoves[move]["e_id"])
+	    console.log(effect_code)
+
+	    var ai_content = expertAI[effect_code]
+
+	    ai_html = ""
+	    
+	    ai_html += `<h2>${move} AI</h2><br>`
+
+	    for (n in ai_content) {
+	        ai_html += ai_content[n].replace("\t", "&ensp;")
+	        ai_html += "<br>"
+	    }
+	    $("#ai-container").html(ai_html)
+    }
+
+    
 });
 
 function displayDamageHits(damage) {

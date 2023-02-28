@@ -544,6 +544,10 @@ $(document).ready(function() {
         jsonMoves = data["moves"]
         var jsonMove
 
+        if (!jsonMoves["Cut"]["e_id"]){
+            $("#show-ai").hide()
+        }
+
         for (move in moves) {
 
             if (jsonMoves[move]) {
@@ -564,11 +568,15 @@ $(document).ready(function() {
             moves[move]["category"] = jsonMove["category"]
             MOVES_BY_ID[g][move_id].category = jsonMove["category"]
 
+            if (moves[move]["e_id"]) {
+                moves[move]["e_id"] = jsonMove["e_id"]
+            } 
+
+            
+
             if (moves[move]["multihit"]) {
                 moves[move]["multihit"] = jsonMove["multihit"]
             }
-
-
         }
 
         var jsonPoks = data["poks"]
@@ -606,6 +614,34 @@ $(document).ready(function() {
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
         $('.panel:not(.panel-mid)').toggleClass('third')
+   })
+
+   $(document).on('click', '#show-ai', function() {
+        $("#ai-container").toggle()
+
+   })
+
+   $(document).on('click', '.results-right label', function() {
+        
+        var move = $(".results-right .visually-hidden:checked + .btn").text()
+        if (move == "") {
+            return
+        }
+
+        var effect_code = parseInt(jsonMoves[move]["e_id"])
+        console.log(effect_code)
+
+        var ai_content = expertAI[effect_code]
+
+        ai_html = ""
+        
+        ai_html += `<h2>${move} AI</h2><br>`
+
+        for (n in ai_content) {
+            ai_html += ai_content[n].replace("\t", "&ensp;")
+            ai_html += "<br>"
+        }
+        $("#ai-container").html(ai_html)
    })
 
    $(document).on('click', '#img-toggle', function() {
