@@ -481,7 +481,7 @@ $(".set-selector").change(function () {
 					}
 				}
 				console.log(battle_type)
-				if (battle_type == "Singles" || battle_type == undefined) {
+				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
 					$('#singles-format').click()
 				} else {
 					$('#doubles-format').click()
