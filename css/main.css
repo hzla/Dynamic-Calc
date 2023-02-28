@@ -169,8 +169,8 @@ input {
     z-index: 100;
     background: rgb(248, 248, 242);
     color:  black;
-    width: 600px;
-    left: calc(50vw - 300px);
+    width: calc(100vw - 870px);
+    right: 440px;
     top:  20px;
     padding: 40px;
     font-size: 16px;
