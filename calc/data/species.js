@@ -5020,8 +5020,8 @@ var BW_PATCH = {
     }
 };
 var BW = (0, util_1.extend)(true, {}, DPP, BW_PATCH);
-delete BW['Pichu'].otherFormes;
-delete BW['Pichu-Spiky-eared'];
+
+
 var XY_PATCH = {
     Abomasnow: { otherFormes: ['Abomasnow-Mega'] },
     Absol: { otherFormes: ['Absol-Mega'] },
@@ -7474,12 +7474,7 @@ var SM_PATCH = {
     }
 };
 var SM = (0, util_1.extend)(true, {}, XY, SM_PATCH);
-delete SM['Pikachu-Cosplay'];
-delete SM['Pikachu-Rock-Star'];
-delete SM['Pikachu-Belle'];
-delete SM['Pikachu-PhD'];
-delete SM['Pikachu-Pop-Star'];
-delete SM['Pikachu-Libre'];
+
 var SS_PATCH = {
     'Aegislash-Blade': { bs: { at: 140, sa: 140 } },
     'Aegislash-Both': { bs: { at: 140, df: 140, sa: 140, sd: 140 } },
@@ -8726,8 +8721,8 @@ var SS_PATCH = {
     }
 };
 var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
-delete SS['Pikachu-Starter'];
-delete SS['Eevee-Starter'];
+
+
 exports.SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 var Species = (function () {
     function Species(gen) {

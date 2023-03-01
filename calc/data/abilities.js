@@ -325,7 +325,29 @@ var SS = SM.concat([
     'Unseen Fist',
     'Wandering Spirit',
 ]);
-exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+
+SS = SS.concat([
+    'Bad Company',
+    'Blademaster',
+    'Blazing Soul',
+    'Blubber Defense',
+    'Bone Zone',
+    'Bull Rush',
+    'Cash Splash',
+    'Fatal Precision',
+    'Feline Prowess',
+    'Mountaineer',
+    'ORAORAORAORA',
+    'Parasitic Waste',
+    'Pheonix Down',
+    'Primal Armor',
+    'Quill Rush',
+    'Sage Power',
+    'Self Sufficient',
+    'Striker',
+    'Surprise!',
+]);
+exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SS];
 var Abilities = (function () {
     function Abilities(gen) {
         this.gen = gen;

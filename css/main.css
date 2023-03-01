@@ -46,6 +46,7 @@ a img {
     align-items: center;
     width: calc(100vw - 80px);
     justify-content: space-between;
+    min-width:  calc(1256px);
 }
 
 #rom-title {
@@ -156,7 +157,7 @@ input {
     right: 40px;
     border-radius: 5px;
     z-index:  10;
-    top: 290px;
+    top: 280px;
 }
 
 #show-ai {
@@ -451,6 +452,7 @@ html, body {
 
 .wrapper {
     max-width: calc(100vw - 80px);
+    min-width:  1540px;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -549,6 +551,7 @@ th {
 .panel-wrapper {
     display:flex;
     justify-content: space-between;
+    min-width:  1540px;
 }
 
 /* general button styling */
@@ -815,10 +818,12 @@ table.field {
 
 .panel:not(.panel-mid) {
     flex-grow:  2;
+    min-width: calc(50% - 10px);
 }
 
 .panel.third:not(.panel-mid) {
     max-width:  calc(50vw - 275px);
+    min-width: calc(805px - 275px);
 }
 
 .panel.panel-mid {
