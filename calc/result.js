@@ -28,6 +28,7 @@ exports.__esModule = true;
 
 var desc_1 = require("./desc");
 var Result = (function () {
+
     function Result(gen, attacker, defender, move, field, damage, rawDesc) {
         this.gen = gen;
         this.attacker = attacker;
@@ -41,6 +42,7 @@ var Result = (function () {
         return this.fullDesc();
     };
     Result.prototype.range = function () {
+
         var range = damageRange(this.damage);
         if (typeof range[0] === 'number')
             return range;

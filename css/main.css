@@ -44,7 +44,7 @@ a img {
     display: flex;
     line-height: 40px;
     align-items: center;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 40px);
     justify-content: space-between;
     min-width:  calc(1256px);
 }
@@ -136,6 +136,12 @@ input {
     font-size: 16px;
 }
 
+.move-result-subgroup div {
+    height: 39px;
+    display: flex;
+    align-items: center;
+}
+
 .btn.btn-xxxwide {
     height:  30px;
     font-size: 20px;
@@ -148,21 +154,21 @@ input {
 #show-mid, #show-ai {
     position:  absolute;
     background: #bd93f9;
-    height:  40px;
-    font-size: 20px;
-    line-height: 40px;
+    height:  24px;
+    font-size: 14px;
+    line-height: 24px;
     text-align: center;
     cursor: pointer;
-    width:  200px;
-    right: 40px;
+    width:  160px;
+    right: 20px;
     border-radius: 5px;
     z-index:  10;
-    top: 280px;
+    top: 272px;
 }
 
 #show-ai {
-    right: 250px;
-    width: 180px;
+    width: 140px;
+    top: 307px;
 }
 
 #ai-container {
@@ -188,6 +194,7 @@ input {
     position: absolute;
     right: calc(50vw - 90px);
     top:  88px;
+    display: none !important;
 }
 
 .poke-sprite { 
@@ -203,6 +210,10 @@ input {
     border-radius:  20px;
     padding: 20px;
     z-index:  12;
+}
+
+#p1 .poke-sprite {
+    transform: scaleX(-1);
 }
 
 .pokeweb-link {
@@ -451,10 +462,10 @@ html, body {
 }
 
 .wrapper {
-    max-width: calc(100vw - 80px);
+    max-width: calc(100vw - 40px);
     min-width:  1540px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .credits {
     clear: both;
@@ -500,7 +511,7 @@ th {
     float: left;
     display: inline-block; /* required for honkaculate to work */
     font-size:  18px;
-    max-width:  calc(50vw - 40px);
+    max-width:  calc(50vw - 20px);
     position: relative;
 }
 .poke-info {
@@ -822,8 +833,8 @@ table.field {
 }
 
 .panel.third:not(.panel-mid) {
-    max-width:  calc(50vw - 275px);
-    min-width: calc(805px - 275px);
+    max-width:  calc(50vw - 255px);
+    min-width: calc(805px - 255px);
 }
 
 .panel.panel-mid {

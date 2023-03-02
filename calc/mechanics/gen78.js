@@ -1,14 +1,15 @@
 "use strict";
 exports.__esModule = true;
 
-var util_1 = require("../util8");
+var util_1 = require("../util");
 var items_1 = require("../items");
-var result_1 = require("../result8");
-var util_2 = require("./util8");
-
+var result_1 = require("../result");
+var util_2 = require("./custom/util");
 
 function calculateSMSS(gen, attacker, defender, move, field) {
-    console.log(move);
+
+
+
     (0, util_2.checkAirLock)(attacker, field);
     (0, util_2.checkAirLock)(defender, field);
     (0, util_2.checkForecast)(attacker, field.weather);
@@ -39,8 +40,6 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         isWonderRoom: field.isWonderRoom
     };
     var result = new result_1.Result(gen, attacker, defender, move, field, 0, desc);
-    
-    console.log([gen, attacker, defender, move, field, 0, desc])
     if (move.category === 'Status' && !move.named('Nature Power')) {
         return result;
     }
@@ -283,6 +282,9 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     var turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
     var basePower = calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbilityTypeChange, desc);
+    
+
+
     if (basePower === 0) {
         return result;
     }
@@ -296,6 +298,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     var hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical';
     var defenseStat = hitsPhysical ? 'def' : 'spd';
     var baseDamage = (0, util_2.getBaseDamage)(attacker.level, basePower, attack, defense);
+
     var isSpread = field.gameType !== 'Singles' &&
         ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
     if (isSpread) {
@@ -334,6 +337,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         baseDamage = Math.floor((0, util_2.OF32)(baseDamage * 1.5));
         desc.isCritical = isCritical;
     }
+
     var stabMod = 4096;
     if (attacker.hasType(move.type)) {
         if (attacker.hasAbility('Adaptability')) {
@@ -381,6 +385,8 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         desc.attackerAbility = attacker.ability;
     }
     var damage = [];
+
+
     for (var i = 0; i < 16; i++) {
         damage[i] =
             (0, util_2.getFinalDamage)(baseDamage, i, typeEffectiveness, applyBurn, applyFrostbite, stabMod, finalMod, protect);
@@ -582,8 +588,12 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
     if (move.named('Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc', 'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage', 'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare', 'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle')) {
         desc.moveBP = move.bp;
     }
+
     var bpMods = calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePower, hasAteAbilityTypeChange, turnOrder);
+
+
     basePower = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((basePower * (0, util_2.chainMods)(bpMods)) / 4096)));
+
     return basePower;
 }
 exports.calculateBasePowerSMSS = calculateBasePowerSMSS;
@@ -713,12 +723,9 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
     if (!move.isMax && hasAteAbilityTypeChange) {
         bpMods.push(4915);
     }
-    // console.log(attacker.hasAbility('Blademaster'))
-    // console.log(move)
     if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
         (attacker.hasAbility('Liquid Voice') && move.flags.sound) ||
         (attacker.hasAbility('Blademaster') && move.flags.sword)) {
-        
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
@@ -1031,6 +1038,7 @@ function calculateFinalModsSMSS(gen, attacker, defender, move, field, desc, isCr
         finalMods.push(2048);
         desc.defenderItem = defender.item;
     }
+
     return finalMods;
 }
 exports.calculateFinalModsSMSS = calculateFinalModsSMSS;

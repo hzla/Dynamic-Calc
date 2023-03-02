@@ -113,6 +113,10 @@ function get_trainer_poks(trainer_name)
     return matches
 }
 
+
+
+
+
 // only phase 1
 function get_next_in_g3() {
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
@@ -389,6 +393,100 @@ function get_next_in_g4() {
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }
 
+
+function get_next_in_cfru() {
+    // AI mon can kill = +4
+    // AI mon does resist/immune to all moves = +4
+    // AI mon can revenge kill = +2 (All of them added gives the highest score of +10)
+
+    // AI mon hits super effective on player mon (Only counts if AI doesn't OH-KO) = +1
+    // AI mon weak to one of your moves aka player got Super Effective move on AI mon = -1
+
+    // Notes:
+    // *AI mon can kill: The AI rolls, in this instance, between 93% and 100% of the maximum damage a move can do to you. 
+    //  So over 50% chance to OHKO will be enough for the AI to always "see" a KO on you. 
+    // *It’s either “resists/immune to all player’s moves” +4 or nothing, it’s not that each resisted move gives a +1! 
+    // *A resisted move doing more than 50% to the AI isnt treated as such (no +4).
+    // *It's -1 regardless of how many moves you have that are Super Effective to the AI's mon!
+    // *If you OHKO with a neutral move, that’s not even a negative! (just a "0")
+    // *Getting OHKO’d doesn’t matter to AI, only super effective moves do!
+    // *Getting OHKO’d does play more of a role for AI Switching BEFORE they even lose a mon! 
+
+    // A few (niche) additions to the SwitchInList:
+
+    // AI mon Walls you = +2
+    // This is a weaker statement than AI resists all moves. It applies when you hit the AI for neutral damage. 
+    // The AIs defense also needs to be greater than your offense (If you are a special attacker, the AIs SpD > Your SpA, If you are a physical attacker, AIs Def > Your Att)
+
+    if (typeof CURRENT_TRAINER_POKS === "undefined") {
+        return
+    }
+
+    var ranked_trainer_poks = []
+    var trainer_poks = CURRENT_TRAINER_POKS
+    var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
+    var player_type1 = $('.type1').first().val()
+    var player_type2 = $('.type2').first().val() 
+    var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
+
+    if (player_type2 == ""){
+        player_type2 = player_type1
+    }
+
+    // get type chart
+    var type_info = get_type_info([player_type1, player_type2])
+
+
+
+
+    var currentHp = parseInt($('.current-hp').first().val())
+
+    var p1info = $("#p1");
+    var p2info = $("#p2");
+    var p1 = createPokemon(p1info);
+    var p2 = createPokemon(p2info);
+    var p1field = createField();
+    var p2field = p1field.clone().swap();
+
+    for (i in trainer_poks) {
+        var pok_name = trainer_poks[i].split(" (")[0]
+        var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        var type1 = pokedex[pok_name]["types"][0]
+        var type2 = pokedex[pok_name]["types"][1] || type1
+        var pok_data = SETDEX_BW[pok_name][tr_name]
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+
+        if (se_indexes.includes(sub_index)) {
+            continue
+        }
+
+        p2 = createPokemon(p2info, pok_data["moves"])
+        var results = calculateAllMoves(4, p1, p1field, p2, p2field, false)[1];
+
+        var highestDamage = 0
+        for (n in results) {
+            var dmg = 0
+            if (typeof results[n].damage === 'number') {
+                dmg = results[n].damage
+            } else {
+                dmg = results[n].damage[0]
+            }
+            // console.log(dmg)
+
+            if (dmg > highestDamage) {
+                highestDamage = dmg
+            }
+            if (highestDamage >= currentHp) {
+                highestDamage = 1000
+            }   
+        }
+        other_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], highestDamage])
+    }
+
+
+
+}
+
 function get_current_in() {
     var setInfo = $('.set-selector')[3].value
     var pok_name = setInfo.split(" (")[0]
@@ -556,10 +654,12 @@ $(document).ready(function() {
                 continue //skip unsupported moves like hidden power
             }
 
-            var move_id = move.replace(/-|,| /g, "").toLowerCase()
+            var move_id = move.replace(/-|,|'| /g, "").toLowerCase()
 
             moves[move]["bp"] = jsonMove["basePower"]
+            
             MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+
 
 
             moves[move]["type"] = jsonMove["type"]
@@ -664,7 +764,9 @@ $(document).ready(function() {
    SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
    "da1eedc0e39ea07b75bf": "Vintage White",
-   "bd7fc78f8fa2500dfcca": "Renegade Platinum"
+   "bd7fc78f8fa2500dfcca": "Renegade Platinum",
+   "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
+   "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6"
     }
 
     if (SOURCES[params.get('data')]) {

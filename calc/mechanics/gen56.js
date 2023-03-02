@@ -747,6 +747,8 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         finalMods.push(1024);
         desc.isProtected = true;
     }
+
+    console.log(finalMods)
     var finalMod = (0, util_2.chainMods)(finalMods, 41, 131072);
     var childDamage;
     if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
