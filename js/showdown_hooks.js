@@ -524,6 +524,8 @@ function get_next_in() {
         var strongest_move = "None"
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
 
+        console.log(tr_name)
+        console.log(pok_name)
 
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
@@ -766,12 +768,16 @@ $(document).ready(function() {
    "da1eedc0e39ea07b75bf": "Vintage White",
    "bd7fc78f8fa2500dfcca": "Renegade Platinum",
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
-   "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6"
+   "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
+   "b6e2693147e215f10f4a": "Radical Red 3.02"
     }
 
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')]
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+        if (TITLE == "Radical Red 3.02") {
+            $(".trainer-pok-list.opposing").addClass('no-switch')
+        }
     }
 })

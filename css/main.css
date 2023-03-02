@@ -456,6 +456,14 @@ html, body {
     color: #ff5555;
 }
 
+
+
+
+.trainer-pok-list.opposing.no-switch .trainer-pok-container {
+    border:  1px solid rgb(0,0,0,0) !important;
+
+}
+
 .trainer-pok-container:first-child {
     border: 1px solid #ff5555;
     border-radius:  10px;
