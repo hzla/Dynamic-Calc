@@ -469,9 +469,7 @@ $(".set-selector").change(function () {
 				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
-				console.log(ai)
 				for (n in [1,2,3,4,5,6]) {
-					console.log(n)
 					n = parseInt(n)
 					if (ai & (1 << n)) {
 						console.log(`#ai${n + 1}`)
@@ -545,7 +543,20 @@ $(".set-selector").change(function () {
 		}
 		if (regSets || randset) {
 			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
+			
+			if (parseInt(set.level) == 0) {
+				set.level = parseInt($("#levelL1").val())
+			} else if (parseInt(set.level) == -1) {
+				set.level = parseInt($("#levelL1").val() - 1)
+			} else {
+				
+			}
+
+
 			pokeObj.find(".level").val(set.level);
+
+
+
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
 			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);

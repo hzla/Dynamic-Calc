@@ -17,7 +17,7 @@ rr.each_with_index do |line, i|
 		moves = []
 
 		pok = line[/\(.*?\)/][1..-2]
-		trname = line.split(" (")[0]
+		trname = line.split(" (")[0].gsub("[", "|").gsub("]", "|")
 		item = line.split("@ ")[-1].strip
 
 		level_found = false
@@ -26,6 +26,12 @@ rr.each_with_index do |line, i|
 		until level_found
 			if rr[i + n].include?("Level:")
 				level = rr[i + n].split("Level: ")[-1].strip
+				if level == "Scale"
+					level = 0
+				elsif level == "Scale-1"
+					level = -1
+				else
+				end
 				trname = "Lvl #{level} #{trname}"
 				level_found = true
 			end
