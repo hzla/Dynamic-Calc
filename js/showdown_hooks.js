@@ -622,6 +622,30 @@ $(document).ready(function() {
    SETDEX_BW = null
    TR_NAMES = null
 
+   SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
+   "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
+   "da1eedc0e39ea07b75bf": "Vintage White",
+   "bd7fc78f8fa2500dfcca": "Renegade Platinum",
+   "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
+   "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
+   "b6e2693147e215f10f4a": "Radical Red 3.02"
+    }
+
+    if (SOURCES[params.get('data')]) {
+        TITLE = SOURCES[params.get('data')]
+        $('.genSelection').hide()
+        $('#rom-title').text(TITLE).show()
+        if (TITLE == "Radical Red 3.02") {
+            $(".trainer-pok-list.opposing").addClass('no-switch')
+        }
+    }
+
+    $(document).on('change', '.calc-select', function() {
+        location.href = $('.calc-select option:selected').attr('data-source')
+    })
+
+    if (!params.get('data')) {return}
+
    npoint = `https://api.npoint.io/${params.get('data')}`
 
    if (params.get('data').includes("Pokeweb")) {
@@ -647,6 +671,8 @@ $(document).ready(function() {
         if (!jsonMoves["Explosion"]["e_id"]){
             $("#show-ai").hide()
         }
+
+
 
         for (move in moves) {
 
@@ -709,9 +735,7 @@ $(document).ready(function() {
    })
 
 
-   $(document).on('change', '.calc-select', function() {
-        location.href = $('.calc-select option:selected').attr('data-source')
-   })
+
 
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
@@ -763,21 +787,5 @@ $(document).ready(function() {
         get_box()
    })
 
-   SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
-   "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
-   "da1eedc0e39ea07b75bf": "Vintage White",
-   "bd7fc78f8fa2500dfcca": "Renegade Platinum",
-   "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
-   "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
-   "b6e2693147e215f10f4a": "Radical Red 3.02"
-    }
-
-    if (SOURCES[params.get('data')]) {
-        TITLE = SOURCES[params.get('data')]
-        $('.genSelection').hide()
-        $('#rom-title').text(TITLE).show()
-        if (TITLE == "Radical Red 3.02") {
-            $(".trainer-pok-list.opposing").addClass('no-switch')
-        }
-    }
+   
 })
