@@ -312,6 +312,9 @@ $(document).ready(function () {
 	}
 	$(".calc-trigger").bind("change keyup", function () {
 		setTimeout(performCalculations, 0);
+		if (switchIn == 10) {
+			setTimeout(refresh_next_in(), 0);
+		}
 	});
 	performCalculations();
 });

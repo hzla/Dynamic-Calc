@@ -20,6 +20,12 @@ a img {
     min-height: 50px;
 }
 
+#reasoning {
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 #ai-tags {
     position: absolute;
     display: flex;
@@ -214,6 +220,10 @@ input {
 
 #p1 .poke-sprite {
     transform: scaleX(-1);
+}
+
+#p1 .poke-sprite.no-flip {
+    transform: scaleX(1)
 }
 
 .pokeweb-link {

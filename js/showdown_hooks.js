@@ -336,7 +336,7 @@ function get_next_in_g4() {
             }
 
             if (isSE) {   
-                se_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], effectiveness])
+                se_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], effectiveness])
                 se_indexes.push(sub_index)
                 break
             }           
@@ -387,11 +387,36 @@ function get_next_in_g4() {
                 highestDamage = 1000
             }   
         }
-        other_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], highestDamage])
+        other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage])
     }
     console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }
+
+// check if ai mon has >= 50% chance kills player
+function can_kill(damages, hp) {
+    kill_count = 0
+    for (n in damages) {
+        if (damages[n] >= hp) {
+            kill_count += 1
+        }
+    }
+    return (kill_count >= 8)
+}
+
+// check if player deals 50% or more to ai
+function can_chunk(damages, hp) {
+    var threshold = hp / 2
+    var chunk_count = 0
+
+    for (n in damages) {
+        if (damages[n] >= threshold) {
+            chunk_count += 1
+        }
+    }
+    return (chunk_count >= 8)
+}
+
 
 
 function get_next_in_cfru() {
@@ -417,14 +442,19 @@ function get_next_in_cfru() {
     // AI mon Walls you = +2
     // This is a weaker statement than AI resists all moves. It applies when you hit the AI for neutral damage. 
     // The AIs defense also needs to be greater than your offense (If you are a special attacker, the AIs SpD > Your SpA, If you are a physical attacker, AIs Def > Your Att)
+    // "revenge kill" where ai gives a mon a +2 score when a pokemon has an ability that boosts it's stats, has a trapping ability, and has a priority move that can kill your mon. 
+
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
 
     var ranked_trainer_poks = []
+
+    var scores = []
     var trainer_poks = CURRENT_TRAINER_POKS
     var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
+    
     var player_type1 = $('.type1').first().val()
     var player_type2 = $('.type2').first().val() 
     var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
@@ -437,51 +467,162 @@ function get_next_in_cfru() {
     var type_info = get_type_info([player_type1, player_type2])
 
 
-
-
     var currentHp = parseInt($('.current-hp').first().val())
 
     var p1info = $("#p1");
     var p2info = $("#p2");
     var p1 = createPokemon(p1info);
-    var p2 = createPokemon(p2info);
+
     var p1field = createField();
     var p2field = p1field.clone().swap();
 
+    // Check for kills, revenge kills, and SE
     for (i in trainer_poks) {
+        var score = 0
+        var set_name = (' ' + trainer_poks[i]).slice(1)
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+        var kills = false
+        var revenge_kills = false
+        var is_se = false
+        var full_resist = true
+        var is_weak = false
+        var reasoning = ""
+        var all_neutral = true
+        var is_wall = false
+
+
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
-        var type1 = pokedex[pok_name]["types"][0]
-        var type2 = pokedex[pok_name]["types"][1] || type1
         var pok_data = SETDEX_BW[pok_name][tr_name]
-        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
-        if (se_indexes.includes(sub_index)) {
-            continue
-        }
+        p2 = createPokemon(trainer_poks[i].slice(0,-3))
+        var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
+        var results = all_results[1]
+        var player_results = all_results[0]
 
-        p2 = createPokemon(p2info, pok_data["moves"])
-        var results = calculateAllMoves(4, p1, p1field, p2, p2field, false)[1];
 
-        var highestDamage = 0
-        for (n in results) {
+        for (let n = 0; n < 4; n++) {
             var dmg = 0
-            if (typeof results[n].damage === 'number') {
-                dmg = results[n].damage
-            } else {
-                dmg = results[n].damage[0]
-            }
-            // console.log(dmg)
 
-            if (dmg > highestDamage) {
-                highestDamage = dmg
+            if (typeof results[n].damage === 'number') {
+                dmg = [results[n].damage]
+            } else {
+                dmg = results[n].damage
             }
-            if (highestDamage >= currentHp) {
-                highestDamage = 1000
-            }   
+
+            // add 4 if kills, add +2 if revenge kill
+            if (can_kill(dmg, currentHp)) {
+                var kills = true
+                
+                reasoning += `+4 from killing with ${results[n].move.name}, `
+
+                if (["Moxie", "Soul Heart","Beast Boost", "Shadow Tag"].includes(p2.ability) ) {
+                    var revenge_kills = true
+                    reasoning += `+2 from boosting ability, `
+                }
+
+                if (p1.ability != "Levitate" && !p1.types.includes("Flying") && (p2.ability == "Arena Trap")) {
+                     var revenge_kills = true
+                    reasoning += `+2 from trapping ability, `
+                }
+
+                if (p2.ability == "Magnet Pull" && p1.types.includes("Steel")) {
+                    var revenge_kills = true
+                    reasoning += `+2 from Magnet Pull trap, `
+                }
+
+                if (results[n].move.priority >= 1) {
+                    var revenge_kills = true
+                    reasoning += `+2 from priority kill with ${results[n].move.name}, `
+                }
+            } else { // add +1 if non kill and super effective
+                if ( (results[n].move.category != "Status") && type_info[results[n].move.type] > 1 && !kills ) {
+                    is_se = true
+                    reasoning += `+1 from non kill super effective ${results[n].move.name}, `
+                }
+            }
         }
-        other_mons.push([trainer_poks[i], 0, "asdfasadf", sub_index, pok_data["moves"], highestDamage])
+
+        var tr_types = p2.types
+        if (tr_types.length == 1) {
+            tr_types.push(p2.types[0])
+        }
+
+        // Check if trainer mon resists/immune all of player mon moves
+        for (let n = 0; n < 4; n++) {
+            if (p1.moves[0].category == "Status") {
+                continue
+            }
+
+            if (tr_types[1] == "None") {
+                tr_types[1] = tr_types[0]
+            }
+            
+            var damages = player_results[n].damages
+            var hp = player_results[n].originalCurHP
+
+            if (can_chunk(damages, hp)) {
+                full_resist = false
+            }
+            var trainer_type_info = get_type_info(tr_types)       
+            var move_type = p1.moves[n].type
+            if (trainer_type_info[move_type] >= 1) {              
+                full_resist = false
+                all_neutral = false
+            }
+
+            if (trainer_type_info[move_type] >= 2) {              
+                is_weak = true
+            }
+        }
+
+        if (full_resist) {
+            reasoning += "+4 from full resist, "
+        }
+
+        if (is_weak) {
+            reasoning += "-1 from being weak to move, "
+        }
+
+        // check if trainer def > player highest offensive stat
+        if (all_neutral) {
+            var player_offense = 0
+            var trainer_def = 0
+
+            if (p1.rawStats.atk >= p1.rawStats.spa) {
+                player_offense = p1.rawStats.atk 
+                trainer_def = p2.rawStats.def
+            } else {
+                player_offense = p1.rawStats.spa
+                trainer_def = p2.rawStats.spd
+            }
+            is_wall = (trainer_def > player_offense)
+            if (is_wall) {
+               reasoning += "+2 from walling" 
+            }         
+        }
+
+        
+        // calculate final scores
+        var pok_scores = {"kills": kills, "revenge_kills": revenge_kills, "is_se": is_se, "full_resist": full_resist, "is_weak": is_weak, "is_wall": is_wall}
+        var score_mods = {"kills": 4, "revenge_kills": 2, "is_se": 1, "full_resist": 4, "is_weak": -1, "is_wall": 2}
+
+        for (mod in score_mods) {
+            if (pok_scores[mod]) {
+               score += score_mods[mod]
+            }
+        }
+        score -= (sub_index / 100) 
+
+        reasoning += `, Final Score: ${score}`
+
+        ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
     }
+
+    console.log(ranked_trainer_poks)
+    RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
+
+    return RR_SORTED
 
 
 
@@ -499,6 +640,10 @@ function get_next_in() {
 
     if (switchIn == 4) {
         return get_next_in_g4()
+    }
+
+    if (switchIn == 10) {
+        return get_next_in_cfru()
     }
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
@@ -524,8 +669,7 @@ function get_next_in() {
         var strongest_move = "None"
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
 
-        console.log(tr_name)
-        console.log(pok_name)
+
 
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
@@ -550,6 +694,7 @@ function get_next_in() {
         }
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
+    console.log(ranked_trainer_poks)
     return ranked_trainer_poks.sort(sort_trpoks)
 }
 
@@ -629,15 +774,6 @@ $(document).ready(function() {
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02"
-    }
-
-    if (SOURCES[params.get('data')]) {
-        TITLE = SOURCES[params.get('data')]
-        $('.genSelection').hide()
-        $('#rom-title').text(TITLE).show()
-        if (TITLE == "Radical Red 3.02") {
-            $(".trainer-pok-list.opposing").addClass('no-switch')
-        }
     }
 
     $(document).on('change', '.calc-select', function() {
@@ -777,6 +913,10 @@ $(document).ready(function() {
    $(document).on('change', '.current-hp', function() {
         $($('.set-selector')[1]).change()
    })
+
+   
+
+
 
    $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')

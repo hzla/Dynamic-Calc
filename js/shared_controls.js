@@ -433,15 +433,8 @@ function smogonAnalysis(pokemonName) {
 
 
 // auto-update set details on select
-$(".set-selector").change(function () {
-	var fullSetName = $(this).val();
 
-	if ($(this).hasClass('opposing')) {
-		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
-		var sprite = SETDEX_BW
-		$('#trainer-sprite').attr('src',  )
-	}
-
+function refresh_next_in() {
 	var next_poks = get_next_in()
 
 	var trpok_html = ""
@@ -458,8 +451,22 @@ $(".set-selector").change(function () {
 		</div>`
 		trpok_html += pok
 	}
-
 	$('.opposing.trainer-pok-list').html(trpok_html)
+}
+
+
+$(".set-selector").change(function () {
+	var fullSetName = $(this).val();
+
+	if ($(this).hasClass('opposing')) {
+		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
+		var sprite = SETDEX_BW
+		$('#trainer-sprite').attr('src',  )
+	}
+
+	refresh_next_in()
+
+	
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	
@@ -472,13 +479,11 @@ $(".set-selector").change(function () {
 				for (n in [1,2,3,4,5,6]) {
 					n = parseInt(n)
 					if (ai & (1 << n)) {
-						console.log(`#ai${n + 1}`)
 						$(`#ai${n + 1}`).show()
 					} else {
 						$(`#ai${n + 1}`).hide()
 					}
 				}
-				console.log(battle_type)
 				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
 					$('#singles-format').click()
 				} else {
@@ -499,6 +504,9 @@ $(".set-selector").change(function () {
 		if (SETDEX_BW) {
 			var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
 			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
+			if (damageGen <= 5) {
+				$('#p1 .poke-sprite').addClass('no-flip')
+			}
 		}
 	}
 
@@ -549,7 +557,7 @@ $(".set-selector").change(function () {
 			} else if (parseInt(set.level) == -1) {
 				set.level = parseInt($("#levelL1").val() - 1)
 			} else {
-				
+
 			}
 
 
@@ -793,6 +801,8 @@ function correctHiddenPower(pokemon) {
 
 function createPokemon(pokeInfo, customMoves=false) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
+		console.log(pokeInfo)
+		console.log("^^^^^^")
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
 		var isRandoms = $("#randoms").prop("checked");
@@ -1433,7 +1443,16 @@ $(document).ready(function () {
 
 	if (!switchIn) {
 		switchIn = 5
-	} 
+	}
+
+	if (switchIn == 10) {
+        $(document).on('mouseover', '.trainer-pok-container', function() {
+            var trpok_index = $(this).index()
+            var reasoning = RR_SORTED[trpok_index][6]
+            $('#reasoning').text(reasoning)
+        })
+   }
+    
 
 	if (damageGen <= 5) {
 		trainerSprites = "front"
