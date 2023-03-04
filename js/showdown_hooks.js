@@ -489,6 +489,7 @@ function get_next_in_cfru() {
         var reasoning = ""
         var all_neutral = true
         var is_wall = false
+        var kill_found = false
 
 
         var pok_name = trainer_poks[i].split(" (")[0]
@@ -514,7 +515,13 @@ function get_next_in_cfru() {
             if (can_kill(dmg, currentHp)) {
                 var kills = true
                 
-                reasoning += `+4 from killing with ${results[n].move.name}, `
+                if (kill_found) {
+                    reasoning += `killing with ${results[n].move.name}, `
+                } else {
+                    reasoning += `+4 killing with ${results[n].move.name}, `
+                }
+                
+                kill_found = true
 
                 if (["Moxie", "Soul Heart","Beast Boost", "Shadow Tag"].includes(p2.ability) ) {
                     var revenge_kills = true
