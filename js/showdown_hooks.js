@@ -776,6 +776,12 @@ $(document).ready(function() {
    "b6e2693147e215f10f4a": "Radical Red 3.02"
     }
 
+    if (SOURCES[params.get('data')]) {
+        TITLE = SOURCES[params.get('data')]
+        $('.genSelection').hide()
+        $('#rom-title').text(TITLE).show()
+    }
+
     $(document).on('change', '.calc-select', function() {
         location.href = $('.calc-select option:selected').attr('data-source')
     })
