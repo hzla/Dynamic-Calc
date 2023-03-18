@@ -335,6 +335,10 @@ function get_next_in_g4() {
                 isSE = true
             }
 
+            if ($("#abilityL1").val() == 'Levitate' && mov_data["type"] == "Ground") {
+                isSE = false
+            }
+
             if (isSE) {   
                 se_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], effectiveness])
                 se_indexes.push(sub_index)
