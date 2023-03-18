@@ -784,7 +784,8 @@ $(document).ready(function() {
    "bd7fc78f8fa2500dfcca": "Renegade Platinum",
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
-   "b6e2693147e215f10f4a": "Radical Red 3.02"
+   "b6e2693147e215f10f4a": "Radical Red 3.02",
+   "7a1ed35468b22ea01103": "Ancestral X"
     }
 
     if (SOURCES[params.get('data')]) {
