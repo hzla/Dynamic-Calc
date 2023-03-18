@@ -458,6 +458,7 @@ function refresh_next_in() {
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 
+	console.log(fullSetName)
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW

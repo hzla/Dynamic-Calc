@@ -132,6 +132,8 @@ var GSC = [
     'Ultra Ball',
     'Up-Grade',
     'Water Stone',
+    'Megite X',
+    'Megite Y'
 ];
 var GSC_ONLY = [
     'Berry',

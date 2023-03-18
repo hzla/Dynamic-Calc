@@ -43,6 +43,7 @@ exports.__esModule = true;
 var util_1 = require("../util");
 var RBY = {
     '(No Move)': { bp: 0, category: 'Status', type: 'Normal' },
+    '-': { bp: 0, category: 'Status', type: 'Normal' },
     Absorb: { bp: 20, type: 'Grass', drain: [1, 2] },
     Acid: { bp: 40, type: 'Poison' },
     Amnesia: { bp: 0, category: 'Status', type: 'Psychic' },
@@ -1162,7 +1163,8 @@ var DPP_PATCH = {
         type: 'Psychic',
         makesContact: true,
         category: 'Physical'
-    }
+    },
+    "Ground Pound":{type: "Ground",bp:85, category: "Physical"}
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
 var BW_PATCH = {

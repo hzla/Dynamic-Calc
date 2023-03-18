@@ -1,4 +1,9 @@
 moveChanges = {
+	'Ancestral X': 
+		{
+			"Stomp": "Ground Pound"
+		},
+
 	'Blaze Black 2/Volt White 2 Redux':
 
 		{"Sand Tomb": "Accelerock",
