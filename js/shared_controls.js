@@ -1453,7 +1453,12 @@ $(document).ready(function () {
 	if (switchIn == 10 || switchIn == 11) {
         $(document).on('mouseover', '.trainer-pok-container', function() {
             var trpok_index = $(this).index()
-            var reasoning = RR_SORTED[trpok_index][6]
+            var reasoning = ""
+            for (let i = 0;i < RR_SORTED.length; i++) {
+            	if (RR_SORTED[i][0].includes($(this).find('.trainer-pok').attr('data-id'))) {
+            		reasoning = RR_SORTED[i][6]
+            	}
+            }
             $('#reasoning').text(reasoning)
         })
    }
@@ -1463,7 +1468,7 @@ $(document).ready(function () {
    // }
     
 
-	if (damageGen <= 5) {
+	if (damageGen <= 5 && switchIn < 10) {
 		trainerSprites = "front"
 		playerSprites = "back"
 		suffix = "gif"

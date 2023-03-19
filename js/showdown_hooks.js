@@ -408,6 +408,17 @@ function can_kill(damages, hp) {
     return (kill_count >= 8)
 }
 
+// check if ai mon highest roll kills player
+function can_topkill(damages, hp) {
+    kill_count = 0
+    for (n in damages) {
+        if (damages[n] >= hp) {
+            kill_count += 1
+        }
+    }
+    return (kill_count > 0)
+}
+
 // check if player deals 50% or more to ai
 function can_chunk(damages, hp) {
     var threshold = hp / 2
@@ -432,7 +443,7 @@ function get_next_in_pkem() {
 // 0   Default.
 // -1  AI's Pokémon is slower than the player's and is OHKO'd.
     
-    console.log("######## em")
+
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
@@ -460,6 +471,8 @@ function get_next_in_pkem() {
     var p1info = $("#p1");
     var p2info = $("#p2");
     var p1 = createPokemon(p1info);
+
+    var p1speed = parseInt(p1info.find(".totalMod").text())
 
     var p1field = createField();
     var p2field = p1field.clone().swap();
@@ -494,9 +507,17 @@ function get_next_in_pkem() {
         var player_results = all_results[0]
 
 
-        if (p2.rawStats.spe > p1.rawStats.spe ) {
+        var p2speed = p2.rawStats.spe
+
+        if ($('#tailwindR').is(':checked')) {
+            p2speed = p2speed * 1.5
+        }
+
+        if (p2.rawStats.spe >= p1speed ) {
             faster = true
         }
+
+
 
 
         //  check rolls against player pok
@@ -516,27 +537,10 @@ function get_next_in_pkem() {
 
 
             // add 4 if kills, add +2 if revenge kill
-            if (can_kill(dmg, currentHp)) {
+            if (can_topkill(dmg, currentHp)) {
                 var kills = true
-                
-                if (kill_found) {
-                    reasoning += `killing with ${results[n].move.name}, `
-                } else {
-                    reasoning += `+4 killing with ${results[n].move.name}, `
-                }
-                
-                
-
-                if (results[n].move.priority >= 1) {
-                    var revenge_kills = true
-                    reasoning += `+2 from priority kill with ${results[n].move.name}, `
-                }
-            } else { // add +1 if non kill and super effective
-                if ( (results[n].move.category != "Status") && type_info[results[n].move.type] > 1 && !kills ) {
-                    is_se = true
-                    reasoning += `+1 from non kill super effective ${results[n].move.name}, `
-                }
-            }
+            
+            } 
         }
 
         // check rolls against trainer poks
@@ -555,7 +559,8 @@ function get_next_in_pkem() {
 
             var tr_hp = p2.maxHP()
             // add 4 if kills, add +2 if revenge kill
-            if (can_kill(dmg, tr_hp)) {
+            
+            if (can_topkill(dmg, tr_hp)) {
                 gets_ohkod = true                     
             } 
         }

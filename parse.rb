@@ -24,6 +24,8 @@ csv = File.read('rb.csv').split("\n")
 
 sets = JSON.parse(File.read('formatted.json'))
 
+tr_counts = {}
+
 nf = {}
 
 current_trainer = nil
@@ -41,10 +43,24 @@ while i < csv.length do
 	if line[0..3] == "Name" && !line.include?("&")
 
 
+
+
 		p line
 		battle_type = "Singles"
 
 		current_trainer = line.split(",")[1].strip.split("[")[0].strip
+
+		if tr_counts[current_trainer]
+			tr_counts[current_trainer] += 1
+			current_trainer += tr_counts[current_trainer].to_s
+
+		else
+			begin
+				tr_counts[current_trainer] = 1
+			rescue
+				binding.pry
+			end
+		end
 
 		mons = csv[i + 2][1..-1].split(",").compact
 		levels = csv[i + 3][6..-1].split(",").compact
@@ -163,7 +179,7 @@ end
 rb = JSON.parse(File.read('rb.json'))
 rb["formatted_sets"] = nf
 
-File.write('rb2.json', rb.to_json)
+File.write('rb3.json', rb.to_json)
 
 
 

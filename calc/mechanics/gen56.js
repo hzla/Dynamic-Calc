@@ -625,6 +625,9 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.defenderAbility = defender.ability;
     }
     defense = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((defense * (0, util_2.chainMods)(dfMods, 410, 131072)) / 4096)));
+      if (move.named('Explosion') || move.named('Self-Destruct')) {
+        defense = Math.floor(defense * 0.5);
+      }
     
     var levelCaps = [[20, 1], [36, 2], [52, 3]]
     var delta = 0

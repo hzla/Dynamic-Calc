@@ -686,6 +686,10 @@ export function calculateBWXY(
     desc.weather = field.weather;
   }
 
+  if (move.named('Explosion') || move.named('Self-Destruct') && switchIn == 11) {
+    defense = Math.floor(defense * 0.5);
+  }
+
   const dfMods = [];
   if (defender.hasAbility('Marvel Scale') && defender.status && hitsPhysical) {
     dfMods.push(6144);
