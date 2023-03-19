@@ -445,7 +445,7 @@ function refresh_next_in() {
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","")
 
 		var pok = `<div class="trainer-pok-container">
-			<img class="trainer-pok right-side" src="./img/pokesprite/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
+			<img class="trainer-pok right-side" src="./img/newhd/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][0])}">${next_poks[i][4][0]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2]}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][3])}">${next_poks[i][4][3]}</div>
 
 		</div>`
@@ -498,12 +498,16 @@ $(".set-selector").change(function () {
 		}
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
 
+
+
+		
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite}.${suffix}`)
 
 
 	} else {
 		if (SETDEX_BW) {
 			var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
+			
 			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
 			if (damageGen <= 5) {
 				$('#p1 .poke-sprite').addClass('no-flip')
@@ -1460,8 +1464,9 @@ $(document).ready(function () {
 		playerSprites = "back"
 		suffix = "gif"
 	} else {
-		trainerSprites = "pokesprite"
-		playerSprites = "pokesprite"
+		trainerSprites = "newhd"
+		playerSprites = "newhd"
+		$('.poke-sprite').css('background', 'none')
 		suffix = "png"
 	}
 	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)

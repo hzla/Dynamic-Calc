@@ -387,6 +387,7 @@ html, body {
     overflow: scroll;
     min-height: 96px;
     max-height: 595px;
+    justify-content: space-between;
 }
 
 
