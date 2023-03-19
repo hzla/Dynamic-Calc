@@ -1450,13 +1450,17 @@ $(document).ready(function () {
 		switchIn = 5
 	}
 
-	if (switchIn == 10) {
+	if (switchIn == 10 || switchIn == 11) {
         $(document).on('mouseover', '.trainer-pok-container', function() {
             var trpok_index = $(this).index()
             var reasoning = RR_SORTED[trpok_index][6]
             $('#reasoning').text(reasoning)
         })
    }
+
+   // if (switchIn == 11) {
+   //      $('.trainer-pok-list.opposing').addClass('no-switch')
+   // }
     
 
 	if (damageGen <= 5) {

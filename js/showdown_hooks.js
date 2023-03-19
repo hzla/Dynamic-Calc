@@ -422,6 +422,199 @@ function can_chunk(damages, hp) {
 }
 
 
+function get_next_in_pkem() {
+
+//     +5  AI's Pokémon is faster than the player's and OHKO's it.
+// +4  AI's Pokémon is slower than the player's but OHKO's it and is not OHKO'd.
+// +3  AI's Pokémon is faster than the player's and deals more damage than it takes (damage is considered in % and not raw numbers).
+// +2  AI's Pokémon is slower than the player's and deals more damage than it takes (damage is considered in % and not raw numbers).
+// +1  AI's Pokémon is faster than the player's.
+// 0   Default.
+// -1  AI's Pokémon is slower than the player's and is OHKO'd.
+    
+    console.log("######## em")
+    if (typeof CURRENT_TRAINER_POKS === "undefined") {
+        return
+    }
+
+    var ranked_trainer_poks = []
+
+    var scores = []
+    var trainer_poks = CURRENT_TRAINER_POKS
+    var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
+    
+    var player_type1 = $('.type1').first().val()
+    var player_type2 = $('.type2').first().val() 
+    var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
+
+    if (player_type2 == ""){
+        player_type2 = player_type1
+    }
+
+    // get type chart
+    var type_info = get_type_info([player_type1, player_type2])
+
+
+    var currentHp = parseInt($('.current-hp').first().val())
+
+    var p1info = $("#p1");
+    var p2info = $("#p2");
+    var p1 = createPokemon(p1info);
+
+    var p1field = createField();
+    var p2field = p1field.clone().swap();
+
+
+     for (i in trainer_poks) {
+        var score = 0
+        var set_name = (' ' + trainer_poks[i]).slice(1)
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+        var kills = false
+        var faster = false
+        var revenge_kills = false
+        var is_se = false
+        var full_resist = true
+        var is_weak = false
+        var reasoning = ""
+        var all_neutral = true
+        var is_wall = false
+        var kill_found = false
+        var gets_ohkod = false
+        var highest_dmg_dealt = 0
+        var highest_dmg_taken = 0
+
+
+        var pok_name = trainer_poks[i].split(" (")[0]
+        var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        var pok_data = SETDEX_BW[pok_name][tr_name]
+
+        p2 = createPokemon(trainer_poks[i].slice(0,-3))
+        var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
+        var results = all_results[1]
+        var player_results = all_results[0]
+
+
+        if (p2.rawStats.spe > p1.rawStats.spe ) {
+            faster = true
+        }
+
+
+        //  check rolls against player pok
+        for (let n = 0; n < 4; n++) {
+            var dmg = 0
+
+            if (typeof results[n].damage === 'number') {
+                dmg = [results[n].damage]
+                if (dmg[7] >= highest_dmg_dealt) {
+                    highest_dmg_dealt = dmg[7]
+                }
+
+            } else {
+                dmg = results[n].damage
+            }
+
+
+
+            // add 4 if kills, add +2 if revenge kill
+            if (can_kill(dmg, currentHp)) {
+                var kills = true
+                
+                if (kill_found) {
+                    reasoning += `killing with ${results[n].move.name}, `
+                } else {
+                    reasoning += `+4 killing with ${results[n].move.name}, `
+                }
+                
+                
+
+                if (results[n].move.priority >= 1) {
+                    var revenge_kills = true
+                    reasoning += `+2 from priority kill with ${results[n].move.name}, `
+                }
+            } else { // add +1 if non kill and super effective
+                if ( (results[n].move.category != "Status") && type_info[results[n].move.type] > 1 && !kills ) {
+                    is_se = true
+                    reasoning += `+1 from non kill super effective ${results[n].move.name}, `
+                }
+            }
+        }
+
+        // check rolls against trainer poks
+        
+        for (let n = 0; n < 4; n++) {
+            var dmg = 0
+
+            if (typeof player_results[n].damage === 'number') {
+                dmg = [player_results[n].damage]
+                if (dmg[7] >= highest_dmg_taken) {
+                    highest_dmg_taken = dmg[7]
+                }
+            } else {
+                dmg = player_results[n].damage
+            }
+
+            var tr_hp = p2.maxHP()
+            // add 4 if kills, add +2 if revenge kill
+            if (can_kill(dmg, tr_hp)) {
+                gets_ohkod = true                     
+            } 
+        }
+
+        var tr_types = p2.types
+        if (tr_types.length == 1) {
+            tr_types.push(p2.types[0])
+        }
+
+        if (kills && faster) {
+            score = 5
+            reasoning = "Kills and is faster +5, "
+        }
+
+        if (kills && !faster && !gets_ohkod) {
+            score = 4
+            reasoning = "Kills and is slower, does not get ohko'd +4, "
+        }
+
+        if (faster && highest_dmg_taken < highest_dmg_dealt) {
+            score += 3
+            reasoning += 'faster and deals more dmg than taken +3, '
+        }
+
+        if (!faster && highest_dmg_taken < highest_dmg_dealt) {
+            score += 2
+            reasoning += 'slower and deals more dmg than taken +2, '
+        }
+
+        if (faster) {
+            score += 1
+            reasoning += 'faster +1, '
+        }
+
+        if (!faster && gets_ohkod) {
+            score -= 1
+            reasoning += 'slower and gets ohkod -1'
+        }
+
+
+
+        score -= (sub_index / 100) 
+
+        reasoning += `, Final Score: ${score}`
+
+        ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
+    }
+
+    console.log(ranked_trainer_poks)
+    RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
+
+    return RR_SORTED
+
+
+    
+
+}
+
+
 
 function get_next_in_cfru() {
     // AI mon can kill = +4
@@ -657,6 +850,10 @@ function get_next_in() {
         return get_next_in_cfru()
     }
 
+    if (switchIn == 11) {
+        return get_next_in_pkem()
+    }
+
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
@@ -785,7 +982,8 @@ $(document).ready(function() {
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
-   "7a1ed35468b22ea01103": "Ancestral X"
+   "7a1ed35468b22ea01103": "Ancestral X",
+   "8c3ca30ba346734d5e4f": "Run & Bun"
     }
 
     if (SOURCES[params.get('data')]) {
@@ -838,6 +1036,9 @@ $(document).ready(function() {
 
             var move_id = move.replace(/-|,|'| /g, "").toLowerCase()
 
+            if (move == '(No Move)') {
+                continue
+            }
             moves[move]["bp"] = jsonMove["basePower"]
             
             MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
