@@ -501,7 +501,11 @@ function get_next_in_pkem() {
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
+        
+        console.log(trainer_poks[i].slice(0,-3))
+        console.log("***********")
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
+        
         var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
         var results = all_results[1]
         var player_results = all_results[0]
@@ -539,7 +543,7 @@ function get_next_in_pkem() {
             // add 4 if kills, add +2 if revenge kill
             if (can_topkill(dmg, currentHp)) {
                 var kills = true
-            
+                reasoning += `${results[n].move.name} kills, `
             } 
         }
 
@@ -561,9 +565,10 @@ function get_next_in_pkem() {
             // add 4 if kills, add +2 if revenge kill
             
             if (can_topkill(dmg, tr_hp)) {
-                gets_ohkod = true                     
+                gets_ohkod = true
+                reasoning += `killed by ${results[n].move.name}, `                     
             } 
-        }
+        } 
 
         var tr_types = p2.types
         if (tr_types.length == 1) {
@@ -572,12 +577,12 @@ function get_next_in_pkem() {
 
         if (kills && faster) {
             score = 5
-            reasoning = "Kills and is faster +5, "
+            reasoning += "Kills and is faster +5, "
         }
 
         if (kills && !faster && !gets_ohkod) {
             score = 4
-            reasoning = "Kills and is slower, does not get ohko'd +4, "
+            reasoning += "Kills and is slower, does not get ohko'd +4, "
         }
 
         if (faster && highest_dmg_taken < highest_dmg_dealt) {
