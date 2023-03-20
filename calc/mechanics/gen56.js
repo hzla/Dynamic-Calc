@@ -121,7 +121,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
     if (!resistedKnockOffDamage && defender.item) {
         var item = gen.items.get((0, util_1.toID)(defender.item));
-        resistedKnockOffDamage = !!(item.megaEvolves && defender.name.includes(item.megaEvolves));
+        resistedKnockOffDamage = false;
     }
     if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
         typeEffectiveness = 1;

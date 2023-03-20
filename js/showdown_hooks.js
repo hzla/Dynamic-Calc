@@ -475,7 +475,8 @@ function get_next_in_pkem() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         
-
+        console.log("%%%%%%%%%%")
+        console.log(trainer_poks[i].slice(0,-3))
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
         
         var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
