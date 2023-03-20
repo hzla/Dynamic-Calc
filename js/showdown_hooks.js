@@ -500,7 +500,7 @@ function get_next_in_pkem() {
         for (let n = 0; n < 4; n++) {
             var dmg = 0
 
-            if (player_results[n].move.name == "Explosion" || player_results[n].move.name == "Final Gambit" ) {
+            if (["Explosion", "Self-Destruct", "Final Gambit"].includes(player_results[n].move.name)) {
                 continue
             }
 
@@ -542,9 +542,10 @@ function get_next_in_pkem() {
             for (let n = 0; n < 4; n++) {
                 var dmg = 0
 
-                if (results[n].move.name == "Explosion" || results[n].move.name == "Final Gambit" ) {
+                if (["Explosion", "Self-Destruct", "Final Gambit"].includes(player_results[n].move.name)) {
                     continue
                 }
+
 
                 if (typeof results[n].damage === 'number') {
                     dmg = [results[n].damage]                    
