@@ -544,16 +544,20 @@ function get_next_in_pkem() {
 
             if (typeof player_results[n].damage === 'number') {
                 dmg = [player_results[n].damage]
+                
+            } else {
+                dmg = player_results[n].damage
                 if (dmg[15] >= highest_dmg_taken) {
                     highest_dmg_taken = dmg[15]
                 }
-            } else {
-                dmg = player_results[n].damage
             }
 
             var tr_hp = p2.maxHP()
             // add 4 if kills, add +2 if revenge kill
             
+
+            console.log([dmg, tr_hp])
+            console.log(player_results[n])
             if (can_topkill(dmg, tr_hp) && !p2.hasItem('Focus Sash') && p2.ability != "Sturdy") {
                 gets_ohkod = true
                 score -= 3
@@ -584,12 +588,14 @@ function get_next_in_pkem() {
 
                 if (typeof results[n].damage === 'number') {
                     dmg = [results[n].damage]
-                    if (dmg[15] >= highest_dmg_dealt) {
-                        highest_dmg_dealt = dmg[15]
-                    }
+                    
 
                 } else {
                     dmg = results[n].damage
+
+                    if (dmg[15] >= highest_dmg_dealt) {
+                        highest_dmg_dealt = dmg[15]
+                    }
                 }
 
                 // add 4 if kills, add +2 if revenge kill
@@ -606,8 +612,13 @@ function get_next_in_pkem() {
         }
         
 
-        highest_dmg_takenn = highest_dmg_taken / p2.maxHP()
+        console.log(highest_dmg_taken)
+        console.log(highest_dmg_dealt)
+
+        highest_dmg_taken = highest_dmg_taken / p2.maxHP()
         highest_dmg_dealt = highest_dmg_dealt / p1.maxHP()
+
+
 
 
         if (highest_dmg_taken < highest_dmg_dealt && !skip_player_calcs && !skip_dmg_calcs) {
@@ -860,7 +871,7 @@ function get_current_in() {
 }
 
 function get_next_in() {
-
+    console.log("refreshing switch ins")
     if (switchIn == 4) {
         return get_next_in_g4()
     }
@@ -1148,9 +1159,27 @@ $(document).ready(function() {
         $('#battle-bg,.poke-sprite, #trainer-sprite').toggle()
    })
 
-   $(document).on('change', '.current-hp', function() {
-        $($('.set-selector')[1]).change()
+
+
+
+   $(document).on('keyup', '.current-hp, .percent-hp', function() {
+        console.log("hp changed")
+        refresh_next_in()
    })
+
+   // $(document).click(function() {
+   //      console.log("move selected")
+   //      setTimeout(function(){$($('.set-selector')[1]).change()},100);   
+   // })
+
+   $(window).click(function(event) {
+        if ($('.select2-drop:visible').length == 0) {
+            console.log("changing")
+           refresh_next_in()
+        }
+        
+        
+    });
 
    
 
