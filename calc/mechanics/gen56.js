@@ -669,7 +669,12 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
     }
     if (isCritical) {
-        baseDamage = Math.floor((0, util_2.OF32)(baseDamage * (gen.num > 5 ? 1.5 : 2)));
+        if (switchIn == 11) {
+           baseDamage = Math.floor((0, util_2.OF32)(baseDamage * (1.5)));
+        } else {
+           baseDamage = Math.floor((0, util_2.OF32)(baseDamage * (gen.num > 5 ? 1.5 : 2)));
+        }
+
         desc.isCritical = isCritical;
     }
     var stabMod = 4096;

@@ -435,31 +435,6 @@ function can_chunk(damages, hp) {
 
 function get_next_in_pkem() {
 
-
-// if faster + 1
-
-
-// for player mon's moves
-//     continue if explosion or final gambit
-
-//     if gets ohko'd and slower and not sashed or sturdy
-//         return score -= 3
-
-// if ditto, or wynaut, or wobba
-//     return score += 2
-
-// for trainer mon's moves
-//     continue if explosion or final gambit
-
-//     if ohkos
-//         return score += 4
-
-// if highest_percent_damage_taken < highest_percent_damage_given
-//     score += 2
-
-// return score
-    
-
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
@@ -470,24 +445,11 @@ function get_next_in_pkem() {
     var trainer_poks = CURRENT_TRAINER_POKS
     var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
     
-    var player_type1 = $('.type1').first().val()
-    var player_type2 = $('.type2').first().val() 
-    var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
-
-    if (player_type2 == ""){
-        player_type2 = player_type1
-    }
-
-    // get type chart
-    var type_info = get_type_info([player_type1, player_type2])
-
-
     var currentHp = parseInt($('.current-hp').first().val())
 
     var p1info = $("#p1");
     var p2info = $("#p2");
     var p1 = createPokemon(p1info);
-
     var p1speed = parseInt(p1info.find(".totalMod").text())
 
     var p1field = createField();
@@ -575,8 +537,7 @@ function get_next_in_pkem() {
         }
 
 
-        //  check rolls against player pok
-        
+        //  check rolls against player pok        
         if (!skip_player_calcs) {
             for (let n = 0; n < 4; n++) {
                 var dmg = 0
@@ -585,11 +546,8 @@ function get_next_in_pkem() {
                     continue
                 }
 
-
                 if (typeof results[n].damage === 'number') {
-                    dmg = [results[n].damage]
-                    
-
+                    dmg = [results[n].damage]                    
                 } else {
                     dmg = results[n].damage
 
@@ -604,22 +562,13 @@ function get_next_in_pkem() {
                     score += 4
                     skip_dmg_calcs = true
                     reasoning += `${results[n].move.name} kills +4, `
-                    break
-                    
+                    break       
                 } 
             }
-
         }
         
-
-        console.log(highest_dmg_taken)
-        console.log(highest_dmg_dealt)
-
         highest_dmg_taken = highest_dmg_taken / p2.maxHP()
         highest_dmg_dealt = highest_dmg_dealt / p1.maxHP()
-
-
-
 
         if (highest_dmg_taken < highest_dmg_dealt && !skip_player_calcs && !skip_dmg_calcs) {
             score += 2
@@ -628,20 +577,12 @@ function get_next_in_pkem() {
 
 
         score -= (sub_index / 100) 
-
         reasoning += `Final Score: ${score}`
-
         ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
     }
-
     console.log(ranked_trainer_poks)
     RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
-
     return RR_SORTED
-
-
-    
-
 }
 
 

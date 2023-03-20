@@ -766,7 +766,11 @@ export function calculateBWXY(
   }
 
   if (isCritical) {
-    baseDamage = Math.floor(OF32(baseDamage * (gen.num > 5 ? 1.5 : 2)));
+    if (switchIn == 11) {
+      baseDamage = Math.floor(OF32(baseDamage * (1.5))); 
+    } else {
+      baseDamage = Math.floor(OF32(baseDamage * (gen.num > 5 ? 1.5 : 2)));
+    }
     desc.isCritical = isCritical;
   }
 

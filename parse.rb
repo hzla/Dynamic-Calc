@@ -119,6 +119,32 @@ while i < csv.length do
 		trainer1 = trainers.split(" & ")[0]
 		trainer2 = trainers.split(" & ")[1].split(" [")[0]
 
+
+
+		if tr_counts[trainer1]
+			tr_counts[trainer1] += 1
+			trainer1 += tr_counts[trainer1].to_s
+
+		else
+			begin
+				tr_counts[trainer1] = 1
+			rescue
+				binding.pry
+			end
+		end
+
+		if tr_counts[trainer2]
+			tr_counts[trainer2] += 1
+			trainer2 += tr_counts[trainer2].to_s
+
+		else
+			begin
+				tr_counts[trainer2] = 1
+			rescue
+				binding.pry
+			end
+		end
+
 		mons = csv[i + 2][1..-1].split(",").compact
 		levels = csv[i + 3][6..-1].split(",").compact
 		items = csv[i + 4][10..-1].split(",").compact
