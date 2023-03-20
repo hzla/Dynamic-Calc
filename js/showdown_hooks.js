@@ -1116,16 +1116,11 @@ $(document).ready(function() {
    // })
 
    $(window).click(function(event) {
-        if ($('#sand')[0].checked) {
-            var check_sand = true
-        }
+
         if ($('.select2-drop:visible').length == 0) {
             console.log("changing")
            refresh_next_in()
 
-           if (check_sand) {
-                $('#sand')[0].click()
-           }
         }
         
         
