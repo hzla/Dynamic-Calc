@@ -566,7 +566,7 @@ function get_next_in_pkem() {
             
             if (can_topkill(dmg, tr_hp)) {
                 gets_ohkod = true
-                reasoning += `killed by ${results[n].move.name}, `                     
+                reasoning += `killed by ${player_results[n].move.name}, `                     
             } 
         } 
 
