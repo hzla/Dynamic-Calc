@@ -435,13 +435,29 @@ function can_chunk(damages, hp) {
 
 function get_next_in_pkem() {
 
-//     +5  AI's Pokémon is faster than the player's and OHKO's it.
-// +4  AI's Pokémon is slower than the player's but OHKO's it and is not OHKO'd.
-// +3  AI's Pokémon is faster than the player's and deals more damage than it takes (damage is considered in % and not raw numbers).
-// +2  AI's Pokémon is slower than the player's and deals more damage than it takes (damage is considered in % and not raw numbers).
-// +1  AI's Pokémon is faster than the player's.
-// 0   Default.
-// -1  AI's Pokémon is slower than the player's and is OHKO'd.
+
+// if faster + 1
+
+
+// for player mon's moves
+//     continue if explosion or final gambit
+
+//     if gets ohko'd and slower and not sashed or sturdy
+//         return score -= 3
+
+// if ditto, or wynaut, or wobba
+//     return score += 2
+
+// for trainer mon's moves
+//     continue if explosion or final gambit
+
+//     if ohkos
+//         return score += 4
+
+// if highest_percent_damage_taken < highest_percent_damage_given
+//     score += 2
+
+// return score
     
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
@@ -484,17 +500,12 @@ function get_next_in_pkem() {
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
         var kills = false
         var faster = false
-        var revenge_kills = false
-        var is_se = false
-        var full_resist = true
-        var is_weak = false
         var reasoning = ""
-        var all_neutral = true
-        var is_wall = false
-        var kill_found = false
         var gets_ohkod = false
         var highest_dmg_dealt = 0
         var highest_dmg_taken = 0
+        var skip_player_calcs = false
+        var skip_dmg_calcs = false
 
 
         var pok_name = trainer_poks[i].split(" (")[0]
@@ -502,8 +513,7 @@ function get_next_in_pkem() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         
-        console.log(trainer_poks[i].slice(0,-3))
-        console.log("***********")
+
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
         
         var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
@@ -519,32 +529,8 @@ function get_next_in_pkem() {
 
         if (p2.rawStats.spe >= p1speed ) {
             faster = true
-        }
-
-
-
-
-        //  check rolls against player pok
-        for (let n = 0; n < 4; n++) {
-            var dmg = 0
-
-            if (typeof results[n].damage === 'number') {
-                dmg = [results[n].damage]
-                if (dmg[7] >= highest_dmg_dealt) {
-                    highest_dmg_dealt = dmg[7]
-                }
-
-            } else {
-                dmg = results[n].damage
-            }
-
-
-
-            // add 4 if kills, add +2 if revenge kill
-            if (can_topkill(dmg, currentHp)) {
-                var kills = true
-                reasoning += `${results[n].move.name} kills, `
-            } 
+            score += 1
+            reasoning += "Faster +1, "
         }
 
         // check rolls against trainer poks
@@ -552,10 +538,14 @@ function get_next_in_pkem() {
         for (let n = 0; n < 4; n++) {
             var dmg = 0
 
+            if (player_results[n].move.name == "Explosion" || player_results[n].move.name == "Final Gambit" ) {
+                continue
+            }
+
             if (typeof player_results[n].damage === 'number') {
                 dmg = [player_results[n].damage]
-                if (dmg[7] >= highest_dmg_taken) {
-                    highest_dmg_taken = dmg[7]
+                if (dmg[15] >= highest_dmg_taken) {
+                    highest_dmg_taken = dmg[15]
                 }
             } else {
                 dmg = player_results[n].damage
@@ -564,52 +554,71 @@ function get_next_in_pkem() {
             var tr_hp = p2.maxHP()
             // add 4 if kills, add +2 if revenge kill
             
-            if (can_topkill(dmg, tr_hp)) {
+            if (can_topkill(dmg, tr_hp) && !p2.hasItem('Focus Sash') && p2.ability != "Sturdy") {
                 gets_ohkod = true
-                reasoning += `killed by ${player_results[n].move.name}, `                     
+                score -= 3
+                skip_player_calcs = true
+                reasoning += `killed by ${player_results[n].move.name} -3, ` 
+                break
+                                    
             } 
         } 
 
-        var tr_types = p2.types
-        if (tr_types.length == 1) {
-            tr_types.push(p2.types[0])
-        }
-
-        if (kills && faster) {
-            score = 5
-            reasoning += "Kills and is faster +5, "
-        }
-
-        if (kills && !faster && !gets_ohkod) {
-            score = 4
-            reasoning += "Kills and is slower, does not get ohko'd +4, "
-        }
-
-        if (faster && highest_dmg_taken < highest_dmg_dealt) {
-            score += 3
-            reasoning += 'faster and deals more dmg than taken +3, '
-        }
-
-        if (!faster && highest_dmg_taken < highest_dmg_dealt) {
+        if (["Ditto", "Wynaut", "Wobbuffet"].includes(p2.species.name) && !skip_player_calcs) {
             score += 2
-            reasoning += 'slower and deals more dmg than taken +2, '
+            reasoning = "Special Pok +2, "
+            skip_player_calcs = true
         }
 
-        if (faster) {
-            score += 1
-            reasoning += 'faster +1, '
-        }
 
-        if (!faster && gets_ohkod) {
-            score -= 1
-            reasoning += 'slower and gets ohkod -1'
-        }
+        //  check rolls against player pok
+        
+        if (!skip_player_calcs) {
+            for (let n = 0; n < 4; n++) {
+                var dmg = 0
 
+                if (results[n].move.name == "Explosion" || results[n].move.name == "Final Gambit" ) {
+                    continue
+                }
+
+
+                if (typeof results[n].damage === 'number') {
+                    dmg = [results[n].damage]
+                    if (dmg[15] >= highest_dmg_dealt) {
+                        highest_dmg_dealt = dmg[15]
+                    }
+
+                } else {
+                    dmg = results[n].damage
+                }
+
+                // add 4 if kills, add +2 if revenge kill
+                if (can_topkill(dmg, currentHp)) {
+                    var kills = true
+                    score += 4
+                    skip_dmg_calcs = true
+                    reasoning += `${results[n].move.name} kills +4, `
+                    break
+                    
+                } 
+            }
+
+        }
+        
+
+        highest_dmg_takenn = highest_dmg_taken / p2.maxHP()
+        highest_dmg_dealt = highest_dmg_dealt / p1.maxHP()
+
+
+        if (highest_dmg_taken < highest_dmg_dealt && !skip_player_calcs && !skip_dmg_calcs) {
+            score += 2
+            reasoning += 'deals more dmg than taken +2, '
+        }
 
 
         score -= (sub_index / 100) 
 
-        reasoning += `, Final Score: ${score}`
+        reasoning += `Final Score: ${score}`
 
         ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
     }
