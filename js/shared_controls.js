@@ -481,7 +481,9 @@ $(".set-selector").change(function () {
 
 
 				console.log(next)
-				$(".nav-tag.next").attr('data-next', next).show()
+				if (SETDEX_BW[pokemonName][setName]["next"]) {
+					$(".nav-tag.next").attr('data-next', next).show()
+				}
 
 				if (SETDEX_BW[pokemonName][setName]["partner"]) {
 					$(".nav-tag.partner").show().attr('data-next', SETDEX_BW[pokemonName][setName]["partner"])
