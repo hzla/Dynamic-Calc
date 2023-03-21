@@ -478,11 +478,16 @@ $(".set-selector").change(function () {
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
 				var next = SETDEX_BW[pokemonName][setName]["next"]
+				var prev = SETDEX_BW[pokemonName][setName]["prev"]
 
 
-				console.log(next)
+
 				if (SETDEX_BW[pokemonName][setName]["next"]) {
 					$(".nav-tag.next").attr('data-next', next).show()
+				}
+
+				if (SETDEX_BW[pokemonName][setName]["prev"]) {
+					$(".nav-tag.prev").attr('data-next', prev).show()
 				}
 
 				if (SETDEX_BW[pokemonName][setName]["partner"]) {

@@ -22,7 +22,7 @@ function get_trainer_names() {
 }
 
 function get_custom_trainer_names() {
-    var all_poks = SETDEX_BW
+    var all_poks = setdex
     var trainer_names = [] 
 
     for (const [pok_name, poks] of Object.entries(all_poks)) {

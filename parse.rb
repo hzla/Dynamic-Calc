@@ -111,20 +111,26 @@ while i < csv.length do
 
 			curr_sets << set_name
 			
+			if prev_mons and prev_sets
+				p prev_sets
+				data["prev"] = "#{prev_mons[0]} (#{prev_sets[0]})"
+			end
 
 			if prev_mons && j == 0
-				p prev_mons
-				p prev_sets
+
 				prev_mons.each_with_index do |mn, idx|
 					break if mn == "" or mn == "\r"
 					mn = mn.strip
 					p idx
 					nf[mn][prev_sets[idx]]["next"] = "#{mon} (#{set_name})"
+					
 				end
 				prev_mons = mons
 			else
 				prev_mons = mons
 			end
+
+
 
 			prev_set = set_name
 			nf[mon][set_name] = data
@@ -227,6 +233,11 @@ while i < csv.length do
 				
 				offset = 0
 				
+
+				if prev_mons
+					data["prev"] = "#{prev_mons[0]} (#{prev_sets[0]})"
+				end
+
 				if prev_mons && k == 0 && n == 0
 					prev_mons.each_with_index do |mn, idx|
 						if mn == "" or mn == "\r"

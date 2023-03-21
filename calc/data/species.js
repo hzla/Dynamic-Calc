@@ -5346,6 +5346,13 @@ var XY_PATCH = {
         nfe: true,
         abilities: { 0: 'Flower Veil' }
     },
+    'Floette-Eternal': {
+        types: ['Fairy'],
+        bs: { hp: 54, at: 45, df: 47, sa: 75, sd: 98, sp: 52 },
+        weightkg: 0.9,
+        nfe: true,
+        abilities: { 0: 'Flower Veil' }
+    },
     Florges: {
         types: ['Fairy'],
         bs: { hp: 78, at: 65, df: 68, sa: 112, sd: 154, sp: 75 },
