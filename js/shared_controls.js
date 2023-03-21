@@ -477,6 +477,18 @@ $(".set-selector").change(function () {
 				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
+				var next = SETDEX_BW[pokemonName][setName]["next"]
+
+
+				console.log(next)
+				$(".nav-tag.next").attr('data-next', next).show()
+
+				if (SETDEX_BW[pokemonName][setName]["partner"]) {
+					$(".nav-tag.partner").show().attr('data-next', SETDEX_BW[pokemonName][setName]["partner"])
+
+				} else {
+					$(".nav-tag.partner").hide()
+				}
 				for (n in [1,2,3,4,5,6]) {
 					n = parseInt(n)
 					if (ai & (1 << n)) {

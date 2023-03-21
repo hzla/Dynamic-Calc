@@ -1062,6 +1062,13 @@ $(document).ready(function() {
         $('.opposing .select2-chosen').text(set)
    })
 
+   $(document).on('click', '.nav-tag', function() {
+        var set = $(this).attr('data-next')
+        $('.opposing').val(set)
+        $('.opposing').change()
+        $('.opposing .select2-chosen').text(set)
+   })
+
 
 
 

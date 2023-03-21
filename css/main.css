@@ -36,7 +36,19 @@ a img {
     z-index: 12;
 }
 
-#ai-tags div {
+#ai-tags, #nav-tags {
+    position: absolute;
+    display: flex;
+    top: 78px;
+    cursor: pointer;
+    right: 16px;
+    font-size: 16px;
+    z-index: 12;
+}
+
+
+
+#ai-tags div, #nav-tags div {
     line-height: 20px;
     margin-right: 10px;
     background: #ff79c6;
@@ -44,6 +56,14 @@ a img {
     padding: 0px 4px;
     display: none;
     color: rgb(248, 248, 242);
+}
+
+#nav-tags div {
+    background: none;   
+}
+
+.nav-tag.partner {
+    display: none;
 }
 
 .header-settings {
