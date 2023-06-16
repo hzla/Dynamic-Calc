@@ -217,6 +217,7 @@ function getMoves(currentPoke, rows, offset) {
 				movesFound = true;
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
 
+				console.log(TITLE)
 				if (moveChanges[TITLE]) {
 					if (moveChanges[TITLE][move]) {
 						move = moveChanges[TITLE][move]

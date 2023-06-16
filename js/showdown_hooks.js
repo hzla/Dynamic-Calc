@@ -950,6 +950,7 @@ $(document).ready(function() {
 
    SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
+   "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
    "da1eedc0e39ea07b75bf": "Vintage White",
    "bd7fc78f8fa2500dfcca": "Renegade Platinum",
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
