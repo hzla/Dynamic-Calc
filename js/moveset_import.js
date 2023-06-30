@@ -1,7 +1,8 @@
 moveChanges = {
 	'Ancestral X': 
 		{
-			"Stomp": "Ground Pound"
+			"Stomp": "Ground Pound",
+			"Needle Arm": "Grassy Dash"
 		},
 
 	'Blaze Black 2/Volt White 2 Redux':
@@ -202,6 +203,7 @@ function getStats(currentPoke, rows, offset) {
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
+		item = item.replace("’", "'");
 		if (calc.ITEMS[8].indexOf(item) != -1) {
 			return item;
 		}
@@ -358,7 +360,7 @@ function addSets(pokes, name) {
 function checkExeptions(poke) {
 	switch (poke) {
 	case 'Aegislash':
-		poke = "Aegislash-Blade";
+		poke = "Aegislash-Shield";
 		break;
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
@@ -385,6 +387,18 @@ function checkExeptions(poke) {
 	case 'Vivillon-Fancy':
 	case 'Vivillon-Pokeball':
 		poke = "Vivillon";
+		break;
+	case 'Flabébé-White':
+	case 'Flabébé-Blue':
+	case 'Flabébé-Orange':
+	case 'Flabébé-Yellow':
+		poke = "Flabébé";
+		break;
+	case 'Floette-White':
+	case 'Floette-Blue':
+	case 'Floette-Orange':
+	case 'Floette-Yellow':
+		poke = "Floette";
 		break;
 	case 'Florges-White':
 	case 'Florges-Blue':

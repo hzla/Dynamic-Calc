@@ -757,16 +757,12 @@ $(".forme").change(function () {
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
-	if (isAltForme && abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
-		container.find(".ability").val(altForme.ab);
+	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
+		container.find(".ability").val(altForme.abilities[0]);
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
 	} else if (chosenSet) {
-		if (!isRandoms) {
-			container.find(".abilities").val(chosenSet.ability);
-		} else {
-			container.find(".ability").val(chosenSet.abilities[0]);
-		}
+		container.find(".ability").val(chosenSet.ability);
 	}
 	container.find(".ability").keyup();
 

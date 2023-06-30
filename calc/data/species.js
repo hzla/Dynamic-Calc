@@ -5311,7 +5311,7 @@ var XY_PATCH = {
         nfe: true,
         abilities: { 0: 'Blaze' }
     },
-    Flabébé: {
+    Flabébé: {
         types: ['Fairy'],
         bs: { hp: 44, at: 38, df: 39, sa: 61, sd: 79, sp: 42 },
         weightkg: 0.1,

@@ -876,7 +876,27 @@ function get_next_in() {
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
     console.log(ranked_trainer_poks)
-    return ranked_trainer_poks.sort(sort_trpoks)
+    ranked_trainer_poks.sort(sort_trpoks)
+    
+    // Auto-sorts Megas to come out last - this should only run on switchIn=5
+    var endSwap = null
+    var foundMega = false
+    for (var i = 0; i < ranked_trainer_poks.length; i++) {
+        if (foundMega) {
+            if (i == ranked_trainer_poks.length - 1)
+                ranked_trainer_poks[i - 1] = endSwap
+            else
+                ranked_trainer_poks[i - 1] = ranked_trainer_poks[i]
+        }
+      
+        if (ranked_trainer_poks[i][0].includes("-Mega")) {
+            endSwap = ranked_trainer_poks[ranked_trainer_poks.length - 1]
+            ranked_trainer_poks[ranked_trainer_poks.length - 1] = ranked_trainer_poks[i]
+            foundMega = true
+        }
+    }
+    
+    return ranked_trainer_poks
 }
 
 function sort_trpoks(a, b) {
