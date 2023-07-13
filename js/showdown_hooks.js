@@ -1083,6 +1083,9 @@ $(document).ready(function() {
         $('.opposing').val(set)
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+        if ($('.info-group.opp > * > .forme').is(':visible')) {
+            $('.info-group.opp > * > .forme').change()
+        }
    })
 
    $(document).on('click', '.nav-tag', function() {
@@ -1166,8 +1169,8 @@ $(document).ready(function() {
 
         $('.player').change()
         $('.player .select2-chosen').text(set)
-        if ($('.forme').is(':visible')) {
-            $('.forme').change()
+        if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
+            $('.info-group:not(.opp) > * > .forme').change()
         }
         get_box()
     })
