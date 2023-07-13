@@ -1163,8 +1163,7 @@ var DPP_PATCH = {
         type: 'Psychic',
         makesContact: true,
         category: 'Physical'
-    },
-    "Ground Pound":{type: "Ground",bp:85, category: "Physical"}
+    }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
 var BW_PATCH = {
@@ -1959,7 +1958,20 @@ var XY_PATCH = {
     'Sticky Web': { bp: 0, type: 'Bug' },
     'Topsy-Turvy': { bp: 0, type: 'Dark' },
     'Trick-or-Treat': { bp: 0, type: 'Ghost' },
-    'Venom Drench': { bp: 0, type: 'Poison', target: 'allAdjacentFoes' }
+    'Venom Drench': { bp: 0, type: 'Poison', target: 'allAdjacentFoes' },
+    'Ground Pound': {
+      bp: 85,
+      type: 'Ground',
+      category: 'Physical',
+      secondaries: true
+    },
+    'Grassy Dash': {
+      bp: 50,
+      type: 'Grass',
+      category: 'Physical',
+      priority: 1,
+      makesContact: true
+    }
 };
 var XY = (0, util_1.extend)(true, {}, BW, XY_PATCH);
 var SM_PATCH = {

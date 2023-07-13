@@ -1068,6 +1068,8 @@ $(document).ready(function() {
             }
             pokedex[pok]["bs"] = jsonPok["bs"]
             pokedex[pok]["types"] = jsonPok["types"]
+            if (jsonPok.hasOwnProperty("abilities"))
+                pokedex[pok]["abilities"] = jsonPok["abilities"]
         }
         load_js() 
         customSets = JSON.parse(localStorage.customsets);
@@ -1158,14 +1160,17 @@ $(document).ready(function() {
 
 
 
-   $(document).on('click', '.trainer-pok.left-side', function() {
+    $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
         $('.player').val(set)
 
         $('.player').change()
         $('.player .select2-chosen').text(set)
+        if ($('.forme').is(':visible')) {
+            $('.forme').change()
+        }
         get_box()
-   })
+    })
 
    
 })
