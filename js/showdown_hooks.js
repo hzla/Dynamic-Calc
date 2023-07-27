@@ -876,7 +876,27 @@ function get_next_in() {
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
     console.log(ranked_trainer_poks)
-    return ranked_trainer_poks.sort(sort_trpoks)
+    ranked_trainer_poks.sort(sort_trpoks)
+    
+    // Auto-sorts Megas to come out last - this should only run on switchIn=5
+    var endSwap = null
+    var foundMega = false
+    for (var i = 0; i < ranked_trainer_poks.length; i++) {
+        if (foundMega) {
+            if (i == ranked_trainer_poks.length - 1)
+                ranked_trainer_poks[i - 1] = endSwap
+            else
+                ranked_trainer_poks[i - 1] = ranked_trainer_poks[i]
+        }
+      
+        if (ranked_trainer_poks[i][0].includes("-Mega")) {
+            endSwap = ranked_trainer_poks[ranked_trainer_poks.length - 1]
+            ranked_trainer_poks[ranked_trainer_poks.length - 1] = ranked_trainer_poks[i]
+            foundMega = true
+        }
+    }
+    
+    return ranked_trainer_poks
 }
 
 function sort_trpoks(a, b) {
@@ -952,7 +972,7 @@ $(document).ready(function() {
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
    "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
    "da1eedc0e39ea07b75bf": "Vintage White",
-   "26138cc1d500b0cf7334": "Renegade Platinum",
+   "bd7fc78f8fa2500dfcca": "Renegade Platinum",
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
@@ -1048,6 +1068,8 @@ $(document).ready(function() {
             }
             pokedex[pok]["bs"] = jsonPok["bs"]
             pokedex[pok]["types"] = jsonPok["types"]
+            if (jsonPok.hasOwnProperty("abilities"))
+                pokedex[pok]["abilities"] = jsonPok["abilities"]
         }
         load_js() 
         customSets = JSON.parse(localStorage.customsets);
@@ -1061,6 +1083,9 @@ $(document).ready(function() {
         $('.opposing').val(set)
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+        if ($('.info-group.opp > * > .forme').is(':visible')) {
+            $('.info-group.opp > * > .forme').change()
+        }
    })
 
    $(document).on('click', '.nav-tag', function() {
@@ -1138,14 +1163,17 @@ $(document).ready(function() {
 
 
 
-   $(document).on('click', '.trainer-pok.left-side', function() {
+    $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
         $('.player').val(set)
 
         $('.player').change()
         $('.player .select2-chosen').text(set)
+        if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
+            $('.info-group:not(.opp) > * > .forme').change()
+        }
         get_box()
-   })
+    })
 
-   
+
 })
