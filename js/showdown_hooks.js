@@ -981,7 +981,7 @@ $(document).ready(function() {
     }
 
     if (SOURCES[params.get('data')]) {
-        TITLE = SOURCES[params.get('data')]
+        TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
     }
