@@ -972,7 +972,7 @@ $(document).ready(function() {
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
    "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
    "da1eedc0e39ea07b75bf": "Vintage White",
-   "bd7fc78f8fa2500dfcca": "Renegade Platinum",
+   "26138cc1d500b0cf7334": "Renegade Platinum",
    "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
