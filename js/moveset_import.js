@@ -50,7 +50,12 @@ moveChanges = {
 		"Volt Tackle":  "Wild Charge"}
 }
 
-moveChanges["NONE"] = CHANGES
+if(typeof CHANGES === 'undefined') {
+	
+} else {
+	moveChanges["NONE"] = CHANGES
+}
+
 
 function placeBsBtn() {
 	var importBtn = "<button id='import' class='bs-btn bs-btn-default'>Import</button>";
