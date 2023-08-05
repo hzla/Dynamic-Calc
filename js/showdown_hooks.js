@@ -110,6 +110,17 @@ function get_trainer_poks(trainer_name)
             }    
         }
     }
+
+    if (matches.length == 0) {
+        for (i in TR_NAMES) {
+
+            if (TR_NAMES[i].includes(og_trainer_name)) {
+                if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+                   matches.push(TR_NAMES[i])
+                }    
+            }
+        }
+    }
     return matches
 }
 
@@ -1010,6 +1021,12 @@ $(document).ready(function() {
         SETDEX_SS = data["formatted_sets"]
         SETDEX_XY = data["formatted_sets"]
         TR_NAMES = get_trainer_names()
+        if ('move_changes' in data) {
+            CHANGES = data['move_changes']
+        } else {
+            CHANGES = {}
+        }
+
         
         jsonMoves = data["moves"]
         var jsonMove
