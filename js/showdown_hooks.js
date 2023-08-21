@@ -995,6 +995,8 @@ $(document).ready(function() {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+    } else {
+        TITLE = "NONE"
     }
 
     $(document).on('change', '.calc-select', function() {
