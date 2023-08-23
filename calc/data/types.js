@@ -446,10 +446,18 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
         Fairy: 1
     }
 });
-var DPP = XY;
-var BW = XY;
+
+
 var SM = XY;
 var SS = SM;
+
+console.log(type_chart)
+if (type_chart >= 6) {
+    BW = XY
+    DPP = XY
+    ADV = XY
+}
+
 exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 var Types = (function () {
     function Types(gen) {
@@ -495,6 +503,29 @@ var Type = (function () {
     return Type;
 }());
 var TYPES_BY_ID = [];
+
+// if (type_chart >= 6) {
+//     exports.TYPE_CHART[3].Dark.Steel = 1
+//     exports.TYPE_CHART[3].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[4].Dark.Steel = 1
+//     exports.TYPE_CHART[4].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[5].Dark.Steel = 1
+//     exports.TYPE_CHART[5].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[6].Dark.Steel = 1
+//     exports.TYPE_CHART[6].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[7].Dark.Steel = 1
+//     exports.TYPE_CHART[7].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[8].Dark.Steel = 1
+//     exports.TYPE_CHART[8].Ghost.Steel = 1
+
+// }
+
+
 try {
     for (var TYPE_CHART_1 = __values(exports.TYPE_CHART), TYPE_CHART_1_1 = TYPE_CHART_1.next(); !TYPE_CHART_1_1.done; TYPE_CHART_1_1 = TYPE_CHART_1.next()) {
         var typeChart = TYPE_CHART_1_1.value;
@@ -514,26 +545,6 @@ finally {
     finally { if (e_1) throw e_1.error; }
 }
 
-if (type_chart != 6) {
-    exports.TYPE_CHART[3].Dark.Steel = 1
-    exports.TYPE_CHART[3].Ghost.Steel = 1
-
-    exports.TYPE_CHART[4].Dark.Steel = 1
-    exports.TYPE_CHART[4].Ghost.Steel = 1
-
-    exports.TYPE_CHART[5].Dark.Steel = 1
-    exports.TYPE_CHART[5].Ghost.Steel = 1
-
-    exports.TYPE_CHART[6].Dark.Steel = 1
-    exports.TYPE_CHART[6].Ghost.Steel = 1
-
-    exports.TYPE_CHART[7].Dark.Steel = 1
-    exports.TYPE_CHART[7].Ghost.Steel = 1
-
-    exports.TYPE_CHART[8].Dark.Steel = 1
-    exports.TYPE_CHART[8].Ghost.Steel = 1
-
-}
 
 
 

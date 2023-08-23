@@ -1445,13 +1445,15 @@ function loadCustomList(id) {
 	});
 }
 
+var params = new URLSearchParams(window.location.search);
+var g = params.get('gen');
+damageGen = parseInt(params.get('dmgGen'))
+type_chart = parseInt(params.get('types'))
+switchIn = parseInt(params.get('switchIn'))
+challengeMode = params.get('challengeMode')
+
 $(document).ready(function () {
-	var params = new URLSearchParams(window.location.search);
-	var g = params.get('gen');
-	damageGen = parseInt(params.get('dmgGen'))
-	type_chart = parseInt(params.get('types'))
-	switchIn = parseInt(params.get('switchIn'))
-	challengeMode = params.get('challengeMode')
+	
 
 	if (!damageGen) {
 		damageGen = Math.min(parseInt(g),5)

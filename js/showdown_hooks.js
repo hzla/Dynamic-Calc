@@ -974,6 +974,14 @@ function get_type_info(pok_types) {
     return result
 }
 
+
+params = new URLSearchParams(window.location.search);
+g = params.get('gen');
+damageGen = parseInt(params.get('dmgGen'))
+type_chart = parseInt(params.get('types'))
+switchIn = parseInt(params.get('switchIn'))
+challengeMode = params.get('challengeMode')
+
 $(document).ready(function() {
    params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
