@@ -399,6 +399,27 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dark: 1,
         Steel: 0.5,
         Fairy: 2
+    },
+    Fairy: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 0.5,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 2,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 2,
+        Dark: 2,
+        Steel: 0.5,
+        Fairy: 1
     }
 });
 var ADV = GSC;
