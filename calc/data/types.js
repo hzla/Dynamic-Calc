@@ -342,22 +342,22 @@ var RBY = {
     }
 };
 var GSC = (0, util_1.extend)(true, {}, RBY, {
-    '???': { Dark: 1, Steel: 1 },
-    Normal: { Dark: 1, Steel: 0.5 },
-    Grass: { Dark: 1, Steel: 0.5 },
-    Fire: { Dark: 1, Steel: 2 },
-    Water: { Dark: 1, Steel: 1 },
-    Electric: { Dark: 1, Steel: 1 },
-    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5 },
-    Flying: { Dark: 1, Steel: 0.5 },
-    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5 },
-    Poison: { Bug: 1, Dark: 1, Steel: 0 },
-    Ground: { Dark: 1, Steel: 2 },
-    Rock: { Dark: 1, Steel: 0.5 },
-    Fighting: { Dark: 2, Steel: 2 },
-    Psychic: { Dark: 0, Steel: 0.5 },
-    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5 },
-    Dragon: { Dark: 1, Steel: 0.5 },
+    '???': { Dark: 1, Steel: 1, Fairy: 1 },
+    Normal: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Grass: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fire: { Dark: 1, Steel: 2, Fairy: 1 },
+    Water: { Dark: 1, Steel: 1, Fairy: 1 },
+    Electric: { Dark: 1, Steel: 1, Fairy: 1 },
+    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5, Fairy: 1 },
+    Flying: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5, Fairy: 0.5 },
+    Poison: { Bug: 1, Dark: 1, Steel: 0, Fairy: 2 },
+    Ground: { Dark: 1, Steel: 2, Fairy: 1 },
+    Rock: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fighting: { Dark: 2, Steel: 2, Fairy: 0.5 },
+    Psychic: { Dark: 0, Steel: 0.5, Fairy: 1 },
+    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5, Fairy: 1 },
+    Dragon: { Dark: 1, Steel: 0.5, Fairy: 0 },
     Dark: {
         '???': 1,
         Normal: 1,
@@ -376,7 +376,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Ghost: 2,
         Dragon: 1,
         Dark: 0.5,
-        Steel: 0.5
+        Steel: 0.5,
+        Fairy: 0.5
     },
     Steel: {
         '???': 1,
@@ -396,7 +397,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Ghost: 1,
         Dragon: 1,
         Dark: 1,
-        Steel: 0.5
+        Steel: 0.5,
+        Fairy: 2
     }
 });
 var ADV = GSC;
