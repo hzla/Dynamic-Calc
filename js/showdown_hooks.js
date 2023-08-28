@@ -996,7 +996,8 @@ $(document).ready(function() {
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
    "7a1ed35468b22ea01103": "Ancestral X",
-   "8c3ca30ba346734d5e4f": "Run & Bun"
+   "8c3ca30ba346734d5e4f": "Run & Bun",
+   "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire"
     }
 
     if (SOURCES[params.get('data')]) {
