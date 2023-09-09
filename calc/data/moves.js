@@ -806,6 +806,12 @@ var DPP_PATCH = {
         makesContact: true,
         category: 'Physical'
     },
+    'Shadow Rush': {
+        bp: 90,
+        type: 'Dark',
+        makesContact: true,
+        category: 'Physical'
+    },
     Avalanche: {
         bp: 60,
         type: 'Ice',
@@ -5012,7 +5018,15 @@ console.log(SS)
 var BW = SV
 var SM = SV
 var SS = SV
+
+if (damageGen == "gdCol") {
+   ADV = SV
+}
+
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+
+
+
 var Moves = (function () {
     function Moves(gen) {
         this.gen = gen;
