@@ -342,22 +342,22 @@ var RBY = {
     }
 };
 var GSC = (0, util_1.extend)(true, {}, RBY, {
-    '???': { Dark: 1, Steel: 1 },
-    Normal: { Dark: 1, Steel: 0.5 },
-    Grass: { Dark: 1, Steel: 0.5 },
-    Fire: { Dark: 1, Steel: 2 },
-    Water: { Dark: 1, Steel: 1 },
-    Electric: { Dark: 1, Steel: 1 },
-    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5 },
-    Flying: { Dark: 1, Steel: 0.5 },
-    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5 },
-    Poison: { Bug: 1, Dark: 1, Steel: 0 },
-    Ground: { Dark: 1, Steel: 2 },
-    Rock: { Dark: 1, Steel: 0.5 },
-    Fighting: { Dark: 2, Steel: 2 },
-    Psychic: { Dark: 0, Steel: 0.5 },
-    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5 },
-    Dragon: { Dark: 1, Steel: 0.5 },
+    '???': { Dark: 1, Steel: 1, Fairy: 1 },
+    Normal: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Grass: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fire: { Dark: 1, Steel: 2, Fairy: 1 },
+    Water: { Dark: 1, Steel: 1, Fairy: 1 },
+    Electric: { Dark: 1, Steel: 1, Fairy: 1 },
+    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5, Fairy: 1 },
+    Flying: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5, Fairy: 0.5 },
+    Poison: { Bug: 1, Dark: 1, Steel: 0, Fairy: 2 },
+    Ground: { Dark: 1, Steel: 2, Fairy: 1 },
+    Rock: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fighting: { Dark: 2, Steel: 2, Fairy: 0.5 },
+    Psychic: { Dark: 0, Steel: 0.5, Fairy: 1 },
+    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5, Fairy: 1 },
+    Dragon: { Dark: 1, Steel: 0.5, Fairy: 0 },
     Dark: {
         '???': 1,
         Normal: 1,
@@ -376,7 +376,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Ghost: 2,
         Dragon: 1,
         Dark: 0.5,
-        Steel: 0.5
+        Steel: 0.5,
+        Fairy: 0.5
     },
     Steel: {
         '???': 1,
@@ -396,7 +397,29 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Ghost: 1,
         Dragon: 1,
         Dark: 1,
-        Steel: 0.5
+        Steel: 0.5,
+        Fairy: 2
+    },
+    Fairy: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 0.5,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 2,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 2,
+        Dark: 2,
+        Steel: 0.5,
+        Fairy: 1
     }
 });
 var ADV = GSC;
@@ -446,10 +469,18 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
         Fairy: 1
     }
 });
-var DPP = XY;
-var BW = XY;
+
+
 var SM = XY;
 var SS = SM;
+
+console.log(type_chart)
+if (type_chart >= 6) {
+    BW = XY
+    DPP = XY
+    ADV = XY
+}
+
 exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 var Types = (function () {
     function Types(gen) {
@@ -495,6 +526,29 @@ var Type = (function () {
     return Type;
 }());
 var TYPES_BY_ID = [];
+
+// if (type_chart >= 6) {
+//     exports.TYPE_CHART[3].Dark.Steel = 1
+//     exports.TYPE_CHART[3].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[4].Dark.Steel = 1
+//     exports.TYPE_CHART[4].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[5].Dark.Steel = 1
+//     exports.TYPE_CHART[5].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[6].Dark.Steel = 1
+//     exports.TYPE_CHART[6].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[7].Dark.Steel = 1
+//     exports.TYPE_CHART[7].Ghost.Steel = 1
+
+//     exports.TYPE_CHART[8].Dark.Steel = 1
+//     exports.TYPE_CHART[8].Ghost.Steel = 1
+
+// }
+
+
 try {
     for (var TYPE_CHART_1 = __values(exports.TYPE_CHART), TYPE_CHART_1_1 = TYPE_CHART_1.next(); !TYPE_CHART_1_1.done; TYPE_CHART_1_1 = TYPE_CHART_1.next()) {
         var typeChart = TYPE_CHART_1_1.value;
@@ -514,26 +568,6 @@ finally {
     finally { if (e_1) throw e_1.error; }
 }
 
-if (type_chart != 6) {
-    exports.TYPE_CHART[3].Dark.Steel = 1
-    exports.TYPE_CHART[3].Ghost.Steel = 1
-
-    exports.TYPE_CHART[4].Dark.Steel = 1
-    exports.TYPE_CHART[4].Ghost.Steel = 1
-
-    exports.TYPE_CHART[5].Dark.Steel = 1
-    exports.TYPE_CHART[5].Ghost.Steel = 1
-
-    exports.TYPE_CHART[6].Dark.Steel = 1
-    exports.TYPE_CHART[6].Ghost.Steel = 1
-
-    exports.TYPE_CHART[7].Dark.Steel = 1
-    exports.TYPE_CHART[7].Ghost.Steel = 1
-
-    exports.TYPE_CHART[8].Dark.Steel = 1
-    exports.TYPE_CHART[8].Ghost.Steel = 1
-
-}
 
 
 

@@ -1,7 +1,8 @@
 moveChanges = {
 	'Ancestral X': 
 		{
-			"Stomp": "Ground Pound"
+			"Stomp": "Ground Pound",
+			"Needle Arm": "Grassy Dash"
 		},
 
 	'Blaze Black 2/Volt White 2 Redux':
@@ -48,6 +49,13 @@ moveChanges = {
 		"Twister":      "Hurricane",
 		"Volt Tackle":  "Wild Charge"}
 }
+
+if(typeof CHANGES === 'undefined') {
+	
+} else {
+	moveChanges["NONE"] = CHANGES
+}
+
 
 function placeBsBtn() {
 	var importBtn = "<button id='import' class='bs-btn bs-btn-default'>Import</button>";
@@ -202,6 +210,7 @@ function getStats(currentPoke, rows, offset) {
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
+		item = item.replace("’", "'");
 		if (calc.ITEMS[8].indexOf(item) != -1) {
 			return item;
 		}
@@ -217,6 +226,7 @@ function getMoves(currentPoke, rows, offset) {
 				movesFound = true;
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
 
+				console.log(TITLE)
 				if (moveChanges[TITLE]) {
 					if (moveChanges[TITLE][move]) {
 						move = moveChanges[TITLE][move]
@@ -357,7 +367,7 @@ function addSets(pokes, name) {
 function checkExeptions(poke) {
 	switch (poke) {
 	case 'Aegislash':
-		poke = "Aegislash-Blade";
+		poke = "Aegislash-Shield";
 		break;
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
@@ -384,6 +394,18 @@ function checkExeptions(poke) {
 	case 'Vivillon-Fancy':
 	case 'Vivillon-Pokeball':
 		poke = "Vivillon";
+		break;
+	case 'Flabébé-White':
+	case 'Flabébé-Blue':
+	case 'Flabébé-Orange':
+	case 'Flabébé-Yellow':
+		poke = "Flabébé";
+		break;
+	case 'Floette-White':
+	case 'Floette-Blue':
+	case 'Floette-Orange':
+	case 'Floette-Yellow':
+		poke = "Floette";
 		break;
 	case 'Florges-White':
 	case 'Florges-Blue':

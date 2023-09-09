@@ -757,16 +757,12 @@ $(".forme").change(function () {
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
-	if (isAltForme && abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
-		container.find(".ability").val(altForme.ab);
+	if (chosenSet) {
+		container.find(".ability").val(chosenSet.ability);
+	} else if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
+		container.find(".ability").val(altForme.abilities[0]);
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
-	} else if (chosenSet) {
-		if (!isRandoms) {
-			container.find(".abilities").val(chosenSet.ability);
-		} else {
-			container.find(".ability").val(chosenSet.abilities[0]);
-		}
 	}
 	container.find(".ability").keyup();
 
@@ -1449,13 +1445,15 @@ function loadCustomList(id) {
 	});
 }
 
+var params = new URLSearchParams(window.location.search);
+var g = params.get('gen');
+damageGen = parseInt(params.get('dmgGen'))
+type_chart = parseInt(params.get('types'))
+switchIn = parseInt(params.get('switchIn'))
+challengeMode = params.get('challengeMode')
+
 $(document).ready(function () {
-	var params = new URLSearchParams(window.location.search);
-	var g = params.get('gen');
-	damageGen = parseInt(params.get('dmgGen'))
-	type_chart = parseInt(params.get('types'))
-	switchIn = parseInt(params.get('switchIn'))
-	challengeMode = params.get('challengeMode')
+	
 
 	if (!damageGen) {
 		damageGen = Math.min(parseInt(g),5)
