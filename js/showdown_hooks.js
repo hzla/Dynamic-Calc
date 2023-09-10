@@ -553,7 +553,7 @@ function get_next_in_pkem() {
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
         var kills = false
         var faster = false
-        var reasoning = ""
+        
         var gets_ohkod = false
         var highest_dmg_dealt = 0
         var highest_dmg_taken = 0
@@ -562,6 +562,7 @@ function get_next_in_pkem() {
 
 
         var pok_name = trainer_poks[i].split(" (")[0]
+        var reasoning = `${pok_name}: `
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
