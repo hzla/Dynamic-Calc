@@ -1001,7 +1001,7 @@ $(document).ready(function() {
    "7a1ed35468b22ea01103": "Ancestral X",
    "8c3ca30ba346734d5e4f": "Run & Bun",
    "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
-   "00734d33040067eb7e9f": "Grand Colloseum"
+   "00734d33040067eb7e9f": "Grand Colloseum 2.0"
     }
 
     if (SOURCES[params.get('data')]) {
