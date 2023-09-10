@@ -410,6 +410,49 @@ html, body {
     justify-content: space-between;
 }
 
+#player-poks-filter {
+    margin-left:  12px;
+    margin-bottom:  20px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+}
+
+#min-dealt-label {
+    color:  #ff5555;
+}
+
+#max-taken-label {
+    color:  #6272a4;
+}
+
+.trainer-pok.left-side.killer {
+    background: rgba(255, 85, 85, 0.4);
+}
+
+.trainer-pok.left-side.defender {
+    background:  rgba(98, 114, 164, 1);
+    border: 10px solid rgba(98, 114, 164, 1);
+    border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+}
+
+.trainer-pok.left-side.killer.defender {
+    background:  rgba(255, 85, 85, 0.4);
+    border: 10px solid rgba(98, 114, 164, 1);
+}
+
+.filter-desc {
+    width:  380px;
+}
+
+.filter-row input {
+    margin-left: 20px;
+}
+
+
+
 
 
 .trainer-pok {
@@ -487,6 +530,10 @@ html, body {
     color: #ff5555;
 }
 
+.gone {
+    display:  none !important;
+}
+ 
 
 
 
@@ -495,7 +542,7 @@ html, body {
 
 }
 
-.trainer-pok-container:first-child {
+.trainer-pok-container.hl-enabled:first-child {
     border: 1px solid #ff5555;
     border-radius:  10px;
 }
@@ -742,6 +789,20 @@ th {
     border-radius: 6px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+#toggle-analysis {
+    font-size: 16px;
+    font-weight: 400;
+    background: #bd93f9;
+    padding: 5px;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-top:  20px;
+    width:  124px;
+    cursor: pointer;
+    margin-bottom:  20px;
+
 }
 
 .results-right > div > span {

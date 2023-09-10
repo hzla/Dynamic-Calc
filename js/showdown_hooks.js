@@ -95,13 +95,11 @@ function get_trainer_poks(trainer_name)
 
     var og_trainer_name = trainer_name.split(/Lvl \d+ /)[1]
 
-    console.log(trainer_name)
 
     if (og_trainer_name) {
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
-    console.log(og_trainer_name)
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name + " ")) {
@@ -115,6 +113,7 @@ function get_trainer_poks(trainer_name)
         for (i in TR_NAMES) {
 
             if (TR_NAMES[i].includes(og_trainer_name)) {
+                
                 if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }    
@@ -122,6 +121,82 @@ function get_trainer_poks(trainer_name)
         }
     }
     return matches
+}
+
+function box_rolls() {
+    var box = get_box()
+
+    var dealt_min_roll = $("#min-dealt").val()
+    var taken_max_roll = $("#max-taken").val()
+
+    if ($("#min-dealt").val() == "" && $("#max-taken").val() == "") {
+        return
+    }
+
+
+    if ($("#min-dealt").val() == "") {
+        $("#min-dealt").val(100)
+        dealt_min_roll=100
+    } 
+
+    if ($("#max-taken").val() == "") {
+        $("#max-taken").val(0)
+        taken_max_roll=0
+    }
+
+    
+
+    $('.killer').removeClass('killer')
+    $('.defender').removeClass('defender')
+
+    var p1field = createField();
+    var p2field = p1field.clone().swap();
+
+    var p1info = $("#p2");
+    var p1 = createPokemon(p1info);
+    var p1hp = $('#p2').find('#currentHpL1').val()
+
+
+    var killers = []
+    var defenders = []
+
+
+
+    for (m = 0; m < box.length; m++) {
+        var mon = createPokemon(box[m])
+
+        var monHp = mon.originalCurHP
+
+        var all_results = calculateAllMoves(damageGen, p1, p1field, mon, p2field, false);
+        var opposing_results = all_results[0]
+        var player_results = all_results[1]
+
+        var defend_count = 0
+
+        console.log(opposing_results)
+
+        for (j = 0; j < 4; j++) {
+            player_dmg = player_results[j].damage
+
+            if (can_kill(player_dmg, p1hp * dealt_min_roll / 100)) {
+                killers.push({"set": box[m], "move": player_results[j].move.originalName})
+                $(`.trainer-pok[data-id='${box[m]}']`).addClass('killer')
+            }
+
+            opposing_dmg = opposing_results[j].damage
+
+            if (!can_kill(opposing_dmg, monHp * taken_max_roll / 100)) {
+                defend_count += 1
+                if (defend_count == 4) {
+                    defenders.push({"set": box[m], "move": opposing_results[j].move.originalName})
+                    $(`.trainer-pok[data-id='${box[m]}']`).addClass('defender')
+                }         
+            }
+        }
+    }
+
+    return {"killers": killers, "defenders": defenders}
+    
 }
 
 
@@ -136,7 +211,7 @@ function get_next_in_g3() {
 
     var type_names = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
              "Fighting", "Poison", "Ground", "Flying", "Psychic",
-             "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","None"]
+             "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","???"]
 
     var type_chart = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1,1],
             [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1,1],
@@ -167,7 +242,9 @@ function get_next_in_g3() {
     var player_type1 = $('.type1').first().val()
     var player_type1_index = type_names.indexOf(player_type1)
     var player_type2 = $('.type2').first().val() 
-    
+
+
+
 
     var player_pok = $('.set-selector.player')[1].value.substring(0, $('.set-selector.player')[1].value.indexOf(" ("))
 
@@ -206,7 +283,7 @@ function get_next_in_g3() {
         var type2_index = type_names.indexOf(type2)
 
         var pok_data = SETDEX_BW[pok_name][tr_name]
-        console.log(SETDEX_BW[pok_name][tr_name]["sub_index"])
+
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
         var effectiveness = 10
@@ -274,7 +351,9 @@ function get_next_in_g3() {
             }     
         }
     }
-    return [se_mons, se_status_mons, stab_mons]
+
+    return se_mons.concat(se_status_mons).concat(stab_mons)
+    // [se_mons, se_status_mons, stab_mons]
 }
 
 function get_next_in_g4() {
@@ -384,7 +463,7 @@ function get_next_in_g4() {
         }
 
         p2 = createPokemon(p2info, pok_data["moves"])
-        var results = calculateAllMoves(4, p1, p1field, p2, p2field, false)[1];
+        var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
 
         var highestDamage = 0
         for (n in results) {
@@ -394,7 +473,7 @@ function get_next_in_g4() {
             } else {
                 dmg = results[n].damage[0]
             }
-            // console.log(dmg)
+
 
             if (dmg > highestDamage) {
                 highestDamage = dmg
@@ -405,7 +484,7 @@ function get_next_in_g4() {
         }
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage])
     }
-    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }
 
@@ -417,7 +496,7 @@ function can_kill(damages, hp) {
             kill_count += 1
         }
     }
-    return (kill_count >= 8)
+    return (kill_count >= 16)
 }
 
 // check if ai mon highest roll kills player
@@ -487,11 +566,11 @@ function get_next_in_pkem() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         
-        // console.log("%%%%%%%%%%")
-        // console.log(trainer_poks[i].slice(0,-3))
+
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
+
         
-        var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
+        var all_results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false);
         var results = all_results[1]
         var player_results = all_results[0]
 
@@ -505,7 +584,7 @@ function get_next_in_pkem() {
         if (p2.rawStats.spe >= p1speed ) {
             faster = true
             score += 1
-            reasoning += "Faster +1, "
+            reasoning += "Faster, "
         }
 
         // check rolls against trainer poks
@@ -531,27 +610,26 @@ function get_next_in_pkem() {
             // add 4 if kills, add +2 if revenge kill
             
 
-            // console.log([dmg, tr_hp])
-            // console.log(player_results[n])
+
             if (can_topkill(dmg, tr_hp) && !p2.hasItem('Focus Sash') && p2.ability != "Sturdy") {
                 gets_ohkod = true
                 score -= 3
-                skip_player_calcs = true
-                reasoning += `killed by ${player_results[n].move.name} -3, ` 
-                break
+                // skip_player_calcs = true
+                reasoning += `killed by ${player_results[n].move.name}, ` 
+                // break
                                     
             } 
         } 
 
         if (["Ditto", "Wynaut", "Wobbuffet"].includes(p2.species.name) && !skip_player_calcs) {
             score += 2
-            reasoning = "Special Pok +2, "
+            // reasoning = "Special Pok +2, "
             skip_player_calcs = true
         }
 
 
         //  check rolls against player pok        
-        if (!skip_player_calcs) {
+        if (true) {
             for (let n = 0; n < 4; n++) {
                 var dmg = 0
 
@@ -575,8 +653,8 @@ function get_next_in_pkem() {
                     var kills = true
                     score += 4
                     skip_dmg_calcs = true
-                    reasoning += `${results[n].move.name} kills +4, `
-                    break       
+                    reasoning += `${results[n].move.name} kills, `
+                    // break       
                 } 
             }
         }
@@ -586,15 +664,15 @@ function get_next_in_pkem() {
 
         if (highest_dmg_taken < highest_dmg_dealt && !skip_player_calcs && !skip_dmg_calcs) {
             score += 2
-            reasoning += 'deals more dmg than taken +2, '
+            // reasoning += 'deals more dmg than taken, '
         }
 
 
         score -= (sub_index / 100) 
-        reasoning += `Final Score: ${score}`
+        // reasoning += `Final Score: ${score}`
         ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
     }
-    console.log(ranked_trainer_poks)
+
     RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
     return RR_SORTED
 }
@@ -679,7 +757,8 @@ function get_next_in_cfru() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
-        var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
+
+        var all_results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false);
         var results = all_results[1]
         var player_results = all_results[0]
 
@@ -700,34 +779,34 @@ function get_next_in_cfru() {
                 if (kill_found) {
                     reasoning += `killing with ${results[n].move.name}, `
                 } else {
-                    reasoning += `+4 killing with ${results[n].move.name}, `
+                    reasoning += `kills with ${results[n].move.name}, `
                 }
                 
                 kill_found = true
 
-                if (["Moxie", "Soul Heart","Beast Boost", "Shadow Tag"].includes(p2.ability) ) {
-                    var revenge_kills = true
-                    reasoning += `+2 from boosting ability, `
-                }
+                // if (["Moxie", "Soul Heart","Beast Boost", "Shadow Tag"].includes(p2.ability) ) {
+                //     var revenge_kills = true
+                //     reasoning += `+2 from boosting ability, `
+                // }
 
-                if (p1.ability != "Levitate" && !p1.types.includes("Flying") && (p2.ability == "Arena Trap")) {
-                     var revenge_kills = true
-                    reasoning += `+2 from trapping ability, `
-                }
+                // if (p1.ability != "Levitate" && !p1.types.includes("Flying") && (p2.ability == "Arena Trap")) {
+                //      var revenge_kills = true
+                //     reasoning += `+2 from trapping ability, `
+                // }
 
-                if (p2.ability == "Magnet Pull" && p1.types.includes("Steel")) {
-                    var revenge_kills = true
-                    reasoning += `+2 from Magnet Pull trap, `
-                }
+                // if (p2.ability == "Magnet Pull" && p1.types.includes("Steel")) {
+                //     var revenge_kills = true
+                //     reasoning += `+2 from Magnet Pull trap, `
+                // }
 
                 if (results[n].move.priority >= 1) {
                     var revenge_kills = true
-                    reasoning += `+2 from priority kill with ${results[n].move.name}, `
+                    reasoning += `priority kill with ${results[n].move.name}, `
                 }
             } else { // add +1 if non kill and super effective
                 if ( (results[n].move.category != "Status") && type_info[results[n].move.type] > 1 && !kills ) {
                     is_se = true
-                    reasoning += `+1 from non kill super effective ${results[n].move.name}, `
+                    reasoning += `non kill super effective ${results[n].move.name}, `
                 }
             }
         }
@@ -766,11 +845,11 @@ function get_next_in_cfru() {
         }
 
         if (full_resist) {
-            reasoning += "+4 from full resist, "
+            reasoning += "full resist, "
         }
 
         if (is_weak) {
-            reasoning += "-1 from being weak to move, "
+            reasoning += "weak to move, "
         }
 
         // check if trainer def > player highest offensive stat
@@ -787,7 +866,7 @@ function get_next_in_cfru() {
             }
             is_wall = (trainer_def > player_offense)
             if (is_wall) {
-               reasoning += "+2 from walling" 
+               reasoning += "walls you" 
             }         
         }
 
@@ -803,12 +882,12 @@ function get_next_in_cfru() {
         }
         score -= (sub_index / 100) 
 
-        reasoning += `, Final Score: ${score}`
+        // reasoning += `, Final Score: ${score}`
 
         ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
     }
 
-    console.log(ranked_trainer_poks)
+
     RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
 
     return RR_SORTED
@@ -822,11 +901,12 @@ function get_current_in() {
     var pok_name = setInfo.split(" (")[0]
     var tr_name = setInfo.split(" (")[1].replace(")", "").split("[")[0]
 
+    // box_rolls()
     return SETDEX_BW[pok_name][tr_name]
 }
 
 function get_next_in() {
-    console.log("refreshing switch ins")
+
     if (switchIn == 4) {
         return get_next_in_g4()
     }
@@ -839,9 +919,19 @@ function get_next_in() {
         return get_next_in_pkem()
     }
 
+    if (switchIn == 3) {
+        return get_next_in_g3()
+    }
+
+    
+
+
+    
+
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
+
 
     var trainer_poks = CURRENT_TRAINER_POKS
     var player_type1 = $('.type1').first().val()
@@ -887,7 +977,7 @@ function get_next_in() {
         }
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
-    console.log(ranked_trainer_poks)
+
     ranked_trainer_poks.sort(sort_trpoks)
     
     // Auto-sorts Megas to come out last - this should only run on switchIn=5
@@ -979,11 +1069,15 @@ function get_type_info(pok_types) {
 params = new URLSearchParams(window.location.search);
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
-console.log(damageGen)
 type_chart = parseInt(params.get('types'))
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
 misc = params.get('misc')
+analyze = false
+
+if (switchIn != 11) {
+    $('#toggle-analysis').addClass('gone')
+}  
 
 $(document).ready(function() {
    params = new URLSearchParams(window.location.search)
@@ -1001,7 +1095,8 @@ $(document).ready(function() {
    "7a1ed35468b22ea01103": "Ancestral X",
    "8c3ca30ba346734d5e4f": "Run & Bun",
    "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
-   "00734d33040067eb7e9f": "Grand Colloseum 2.0"
+   "00734d33040067eb7e9f": "Grand Colloseum 2.0",
+   "24bbfc0e69ff4a5c006b": "Emerald Kaizo"
     }
 
     if (SOURCES[params.get('data')]) {
@@ -1067,7 +1162,7 @@ $(document).ready(function() {
             }
             moves[move]["bp"] = jsonMove["basePower"]
             
-            // console.log(move)
+            console.log(move)
             MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 
@@ -1119,6 +1214,7 @@ $(document).ready(function() {
         if ($('.info-group.opp > * > .forme').is(':visible')) {
             $('.info-group.opp > * > .forme').change()
         }
+        box_rolls()
    })
 
    $(document).on('click', '.nav-tag', function() {
@@ -1126,6 +1222,10 @@ $(document).ready(function() {
         $('.opposing').val(set)
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
+   })
+
+   $(document).on('click', '.select2-result-label', function() {
+        setTimeout(1, box_rolls())
    })
 
 
@@ -1136,9 +1236,21 @@ $(document).ready(function() {
         $('.panel:not(.panel-mid)').toggleClass('third')
    })
 
+
+   $(document).on('click', '#toggle-analysis', function() {
+        $('#reasoning').toggleClass('gone')
+   })
+
    $(document).on('click', '#show-ai', function() {
         $("#ai-container").toggle()
 
+   })
+
+   $(document).on('focusout', '.filter-row input', function() {
+        
+        
+
+        box_rolls($("#min-dealt").val(), $("#max-taken").val())
    })
 
    $(document).on('click', '.results-right label', function() {
@@ -1149,7 +1261,7 @@ $(document).ready(function() {
         }
 
         var effect_code = parseInt(jsonMoves[move]["e_id"])
-        // console.log(effect_code)
+
 
         var ai_content = expertAI[effect_code]
 
@@ -1172,19 +1284,19 @@ $(document).ready(function() {
 
 
    $(document).on('keyup', '.current-hp, .percent-hp', function() {
-        console.log("hp changed")
+
         refresh_next_in()
    })
 
    // $(document).click(function() {
-   //      console.log("move selected")
+
    //      setTimeout(function(){$($('.set-selector')[1]).change()},100);   
    // })
 
    $(window).click(function(event) {
 
         if ($('.select2-drop:visible').length == 0) {
-            console.log("changing")
+
            refresh_next_in()
 
         }
@@ -1206,6 +1318,13 @@ $(document).ready(function() {
             $('.info-group:not(.opp) > * > .forme').change()
         }
         get_box()
+        box_rolls()
+    })
+
+    $(document).on('change', '#p2 .poke-sprite', function() {
+        $('.killer').removeClass('killer')
+        $('.defender').removeClass('defender')
+
     })
 
 

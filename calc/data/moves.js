@@ -560,7 +560,13 @@ var ADV_PATCH = {
     Superpower: { bp: 120, type: 'Fighting', self: { boosts: { atk: -1, def: -1 } }, makesContact: true },
     'Water Pulse': { bp: 60, type: 'Water' },
     'Water Spout': { bp: 150, type: 'Water', target: 'allAdjacentFoes' },
-    Yawn: { bp: 0, category: 'Status', type: 'Normal' }
+    Yawn: { bp: 0, category: 'Status', type: 'Normal' },
+    'Head Smash': {
+        bp: 150,
+        type: 'Rock',
+        recoil: [1, 2],
+        makesContact: true
+    }
 };
 var ADV = (0, util_1.extend)(true, {}, GSC, ADV_PATCH);
 var DPP_PATCH = {

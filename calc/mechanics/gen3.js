@@ -30,6 +30,24 @@ var items_1 = require("../items");
 var result_1 = require("../result");
 var util_1 = require("./util");
 function calculateADV(gen, attacker, defender, move, field) {
+    if (type_chart == 3) {
+        
+        if ((move.hasType('Normal', 'Fighting', 'Flying', 'Ground', 'Rock', 'Bug', 'Ghost', 'Poison', 'Steel'))) {
+            isPhysical = true
+            move.category = 'Physical'
+
+        } 
+        if ((move.hasType('Water', 'Grass', 'Fire', 'Ice', 'Electric', 'Psychic', 'Dragon', 'Dark'))) {
+            isPhysical = false
+            move.category = "Special"
+
+        }
+    }
+
+
+
+
+
     (0, util_1.checkAirLock)(attacker, field);
     (0, util_1.checkAirLock)(defender, field);
     (0, util_1.checkForecast)(attacker, field.weather);
@@ -125,6 +143,8 @@ function calculateADV(gen, attacker, defender, move, field) {
         return result;
     }
     var isPhysical = move.category === 'Physical';
+    
+    
     var attackStat = isPhysical ? 'atk' : 'spa';
     desc.attackEVs = (0, util_1.getEVDescriptionText)(gen, attacker, attackStat, attacker.nature);
     var defenseStat = isPhysical ? 'def' : 'spd';
@@ -288,6 +308,7 @@ function calculateADV(gen, attacker, defender, move, field) {
     for (var i = 85; i <= 100; i++) {
         result.damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
     }
+
     return result;
 }
 exports.calculateADV = calculateADV;

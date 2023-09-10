@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96d" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c96e" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -54,18 +54,18 @@
         </span>
         <select class="calc-select">
             <option selected="selected">Other Romhacks</option>
-
+             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=24bbfc0e69ff4a5c006b&dmgGen=3&gen=8&switchIn=11&types=3">Emerald Kaizo</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=9aa37533b7c000992d92&gen=5&types=5">Blaze Black</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=11c4eeca5a94f8edf413&gen=8&types=6">Blaze Black 2 Redux</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=11c4eeca5a94f8edf413&gen=8&challengeMode=true&types=6">Blaze Black 2 Redux Challenge Mode</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=945a33720dbd6bc04488&gen=8&types=6">Blaze Black 2 Redux 1.4</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=945a33720dbd6bc04488&gen=8&challengeMode=true&types=6">Blaze Black 2 Redux Challenge Mode 1.4</option>
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=da1eedc0e39ea07b75bf&gen=5&types=5">Vintage White</option>
-            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6">Renegade Platinum</option> 
-            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=03e577af7cc9856a1f42&gen=7&switchIn=4&types=5">Sacred Gold/Storm Silver</option>  
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6&dmgGen=4">Renegade Platinum</option> 
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=03e577af7cc9856a1f42&gen=7&switchIn=4&types=5&dmgGen=4">Sacred Gold/Storm Silver</option>  
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=f109940e5639c3702e6d&dmgGen=6&gen=6&types=6">Rising Ruby/Sinking Saphire</option> 
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=7a1ed35468b22ea01103&dmgGen=6&gen=6">Ancestral X</option>   
-            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=8c3ca30ba346734d5e4f&gen=8&dmgGen=5&switchIn=11&types=6">Run & Bun</option>  
+            <option data-source="https://hzla.github.io/Dynamic-Calc/?data=8c3ca30ba346734d5e4f&gen=8&dmgGen=8&switchIn=11&types=6">Run & Bun</option>  
             <option data-source="https://hzla.github.io/Dynamic-Calc/?data=00734d33040067eb7e9f&dmgGen=3&gen=8&switchIn=3&misc=Orre&types=6">Grand Colloseum 2.0</option>   
 
 
@@ -498,12 +498,28 @@
             <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
             <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
 
+
+           
+
             <div class="trainer-poks ">
 
                 <div class="trainer-pok-list player-poks">
 
                 </div>
             </div>
+
+             <div id="player-poks-filter">
+                <div class="filter-row">
+                    <div class="filter-desc" id="min-dealt-label">Search Minimum % Dealt: </div>
+                    <input id="min-dealt"/>
+                </div>
+
+                <div class="filter-row">
+                    <div class="filter-desc" id="max-taken-label">Search Maximum % Taken: </div>
+                    <input id="max-taken"/>
+                </div>
+            </div>
+
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
@@ -1398,6 +1414,8 @@
                     
                 </div>
 
+
+
             </div>
              <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -1519,6 +1537,8 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
+
+            <div id="toggle-analysis">Toggle Analysis</div>
         </fieldset>
     </div>
     </div>
@@ -1549,14 +1569,14 @@
     
 
     <script type="text/javascript" src="./js/data/sets/gen4.js?57f6a821"></script>
-    <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5a"></script>
+    <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100046"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100047"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17a"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?c1788574"></script>
-    <script type="text/javascript" src="./calc/data/moves.js?dcd8d221"></script>
+    <script type="text/javascript" src="./calc/data/moves.js?dcd8d222"></script>
     <script type="text/javascript" src="./calc/data/items.js?4724e4b2"></script>
     <script type="text/javascript" src="./calc/data/index.js?083d2bc9"></script>
     <script type="text/javascript" src="./calc/move.js?de87e36d"></script>
@@ -1575,7 +1595,7 @@
     <script type="text/javascript" src="./calc/result.js?d5c7552c"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?0b3ea036"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?0b3ea037"></script>
 
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f4"></script>
     <script type="text/javascript" src="./js/moveset_import.js?a7071f61"></script>
