@@ -207,7 +207,8 @@ function calculateADV(gen, attacker, defender, move, field) {
         bp = Math.floor(bp * 1.5);
         desc.attackerAbility = attacker.ability;
     }
-    if (move.named('Explosion', 'Self-Destruct')) {
+    if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion')) {
+        console.log("asdf")
         df = Math.floor(df / 2);
     }
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
@@ -243,7 +244,13 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.isSwitching = 'out';
     }
     if (field.gameType !== 'Singles' && move.target === 'allAdjacentFoes') {
-        baseDamage = Math.floor(baseDamage / 2);
+        if (gen >= 4) {
+            baseDamage = Math.floor(baseDamage * 0.75);
+            console.log("0.75 not half")
+        } else {
+            baseDamage = Math.floor(baseDamage / 2);
+        }
+        
     }
     if ((field.hasWeather('Sun') && move.hasType('Fire')) ||
         (field.hasWeather('Rain') && move.hasType('Water'))) {

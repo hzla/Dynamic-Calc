@@ -485,6 +485,9 @@ exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 var Types = (function () {
     function Types(gen) {
         this.gen = gen;
+        if (this.gen == 12) {
+            this.gen = 3
+        }
     }
     Types.prototype.get = function (id) {
         return TYPES_BY_ID[this.gen][id];

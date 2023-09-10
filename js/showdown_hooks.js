@@ -206,6 +206,7 @@ function get_next_in_g3() {
         var type2_index = type_names.indexOf(type2)
 
         var pok_data = SETDEX_BW[pok_name][tr_name]
+        console.log(SETDEX_BW[pok_name][tr_name]["sub_index"])
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
         var effectiveness = 10
@@ -486,8 +487,8 @@ function get_next_in_pkem() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         
-        console.log("%%%%%%%%%%")
-        console.log(trainer_poks[i].slice(0,-3))
+        // console.log("%%%%%%%%%%")
+        // console.log(trainer_poks[i].slice(0,-3))
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
         
         var all_results = calculateAllMoves(4, p1, p1field, p2, p2field, false);
@@ -530,8 +531,8 @@ function get_next_in_pkem() {
             // add 4 if kills, add +2 if revenge kill
             
 
-            console.log([dmg, tr_hp])
-            console.log(player_results[n])
+            // console.log([dmg, tr_hp])
+            // console.log(player_results[n])
             if (can_topkill(dmg, tr_hp) && !p2.hasItem('Focus Sash') && p2.ability != "Sturdy") {
                 gets_ohkod = true
                 score -= 3
@@ -978,9 +979,11 @@ function get_type_info(pok_types) {
 params = new URLSearchParams(window.location.search);
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
+console.log(damageGen)
 type_chart = parseInt(params.get('types'))
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
+misc = params.get('misc')
 
 $(document).ready(function() {
    params = new URLSearchParams(window.location.search)
@@ -997,7 +1000,8 @@ $(document).ready(function() {
    "b6e2693147e215f10f4a": "Radical Red 3.02",
    "7a1ed35468b22ea01103": "Ancestral X",
    "8c3ca30ba346734d5e4f": "Run & Bun",
-   "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire"
+   "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
+   "00734d33040067eb7e9f": "Grand Colloseum"
     }
 
     if (SOURCES[params.get('data')]) {
@@ -1063,6 +1067,7 @@ $(document).ready(function() {
             }
             moves[move]["bp"] = jsonMove["basePower"]
             
+            // console.log(move)
             MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 
@@ -1144,7 +1149,7 @@ $(document).ready(function() {
         }
 
         var effect_code = parseInt(jsonMoves[move]["e_id"])
-        console.log(effect_code)
+        // console.log(effect_code)
 
         var ai_content = expertAI[effect_code]
 

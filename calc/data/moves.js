@@ -5031,8 +5031,11 @@ var BW = SV
 var SM = SV
 var SS = SV
 
-if (damageGen == "gdCol") {
+
+// 12 for grand colloseum
+if (damageGen == 12) {
    ADV = SV
+   console.log("this triggered")
 }
 
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];

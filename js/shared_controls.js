@@ -504,9 +504,14 @@ $(".set-selector").change(function () {
 						$(`#ai${n + 1}`).hide()
 					}
 				}
+
 				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
 					$('#singles-format').click()
 				} else {
+					$('#doubles-format').click()
+				}
+
+				if (misc == "Orre") {
 					$('#doubles-format').click()
 				}
 				$('#trainer-sprite').attr('src', `./img/${sprite}`)

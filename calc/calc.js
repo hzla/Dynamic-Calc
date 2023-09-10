@@ -24,6 +24,9 @@ function calculate(gen, attacker, defender, move, field) {
     //     gen.num = 5
     // }
 
+    if (damageGen == 12) {
+        return MECHANICS[3](gen, attacker.clone(), defender.clone(), move.clone(), field ? field.clone() : new field_1.Field());
+    }
     return MECHANICS[gen.num](gen, attacker.clone(), defender.clone(), move.clone(), field ? field.clone() : new field_1.Field());
 }
 exports.calculate = calculate;
