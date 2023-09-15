@@ -155,15 +155,24 @@ function box_rolls() {
     var p1info = $("#p2");
     var p1 = createPokemon(p1info);
     var p1hp = $('#p2').find('#currentHpL1').val()
+    var p1speed = parseInt($('.total.totalMod')[1].innerHTML)
+
 
 
     var killers = []
     var defenders = []
+    var faster = []
 
 
 
     for (m = 0; m < box.length; m++) {
         var mon = createPokemon(box[m])
+        var monSpeed = mon.rawStats.spe
+
+        if (monSpeed > p1speed) {
+            faster.push({"set": box[m]})
+            $(`.trainer-pok[data-id='${box[m]}']`).addClass('faster')
+        }
 
         var monHp = mon.originalCurHP
 
@@ -173,7 +182,9 @@ function box_rolls() {
 
         var defend_count = 0
 
-        console.log(opposing_results)
+
+
+        
 
         for (j = 0; j < 4; j++) {
             player_dmg = player_results[j].damage
@@ -195,7 +206,9 @@ function box_rolls() {
         }
     }
 
-    return {"killers": killers, "defenders": defenders}
+    console.log(faster)
+
+    return {"killers": killers, "defenders": defenders, "faster": faster}
     
 }
 

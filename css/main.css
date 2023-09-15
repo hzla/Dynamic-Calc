@@ -428,6 +428,14 @@ html, body {
     color:  #6272a4;
 }
 
+#faster-label {
+    color:  #f1fa8c;
+}
+
+.faster {
+    box-shadow: inset 0 0 0 10px #f1fa8c;
+}
+
 .trainer-pok.left-side.killer {
     background: rgba(255, 85, 85, 0.4);
 }
