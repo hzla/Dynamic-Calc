@@ -1,8 +1,23 @@
 moveChanges = {
 	'Ancestral X': 
 		{
-			"Stomp": "Ground Pound",
-			"Needle Arm": "Grassy Dash"
+			"Fury Attack"	:	"Scorching Swarm",
+			"Scratch"			:	"Breaking Swipe",
+			"Fairy Wind"	:	"Spirit Break",
+			"Vice Grip"		:	"Tussle",
+			"Wing Attack"	:	"Dual Wingbeat",
+			"Needle Arm"	:	"Trailblaze",
+			"Vine Whip"		:	"Trop Kick",
+			"Stomp"				:	"Ground Pound",
+			"Horn Attack"	:	"Headlong Rush",
+			"Powder Snow"	:	"Ice Hammer",
+			"Bind"				:	"Esper Wing",
+			"Rolling Kick":	"Fate's Flourish",
+			"Rock Throw"	:	"Accelerock",
+			"Double Slap"	:	"Steel Beam",
+			"Lick"				:	"Aqua Step",
+			"Water Gun"		:	"Chilling Water",
+			"Pound"				:	"Wave Crash"
 		},
 
 	'Blaze Black 2/Volt White 2 Redux':

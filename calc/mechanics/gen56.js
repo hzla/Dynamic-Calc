@@ -249,7 +249,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             break;
         case 'Stored Power':
         case 'Power Trip':
-            basePower = 20 + 20 * (0, util_2.countBoosts)(gen, attacker.boosts);
+            basePower = basePower + 20 * (0, util_2.countBoosts)(gen, attacker.boosts);
             desc.moveBP = basePower;
             break;
         case 'Acrobatics':

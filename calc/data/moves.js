@@ -1959,19 +1959,120 @@ var XY_PATCH = {
     'Topsy-Turvy': { bp: 0, type: 'Dark' },
     'Trick-or-Treat': { bp: 0, type: 'Ghost' },
     'Venom Drench': { bp: 0, type: 'Poison', target: 'allAdjacentFoes' },
+		'Scorching Swarm': {
+			bp: 110,
+			type: 'Bug',
+			category: 'Special',
+			secondaries: true
+		},
+		'Breaking Swipe': {
+			bp: 60,
+			type: 'Dragon',
+			category: 'Physical',
+			target: 'allAdjacentFoes',
+			makesContact: true,
+			secondaries: true
+		},
+		'Spirit Break': {
+			bp: 75,
+			type: 'Fairy',
+			category: 'Physical',
+			makesContact: true,
+			secondaries: true
+		},
+		'Tussle': {
+			bp: 50,
+			type: 'Fairy',
+			category: 'Physical',
+			makesContact: true,
+			secondaries: true
+		},
+		'Dual Wingbeat': {
+			bp: 40,
+			type: 'Flying',
+			category: 'Physical',
+			makesContact: true,
+			multihit: 2
+		},
+		'Trailblaze': {
+			bp: 50,
+			type: 'Grass',
+			category: 'Physical',
+			secondaries: true,
+			makesContact: true
+		},
+		'Trop Kick': {
+			bp: 70,
+			type: 'Grass',
+			category: 'Physical',
+			makesContact: true,
+			secondaries: true
+		},
     'Ground Pound': {
       bp: 85,
       type: 'Ground',
       category: 'Physical',
       secondaries: true
     },
-    'Grassy Dash': {
-      bp: 50,
-      type: 'Grass',
-      category: 'Physical',
-      priority: 1,
-      makesContact: true
-    }
+		'Headlong Rush': {
+			bp: 120,
+			type: 'Ground',
+			category: 'Physical',
+			makesContact: true,
+			isPunch: true
+		},
+		'Ice Hammer': {
+			bp: 100,
+			type: 'Ice',
+			category: 'Physical',
+			makesContact: true,
+			isPunch: true,
+		},
+    'Esper Wing': {
+			bp: 80,
+			type: 'Psychic',
+			category: 'Special',
+			secondaries: true
+		},
+		'Fate\'s Flourish': {
+			bp: 120,
+			type: 'Psychic',
+			category: 'Physical',
+			makesContact: true
+		},
+		'Accelerock': {
+			bp: 40,
+			type: 'Rock',
+			category: 'Physical',
+			priority: 1,
+			makesContact: true
+		},
+		'Steel Beam': {
+			bp: 140,
+			type: 'Steel',
+			category: 'Special',
+			recoil: [1, 2]
+		},
+		'Aqua Step': {
+			bp: 80,
+			type: 'Water',
+			category: 'Physical',
+			secondaries: true,
+			makesContact: true
+		},
+		'Chilling Water': {
+			bp: 50,
+			type: 'Water',
+			category: 'Special',
+			secondaries: true
+		},
+		'Wave Crash': {
+			bp: 120,
+			type: 'Water',
+			category: 'Physical',
+			makesContact: true,
+			recoil: [33, 100]
+		}
 };
 var XY = (0, util_1.extend)(true, {}, BW, XY_PATCH);
 var SM_PATCH = {
