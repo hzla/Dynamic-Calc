@@ -1064,9 +1064,12 @@ function get_type_info(pok_types) {
             [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 
-    if (type_chart != 6) {
-        types[13][16] = 1
-        types[15][16] = 1
+    if (type_chart < 6) {
+        types[13][16] = 0.5
+        types[15][16] = 0.5
+    } else {
+       types[13][16] = 1
+        types[15][16] = 1 
     }
 
     var type1 = type_name.indexOf(pok_types[0])
