@@ -1091,7 +1091,7 @@ function loadDataSource(data) {
     SETDEX_XY = data["formatted_sets"]
     console.log("settings setdex")
     setdex = data["formatted_sets"]
-    console.log(setdex)
+    console.log()
 
     TR_NAMES = get_trainer_names()
     if ('move_changes' in data) {
@@ -1194,7 +1194,7 @@ $(document).ready(function() {
    "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
    "da1eedc0e39ea07b75bf": "Vintage White",
    "26138cc1d500b0cf7334": "Renegade Platinum",
-   "6eaddfad52c62f0d869b": "Sacred Gold/Storm Silver",
+   "03e577af7cc9856a1f42": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
    "7a1ed35468b22ea01103": "Ancestral X",
