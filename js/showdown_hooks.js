@@ -1163,9 +1163,13 @@ function loadDataSource(data) {
             pokedex[pok]["abilities"] = jsonPok["abilities"]
     }
     load_js() 
-    customSets = JSON.parse(localStorage.customsets);
-    updateDex(customSets)   
-    get_box()
+
+    if (localStorage.customsets) {
+        customSets = JSON.parse(localStorage.customsets);
+        updateDex(customSets)   
+        get_box()
+    }
+    
     customLeads = get_custom_trainer_names()
 }
 
