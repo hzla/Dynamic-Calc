@@ -1262,6 +1262,9 @@ $(document).ready(function() {
             } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
                 console.log("loading backup")
                 backup_data = bb2redux_backup
+            } else if (TITLE == "Blaze Black 2/Volt White 2 Redux 1.4") {
+                console.log("loading backup")
+                backup_data = bb2redux_backup
             } else if (TITLE == "Vintage White") {
                 backup_data = vw_backup
             } else if (TITLE == "Renegade Platinum") {
