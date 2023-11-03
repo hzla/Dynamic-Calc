@@ -1082,6 +1082,90 @@ function get_type_info(pok_types) {
     return result
 }
 
+function loadDataSource(data) {
+    SETDEX_BW = data["formatted_sets"]
+    SETDEX_ADV = data["formatted_sets"]
+    SETDEX_DPP = data["formatted_sets"]
+    SETDEX_SM = data["formatted_sets"]
+    SETDEX_SS = data["formatted_sets"]
+    SETDEX_XY = data["formatted_sets"]
+    setdex = data["formatted_sets"]
+    TR_NAMES = get_trainer_names()
+    if ('move_changes' in data) {
+        CHANGES = data['move_changes']
+    } else {
+        CHANGES = {}
+    }
+
+    
+    jsonMoves = data["moves"]
+    var jsonMove
+
+    if (!jsonMoves["Explosion"]["e_id"]){
+        $("#show-ai").hide()
+    }
+
+
+
+    for (move in moves) {
+
+        if (jsonMoves[move]) {
+            jsonMove = jsonMoves[move]
+        } else {
+            continue //skip unsupported moves like hidden power
+        }
+
+        var move_id = move.replace(/-|,|'| /g, "").toLowerCase()
+
+        if (move == '(No Move)') {
+            continue
+        }
+        moves[move]["bp"] = jsonMove["basePower"]
+        
+        console.log(move)
+        MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+
+
+
+        moves[move]["type"] = jsonMove["type"]
+        MOVES_BY_ID[g][move_id].type = jsonMove["type"]
+
+        moves[move]["category"] = jsonMove["category"]
+        MOVES_BY_ID[g][move_id].category = jsonMove["category"]
+
+        if (moves[move]["e_id"]) {
+            moves[move]["e_id"] = jsonMove["e_id"]
+        } 
+
+        
+
+        if (moves[move]["multihit"]) {
+            moves[move]["multihit"] = jsonMove["multihit"]
+        }
+    }
+
+    var jsonPoks = data["poks"]
+    var jsonPok 
+  
+    for (pok in pokedex) {
+
+        if (jsonPoks[pok]) {
+            jsonPok = jsonPoks[pok]
+        } else {
+            continue //skip weird smogon pokemon and arceus forms
+        }
+        pokedex[pok]["bs"] = jsonPok["bs"]
+        pokedex[pok]["types"] = jsonPok["types"]
+        if (jsonPok.hasOwnProperty("abilities"))
+            pokedex[pok]["abilities"] = jsonPok["abilities"]
+    }
+    load_js() 
+    customSets = JSON.parse(localStorage.customsets);
+    updateDex(customSets)   
+    get_box()
+    customLeads = get_custom_trainer_names()
+}
+
 
 params = new URLSearchParams(window.location.search);
 g = params.get('gen');
@@ -1100,6 +1184,7 @@ $(document).ready(function() {
    params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
    TR_NAMES = null
+   BACKUP_MODE = true
 
    SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
@@ -1116,10 +1201,33 @@ $(document).ready(function() {
    "24bbfc0e69ff4a5c006b": "Emerald Kaizo"
     }
 
+   
+
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+        // if (TITLE == "Blaze Black/Volt White") {
+        //     backup_data = bb_backup
+        // } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
+        //     backup_data == bb2redux_backup
+        // } else if (TITLE == "Vintage White") {
+        //     backup_data == vw_backup
+        // } else if (TITLE == "Renegade Platinum") {
+        //     backup_data == rp_backup
+        // } else if (TITLE == "Sacred Gold/Storm Silver") {
+        //     backup_data == sgss_backup
+        // } else if (TITLE == "Ancestral X") {
+        //     backup_data == ax_backup
+        // } else if (TITLE == "Rising Ruby/Sinking Saphire") {
+        //     backup_data == rrss_backup
+        // } else if (TITLE == "Grand Colloseum 2.0") {
+        //     backup_data == gcol_backup
+        // } else if (TITLE == "Emerald Kaizo") {
+        //     backup_data == ek_backup
+        // } else {
+        //     "nothing"
+        // }
     } else {
         TITLE = "NONE"
     }
@@ -1138,90 +1246,53 @@ $(document).ready(function() {
    jsonMoves = moves
 
    var g =  parseInt(params.get('gen'));
-   $.get(npoint, function(data){
-        npoint_data = data
+   
 
-        SETDEX_BW = data["formatted_sets"]
-        SETDEX_ADV = data["formatted_sets"]
-        SETDEX_DPP = data["formatted_sets"]
-        SETDEX_SM = data["formatted_sets"]
-        SETDEX_SS = data["formatted_sets"]
-        SETDEX_XY = data["formatted_sets"]
-        TR_NAMES = get_trainer_names()
-        if ('move_changes' in data) {
-            CHANGES = data['move_changes']
+   
+
+   if (BACKUP_MODE) {
+        if (SOURCES[params.get('data')]) {
+            TITLE = SOURCES[params.get('data')] || "NONE"
+            $('.genSelection').hide()
+            $('#rom-title').text(TITLE).show()
+            console.log(TITLE)
+            backup_data = {}
+            if (TITLE == "Blaze Black/Volt White") {
+                backup_data = bb_backup
+            } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
+                console.log("loading backup")
+                backup_data = bb2redux_backup
+            } else if (TITLE == "Vintage White") {
+                backup_data = vw_backup
+            } else if (TITLE == "Renegade Platinum") {
+                backup_data = rp_backup
+            } else if (TITLE == "Sacred Gold/Storm Silver") {
+                backup_data = sgss_backup
+            } else if (TITLE == "Ancestral X") {
+                backup_data = ax_backup
+            } else if (TITLE == "Rising Ruby/Sinking Saphire") {
+                backup_data = rrss_backup
+            } else if (TITLE == "Grand Colloseum 2.0") {
+                backup_data = gcol_backup
+            } else if (TITLE == "Emerald Kaizo") {
+                backup_data = ek_backup
+            } else {
+                "nothing"
+            }
         } else {
-            CHANGES = {}
+            TITLE = "NONE"
         }
-
-        
-        jsonMoves = data["moves"]
-        var jsonMove
-
-        if (!jsonMoves["Explosion"]["e_id"]){
-            $("#show-ai").hide()
-        }
-
-
-
-        for (move in moves) {
-
-            if (jsonMoves[move]) {
-                jsonMove = jsonMoves[move]
-            } else {
-                continue //skip unsupported moves like hidden power
-            }
-
-            var move_id = move.replace(/-|,|'| /g, "").toLowerCase()
-
-            if (move == '(No Move)') {
-                continue
-            }
-            moves[move]["bp"] = jsonMove["basePower"]
-            
-            console.log(move)
-            MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+        loadDataSource(backup_data)
+   } else {
+        $.get(npoint, function(data){
+            npoint_data = data
+            loadDataSource(data)
+        })
+   }
 
 
 
-            moves[move]["type"] = jsonMove["type"]
-            MOVES_BY_ID[g][move_id].type = jsonMove["type"]
-
-            moves[move]["category"] = jsonMove["category"]
-            MOVES_BY_ID[g][move_id].category = jsonMove["category"]
-
-            if (moves[move]["e_id"]) {
-                moves[move]["e_id"] = jsonMove["e_id"]
-            } 
-
-            
-
-            if (moves[move]["multihit"]) {
-                moves[move]["multihit"] = jsonMove["multihit"]
-            }
-        }
-
-        var jsonPoks = data["poks"]
-        var jsonPok 
-      
-        for (pok in pokedex) {
-
-            if (jsonPoks[pok]) {
-                jsonPok = jsonPoks[pok]
-            } else {
-                continue //skip weird smogon pokemon and arceus forms
-            }
-            pokedex[pok]["bs"] = jsonPok["bs"]
-            pokedex[pok]["types"] = jsonPok["types"]
-            if (jsonPok.hasOwnProperty("abilities"))
-                pokedex[pok]["abilities"] = jsonPok["abilities"]
-        }
-        load_js() 
-        customSets = JSON.parse(localStorage.customsets);
-        updateDex(customSets)   
-        get_box()
-        customLeads = get_custom_trainer_names()    
-   })
+  
 
    $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
         var set = $(this).attr('data-id')
