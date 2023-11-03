@@ -1089,7 +1089,10 @@ function loadDataSource(data) {
     SETDEX_SM = data["formatted_sets"]
     SETDEX_SS = data["formatted_sets"]
     SETDEX_XY = data["formatted_sets"]
+    console.log("settings setdex")
     setdex = data["formatted_sets"]
+    console.log(setdex)
+
     TR_NAMES = get_trainer_names()
     if ('move_changes' in data) {
         CHANGES = data['move_changes']
@@ -1122,7 +1125,7 @@ function loadDataSource(data) {
         }
         moves[move]["bp"] = jsonMove["basePower"]
         
-        console.log(move)
+        // console.log(move)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 
@@ -1274,6 +1277,7 @@ $(document).ready(function() {
             } else if (TITLE == "Ancestral X") {
                 backup_data = ax_backup
             } else if (TITLE == "Rising Ruby/Sinking Saphire") {
+                console.log("loading rrss")
                 backup_data = rrss_backup
             } else if (TITLE == "Grand Colloseum 2.0") {
                 backup_data = gcol_backup
