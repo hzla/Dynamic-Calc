@@ -1121,14 +1121,14 @@ function loadDataSource(data) {
             continue //skip unsupported moves like hidden power
         }
 
-        var move_id = move.replace(/-|,|'| /g, "").toLowerCase()
+        var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
 
         if (move == '(No Move)') {
             continue
         }
         moves[move]["bp"] = jsonMove["basePower"]
         
-        // console.log(move)
+        console.log(move_id)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 
