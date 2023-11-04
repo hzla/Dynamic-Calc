@@ -1108,6 +1108,9 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
+    moves = data["moves"]
+    pokedex = data["poks"]
+
 
 
     for (move in moves) {
@@ -1149,12 +1152,15 @@ function loadDataSource(data) {
 
     var jsonPoks = data["poks"]
     var jsonPok 
-  
+    
+    console.log(pokedex)
     for (pok in pokedex) {
 
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
+            console.log(jsonPok)
         } else {
+            console.log("skipping")
             continue //skip weird smogon pokemon and arceus forms
         }
         pokedex[pok]["bs"] = jsonPok["bs"]
@@ -1165,6 +1171,7 @@ function loadDataSource(data) {
     load_js() 
 
     if (localStorage.customsets) {
+        console.log("loading box")
         customSets = JSON.parse(localStorage.customsets);
         updateDex(customSets)   
         get_box()
