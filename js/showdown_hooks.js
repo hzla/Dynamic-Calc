@@ -1108,8 +1108,10 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
+
     moves = data["moves"]
     pokedex = data["poks"]
+    console.log("loaded custom poks data")
 
 
 
@@ -1128,7 +1130,7 @@ function loadDataSource(data) {
         }
         moves[move]["bp"] = jsonMove["basePower"]
         
-        console.log(move_id)
+        // console.log(move_id)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 
@@ -1158,7 +1160,7 @@ function loadDataSource(data) {
 
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
-            console.log(jsonPok)
+            // console.log(jsonPok)
         } else {
             console.log("skipping")
             continue //skip weird smogon pokemon and arceus forms
@@ -1188,6 +1190,7 @@ type_chart = parseInt(params.get('types'))
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
 misc = params.get('misc')
+DEFAULTS_LOADED = false
 analyze = false
 
 if (switchIn != 11) {
@@ -1198,7 +1201,7 @@ $(document).ready(function() {
    params = new URLSearchParams(window.location.search)
    SETDEX_BW = null
    TR_NAMES = null
-   BACKUP_MODE = true
+   BACKUP_MODE = params.get('backup')
 
    SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
    "11c4eeca5a94f8edf413": "Blaze Black 2/Volt White 2 Redux",
@@ -1221,27 +1224,6 @@ $(document).ready(function() {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
-        // if (TITLE == "Blaze Black/Volt White") {
-        //     backup_data = bb_backup
-        // } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
-        //     backup_data == bb2redux_backup
-        // } else if (TITLE == "Vintage White") {
-        //     backup_data == vw_backup
-        // } else if (TITLE == "Renegade Platinum") {
-        //     backup_data == rp_backup
-        // } else if (TITLE == "Sacred Gold/Storm Silver") {
-        //     backup_data == sgss_backup
-        // } else if (TITLE == "Ancestral X") {
-        //     backup_data == ax_backup
-        // } else if (TITLE == "Rising Ruby/Sinking Saphire") {
-        //     backup_data == rrss_backup
-        // } else if (TITLE == "Grand Colloseum 2.0") {
-        //     backup_data == gcol_backup
-        // } else if (TITLE == "Emerald Kaizo") {
-        //     backup_data == ek_backup
-        // } else {
-        //     "nothing"
-        // }
     } else {
         TITLE = "NONE"
     }
@@ -1265,42 +1247,44 @@ $(document).ready(function() {
    
 
    if (BACKUP_MODE) {
-        if (SOURCES[params.get('data')]) {
-            TITLE = SOURCES[params.get('data')] || "NONE"
-            $('.genSelection').hide()
-            $('#rom-title').text(TITLE).show()
-            console.log(TITLE)
-            backup_data = {}
-            if (TITLE == "Blaze Black/Volt White") {
-                backup_data = bb_backup
-            } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
-                console.log("loading backup")
-                backup_data = bb2redux_backup
-            } else if (TITLE == "Blaze Black 2/Volt White 2 Redux 1.4") {
-                console.log("loading backup")
-                backup_data = bb2redux_backup
-            } else if (TITLE == "Vintage White") {
-                backup_data = vw_backup
-            } else if (TITLE == "Renegade Platinum") {
-                backup_data = rp_backup
-            } else if (TITLE == "Sacred Gold/Storm Silver") {
-                backup_data = sgss_backup
-            } else if (TITLE == "Ancestral X") {
-                backup_data = ax_backup
-            } else if (TITLE == "Rising Ruby/Sinking Saphire") {
-                console.log("loading rrss")
-                backup_data = rrss_backup
-            } else if (TITLE == "Grand Colloseum 2.0") {
-                backup_data = gcol_backup
-            } else if (TITLE == "Emerald Kaizo") {
-                backup_data = ek_backup
+        $.get('http://fishbowlweb.cloud:3000', function() {
+            console.log("loading backups")
+            if (SOURCES[params.get('data')]) {
+                TITLE = SOURCES[params.get('data')] || "NONE"
+                $('.genSelection').hide()
+                $('#rom-title').text(TITLE).show()
+                console.log(TITLE)
+                backup_data = {}
+                if (TITLE == "Blaze Black/Volt White") {
+                    backup_data = bb_backup
+                } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
+                    backup_data = bb2redux_backup
+                } else if (TITLE == "Blaze Black 2/Volt White 2 Redux 1.4") {
+                    backup_data = bb2redux_backup
+                } else if (TITLE == "Vintage White") {
+                    backup_data = vw_backup
+                } else if (TITLE == "Renegade Platinum") {
+                    backup_data = rp_backup
+                } else if (TITLE == "Sacred Gold/Storm Silver") {
+                    backup_data = sgss_backup
+                } else if (TITLE == "Ancestral X") {
+                    backup_data = ax_backup
+                } else if (TITLE == "Rising Ruby/Sinking Saphire") {
+                    console.log("loading rrss")
+                    backup_data = rrss_backup
+                } else if (TITLE == "Grand Colloseum 2.0") {
+                    backup_data = gcol_backup
+                } else if (TITLE == "Emerald Kaizo") {
+                    backup_data = ek_backup
+                } else {
+                    "nothing"
+                }
             } else {
-                "nothing"
+                TITLE = "NONE"
             }
-        } else {
-            TITLE = "NONE"
-        }
-        loadDataSource(backup_data)
+            loadDataSource(backup_data)
+        })
+        
    } else {
         $.get(npoint, function(data){
             npoint_data = data
@@ -1383,7 +1367,13 @@ $(document).ready(function() {
    })
 
    $(document).on('click', '#img-toggle', function() {
-        $('#battle-bg,.poke-sprite, #trainer-sprite').toggle()
+        let url = window.location.href;    
+        if (url.indexOf('?') > -1){
+           url += '&backup=true'
+        } else {
+           url += '?backup=true'
+        }
+        window.location.href = url;
    })
 
 

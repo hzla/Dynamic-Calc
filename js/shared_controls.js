@@ -1129,13 +1129,23 @@ $(".gen").change(function () {
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
-	// pokedex = calc.SPECIES[gen];
-	// setdex = SETDEX[gen];
+	
 	randdex = RANDDEX[gen];
 	typeChart = calc.TYPE_CHART[gen];
-	// moves = calc.MOVES[9];
+	
 	items = calc.ITEMS[gen];
 	abilities = calc.ABILITIES[gen];
+
+	if (!DEFAULTS_LOADED) {
+		pokedex = calc.SPECIES[gen];
+		setdex = SETDEX[gen];
+		moves = calc.MOVES[9];
+		DEFAULTS_LOADED = true
+	}
+
+	
+
+
 	clearField();
 	$("#importedSets").prop("checked", false);
 	loadDefaultLists();
