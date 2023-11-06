@@ -1247,7 +1247,7 @@ $(document).ready(function() {
    
 
    if (BACKUP_MODE) {
-        $.get('http://fishbowlweb.cloud:3000', function() {
+        $.get('/Dynamic-Calc', function() {
             console.log("loading backups")
             if (SOURCES[params.get('data')]) {
                 TITLE = SOURCES[params.get('data')] || "NONE"
