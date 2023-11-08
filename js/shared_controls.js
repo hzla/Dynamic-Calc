@@ -1138,6 +1138,7 @@ $(".gen").change(function () {
 
 	if (!DEFAULTS_LOADED) {
 		pokedex = calc.SPECIES[gen];
+		console.log("loading defaults")
 		setdex = SETDEX[gen];
 		moves = calc.MOVES[9];
 		DEFAULTS_LOADED = true

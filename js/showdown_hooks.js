@@ -1109,13 +1109,15 @@ function loadDataSource(data) {
     }
 
 
-    moves = data["moves"]
-    pokedex = data["poks"]
+    // moves = data["moves"]
+    // pokedex = data["poks"]
     console.log("loaded custom poks data")
 
 
 
     for (move in moves) {
+
+        var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
 
         if (jsonMoves[move]) {
             jsonMove = jsonMoves[move]
@@ -1123,7 +1125,8 @@ function loadDataSource(data) {
             continue //skip unsupported moves like hidden power
         }
 
-        var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
+        
+        
 
         if (move == '(No Move)') {
             continue
