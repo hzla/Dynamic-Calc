@@ -920,9 +920,7 @@ function get_current_in() {
 }
 
 function get_current_learnset() {
-    var setInfo = $('.set-selector')[0].value
-    var pok_name = setInfo.split(" (")[0]
-
+    var pok_name = createPokemon($("#p1")).name
     current_learnset = npoint_data['poks'][pok_name]["learnset_info"]
     
 
