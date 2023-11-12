@@ -415,29 +415,33 @@ function get_next_in_g4() {
                 continue
             }
 
-            if (mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
-                isSE = true
-            }
+            if (!invert) {
+                if (mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
+                    isSE = true
+                }
 
-            if (mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
-                isSE = true
-            }
+                if (mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
+                    isSE = true
+                }
 
-            if (player_pok == "Altaria" && mov_data["type"] == "Dragon") {
-                isSE = true
-            }
+                if (player_pok == "Altaria" && mov_data["type"] == "Dragon") {
+                    isSE = true
+                }
 
-            if (player_pok == "Mawile" && mov_data["type"] == "Poison") {
-                isSE = true
-            }
+                if (player_pok == "Mawile" && mov_data["type"] == "Poison") {
+                    isSE = true
+                }
 
-            if (player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
-                isSE = true
-            }
+                if (player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
+                    isSE = true
+                }
 
-            if (type_info[mov_data["type"]] >= 2) {
-                isSE = true
+                if (type_info[mov_data["type"]] >= 2) {
+                    isSE = true
+                }
+                
             }
+            
 
             if ($("#abilityL1").val() == 'Levitate' && mov_data["type"] == "Ground") {
                 isSE = false
