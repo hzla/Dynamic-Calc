@@ -919,6 +919,41 @@ function get_current_in() {
     return SETDEX_BW[pok_name][tr_name]
 }
 
+function get_current_learnset() {
+    var setInfo = $('.set-selector')[0].value
+    var pok_name = setInfo.split(" (")[0]
+
+    current_learnset = npoint_data['poks'][pok_name]["learnset_info"]
+    
+
+
+    if (!current_learnset) {
+        $("#learnset-show").hide()
+        return
+    }
+
+    var ls_html = ""
+
+    for (let i = 0; i < current_learnset["learnset"].length; i++) {
+        var lvl = current_learnset["learnset"][i][0]
+        var mv_name = current_learnset["learnset"][i][1]
+        ls_html += `<div class='ls-row'><div class='ls-level'>${lvl}</div><div class='ls-name'>${mv_name}</div></div>`
+    }
+    $(".lvl-up-moves").html(ls_html)
+
+    var tm_html = ""
+
+    for (let i = 0; i < current_learnset["tms"].length; i++) {
+        var mv_name = current_learnset["tms"][i]
+        tm_html += `<div class='ls-row'><div class='ls-name'>${mv_name}</div></div>`
+    }
+    $(".tms").html(tm_html)
+
+    return current_learnset    
+}
+
+
+
 function get_next_in() {
 
     if (switchIn == 4) {
@@ -1159,6 +1194,11 @@ function loadDataSource(data) {
     var jsonPok 
     
     console.log(pokedex)
+
+    if (jsonPoks["Bulbasaur"]["learnset_info"]) {
+        $('#learnset-show').show()
+    }
+
     for (pok in pokedex) {
 
         if (jsonPoks[pok]) {
@@ -1329,6 +1369,11 @@ $(document).ready(function() {
         $('.panel:not(.panel-mid)').toggleClass('third')
    })
 
+
+   $(document).on('click', '#learnset-show', function() {
+        get_current_learnset()
+        $('#learnset-container').toggle()
+   })
 
    $(document).on('click', '#toggle-analysis', function() {
         $('#reasoning').toggleClass('gone')
