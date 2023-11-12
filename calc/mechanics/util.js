@@ -186,7 +186,16 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
             gen.types.get('flying').effectiveness[type]);
     }
     else {
-        return gen.types.get((0, util_1.toID)(move.type)).effectiveness[type];
+        if (invert) {
+            var inverted_dmg = (1 / gen.types.get((0, util_1.toID)(move.type)).effectiveness[type])
+            if (inverted_dmg == Infinity) {
+                inverted_dmg = 2
+            }
+            return inverted_dmg;
+        } else {
+            return gen.types.get((0, util_1.toID)(move.type)).effectiveness[type];
+        }
+        
     }
 }
 exports.getMoveEffectiveness = getMoveEffectiveness;

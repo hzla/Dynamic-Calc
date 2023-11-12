@@ -989,6 +989,7 @@ function get_next_in() {
     }
 
     var type_info = get_type_info([player_type1, player_type2])
+    console.log(type_info)
 
     var ranked_trainer_poks = []
 
@@ -1045,6 +1046,7 @@ function get_next_in() {
         }
     }
     
+    console.log(ranked_trainer_poks)
     return ranked_trainer_poks
 }
 
@@ -1108,8 +1110,29 @@ function get_type_info(pok_types) {
     var type1 = type_name.indexOf(pok_types[0])
     var type2 = type_name.indexOf(pok_types[1])
 
+
     for (i in types) {
-        result[type_name[i]] = (types[i][type1] * types[i][type2])
+        if (invert) {
+            if (type1 == -1) {
+                return result
+            }
+            
+            var matchup1 = types[i][type1]
+            var matchup2 = types[i][type2]
+
+            if (matchup1 == 0) {
+                matchup1 = 0.5
+            }
+
+            if (matchup2 == 0) {
+                matchup2 = 0.5
+            }
+            result[type_name[i]] = (1 / (matchup1 * matchup2))
+        } else {
+          
+          result[type_name[i]] = (types[i][type1] * types[i][type2])  
+        }
+        
     }
 
     return result
@@ -1231,6 +1254,7 @@ type_chart = parseInt(params.get('types'))
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
 misc = params.get('misc')
+invert = params.get('invert')
 DEFAULTS_LOADED = false
 analyze = false
 
@@ -1418,6 +1442,16 @@ $(document).ready(function() {
            url += '&backup=true'
         } else {
            url += '?backup=true'
+        }
+        window.location.href = url;
+   })
+
+   $(document).on('click', '#invert-types', function() {
+        let url = window.location.href;    
+        if (url.indexOf('?') > -1){
+           url += '&invert=true'
+        } else {
+           url += '?invert=true'
         }
         window.location.href = url;
    })

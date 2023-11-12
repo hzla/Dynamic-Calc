@@ -824,7 +824,7 @@ th {
     justify-content: flex-end;
 }
 
-#img-toggle {
+#img-toggle, #invert-types {
     font-size: 16px;
     font-weight: 400;
     background: #bd93f9;
