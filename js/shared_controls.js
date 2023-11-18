@@ -221,9 +221,10 @@ $(".ability").bind("keyup change", function () {
 	}
 });
 
-$("#p1 .ability").bind("keyup change", function () {
-	// autosetWeather($(this).val(), 0);
-	// autosetTerrain($(this).val(), 0);
+$("#p1 .ability, #p2 .ability").bind("keyup change", function () {
+	console.log("ability changed")
+	autosetWeather($(this).val(), 0);
+	autosetTerrain($(this).val(), 0);
 });
 
 var lastManualWeather = "";
