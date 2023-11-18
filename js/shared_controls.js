@@ -223,8 +223,30 @@ $(".ability").bind("keyup change", function () {
 
 $("#p1 .ability, #p2 .ability").bind("keyup change", function () {
 	console.log("ability changed")
+
+
+	var is_p1 = $(this).parents("#p1").length > 0
+	var ability = $(this).val()
+	var weather_abilities = ["Drought", "Drizzle", "Sand Stream", "Snow Warning", "Desolate Land", "Primordial Sea", "Delta Stream"]
+
+	// dont change weather if new mon has no weather ability but other mon does
+	if (!weather_abilities.includes(ability) && is_p1) {
+		if (weather_abilities.includes($("#p2 .ability").val())) {
+			return
+		}
+	}
+
+	if (!weather_abilities.includes(ability) && !is_p1) {
+		if (weather_abilities.includes($("#p1 .ability").val())) {
+			return
+		}
+	}
+
+	// set weather according to new mons ability
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
+
+
 });
 
 var lastManualWeather = "";
