@@ -1284,7 +1284,11 @@ $(document).ready(function() {
    "8c3ca30ba346734d5e4f": "Run & Bun",
    "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
    "00734d33040067eb7e9f": "Grand Colloseum 2.0",
-   "24bbfc0e69ff4a5c006b": "Emerald Kaizo"
+   "24bbfc0e69ff4a5c006b": "Emerald Kaizo",
+   "13fc25a3b19071978dd6": "Platinum",
+   "be0a4fedbe0ff31e47b0": "Heart Gold/Soul Silver",
+   "78381c312866ee2e6ff9": "Black/White",
+   "83c196dce6759252b3f4": "Black 2/White 2"
     }
 
    
