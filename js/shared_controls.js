@@ -222,7 +222,6 @@ $(".ability").bind("keyup change", function () {
 });
 
 $("#p1 .ability, #p2 .ability").bind("keyup change", function () {
-	console.log("ability changed")
 
 
 	var is_p1 = $(this).parents("#p1").length > 0
@@ -484,7 +483,7 @@ function refresh_next_in() {
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 
-	console.log(fullSetName)
+
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
@@ -852,8 +851,6 @@ function correctHiddenPower(pokemon) {
 
 function createPokemon(pokeInfo, customMoves=false) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
-		console.log(pokeInfo)
-		console.log("^^^^^^")
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
 		var isRandoms = $("#randoms").prop("checked");
@@ -873,7 +870,6 @@ function createPokemon(pokeInfo, customMoves=false) {
 		for (var i = 0; i < 4; i++) {
 			var moveName = ""
 			if (customMoves) {
-				console.log(customMoves[i])
 				moveName = customMoves[i]
 			} else {
 				moveName = set.moves[i];

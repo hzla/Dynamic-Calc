@@ -206,7 +206,6 @@ function box_rolls() {
         }
     }
 
-    console.log(faster)
 
     return {"killers": killers, "defenders": defenders, "faster": faster}
     
@@ -993,7 +992,6 @@ function get_next_in() {
     }
 
     var type_info = get_type_info([player_type1, player_type2])
-    console.log(type_info)
 
     var ranked_trainer_poks = []
 
@@ -1050,7 +1048,7 @@ function get_next_in() {
         }
     }
     
-    console.log(ranked_trainer_poks)
+    // console.log(ranked_trainer_poks)
     return ranked_trainer_poks
 }
 
@@ -1149,9 +1147,7 @@ function loadDataSource(data) {
     SETDEX_SM = data["formatted_sets"]
     SETDEX_SS = data["formatted_sets"]
     SETDEX_XY = data["formatted_sets"]
-    console.log("settings setdex")
     setdex = data["formatted_sets"]
-    console.log()
 
     TR_NAMES = get_trainer_names()
     if ('move_changes' in data) {
@@ -1218,7 +1214,7 @@ function loadDataSource(data) {
     var jsonPoks = data["poks"]
     var jsonPok 
     
-    console.log(pokedex)
+
 
     if (jsonPoks["Bulbasaur"]["learnset_info"]) {
         $('#learnset-show').show()

@@ -135,7 +135,7 @@ $(".result-move").change(function () {
     if (move != "") {
 
 	    var effect_code = parseInt(jsonMoves[move]["e_id"])
-	    console.log(effect_code)
+
 
 	    var ai_content = expertAI[effect_code]
 
