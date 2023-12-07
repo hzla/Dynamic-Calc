@@ -1263,6 +1263,11 @@ function loadDataSource(data) {
             console.log(moves[move])
         }
     }
+    moves['(No Move)'] = {
+        "bp": 0,
+        "category": "Status",
+        "type": "Normal"
+    }
 }
 
 
