@@ -1158,6 +1158,7 @@ function loadDataSource(data) {
 
     
     jsonMoves = data["moves"]
+    customMoves = data["custom_moves"]
     var jsonMove
 
     if (!jsonMoves["Explosion"]["e_id"]){
@@ -1170,6 +1171,7 @@ function loadDataSource(data) {
     console.log("loaded custom poks data")
 
 
+    
 
     for (move in moves) {
 
@@ -1178,6 +1180,7 @@ function loadDataSource(data) {
         if (jsonMoves[move]) {
             jsonMove = jsonMoves[move]
         } else {
+            moves[move] = jsonMoves[move]
             continue //skip unsupported moves like hidden power
         }
 
@@ -1244,6 +1247,15 @@ function loadDataSource(data) {
     }
     
     customLeads = get_custom_trainer_names()
+    if (customMoves) {
+        for (move in customMoves) {
+            moves[move] = customMoves[move]
+            moves[move]["bp"] = customMoves[move]["basePower"]
+
+            MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = customMoves[move]
+            console.log(moves[move])
+        }
+    }
 }
 
 

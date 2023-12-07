@@ -23,7 +23,10 @@ function calculate(gen, attacker, defender, move, field) {
     // if (gen.num > 5) {
     //     gen.num = 5
     // }
-
+    if (!move.flags) {
+        move.flags = {}
+    }
+    
     if (damageGen == 12) {
         return MECHANICS[3](gen, attacker.clone(), defender.clone(), move.clone(), field ? field.clone() : new field_1.Field());
     }

@@ -31,6 +31,9 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         defenderName: defender.name,
         isWonderRoom: field.isWonderRoom
     };
+
+
+    
     var result = new result_1.Result(gen, attacker, defender, move, field, 0, desc);
     if (move.category === 'Status' && !move.named('Nature Power')) {
         return result;
@@ -139,9 +142,11 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             typeEffectiveness = type1Effectiveness;
         }
     }
+
     if (typeEffectiveness === 0) {
         return result;
     }
+
     if ((move.named('Sky Drop') &&
         (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
         (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
@@ -201,6 +206,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
     var turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
     var basePower;
+
     switch (move.name) {
         case 'Payback':
             basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
@@ -646,6 +652,8 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     } else {
 
     }
+
+
 
 
 
