@@ -924,6 +924,9 @@ function get_current_in() {
 
 function get_current_learnset() {
     var pok_name = createPokemon($("#p1")).name
+    if (pok_name.includes("-Mega")) {
+        pok_name = pok_name.split("-Mega")[0]
+    } 
     current_learnset = npoint_data['poks'][pok_name]["learnset_info"]
     
 
@@ -935,19 +938,23 @@ function get_current_learnset() {
 
     var ls_html = ""
 
-    for (let i = 0; i < current_learnset["learnset"].length; i++) {
-        var lvl = current_learnset["learnset"][i][0]
-        var mv_name = current_learnset["learnset"][i][1]
+    for (let i = 0; i < current_learnset.length; i++) {
+        var lvl = current_learnset[i][0]
+        var mv_name = current_learnset[i][1]
         ls_html += `<div class='ls-row'><div class='ls-level'>${lvl}</div><div class='ls-name'>${mv_name}</div></div>`
     }
     $(".lvl-up-moves").html(ls_html)
 
     var tm_html = ""
 
-    for (let i = 0; i < current_learnset["tms"].length; i++) {
-        var mv_name = current_learnset["tms"][i]
-        tm_html += `<div class='ls-row'><div class='ls-name'>${mv_name}</div></div>`
+    if (current_learnset["tms"]) {
+        for (let i = 0; i < current_learnset["tms"].length; i++) {
+            var mv_name = current_learnset["tms"][i]
+            tm_html += `<div class='ls-row'><div class='ls-name'>${mv_name}</div></div>`
+        }
+
     }
+    
     $(".tms").html(tm_html)
 
     return current_learnset    
