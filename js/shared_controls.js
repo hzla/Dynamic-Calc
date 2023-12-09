@@ -372,8 +372,13 @@ $(".move-selector").change(function () {
 	var moveName = $(this).val();
 	var move = moves[moveName] || moves['(No Move)'];
 	var moveGroupObj = $(this).parent();
+	console.log(moveName)
+	console.log(moves[moveName])
 	moveGroupObj.children(".move-bp").val(moveName === 'Present' ? 40 : move.bp);
 	var m = moveName.match(HIDDEN_POWER_REGEX);
+
+
+
 	if (m) {
 		var pokeObj = $(this).closest(".poke-info");
 		var pokemon = createPokemon(pokeObj);
@@ -1172,6 +1177,8 @@ $(".gen").change(function () {
 		moves = calc.MOVES[9];
 		DEFAULTS_LOADED = true
 	}
+
+
 
 	
 
