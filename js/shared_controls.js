@@ -469,9 +469,19 @@ function refresh_next_in() {
 		if (switchIn == 0) {
 			highlight = "hl-disabled"
 		} 
+
+		for (let n = 0; n < 4; n++) {
+			if (!next_poks[i][4][n]) {
+				next_poks[i][4][n] = ""
+			}
+		}
+
 		var pok = `<div class="trainer-pok-container">
 			<img class="trainer-pok right-side ${highlight}" src="./img/newhd/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
-			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][0])}">${next_poks[i][4][0].replace("Hidden Power", "HP")}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1].replace("Hidden Power", "HP")}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2].replace("Hidden Power", "HP")}</div><div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][3])}">${next_poks[i][4][3].replace("Hidden Power", "HP")}</div>
+			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][0])}">${next_poks[i][4][0].replace("Hidden Power", "HP")}</div>
+			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1].replace("Hidden Power", "HP")}</div>
+			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2].replace("Hidden Power", "HP")}</div>
+			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][3])}">${next_poks[i][4][3].replace("Hidden Power", "HP")}</div>
 
 		</div>`
 		trpok_html += pok
