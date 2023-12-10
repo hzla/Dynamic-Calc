@@ -372,8 +372,6 @@ $(".move-selector").change(function () {
 	var moveName = $(this).val();
 	var move = moves[moveName] || moves['(No Move)'];
 	var moveGroupObj = $(this).parent();
-	console.log(moveName)
-	console.log(moves[moveName])
 	moveGroupObj.children(".move-bp").val(moveName === 'Present' ? 40 : move.bp);
 	var m = moveName.match(HIDDEN_POWER_REGEX);
 
@@ -551,6 +549,8 @@ $(".set-selector").change(function () {
 					$('#doubles-format').click()
 				}
 
+
+
 				if (misc == "Orre") {
 					$('#doubles-format').click()
 				}
@@ -576,6 +576,25 @@ $(".set-selector").change(function () {
 			if (damageGen <= 5) {
 				$('#p1 .poke-sprite').addClass('no-flip')
 			}
+			if (TITLE == "Emerald Kaizo") {
+				caps = [15, 29, 48, 70]
+				current_tr_mon_level = parseInt($("#levelL1").val())
+				$("#AtkL, #SpeL, #DefL, #SpecL").prop("checked", false)
+				if (current_tr_mon_level > caps[0]) {
+					$("#AtkL").prop("checked", true)
+				}
+				if (current_tr_mon_level > caps[1]) {
+					$("#SpeL").prop("checked", true)
+				}
+				if (current_tr_mon_level > caps[2]) {
+					$("#DefL").prop("checked", true)
+				}
+				if (current_tr_mon_level > caps[3]) {
+					$("#SpecL").prop("checked", true)
+				}
+
+			}
+			console.log($("#levelL1").val())
 		}
 	}
 
