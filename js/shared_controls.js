@@ -500,7 +500,13 @@ $(".set-selector").change(function () {
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
-		$('#trainer-sprite').attr('src',  )
+		// $('#trainer-sprite').attr('src',  )
+		var left_max_hp = $("#p2 .max-hp").text()
+		$("#p2 .current-hp").val(left_max_hp).change()
+	} else {
+		var right_max_hp = $("#p1 .max-hp").text()
+		$("#p1 .current-hp").val(right_max_hp).change()
+        console.log("hp changed")
 	}
 
 	refresh_next_in()

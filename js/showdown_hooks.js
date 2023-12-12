@@ -1524,6 +1524,11 @@ $(document).ready(function() {
         }
         get_box()
         box_rolls()
+
+        var right_max_hp = $("#p1 .max-hp").text()
+        console.log(right_max_hp)
+        $("#p1 .current-hp").val(right_max_hp).change()
+        console.log("hp changed")
     })
 
     $(document).on('change', '#p2 .poke-sprite', function() {
