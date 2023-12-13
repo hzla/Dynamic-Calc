@@ -1317,8 +1317,9 @@ $(document).ready(function() {
    "68bfb2ccba14b7f6b1f0": "Inclement Emerald"
     }
 
-   
 
+   
+    INC_EM = false
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
