@@ -62,7 +62,12 @@ moveChanges = {
 		"Sand Tomb":    "Bulldoze",
 		"Submission":   "Play Rough",
 		"Twister":      "Hurricane",
-		"Volt Tackle":  "Wild Charge"}
+		"Volt Tackle":  "Wild Charge"},
+	
+	"Emerald Kaizo": 
+		{"Ancientpower":     "Ancient Power",
+		"X-scissor":        "X-Scissor",
+		"Faint Attack": "Feint Attack"}
 }
 
 if(typeof CHANGES === 'undefined') {
