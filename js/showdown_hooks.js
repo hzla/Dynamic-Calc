@@ -93,12 +93,16 @@ function get_trainer_poks(trainer_name)
     var all_poks = SETDEX_BW
     var matches = []
 
-    var og_trainer_name = trainer_name.split(/Lvl \d+ /)[1]
+    var og_trainer_name = trainer_name.split(/Lvl [-+]?\d+ /)[1]
+
 
 
     if (og_trainer_name) {
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
+
+    console.log(trainer_name)
+    console.log(og_trainer_name)
 
     for (i in TR_NAMES) {
 
@@ -1309,7 +1313,8 @@ $(document).ready(function() {
    "be0a4fedbe0ff31e47b0": "Heart Gold/Soul Silver",
    "78381c312866ee2e6ff9": "Black/White",
    "83c196dce6759252b3f4": "Black 2/White 2",
-   "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced"
+   "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
+   "68bfb2ccba14b7f6b1f0": "Inclement Emerald"
     }
 
    
@@ -1318,9 +1323,14 @@ $(document).ready(function() {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+        if (TITLE == "Inclement Emerald") {
+            INC_EM = true
+            $("#lvl-cap").show()
+        }
     } else {
         TITLE = "NONE"
     }
+
 
     $(document).on('change', '.calc-select', function() {
         location.href = $('.calc-select option:selected').attr('data-source')

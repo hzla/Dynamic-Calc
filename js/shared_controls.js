@@ -496,6 +496,9 @@ function refresh_next_in() {
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 
+	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+
 
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
@@ -503,8 +506,10 @@ $(".set-selector").change(function () {
 		// $('#trainer-sprite').attr('src',  )
 		var left_max_hp = $("#p2 .max-hp").text()
 		$("#p2 .current-hp").val(left_max_hp).change()
+		
 	} else {
 		var right_max_hp = $("#p1 .max-hp").text()
+		
 		$("#p1 .current-hp").val(right_max_hp).change()
         console.log("hp changed")
 	}
@@ -512,8 +517,7 @@ $(".set-selector").change(function () {
 	refresh_next_in()
 
 	
-	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
-	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+	
 	
 	if ($(this).hasClass('opposing')) {
 		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
@@ -562,6 +566,17 @@ $(".set-selector").change(function () {
 				}
 				$('#trainer-sprite').attr('src', `./img/${sprite}`)
 				$('#trainer-sprite').show()
+
+				if (INC_EM && $("#lvl-cap").val() != "") {
+					var lvl_delta = parseInt(SETDEX_BW[pokemonName][setName]["sublevel"])
+					var current_cap = parseInt($("#lvl-cap").val())
+					setTimeout(function() {
+						
+						$("#levelR1").val(lvl_delta + current_cap).change()
+						console.log(`changing to ${lvl_delta + current_cap}`)
+					},2)
+					
+				}
 			}
 		} else {
 			$('#trainer-sprite').hide()

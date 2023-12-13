@@ -20,6 +20,12 @@ a img {
     min-height: 50px;
 }
 
+#lvl-cap {
+    padding:  4px;
+    width:  60px;
+    display: none;
+}
+
 #reasoning {
     padding: 20px;
     font-size: 20px;

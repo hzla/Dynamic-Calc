@@ -346,6 +346,16 @@ SS = SS.concat([
     'Self Sufficient',
     'Striker',
     'Surprise!',
+    "Chloroplast",
+    "Whiteout",
+    "Keen Edge",
+    "Prism Scales",
+    "Power Fists",
+    "Sand Song",
+    "Rampage",
+    "Vengeance",
+    "Pyromancy",
+    "Blitz Boxer"
 ]);
 exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SS];
 var Abilities = (function () {
