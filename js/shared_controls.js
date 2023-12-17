@@ -615,7 +615,6 @@ $(".set-selector").change(function () {
 				}
 
 			}
-			console.log($("#levelL1").val())
 		}
 	}
 
