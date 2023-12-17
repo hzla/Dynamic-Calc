@@ -242,7 +242,12 @@ $("#p1 .ability, #p2 .ability").bind("keyup change", function () {
 	}
 
 	// set weather according to new mons ability
-	autosetWeather($(this).val(), 0);
+	console.log("weather change")
+
+	if (weather_abilities.includes(ability)) {
+		autosetWeather($(this).val(), 0);
+	}
+	
 	autosetTerrain($(this).val(), 0);
 
 
