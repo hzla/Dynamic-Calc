@@ -400,6 +400,9 @@ function get_next_in_g4() {
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        if (!pokedex[pok_name]) {
+            continue
+        }
         var type1 = pokedex[pok_name]["types"][0]
         var type2 = pokedex[pok_name]["types"][1] || type1
         var pok_data = SETDEX_BW[pok_name][tr_name]
@@ -473,6 +476,7 @@ function get_next_in_g4() {
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        console.log(pok_name)
         var type1 = pokedex[pok_name]["types"][0]
         var type2 = pokedex[pok_name]["types"][1] || type1
         var pok_data = SETDEX_BW[pok_name][tr_name]
@@ -484,6 +488,7 @@ function get_next_in_g4() {
 
         p2 = createPokemon(p2info, pok_data["moves"])
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
+        console.log(results)
 
         var highestDamage = 0
         for (n in results) {
@@ -495,7 +500,7 @@ function get_next_in_g4() {
             }
 
 
-            if (dmg > highestDamage) {
+            if (dmg > highestDamage && results[n].move.name != "Sonic Boom" && results[n].move.name != "Dragon Rage" && results[n].move.name != "Night Shade" && results[n].move.name != "Seismic Toss" ) {
                 highestDamage = dmg
             }
             if (highestDamage >= currentHp) {
@@ -504,6 +509,8 @@ function get_next_in_g4() {
         }
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage])
     }
+
+    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }
