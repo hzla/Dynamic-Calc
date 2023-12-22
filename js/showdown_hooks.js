@@ -392,6 +392,7 @@ function get_next_in_g4() {
 
     // get type chart
     var type_info = get_type_info([player_type1, player_type2])
+    // console.log(type_info)
 
     // get mons with SE moves and sort by type matchup and trainer order
     var se_mons = []
@@ -443,6 +444,8 @@ function get_next_in_g4() {
                 }
 
                 if (type_info[mov_data["type"]] >= 2) {
+                    console.log(mov_data)
+                    console.log(pok_data)
                     isSE = true
                 }
                 
@@ -1321,8 +1324,10 @@ $(document).ready(function() {
    "78381c312866ee2e6ff9": "Black/White",
    "83c196dce6759252b3f4": "Black 2/White 2",
    "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
-   "68bfb2ccba14b7f6b1f0": "Inclement Emerald"
+   "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
+   "e9030beba9c1ba8804e8": "Kaizo Colloseum"
     }
+
 
 
    
