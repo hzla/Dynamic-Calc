@@ -1368,7 +1368,7 @@ $(document).ready(function() {
    
 
    if (BACKUP_MODE) {
-        $.get('/Dynamic-Calc', function() {
+        setTimeout(function() {
             console.log("loading backups")
             if (SOURCES[params.get('data')]) {
                 TITLE = SOURCES[params.get('data')] || "NONE"
@@ -1404,7 +1404,10 @@ $(document).ready(function() {
                 TITLE = "NONE"
             }
             loadDataSource(backup_data)
-        })
+
+        },500)
+            
+        
         
    } else {
         $.get(npoint, function(data){
