@@ -242,7 +242,7 @@ $("#p1 .ability, #p2 .ability").bind("keyup change", function () {
 	}
 
 	// set weather according to new mons ability
-	console.log("weather change")
+
 
 	if (weather_abilities.includes(ability)) {
 		autosetWeather($(this).val(), 0);
@@ -269,6 +269,10 @@ function autosetWeather(ability, i) {
 	case "Drizzle":
 		lastAutoWeather[i] = "Rain";
 		$("#rain").prop("checked", true);
+		// var bg_width = $('.poke-sprite')[0].width + 40
+		// $(".poke-sprite-weather").show().css("background",
+		// 	"url(../img/rain.gif)"
+		// ).css("width", `${bg_width}px`)
 		break;
 	case "Sand Stream":
 		lastAutoWeather[i] = "Sand";

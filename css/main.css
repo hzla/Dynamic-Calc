@@ -279,6 +279,23 @@ input {
     z-index:  12;
 }
 
+
+.poke-sprite-weather { 
+    position: absolute;
+    display: none;
+    max-width: calc(100% - 390px);
+    right: 13px;
+    top: 80px;
+    border-bottom-left-radius: 10px;
+    height: 128px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius:  20px;
+    padding: 20px;
+    z-index:  13;
+}
+
+
 #p1 .poke-sprite {
     transform: scaleX(-1);
 }

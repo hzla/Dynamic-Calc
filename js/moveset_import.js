@@ -156,8 +156,10 @@ function serialize(array, separator) {
 	return text;
 }
 
-function getAbility(row) {
+function getAbility(row, species=false) {
 	var ability = row[1] ? row[1].trim() : '';
+
+
 	if (calc.ABILITIES[8].indexOf(ability) !== -1) return ability;
 }
 
@@ -227,6 +229,12 @@ function getStats(currentPoke, rows, offset) {
 	return currentPoke;
 }
 
+function isInt(value) {
+  return !isNaN(value) && 
+         parseInt(Number(value)) == value && 
+         !isNaN(parseInt(value, 10));
+}
+
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
@@ -289,6 +297,17 @@ function addToDex(poke) {
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
 	}
+
+
+	console.log(`${poke.name} - ${parseInt(poke.ability)}`)
+	console.log(pokedex[poke.name]['abilities'][parseInt(poke.ability)])
+
+	if (isInt(poke.ability)) {
+		console.log("ability updated")
+		dexObject.ability = pokedex[poke.name]['abilities'][parseInt(poke.ability)]
+	}
+	
+
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
 	dexObject.ivs = poke.ivs;
@@ -302,7 +321,7 @@ function addToDex(poke) {
 	} else {
 		customsets = {};
 	}
-	console.log(poke.nameProp)
+	// console.log(poke.nameProp)
 
 	if (!customsets[poke.name]) {
 		customsets[poke.name] = {};
@@ -318,7 +337,6 @@ function addToDex(poke) {
 }
 
 function updateDex(customsets) {
-	console.log(customsets)
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
 			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};
@@ -361,7 +379,16 @@ function addSets(pokes, name) {
 					currentPoke.nameProp = "My Box";
 				}
 				currentPoke.isCustomSet = true;
-				currentPoke.ability = getAbility(rows[i + 1].split(":"));
+
+				if (INC_EM) {
+					currentPoke.ability = getAbility(rows[i + 4].split(":"), currentPoke.name);
+				} else {
+					currentPoke.ability = getAbility(rows[i + 1].split(":"));
+				}
+
+				console.log(currentPoke.ability)
+				console.log("........")
+				
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
