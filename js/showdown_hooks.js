@@ -1171,11 +1171,13 @@ function loadDataSource(data) {
     setdex = data["formatted_sets"]
 
     TR_NAMES = get_trainer_names()
-    if ('move_changes' in data) {
-        CHANGES = data['move_changes']
+    if ('move_replacements' in data) {
+        CHANGES = data['move_replacements']
     } else {
         CHANGES = {}
     }
+
+    moveChanges["NONE"] = CHANGES
 
     
     jsonMoves = data["moves"]
