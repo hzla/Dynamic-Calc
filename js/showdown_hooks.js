@@ -1331,7 +1331,8 @@ $(document).ready(function() {
    "83c196dce6759252b3f4": "Black 2/White 2",
    "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
    "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
-   "e9030beba9c1ba8804e8": "Kaizo Colloseum"
+   "e9030beba9c1ba8804e8": "Kaizo Colloseum",
+   "6875151cfa5eea00eafa": "Inclement Emerald No EVs"
     }
 
 
