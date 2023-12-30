@@ -1343,7 +1343,7 @@ $(document).ready(function() {
         TITLE = SOURCES[params.get('data')] || "NONE"
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
-        if (TITLE == "Inclement Emerald") {
+        if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
             INC_EM = true
             $("#lvl-cap").show()
         }
