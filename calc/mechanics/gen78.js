@@ -333,8 +333,20 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     if (!noWeatherBoost && (field.hasWeather('Sun', 'Harsh Sunshine') &&
         move.hasType('Fire')) ||
         (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
-        baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
+        
+        // in inc_em perm weather is only 20% boost
+        if (!INC_EM) {
+              baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
+        } else {
+            if (field.hasWeather('Rain', 'Sun')) {
+                baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
+            } else {
+                baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 4916) / 4096);
+            }
+        }
+
         desc.weather = field.weather;
+        
     }
     else if (!noWeatherBoost && attacker.hasAbility("Whiteout") && field.hasWeather('Hail') && move.hasType('Ice') && INC_EM) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
@@ -925,6 +937,10 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
         atMods.push(8192);
         desc.attackerItem = attacker.item;
     }
+    if (INC_EM && attacker.hasItem('Light Ball') && attacker.name.includes('Raichu')) {
+        atMods.push(6144);
+        desc.attackerItem = attacker.item;
+    }
     else if (!move.isZ && !move.isMax &&
         ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
             (attacker.hasItem('Choice Specs') && move.category === 'Special'))) {
@@ -954,6 +970,10 @@ function calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCrit
         desc.defenseBoost = defender.boosts[defenseStat];
     }
     if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
+        defense = (0, util_2.pokeRound)((defense * 3) / 2);
+        desc.weather = field.weather;
+    }
+    if (INC_EM && field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }

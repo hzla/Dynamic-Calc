@@ -261,6 +261,11 @@ function autosetWeather(ability, i) {
 		lastManualWeather = currentWeather;
 		lastAutoWeather[1 - i] = "";
 	}
+
+	if (INC_EM) {
+		ability = ability.replace("Drought", "Desolate Land").replace("Drizzle", "Primordial Sea")
+	}
+
 	switch (ability) {
 	case "Drought":
 		lastAutoWeather[i] = "Sun";
