@@ -1263,7 +1263,7 @@ function loadDataSource(data) {
         pokedex[pok]["types"] = jsonPok["types"]
         if (jsonPok.hasOwnProperty("abilities"))
             pokedex[pok]["abilities"] = jsonPok["abilities"]
-    }
+        }
     load_js() 
 
     if (localStorage.customsets) {

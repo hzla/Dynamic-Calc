@@ -769,7 +769,12 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
         desc.defenderAbility = defender.ability;
     }
     if (attacker.hasItem("".concat(move.type, " Gem"))) {
-        bpMods.push(6144);
+        if (INC_EM) {
+            bpMods.push(5325);
+        } else {
+             bpMods.push(6144);
+        }
+       
         desc.attackerItem = attacker.item;
     }
     else if ((attacker.hasItem('Adamant Orb') &&
