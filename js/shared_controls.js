@@ -600,7 +600,7 @@ $(".set-selector").change(function () {
 
 
 		
-		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite}.${suffix}`)
+		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
 
 	} else {
@@ -635,6 +635,8 @@ $(".set-selector").change(function () {
 
 
 	var pokemon = pokedex[pokemonName];
+
+
 
 
 	if (pokemon) {
@@ -964,6 +966,7 @@ function createPokemon(pokeInfo, customMoves=false) {
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		var name;
+
 		if (setName.indexOf("(") === -1) {
 			name = setName;
 		} else {
@@ -973,17 +976,43 @@ function createPokemon(pokeInfo, customMoves=false) {
 			name = (species.otherFormes || (species.baseSpecies && species.baseSpecies !== pokemonName)) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
+
+
 		var baseStats = {};
 		var ivs = {};
 		var evs = {};
 		var boosts = {};
-		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
-			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
-			baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
-			ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
-			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
-			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
+		
+		
+		if (false) {
+			var stat_abvs = {"hp": "hp", "atk": "at", "def": "df", "spa": "sa", "spd": "sd", "spe": "sp"}
+			for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+				var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
+				
+				console.log(stat)
+				console.log(pokedex['Rotom']['bs'][stat_abvs[stat]]) 
+				baseStats[stat === 'spc' ? 'spa' : stat] = pokedex['Rotom']['bs'][stat_abvs[stat]];
+				~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val(pokedex['Rotom']['bs'][stat_abvs[stat]])
+				ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
+				evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+				boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
+			}
+		} else {
+			for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+				var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
+				baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
+				ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
+				evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+				boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
+			}
+
 		}
+
+
+
+
+
+		
 		if (gen === 1) baseStats.spd = baseStats.spa;
 
 		var ability = pokeInfo.find(".ability").val();

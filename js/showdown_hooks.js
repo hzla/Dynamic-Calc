@@ -1250,8 +1250,40 @@ function loadDataSource(data) {
         $('#learnset-show').show()
     }
 
+    if ( TITLE.includes("Platinum") ) {
+        var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
+        
+        for (let i = 0; i < rotom_info.length; i++) {
+            pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+                "types": [
+                    "Electric",
+                    rotom_info[i][1]
+                ],
+                "bs": {
+                    "at": 50,
+                    "df": 77,
+                    "hp": 50,
+                    "sa": 95,
+                    "sd": 77,
+                    "sp": 101
+                },
+                "weightkg": 0.3,
+                "abilities": {
+                    "0": "Levitate"
+                },
+                "gender": "N"
+            }
+        }
+        
+
+
+    }
+
     for (pok in pokedex) {
 
+        if (pok.includes("Glitched")) {
+            continue
+        }
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
@@ -1263,7 +1295,10 @@ function loadDataSource(data) {
         pokedex[pok]["types"] = jsonPok["types"]
         if (jsonPok.hasOwnProperty("abilities"))
             pokedex[pok]["abilities"] = jsonPok["abilities"]
-        }
+
+    }
+// TITLE.includes("Platinum")
+    
     load_js() 
 
     if (localStorage.customsets) {
