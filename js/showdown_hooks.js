@@ -953,9 +953,9 @@ function get_current_learnset() {
 
     var ls_html = ""
 
-    for (let i = 0; i < current_learnset.length; i++) {
-        var lvl = current_learnset[i][0]
-        var mv_name = current_learnset[i][1]
+    for (let i = 0; i < current_learnset["learnset"].length; i++) {
+        var lvl = current_learnset["learnset"][i][0]
+        var mv_name = current_learnset["learnset"][i][1]
         ls_html += `<div class='ls-row'><div class='ls-level'>${lvl}</div><div class='ls-name'>${mv_name}</div></div>`
     }
     $(".lvl-up-moves").html(ls_html)
