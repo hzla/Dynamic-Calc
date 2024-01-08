@@ -403,6 +403,7 @@ function addSets(pokes, name) {
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
+	 $(".trainer-pok.left-side" ).attr("draggable", "true")
 }
 
 
@@ -489,6 +490,7 @@ $(document).ready(function () {
 	placeBsBtn();
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
+		$(".trainer-pok.left-side" ).attr("draggable", "true")
 		// updateDex(customSets);
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {

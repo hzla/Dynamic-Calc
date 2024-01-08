@@ -84,6 +84,7 @@ function get_box() {
         }   
     }
 
+
     $('.player-poks').html(box_html)
     return box
 }
@@ -1466,7 +1467,7 @@ $(document).ready(function() {
         if ($('.info-group.opp > * > .forme').is(':visible')) {
             $('.info-group.opp > * > .forme').change()
         }
-        box_rolls()
+        // box_rolls()
    })
 
    $(document).on('click', '.nav-tag', function() {
@@ -1476,9 +1477,9 @@ $(document).ready(function() {
         $('.opposing .select2-chosen').text(set)
    })
 
-   $(document).on('click', '.select2-result-label', function() {
-        setTimeout(1, box_rolls())
-   })
+   // $(document).on('click', '.select2-result-label', function() {
+   //      setTimeout(1, box_rolls())
+   // })
 
 
 
@@ -1507,7 +1508,7 @@ $(document).ready(function() {
         
         
 
-        box_rolls($("#min-dealt").val(), $("#max-taken").val())
+        // box_rolls($("#min-dealt").val(), $("#max-taken").val())
    })
 
    $(document).on('click', '.results-right label', function() {
@@ -1542,6 +1543,55 @@ $(document).ready(function() {
         }
         window.location.href = url;
    })
+
+   $(document).on('contextmenu', '.trainer-pok.left-side', function(e) {
+        e.preventDefault()
+        console.log("dbl click")
+        var parentBox = $(this).parent()
+        var destination = $(this)
+        
+
+
+        if (parentBox.hasClass('player-poks')) {
+            destination = $('.player-party')
+            $('.player-party').show()
+            $('#clear-party').show()
+        } else {
+            $(this).remove()
+            if ($('.player-party').children().length == 0) {
+                $('.player-party').hide()
+                $('#clear-party').hide()
+            }
+        }
+
+        console.log(destination)
+
+        destination.append($(this).clone())
+        // $(this).remove()
+   })
+
+   $(document).on('click', '#clear-party', function() {
+        $('.player-party').html("")
+        $('.player-party').hide()
+        $('#clear-party').hide()
+   })
+
+
+
+   $(document).on('click', '#img-toggle', function() {
+        let url = window.location.href;    
+        if (url.indexOf('?') > -1){
+           url += '&backup=true'
+        } else {
+           url += '?backup=true'
+        }
+        window.location.href = url;
+   })
+
+
+
+  
+
 
    $(document).on('click', '#invert-types', function() {
         let url = window.location.href;    
@@ -1591,7 +1641,7 @@ $(document).ready(function() {
             $('.info-group:not(.opp) > * > .forme').change()
         }
         get_box()
-        box_rolls()
+        // box_rolls()
 
         var right_max_hp = $("#p1 .max-hp").text()
         console.log(right_max_hp)

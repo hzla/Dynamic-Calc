@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c963" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c964" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -22,6 +22,8 @@
         };
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <link href="../stylesheets/main.css" rel="stylesheet">
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PSZYZ0XPP"></script>
@@ -535,6 +537,13 @@
             <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
             <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
 
+            <div class="trainer-poks ">
+
+                <div class="trainer-pok-list player-party">
+
+                </div>
+                <div id="clear-party">Clear</div>
+            </div>
 
            
 
@@ -543,9 +552,10 @@
                 <div class="trainer-pok-list player-poks">
 
                 </div>
+
             </div>
 
-             <div id="player-poks-filter">
+<!--              <div id="player-poks-filter">
                 <div class="filter-row">
                     <div class="filter-desc" id="min-dealt-label">Search Minimum % Dealt: </div>
                     <input id="min-dealt"/>
@@ -558,7 +568,7 @@
                 <div class="filter-row">
                     <div class="filter-desc" id="faster-label">Faster</div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -1628,7 +1638,7 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100075"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100076"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17a"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?c1788575"></script>
@@ -1656,7 +1666,7 @@
 
 
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f6"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?a7071f63"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?a7071f64"></script>
 </div>
 
 
