@@ -262,6 +262,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var attack;
     var attackBoost = attacker.boosts[attackStat];
     var rawAttack = attacker.rawStats[attackStat];
+
     if (attackBoost === 0 || (isCritical && attackBoost < 0)) {
         attack = rawAttack;
     }

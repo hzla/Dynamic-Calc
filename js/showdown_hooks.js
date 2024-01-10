@@ -1650,6 +1650,36 @@ $(document).ready(function() {
         
     });
 
+
+   $(document).on('click', '#weather-bar label', function() {
+        var weather = $(this).text()
+        var sprite = $('#p2 .poke-sprite').attr('src')
+
+        var cast_regx = /castform-?[a-z]*/i
+        var cherr_regx = /cherrim-?[a-z]*/i
+
+        
+        if (weather == "Rain" && $('.forme').last().val().includes("Castform")) {
+            $('.forme').last().val("Castform-Rainy").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cast_regx, "castform-rainy"))
+        } else if (weather == "Sun" && $('.forme').last().val().includes("Castform")) {
+            $('.forme').last().val("Castform-Sunny").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cast_regx, "castform-sunny"))
+        } else if (weather == "Hail" && $('.forme').last().val().includes("Castform")) {
+            $('.forme').last().val("Castform-Snowy").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cast_regx, "castform-snowy"))
+        } else if (weather == "Sun" && $('.forme').last().val().includes("Cherrim")){
+            $('.forme').last().val("Cherrim-Sunshine").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cherr_regx, "cherrim-sunshine"))
+        } else if (weather == "None"  && $('.forme').last().val().includes("Cherrim")) {
+            $('.forme').last().val("Cherrim").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cherr_regx, "cherrim"))
+        } else if (weather == "None"  && $('.forme').last().val().includes("Castform")) {
+            $('.forme').last().val("Castform").change()
+            $('#p2 .poke-sprite').attr('src', sprite.replace(cast_regx, "castform"))
+        }     
+   })
+
    
 
 
