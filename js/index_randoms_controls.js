@@ -260,8 +260,9 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 
 	checkStatBoost(p1, p2);
 	var results = [[], []];
+	console.log(p2)
 	for (var i = 0; i < 4; i++) {
-		// console.log(moves[p2.moves[i].originalName])
+		console.log(moves[p2.moves[i]])
 		p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
 		p2.moves[i].overrides = {}
 

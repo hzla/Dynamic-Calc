@@ -477,6 +477,20 @@ html, body {
     min-height: 96px;
     justify-content: space-between;   
     display: none;
+    justify-content: flex-start ;
+}
+
+.player-party .trainer-pok-container {
+    width: calc(16.66% - 3px);
+    margin: 0;
+    padding: 0;
+}
+
+.player-party .trainer-pok.left-side {
+    background: url(../img/box_bg_city.png);
+    background-size: cover ;
+    height:  100%;
+    width:  100%;
 }
 
 #clear-party {
@@ -491,6 +505,7 @@ html, body {
     text-align: center;
     cursor: pointer;
     margin-left: 13px;
+    margin-top:  20px;
 }
 
 #player-poks-filter {
@@ -590,6 +605,11 @@ html, body {
     border: 1px solid #1abc9c;
     border-radius: 10px;
 }
+
+.player-party .trainer-pok-container:hover {
+    border: none;
+}
+
 
 .info-group.hp-cntrl {
     margin-bottom: 0;

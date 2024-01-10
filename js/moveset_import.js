@@ -486,11 +486,11 @@ $("#importedSets").click(function () {
 });
 
 $(document).ready(function () {
-	var customSets;
+	// customSets;
 	placeBsBtn();
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
-		$(".trainer-pok.left-side" ).attr("draggable", "true")
+
 		// updateDex(customSets);
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {

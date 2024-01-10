@@ -21,6 +21,14 @@ function get_trainer_names() {
     return trainer_names
 }
 
+function abv(s) {
+    if (s.length >= 10) {
+        return (s.split(" ")[0][0] + " " + s.split(" ")[1])
+    } else {
+        return s
+    }
+}
+
 function get_custom_trainer_names() {
     var all_poks = setdex
     var trainer_names = [] 
@@ -1548,25 +1556,40 @@ $(document).ready(function() {
         e.preventDefault()
         console.log("dbl click")
         var parentBox = $(this).parent()
-        var destination = $(this)
+
+
+        var data_id = $(this).attr('data-id')
+        var species_name = data_id.split(" (")[0]
+        var sprite_name = species_name.toLowerCase().replace(" ","-").replace(".","").replace("’","")
+        var set_data = customSets[species_name]["My Box"]
+
+        var pok = `<div class="trainer-pok-container">
+            <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">
+            <div class="bp-info">${abv(set_data['moves'][0].replace("Hidden Power", "HP"))}</div>
+            <div class="bp-info">${abv(set_data['moves'][1].replace("Hidden Power", "HP"))}</div>
+            <div class="bp-info">${abv(set_data['moves'][2].replace("Hidden Power", "HP"))}</div>
+            <div class="bp-info">${abv(set_data['moves'][3].replace("Hidden Power", "HP"))}</div>
+        </div>`
+
         
 
 
-        if (parentBox.hasClass('player-poks')) {
+        if (!parentBox.hasClass('trainer-pok-container')) {
             destination = $('.player-party')
-            $('.player-party').show()
+            $('.player-party').css('display', 'flex')
             $('#clear-party').show()
+            destination.append(pok)
         } else {
-            $(this).remove()
+            $(this).parent().remove()
             if ($('.player-party').children().length == 0) {
                 $('.player-party').hide()
                 $('#clear-party').hide()
             }
         }
 
-        console.log(destination)
 
-        destination.append($(this).clone())
+
+        
         // $(this).remove()
    })
 
