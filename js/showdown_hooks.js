@@ -22,8 +22,13 @@ function get_trainer_names() {
 }
 
 function abv(s) {
-    if (s.length >= 10) {
-        return (s.split(" ")[0][0] + " " + s.split(" ")[1])
+    if (s.length >= 10 && $('.player-party').width() <= 800 ) {
+        if (s.split(" ")[1]) {
+            return (s.split(" ")[0][0] + " " + s.split(" ")[1])
+        } else {
+            return s.slice(0,9)
+        }
+        
     } else {
         return s
     }
@@ -1376,7 +1381,8 @@ $(document).ready(function() {
    "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
    "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
    "e9030beba9c1ba8804e8": "Kaizo Colloseum",
-   "6875151cfa5eea00eafa": "Inclement Emerald No EVs"
+   "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
+   "d6364c8b89ad50905e6a": "Sterling Silver"
     }
 
 
