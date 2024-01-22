@@ -1198,7 +1198,7 @@ function loadDataSource(data) {
     customMoves = data["custom_moves"]
     var jsonMove
 
-    if (!jsonMoves["Explosion"]["e_id"]){
+    if (!jsonMoves["Fire Blast"]["e_id"]){
         $("#show-ai").hide()
     }
 
@@ -1252,6 +1252,22 @@ function loadDataSource(data) {
 
         if (moves[move]["multihit"]) {
             moves[move]["multihit"] = jsonMove["multihit"]
+        }
+    }
+
+    for (move in jsonMoves) {
+        
+        // if defined in showdown move lis
+        if (moves[move]) {
+        } else {
+            // custom move
+            console.log(move)
+            jsonMoves[move]["flags"] = {}
+
+            moves[move] = jsonMoves[move]
+            moves[move]["bp"] = jsonMoves[move]["basePower"]
+
+            MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
         }
     }
 
@@ -1382,7 +1398,8 @@ $(document).ready(function() {
    "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
    "e9030beba9c1ba8804e8": "Kaizo Colloseum",
    "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
-   "d6364c8b89ad50905e6a": "Sterling Silver"
+   "d6364c8b89ad50905e6a": "Sterling Silver",
+   "5b789b0056c18c5c668b": "Platinum Redux 2.6"
     }
 
 
@@ -1694,7 +1711,11 @@ $(document).ready(function() {
         var set = $(this).attr('data-id')
         $('.player').val(set)
 
-        $('.player').change()
+
+
+        $('.set-selector').first().change()
+
+    
         $('.player .select2-chosen').text(set)
         if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
             $('.info-group:not(.opp) > * > .forme').change()

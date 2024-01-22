@@ -69,7 +69,7 @@ moveChanges = {
 		"X-scissor":        "X-Scissor",
 		"Faint Attack": "Feint Attack"},
 
-		"Sterling Silver": 
+	"Sterling Silver": 
     {
         "Defend Order": "HP Bug",
         "Dark Void": "HP Dark",

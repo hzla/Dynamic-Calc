@@ -1623,7 +1623,7 @@ $(document).ready(function () {
    // }
     
 
-	if (damageGen <= 5 && switchIn < 10) {
+	if (damageGen <= 5 && switchIn < 10 && TITLE != "Platinum Redux 2.6") {
 		trainerSprites = "front"
 		playerSprites = "back"
 		suffix = "gif"
