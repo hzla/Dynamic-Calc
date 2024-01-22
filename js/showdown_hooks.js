@@ -458,8 +458,6 @@ function get_next_in_g4() {
                 }
 
                 if (type_info[mov_data["type"]] >= 2) {
-                    console.log(mov_data)
-                    console.log(pok_data)
                     isSE = true
                 }
                 
@@ -493,7 +491,6 @@ function get_next_in_g4() {
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
-        console.log(pok_name)
         var type1 = pokedex[pok_name]["types"][0]
         var type2 = pokedex[pok_name]["types"][1] || type1
         var pok_data = SETDEX_BW[pok_name][tr_name]
@@ -1105,45 +1102,75 @@ function sort_trpoks_g4(a, b) {
     }
 }
 
+
+function construct_type_chart() {
+    var type_names = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
+             "Fighting", "Poison", "Ground", "Flying", "Psychic",
+             "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","???"]
+
+    var types = TYPES_BY_ID[type_chart]
+    var chart = []
+
+    for (i = 0; i < type_names.length; i++) {
+        var effectiveness = []
+
+        for (j = 0; j < type_names.length; j++) {
+            effectiveness.push(types[type_names[i].toLowerCase().replace("???", "")].effectiveness[type_names[j]])
+        }
+        chart.push(effectiveness)
+    }
+
+    return chart
+
+}
+
 function get_type_info(pok_types) {
     if (pok_types[1] == pok_types[0]) {
         pok_types[1] = "None"
     }
 
     var type_name = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
-             "Fighting", "Poison", "Ground", "Flying", "Psychic",
-             "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","None"]
+                 "Fighting", "Poison", "Ground", "Flying", "Psychic",
+                 "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","None"]
 
     var result = {}
 
-    var types = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1,1],
-            [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1,1],
-            [1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1,1],
-            [1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1,1],
-            [1, 0.5, 2, 1, 0.5, 1, 1, 0.5, 2, 0.5, 1, 0.5, 2, 1, 0.5, 1, 0.5, 1,1],
-            [1, 0.5, 0.5, 1, 2, 0.5, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 0.5, 1,1],
-            [2, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 0.5, 2, 0, 1, 2, 2, 0.5,1],
-            [1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 0, 2,1],
-            [1, 2, 1, 2, 0.5, 1, 1, 2, 1, 0, 1, 0.5, 2, 1, 1, 1, 2, 1,1],
-            [1, 1, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 0.5, 1,1],
-            [1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0.5, 1, 1, 1, 1, 0, 0.5, 1,1],
-            [1, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 0.5, 2, 1, 1, 0.5, 1, 2, 0.5, 0.5,1],
-            [1, 2, 1, 1, 1, 2, 0.5, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 0.5, 1,1],
-            [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 1,1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0.5, 0,1],
-            [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 0.5,1],
-            [1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2,1],
-            [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+    if (typeof final_type_chart !== 'undefined') {
+        var types = final_type_chart
 
-    if (type_chart < 6) {
-        types[13][16] = 0.5
-        types[15][16] = 0.5
     } else {
-       types[13][16] = 1
-        types[15][16] = 1 
-    }
 
+        
+
+        var types = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1,1],
+                [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1,1],
+                [1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1,1],
+                [1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1,1],
+                [1, 0.5, 2, 1, 0.5, 1, 1, 0.5, 2, 0.5, 1, 0.5, 2, 1, 0.5, 1, 0.5, 1,1],
+                [1, 0.5, 0.5, 1, 2, 0.5, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 0.5, 1,1],
+                [2, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 0.5, 2, 0, 1, 2, 2, 0.5,1],
+                [1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 0, 2,1],
+                [1, 2, 1, 2, 0.5, 1, 1, 2, 1, 0, 1, 0.5, 2, 1, 1, 1, 2, 1,1],
+                [1, 1, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 0.5, 1,1],
+                [1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0.5, 1, 1, 1, 1, 0, 0.5, 1,1],
+                [1, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 0.5, 2, 1, 1, 0.5, 1, 2, 0.5, 0.5,1],
+                [1, 2, 1, 1, 1, 2, 0.5, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 0.5, 1,1],
+                [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 1,1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0.5, 0,1],
+                [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 0.5,1],
+                [1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2,1],
+                [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1,1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+
+        if (type_chart < 6) {
+            types[13][16] = 0.5
+            types[15][16] = 0.5
+        } else {
+           types[13][16] = 1
+            types[15][16] = 1 
+        }
+    }
+   
     var type1 = type_name.indexOf(pok_types[0])
     var type2 = type_name.indexOf(pok_types[1])
 
@@ -1352,6 +1379,8 @@ function loadDataSource(data) {
         "category": "Status",
         "type": "Normal"
     }
+
+    
 }
 
 
@@ -1359,12 +1388,14 @@ params = new URLSearchParams(window.location.search);
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
 type_chart = parseInt(params.get('types'))
+type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
 misc = params.get('misc')
 invert = params.get('invert')
 DEFAULTS_LOADED = false
 analyze = false
+
 
 if (switchIn != 11) {
     $('#toggle-analysis').addClass('gone')
@@ -1482,6 +1513,7 @@ $(document).ready(function() {
         $.get(npoint, function(data){
             npoint_data = data
             loadDataSource(data)
+            final_type_chart = construct_type_chart()
         })
    }
 

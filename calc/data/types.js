@@ -470,18 +470,65 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
     }
 });
 
+var platRedux = (0, util_1.extend)(true, {}, GSC, {
+    '???': { Fairy: 1 },
+    Normal: { Fairy: 1, Dark: 2},
+    Grass: { Fairy: 1, Steel: 1},
+    Fire: { Fairy: 1 },
+    Water: { Fairy: 1 },
+    Electric: { Fairy: 1 },
+    Ice: { Fairy: 1 },
+    Flying: { Fairy: 1 },
+    Bug: { Fairy: 0.5, Ghost: 1},
+    Poison: { Fairy: 2, Dragon: 2 },
+    Ground: { Fairy: 1 },
+    Rock: { Fairy: 1 },
+    Fighting: { Fairy: 0.5 },
+    Psychic: { Fairy: 1, Steel: 1 },
+    Ghost: { Steel: 1, Fairy: 1 },
+    Dragon: { Fairy: 0, Ice: 0.5, Normal: 2 },
+    Dark: { Steel: 1, Fairy: 0.5, Normal: 0.5},
+    Steel: { Fairy: 2 },
+    Fairy: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 0.5,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 2,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 2,
+        Dark: 2,
+        Steel: 0.5,
+        Fairy: 1
+    }
+});
+
+
 
 var SM = XY;
 var SS = SM;
 
-console.log(type_chart)
+if (type_mod == "plat_redux") {
+    DPP = platRedux
+}
+
+
 if (type_chart >= 6) {
     BW = XY
     DPP = XY
     ADV = XY
 }
 
-exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+exports.TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, platRedux];
 var Types = (function () {
     function Types(gen) {
         this.gen = gen;
@@ -570,6 +617,29 @@ finally {
     }
     finally { if (e_1) throw e_1.error; }
 }
+
+// function construct_type_chart() {
+//     var type_names = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
+//              "Fighting", "Poison", "Ground", "Flying", "Psychic",
+//              "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","???"]
+
+//     var types = TYPES_BY_ID[type_chart]
+//     var chart = []
+
+//     for (let i = 0; i < type_names.length; i++) {
+//         var effectiveness = []
+
+//         for (let j = 0; j < type_names.length; j++) {
+//             effectiveness.push(types[type_names[i].toLowerCase().replace("???", "")].effectiveness[type_names[j]])
+//         }
+//         chart.push(effectiveness)
+//     }
+
+//     return chart
+
+// }
+
+// final_type_chart = construct_type_chart()
 
 
 

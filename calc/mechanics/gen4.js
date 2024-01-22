@@ -218,7 +218,13 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var isPhysical = move.category === 'Physical';
     if ((attacker.hasItem('Muscle Band') && isPhysical) ||
         (attacker.hasItem('Wise Glasses') && !isPhysical)) {
-        basePower = Math.floor(basePower * 1.1);
+        
+        if (TITLE == "Platinum Redux 2.6") {
+            basePower = Math.floor(basePower * 1.15);
+        } else {
+            basePower = Math.floor(basePower * 1.1);
+        }
+        
         desc.attackerItem = attacker.item;
     }
     else if (move.hasType((0, items_1.getItemBoostType)(attacker.item)) ||
@@ -306,7 +312,14 @@ function calculateDPP(gen, attacker, defender, move, field) {
     }
     if ((isPhysical ? attacker.hasItem('Choice Band') : attacker.hasItem('Choice Specs')) ||
         (!isPhysical && attacker.hasItem('Soul Dew') && attacker.named('Latios', 'Latias'))) {
-        attack = Math.floor(attack * 1.5);
+        
+        if (TITLE == "Platinum Redux 2.6" && !attacker.hasItem('Soul Dew')) {
+            attack = Math.floor(attack * 1.25);
+        } else {
+            attack = Math.floor(attack * 1.5);
+        }
+
+        
         desc.attackerItem = attacker.item;
     }
     else if ((attacker.hasItem('Light Ball') && attacker.named('Pikachu')) ||
@@ -416,7 +429,12 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.isCritical = isCritical;
     }
     if (attacker.hasItem('Life Orb')) {
-        baseDamage = Math.floor(baseDamage * 1.3);
+        if (TITLE == "Platinum Redux 2.6") {
+            baseDamage = Math.floor(baseDamage * 1.25);
+        } else {
+            baseDamage = Math.floor(baseDamage * 1.3);
+        }
+        
         desc.attackerItem = attacker.item;
     }
     if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
@@ -445,7 +463,12 @@ function calculateDPP(gen, attacker, defender, move, field) {
     }
     var ebeltMod = 1;
     if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
-        ebeltMod = 1.2;
+        if (TITLE == "Platinum Redux 2.6") {
+            ebeltMod = 1.25;
+        } else {
+            ebeltMod = 1.2;
+        }
+        
         desc.attackerItem = attacker.item;
     }
     var tintedMod = 1;
