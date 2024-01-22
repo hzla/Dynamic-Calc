@@ -33,8 +33,7 @@ function performCalculations() {
 	var p1field = createField();
 	var p2field = p1field.clone().swap();
 
-	console.log("recalculating")
-	console.log(p2)
+
 
 
 	
@@ -83,7 +82,6 @@ function performCalculations() {
 		$(resultLocations[1][i].damage).text(result.moveDesc(notation));
 
 		var dmgInfo = $(resultLocations[1][i].damage).text()
-		console.log(result)
 
 		
 		if (moveProbabilities[i] != 0) {

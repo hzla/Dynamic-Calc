@@ -1711,6 +1711,8 @@ $(document).ready(function() {
         $('.player').val(set)
 
 
+        console.log("switching")
+        $('.player').change()
 
         $('.set-selector').first().change()
 
