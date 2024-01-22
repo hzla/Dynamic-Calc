@@ -505,7 +505,7 @@ function get_next_in_g4() {
 
         p2 = createPokemon(p2info, pok_data["moves"])
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
-        console.log(results)
+
 
         var highestDamage = 0
         for (n in results) {
@@ -1261,7 +1261,6 @@ function loadDataSource(data) {
         if (moves[move]) {
         } else {
             // custom move
-            console.log(move)
             jsonMoves[move]["flags"] = {}
 
             moves[move] = jsonMoves[move]
@@ -1724,9 +1723,7 @@ $(document).ready(function() {
         // box_rolls()
 
         var right_max_hp = $("#p1 .max-hp").text()
-        console.log(right_max_hp)
         $("#p1 .current-hp").val(right_max_hp).change()
-        console.log("hp changed")
     })
 
     $(document).on('change', '#p2 .poke-sprite', function() {
