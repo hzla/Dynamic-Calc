@@ -1429,6 +1429,7 @@ $(document).ready(function() {
    "e9030beba9c1ba8804e8": "Kaizo Colloseum",
    "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
    "d6364c8b89ad50905e6a": "Sterling Silver",
+   "8f199f3f40194ecc4b8e": "Sterling Silver"
    "5b789b0056c18c5c668b": "Platinum Redux 2.6"
     }
 
