@@ -96,6 +96,12 @@ var Side = (function () {
         this.isBattery = !!side.isBattery;
         this.isPowerSpot = !!side.isPowerSpot;
         this.isSwitching = side.isSwitching;
+        this.is10Buff = !!side.is10Buff
+        this.is15Buff = !!side.is15Buff
+        this.is20Buff = !!side.is20Buff
+        this.is25Buff = !!side.is25Buff
+        this.is30Buff = !!side.is30Buff
+        this.is50Buff = !!side.is50Buff
     }
     Side.prototype.clone = function () {
         return new Side(this);

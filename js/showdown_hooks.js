@@ -524,7 +524,7 @@ function get_next_in_g4() {
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage])
     }
 
-    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+    // console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 }

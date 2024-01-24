@@ -215,6 +215,30 @@ function calculateDPP(gen, attacker, defender, move, field) {
         basePower = Math.floor(basePower * 1.5);
         desc.isHelpingHand = true;
     }
+
+    // console.log(field.attackerSide)
+
+    if (field.attackerSide.is10Buff) {
+        basePower = Math.floor(basePower * 1.1);
+        // console.log("buffing")
+        desc.is10Buff = true;
+    }
+    if (field.attackerSide.is15Buff) {
+        basePower = Math.floor(basePower * 1.15);
+    }
+    if (field.attackerSide.is20Buff) {
+        basePower = Math.floor(basePower * 1.2);
+    }
+    if (field.attackerSide.is25Buff) {
+        basePower = Math.floor(basePower * 1.25);
+    }
+    if (field.attackerSide.is30Buff) {
+        basePower = Math.floor(basePower * 1.3);
+    }
+    if (field.attackerSide.is50Buff) {
+        basePower = Math.floor(basePower * 1.5);
+    }
+
     var isPhysical = move.category === 'Physical';
     if ((attacker.hasItem('Muscle Band') && isPhysical) ||
         (attacker.hasItem('Wise Glasses') && !isPhysical)) {

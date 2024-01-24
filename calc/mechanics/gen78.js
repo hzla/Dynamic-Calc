@@ -681,6 +681,24 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
         bpMods.push(6144);
         desc.isHelpingHand = true;
     }
+    if (field.attackerSide.is10Buff) {
+        bpMods.push(4505);
+    }
+    if (field.attackerSide.is15Buff) {
+        bpMods.push(4710);
+    }
+    if (field.attackerSide.is20Buff) {
+        bpMods.push(4915)
+    }
+    if (field.attackerSide.is25Buff) {
+        bpMods.push(5120)
+    }
+    if (field.attackerSide.is30Buff) {
+        bpMods.push(5324)
+    }
+    if (field.attackerSide.is50Buff) {
+        bpMods.push(6144)
+    }
     var terrainMultiplier = gen.num > 7 ? 5325 : 6144;
     if ((0, util_2.isGrounded)(attacker, field)) {
         if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||

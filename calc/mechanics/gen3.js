@@ -300,6 +300,25 @@ function calculateADV(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.isHelpingHand = true;
     }
+    if (field.attackerSide.is10Buff) {
+        baseDamage = Math.floor(baseDamage * 1.1);
+        desc.is10Buff = true;
+    }
+    if (field.attackerSide.is15Buff) {
+        baseDamage = Math.floor(baseDamage * 1.15);
+    }
+    if (field.attackerSide.is20Buff) {
+        baseDamage = Math.floor(baseDamage * 1.2);
+    }
+    if (field.attackerSide.is25Buff) {
+        baseDamage = Math.floor(baseDamage * 1.25);
+    }
+    if (field.attackerSide.is30Buff) {
+        baseDamage = Math.floor(baseDamage * 1.3);
+    }
+    if (field.attackerSide.is50Buff) {
+        baseDamage = Math.floor(baseDamage * 1.5);
+    }
     if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false))) {
         baseDamage = Math.floor(baseDamage * 1.5);
     }

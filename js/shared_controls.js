@@ -1124,6 +1124,13 @@ function createField() {
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
 	var isPowerSpot = [$("#powerSpotL").prop("checked"), $("#powerSpotR").prop("checked")];
 	var isFlowerGift = [$("#flowerGiftL").prop("checked"), $("#flowerGiftR").prop("checked")];
+	
+	var is10Buff = [$("#is10BuffL").prop("checked"), $("#is10BuffR").prop("checked")];
+	var is15Buff = [$("#is15BuffL").prop("checked"), $("#is15BuffR").prop("checked")];
+	var is20Buff = [$("#is20BuffL").prop("checked"), $("#is20BuffR").prop("checked")];
+	var is25Buff = [$("#is25BuffL").prop("checked"), $("#is25BuffR").prop("checked")];
+	var is30Buff = [$("#is30BuffL").prop("checked"), $("#is30BuffR").prop("checked")];
+	var is50Buff = [$("#is50BuffL").prop("checked"), $("#is50BuffR").prop("checked")];
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 
@@ -1139,9 +1146,10 @@ function createField() {
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i], isFlowerGift: isFlowerGift[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i], isBadgeAtk: isBadgeAtk[i],isBadgeSpec: isBadgeSpec[i], isBadgeDef: isBadgeDef[i], isBadgeSpeed: isBadgeSpeed[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i]? 'out' : undefined
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i], is10Buff: is10Buff[i], is15Buff: is15Buff[i], is20Buff: is20Buff[i], is25Buff: is25Buff[i], is30Buff: is30Buff[i], is50Buff: is50Buff[i] ? 'out' : undefined
 		});
 	};
+	// console.log(is10Buff)
 	return new calc.Field({
 		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
 		attackerSide: createSide(0), defenderSide: createSide(1)
@@ -1308,6 +1316,8 @@ function clearField() {
 	$("#srR").prop("checked", false);
 	$("#spikesL0").prop("checked", true);
 	$("#spikesR0").prop("checked", true);
+	$("#is0BuffL").prop("checked", true);
+	$("#is0BuffR").prop("checked", true);
 	$("#gscSpikesL").prop("checked", false);
 	$("#gscSpikesR").prop("checked", false);
 	$("#steelsurgeL").prop("checked", false);
