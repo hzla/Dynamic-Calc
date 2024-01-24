@@ -1558,6 +1558,16 @@ $(document).ready(function() {
         $('#learnset-container').toggle()
    })
 
+   $(document).on('click', '#box-remove', function() {
+        var species = $('.set-selector')[0].value.split(" (")[0]
+        var sets = JSON.parse(localStorage.customsets)
+        if (confirm(`Delete ${species} from imported sets?`)) {
+            delete sets[species]['My Box']
+            localStorage.customsets = JSON.stringify(sets)
+            $(`[data-id='${$('.set-selector')[0].value}']`).remove()
+        }
+   })
+
    $(document).on('click', '#toggle-analysis', function() {
         $('#reasoning').toggleClass('gone')
    })

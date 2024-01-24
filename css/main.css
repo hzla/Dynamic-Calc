@@ -54,7 +54,7 @@ a img {
 
 
 
-#ai-tags div, #nav-tags div, #learnset-show {
+#ai-tags div, #nav-tags div, #learnset-show, #box-remove {
     line-height: 20px;
     margin-right: 10px;
     background: #ff79c6;
@@ -66,6 +66,11 @@ a img {
 
 #learnset-show {
     display: none;
+}
+
+#box-remove {
+    background: #FF5555;
+    display: block;
 }
 
 #learnset-container {
