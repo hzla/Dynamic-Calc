@@ -986,6 +986,20 @@ function get_current_learnset() {
 }
 
 
+function get_encs() {
+    if (typeof all_encs == 'undefined') {
+        $.ajax({
+             async: false,
+             type: 'GET',
+             url: encs,
+             success: function(data) {
+                all_encs = data
+             }
+        });
+    }
+    return all_encs
+}
+
 
 function get_next_in() {
 
@@ -1340,6 +1354,10 @@ function loadDataSource(data) {
         if (pok.includes("Glitched")) {
             continue
         }
+
+        if (pok.includes("Castform-") && damageGen == 4) {
+            pokedex[pok]["bs"] = jsonPoks["Castform"]["bs"]   
+        }
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
@@ -1434,6 +1452,7 @@ $(document).ready(function() {
     }
 
 
+    encs = `https://api.npoint.io/c39f79b412a6f19f3c4f`
 
    
     INC_EM = false
@@ -1457,6 +1476,7 @@ $(document).ready(function() {
     if (!params.get('data')) {return}
 
    npoint = `https://api.npoint.io/${params.get('data')}`
+
 
    if (params.get('data').includes("Pokeweb")) {
     npoint = `http://fishbowlweb.cloud:3000/${params.get('data').split("Pokeweb-")[1]}_calc.json`
@@ -1517,6 +1537,7 @@ $(document).ready(function() {
             final_type_chart = construct_type_chart()
         })
    }
+
 
 
 
