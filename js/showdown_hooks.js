@@ -1243,14 +1243,7 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
-
-    // moves = data["moves"]
-    // pokedex = data["poks"]
     console.log("loaded custom poks data")
-
-
-    
-
     for (move in moves) {
 
         var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
@@ -1259,46 +1252,28 @@ function loadDataSource(data) {
             jsonMove = jsonMoves[move]
         } else {
             moves[move] = jsonMoves[move]
-            continue //skip unsupported moves like hidden power
+            continue //completely overite if custom move data found
         }
-
-        
-        
 
         if (move == '(No Move)') {
             continue
         }
         moves[move]["bp"] = jsonMove["basePower"]
-        
-        // console.log(move_id)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
-
-
-
-        moves[move]["type"] = jsonMove["type"]
-        MOVES_BY_ID[g][move_id].type = jsonMove["type"]
-
         
-        if (jsonMove["category"]) {
-           moves[move]["category"] = jsonMove["category"]
-            MOVES_BY_ID[g][move_id].category = jsonMove["category"] 
-        }
-        
-
-        if (moves[move]["e_id"]) {
-            moves[move]["e_id"] = jsonMove["e_id"]
-        } 
-
-        
-
-        if (moves[move]["multihit"]) {
-            moves[move]["multihit"] = jsonMove["multihit"]
+        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil"]  
+        for (n in optional_move_params) {
+            var param = optional_move_params[n]
+            if (jsonMove[param]) {
+              moves[move][param] = jsonMove[param]
+              MOVES_BY_ID[g][move_id][param] = jsonMove[param]  
+            }
         }
     }
 
     for (move in jsonMoves) {
         
-        // if defined in showdown move lis
+        // if defined in showdown move list
         if (moves[move]) {
         } else {
             // custom move

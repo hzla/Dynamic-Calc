@@ -724,6 +724,10 @@ th {
 .info-group, .move1, .move2, .move3, .move4 {
     padding:  0px 12px;
 }
+
+.move4 {
+    margin-bottom: 20px;
+}
 .field-info, .poke-import {
     text-align: center;
     max-width:  510px;
