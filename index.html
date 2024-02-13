@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c966" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c967" />
+    <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c966" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -37,17 +38,29 @@
 
 <body>
 
-<div id="encounter-container">
-    
+<!-- <div id="encounter-container">
+    <h1 id="enc-header">Burned Tower</h1>
+
+
+
 
     
 </div>
-
+ -->
 
 <div class="wrapper" style="margin-top: 20px;">
 
     <div aria-label="Settings" role="region" class="header-settings">
-        <span class="title-text"><span id="img-toggle">Backup Mode</span><span id="invert-types">Invert Types</span>
+        
+        <img src="./img/menu.svg" id="open-menu">
+
+        <div id="settings-menu">
+            <div id="img-toggle" class="menu-item">Backup Mode</div>
+            <div id="invert-types" class="menu-item">Invert Types</div>
+            <!-- <div id="show-encs" class="menu-item">Encounters</div> -->
+        </div>
+
+        <span class="title-text">
         <input id="lvl-cap" placeholder="Lvl Cap">
 
         </span>
@@ -1093,29 +1106,13 @@
             </fieldset>
         </div>
 
-    <!--     <fieldset id="similarTrainers">
-            <div class="sim-trainer">
-                Elite 4 Marshall 
-            </div>
-            <div class="sim-trainer">
-                Elite 4 Marshall 
-            </div>
-            <div class="sim-trainer">
-                Elite 4 Marshall 
-            </div>
-            <div class="sim-trainer">
-                Elite 4 Marshall 
-            </div>
-        </fieldset> -->
-
-
         <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
                 <legend align="center">Import / Export</legend>
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
                         <input class="import-name-text" value="My Box"></input>
-                        <textarea class="import-team-text"></textarea>
+                        <textarea class="import-team-text" placeholder="Export your box and party data using Pkhex and paste here"></textarea>
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
                 </div>
@@ -1685,7 +1682,7 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100088"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100089"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17b"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?c1788575"></script>
@@ -1713,16 +1710,27 @@
 
 
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f7"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?a7071f68"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?a7071f69"></script>
 </div>
 
 
-<div class="credits">Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla.
-    <br><br>
-        <a href="https://discord.gg/HCXJFBANV2" class="pokeweb-link" target="_blank">Click here to join the discord for announcements, feature/game requests, and bug reports</a>
-    <br><br>
-    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'H2H01N1FG');kofiwidget2.draw();</script> <br>
 
+<div id="footer">
+    <div class="credits">Created by Honko, maintained by Austin and Kris, modified for Pokeweb by Hzla.
+        <br><br>
+            <a href="https://discord.gg/HCXJFBANV2" class="pokeweb-link" target="_blank">Click here to join the discord for announcements, feature/game requests, and bug reports</a>
+        <br><br>
+        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'H2H01N1FG');kofiwidget2.draw();</script> <br>
+
+
+    </div>
+
+    <div class="shortcut-info">
+        f - toggle "F"ield info<br>
+        i - "I"mports set data from clipboard<br>
+        c - toggle all opposing moves "C"rit<br>
+        f - toggle "L"earnset window if available
+    </div>
 
 </div>
 

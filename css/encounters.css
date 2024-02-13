@@ -1,0 +1,18 @@
+#encounter-container {
+	position: fixed;
+    width: calc(100vw - 60px);
+    height: calc(100vh - 125px);
+    left: 16px;
+    top: 85px;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    background: #282a36;
+    opacity: 0.92;
+    z-index: 99;
+	/*display: none;*/
+}
+
+#enc-header {
+	text-align: center;
+}

@@ -569,7 +569,7 @@ function addSets(pokes, name) {
 	}
 	if (addedpokes > 0) {
 		get_box()
-		alert("Successfully imported " + addedpokes + " set(s)");
+		// alert("Successfully imported " + addedpokes + " set(s)");
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");

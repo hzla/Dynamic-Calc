@@ -1511,6 +1511,11 @@ $(document).ready(function() {
             loadDataSource(data)
             final_type_chart = construct_type_chart()
         })
+
+        $.get(encs, function(data){
+            enc_data = data
+            console.log(enc_data["Burned Tower"])
+        })
    }
 
 
@@ -1526,7 +1531,6 @@ $(document).ready(function() {
         if ($('.info-group.opp > * > .forme').is(':visible')) {
             $('.info-group.opp > * > .forme').change()
         }
-        // box_rolls()
    })
 
    $(document).on('click', '.nav-tag', function() {
@@ -1536,16 +1540,13 @@ $(document).ready(function() {
         $('.opposing .select2-chosen').text(set)
    })
 
-   // $(document).on('click', '.select2-result-label', function() {
-   //      setTimeout(1, box_rolls())
-   // })
-
-
-
-
    $(document).on('click', '#show-mid', function() {
         $('.panel-mid').toggle()
         $('.panel:not(.panel-mid)').toggleClass('third')
+   })
+
+   $(document).on('click', '#open-menu', function() {
+        $('#settings-menu').toggle()
    })
 
 
@@ -1571,13 +1572,6 @@ $(document).ready(function() {
    $(document).on('click', '#show-ai', function() {
         $("#ai-container").toggle()
 
-   })
-
-   $(document).on('focusout', '.filter-row input', function() {
-        
-        
-
-        // box_rolls($("#min-dealt").val(), $("#max-taken").val())
    })
 
    $(document).on('click', '.results-right label', function() {
@@ -1647,11 +1641,6 @@ $(document).ready(function() {
                 $('#clear-party').hide()
             }
         }
-
-
-
-        
-        // $(this).remove()
    })
 
    $(document).on('click', '#clear-party', function() {
@@ -1671,6 +1660,36 @@ $(document).ready(function() {
         }
         window.location.href = url;
    })
+
+
+
+   // shortcuts
+    $(document).keyup(async function (e) {
+     if(e.key == "i" && $('.select2-drop-active:visible').length == 0) {
+        const text = await navigator.clipboard.readText();
+        addSets(text)
+     } else if(e.key == "e" && $('.select2-drop-active:visible').length == 0) {
+        $('#encounter-container').toggle()
+     } else if (e.key == "f" && $('.select2-drop-active:visible').length == 0){
+        $('.panel-mid').toggle()
+        $('.panel:not(.panel-mid)').toggleClass('third')
+     } else if (e.key == "c" && $('.select2-drop-active:visible').length == 0) {
+        $("#critR1")[0].checked = !$("#critR1")[0].checked
+        $("#critR2")[0].checked = !$("#critR2")[0].checked
+        $("#critR3")[0].checked = !$("#critR3")[0].checked
+        $("#critR4")[0].checked = !$("#critR4")[0].checked
+        $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
+        $('.move-crit').last().change()
+     } else if (e.key == "l" && $('.select2-drop-active:visible').length == 0 && $("#learnset-show:visible").length > 0) {
+         get_current_learnset()
+        $('#learnset-container').toggle()
+     }
+     
+
+
+    })
+
+
 
 
 
@@ -1710,6 +1729,14 @@ $(document).ready(function() {
         
         
     });
+
+
+   $('.set-selector, .move-selector').on("select2-close", function () {
+    setTimeout(function() {
+        $('.select2-container-active').removeClass('select2-container-active');
+        $(':focus').blur();
+    }, 1);
+});
 
 
    $(document).on('click', '#weather-bar label', function() {

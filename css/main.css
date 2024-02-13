@@ -20,6 +20,41 @@ a img {
     min-height: 50px;
 }
 
+#open-menu {
+    height:  40px;
+    cursor: pointer;
+}
+
+#settings-menu {
+    border: 2px solid #f1f1f1;
+    z-index: 100;
+    position: absolute;
+    top: 70px;
+    background: #282a36;
+    width: 160px;
+    padding: 4px;
+    display: none;
+
+
+}
+
+.menu-item {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.crit-text {
+    color:  #FF5555;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+
 #lvl-cap {
     padding:  4px;
     width:  60px;
@@ -672,8 +707,17 @@ html, body {
 .credits {
     clear: both;
     padding: 20px 0px;
-    max-width: 1285px;
+    max-width: 60vw;
     margin-left: 40px;
+}
+
+.shortcut-info {
+    width: 40vw;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 40px;
+
 }
 div.wrapper > div > span {
     padding-right: 5px;
@@ -901,15 +945,8 @@ th {
     justify-content: flex-end;
 }
 
-#img-toggle, #invert-types {
-    font-size: 16px;
-    font-weight: 400;
-    background: #bd93f9;
-    padding: 5px;
-    border-radius: 6px;
-    margin-left: 10px;
-    cursor: pointer;
-}
+
+
 
 #toggle-analysis {
     font-size: 16px;
@@ -1138,3 +1175,15 @@ table.field {
 .panel-mid {
     flex-direction: column;
 }
+
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
