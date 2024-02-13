@@ -570,6 +570,10 @@ function addSets(pokes, name) {
 	if (addedpokes > 0) {
 		get_box()
 		// alert("Successfully imported " + addedpokes + " set(s)");
+		$('.player-poks').addClass('shake')
+		setTimeout(function(){
+			$('.player-poks').removeClass('shake')
+		}, 500)
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
