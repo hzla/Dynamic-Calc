@@ -465,7 +465,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             basePower = move.bp;
     }
 
-    if (typeof npoint_data['moves'][move.name]['hc_effect'] !== 'undefined') {
+    if (typeof npoint_data['moves'][move.name] != 'undefined' && typeof npoint_data['moves'][move.name]['hc_effect'] !== 'undefined') {
         switch (npoint_data['moves'][move.name]['hc_effect']) {
             case 'Payback':
                 basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
