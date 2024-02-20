@@ -7,10 +7,12 @@ A showdown calculator fork with dynamic data source loading and expanded feature
   
 ### Imported Set Preview
 <img width="854" alt="Screen Shot 2024-02-20 at 2 03 36 PM" src="https://github.com/hzla/Dynamic-Calc/assets/5680299/cccd0ce2-342e-46e4-8d5b-081b0b0a4920">
+
 All imported sets are treated as your box and can be clicked to be quickly loaded into the left side of the calc
 
 ### Enemy Trainer Team Preview
 <img width="885" alt="Screen Shot 2024-02-20 at 2 04 29 PM" src="https://github.com/hzla/Dynamic-Calc/assets/5680299/5cb031cb-4859-4acc-a9c3-4c3fe5168abe">
+
 Enemy Trainers have their teams shown on the right side and can be clicked to load into the right side of the calc.
 
 ### Switchin Bait Order Preview (Gen 4-9)
