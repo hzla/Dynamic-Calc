@@ -3,7 +3,7 @@
 # Dynamic Calc
 A showdown calculator fork with dynamic data source loading and expanded features for nuzlockes
 
-## Main Features
+## Features for Nuzlockers
   
 ### Imported Set Preview
 <img width="854" alt="Screen Shot 2024-02-20 at 2 03 36 PM" src="https://github.com/hzla/Dynamic-Calc/assets/5680299/cccd0ce2-342e-46e4-8d5b-081b0b0a4920">
