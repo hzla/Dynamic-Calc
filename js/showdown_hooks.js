@@ -1261,12 +1261,28 @@ function loadDataSource(data) {
         moves[move]["bp"] = jsonMove["basePower"]
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
         
-        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil"]  
+        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP"]  
         for (n in optional_move_params) {
             var param = optional_move_params[n]
             if (jsonMove[param]) {
               moves[move][param] = jsonMove[param]
               MOVES_BY_ID[g][move_id][param] = jsonMove[param]  
+            }
+        }
+
+        if (jsonMove["sf"]) {
+            moves[move]["secondaries"] = true
+            MOVES_BY_ID[g][move_id]["secondaries"] = true
+        }
+
+        if (jsonMove['flags']) {
+            if (jsonMove['flags']['punch']) {
+                moves[move]['isPunch'] = true
+                MOVES_BY_ID[g][move_id]["flags"]["punch"] = 1
+            }
+            if (jsonMove['flags']['sound']) {
+                moves[move]['isSound'] = true
+                MOVES_BY_ID[g][move_id]["flags"]["sound"] = 1
             }
         }
     }

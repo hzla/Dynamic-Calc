@@ -335,9 +335,271 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         default:
             basePower = move.bp;
     }
+
+    switch (move.name) {
+        case 'Payback':
+            basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Pursuit':
+            var switching = field.defenderSide.isSwitching === 'out';
+            basePower = move.bp * (switching ? 2 : 1);
+            if (switching)
+                desc.isSwitching = 'out';
+            desc.moveBP = basePower;
+            break;
+        case 'Electro Ball':
+            if (defender.stats.spe === 0)
+                defender.stats.spe = 1;
+            var r = Math.floor(attacker.stats.spe / defender.stats.spe);
+            basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
+            desc.moveBP = basePower;
+            break;
+        case 'Gyro Ball':
+            if (attacker.stats.spe === 0)
+                attacker.stats.spe = 1;
+            basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Punishment':
+            basePower = Math.min(200, 60 + 20 * (0, util_2.countBoosts)(gen, defender.boosts));
+            desc.moveBP = basePower;
+            break;
+        case 'Low Kick':
+        case 'Grass Knot':
+            var w = defender.weightkg * (0, util_2.getWeightFactor)(defender);
+            basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+            desc.moveBP = basePower;
+            break;
+        case 'Hex':
+            basePower = move.bp * (defender.status ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Heavy Slam':
+        case 'Heat Crash':
+            var wr = (attacker.weightkg * (0, util_2.getWeightFactor)(attacker)) /
+                (defender.weightkg * (0, util_2.getWeightFactor)(defender));
+            basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
+            desc.moveBP = basePower;
+            break;
+        case 'Stored Power':
+        case 'Power Trip':
+            basePower = move.bp + 20 * (0, util_2.countBoosts)(gen, attacker.boosts);
+            desc.moveBP = basePower;
+            break;
+        case 'Acrobatics':
+            basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Assurance':
+            basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+            break;
+        case 'Wake-Up Slap':
+            basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Smelling Salts':
+            basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Weather Ball':
+            basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Fling':
+            basePower = (0, items_1.getFlingPower)(attacker.item);
+            desc.moveBP = basePower;
+            desc.attackerItem = attacker.item;
+            break;
+        case 'Eruption':
+        case 'Water Spout':
+            basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
+            desc.moveBP = basePower;
+            break;
+        case 'Flail':
+        case 'Reversal':
+            var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
+            basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+            desc.moveBP = basePower;
+            break;
+        case 'Nature Power':
+            if (gen.num === 5) {
+                move.category = 'Physical';
+                move.target = 'allAdjacent';
+                basePower = 100;
+                desc.moveName = 'Earthquake';
+            }
+            else {
+                move.category = 'Special';
+                move.secondaries = true;
+                switch (field.terrain) {
+                    case 'Electric':
+                        basePower = 90;
+                        desc.moveName = 'Thunderbolt';
+                        break;
+                    case 'Grassy':
+                        basePower = 90;
+                        desc.moveName = 'Energy Ball';
+                        break;
+                    case 'Misty':
+                        basePower = 95;
+                        desc.moveName = 'Moonblast';
+                        break;
+                    default:
+                        basePower = 80;
+                        desc.moveName = 'Tri Attack';
+                }
+            }
+            break;
+        // Assuming there are always 3 hits in Triple Kick
+        case 'Triple Kick':
+            basePower = (move.bp * 3 + 30) / 3;
+            break;
+        case 'Crush Grip':
+        case 'Wring Out':
+            basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+            basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+            desc.moveBP = basePower;
+            break;
+        default:
+            basePower = move.bp;
+    }
+
+    if (typeof npoint_data['moves'][move.name]['hc_effect'] !== 'undefined') {
+        switch (npoint_data['moves'][move.name]['hc_effect']) {
+            case 'Payback':
+                basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Pursuit':
+                var switching = field.defenderSide.isSwitching === 'out';
+                basePower = move.bp * (switching ? 2 : 1);
+                if (switching)
+                    desc.isSwitching = 'out';
+                desc.moveBP = basePower;
+                break;
+            case 'Electro Ball':
+                if (defender.stats.spe === 0)
+                    defender.stats.spe = 1;
+                var r = Math.floor(attacker.stats.spe / defender.stats.spe);
+                basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
+                desc.moveBP = basePower;
+                break;
+            case 'Gyro Ball':
+                if (attacker.stats.spe === 0)
+                    attacker.stats.spe = 1;
+                basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Punishment':
+                basePower = Math.min(200, 60 + 20 * (0, util_2.countBoosts)(gen, defender.boosts));
+                desc.moveBP = basePower;
+                break;
+            case 'Low Kick':
+            case 'Grass Knot':
+                var w = defender.weightkg * (0, util_2.getWeightFactor)(defender);
+                basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+                desc.moveBP = basePower;
+                break;
+            case 'Hex':
+                basePower = move.bp * (defender.status ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Heavy Slam':
+            case 'Heat Crash':
+                var wr = (attacker.weightkg * (0, util_2.getWeightFactor)(attacker)) /
+                    (defender.weightkg * (0, util_2.getWeightFactor)(defender));
+                basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
+                desc.moveBP = basePower;
+                break;
+            case 'Stored Power':
+            case 'Power Trip':
+                basePower = move.bp + 20 * (0, util_2.countBoosts)(gen, attacker.boosts);
+                desc.moveBP = basePower;
+                break;
+            case 'Acrobatics':
+                basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Assurance':
+                basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+                break;
+            case 'Wake-Up Slap':
+                basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Smelling Salts':
+                basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Weather Ball':
+                basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
+            case 'Fling':
+                basePower = (0, items_1.getFlingPower)(attacker.item);
+                desc.moveBP = basePower;
+                desc.attackerItem = attacker.item;
+                break;
+            case 'Eruption':
+            case 'Water Spout':
+                basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
+                desc.moveBP = basePower;
+                break;
+            case 'Flail':
+            case 'Reversal':
+                var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
+                basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+                desc.moveBP = basePower;
+                break;
+            case 'Nature Power':
+                if (gen.num === 5) {
+                    move.category = 'Physical';
+                    move.target = 'allAdjacent';
+                    basePower = 100;
+                    desc.moveName = 'Earthquake';
+                }
+                else {
+                    move.category = 'Special';
+                    move.secondaries = true;
+                    switch (field.terrain) {
+                        case 'Electric':
+                            basePower = 90;
+                            desc.moveName = 'Thunderbolt';
+                            break;
+                        case 'Grassy':
+                            basePower = 90;
+                            desc.moveName = 'Energy Ball';
+                            break;
+                        case 'Misty':
+                            basePower = 95;
+                            desc.moveName = 'Moonblast';
+                            break;
+                        default:
+                            basePower = 80;
+                            desc.moveName = 'Tri Attack';
+                    }
+                }
+                break;
+            // Assuming there are always 3 hits in Triple Kick
+            case 'Triple Kick':
+                basePower = (move.bp * 3 + 30) / 3;
+                break;
+            case 'Crush Grip':
+            case 'Wring Out':
+                basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+                basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+                desc.moveBP = basePower;
+                break;
+            default:
+                basePower = move.bp;
+        }
+
+    }
     if (basePower === 0) {
         return result;
     }
+
     var bpMods = [];
     if ((attacker.hasAbility('Technician') && basePower <= 60) ||
         (attacker.hasAbility('Flare Boost') &&
