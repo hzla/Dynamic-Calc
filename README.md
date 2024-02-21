@@ -21,6 +21,16 @@ On supported games next pokemon to be switched in will always be the left most p
 ### Automatic PKHex move import adjusting
 For all games in the romhack dropdown, pkhex imported movesets are autocorrected to the correct moves in game. 
 
+### Hotkeys for common actions
+
+`f` - toggle "F"ield info
+
+`i` - "I"mports set data from clipboard
+
+`c` - toggle all opposing moves "C"rit
+
+`l` - toggle "L"earnset window if available
+
 
 ## Features for Rom Hack Developers
 
