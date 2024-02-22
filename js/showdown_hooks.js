@@ -1302,7 +1302,7 @@ function loadDataSource(data) {
         }
     }
 
-    var jsonPoks = data["poks"]
+    jsonPoks = data["poks"]
     var jsonPok 
     
 
@@ -1311,8 +1311,35 @@ function loadDataSource(data) {
         $('#learnset-show').show()
     }
 
+    // if ( TITLE.includes("Platinum") ) {
+    //     var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
+        
+    //     for (let i = 0; i < rotom_info.length; i++) {
+    //         pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+    //             "types": [
+    //                 "Electric",
+    //                 rotom_info[i][1]
+    //             ],
+    //             "bs": {
+    //                 "at": 50,
+    //                 "df": 77,
+    //                 "hp": 50,
+    //                 "sa": 95,
+    //                 "sd": 77,
+    //                 "sp": 101
+    //             },
+    //             "weightkg": 0.3,
+    //             "abilities": {
+    //                 "0": "Levitate"
+    //             },
+    //             "gender": "N"
+    //         }
+    //     }
+    // }
+
     if ( TITLE.includes("Platinum") ) {
         var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
+        var deoxys_info = ['Attack', 'Defense','Speed']
         
         for (let i = 0; i < rotom_info.length; i++) {
             pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
@@ -1320,14 +1347,7 @@ function loadDataSource(data) {
                     "Electric",
                     rotom_info[i][1]
                 ],
-                "bs": {
-                    "at": 50,
-                    "df": 77,
-                    "hp": 50,
-                    "sa": 95,
-                    "sd": 77,
-                    "sp": 101
-                },
+                "bs": jsonPoks['Rotom']['bs'],
                 "weightkg": 0.3,
                 "abilities": {
                     "0": "Levitate"
@@ -1335,31 +1355,34 @@ function loadDataSource(data) {
                 "gender": "N"
             }
         }
-    }
 
-     if ( TITLE.includes("Maximum Platinum") ) {
-        var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
-        
-        for (let i = 0; i < rotom_info.length; i++) {
-            pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+        for (let i = 0; i < deoxys_info.length; i++) {
+            pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
                 "types": [
-                    "Electric",
-                    rotom_info[i][1]
+                    "Psychic"
                 ],
-                "bs": {
-                    "at": 50,
-                    "df": 77,
-                    "hp": 50,
-                    "sa": 95,
-                    "sd": 77,
-                    "sp": 91
-                },
-                "weightkg": 0.3,
+                "bs": jsonPoks['Deoxys']['bs'],
+                "weightkg": 60.8,
                 "abilities": {
-                    "0": "Levitate"
+                    "0": "Pressure"
                 },
-                "gender": "N"
+                "gender": "N",
             }
+        }
+
+        pokedex['Shaymin-Sky-Glitched'] = {
+            "types": [
+                "Grass"
+            ],
+            "bs": jsonPoks['Shaymin']['bs'],
+            "weightkg": 2.1,
+            "abilities": {
+                "0": "Natural Cure"
+            },
+            "gender": "N",
+            "otherFormes": [
+                "Shaymin-Sky"
+            ]
         }
     }
 
