@@ -1335,9 +1335,32 @@ function loadDataSource(data) {
                 "gender": "N"
             }
         }
+    }
+
+     if ( TITLE.includes("Maximum Platinum") ) {
+        var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
         
-
-
+        for (let i = 0; i < rotom_info.length; i++) {
+            pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+                "types": [
+                    "Electric",
+                    rotom_info[i][1]
+                ],
+                "bs": {
+                    "at": 50,
+                    "df": 77,
+                    "hp": 50,
+                    "sa": 95,
+                    "sd": 77,
+                    "sp": 91
+                },
+                "weightkg": 0.3,
+                "abilities": {
+                    "0": "Levitate"
+                },
+                "gender": "N"
+            }
+        }
     }
 
     for (pok in pokedex) {
@@ -1440,7 +1463,7 @@ $(document).ready(function() {
    "d6364c8b89ad50905e6a": "Sterling Silver",
    "8f199f3f40194ecc4b8e": "Sterling Silver",
    "5b789b0056c18c5c668b": "Platinum Redux 2.6",
-   "de22f896c09fceb0b273": "Maximum Plat"
+   "de22f896c09fceb0b273": "Maximum Platinum"
     }
 
 
