@@ -53,7 +53,12 @@ Trainer set names are specified with the following Format `Lvl LEVEL TRAINER_NAM
 `switchIn` the generation of switchin mechanics to use
 
 ### Easy Calc data generation with Pokeweb (Gen 5)
-Generate the data in one click with [Pokeweb](https://github.com/hzla/Pokeweb-Live) for Gen 4/5 only. Use pokeweb-live `prod-g4` branch for gen 4. Use [this](https://github.com/hzla/pk3ds_for_dynamic_calc) for gen 6/7.
+
+Generate the data in one click with [Pokeweb](https://github.com/hzla/Pokeweb-Live) for Gen 4/5 only. 
+
+Use pokeweb `prod-g4` branch for gen 4. Replace all relevant text files in Pokeweb/texts with your rom hack's text files before exporting calc. Adjust Pokeweb/models/trpok.rb for further customization.
+
+Use [this modified pkhex](https://github.com/hzla/pk3ds_for_dynamic_calc) to export a calc for gen 6/7.
 
 
 ## License
