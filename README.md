@@ -51,5 +51,12 @@ Trainer set names are specified with the following Format `Lvl LEVEL TRAINER_NAM
 Generate the data in one click with [Pokeweb](https://github.com/hzla/Pokeweb-Live) for Gen 4/5 only. Use pokeweb-live `prod-g4` branch for gen 4. Use [this](https://github.com/hzla/pk3ds_for_dynamic_calc) for gen 6/7.
 
 
+## License
+
+This package is distributed under the terms of the MIT License.
+
+
+
+
 
 
