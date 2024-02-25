@@ -1559,6 +1559,7 @@ $(document).ready(function() {
                 } else {
                     "nothing"
                 }
+                npoint_data = backup_data
             } else {
                 TITLE = "NONE"
             }
