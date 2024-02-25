@@ -944,7 +944,8 @@ function createPokemon(pokeInfo, customMoves=false) {
 			} else {
 				moveName = set.moves[i];
 			}
-			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
+			var pokmove = new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item})
+			pokemonMoves.push(pokmove);
 		}
 
 		if (isRandoms) {
@@ -1033,6 +1034,10 @@ function createPokemon(pokeInfo, customMoves=false) {
 		} 
 
 
+
+
+
+
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
@@ -1077,7 +1082,13 @@ function getMoveDetails(moveInfo, species, ability, item, useMax, moveName=false
 	
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
-	var hits = +moveInfo.find(".move-hits").val();
+
+	if (limitHits) {
+		var hits = 1
+		// console.log("limit")
+	} else {
+		var hits = +moveInfo.find(".move-hits").val();
+	}
 	var timesUsed = +moveInfo.find(".stat-drops").val();
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
 	var overrides = {

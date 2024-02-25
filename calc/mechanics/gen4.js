@@ -30,6 +30,11 @@ var items_1 = require("../items");
 var result_1 = require("../result");
 var util_1 = require("./util");
 function calculateDPP(gen, attacker, defender, move, field) {
+    // if (limitHits) {
+    //     move.hits = 1
+    // }
+
+
     (0, util_1.checkAirLock)(attacker, field);
     (0, util_1.checkAirLock)(defender, field);
     (0, util_1.checkForecast)(attacker, field.weather);
@@ -135,6 +140,9 @@ function calculateDPP(gen, attacker, defender, move, field) {
         result.damage = fixedDamage;
         return result;
     }
+
+
+
     if (move.hits > 1) {
         desc.hits = move.hits;
     }

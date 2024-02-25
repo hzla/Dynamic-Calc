@@ -29,6 +29,10 @@ function calculate(gen, attacker, defender, move, field) {
 
     var move_clone = move.clone()
     move_clone.bp = move.bp
+
+    // if (damageGen == 4 && limitHits) {
+    //     move_clone.hits = 1
+    // }
     
     if (damageGen == 12) {
         return MECHANICS[3](gen, attacker.clone(), defender.clone(), move_clone, field ? field.clone() : new field_1.Field());

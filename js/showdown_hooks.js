@@ -501,10 +501,13 @@ function get_next_in_g4() {
         }
 
         p2 = createPokemon(p2info, pok_data["moves"])
-        var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
 
+         // because the game only counts multihits moves as 1 
+        var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
+        
 
         var highestDamage = 0
+        var highestDamageName = ""
         for (n in results) {
             var dmg = 0
             if (typeof results[n].damage === 'number') {
@@ -515,18 +518,23 @@ function get_next_in_g4() {
 
 
             if (dmg > highestDamage && results[n].move.name != "Sonic Boom" && results[n].move.name != "Dragon Rage" && results[n].move.name != "Night Shade" && results[n].move.name != "Seismic Toss" ) {
+                if (moves[results[n].move.name]['multihit']) {
+                    dmg = Math.floor(dmg / 3)
+                }
                 highestDamage = dmg
+                highestDamageName = results[n].move.name
             }
             if (highestDamage >= currentHp) {
                 highestDamage = 1000
             }   
         }
-        other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage])
+        other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage, highestDamageName])
     }
 
-    // console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+
 }
 
 // check if ai mon has >= 50% chance kills player
@@ -1450,6 +1458,7 @@ misc = params.get('misc')
 invert = params.get('invert')
 DEFAULTS_LOADED = false
 analyze = false
+limitHits = false
 
 
 if (switchIn != 11) {
