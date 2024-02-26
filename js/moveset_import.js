@@ -14,6 +14,7 @@ moveChanges = {
 			"Bind"				:	"Esper Wing",
 			"Rolling Kick":	"Fate's Flourish",
 			"Rock Throw"	:	"Accelerock",
+			"Crush Claw"	: "Smart Strike",
 			"Double Slap"	:	"Steel Beam",
 			"Lick"				:	"Aqua Step",
 			"Water Gun"		:	"Chilling Water",

@@ -322,9 +322,9 @@ function calculateBWXY(gen, attacker, defender, move, field) {
                 }
             }
             break;
-        // Assuming there are always 3 hits in Triple Kick
+        // Triple Kick is hardcoded @ 10 bp * hit count
         case 'Triple Kick':
-            basePower = (move.bp * 3 + 30) / 3;
+            basePower = move.hits * 5 + 5;
             break;
         case 'Crush Grip':
         case 'Wring Out':
