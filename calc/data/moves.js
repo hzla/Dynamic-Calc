@@ -2101,6 +2101,12 @@ var XY_PATCH = {
 			category: 'Physical',
 			makesContact: true,
 			recoil: [33, 100]
+		},
+		'Smart Strike': {
+			bp: 75,
+			type: 'Steel',
+			category: 'Physical',
+			makesContact: true
 		}
 };
 var XY = (0, util_1.extend)(true, {}, BW, XY_PATCH);
