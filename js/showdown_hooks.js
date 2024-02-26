@@ -1009,8 +1009,7 @@ function get_encs() {
 }
 
 
-function get_next_in() {
-
+function get_next_in() {    
     if (switchIn == 4) {
         return get_next_in_g4()
     }
@@ -1267,6 +1266,7 @@ function loadDataSource(data) {
             continue
         }
         moves[move]["bp"] = jsonMove["basePower"]
+        console.log(move)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
         
         var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP"]  
@@ -1583,6 +1583,25 @@ $(document).ready(function() {
             npoint_data = data
             loadDataSource(data)
             final_type_chart = construct_type_chart()
+
+            setTimeout(function() {
+                if (localStorage["left"]) {
+                    var set = localStorage["right"]
+                    $('.opposing').val(set)
+                    $('.opposing').change()
+                    $('.opposing .select2-chosen').text(set)
+                    if ($('.info-group.opp > * > .forme').is(':visible')) {
+                        $('.info-group.opp > * > .forme').change()
+                    }
+                }
+
+                if (localStorage["right"]) {
+                    $(`[data-id='${localStorage["left"]}']`).click()
+                }
+
+                
+            }, 100)
+           
         })
 
         $.get(encs, function(data){
@@ -1598,6 +1617,8 @@ $(document).ready(function() {
 
    $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
         var set = $(this).attr('data-id')
+        localStorage["right"] = set
+
         $('.opposing').val(set)
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
@@ -1847,6 +1868,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
+        localStorage["left"] = set 
         $('.player').val(set)
 
 

@@ -520,7 +520,6 @@ $(".set-selector").change(function () {
 		// $('#trainer-sprite').attr('src',  )
 		var left_max_hp = $("#p2 .max-hp").text()
 		$("#p2 .current-hp").val(left_max_hp).change()
-		
 	} else {
 		var right_max_hp = $("#p1 .max-hp").text()
 		
@@ -536,7 +535,7 @@ $(".set-selector").change(function () {
 	if ($(this).hasClass('opposing')) {
 		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
 			if (setName != "Blank Set") {
-				var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
+				// var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
 				var next = SETDEX_BW[pokemonName][setName]["next"]
@@ -578,8 +577,8 @@ $(".set-selector").change(function () {
 				if (misc == "Orre") {
 					$('#doubles-format').click()
 				}
-				$('#trainer-sprite').attr('src', `./img/${sprite}`)
-				$('#trainer-sprite').show()
+				// $('#trainer-sprite').attr('src', `./img/${sprite}`)
+				// $('#trainer-sprite').show()
 
 				if (INC_EM && $("#lvl-cap").val() != "") {
 					var lvl_delta = parseInt(SETDEX_BW[pokemonName][setName]["sublevel"])
@@ -1287,7 +1286,6 @@ $(".gen").change(function () {
 
 	clearField();
 	$("#importedSets").prop("checked", false);
-	loadDefaultLists();
 	$(".gen-specific.g" + damageGen).show();
 	$(".gen-specific").not(".g" + damageGen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
@@ -1300,16 +1298,30 @@ $(".gen").change(function () {
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
-	// $(".set-selector").val(getFirstValidSetOption().id);
-	$(".set-selector").change();
+
 });
 
-function getFirstValidSetOption() {
+function getFirstValidSetOption(side="left") {
 	var sets = getSetOptions();
+
+	console.log(side)
+	if (localStorage[side]) {
+		var setData = {}
+		console.log(localStorage[side])
+		setData["pokemon"] = localStorage[side].split(" (")[0]
+		setData["set"] = localStorage[side].split(" (")[1].split(")")[0]
+		setData["nickname"] = ""
+		setData["text"] = localStorage[side]
+		setData["id"] = localStorage[side]
+		return setData
+	} 
+
+	
+
 	// NB: The first set is never valid, so we start searching after it.
-	for (var i = 1; i < sets.length; i++) {
-		if (sets[i].id && sets[i].id.indexOf('(Blank Set)') === -1) return sets[i];
-	}
+	// for (var i = 1; i < sets.length; i++) {
+	// 	if (sets[i].id && sets[i].id.indexOf('(Blank Set)') === -1) return sets[i];
+	// }
 	return undefined;
 }
 
@@ -1522,7 +1534,7 @@ function getTerrainEffects() {
 }
 
 function loadDefaultLists() {
-	$(".set-selector").select2({
+	$(".player.set-selector").select2({
 		formatResult: function (object) {
 			if ($("#randoms").prop("checked")) {
 				return object.pokemon;
@@ -1555,9 +1567,41 @@ function loadDefaultLists() {
 				results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
 				more: results.length >= query.page * pageSize
 			});
+		}
+	});
+	$(".opposing.set-selector").select2({
+		formatResult: function (object) {
+			if ($("#randoms").prop("checked")) {
+				return object.pokemon;
+			} else {
+				// return object.text;
+				return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.text) : ("<b>" + object.text + "</b>");
+			}
 		},
-		initSelection: function (element, callback) {
-			callback(getFirstValidSetOption());
+		query: function (query) {
+			var pageSize = 30;
+			var results = [];
+			var options = getSetOptions();
+			for (var i = 0; i < options.length; i++) {
+				var option = options[i];
+				// var pokeName = option.pokemon.toUpperCase();
+				var fullName = option.text.toUpperCase();
+				if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
+					// return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0;
+					return fullName.indexOf(term) === 0 || fullName.indexOf("-" + term) >= 0 || fullName.indexOf(" " + term) >= 0 || fullName.indexOf("(" + term) >= 0;
+					// return fullName.indexOf(term) === 0 || fullName.indexOf("-" + term) >= 0 || fullName.indexOf("(" + term) >= 0;
+				})) {
+					if ($("#randoms").prop("checked")) {
+						if (option.id) results.push(option);
+					} else {
+						results.push(option);
+					}
+				}
+			}
+			query.callback({
+				results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
+				more: results.length >= query.page * pageSize
+			});
 		}
 	});
 }
@@ -1667,7 +1711,8 @@ $(document).ready(function () {
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
 		}
 	});
-	// $(".set-selector").val(getFirstValidSetOption().id);
-	// $(".set-selector").change();
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
+	
+
+	
 });
