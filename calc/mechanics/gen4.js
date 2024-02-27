@@ -67,9 +67,12 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
     var basePower = move.bp;
     if (move.named('Weather Ball')) {
+        console.log(basePower)
         if (field.hasWeather('Sun')) {
             move.type = 'Fire';
             basePower *= 2;
+            // console.log("fire")
+            // console.log(basePower)
         }
         else if (field.hasWeather('Rain')) {
             move.type = 'Water';
@@ -89,6 +92,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
         desc.moveType = move.type;
         desc.moveBP = basePower;
+        move.bp = basePower
     }
     else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
         move.type = (0, items_1.getItemBoostType)(attacker.item);
@@ -414,6 +418,10 @@ function calculateDPP(gen, attacker, defender, move, field) {
     if (defense < 1) {
         defense = 1;
     }
+    if (move.named('Weather Ball')) {
+        console.log(["final base power", basePower])
+    }
+    
     var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense);
     if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
         baseDamage = Math.floor(baseDamage * 0.5);

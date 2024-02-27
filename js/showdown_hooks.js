@@ -479,7 +479,7 @@ function get_next_in_g4() {
     // sort rest of mons by using other mons moves with current mon stats
     var other_mons = []
 
-    var currentHp = parseInt($('.current-hp').first().val())
+    var currentHp = parseInt($('.max-hp').first().text())
 
     var p1info = $("#p1");
     var p2info = $("#p2");
@@ -511,9 +511,9 @@ function get_next_in_g4() {
 
          // because the game only counts multihits moves as 1 
         
-        console.log(p1)
-        console.log(pok_data["moves"])
-        console.log("p1 again")
+        // console.log(p1)
+        // console.log(pok_data["moves"])
+        // console.log("p1 again")
 
 
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
@@ -1444,6 +1444,7 @@ function loadDataSource(data) {
         if (pok.includes("Castform-") && damageGen == 4) {
             pokedex[pok]["bs"] = jsonPoks["Castform"]["bs"]   
         }
+
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
@@ -1455,7 +1456,10 @@ function loadDataSource(data) {
         pokedex[pok]["types"] = jsonPok["types"]
         if (jsonPok.hasOwnProperty("abilities"))
             pokedex[pok]["abilities"] = jsonPok["abilities"]
+    }
 
+    if (damageGen >= 3) {
+        pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
     }
 // TITLE.includes("Platinum")
     
