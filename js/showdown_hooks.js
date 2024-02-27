@@ -22,7 +22,7 @@ function get_trainer_names() {
 }
 
 function abv(s) {
-    if (s.length >= 10 && $('.player-party').width() <= 800 ) {
+    if (($('.player-party').width() / s.length <= 65)) {
         if (s.split(" ")[1]) {
             return (s.split(" ")[0][0] + " " + s.split(" ")[1])
         } else {
@@ -994,6 +994,33 @@ function get_current_learnset() {
 }
 
 
+function displayParty() {
+    var destination = $('.player-party')
+
+    if (currentParty.length > 0) {
+        $('.player-party').css('display', 'flex')
+        $('#clear-party').show()
+
+        for (i in currentParty) {
+            species_name = currentParty[i]
+
+            var sprite_name = species_name.toLowerCase().replace(" ","-").replace(".","").replace("’","")
+            var set_data = customSets[species_name]["My Box"]
+            var data_id = species_name + " (My Box)"
+
+            var pok = `<div class="trainer-pok-container">
+                <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">
+                <div class="bp-info">${abv(set_data['moves'][0].replace("Hidden Power", "HP"))}</div>
+                <div class="bp-info">${abv(set_data['moves'][1].replace("Hidden Power", "HP"))}</div>
+                <div class="bp-info">${abv(set_data['moves'][2].replace("Hidden Power", "HP"))}</div>
+                <div class="bp-info">${abv(set_data['moves'][3].replace("Hidden Power", "HP"))}</div>
+            </div>`
+            destination.append(pok)
+        }
+
+    }
+}
+
 function get_encs() {
     if (typeof all_encs == 'undefined') {
         $.ajax({
@@ -1700,6 +1727,7 @@ $(document).ready(function() {
         window.location.href = url;
    })
 
+
    $(document).on('contextmenu', '.trainer-pok.left-side', function(e) {
         e.preventDefault()
         console.log("dbl click")
@@ -1740,6 +1768,7 @@ $(document).ready(function() {
         $('.player-party').html("")
         $('.player-party').hide()
         $('#clear-party').hide()
+        currentParty = []
    })
 
 

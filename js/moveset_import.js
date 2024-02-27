@@ -551,8 +551,19 @@ function addSets(pokes, name) {
 	var currentRow;
 	var currentPoke;
 	var addedpokes = 0;
+	currentParty = []
 	for (var i = 0; i < rows.length; i++) {
+		
+		if (rows[i].split(" |Party")[1]) {
+			rows[i] = rows[i].split(" |Party")[0]
+			currentParty.push(rows[i])
+		}
+
+
 		currentRow = rows[i].split(/[()@]/);
+		console.log(currentRow)
+		
+		
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
@@ -590,6 +601,7 @@ function addSets(pokes, name) {
 			$('.player-poks').removeClass('shake')
 		}, 500)
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+		displayParty()
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
