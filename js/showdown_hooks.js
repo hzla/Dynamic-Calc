@@ -488,6 +488,12 @@ function get_next_in_g4() {
     var p1field = createField();
     var p2field = p1field.clone().swap();
 
+
+
+
+    console.log(p1)
+    console.log("p1 ^^^^^")
+
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
@@ -500,12 +506,21 @@ function get_next_in_g4() {
             continue
         }
 
+        // p1 = createPokemon($("#p1"))
         p2 = createPokemon(p2info, pok_data["moves"])
 
          // because the game only counts multihits moves as 1 
+        
+        console.log(p1)
+        console.log(pok_data["moves"])
+        console.log("p1 again")
+
+
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
         
 
+        console.log(p2)
+        console.log(results)
         var highestDamage = 0
         var highestDamageName = ""
         for (n in results) {
