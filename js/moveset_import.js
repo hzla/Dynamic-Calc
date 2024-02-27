@@ -21,17 +21,17 @@ moveChanges = {
 			"Pound"				:	"Wave Crash"
 		},
 	'Maximum Platinum': {
-		"Pound": "Hidden Power Grass"
-		"Payday": "Hidden Power Rock"
-		"Comet Punch": "Hidden Power Ice"
-		"Razor Wind": "Hidden Power Fire"
-		"Gust": "Hidden Power Flying"
-		"Bind": "Hidden Power Bug" 
-		"Bubble": "Hidden Power Water"
-		"Take Down": "Hidden Power Electric"
-		"Kinesis": "Hidden Power Ground"
-		"Stockpile": "Hidden Power Psychic"
-		"Spit Up": "Hidden Power Steel"
+		"Pound": "Hidden Power Grass",
+		"Payday": "Hidden Power Rock",
+		"Comet Punch": "Hidden Power Ice",
+		"Razor Wind": "Hidden Power Fire",
+		"Gust": "Hidden Power Flying",
+		"Bind": "Hidden Power Bug" ,
+		"Bubble": "Hidden Power Water",
+		"Take Down": "Hidden Power Electric",
+		"Kinesis": "Hidden Power Ground",
+		"Stockpile": "Hidden Power Psychic",
+		"Spit Up": "Hidden Power Steel",
 		"Swallow": "Hidden Power Fighting"
 	},
 
