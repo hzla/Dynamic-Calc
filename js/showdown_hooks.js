@@ -1,9 +1,9 @@
 function load_js() {
 
-  var head= document.getElementsByTagName('head')[0];
-  var script= document.createElement('script');
-  script.src= './js/shared_controls.js?0b3ea005';
-  head.appendChild(script);
+  // var head= document.getElementsByTagName('head')[0];
+  // var script= document.createElement('script');
+  // script.src= './js/shared_controls.js?0b3ea005';
+  // head.appendChild(script);
 }
 
 function get_trainer_names() {
@@ -1266,7 +1266,6 @@ function loadDataSource(data) {
             continue
         }
         moves[move]["bp"] = jsonMove["basePower"]
-        console.log(move)
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
         
         var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP"]  
