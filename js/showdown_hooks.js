@@ -1310,7 +1310,7 @@ function loadDataSource(data) {
         moves[move]["bp"] = jsonMove["basePower"]
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
         
-        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP"]  
+        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
         for (n in optional_move_params) {
             var param = optional_move_params[n]
             if (jsonMove[param]) {
@@ -1493,7 +1493,7 @@ function loadDataSource(data) {
             console.log(moves[move])
         }
     }
-    moves['(No Move)'] = {
+    moves['(No Move)'] = moves['-'] = {
         "bp": 0,
         "category": "Status",
         "type": "Normal"

@@ -1,25 +1,4 @@
 moveChanges = {
-	'Ancestral X': 
-		{
-			"Fury Attack"	:	"Scorching Swarm",
-			"Scratch"			:	"Breaking Swipe",
-			"Fairy Wind"	:	"Spirit Break",
-			"Vice Grip"		:	"Tussle",
-			"Wing Attack"	:	"Dual Wingbeat",
-			"Needle Arm"	:	"Trailblaze",
-			"Vine Whip"		:	"Trop Kick",
-			"Stomp"				:	"Ground Pound",
-			"Horn Attack"	:	"Headlong Rush",
-			"Powder Snow"	:	"Ice Hammer",
-			"Bind"				:	"Esper Wing",
-			"Rolling Kick":	"Fate's Flourish",
-			"Rock Throw"	:	"Accelerock",
-			"Crush Claw"	: "Smart Strike",
-			"Double Slap"	:	"Steel Beam",
-			"Lick"				:	"Aqua Step",
-			"Water Gun"		:	"Chilling Water",
-			"Pound"				:	"Wave Crash"
-		},
 	'Maximum Platinum': {
 		"Pound": "Hidden Power Grass",
 		"Payday": "Hidden Power Rock",
