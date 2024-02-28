@@ -208,7 +208,20 @@ $(".percent-hp").keyup(function () {
 });
 
 $(".ability").bind("keyup change", function () {
-	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+	$(this).closest(".poke-info").find(".move-selector.select2-offscreen").each((_, obj) => {
+		var move = moves[$(obj).val()];
+		var moveHits = 3;
+
+		if (move.multihit) {
+			if (move.multihit[1] == 2)
+				moveHits = 2;
+			else if (move.multihit[1] == 5 && pokemon.find(".ability").val() === "Skill Link")
+				moveHits = 5;
+		}
+
+		$(obj).siblings(".move-hits").val(moveHits);
+	});
+	//$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
 
@@ -441,7 +454,11 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
-		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
+		var moveHits = 3;
+		if (move.multihit[1] == 2)
+			moveHits = 2;
+		else if (move.multihit[1] == 5 && pokemon.find(".ability").val() === "Skill Link")
+			moveHits = 5;
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();

@@ -1,11 +1,3 @@
-function load_js() {
-
-  // var head= document.getElementsByTagName('head')[0];
-  // var script= document.createElement('script');
-  // script.src= './js/shared_controls.js?0b3ea005';
-  // head.appendChild(script);
-}
-
 function get_trainer_names() {
     var all_poks = SETDEX_BW
     var trainer_names = [] 
@@ -1309,6 +1301,16 @@ function loadDataSource(data) {
         }
         moves[move]["bp"] = jsonMove["basePower"]
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+
+				var special_case_power_overrides = {
+					"Return": 102,
+					"Magnitude": 70
+				}
+
+				if (move in special_case_power_overrides) {
+					moves[move]["bp"] = special_case_power_overrides[move]
+        	MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
+				}
         
         var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
         for (n in optional_move_params) {
@@ -1472,9 +1474,6 @@ function loadDataSource(data) {
             }
         }
     }
-
-    
-    load_js() 
 
     if (localStorage.customsets) {
         console.log("loading box")
