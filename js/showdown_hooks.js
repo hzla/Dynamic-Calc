@@ -1817,28 +1817,27 @@ $(document).ready(function() {
 
    // shortcuts
     $(document).keyup(async function (e) {
-     if(e.key == "i" && $('.select2-drop-active:visible').length == 0) {
-        const text = await navigator.clipboard.readText();
-        addSets(text)
-     } else if(e.key == "e" && $('.select2-drop-active:visible').length == 0) {
-        $('#encounter-container').toggle()
-     } else if (e.key == "f" && $('.select2-drop-active:visible').length == 0){
-        $('.panel-mid').toggle()
-        $('.panel:not(.panel-mid)').toggleClass('third')
-     } else if (e.key == "c" && $('.select2-drop-active:visible').length == 0) {
-        $("#critR1")[0].checked = !$("#critR1")[0].checked
-        $("#critR2")[0].checked = !$("#critR2")[0].checked
-        $("#critR3")[0].checked = !$("#critR3")[0].checked
-        $("#critR4")[0].checked = !$("#critR4")[0].checked
-        $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
-        $('.move-crit').last().change()
-     } else if (e.key == "l" && $('.select2-drop-active:visible').length == 0 && $("#learnset-show:visible").length > 0) {
-         get_current_learnset()
-        $('#learnset-container').toggle()
-     }
-     
-
-
+        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0]) {
+            if(e.key == "i") {
+                const text = await navigator.clipboard.readText();
+                addSets(text)
+             } else if(e.key == "e") {
+                $('#encounter-container').toggle()
+             } else if (e.key == "f"){
+                $('.panel-mid').toggle()
+                $('.panel:not(.panel-mid)').toggleClass('third')
+             } else if (e.key == "c") {
+                $("#critR1")[0].checked = !$("#critR1")[0].checked
+                $("#critR2")[0].checked = !$("#critR2")[0].checked
+                $("#critR3")[0].checked = !$("#critR3")[0].checked
+                $("#critR4")[0].checked = !$("#critR4")[0].checked
+                $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
+                $('.move-crit').last().change()
+             } else if (e.key == "l" && $("#learnset-show:visible").length > 0) {
+                 get_current_learnset()
+                $('#learnset-container').toggle()
+             }
+        }    
     })
 
 
