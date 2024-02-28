@@ -65,7 +65,13 @@ function performCalculations() {
 			return secondMove.maxDamage - firstMove.maxDamage;
 		});
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
+		
+
 		$(resultLocations[0][i].damage).text(result.moveDesc(notation));
+
+		if (["Avalanche", "Payback", "Assurance", "Revenge", "Retaliate", "Stomping Tantrum"].indexOf(p1.moves[i].name) != -1) {
+			$(resultLocations[0][i].damage).text(result.moveDesc(notation) + " (can double power)");
+		}
 
 		// P2
 		result = damageResults[1][i];
@@ -92,10 +98,14 @@ function performCalculations() {
 					is100 = true
 				}
 				$(resultLocations[1][i].damage).text(dmgInfo + probability)
-			}
-
-			
+			}	
 		}
+
+		if (["Avalanche", "Payback", "Assurance", "Revenge", "Retaliate", "Stomping Tantrum"].indexOf(p2.moves[i].name) != -1) {
+			$(resultLocations[1][i].damage).text($(resultLocations[1][i].damage).text()+ " (can double power)");
+		}
+
+
 		
 
 		// BOTH
