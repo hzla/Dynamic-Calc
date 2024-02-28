@@ -2103,7 +2103,7 @@ var XY_PATCH = {
 			recoil: [33, 100]
 		},
 		'Smart Strike': {
-			bp: 75,
+			bp: 70,
 			type: 'Steel',
 			category: 'Physical',
 			makesContact: true
