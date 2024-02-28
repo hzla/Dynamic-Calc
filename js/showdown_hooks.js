@@ -1441,10 +1441,6 @@ function loadDataSource(data) {
             continue
         }
 
-        if (pok.includes("Castform-") && damageGen == 4) {
-            pokedex[pok]["bs"] = jsonPoks["Castform"]["bs"]   
-        }
-
         if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
@@ -1461,7 +1457,22 @@ function loadDataSource(data) {
     if (damageGen >= 3) {
         pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
     }
-// TITLE.includes("Platinum")
+    if (damageGen == 4) {
+        var gen4Forms = [["Wormadam", ["Trash", "Sandy"]],
+            ["Deoxys", ["Attack", "Defense", "Speed"]],
+            ["Shaymin", ["Sky"],
+            ["Castform", ["Rainy", "Sunny", "Snowy"]]]
+        ]
+        for (i in gen4Forms) {
+            var base = gen4Forms[i][0]
+            var forms = gen4Forms[i][1]
+
+            for (j in forms) {
+                pokedex[`${base}-${forms[j]}`]['bs'] = pokedex[base]['bs']
+            }
+        }
+    }
+
     
     load_js() 
 
