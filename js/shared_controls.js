@@ -355,7 +355,12 @@ function autosetStatus(p, item) {
 	if (currentStatus !== lastAutoStatus[p]) {
 		lastManualStatus[p] = currentStatus;
 	}
-	if (item === "Flame Orb") {
+	if (p == "#p2") {
+		var ability = $('#abilityR1').val()
+	} else {
+		var ability = $('#abilityL1').val()
+	}
+	if (item === "Flame Orb" && ability != "Water Veil") {
 		lastAutoStatus[p] = "Burned";
 		$(p + " .status").val("Burned");
 		$(p + " .status").change();
