@@ -423,6 +423,32 @@ function get_next_in_g4() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
+        if (pok_data["ability"] == "Multitype") {
+            var plates = {}
+            plates["Blank"] = "Normal"
+            plates["Draco"] = "Dragon"
+            plates["Dread"] = "Dark"
+            plates["Earth"] = "Ground"
+            plates["Fist"] = "Fighting"
+            plates["Flame"] = "Fire"
+            plates["Icicle"] = "Ice"
+            plates["Insect"] = "Bug"
+            plates["Iron"] = "Steel"
+            plates["Meadow"] = "Grass"
+            plates["Mind"] = "Psychic"
+            plates["Pixie"] = "Fairy"
+            plates["Sky"] = "Flying"
+            plates["Splash"] = "Water"
+            plates["Spooky"] = "Ghost"
+            plates["Stone"] = "Rock"
+            plates["Toxic"] = "Poison"
+            plates["Zap"] = "Electric"
+            plate_type = plates[pok_data["item"].split(" Plate")[0]]
+            type1 = plate_type
+            type2 = plate_type
+        }
+
+
         var effectiveness = type_info[type1] + type_info[type2]
         if (effectiveness == 8) {
             effectiveness = 1.75
@@ -431,6 +457,10 @@ function get_next_in_g4() {
         var isSE = false
         for (j in pok_data["moves"]) {
             var mov_data = moves[pok_data["moves"][j]]
+
+            if (pok_data["moves"][j] == "Judgment") {
+                mov_data["type"] = plate_type
+            }
 
             if (!mov_data) {
                 continue
@@ -459,8 +489,7 @@ function get_next_in_g4() {
 
                 if (type_info[mov_data["type"]] >= 2) {
                     isSE = true
-                }
-                
+                }           
             }
             
 
