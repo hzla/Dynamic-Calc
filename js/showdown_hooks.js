@@ -1480,6 +1480,8 @@ function loadDataSource(data) {
         }
     }
 
+    $('.gen').change() // Refresh moves
+
     if (localStorage.customsets) {
         console.log("loading box")
         customSets = JSON.parse(localStorage.customsets);
