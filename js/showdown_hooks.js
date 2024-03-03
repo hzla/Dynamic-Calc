@@ -1321,7 +1321,7 @@ function loadDataSource(data) {
         if (jsonMoves[move]) {
             jsonMove = jsonMoves[move]
         } else {
-            moves[move] = jsonMoves[move]
+            // moves[move] = jsonMoves[move]
             continue //completely overite if custom move data found
         }
 
@@ -1377,7 +1377,7 @@ function loadDataSource(data) {
 
             moves[move] = jsonMoves[move]
             moves[move]["bp"] = jsonMoves[move]["basePower"]
-
+            console.log(move)
             MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
         }
     }
@@ -1391,31 +1391,7 @@ function loadDataSource(data) {
         $('#learnset-show').show()
     }
 
-    // if ( TITLE.includes("Platinum") ) {
-    //     var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
-        
-    //     for (let i = 0; i < rotom_info.length; i++) {
-    //         pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
-    //             "types": [
-    //                 "Electric",
-    //                 rotom_info[i][1]
-    //             ],
-    //             "bs": {
-    //                 "at": 50,
-    //                 "df": 77,
-    //                 "hp": 50,
-    //                 "sa": 95,
-    //                 "sd": 77,
-    //                 "sp": 101
-    //             },
-    //             "weightkg": 0.3,
-    //             "abilities": {
-    //                 "0": "Levitate"
-    //             },
-    //             "gender": "N"
-    //         }
-    //     }
-    // }
+
 
     if ( TITLE.includes("Platinum") ) {
         var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
@@ -1518,7 +1494,6 @@ function loadDataSource(data) {
             moves[move]["bp"] = customMoves[move]["basePower"]
 
             MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = customMoves[move]
-            console.log(moves[move])
         }
     }
     moves['(No Move)'] = moves['-'] = {

@@ -1692,7 +1692,7 @@ expertAI = {
     "128":
     [
         "ExpertAI_128:",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "",
         "If last checked value is not equal to 0, jump to ExpertAI_128_ok1",
         "",
@@ -2131,7 +2131,7 @@ expertAI = {
         "If the defender has the condition: INFATUATED, jump to ExpertAI_170_ok1",
         "If the defender has the condition: CONFUSED, jump to ExpertAI_170_ok1",
         "",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is not equal to 0, jump to ExpertAI_170_end",
         "",
         "If rnd number (0-255) is under 200, jump to ExpertAI_170_end",
@@ -2482,7 +2482,7 @@ expertAI = {
         "If rnd number (0-255) is under 100, jump to ExpertAI_183_0",
         "\tSCORE_CHANGE\t\t-1",
         "ExpertAI_183_0:",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is equal to 0, jump to ExpertAI_183_ng",
         "",
         "ExpertAI_183_1:",
@@ -2555,7 +2555,7 @@ expertAI = {
         "ExpertAI_188:",
         "If hp% of defender is under 30, jump to ExpertAI_188_end",
         "",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is over: 0, jump to ExpertAI_188_end",
         "",
         "If rnd number (0-255) is under 180, jump to ExpertAI_188_end",
@@ -2608,7 +2608,7 @@ expertAI = {
     "192":
     [
         "ExpertAI_192:",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is over: 0, jump to ExpertAI_192_end",
         "",
         "If rnd number (0-255) is under 100, jump to ExpertAI_192_end",
@@ -2631,7 +2631,7 @@ expertAI = {
     "195":
     [
         "ExpertAI_195:",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is equal to 1, jump to ExpertAI_195_ok1",
         "",
         "If rnd number (0-255) is under 30, jump to ExpertAI_195_end",
@@ -2936,7 +2936,7 @@ expertAI = {
         "If move is: 1/2 effective, jump to ExpertAI_224_ng",
         "If move is: 1/4 effective, jump to ExpertAI_224_ng",
         "\t",
-        "\tCHECK_NEKODAMASI\tCHECK_ATTACKER",
+        "\tCHECK_FAKEOUT\tCHECK_ATTACKER",
         "If last checked value is equal to 0, jump to ExpertAI_224_1",
         "If rnd number (0-255) is under 64, jump to ExpertAI_224_1",
         "\tSCORE_CHANGE\t1",
