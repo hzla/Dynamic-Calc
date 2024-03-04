@@ -1,3 +1,11 @@
+function load_js() {
+
+  var head= document.getElementsByTagName('head')[0];
+  var script= document.createElement('script');
+  script.src= './js/shared_controls.js?0b3ea005';
+  head.appendChild(script);
+}
+
 function get_trainer_names() {
     var all_poks = SETDEX_BW
     var trainer_names = [] 
@@ -1480,7 +1488,7 @@ function loadDataSource(data) {
         }
     }
 
-    $('.gen').change() // Refresh moves
+    load_js() 
 
     if (localStorage.customsets) {
         console.log("loading box")
