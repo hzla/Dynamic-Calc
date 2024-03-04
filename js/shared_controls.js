@@ -215,7 +215,7 @@ $(".ability").bind("keyup change", function () {
 		if (move.multihit) {
 			if (move.multihit[1] == 2)
 				moveHits = 2;
-			else if (move.multihit[1] == 5 && $(this).find(".ability").val() === "Skill Link")
+			else if (move.multihit[1] == 5 && $(this).val() === "Skill Link")
 				moveHits = 5;
 		}
 
