@@ -1685,12 +1685,12 @@ $(document).ready(function() {
   
 
    $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
-        var set = $(this).attr('data-id')
-        localStorage["right"] = set
+        currentTrainerSet = $(this).attr('data-id')
+        localStorage["right"] = currentTrainerSet
 
-        $('.opposing').val(set)
+        $('.opposing').val(currentTrainerSet)
         $('.opposing').change()
-        $('.opposing .select2-chosen').text(set)
+        $('.opposing .select2-chosen').text(currentTrainerSet)
         if ($('.info-group.opp > * > .forme').is(':visible')) {
             $('.info-group.opp > * > .forme').change()
         }
@@ -1773,7 +1773,6 @@ $(document).ready(function() {
 
    $(document).on('contextmenu', '.trainer-pok.left-side', function(e) {
         e.preventDefault()
-        console.log("dbl click")
         var parentBox = $(this).parent()
 
 

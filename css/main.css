@@ -493,6 +493,7 @@ html, body {
 
 .trainer-pok-list.opposing {
     /*margin-top:  70px;*/
+    flex-wrap:  nowrap;
 }
 
 
