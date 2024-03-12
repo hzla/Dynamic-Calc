@@ -531,7 +531,6 @@ function refresh_next_in() {
 
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
-
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
@@ -539,14 +538,11 @@ $(".set-selector").change(function () {
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
-		// $('#trainer-sprite').attr('src',  )
 		var left_max_hp = $("#p2 .max-hp").text()
 		$("#p2 .current-hp").val(left_max_hp).change()
 	} else {
-		var right_max_hp = $("#p1 .max-hp").text()
-		
+		var right_max_hp = $("#p1 .max-hp").text()		
 		$("#p1 .current-hp").val(right_max_hp).change()
-        console.log("hp changed")
 	}
 
 	refresh_next_in()
@@ -559,8 +555,6 @@ $(".set-selector").change(function () {
 			if (setName != "Blank Set") {
 				// var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				
-				console.log(setName)
-
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
 				var next = SETDEX_BW[pokemonName][setName]["next"]
@@ -591,11 +585,11 @@ $(".set-selector").change(function () {
 					}
 				}
 
-				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
-					$('#singles-format').click()
-				} else {
-					$('#doubles-format').click()
-				}
+				// if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
+				// 	$('#singles-format').click()
+				// } else {
+				// 	$('#doubles-format').click()
+				// }
 
 
 
@@ -620,10 +614,6 @@ $(".set-selector").change(function () {
 			$('#trainer-sprite').hide()
 		}
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
-
-
-
-		
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
 

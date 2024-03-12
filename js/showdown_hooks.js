@@ -1562,8 +1562,10 @@ $(document).ready(function() {
             $("#lvl-cap").show()
         }
 
-        if (MASTERSHEETS[TITLE]) {
-            mastersheetURL = location.href.replace("/?data", `/${MASTERSHEETS[TITLE]}_mastersheet.html?data`)
+        if (MASTERSHEETS[TITLE] && !location.href.includes("mastersheet")) {
+            mastersheetURL = location.href.replace("index.html","").replace("?data", `/${MASTERSHEETS[TITLE]}_mastersheet.html?data`)
+            $("#ms-btn").show()
+            $("#ms-btn").click(function() {location.href = mastersheetURL})
         }
     } else {
         TITLE = "NONE"
