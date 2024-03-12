@@ -60,6 +60,40 @@ Use pokeweb `prod-g4` branch for gen 4. Replace all relevant text files in Pokew
 
 Use [this modified pkhex](https://github.com/hzla/pk3ds_for_dynamic_calc) to export a calc for gen 6/7.
 
+## Mastersheet Mode
+
+Warning: Mastersheet mode uses about 500mb of ram and is not recommended for low end computers or mobile devices. 
+
+
+## Mastersheet
+Press tab to switch between calc mode and mastersheet mode
+
+
+### Trainers
+
+Click on a pokemon icon or name to display it's stats, learnset, and locations found on the side bar
+
+Click on a move name to display it's type, power, accuracy and pp on the sidebar
+
+Click on a trainer icon to switch to calc mode and load the trainer
+
+Trainers highlighted in purple are marked as mandatory.
+
+### Encounters:
+Click on a pokemon icon to display it's stats, learnset, and locations found on the side bar
+
+Left click on a pokemon to mark it as a dupe to update the encounter percents
+
+In the sidebar, you can enter a level for repel manips and the percents will update automatically
+
+Click on the grass icon or wave icon to view the raw encounter data
+
+
+### Side Bar
+Type a pokemon or move name to view it's info in the sidebar. Capitalizations don't matter. Use showdown spellings for alt forms. 
+
+
+
 
 ## License
 
