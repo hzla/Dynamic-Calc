@@ -799,18 +799,6 @@ $(".set-selector").change(function () {
 			pokeObj.find(".gender").val("");
 		} else pokeObj.find(".gender").parent().show();
 	}
-
-	if ($(this).hasClass('opposing')) {
-		var simTrainers = get_similar_trainers()
-
-        var trainer_html = ""
-
-        for (n in simTrainers) {
-            trainer_html += `<div class="sim-trainer" data-id="${simTrainers[n][1]}">${simTrainers[n][0]}</div>`
-        }
-        $("#similarTrainers").html(trainer_html)
-
-	}
 });
 
 function formatMovePool(moves) {

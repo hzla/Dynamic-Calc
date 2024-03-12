@@ -36,7 +36,7 @@ function abv(s) {
 
 function get_custom_trainer_names() {
     var all_poks = setdex
-    var trainer_names = [] 
+    var trainer_names = {} 
 
     for (const [pok_name, poks] of Object.entries(all_poks)) {
         var pok_tr_names = Object.keys(poks)
@@ -44,39 +44,13 @@ function get_custom_trainer_names() {
            var trainer_name = pok_tr_names[i]
            var sub_index = poks[trainer_name]["sub_index"]
 
-           if (poks[trainer_name]['ivs'] && poks[trainer_name]['ivs']['at'] > 0 && sub_index == 0) {
-                trainer_names.push([poks[trainer_name]["level"], `${pok_name} (${trainer_name})[${sub_index}]`]) 
+           if (sub_index == 0) {
+                trainer_names[poks[trainer_name]["tr_id"] || 0] = `${pok_name} (${trainer_name})[${sub_index}]`
            }     
         }      
     }
 
-    return trainer_names.sort(function (a,b) {
-        if (a[0] < b[0]) {
-            return -1
-        }
-        if (a[0] > b[0]) {
-            return 1
-        }
-        return 0
-    })
-}
-
-function get_similar_trainers() {
-     if (typeof customLeads === "undefined") {
-        return
-    }
-
-    var level = parseInt($("#levelR1").val())
-    var similar = []
-    for (n in customLeads) {
-        if (customLeads[n][0] >= level && customLeads[n][0] <= level + 3) {
-            var tr_info = customLeads[n][1].slice(0,-3)
-
-            var tr_name = tr_info.split("(")[1].slice(0, -1)
-            similar.push([tr_name, tr_info])
-        }
-    }
-    return similar
+    return trainer_names
 }
 
 function get_box() {
@@ -1532,6 +1506,7 @@ analyze = false
 limitHits = false
 
 
+
 if (switchIn != 11) {
     $('#toggle-analysis').addClass('gone')
 }  
@@ -1569,6 +1544,10 @@ $(document).ready(function() {
    "de22f896c09fceb0b273": "Maximum Platinum"
     }
 
+    MASTERSHEETS = {
+        "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux"
+    }
+
 
     encs = `https://api.npoint.io/c39f79b412a6f19f3c4f`
 
@@ -1581,6 +1560,10 @@ $(document).ready(function() {
         if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
             INC_EM = true
             $("#lvl-cap").show()
+        }
+
+        if (MASTERSHEETS[TITLE]) {
+            mastersheetURL = location.href.replace("/?data", `/${MASTERSHEETS[TITLE]}_mastersheet.html?data`)
         }
     } else {
         TITLE = "NONE"
@@ -1683,7 +1666,24 @@ $(document).ready(function() {
 
 
 
+   $(document).on('click', '.trainer-name', function() {
+        var tr_id = parseInt($(this).parent().parent().attr('data-index'))
 
+        currentTrainerSet = customLeads[tr_id].split("[")[0]
+
+        localStorage["right"] = currentTrainerSet
+
+        $('.opposing').val(currentTrainerSet)
+        $('.opposing').change()
+        $('.opposing .select2-chosen').text(currentTrainerSet)
+        if ($('.info-group.opp > * > .forme').is(':visible')) {
+            $('.info-group.opp > * > .forme').change()
+        }
+
+        $('.wrapper').show()
+        $('#content-container').hide()
+
+   })
   
 
    $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
@@ -1831,7 +1831,7 @@ $(document).ready(function() {
 
    // shortcuts
     $(document).keyup(async function (e) {
-        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0]) {
+        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0] && $('.pokemon-filter:visible').length === 0 )  {
             if(e.key == "i") {
                 const text = await navigator.clipboard.readText();
                 addSets(text)
@@ -1854,11 +1854,13 @@ $(document).ready(function() {
         }    
     })
 
-
-
-
-
-  
+    $(document).keydown(function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 9) {
+         $('.wrapper').toggle();
+         $('#content-container').toggle()
+        }   
+    });
 
 
    $(document).on('click', '#invert-types', function() {
@@ -1874,26 +1876,23 @@ $(document).ready(function() {
 
 
 
-   $(document).on('keyup', '.current-hp, .percent-hp', function() {
+   // $(document).on('keyup', '.current-hp, .percent-hp', function() {
 
-        refresh_next_in()
-   })
+   //      refresh_next_in()
+   // })
 
    // $(document).click(function() {
 
    //      setTimeout(function(){$($('.set-selector')[1]).change()},100);   
    // })
 
-   $(window).click(function(event) {
+   // $(window).click(function(event) {
 
-        if ($('.select2-drop:visible').length == 0) {
-
-           refresh_next_in()
-
-        }
+   //      if ($('.select2-drop:visible').length == 0) {
+   //         refresh_next_in()
+   //      }
         
-        
-    });
+   //  });
 
 
    $('.set-selector, .move-selector').on("select2-close", function () {
@@ -1950,20 +1949,14 @@ $(document).ready(function() {
 
     
         $('.player .select2-chosen').text(set)
-        if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
-            $('.info-group:not(.opp) > * > .forme').change()
-        }
-        get_box()
+        // if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
+        //     $('.info-group:not(.opp) > * > .forme').change()
+        // }
+        // get_box()
         // box_rolls()
 
-        var right_max_hp = $("#p1 .max-hp").text()
-        $("#p1 .current-hp").val(right_max_hp).change()
-    })
-
-    $(document).on('change', '#p2 .poke-sprite', function() {
-        $('.killer').removeClass('killer')
-        $('.defender').removeClass('defender')
-
+        // var right_max_hp = $("#p1 .max-hp").text()
+        // $("#p1 .current-hp").val(right_max_hp).change()
     })
 
 

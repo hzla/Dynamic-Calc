@@ -17,3 +17,25 @@
 	text-align: center;
 }
 
+#content-container {
+    position:  fixed;
+    top:  0;
+    left: 0;
+    height: 100vh;
+    width:  100vw;
+    overflow: scroll;
+}
+
+.wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:  0;
+    overflow: scroll;
+    height: 100vh;
+    width:  100vw;
+}
+
+.trainer-pok-list.opposing {
+    min-width:  100%;
+}

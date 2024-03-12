@@ -2,6 +2,49 @@
 a img {
     border: 0;
 }
+.wrapper * {
+    box-sizing: content-box;
+ }
+
+
+.filterable.doc-enc {
+    background: #383a59;
+}
+
+#mastersheet .encounter-wilds {
+    width: 100%;
+}
+
+.ms-move .move-power, .ms-move .move-accuracy {
+    text-align: center;
+}
+
+.ms-move .move-name {
+    margin-left:  0px;
+}
+
+.ms-move {
+    padding: 0px 8px;
+}
+
+#submit-ms {
+    display: none;
+}
+
+#manip-lvl {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.trainer-name:hover {
+    cursor: pointer;
+    border:  1px solid #1abc9c;
+}
+
+.ms-enc-main-header {
+    display: flex;
+    align-items: center;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -479,6 +522,23 @@ html, body {
 
 .trainer-poks {
     margin-bottom: 20px;
+    width:  auto;
+}
+
+table td {
+    padding:  0;
+}
+
+.wrapper .btn {
+    text-transform: none;
+}
+
+.move-type .btn {
+    margin: 0 10px;
+}
+
+.ms-desc {
+    margin-top: 20px;
 }
 
 .trainer-poks-label {
@@ -496,6 +556,15 @@ html, body {
     flex-wrap:  nowrap;
 }
 
+
+.filterable {
+    background: #383a59;
+    margin: 2px 0px;
+}
+
+.filterable .expanded-card-content {
+    background: #282a36;
+}
 
 .player-poks {
     background: url(../img/box_bg_city.png);
@@ -995,10 +1064,6 @@ th {
 }
 .set-selector {
     width: 100%;
-}
-
-.select2-container {
-    padding:  0 12px;
 }
 
 .info-selectors select {
