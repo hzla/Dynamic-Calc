@@ -1951,14 +1951,14 @@ $(document).ready(function() {
 
     
         $('.player .select2-chosen').text(set)
-        // if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
-        //     $('.info-group:not(.opp) > * > .forme').change()
-        // }
-        // get_box()
+        if ($('.info-group:not(.opp) > * > .forme').is(':visible')) {
+            $('.info-group:not(.opp) > * > .forme').change()
+        }
+        get_box()
         // box_rolls()
 
-        // var right_max_hp = $("#p1 .max-hp").text()
-        // $("#p1 .current-hp").val(right_max_hp).change()
+        var right_max_hp = $("#p1 .max-hp").text()
+        $("#p1 .current-hp").val(right_max_hp).change()
     })
 
 
