@@ -585,11 +585,11 @@ $(".set-selector").change(function () {
 					}
 				}
 
-				// if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
-				// 	$('#singles-format').click()
-				// } else {
-				// 	$('#doubles-format').click()
-				// }
+				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
+					$('#singles-format').click()
+				} else {
+					$('#doubles-format').click()
+				}
 
 
 

@@ -1447,14 +1447,23 @@ function loadDataSource(data) {
         pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
     }
     if (damageGen == 4) {
-        var gen4Forms = [["Wormadam", ["Trash", "Sandy"]],
+        var gen4Forms = [
             ["Deoxys", ["Attack", "Defense", "Speed"]],
             ["Shaymin", ["Sky"]],
-            ["Castform", ["Rainy", "Sunny", "Snowy"]]]
+            ["Castform", ["Rainy", "Sunny", "Snowy"]],
+            ["Wormadam", ["Trash", "Sandy"]]]
+
+        if (TITLE.includes("Sterling")) {
+            gen4Forms.pop()
+        }
+
+
         
         for (i in gen4Forms) {
             var base = gen4Forms[i][0]
             var forms = gen4Forms[i][1]
+
+
 
 
             for (j in forms) {
