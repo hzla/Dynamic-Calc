@@ -1023,7 +1023,7 @@ function displayParty() {
             species_name = currentParty[i]
 
             var sprite_name = species_name.toLowerCase().replace(" ","-").replace(".","").replace("’","")
-            var set_data = customSets[species_name]["My Box"]
+            var set_data = setdex[species_name]["My Box"]
             var data_id = species_name + " (My Box)"
 
             var pok = `<div class="trainer-pok-container">
