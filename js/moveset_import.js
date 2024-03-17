@@ -525,7 +525,31 @@ function updateDex(customsets) {
 	localStorage.customsets = JSON.stringify(customsets);
 }
 
+function isValidJSON(str) {
+    try {
+        JSON.parse(str);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
 function addSets(pokes, name) {
+	if (isValidJSON(pokes)) {
+		newSets = JSON.parse(pokes)
+		localStorage.customsets = newSets
+		location.reload()
+		return
+
+		// for (let set in newSets) {
+		// 	SETDEX_BW[set] ||= {}
+		// 	SETDEX_BW[set]["My Box"] = newSets[set]["My Box"]
+		// }
+		// console.log("sets updated")
+		// get_box()
+		// return
+	}	
+
 	var rows = pokes.split("\n");
 	var currentRow;
 	var currentPoke;

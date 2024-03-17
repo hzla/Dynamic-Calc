@@ -1011,6 +1011,10 @@ function get_current_learnset() {
     return current_learnset    
 }
 
+function exportAll() {
+    $('.import-team-text').val(JSON.stringify(localStorage.customsets))
+}
+
 
 function displayParty() {
     var destination = $('.player-party')

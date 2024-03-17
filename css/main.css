@@ -201,6 +201,10 @@ a img {
 
 #rom-title {
     font-size: 30px;
+    width: 480px;
+    position: absolute;
+    left: calc(50vw - 240px);
+    text-align: center;
 }
 
 #battle-bg {
@@ -225,6 +229,10 @@ a img {
 .title-text {
     line-height: 40px;
     height:  40px;
+    width: auto;
+    position: absolute;
+    left: 80px;
+    top: 9px;
 }
 
 .calc-select {
@@ -811,7 +819,6 @@ th {
     font-weight: bold;
     font-size: 1.5em;
     margin: 0.5em 1em 0.5em 0;
-    position: relative;
     width: auto;
 }
 .big-text {
