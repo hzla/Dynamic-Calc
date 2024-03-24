@@ -1566,7 +1566,8 @@ $(document).ready(function() {
     }
 
     MASTERSHEETS = {
-        "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux"
+        "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux",
+        "Sterling Silver": "sterlingsilver"
     }
 
 

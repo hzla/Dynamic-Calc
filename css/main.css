@@ -247,9 +247,10 @@ a img {
     color: rgb(248, 248, 242);
     font-size:  24px;
     margin-bottom: 20px;
-    border:  2px solid rgb(248, 248, 242);
+    border:  none;
     height: 40px;
     line-height: 40px;
+    border-radius: 0px;
 }
 
 .opposing .select2-choice {
@@ -321,12 +322,12 @@ input {
     right: 20px;
     border-radius: 5px;
     z-index:  10;
-    top: 272px;
+    top: 257px;
 }
 
 #show-ai {
     width: 140px;
-    top: 307px;
+    top: 292px;
 }
 
 #ai-container {
@@ -1121,8 +1122,17 @@ select.toxic-counter {
 }
 
 /* field info */
-.field-info .btn {
+.field-info .btn{
     font-size: 0.8em;
+    background: none;
+    color: #f1f1f1;
+    margin-top: 2px
+}
+
+.field-info button {
+    background: #bd93f9;
+    border-radius: 8px;
+    color: #f1f1f1;
 }
 table.field {
     width: 100%;
@@ -1134,7 +1144,7 @@ table.field {
 
 /* select2 overrides */
 .select2-container .select2-choice > .select2-chosen {
-    width: 100%;
+    width: calc(100% - 20px);
     text-align: left;
 }
 .small-select.select2-container .select2-choice {
@@ -1147,6 +1157,28 @@ table.field {
 }
 .small-select.select2-dropdown-open .select2-choice .select2-arrow b {
     background-position: -18px -4px;
+}
+
+.player .select2-chosen, .opposing .select2-chosen {
+    color: #f1f1f1;
+    border:  1px solid #bd93f9;
+    height: 37px;
+    padding-left: 10px;
+}
+
+#p2 .select2-chosen {
+    width: calc(100% + 10px);
+}
+
+.move-selector {
+    border: 1px solid #f1f1f1;
+}
+
+.player .select2-arrow, .opposing .select2-arrow {
+    background: none !important;
+    border-radius: 0px !important;
+    border: none !important;
+    right: 10px !important;
 }
 
 /* Bootstrap */
@@ -1188,9 +1220,13 @@ table.field {
 }
 
 .import-team-text {
-    width: calc(100% - 20px);
+    width: calc(100% - 14px);
     min-height: 10em;
     resize: vertical;
+    background: none;
+    color: #f1f1f1;
+    box-sizing: border-box;
+    padding: 4px;
 }
 
 .import-name-text {
