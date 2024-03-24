@@ -494,9 +494,6 @@ function get_next_in_g4() {
 
 
 
-    console.log(p1)
-    console.log("p1 ^^^^^")
-
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
@@ -510,7 +507,8 @@ function get_next_in_g4() {
         }
 
         // p1 = createPokemon($("#p1"))
-        p2 = createPokemon(p2info, pok_data["moves"])
+        // create mon with ignoteStatMods = true
+        p2 = createPokemon(p2info, pok_data["moves"], true)
 
          // because the game only counts multihits moves as 1 
         
@@ -1115,6 +1113,11 @@ function get_next_in() {
                 continue
             }
 
+            // for endeavor/grass knot/counter etc
+            if (mov_data["bp"] == 1) {
+                mov_data["bp"] = 60
+            }
+
             var bp = mov_data["bp"] * type_info[mov_data["type"]]
             
             if (bp > strongest_move_bp) {
@@ -1414,7 +1417,8 @@ function loadDataSource(data) {
 
         pokedex['Shaymin-Sky-Glitched'] = {
             "types": [
-                "Grass"
+                "Grass",
+                "Flying"
             ],
             "bs": jsonPoks['Shaymin']['bs'],
             "weightkg": 2.1,

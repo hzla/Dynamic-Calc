@@ -529,6 +529,10 @@ function refresh_next_in() {
 }
 
 
+$('#p1 .boost').change(function() {
+	refresh_next_in()
+})
+
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
@@ -921,7 +925,7 @@ function correctHiddenPower(pokemon) {
 	return pokemon;
 }
 
-function createPokemon(pokeInfo, customMoves=false) {
+function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
@@ -1008,7 +1012,10 @@ function createPokemon(pokeInfo, customMoves=false) {
 				evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
 				boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 			}
+		}
 
+		if (ignoreStatMods) {
+			boosts = {};
 		}
 
 
