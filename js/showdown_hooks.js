@@ -1438,7 +1438,11 @@ function loadDataSource(data) {
             continue
         }
 
-        if (jsonPoks[pok]) {
+				// Allow import of Farfetch'd w/ unicode standard apostrophe
+				if (pok == "Farfetch’d" && jsonPoks["Farfetch'd"]) {
+					jsonPok = jsonPoks["Farfetch'd"];
+				}
+        else if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
         } else {
