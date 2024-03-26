@@ -1900,26 +1900,9 @@ $(document).ready(function() {
 
 
 
-   // $(document).on('keyup', '.current-hp, .percent-hp', function() {
-
-   //      refresh_next_in()
-   // })
-
-   // $(document).click(function() {
-
-   //      setTimeout(function(){$($('.set-selector')[1]).change()},100);   
-   // })
-
-   // $(window).click(function(event) {
-
-   //      if ($('.select2-drop:visible').length == 0) {
-   //         refresh_next_in()
-   //      }
-        
-   //  });
 
 
-   $('.set-selector, .move-selector').on("select2-close", function () {
+$('.set-selector, .move-selector').on("select2-close", function () {
     setTimeout(function() {
         $('.select2-container-active').removeClass('select2-container-active');
         $(':focus').blur();
