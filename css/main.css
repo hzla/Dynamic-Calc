@@ -108,22 +108,27 @@ a img {
     padding: 20px;
     font-size: 20px;
     margin-top: 20px;
+    display: none;
 }
 
 #ai-tags, #player-tags {
     position: absolute;
     display: flex;
-    top: 78px;
+    top: 71px;
     cursor: pointer;
     left: 16px;
     font-size: 12px;
     z-index: 12;
 }
 
+.info-group.top {
+    min-height: 100px;
+}
+
 #ai-tags, #nav-tags {
     position: absolute;
     display: flex;
-    top: 78px;
+    top: 71px;
     cursor: pointer;
     right: 16px;
     font-size: 16px;
@@ -249,7 +254,7 @@ a img {
     margin-bottom: 20px;
     border:  none;
     height: 40px;
-    line-height: 40px;
+    line-height: 34px;
     border-radius: 0px;
 }
 
@@ -483,7 +488,7 @@ input {
 
     /* default colors */
     color: #222222;
-    border: solid 1px #AAAAAA;
+    border: solid 1px #f1f1f1;
     background: #e3e3e3;
     background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#e3e3e3));
     background: -moz-linear-gradient(top,  #f6f6f6,  #e3e3e3);
@@ -598,6 +603,8 @@ table td {
     min-height: 96px;
     max-height: 595px;
     justify-content: space-between;
+    margin-top:  23px;
+
 }
 
 .player-party {
@@ -909,7 +916,7 @@ th {
 /* general button styling */
 .btn {
     text-align: center;
-    border: solid 1px #aaaaaa;
+    border: solid 1px #f1f1f1;
     padding: 4px 4px;
     position: relative;
     cursor: pointer;
@@ -961,7 +968,7 @@ th {
 .btn:hover {
     z-index: 10;
     border-color: #777777;
-    background: #e3e3e3;
+   
 }
 .visually-hidden:checked + .btn {
     font-weight: bold;
@@ -1008,6 +1015,11 @@ th {
 .move-result-group {
     min-width: 50em;
     margin: 1em 0 11.5em;
+}
+
+.move-result-group label {
+    background:  #282a36;
+    color: #f1f1f1;
 }
 .move-result-subgroup {
     float: left;
