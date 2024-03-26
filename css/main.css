@@ -283,11 +283,24 @@ input {
 }
 
 .select2-input {
-    color: black;
+    color: #f1f1f1;
 }
 .select2-drop {
     padding-top: 10px;
     border-radius: 5px;
+    transform: translateY(-16px);
+    background: #282a36;
+    color: #f1f1f1;
+    font-size: 18px;
+}
+
+.select2-results .select2-no-results {
+     background: #282a36;
+}
+
+.select2-drop-active {
+    border: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
 }
 
 .move-result-subgroup {
@@ -1124,7 +1137,7 @@ select.toxic-counter {
 /* field info */
 .field-info .btn{
     font-size: 0.8em;
-    background: none;
+    background: #282a36;;
     color: #f1f1f1;
     margin-top: 2px
 }
