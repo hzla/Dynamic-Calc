@@ -44,6 +44,19 @@ function get_custom_trainer_names() {
            var trainer_name = pok_tr_names[i]
            var sub_index = poks[trainer_name]["sub_index"]
 
+           // If there's a mastersheet
+           if (npoint_data["order"]) {
+                // If this trainer is listed in the mastersheet
+                if (npoint_data["order"][poks[trainer_name]["tr_id"]]) {
+                    next = npoint_data["order"][poks[trainer_name]["tr_id"]]["next"]
+                    prev = npoint_data["order"][poks[trainer_name]["tr_id"]]["prev"]
+                    setdex[pok_name][trainer_name]["next"] = next
+                    setdex[pok_name][trainer_name]["prev"] = prev
+                }  
+                
+           }
+
+
            if (sub_index == 0) {
                 trainer_names[poks[trainer_name]["tr_id"] || 0] = `${pok_name} (${trainer_name})[${sub_index}]`
            }     
@@ -971,6 +984,11 @@ function get_current_in() {
     return SETDEX_BW[pok_name][tr_name]
 }
 
+function get_adjacent_sets() {
+    var current_in = get_current_in()
+
+}
+
 function get_current_learnset() {
     var pok_name = createPokemon($("#p1")).name
     if (pok_name.includes("-Mega")) {
@@ -1723,7 +1741,8 @@ $(document).ready(function() {
    })
 
    $(document).on('click', '.nav-tag', function() {
-        var set = $(this).attr('data-next')
+        var set = customLeads[$(this).attr('data-next')].split("[")[0]
+
         $('.opposing').val(set)
         $('.opposing').change()
         $('.opposing .select2-chosen').text(set)
