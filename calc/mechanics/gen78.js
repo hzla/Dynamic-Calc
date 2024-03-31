@@ -352,7 +352,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
-    else if (!noWeatherBoost && attacker.hasAbility("Chloroplast") && INC_EM) {
+    else if (attacker.hasAbility("Chloroplast") && INC_EM && move.hasType('Fire')) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
