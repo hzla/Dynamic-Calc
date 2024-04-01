@@ -207,9 +207,9 @@ a img {
 
 #rom-title {
     font-size: 30px;
-    width: 480px;
+    width: 600px;
     position: absolute;
-    left: calc(50vw - 240px);
+    left: calc(50vw - 300px);
     text-align: center;
 }
 

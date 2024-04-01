@@ -466,7 +466,7 @@ function get_next_in_g4() {
                     isSE = true
                 }
 
-                if (player_pok == "Mawile" && mov_data["type"] == "Poison") {
+                if (player_type1 == "Steel" && player_type2 == "Fairy" && mov_data["type"] == "Poison") {
                     isSE = true
                 }
 
@@ -1338,15 +1338,15 @@ function loadDataSource(data) {
         moves[move]["bp"] = jsonMove["basePower"]
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
-				var special_case_power_overrides = {
-					"Return": 102,
-					"Magnitude": 70
-				}
+		var special_case_power_overrides = {
+			"Return": 102,
+			"Magnitude": 70
+		}
 
-				if (move in special_case_power_overrides) {
-					moves[move]["bp"] = special_case_power_overrides[move]
-        	MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
-				}
+		if (move in special_case_power_overrides) {
+			moves[move]["bp"] = special_case_power_overrides[move]
+	MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
+		}
         
         var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
         for (n in optional_move_params) {
@@ -1456,10 +1456,10 @@ function loadDataSource(data) {
             continue
         }
 
-				// Allow import of Farfetch'd w/ unicode standard apostrophe
-				if (pok == "Farfetch’d" && jsonPoks["Farfetch'd"]) {
-					jsonPok = jsonPoks["Farfetch'd"];
-				}
+		// Allow import of Farfetch'd w/ unicode standard apostrophe
+		if (pok == "Farfetch’d" && jsonPoks["Farfetch'd"]) {
+			jsonPok = jsonPoks["Farfetch'd"];
+		}
         else if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
             // console.log(jsonPok)
