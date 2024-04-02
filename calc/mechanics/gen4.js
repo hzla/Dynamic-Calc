@@ -285,7 +285,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
             (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
             (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
             (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
-        (attacker.hasAbility('Technician') && basePower <= 60)) {
+        (attacker.hasAbility('Technician') && basePower <= 60 && !(move.named('Pursuit') && field.defenderSide.isSwitching))) {
         basePower = Math.floor(basePower * 1.5);
         desc.attackerAbility = attacker.ability;
     }
@@ -476,13 +476,13 @@ function calculateDPP(gen, attacker, defender, move, field) {
     }
     if (move.named('Pursuit') && field.defenderSide.isSwitching) {
         
-        if (attacker.hasAbility('Technician')) {
-            baseDamage = Math.floor(baseDamage * 1);
-        }
-        else {
+        // if (attacker.hasAbility('Technician')) {
+        //     baseDamage = Math.floor(baseDamage * 4 / 3);
+        // }
+        // else {
             baseDamage = Math.floor(baseDamage * 2);
             desc.isSwitching = 'out';
-        }
+        // }
     }
     var stabMod = 1;
     if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false))) {

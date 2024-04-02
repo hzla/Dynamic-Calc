@@ -601,7 +601,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
 
     var bpMods = [];
-    if ((attacker.hasAbility('Technician') && basePower <= 60) ||
+    if ((attacker.hasAbility('Technician') && basePower <= 60 && !(move.named('Pursuit') && field.defenderSide.isSwitching)) ||
         (attacker.hasAbility('Flare Boost') &&
             attacker.hasStatus('brn') && move.category === 'Special') ||
         (attacker.hasAbility('Toxic Boost') &&
