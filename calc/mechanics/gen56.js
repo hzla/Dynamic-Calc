@@ -213,7 +213,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             desc.moveBP = basePower;
             break;
         case 'Pursuit':
-            var switching = field.defenderSide.isSwitching === 'out';
+            var switching = field.defenderSide.isSwitching;
             basePower = move.bp * (switching ? 2 : 1);
             if (switching)
                 desc.isSwitching = 'out';
@@ -342,7 +342,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             desc.moveBP = basePower;
             break;
         case 'Pursuit':
-            var switching = field.defenderSide.isSwitching === 'out';
+            var switching = field.defenderSide.isSwitching;
             basePower = move.bp * (switching ? 2 : 1);
             if (switching)
                 desc.isSwitching = 'out';
@@ -472,7 +472,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
                 desc.moveBP = basePower;
                 break;
             case 'Pursuit':
-                var switching = field.defenderSide.isSwitching === 'out';
+                var switching = field.defenderSide.isSwitching;
                 basePower = move.bp * (switching ? 2 : 1);
                 if (switching)
                     desc.isSwitching = 'out';

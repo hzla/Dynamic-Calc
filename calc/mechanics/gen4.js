@@ -474,7 +474,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
         
         desc.attackerItem = attacker.item;
     }
-    if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
+    if (move.named('Pursuit') && field.defenderSide.isSwitching) {
+        
         if (attacker.hasAbility('Technician')) {
             baseDamage = Math.floor(baseDamage * 1);
         }

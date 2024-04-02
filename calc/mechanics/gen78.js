@@ -489,7 +489,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             break;
         case 'Pursuit':
-            var switching = field.defenderSide.isSwitching === 'out';
+            var switching = field.defenderSide.isSwitching;
             basePower = move.bp * (switching ? 2 : 1);
             if (switching)
                 desc.isSwitching = 'out';
@@ -753,7 +753,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
         (attacker.hasAbility('Sand Force') &&
             field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
         (attacker.hasAbility('Analytic') &&
-            (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+            (turnOrder !== 'first' || field.defenderSide.isSwitching)) ||
         (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
         (attacker.hasAbility('Punk Rock') && move.flags.sound) ||
         (attacker.hasAbility('Iron Fist') && move.flags.punch) ||
