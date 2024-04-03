@@ -3,12 +3,46 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Pok&eacute;mon Damage Calculator</title>
+    <title>Dynamic Calc</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css?01" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9674" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9675" />
     <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c967" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css?1" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->    
+    <script>
+        params = new URLSearchParams(window.location.search)
+        SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
+       "04770c9a89687b02a9f5": "Blaze Black 2/Volt White 2 Original",
+       "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
+       "da1eedc0e39ea07b75bf": "Vintage White",
+       "26138cc1d500b0cf7334": "Renegade Platinum",
+       "03e577af7cc9856a1f42": "Sacred Gold/Storm Silver",
+       "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
+       "b6e2693147e215f10f4a": "Radical Red 3.02",
+       "7a1ed35468b22ea01103": "Ancestral X",
+       "8c3ca30ba346734d5e4f": "Run & Bun",
+       "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
+       "00734d33040067eb7e9f": "Grand Colloseum 2.0",
+       "24bbfc0e69ff4a5c006b": "Emerald Kaizo",
+       "13fc25a3b19071978dd6": "Platinum",
+       "be0a4fedbe0ff31e47b0": "Heart Gold/Soul Silver",
+       "78381c312866ee2e6ff9": "Black/White",
+       "83c196dce6759252b3f4": "Black 2/White 2",
+       "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
+       "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
+       "e9030beba9c1ba8804e8": "Kaizo Colloseum",
+       "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
+       "d6364c8b89ad50905e6a": "Sterling Silver",
+       "8f199f3f40194ecc4b8e": "Sterling Silver",
+       "5b789b0056c18c5c668b": "Platinum Redux 2.6",
+       "de22f896c09fceb0b273": "Maximum Platinum"
+        }
+        if (SOURCES[params.get('data')]) {
+            TITLE = SOURCES[params.get('data')] || "NONE"
+            document.title = TITLE + " Calculator"
+            
+        }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -1695,7 +1729,7 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100114"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100115"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17b"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?c1788575"></script>

@@ -200,7 +200,7 @@ a img {
     display: flex;
     line-height: 40px;
     align-items: center;
-    width: calc(100vw - 40px);
+    width: 100%;
     justify-content: space-between;
     min-width:  calc(1256px);
 }
@@ -209,7 +209,7 @@ a img {
     font-size: 30px;
     width: 600px;
     position: absolute;
-    left: calc(50vw - 300px);
+    left: calc(50% - 300px);
     text-align: center;
 }
 
@@ -338,15 +338,15 @@ input {
     text-align: center;
     cursor: pointer;
     width:  160px;
-    right: 20px;
+    right: 0px;
     border-radius: 5px;
     z-index:  10;
-    top: 257px;
+    top: 242px;
 }
 
 #show-ai {
     width: 140px;
-    top: 292px;
+    top: 277px;
 }
 
 #ai-container {
@@ -803,6 +803,7 @@ table td {
     min-width:  1540px;
     margin-left: 20px;
     margin-right: 20px;
+    position: relative;
 }
 .credits {
     clear: both;
