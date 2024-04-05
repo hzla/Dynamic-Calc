@@ -1713,9 +1713,9 @@ $(document).ready(function() {
    $(document).on('click', '.nav-tag', function() {
         var set = customLeads[$(this).attr('data-next')].split("[")[0]
 
-        $('.opposing').val(set)
-        $('.opposing').change()
+        $('.opposing').val(set) 
         $('.opposing .select2-chosen').text(set)
+        $('.opposing').change()
    })
 
    $(document).on('click', '#show-mid', function() {
