@@ -1713,6 +1713,8 @@ $(document).ready(function() {
    $(document).on('click', '.nav-tag', function() {
         var set = customLeads[$(this).attr('data-next')].split("[")[0]
 
+        $("#weather-bar label").first().click()
+
         $('.opposing').val(set) 
         $('.opposing .select2-chosen').text(set)
         $('.opposing').change()
