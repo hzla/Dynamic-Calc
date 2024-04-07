@@ -232,7 +232,41 @@ moveChanges = {
 	    "Attack Order": "Assault Order",
 	    "Double Hit": "Dark Hole",
 	    "Spacial Rend": "Spacial Rupture"
-	}
+	},
+	"Pitch Black 2": {
+        "Sand Tomb": "Accelerock",
+        "Horn Drill": "Boomburst",
+        "Spike Cannon": "Breaking Swipe",
+        "Slam": "Brutal Swing",
+        "Luster Purge": "Dazzling Gleam",
+        "Round": "Disarming Voice",
+        "Sweet Kiss": "Draining Kiss",
+        "ViceGrip": "Dual Wingbeat",
+        "Bubble": "Esper Wing",
+        "Razor Wind": "Fire Lash",
+        "Constrict": "Infestation",
+        "Rolling Kick": "Headlong Rush",
+        "Mega Kick": "High Horsepower",
+        "Barrage": "Lunge",
+        "Mist Ball": "Moonblast",
+        "Sacred Fire": "Mystical Fire",
+        "Sharpen": "Nuzzle",
+        "Submisson": "Play Rough",
+        "Comet Punch": "Power-Up Punch",
+        "Egg Bomb": "Psychic Fangs",
+        "Smelling Salts": "Psyshield Bash",
+        "Thrash": "Raging Fury",
+        "Metal Sound": "Scorching Sands",
+        "Mega Punch": "Smart Strike",
+        "Triple Kick": "Triple Axel",
+        "Punishment": "Wave Crash",
+        "Secret Sword": "Spirit Break",
+        "Sheer Cold": "Mountain Gale",
+        "Splash": "Parabolic Charge",
+        "Fissure": "Sandsear Storm",
+        "Guillotine": "Bleakwind Storm",
+        "Clamp": "Wildbolt Storm"
+    }
 }
 
 if(typeof CHANGES === 'undefined') {
