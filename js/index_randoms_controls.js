@@ -43,7 +43,17 @@ function performCalculations() {
 	var battling = [p1, p2];
 	p1.maxDamages = [];
 	p2.maxDamages = [];
+	
+
+	if ($('#SpeL').prop('checked')) {
+		p1.stats.spe = Math.floor(p1.stats.spe * 1.1)
+		p1info.find(".sp .totalMod").css('color', '#bd93f9')
+	} else {
+		p1info.find(".sp .totalMod").attr('style', '')	
+	}
+
 	p1info.find(".sp .totalMod").text(p1.stats.spe);
+
 	p2info.find(".sp .totalMod").text(p2.stats.spe);
 	var fastestSide = p1.stats.spe > p2.stats.spe ? 0 : p1.stats.spe === p2.stats.spe ? "tie" : 1;
 

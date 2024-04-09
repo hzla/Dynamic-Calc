@@ -69,9 +69,13 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
+	console.log("ASdfasd")
 	var attacker, defender, setName, setTier;
 	var selectedTiers = getSelectedTiers();
 	var setOptions = getSetOptions();
+	
+	
+
 	var dataSet = [];
 	var pokeInfo = $("#p1");
 	for (var i = 0; i < setOptions.length; i++) {
@@ -129,6 +133,9 @@ function performCalculations() {
 		}
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
+	console.log(pokemon.stats.spe)
+
+	
 	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
 }
