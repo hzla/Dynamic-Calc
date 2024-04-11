@@ -523,7 +523,8 @@ function refresh_next_in() {
 		var set_name = next_poks[i][0].split(" (")[1].split(")")[0]
 		var item = setdex[species][set_name]["item"]
 
-		if (item != "-") {
+		if (item && item != "-" && item != "(None)") {
+			console.log(item)
 			item_name = item.toLowerCase().replace(" ", "-") 
             pok += `<img class="trainer-pok-item" src="https://play.pokemonshowdown.com/sprites/itemicons/${item_name}.png">`
 		}
