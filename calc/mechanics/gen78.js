@@ -756,13 +756,13 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
             (turnOrder !== 'first' || field.defenderSide.isSwitching)) ||
         (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
         (attacker.hasAbility('Punk Rock') && move.flags.sound) ||
-        (attacker.hasAbility('Iron Fist') && move.flags.punch) ||
         (attacker.hasAbility('Striker') && move.flags.kick) ||
         (attacker.hasAbility('Illusion') && attacker.abilityOn)) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }
-    if (INC_EM && attacker.hasAbility("Power Fists") && move.flags.punch) {
+    if (INC_EM && attacker.hasAbility("Power Fists") && move.flags.punch ||
+        (attacker.hasAbility('Iron Fist') && move.flags.punch)) {
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
