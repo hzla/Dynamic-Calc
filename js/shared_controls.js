@@ -516,7 +516,20 @@ function refresh_next_in() {
 		}
 
 		var pok = `<div class="trainer-pok-container">
-			<img class="trainer-pok right-side ${highlight}" src="./img/newhd/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">
+			<img class="trainer-pok right-side ${highlight}" src="./img/newhd/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">`
+
+
+		var species = next_poks[i][0].split(" (")[0]
+		var set_name = next_poks[i][0].split(" (")[1].split(")")[0]
+		var item = setdex[species][set_name]["item"]
+
+		if (item != "-") {
+			item_name = item.toLowerCase().replace(" ", "-") 
+            pok += `<img class="trainer-pok-item" src="https://play.pokemonshowdown.com/sprites/itemicons/${item_name}.png">`
+		}
+
+		
+		pok +=`
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][0])}">${next_poks[i][4][0].replace("Hidden Power", "HP")}</div>
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1].replace("Hidden Power", "HP")}</div>
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2].replace("Hidden Power", "HP")}</div>

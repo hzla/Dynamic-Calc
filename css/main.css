@@ -622,9 +622,9 @@ table td {
 
 .trainer-pok-item {
     position: absolute;
-    left: 0px;
+    left: 6px;
     width: 40px;
-    top: 10px;
+    top: 14px;
 }
 
 .player-party .trainer-pok-container {
@@ -747,6 +747,7 @@ table td {
     border:  1px solid #282a36;
     padding:  5px;
     width: calc(20% - 24px);
+    position: relative;
 }
 
 .trainer-pok-container:hover {
