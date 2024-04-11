@@ -634,6 +634,7 @@ function addSets(pokes, name) {
 		get_box()
 		// alert("Successfully imported " + addedpokes + " set(s)");
 		$('.player-poks').addClass('shake')
+		customSets = JSON.parse(localStorage.customsets);
 		setTimeout(function(){
 			$('.player-poks').removeClass('shake')
 		}, 500)

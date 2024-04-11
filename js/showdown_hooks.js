@@ -6,6 +6,8 @@ function load_js() {
   head.appendChild(script);
 }
 
+function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
+
 function get_trainer_names() {
     var all_poks = SETDEX_BW
     var trainer_names = [] 
@@ -1830,14 +1832,25 @@ $(document).ready(function() {
         var species_name = data_id.split(" (")[0]
         var sprite_name = species_name.toLowerCase().replace(" ","-").replace(".","").replace("’","")
         var set_data = customSets[species_name]["My Box"]
+        set_data['moves'] = padArray(set_data['moves'], 4, "-")
+
+        console.log(set_data)
 
         var pok = `<div class="trainer-pok-container">
-            <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">
-            <div class="bp-info">${abv(set_data['moves'][0].replace("Hidden Power", "HP"))}</div>
+            <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">`
+
+        if (set_data['item']) {
+            item_name = set_data['item'].toLowerCase().replace(" ", "-") 
+            pok += `<img class="trainer-pok-item" src="https://play.pokemonshowdown.com/sprites/itemicons/${item_name}.png">`
+        }
+            
+
+        pok += `<div class="bp-info">${abv(set_data['moves'][0].replace("Hidden Power", "HP"))}</div>
             <div class="bp-info">${abv(set_data['moves'][1].replace("Hidden Power", "HP"))}</div>
             <div class="bp-info">${abv(set_data['moves'][2].replace("Hidden Power", "HP"))}</div>
             <div class="bp-info">${abv(set_data['moves'][3].replace("Hidden Power", "HP"))}</div>
         </div>`
+            
 
         
 
