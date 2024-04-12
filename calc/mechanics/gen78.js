@@ -356,7 +356,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
         desc.weather = field.weather;
     }
-    else if ((!noWeatherBoost && defender.name.includes("Primal")) &&
+    else if ((!noWeatherBoost && defender.name && defender.name.includes("Primal")) &&
         (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
         (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
         return result;

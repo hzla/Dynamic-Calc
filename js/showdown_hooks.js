@@ -23,6 +23,64 @@ function get_trainer_names() {
     return trainer_names
 }
 
+function sort_box_by_set(attr) {
+    var box = $('.player-poks'),
+    mons = box.children('.trainer-pok');
+ 
+    mons.sort(function(a,b){
+        mon1_id = a.getAttribute('data-id')
+        mon1_species = mon1_id.split(" (")[0]
+        mon1_data = setdex[mon1_species]["My Box"]
+
+        mon2_id = b.getAttribute('data-id')
+        mon2_species = mon2_id.split(" (")[0]
+        mon2_data = setdex[mon2_species]["My Box"]
+
+        var an = mon1_data[attr],
+            bn = mon2_data[attr];
+     
+        
+
+        if(an > bn) {
+            return 1;
+        }
+        if(an < bn) {
+            return -1;
+        }
+        return 0;
+    });   
+    mons.detach().appendTo(box);
+}
+
+function sort_box_by_dex(attr) {
+    var box = $('.player-poks'),
+    mons = box.children('.trainer-pok');
+ 
+    mons.sort(function(a,b){
+        mon1_id = a.getAttribute('data-id')
+        mon1_species = mon1_id.split(" (")[0]
+        mon1_data = pokedex[mon1_species]
+
+        mon2_id = b.getAttribute('data-id')
+        mon2_species = mon2_id.split(" (")[0]
+        mon2_data = pokedex[mon2_species]
+
+        var an = mon1_data[attr],
+            bn = mon2_data[attr];
+     
+        
+
+        if(an > bn) {
+            return 1;
+        }
+        if(an < bn) {
+            return -1;
+        }
+        return 0;
+    });   
+    mons.detach().appendTo(box);
+}
+
 function abv(s) {
     if (($('.player-party').width() / s.length <= 65)) {
         if (s.split(" ")[1]) {
