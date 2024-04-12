@@ -1605,6 +1605,8 @@ $(document).ready(function() {
         if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
             INC_EM = true
             $("#lvl-cap").show()
+            $("#harsh-sunshine").next().text("Ability Sun")
+            $("#heavy-rain").next().text("Ability Rain")
         }
 
         if (MASTERSHEETS[TITLE] && !location.href.includes("mastersheet")) {
@@ -1840,8 +1842,8 @@ $(document).ready(function() {
             <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">`
 
         if (set_data['item']) {
-            item_name = set_data['item'].toLowerCase().replace(" ", "-") 
-            pok += `<img class="trainer-pok-item" src="https://play.pokemonshowdown.com/sprites/itemicons/${item_name}.png">`
+            item_name = set_data['item'].toLowerCase().replace(" ", "_").replace("'", "") 
+            pok += `<img class="trainer-pok-item" src="./img/items/${item_name}.png">`
         }
             
 
