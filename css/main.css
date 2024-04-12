@@ -238,7 +238,7 @@ a img {
     width: auto;
     position: absolute;
     left: 80px;
-    top: 9px;
+    top: -10px;
 }
 
 .calc-select {
