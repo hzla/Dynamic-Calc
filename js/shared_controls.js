@@ -87,7 +87,7 @@ function validate(obj, min, max) {
 }
 
 // auto-calc stats and current HP on change
-$(".level").keyup(function () {
+$(".level").change(function () {
 	var poke = $(this).closest(".poke-info");
 	calcHP(poke);
 	calcStats(poke);
@@ -624,7 +624,7 @@ $(".set-selector").change(function () {
 						
 						$("#levelR1").val(lvl_delta + current_cap).change()
 						console.log(`changing to ${lvl_delta + current_cap}`)
-					},2)
+					},20)
 					
 				}
 			}
