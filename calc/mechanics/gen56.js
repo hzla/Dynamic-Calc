@@ -142,6 +142,19 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             typeEffectiveness = type1Effectiveness;
         }
     }
+    else if (typeEffectiveness === 0 &&
+        (defender.hasItem('Ring Target') ||
+            (move.hasType('Poison') && attacker.hasAbility('Corrosion')) ||
+            (move.flags.bone && attacker.hasAbility('Bone Zone')) ||
+            move.named('Draco Barrage'))) {
+        var effectiveness = gen.types.get((0, util_1.toID)(move.type)).effectiveness;
+        if (effectiveness[defender.types[0]] === 0) {
+            typeEffectiveness = type2Effectiveness * 2;
+        }
+        else if (defender.types[1] && effectiveness[defender.types[1]] === 0) {
+            typeEffectiveness = type1Effectiveness * 2;
+        }
+    }
 
     if (typeEffectiveness === 0) {
         return result;
@@ -151,7 +164,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
         (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
             (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
-        (move.named('Dream Eater') && !defender.hasStatus('slp'))) {
+        (move.named('Dream Eater') && !defender.hasStatus('slp') && TITLE != "Cascade White 2")) {
         return result;
     }
     if ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
@@ -266,6 +279,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
             break;
         case 'Wake-Up Slap':
+            basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Dream Eater':
             basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
             desc.moveBP = basePower;
             break;
@@ -393,6 +410,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             break;
         case 'Assurance':
             basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+            break;
+        case 'Dream Eater':
+            basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+            desc.moveBP = basePower;
             break;
         case 'Wake-Up Slap':
             basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
@@ -528,6 +549,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
                 basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
                 desc.moveBP = basePower;
                 break;
+            case 'Dream Eater':
+                basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+                desc.moveBP = basePower;
+                break;
             case 'Smelling Salts':
                 basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
                 desc.moveBP = basePower;
@@ -609,7 +634,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
-    else if (attacker.hasAbility('Analytic') && turnOrder !== 'first') {
+    else if (attacker.hasAbility('Analytic', "Patient") && turnOrder !== 'first') {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }
@@ -625,8 +650,17 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
-    if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {
+    if (defender.hasAbility('Toxic Boost') && move.hasType('Poison')) {
         bpMods.push(2048);
+        desc.defenderAbility = defender.ability;
+    }
+    if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {
+        if (TITLE == "Cascade White 2") {
+            bpMods.push(1024);
+        } else {
+            bpMods.push(2048);
+        }
+        
         desc.defenderAbility = defender.ability;
     }
     else if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
@@ -649,7 +683,12 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         desc.attackerAbility = attacker.ability;
      }
     if (attacker.item && (0, items_1.getItemBoostType)(attacker.item) === move.type) {
-        bpMods.push(4915);
+        if (attacker.item.includes("Plate") && TITLE == "Cascade White 2") {
+            bpMods.push(5529);
+        } else {
+            bpMods.push(4915);
+        }
+        
         desc.attackerItem = attacker.item;
     }
     else if ((attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
@@ -870,6 +909,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
+    if (TITLE == "Cascade White 2" && field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
+        defense = (0, util_2.pokeRound)((defense * 3) / 2);
+        desc.weather = field.weather;
+    }
     var dfMods = [];
     if (defender.hasAbility('Marvel Scale') && defender.status && hitsPhysical) {
         dfMods.push(6144);
@@ -993,13 +1036,21 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         finalMods.push(field.gameType !== 'Singles' ? (gen.num > 5 ? 2732 : 2703) : 2048);
         desc.isLightScreen = true;
     }
-    if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
+    if (defender.hasAbility('Multiscale', "Majestic Ward") && defender.curHP() === defender.maxHP() &&
         !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
         !attacker.hasAbility('Parental Bond (Child)')) {
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
-    if (attacker.hasAbility('Tinted Lens') && typeEffectiveness < 1) {
+    if (defender.hasAbility('Fluffy') && move.flags.contact && !attacker.hasAbility('Long Reach')) {
+        finalMods.push(2048);
+        desc.defenderAbility = defender.ability;
+    }
+    if (defender.hasAbility('Fluffy') && move.hasType('Fire')) {
+        finalMods.push(8192);
+        desc.defenderAbility = defender.ability;
+    }
+    if (attacker.hasAbility('Tinted Lens', 'Tenacity') && typeEffectiveness < 1) {
         finalMods.push(8192);
         desc.attackerAbility = attacker.ability;
     }

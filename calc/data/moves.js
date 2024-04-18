@@ -909,6 +909,8 @@ var DPP_PATCH = {
         makesContact: true,
         category: 'Physical'
     },
+    'Razor Winds': { bp: 25, type: 'Flying', multihit: [2, 5], category: "Physical"},
+    'Phantom Strike': { bp: 95, type: 'Ghost', category: "Physical", makesContact: true},
     'Heal Block': { bp: 0, type: 'Psychic', target: 'allAdjacentFoes' },
     'Healing Wish': { bp: 0, type: 'Psychic' },
     'Heal Order': { bp: 0, type: 'Bug' },
@@ -2965,6 +2967,13 @@ var SM_PATCH = {
         category: 'Physical',
         secondaries: true,
         zp: 160
+    },
+    "Sparkle": {
+        bp: 60,
+        type: 'Rock',
+        category: 'Special',
+        secondaries: true,
+        zp: 140
     }
 };
 var SM = (0, util_1.extend)(true, {}, XY, SM_PATCH);

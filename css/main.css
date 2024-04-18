@@ -953,6 +953,11 @@ th {
 .btn-small {
     width: 4em;
 }
+
+.cascade-effects .btn-small {
+    width:  5em;
+    display: none;
+}
 .btn-xsmall {
     width: 1em;
 }

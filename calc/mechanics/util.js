@@ -193,6 +193,32 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
             }
             return inverted_dmg;
         } else {
+            if (TITLE == "Cascade White 2") {
+                if ( ($('#abilityL1') == "Corrosion" || $('#abilityL2') == "Corrosion") && type == "Steel" && move.type == "Poison") {
+                    return 2
+                }
+                if (FIELD_EFFECTS["chargestone"]) {
+                    if (type == "Ground" && move.type == "Electric") {
+                        return 1
+                    }
+                } else if (FIELD_EFFECTS["celestial"]) {
+                    if (type == "Normal" && move.type == "Ghost") {
+                        return 0.5
+                    } 
+
+                    if (type == "Dark" && move.type == "Psychic") {
+                        return 0.5
+                    } 
+                } else if (FIELD_EFFECTS["opelucid"]) {
+                    if (type == "Fairy" && move.type == "Dragon") {
+                        return 0.5
+                    } 
+
+                    if (type == "Ghost" && move.type == "Fighting") {
+                        return 0.5
+                    }
+                }
+            }
             return gen.types.get((0, util_1.toID)(move.type)).effectiveness[type];
         }
         

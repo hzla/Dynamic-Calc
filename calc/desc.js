@@ -59,10 +59,20 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
     var ignoresShellBell = gen.num === 3 && move.named('Doom Desire', 'Future Sight');
     if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
         var max = Math.round(defender.maxHP() / 8);
-        for (var i = 0; i < minD.length; i++) {
-            recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
-            recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+        
+        if (TITLE == "Cascade White 2") {
+            for (var i = 0; i < minD.length; i++) {
+                recovery[0] += Math.min(Math.round(minD[i] * move.hits / 4), max);
+                recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 4), max);
+            }
+        } else {
+            for (var i = 0; i < minD.length; i++) {
+                recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
+                recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+            }
         }
+
+        
     }
     if (move.named('G-Max Finale')) {
         recovery[0] = recovery[1] = Math.round(attacker.maxHP() / 6);
@@ -71,8 +81,17 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
         var percentHealed = move.drain[0] / move.drain[1];
         var max = Math.round(defender.maxHP() * percentHealed);
         for (var i = 0; i < minD.length; i++) {
-            recovery[0] += Math.min(Math.round(minD[i] * move.hits * percentHealed), max);
-            recovery[1] += Math.min(Math.round(maxD[i] * move.hits * percentHealed), max);
+            var range = [minD[i], maxD[i]];
+            for (var j in recovery) {
+                var drained = Math.round(range[j] * percentHealed);
+                if (attacker.hasItem('Big Root'))
+                    if (TITLE == "Cascade White 2") {
+                        drained = Math.trunc(drained * 7168 / 4096);
+                    } else {
+                       drained = Math.trunc(drained * 5324 / 4096); 
+                    }                   
+                recovery[j] += Math.min(drained * move.hits, max);
+            }
         }
     }
     if (recovery[1] === 0)
@@ -104,7 +123,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
             minRecoilDamage = toDisplay(notation, Math.min(min, defender.curHP()) * mod, attacker.maxHP(), 100);
             maxRecoilDamage = toDisplay(notation, Math.min(max, defender.curHP()) * mod, attacker.maxHP(), 100);
         }
-        if (!attacker.hasAbility('Rock Head')) {
+        if (!attacker.hasAbility('Rock Head', 'Determined')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
             text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil damage");
         }
@@ -377,7 +396,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
         else if (!defender.hasType('Ice') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
-            !defender.hasItem('Safety Goggles')) {
+            !defender.hasItem('Safety Goggles') && !(TITLE == 'Cascade White 2' && defender.hasAbility('Slush Rush', 'Fluffy', 'Thick Fat'))) {
             damage -= Math.floor(defender.maxHP() / 16);
             texts.push('hail damage');
         }

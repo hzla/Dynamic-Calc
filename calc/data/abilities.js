@@ -196,6 +196,7 @@ var BW = DPP.concat([
     'Moxie',
     'Multiscale',
     'Mummy',
+    'Contagious',
     'Overcoat',
     'Pickpocket',
     'Poison Touch',
@@ -355,8 +356,19 @@ SS = SS.concat([
     "Rampage",
     "Vengeance",
     "Pyromancy",
-    "Blitz Boxer"
+    "Blitz Boxer",
+    "Majestic Ward",
+    "Resilient",
+    "Keen Senses",
+    "Patient",
+    "Strong Body",
+    "Exploit",
+    "Determined",
+    "Illumination"
 ]);
+
+
+
 exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SS];
 var Abilities = (function () {
     function Abilities(gen) {

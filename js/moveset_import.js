@@ -266,7 +266,93 @@ moveChanges = {
         "Fissure": "Sandsear Storm",
         "Guillotine": "Bleakwind Storm",
         "Clamp": "Wildbolt Storm"
-    }
+    },
+    "Cascade White 2": {
+    	"Rollout": "Accelerock",
+		"Heart Swap": "Boomburst",
+		"Withdraw": "Breaking Swipe",
+		"Slam": "Brutal Swing",
+		"Luster Purge": "Dazzling Gleam",
+		"Round": "Disarming Voice",
+		"Sweet Kiss": "Draining Kiss",
+		"Vise Grip": "Dual Wingbeat",
+		"Sky Attack": "Esper Wing",
+		"Constrict": "Infestation",
+		"Rolling Kick": "Headlong Rush",
+		"Mega Kick": "High Horsepower",
+		"Kinesis": "Lunge",
+		"Mist Ball": "Moonblast",
+		"Sacred Fire": "Mystical Fire",
+		"Submission": "Play Rough",
+		"Sand Attack": "Scorching Sands",
+		"Triple Kick": "Triple Axel",
+		"Punishment": "Wave Crash",
+		"Attack Order": "Scorching Swarm",
+		"Spacial Rend": "Steel Beam",
+		"Roar of Time": "Starburst",
+		"Sharpen": "Nuzzle	",
+		"Razor Wind": "Fire Lash",
+		"Smelling Salts": "Psychic Fangs",
+		"Conversion": "Flip Turn",
+		"Mean Look": "Barb Barrage",
+		"Spider Web": "Infernal Parade",
+		"Lock On": "Parting Shot",
+		"Block": "Ice Hammer",
+		"Camouflage": "Trop Kick",
+		"Conversion 2": "Spin Out",
+		"Mind Reader": "Snap Trap",
+		"Bubble": "Chilling Water",
+		"Transform": "Phantom Force",
+		"Splash": "Spirit Break",
+		"Aqua Ring": "Fairy Wind",
+		"Charge": "Parabolic Charge",
+		"False Swipe": "Body Press",
+		"Miracle Eye": "Freeze-Dry",
+		"Freeze Shock": "Meteor Beam", 
+		"Flash": "Sparkle",
+		"Ice Burn": "Solar Blade",
+		"Torment": "Petal Blizzard",
+		"Fury Attack": "Razor Winds",
+		"Transform": "Phantom Strike",
+		"Chip Away": "Hidden Force",
+		"False Swipe": "Body Press"
+
+	}
+}
+
+abilityChanges = {
+	"Cascade White 2": {
+		"Tinted Lens": "Tenacity",
+		"Shieled Dust": "Resilient",
+		"Compoundeyes": "Keen Senses",
+		"Analytic": "Patient",
+		"Mummy": "Contagious",
+		"Clear Body": "Strong Body",
+		"Download": "Exploit",
+		"Rock Head": "Determined",
+		"Victory Star": "Illumination",
+		"Multiscale": "Majestic Ward",
+		"Light Metal": "Tough Claws",
+		"Pickup": "Fluffy",
+		"Gooey": "Cute Charm",
+		"Heavy Metal": "Slush Rush",
+		"Limber": "Corrosion"
+	}
+}
+
+itemChanges = {
+	"Cascade White 2": {
+		"Power Bracer": "Assault Vest",
+		"Adamant Orb": "Fairy Dust",
+		"Lustrous Orb": "Pixie Plate",
+		"Power Belt": "Fairy Gem",
+		"Lansat Berry": "Roseli Berry",
+		"Ring Target": "Lucky Charm",
+		"Resist Wing": "Throat Spray",
+		"Metal Powder": "Stress Tester",
+		"Power Anklet": "Safety Goggles",
+		"Power Lens": "Weakness Policy"
+	}
 }
 
 if(typeof CHANGES === 'undefined') {
@@ -359,7 +445,12 @@ function getAbility(row, species=false) {
 	var ability = row[1] ? row[1].trim() : '';
 
 	
-	if (calc.ABILITIES[8].indexOf(ability) !== -1) return ability;
+	if (calc.ABILITIES[8].indexOf(ability) !== -1) {
+		if (abilityChanges[TITLE] && abilityChanges[TITLE][ability]) {
+			return abilityChanges[TITLE][ability]
+		}
+		return ability;
+	} 
 }
 
 function statToLegacyStat(stat) {
@@ -418,6 +509,10 @@ function getStats(currentPoke, rows, offset) {
 		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
 		if (currentAbility[0] == "Ability") {
 			currentPoke.ability = currentAbility[1].trim();
+			console.log(currentPoke.ability)
+			if (abilityChanges[TITLE] && abilityChanges[TITLE][currentPoke.ability]) {
+				currentPoke.ability = abilityChanges[TITLE][currentPoke.ability]
+			}
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
@@ -439,6 +534,9 @@ function getItem(currentRow, j) {
 		var item = currentRow[j].trim();
 		item = item.replace("’", "'");
 		if (calc.ITEMS[8].indexOf(item) != -1) {
+			if (itemChanges[TITLE] && itemChanges[TITLE][item]) {
+				return itemChanges[TITLE][item]
+			}
 			return item;
 		}
 	}

@@ -354,6 +354,14 @@ var BW = DPP.concat([
     'Shock Drive',
     'Steel Gem',
     'Water Gem',
+    'Fairy Gem',
+    'Fairy Dust',
+    "Colress Prototype",
+    "Colress's Invention",
+    "Mysterious Device",
+    "Lucky Charm"
+
+
 ]);
 exports.MEGA_STONES = {
     Absolite: 'Absol',

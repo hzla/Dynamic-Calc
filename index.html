@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Dynamic Calc</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css?01" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9678" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9679" />
     <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c967" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css?1" />
     <!-- Global site tag (gtag.js) - Google Analytics -->    
@@ -786,6 +786,29 @@
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
                         <label class="btn btn-small btn-right" for="hail">Hail</label>
+                    </div>
+                    <div class="gen-specific g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto; display: inline-block;">
+                        <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
+                        <span hidden id="wonderRoomInstruction">Is Wonder Room in effect?</span>
+                        <input aria-describedby="magicRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="magicroom" />
+                        <label class="btn btn-xxxwide btn-left" for="magicroom">Magic Room</label>
+                        <input aria-describedby="wonderRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wonderroom" />
+                        <label class="btn btn-xxxwide btn-right" for="wonderroom">Wonder Room</label>
+                    </div>
+                    <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                        <span hidden id="gravityInstruction">Is gravity in effect?</span>
+                        <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
+                        <label class="btn" for="gravity">Gravity</label>
+                    </div>
+                    <div class="g6 g7 g8 cascade-effects" title="Select the current weather condition.">
+                        <input class="visually-hidden calc-trigger" type="radio" name="cascade" value="" id="clear-cascade" checked="checked" />
+                        <label class="btn btn-small btn-left" for="clear-cascade">None</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="cascade" value="Chargestone" id="chargestone" />
+                        <label class="btn btn-small btn-mid" for="chargestone">Charged</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="cascade" value="Opelucid" id="opelucid" />
+                        <label class="btn btn-small btn-mid" for="opelucid">Drayden</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="cascade" value="Celestial" id="celestial" />
+                        <label class="btn btn-small btn-right" for="celestial">Celestial</label>
                     </div>
                     <div class="gen-specific g6 g7 g8" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -1709,7 +1732,7 @@
 
 
     <script type="text/javascript" src="./js/expert_ai.js?8fa0c7fc"></script>
-    <script type="text/javascript" src="./calc/util.js?8fa0c7fa"></script>
+    <script type="text/javascript" src="./calc/util.js?8fa0c7fb"></script>
     <script type="text/javascript" src="./calc/stats.js?da4066f9"></script>
     <script type="text/javascript" src="./calc/data/species.js?66abc351"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?6f60aa5c"></script>
@@ -1725,12 +1748,12 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100121"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100122"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17b"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
-    <script type="text/javascript" src="./calc/data/abilities.js?c1788575"></script>
-    <script type="text/javascript" src="./calc/data/moves.js?dcd8d228"></script>
-    <script type="text/javascript" src="./calc/data/items.js?4724e4b2"></script>
+    <script type="text/javascript" src="./calc/data/abilities.js?c1788576"></script>
+    <script type="text/javascript" src="./calc/data/moves.js?dcd8d229"></script>
+    <script type="text/javascript" src="./calc/data/items.js?4724e4b3"></script>
     <script type="text/javascript" src="./calc/data/index.js?083d2bca"></script>
     <script type="text/javascript" src="./calc/move.js?de87e36d"></script>
     
@@ -1739,21 +1762,21 @@
     <script type="text/javascript" src="./calc/items.js?6c1bfef0"></script>
     <script type="text/javascript" src="./calc/mechanics/util.js?13c1ef44"></script>
     <script type="text/javascript" src="./calc/mechanics/gen78.js?b5cb13c6"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen56.js?326e578c"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen56.js?326e578d"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?7d2b7676"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?2fa3d6a2"></script>
     <script type="text/javascript" src="./calc/mechanics/gen12.js?468bc07c"></script>
     <script type="text/javascript" src="./calc/calc.js?d7fc4fbc"></script>
-    <script type="text/javascript" src="./calc/desc.js?0d17c5d2"></script>
+    <script type="text/javascript" src="./calc/desc.js?0d17c5d3"></script>
     <script type="text/javascript" src="./calc/result.js?d5c7552c"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
 
-    <script type="text/javascript" src="./js/shared_controls.js?0b3ea069"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?0b3ea070"></script>
 
 
     <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f8"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?a7071f76"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?a7071f77"></script>
     <script type="text/javascript" src="./js/sharecalc.js?a7071f74"></script>
 </div>
 

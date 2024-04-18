@@ -524,7 +524,6 @@ function refresh_next_in() {
 		var item = setdex[species][set_name]["item"]
 
 		if (item && item != "-" && !item.toLowerCase().includes("none")) {
-			console.log(item)
 			item_name = item.toLowerCase().replace(" ", "_").replace("'","") 
             pok += `<img class="trainer-pok-item" src="./img/items/${item_name}.png">`
 		}
@@ -543,9 +542,10 @@ function refresh_next_in() {
 }
 
 
-$('#p1 .boost').change(function() {
+$('#p1 .boost, #statusL1, #p1 .percent-hp').change(function() {
 	refresh_next_in()
 })
+
 
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
@@ -1366,6 +1366,7 @@ function clearField() {
 	$("#singles-format").prop("checked", false);
 	$("#doubles-format").prop("checked", true);
 	$("#clear").prop("checked", true);
+	$("#clear-cascade").prop("checked", true);
 	$("#gscClear").prop("checked", true);
 	$("#gravity").prop("checked", false);
 	$("#srL").prop("checked", false);
