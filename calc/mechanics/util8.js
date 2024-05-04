@@ -141,7 +141,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
         speed *= 1.5;
     }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
-        mods *= 2;
+        mods *= 1.5;
     }
     else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
         mods *= 0.5;

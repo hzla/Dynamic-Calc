@@ -704,7 +704,7 @@ function get_next_in_pkem() {
         var pok_data = SETDEX_BW[pok_name][tr_name]
 
         
-
+        console.log(trainer_poks[i].slice(0,-3))
         p2 = createPokemon(trainer_poks[i].slice(0,-3))
 
         
@@ -1750,7 +1750,8 @@ $(document).ready(function() {
 
     MASTERSHEETS = {
         "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux",
-        "Sterling Silver": "sterlingsilver"
+        "Sterling Silver": "sterlingsilver",
+        "Renegade Platinum": "renplat"
     }
     encs = `https://api.npoint.io/c39f79b412a6f19f3c4f`
 
