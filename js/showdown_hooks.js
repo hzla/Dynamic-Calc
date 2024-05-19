@@ -276,6 +276,28 @@ function box_rolls() {
     
 }
 
+function get_pkem_effectiveness(type1, type2, type3, type4) {
+    var type_chart = TYPES_BY_ID[8]
+
+
+    var mult = type_chart[type1.toLowerCase()].effectiveness[type3] 
+
+
+
+    if (type4 != type3) {
+        mult = mult * type_chart[type1.toLowerCase()].effectiveness[type4]
+    }
+
+    if (type2 != type1) {
+        mult = mult * type_chart[type2.toLowerCase()].effectiveness[type3]
+
+        if (type4 != type3) {
+            mult = mult * type_chart[type2.toLowerCase()].effectiveness[type4]
+        }
+    }
+
+    return mult
+}
 
 
 
@@ -599,9 +621,9 @@ function get_next_in_g4() {
         for (n in results) {
             var dmg = 0
             if (typeof results[n].damage === 'number') {
-                dmg = results[n].damage
+                dmg = results[n].damage % 255
             } else {
-                dmg = results[n].damage[0]
+                dmg = results[n].damage[results[n].damage.length - 1] % 255
             }
 
 
@@ -661,158 +683,187 @@ function can_chunk(damages, hp) {
 }
 
 
+
+// Inclement Emerald
 function get_next_in_pkem() {
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
     }
 
-    var ranked_trainer_poks = []
+    // Skip Baton Pass logic, just highlight the move in the UI
 
-    var scores = []
+    var defensive_mons = []
+    var offensive_mons = []
+    effectivenesses = []
+    effectiveness_multipliers = []
+
+
     var trainer_poks = CURRENT_TRAINER_POKS
     var trainer_poks_copy = JSON.parse(JSON.stringify(trainer_poks))
     
-    var currentHp = parseInt($('.current-hp').first().val())
+
 
     var p1info = $("#p1");
     var p2info = $("#p2");
     var p1 = createPokemon(p1info);
-    var p1speed = parseInt(p1info.find(".totalMod").text())
 
     var p1field = createField();
     var p2field = p1field.clone().swap();
 
+    var trainer_poks = CURRENT_TRAINER_POKS
+    
+    // Get Best defensive mon phase
 
-     for (i in trainer_poks) {
-        var score = 0
-        var set_name = (' ' + trainer_poks[i]).slice(1)
-        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
-        var kills = false
-        var faster = false
-        
-        var gets_ohkod = false
-        var highest_dmg_dealt = 0
-        var highest_dmg_taken = 0
-        var skip_player_calcs = false
-        var skip_dmg_calcs = false
+    var player_type1 = $('.type1').first().val() 
+    var player_type2 = $('.type2').first().val() 
+    var trainer_type1 = $('.type1').last().val()
+    var trainer_type2 = $('.type2').last().val() 
+
+    if (player_type2 == ""){
+        player_type2 = player_type1
+    }
+
+    
 
 
+    var type_info = get_type_info([trainer_type1, trainer_type1])
+    var p1_move_types = $('.move-type').slice(0,4).map(function(){return $(this).val()})
+
+    p1_move_types.push(player_type1)
+    p1_move_types.push(player_type2)
+
+    var predicted_type = player_type1
+
+    for (i in p1_move_types) {
+        if (type_info[p1_move_types[i]] >= 2) {
+            predicted_type = p1_move_types[i]
+            break
+        }
+    }
+
+    var weak_mons = []
+    var first_2x_found = false
+    var first_2x_index = 6
+    var last_4x_index = 6
+
+    for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
-        var reasoning = `${pok_name}: `
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
+        if (!pokedex[pok_name]) {
+            continue
+        }
+        var type1 = pokedex[pok_name]["types"][0]
+        var type2 = pokedex[pok_name]["types"][1] || type1
         var pok_data = SETDEX_BW[pok_name][tr_name]
-
-        
-        console.log(trainer_poks[i].slice(0,-3))
-        p2 = createPokemon(trainer_poks[i].slice(0,-3))
-
-        
-        var all_results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false);
-        var results = all_results[1]
-        var player_results = all_results[0]
+        var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
+        var isSE = false
 
 
-        var p2speed = p2.rawStats.spe
+        var switchin_type_info = get_type_info([type1, type2])
 
-        if ($('#tailwindR').is(':checked')) {
-            p2speed = p2speed * 1.5
+        effectiveness_multipliers.push(get_pkem_effectiveness(type1, type2, player_type1, player_type2))
+        console.log([type1, type2, player_type1, player_type2])
+        console.log(get_pkem_effectiveness(type1, type2, player_type1, player_type2))
+
+        if (pok_data["ability"] == "Multitype") {
+            var plates = {}
+            plates["Blank"] = "Normal"
+            plates["Draco"] = "Dragon"
+            plates["Dread"] = "Dark"
+            plates["Earth"] = "Ground"
+            plates["Fist"] = "Fighting"
+            plates["Flame"] = "Fire"
+            plates["Icicle"] = "Ice"
+            plates["Insect"] = "Bug"
+            plates["Iron"] = "Steel"
+            plates["Meadow"] = "Grass"
+            plates["Mind"] = "Psychic"
+            plates["Pixie"] = "Fairy"
+            plates["Sky"] = "Flying"
+            plates["Splash"] = "Water"
+            plates["Spooky"] = "Ghost"
+            plates["Stone"] = "Rock"
+            plates["Toxic"] = "Poison"
+            plates["Zap"] = "Electric"
+            plate_type = plates[pok_data["item"].split(" Plate")[0]]
+            type1 = plate_type
+            type2 = plate_type
         }
 
-        if (p2.rawStats.spe >= p1speed ) {
-            faster = true
-            score += 1
-            reasoning += "Faster, "
+        var effectiveness = switchin_type_info[predicted_type]
+
+
+        if (effectiveness == 2 && !first_2x_found) {
+            first_2x_index = sub_index
+            first_2x_found = true
         }
 
-        // check rolls against trainer poks
-        
-        for (let n = 0; n < 4; n++) {
-            var dmg = 0
+        if (effectiveness == 4) {
+            last_4x_index = sub_index
+        }
 
-            if (["Explosion", "Self-Destruct", "Final Gambit"].includes(player_results[n].move.name)) {
+        for (j in pok_data["moves"]) {
+            var mov_data = moves[pok_data["moves"][j]]
+
+            if (pok_data["moves"][j] == "Judgment") {
+                mov_data["type"] = plate_type
+            }
+
+            if (!mov_data) {
                 continue
             }
 
-            if (typeof player_results[n].damage === 'number') {
-                dmg = [player_results[n].damage]
-                
-            } else {
-                dmg = player_results[n].damage
-                if (dmg[15] >= highest_dmg_taken) {
-                    highest_dmg_taken = dmg[15]
-                }
-            }
-
-            var tr_hp = p2.maxHP()
-            // add 4 if kills, add +2 if revenge kill
-            
 
 
-            if (can_topkill(dmg, tr_hp) && !p2.hasItem('Focus Sash') && p2.ability != "Sturdy") {
-                gets_ohkod = true
-                score -= 3
-                // skip_player_calcs = true
-                reasoning += `killed by ${player_results[n].move.name}, ` 
-                // break
-                                    
-            } 
-        } 
+            if (type_info[mov_data["type"]] >= 2) {
+                isSE = true
+                effectivenesses[sub_index] = true
+            }   
 
-        if (["Ditto", "Wynaut", "Wobbuffet"].includes(p2.species.name) && !skip_player_calcs) {
-            score += 2
-            // reasoning = "Special Pok +2, "
-            skip_player_calcs = true
-        }
-
-
-        //  check rolls against player pok        
-        if (true) {
-            for (let n = 0; n < 4; n++) {
-                var dmg = 0
-
-                if (["Explosion", "Self-Destruct", "Final Gambit"].includes(player_results[n].move.name)) {
-                    continue
-                }
-
-
-                if (typeof results[n].damage === 'number') {
-                    dmg = [results[n].damage]                    
-                } else {
-                    dmg = results[n].damage
-
-                    if (dmg[15] >= highest_dmg_dealt) {
-                        highest_dmg_dealt = dmg[15]
-                    }
-                }
-
-                // add 4 if kills, add +2 if revenge kill
-                if (can_topkill(dmg, currentHp)) {
-                    var kills = true
-                    score += 4
-                    skip_dmg_calcs = true
-                    reasoning += `${results[n].move.name} kills, `
-                    // break       
-                } 
+            if ($("#abilityL1").val() == 'Levitate' && mov_data["type"] == "Ground") {
+                isSE = false
             }
         }
-        
-        highest_dmg_taken = highest_dmg_taken / p2.maxHP()
-        highest_dmg_dealt = highest_dmg_dealt / p1.maxHP()
 
-        if (highest_dmg_taken < highest_dmg_dealt && !skip_player_calcs && !skip_dmg_calcs) {
-            score += 2
-            // reasoning += 'deals more dmg than taken, '
+        if (effectiveness_multipliers[sub_index] >= 2) {
+            if (effectivenesses[sub_index]) {
+                offensive_mons.push([CURRENT_TRAINER_POKS[sub_index], 0, "", sub_index, pok_data["moves"], effectiveness_multipliers[sub_index]])
+            }
         }
-
-
-        score -= (sub_index / 100) 
-        // reasoning += `Final Score: ${score}`
-        ranked_trainer_poks.push([set_name, score, "", 0, pok_data.moves, 0, reasoning])
+        if (effectiveness >= 2) {   
+            weak_mons.push([CURRENT_TRAINER_POKS[sub_index], 0, "", sub_index, pok_data["moves"], effectiveness])
+        }              
     }
 
-    RR_SORTED = ranked_trainer_poks.sort(sort_trpoks)
-    return RR_SORTED
+    console.log(`predicted type: ${predicted_type}`)
+    console.log(`first_2x_index: ${first_2x_index}`)
+    console.log(`last_4x_index: ${last_4x_index}`)
+    console.log("weak mons")
+    console.log(weak_mons)
+
+    for (i in weak_mons) {
+        if ((weak_mons[i][5] == 2 && weak_mons[i][3] > last_4x_index) || (weak_mons[i][5] == 4 && weak_mons[i][3] > first_2x_index))  {
+            
+            if (effectivenesses[sub_index]) {
+                defensive_mons.push(weak_mons[i])
+            }           
+        }
+    }
+
+    console.log("defensive mons")
+    console.log(defensive_mons)
+
+    console.log("offensive_mons")
+    console.log(offensive_mons)
+
+
+
+
+    // get predicted type, allow user to override
+    // var predicted_type = 
+
+    return defensive_mons
 }
 
 
@@ -1832,7 +1883,7 @@ $(document).ready(function() {
                     backup_data = gcol_backup
                 } else if (TITLE == "Emerald Kaizo") {
                     backup_data = ek_backup
-                } else {
+                } else {dist
                     "nothing"
                 }
                 npoint_data = backup_data
