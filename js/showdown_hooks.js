@@ -691,6 +691,8 @@ function get_next_in_pkem() {
         return
     }
 
+    return get_next_in_cfru()
+
     // Skip Baton Pass logic, just highlight the move in the UI
 
     var defensive_mons = []
