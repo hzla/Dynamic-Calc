@@ -14,7 +14,7 @@ moveChanges = {
 		"Swallow": "Hidden Power Fighting"
 	},
 
-	'Blaze Black 2/Volt White 2 Redux':
+	'Blaze Black 2/Volt White 2 Redux 1.4':
 
 		{"Sand Tomb": "Accelerock",
 		"Horn Drill": "Boomburst",
@@ -552,6 +552,8 @@ function getMoves(currentPoke, rows, offset) {
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
 
 				console.log(TITLE)
+				console.log(move)
+				console.log(moveChanges[TITLE])
 				if (moveChanges[TITLE]) {
 					if (moveChanges[TITLE][move]) {
 						move = moveChanges[TITLE][move]
