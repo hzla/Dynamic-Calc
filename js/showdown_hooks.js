@@ -1356,6 +1356,9 @@ function get_next_in() {
     var endSwap = null
     var foundMega = false
     for (var i = 0; i < ranked_trainer_poks.length; i++) {
+				if (TITLE == "Ancestral X")
+					break;
+
         if (foundMega) {
             if (i == ranked_trainer_poks.length - 1)
                 ranked_trainer_poks[i - 1] = endSwap
