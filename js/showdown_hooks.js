@@ -1606,8 +1606,9 @@ function loadDataSource(data) {
 
     if (jsonPoks["Bulbasaur"]["learnset_info"]) {
         $('#learnset-show').show()
-        $('#save-pok').show()
     }
+
+    $('#save-pok').show()
 
 
 
