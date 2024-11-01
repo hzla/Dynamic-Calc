@@ -142,7 +142,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
         if (pv == 0) {
             return ""
         }
-        var nature = natures[pv % 25]
+        var nature = natures[Math.abs(pv) % 25]
 
  
         // Perform the function on pv: ((pv & 0x3E000) >> 0xD) % 24
