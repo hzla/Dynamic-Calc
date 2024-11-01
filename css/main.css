@@ -7,6 +7,18 @@ a img {
  }
 
 
+input[type="file"] {
+  display: none;
+}
+
+#read-save {
+  border: 1px solid #bd93f9;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #bd93f9;
+}
+
 
 
 .filterable.doc-enc {
@@ -139,7 +151,7 @@ a img {
 
 
 
-#ai-tags div, #nav-tags div, #learnset-show, #box-remove {
+#ai-tags div, #nav-tags div, #learnset-show, #box-remove, #save-pok {
     line-height: 20px;
     margin-right: 10px;
     background: #ff79c6;

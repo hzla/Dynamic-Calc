@@ -1606,6 +1606,7 @@ function loadDataSource(data) {
 
     if (jsonPoks["Bulbasaur"]["learnset_info"]) {
         $('#learnset-show').show()
+        $('#save-pok').show()
     }
 
 
@@ -1815,6 +1816,34 @@ $(document).ready(function() {
     INC_EM = false
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')] || "NONE"
+
+        baseGame = null
+        if (TITLE.includes("White") || TITLE.includes("Black") ) {
+            baseGame = "BW"
+        } else if (TITLE.includes("Platinum")) {
+            baseGame = "Pt"
+        } else if (TITLE.includes("Silver")) {
+            baseGame = "HGSS"
+        }
+
+        if (baseGame == "Pt") {
+            partyCountOffset = 0x9C
+            partyDataOffset = 0xA0
+            boxDataOffset = 0xCF30
+        } else if (baseGame == "HGSS") {
+            partyCountOffset = 0x94
+            partyDataOffset = 0x98
+            boxDataOffset = 0x4f700
+        } else if (baseGame == "BW") {
+            partyCountOffset = 0x18e00
+            partyDataOffset = 0x18e08
+            boxDataOffset = 0x400
+        }
+
+        if (!baseGame) {
+            $('#read-save').hide()
+        }
+
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
         if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
@@ -1992,6 +2021,7 @@ $(document).ready(function() {
         var sets = JSON.parse(localStorage.customsets)
         if (confirm(`Delete ${species} from imported sets?`)) {
             delete sets[species]['My Box']
+            delete SETDEX_BW[species]['My Box']
             localStorage.customsets = JSON.stringify(sets)
             $(`[data-id='${$('.set-selector')[0].value}']`).remove()
         }

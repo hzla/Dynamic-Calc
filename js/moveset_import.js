@@ -425,6 +425,15 @@ $("#exportL").click(function () {
 	ExportPokemon($("#p1"));
 });
 
+$('#save-pok').click(function () {
+	ExportPokemon($("#p1"));
+	$('#import').click()
+	$(this).text("Saved!")
+	setTimeout(function() {
+		$('#save-pok').text("Save Changes")
+	}, 500)
+})
+
 $("#exportR").click(function () {
 	ExportPokemon($("#p2"));
 });
