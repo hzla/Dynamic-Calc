@@ -35,11 +35,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 for (let i = 0; i < n; i++) {
                     // Extract the chunk of 236 bytes from the binary data
                    chunk = view.slice(offset, offset + CHUNK_SIZE);
-                   showdownImport += parsePKM(chunk)
+                   showdownImport += parsePKM(chunk, true)
                    offset += CHUNK_SIZE                 
                 }
 
-                console.log(showdownImport)
 
                 offset = boxDataOffset
                 CHUNK_SIZE = 136
@@ -131,12 +130,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
     }
 
 
-    function parsePKM(chunk) {
+    function parsePKM(chunk, is_party=false) {
 
         var showdownString = ""
 
          // Extract the first 4 bytes and convert them to a 32-bit integer
-        const pv = (chunk[0]) | (chunk[1] << 8) | (chunk[2] << 16) | (chunk[3] << 24);
+        pv = read32BitIntegerFromUint8Array(chunk)
+
+
 
         if (pv == 0) {
             return ""
@@ -172,6 +173,23 @@ document.getElementById('save-upload').addEventListener('change', function(event
         var move_data_offset = shiftOrder.indexOf(1) * 16
 
         var mon_name = sav_pok_names[decryptedData[mon_data_offset]]
+
+
+        if (mon_name in mon_forms) {
+            var form_index = (decryptedData[move_data_offset + 12] >> 3 & 0x1F) - 1
+            console.log(mon_name, decryptedData[move_data_offset + 12], (decryptedData[move_data_offset + 12] >> 3 & 0x1F) - 1)  
+            if (form_index >= 0 ) {
+               mon_name += `-${mon_forms[mon_name][form_index]}` 
+            }
+            
+        }
+
+        
+
+
+
+        
+
         var item_name = sav_item_names[decryptedData[mon_data_offset + 1]]
 
         var hp_ev = decryptedData[mon_data_offset + 8] & 0xFF
@@ -183,8 +201,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
         var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF) 
 
-        console.log(iv_value)
-        console.log(move_data_offset)
+
         ivs = getIVs(iv_value) 
 
 
@@ -194,6 +211,9 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
 
 
+        if (is_party) {
+            mon_name += " |Party|"
+        }
 
         showdownString += `${mon_name} @ ${item_name}\n`
 
@@ -202,8 +222,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
         var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]
         var level = get_level(exp_table, exp) 
-        console.log(exp_table, exp)
-        console.log("^^^^^^^^")
         var ability = sav_abilities[(decryptedData[mon_data_offset + 6] >> 8 & 0xFF) ]
 
 
@@ -223,6 +241,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
         return showdownString    
 
     }
+
+
+function read32BitIntegerFromUint8Array(array, offset = 0) {
+  const buffer = array.buffer; // Get the ArrayBuffer from the Uint8Array
+  const view = new DataView(buffer, array.byteOffset, array.byteLength);
+  return view.getUint32(offset, true); // true for little-endian
+}
+
 
 function getIVs(ivValue) {
 
