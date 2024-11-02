@@ -1828,9 +1828,9 @@ $(document).ready(function() {
         }
 
         if (baseGame == "Pt") {
-            partyCountOffset = 0x9C
-            partyDataOffset = 0xA0
-            boxDataOffset = 0xCF30
+            partyCountOffset = 0x9C 
+            partyDataOffset = 0xA0 
+            boxDataOffset = 0xCF30 
         } else if (baseGame == "HGSS") {
             partyCountOffset = 0x94
             partyDataOffset = 0x98
