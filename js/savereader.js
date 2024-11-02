@@ -222,6 +222,9 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
         var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]
         var level = get_level(exp_table, exp) 
+
+        console.log(mon_name, exp)
+
         var ability = sav_abilities[(decryptedData[mon_data_offset + 6] >> 8 & 0xFF) ]
 
 
