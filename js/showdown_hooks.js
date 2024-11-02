@@ -1829,15 +1829,12 @@ $(document).ready(function() {
 
         if (baseGame == "Pt") {
             partyCountOffset = 0x9C 
-            partyDataOffset = 0xA0 
             boxDataOffset = 0xCF30 
         } else if (baseGame == "HGSS") {
             partyCountOffset = 0x94
-            partyDataOffset = 0x98
-            boxDataOffset = 0x4f700
+            boxDataOffset = 0x0f700
         } else if (baseGame == "BW") {
             partyCountOffset = 0x18e00
-            partyDataOffset = 0x18e08
             boxDataOffset = 0x400
         }
 

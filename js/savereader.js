@@ -13,9 +13,38 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     view[i] = binaryData.charCodeAt(i);
                 }
 
+                
+
+                if (baseGame == "Pt") {
+                    smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  0x0CF1C)
+                    smallBlock2SaveCount = read32BitIntegerFromUint8Array(view,  0x4CF1C)
+                    if (smallBlock2SaveCount > smallBlock1SaveCount) {
+                        partyCountOffset += 0x40000
+                        blockId = read32BitIntegerFromUint8Array(view,  0x4CF1C - 4)
+                        console.log("now reading party from block 2")
+                    } else {
+                        console.log("now reading party from block 1")
+                        blockId = read32BitIntegerFromUint8Array(view,  0x0CF1C - 4)
+                    }
+
+                    block1Id = read32BitIntegerFromUint8Array(view,  0x1f0fc)
+                    console.log(blockId)
+                    console.log(block1Id)
+                    if (block1Id != blockId) {
+                        boxDataOffset += 0x40000
+                        console.log("now reading box from block 2")
+                    } else {
+                        console.log("now reading box from block 1")
+                    }
+                }
+
+
+                
+            
+
                 // Step 1: Get 'n' from offset 0x9C (single byte)
                 var n = view[partyCountOffset];
-                console.log(n)
+  
 
                 // Initialize an array to store decrypted chunks
                 decryptedChunks = [];
@@ -28,7 +57,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     CHUNK_SIZE = 220
                 }
 
-                var offset = partyDataOffset;
+                var offset = partyCountOffset + 4;
                 
                 var showdownImport = ""
 
@@ -42,10 +71,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 offset = boxDataOffset
                 CHUNK_SIZE = 136
-                n = 540
+                n = 510
 
                 if (baseGame == "BW") {
-                    n = 720
+                    n = 690
                 }
 
 
