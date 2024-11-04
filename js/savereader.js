@@ -7,13 +7,16 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 // Convert the binary string to ArrayBuffer for easier access
                 const binaryData = e.target.result;
                 const buffer = new ArrayBuffer(binaryData.length);
-                const view = new Uint8Array(buffer);
+                view = new Uint8Array(buffer);
 
                 for (let i = 0; i < binaryData.length; i++) {
                     view[i] = binaryData.charCodeAt(i);
                 }
 
-                
+                partyExpTables = []
+                partyExpIndexes = []
+
+                smallBlockStart = 0
 
                 if (baseGame == "Pt") {
                     smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  0x0CF1C)
@@ -22,14 +25,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
                         partyCountOffset += 0x40000
                         blockId = read32BitIntegerFromUint8Array(view,  0x4CF1C - 4)
                         console.log("now reading party from block 2")
+                        smallBlockStart = 0x40000
                     } else {
                         console.log("now reading party from block 1")
                         blockId = read32BitIntegerFromUint8Array(view,  0x0CF1C - 4)
+                        
                     }
 
                     block1Id = read32BitIntegerFromUint8Array(view,  0x1f0fc)
-                    console.log(blockId)
-                    console.log(block1Id)
                     if (block1Id != blockId) {
                         boxDataOffset += 0x40000
                         console.log("now reading box from block 2")
@@ -37,6 +40,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
                         console.log("now reading box from block 1")
                     }
                 }
+
+ 
 
 
                 
@@ -64,7 +69,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 var checkSum = getCheckSum(view.slice(0, 0xcf18))
 
-                console.log("Checksum: ", checkSum)
+                savParty = []
 
                 for (let i = 0; i < n; i++) {
                     // Extract the chunk of 236 bytes from the binary data
@@ -77,7 +82,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 offset = boxDataOffset
                 CHUNK_SIZE = 136
                 n = 510
-                savParty = []
+                
 
                 if (baseGame == "BW") {
                     n = 690
@@ -98,7 +103,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                    }
                   
                    chunk = view.slice(offset, offset + CHUNK_SIZE);
-                   savParty.push(chunk)
+                   
                    showdownImport += parsePKM(chunk)
                    offset += CHUNK_SIZE                 
                 }
@@ -135,8 +140,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
             // Decrypt by reversing the XOR operation
 
             const decryptedWord = encryptedData[i] ^ prngValue;
-
-            // console.log(X, encryptedData[i], prngValue, decryptedWord)
 
             // Store decrypted word
             decryptedData.push(decryptedWord);
@@ -190,24 +193,27 @@ document.getElementById('save-upload').addEventListener('change', function(event
         const checksum = (chunk[0x07] << 8) | chunk[0x06];
 
         
-        chunk = chunk.slice(8,136)
 
+        
+        chunk = chunk.slice(8,136)
 
 
         // Convert chunk to array of 16-bit words (2-byte integers) for decryption
         const encryptedData = [];
-            for (let j = 0; j < 128; j += 2) {
-                const word = (chunk[j + 1] << 8) | chunk[j];
-                encryptedData.push(word);
-            }
+        for (let j = 0; j < 128; j += 2) {
+            const word = (chunk[j + 1] << 8) | chunk[j];
+            encryptedData.push(word);
+        }
 
         // Step 3: Decrypt the data using the checksum
         const decryptedData = decryptData(encryptedData, checksum);
 
+     
+
         // Store decrypted chunk
         decryptedChunks.push(decryptedData);
 
-        console.log(getPKMNCheckSum(decryptedData), checksum)
+    
 
         var mon_data_offset = shiftOrder.indexOf(0) * 16
         var move_data_offset = shiftOrder.indexOf(1) * 16
@@ -252,6 +258,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
         if (is_party) {
             mon_name += " |Party|"
+            partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
+            partyExpIndexes.push(mon_data_offset + 4)
+            savParty.push(decryptedData)
+            console.log(checksum)
         }
 
         showdownString += `${mon_name} @ ${item_name}\n`
@@ -370,6 +380,98 @@ function getPKMNCheckSum(array) {
     return sum & 0xFFFF; // Mask with 0xFFFF to get the lower 16 bits
 }
 
-function updatePartyPKMN(view, pkmn, partyIndex) {
+function updatePartyPKMN(level) {
+    var partyOffset = partyCountOffset + 4
 
+    for (i = 0; i < partyCount; i++) {
+        
+        // get target exp from exp tables
+        var desiredExp = expTables[partyExpTables[i]][level - 1] - 1
+
+        // write the new exp to the pokemon data 
+        savParty[i][partyExpIndexes[i]] = desiredExp & 0xFFFF
+        savParty[i][partyExpIndexes[i] + 1] = (desiredExp >>> 16) & 0xFFFF
+
+        var newPartyPokCheckSum = getPKMNCheckSum(savParty[i])
+        var encryptedPok = encryptData(savParty[i], newPartyPokCheckSum)
+        var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
+
+
+        view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * 236) + 6)
+        view.set(uint8PokArray, partyOffset + (i * 236) + 8)
+    }
+
+
+
+
+    var checkSum = getCheckSum(view.slice(smallBlockStart, 0xcf18 + smallBlockStart))
+    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], 0xcf2a + smallBlockStart)
+
+    downloadSave(view)
 }
+
+
+function encryptData(decryptedData, checksum) {
+    const encryptedData = [];
+    const WORD_COUNT = 64; // 64 2-byte words
+    let X = checksum; // Initialize PRNG with checksum as seed
+
+    for (let i = 0; i < WORD_COUNT; i++) {
+        // Advance the PRNG state
+        X = (BigInt(0x41C64E6D) * BigInt(X) + BigInt(0x6073)) & BigInt(0xFFFFFFFF);
+
+        // Extract the top 16 bits for XOR
+        const prngValue = Number((X >> BigInt(16)) & BigInt(0xFFFF));
+
+        // Encrypt by applying XOR to the decrypted data
+        const encryptedWord = decryptedData[i] ^ prngValue;
+
+        // Store encrypted word
+        encryptedData.push(encryptedWord);
+    }
+
+    return encryptedData;
+}
+
+
+function convert16BitWordsToUint8Array(words) {
+    const byteArray = new Uint8Array(words.length * 2); // Each word produces 2 bytes
+
+    for (let i = 0; i < words.length; i++) {
+        // Get the current 16-bit word
+        const word = words[i];
+
+        // Split into two bytes and store in little-endian format
+        byteArray[i * 2] = word & 0xFF; // Lower byte
+        byteArray[i * 2 + 1] = (word >> 8) & 0xFF; // Higher byte
+    }
+
+    return byteArray;
+}
+
+
+function downloadSave(save) {
+    // Create a Blob from the Uint8Array, specifying the MIME type as 'application/octet-stream' for binary data
+    const blob = new Blob([save], { type: 'application/octet-stream' });
+
+    // Create a URL for the Blob
+    const url = URL.createObjectURL(blob);
+
+    // Create a temporary anchor element and set attributes for downloading
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = '000000.sav'; // The file name for the download
+
+    // Append the anchor to the document, click it to trigger download, and then remove it
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Release the object URL after download
+    URL.revokeObjectURL(url);
+}
+
+
+
+
+
