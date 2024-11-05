@@ -19,6 +19,16 @@ input[type="file"] {
   color: #bd93f9;
 }
 
+#download-sav {
+  border: 1px solid #bd93f9;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #bd93f9;
+  margin-left: 10px;
+  background: none;
+}
+
 
 
 .filterable.doc-enc {
@@ -668,6 +678,21 @@ table td {
     cursor: pointer;
     margin-left: 13px;
     margin-top:  20px;
+}
+
+#edge {
+    line-height: 20px;
+    margin-right: 10px;
+    background: #ff79c6;
+    border-radius: 5px;
+    padding: 0px 4px;
+    color: rgb(248, 248, 242);
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 13px;
+    margin-top:  20px;
+    display: none;
 }
 
 #player-poks-filter {

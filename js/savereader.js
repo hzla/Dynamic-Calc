@@ -3,15 +3,23 @@ document.getElementById('save-upload').addEventListener('change', function(event
         if (file) {
             const reader = new FileReader();
 
+
+
             reader.onload = function(e) {
                 // Convert the binary string to ArrayBuffer for easier access
                 const binaryData = e.target.result;
                 const buffer = new ArrayBuffer(binaryData.length);
                 view = new Uint8Array(buffer);
 
+
+                saveUploaded = true
                 for (let i = 0; i < binaryData.length; i++) {
                     view[i] = binaryData.charCodeAt(i);
                 }
+
+                changelog = "<h4>Changelog:</h4>"
+
+                $('#clearSets').after("<p id='changelog'></p>")
 
                 partyExpTables = []
                 partyExpIndexes = []
@@ -75,7 +83,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 savParty = []
 
-                console.log(offset)
+
 
                 for (let i = 0; i < n; i++) {
                     // Extract the chunk of 236 bytes from the binary data
@@ -187,7 +195,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
         pv = read32BitIntegerFromUint8Array(chunk)
 
 
-        console.log(pv)
 
 
         if (pv == 0) {
@@ -273,7 +280,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
             partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
             partyExpIndexes.push(mon_data_offset + 4)
             savParty.push(decryptedData)
-            console.log(checksum, mon_name)
         } else {
             boxPokOffsets[mon_name] = {}
             boxPokOffsets[mon_name]["offset"] = offset
@@ -288,7 +294,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
         showdownString += `${mon_name} @ ${item_name}\n`
 
         
-        console.log(decryptedData)
 
         var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
 
@@ -429,8 +434,15 @@ function updatePartyPKMN(level) {
     downloadSave(view)
 }
 
-function updateSelectedBoxPKMN(level) {
+$('#edge').click(function() {
+    edgeSelected()
+})
+
+function edgeSelected() {
     var selected = getSelectedPoks()
+
+
+    var level = parseInt(prompt("Edge selection to level: "))
 
 
 
@@ -449,7 +461,7 @@ function updateSelectedBoxPKMN(level) {
         var expTable = expTables[boxPokData["exp_table"]]
         var desiredExp = expTable[level - 1] - 1
 
-        console.log(desiredExp)
+
 
 
         var decryptedData = boxPokData["decryptedData"]
@@ -458,23 +470,28 @@ function updateSelectedBoxPKMN(level) {
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
 
 
-        console.log(decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF)
-
         var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
         var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
         var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
 
         view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
-        view.set(uint8PokArray, boxPokData["offset"] + (i * 136) + 8)
+        view.set(uint8PokArray, boxPokData["offset"] + 8)
+
+        changelog += `<p>${selected[i]} edged to level ${level}</p>`
+
+
 
     }
 
     var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - 20))
     view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
 
-    console.log("new checksum ", checkSum)
+    $('#download-sav').remove()
+    $('#read-save').after(`<button id="download-sav" class="bs-btn bs-btn-default" onClick='downloadSave()'>Download .sav</button>`)
 
-    downloadSave(view)
+    $('#changelog').html(changelog)
+
+    // downloadSave(view)
 
 }
 
@@ -519,9 +536,9 @@ function convert16BitWordsToUint8Array(words) {
 }
 
 
-function downloadSave(save) {
+function downloadSave() {
     // Create a Blob from the Uint8Array, specifying the MIME type as 'application/octet-stream' for binary data
-    const blob = new Blob([save], { type: 'application/octet-stream' });
+    const blob = new Blob([view], { type: 'application/octet-stream' });
 
     // Create a URL for the Blob
     const url = URL.createObjectURL(blob);
@@ -529,7 +546,7 @@ function downloadSave(save) {
     // Create a temporary anchor element and set attributes for downloading
     const a = document.createElement('a');
     a.href = url;
-    a.download = '000000.sav'; // The file name for the download
+    a.download = `${TITLE}_edited.sav`; // The file name for the download
 
     // Append the anchor to the document, click it to trigger download, and then remove it
     document.body.appendChild(a);

@@ -4,6 +4,7 @@ function load_js() {
   var script= document.createElement('script');
   script.src= './js/shared_controls.js?0b3ea005';
   head.appendChild(script);
+  saveUploaded = false
 }
 
 function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
@@ -1149,7 +1150,11 @@ function displayParty() {
 
     if (currentParty.length > 0) {
         $('.player-party').css('display', 'flex')
-        $('#clear-party').show()
+        $('#clear-party').css('display', 'inline-block')
+
+        if (saveUploaded && (baseGame != "BW")) {
+            $('#edge').css('display', 'inline-block')
+        }
 
         for (i in currentParty) {
             species_name = currentParty[i]
@@ -2109,13 +2114,18 @@ $(document).ready(function() {
         if (!parentBox.hasClass('trainer-pok-container')) {
             destination = $('.player-party')
             $('.player-party').css('display', 'flex')
-            $('#clear-party').show()
+            $('#clear-party').css('display', 'inline-block')
+
+            if (saveUploaded && (baseGame != "BW")) {
+                $('#edge').css('display', 'inline-block')
+            }
             destination.append(pok)
         } else {
             $(this).parent().remove()
             if ($('.player-party').children().length == 0) {
                 $('.player-party').hide()
                 $('#clear-party').hide()
+                $('#edge').hide()
             }
         }
    })
@@ -2124,8 +2134,11 @@ $(document).ready(function() {
         $('.player-party').html("")
         $('.player-party').hide()
         $('#clear-party').hide()
+        $('#edge').hide()
         currentParty = []
    })
+
+
 
 
 
