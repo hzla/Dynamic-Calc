@@ -3,7 +3,22 @@ document.getElementById('save-upload').addEventListener('change', function(event
         if (file) {
             const reader = new FileReader();
 
-
+            if (baseGame == "Pt") {
+                partyCountOffset = 0x9C
+                smallBlockSize = 0xCF2C
+                boxDataOffset = 0xCF30
+                bigBlockStart = boxDataOffset - 4
+                bigBlockSize = 0x121E4
+            } else if (baseGame == "HGSS") {
+                partyCountOffset = 0x94
+                smallBlockSize = 0xF628
+                boxDataOffset = 0x0f700
+                bigBlockStart = boxDataOffset
+                bigBlockSize = 0x12310
+            } else if (baseGame == "BW") {
+                partyCountOffset = 0x18e00 + 4
+                boxDataOffset = 0x400
+            }
 
             reader.onload = function(e) {
                 // Convert the binary string to ArrayBuffer for easier access
@@ -20,6 +35,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 changelog = "<h4>Changelog:</h4>"
 
                 $('#clearSets').after("<p id='changelog'></p>")
+                console.log("reader init")
 
                 partyExpTables = []
                 partyExpIndexes = []
