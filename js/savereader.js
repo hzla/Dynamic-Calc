@@ -18,28 +18,33 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 smallBlockStart = 0
 
-                if (baseGame == "Pt") {
-                    smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  0x0CF1C)
-                    smallBlock2SaveCount = read32BitIntegerFromUint8Array(view,  0x4CF1C)
+                if (baseGame == "Pt" || baseGame == "HGSS") {
+                    smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize - 16)
+                    smallBlock2SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 16)
                     if (smallBlock2SaveCount > smallBlock1SaveCount) {
                         partyCountOffset += 0x40000
-                        blockId = read32BitIntegerFromUint8Array(view,  0x4CF1C - 4)
+                        blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 20)
                         console.log("now reading party from block 2")
                         smallBlockStart = 0x40000
                     } else {
                         console.log("now reading party from block 1")
-                        blockId = read32BitIntegerFromUint8Array(view,  0x0CF1C - 4)
+                        blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize - 20)
                         
                     }
 
-                    block1Id = read32BitIntegerFromUint8Array(view,  0x1f0fc)
+                    block1Id = read32BitIntegerFromUint8Array(view,  bigBlockStart + bigBlockSize - 20)
+
+                    console.log(bigBlockStart, bigBlockSize)
                     if (block1Id != blockId) {
                         boxDataOffset += 0x40000
+                        bigBlockStart += 0x40000
                         console.log("now reading box from block 2")
                     } else {
                         console.log("now reading box from block 1")
                     }
                 }
+
+
 
  
 
@@ -67,9 +72,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 
                 var showdownImport = ""
 
-                var checkSum = getCheckSum(view.slice(0, 0xcf18))
 
                 savParty = []
+
+                console.log(offset)
 
                 for (let i = 0; i < n; i++) {
                     // Extract the chunk of 236 bytes from the binary data
@@ -88,6 +94,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     n = 690
                 }
 
+                boxPokOffsets = {}
+
+                savBox = []
+
 
                 for (let i = 0; i < n; i++) {
                     // Extract the chunk of 236 bytes from the binary data
@@ -104,7 +114,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                   
                    chunk = view.slice(offset, offset + CHUNK_SIZE);
                    
-                   showdownImport += parsePKM(chunk)
+                   showdownImport += parsePKM(chunk, false, offset)
                    offset += CHUNK_SIZE                 
                 }
 
@@ -169,13 +179,15 @@ document.getElementById('save-upload').addEventListener('change', function(event
     }
 
 
-    function parsePKM(chunk, is_party=false) {
+    function parsePKM(chunk, is_party=false, offset=0) {
 
         var showdownString = ""
 
          // Extract the first 4 bytes and convert them to a 32-bit integer
         pv = read32BitIntegerFromUint8Array(chunk)
 
+
+        console.log(pv)
 
 
         if (pv == 0) {
@@ -225,14 +237,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
             var form_index = (decryptedData[move_data_offset + 12] >> 3 & 0x1F) - 1 
             if (form_index >= 0 ) {
                mon_name += `-${mon_forms[mon_name][form_index]}` 
-            }
-            
+            } 
         }
 
+
+
+
+
         
-
-
-
         
 
         var item_name = sav_item_names[decryptedData[mon_data_offset + 1]]
@@ -261,12 +273,23 @@ document.getElementById('save-upload').addEventListener('change', function(event
             partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
             partyExpIndexes.push(mon_data_offset + 4)
             savParty.push(decryptedData)
-            console.log(checksum)
+            console.log(checksum, mon_name)
+        } else {
+            boxPokOffsets[mon_name] = {}
+            boxPokOffsets[mon_name]["offset"] = offset
+            boxPokOffsets[mon_name]["decryptedData"] = decryptedData
+
+            boxPokOffsets[mon_name]["exp_table"] = sav_pok_growths[decryptedData[mon_data_offset]]
+            boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
+
+
         }
 
         showdownString += `${mon_name} @ ${item_name}\n`
 
-    
+        
+        console.log(decryptedData)
+
         var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
 
         var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]
@@ -315,10 +338,10 @@ function getIVs(ivValue) {
     return [
         hp,
         attack,
-        defense,
-        speed,
+        defense,  
         spAttack,
-        spDefense
+        spDefense,
+        speed,
     ];
 }
 
@@ -400,15 +423,61 @@ function updatePartyPKMN(level) {
         view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * 236) + 6)
         view.set(uint8PokArray, partyOffset + (i * 236) + 8)
     }
-
-
-
-
     var checkSum = getCheckSum(view.slice(smallBlockStart, 0xcf18 + smallBlockStart))
     view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], 0xcf2a + smallBlockStart)
 
     downloadSave(view)
 }
+
+function updateSelectedBoxPKMN(level) {
+    var selected = getSelectedPoks()
+
+
+
+    if (selected.length == 0) {
+        alert("Nothing selected")
+        return
+    }
+
+    for (let i = 0;i < selected.length; i++) {
+        if (!boxPokOffsets[selected[i]]) {
+            alert(`${selected[i]} not found in pc box`)
+            return
+        }
+
+        var boxPokData = boxPokOffsets[selected[i]]
+        var expTable = expTables[boxPokData["exp_table"]]
+        var desiredExp = expTable[level - 1] - 1
+
+        console.log(desiredExp)
+
+
+        var decryptedData = boxPokData["decryptedData"]
+
+        decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
+        decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
+
+
+        console.log(decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF)
+
+        var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
+        var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
+        var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
+
+        view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
+        view.set(uint8PokArray, boxPokData["offset"] + (i * 136) + 8)
+
+    }
+
+    var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - 20))
+    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
+
+    console.log("new checksum ", checkSum)
+
+    downloadSave(view)
+
+}
+
 
 
 function encryptData(decryptedData, checksum) {
@@ -469,6 +538,14 @@ function downloadSave(save) {
 
     // Release the object URL after download
     URL.revokeObjectURL(url);
+}
+
+function getSelectedPoks() {
+    var selected = []
+    $('.player-party .left-side').each(function() {
+        selected.push($(this).attr('data-id').split(" (My")[0])
+    })
+    return selected
 }
 
 
