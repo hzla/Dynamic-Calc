@@ -9,12 +9,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 boxDataOffset = 0xCF30
                 bigBlockStart = boxDataOffset - 4
                 bigBlockSize = 0x121E4
+                footerSize = 20
             } else if (baseGame == "HGSS") {
                 partyCountOffset = 0x94
                 smallBlockSize = 0xF628
                 boxDataOffset = 0x0f700
                 bigBlockStart = boxDataOffset
                 bigBlockSize = 0x12310
+                footerSize = 16
             } else if (baseGame == "BW") {
                 partyCountOffset = 0x18e00 + 4
                 boxDataOffset = 0x400
@@ -84,6 +86,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 // Initialize an array to store decrypted chunks
                 decryptedChunks = [];
                 decryptedBattleStats = []
+                partyMons = {}
+                partyPIDs = []
 
                 // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk
                 
@@ -228,8 +232,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
         const checksum = (chunk[0x07] << 8) | chunk[0x06];
 
         
-        
-
+    
         battleStats = chunk.slice(136)
         chunk = chunk.slice(8,136)
 
@@ -305,6 +308,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
 
         if (is_party) {
+            partyMons[mon_name] = decryptedBattleStats.length - 1
+            partyPIDs.push(pv)
             mon_name += " |Party|"
             partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
             partyExpIndexes.push(mon_data_offset + 4)
@@ -435,13 +440,23 @@ function getPKMNCheckSum(array) {
     return sum & 0xFFFF; // Mask with 0xFFFF to get the lower 16 bits
 }
 
-function updatePartyPKMN(level) {
+
+// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
+function updatePartyPKMN(edge=false) {
     var partyOffset = partyCountOffset + 4
 
-    for (i = 0; i < partyCount; i++) {
-        
+
+    const partyIndex = partyMons[$('.set-selector')[0].value.split("(")[0].trim()]
+    const decryptedBattleStat = decryptedBattleStats[partyIndex]
+    const updatedBattleStat = updateBattleStat(decryptedBattleStat)
+    const level = decryptedBattleStat[2] 
+
+
+    if (edge) {
+        // edge exp
+        i = partyIndex
         // get target exp from exp tables
-        var desiredExp = expTables[partyExpTables[i]][level - 1] - 1
+        var desiredExp = expTables[partyExpTables[i]][level] - 1
 
         // write the new exp to the pokemon data 
         savParty[i][partyExpIndexes[i]] = desiredExp & 0xFFFF
@@ -452,18 +467,38 @@ function updatePartyPKMN(level) {
         var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
 
 
+        // write checksum for main pkmn data
         view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * 236) + 6)
-        view.set(uint8PokArray, partyOffset + (i * 236) + 8)
+        view.set(uint8PokArray, partyOffset + (i * 236) + 8)  
     }
-    var checkSum = getCheckSum(view.slice(smallBlockStart, 0xcf18 + smallBlockStart))
-    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], 0xcf2a + smallBlockStart)
+    
 
-    downloadSave(view)
+
+    // update battle stats
+    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], 50)
+    uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
+
+    view.set(uint8PokArray, partyOffset + (partyIndex * 236) + 136)
+
+    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} updated</p>`
+    $('#changelog').html(changelog)
+
+
+    setSmallBlockChecksum()
+    addSaveBtn()
 }
+
+
+
 
 $('#edge').click(function() {
     edgeSelected()
 })
+
+function setSmallBlockChecksum() {
+    var checkSum = getCheckSum(view.slice(smallBlockStart, smallBlockSize + smallBlockStart - footerSize))
+    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], smallBlockSize + smallBlockStart - 2)
+}
 
 function edgeSelected() {
     var selected = getSelectedPoks()
@@ -510,11 +545,10 @@ function edgeSelected() {
 
     }
 
-    var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - 20))
+    var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
     view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
 
-    $('#download-sav').remove()
-    $('#read-save').after(`<button id="download-sav" class="bs-btn bs-btn-default" onClick='downloadSave()'>Download .sav</button>`)
+    addSaveBtn()
 
     $('#changelog').html(changelog)
 
@@ -524,12 +558,18 @@ function edgeSelected() {
 
 
 
-function encryptData(decryptedData, checksum) {
+
+function addSaveBtn() {
+    $('#download-sav').remove()
+    $('#read-save').after(`<button id="download-sav" class="bs-btn bs-btn-default" onClick='downloadSave()'>Download .sav</button>`)
+}
+
+
+function encryptData(decryptedData, checksum, wordCount=64) {
     const encryptedData = [];
-    const WORD_COUNT = 64; // 64 2-byte words
     let X = checksum; // Initialize PRNG with checksum as seed
 
-    for (let i = 0; i < WORD_COUNT; i++) {
+    for (let i = 0; i < wordCount; i++) {
         // Advance the PRNG state
         X = (BigInt(0x41C64E6D) * BigInt(X) + BigInt(0x6073)) & BigInt(0xFFFFFFFF);
 
@@ -592,6 +632,47 @@ function getSelectedPoks() {
     return selected
 }
 
+function updateBattleStat(battleStat) {
+    const level = parseInt($('#levelL1').val())
+    const currentHp = parseInt($('#currentHpL1').val())
+
+    var monStats = $('tbody span.total') 
+        
+    const hp = parseInt(monStats[0].innerHTML)
+    const ata = parseInt(monStats[1].innerHTML)
+    const def = parseInt(monStats[2].innerHTML)
+    const spa = parseInt(monStats[3].innerHTML)
+    const spd = parseInt(monStats[4].innerHTML)
+    const spe = parseInt(monStats[6].innerHTML)
+
+    const status = $('#statusL1').val()
+
+    battleStat[2] = level
+    battleStat[3] = currentHp
+    battleStat[4] = hp
+    battleStat[5] = ata
+    battleStat[6] = def
+    battleStat[7] = spe
+    battleStat[8] = spa
+    battleStat[9] = spd
+
+
+    if (status == "Poisoned") {
+        battleStat[0] = battleStat[0] | (1 << 3)
+    } else if (status == "Asleep") {
+        battleStat[0] = 1
+    } else if (status == "Burned") {
+        battleStat[0] = battleStat[0] | (1 << 4)   
+    } else if (status == "Paralyzed") {
+        battleStat[0] = battleStat[0] | (1 << 6)   
+    } else if (status == "Frozen") {
+        battleStat[0] = battleStat[0] | (1 << 5)   
+    } else if (status == "Badly Poisoned") {
+        battleStat[0] = battleStat[0] | (1 << 7)   
+    }
+
+    return battleStat
+}
 
 
 

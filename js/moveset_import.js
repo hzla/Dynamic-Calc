@@ -429,6 +429,13 @@ $('#save-pok').click(function () {
 	ExportPokemon($("#p1"));
 	$('#import').click()
 	$(this).text("Saved!")
+
+	if (saveUploaded) {
+		updatePartyPKMN()
+	}
+
+	$('.import-team-text').val("")
+	
 	setTimeout(function() {
 		$('#save-pok').text("Save Changes")
 	}, 500)
