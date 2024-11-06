@@ -451,7 +451,7 @@ function updatePartyPKMN(edge=false) {
     const updatedBattleStat = updateBattleStat(decryptedBattleStat)
     const level = decryptedBattleStat[2] 
 
-
+    edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update hp and status")
     if (edge) {
         // edge exp
         i = partyIndex
@@ -470,6 +470,7 @@ function updatePartyPKMN(edge=false) {
         // write checksum for main pkmn data
         view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * 236) + 6)
         view.set(uint8PokArray, partyOffset + (i * 236) + 8)  
+        changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} edged</p>`
     }
     
 
@@ -480,7 +481,7 @@ function updatePartyPKMN(edge=false) {
 
     view.set(uint8PokArray, partyOffset + (partyIndex * 236) + 136)
 
-    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} updated</p>`
+    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} hp/status updated</p>`
     $('#changelog').html(changelog)
 
 
