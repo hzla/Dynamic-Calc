@@ -539,6 +539,7 @@ function isInt(value) {
 }
 
 function getItem(currentRow, j) {
+	console.log(currentRow)
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
 		item = item.replace("’", "'");
@@ -560,9 +561,7 @@ function getMoves(currentPoke, rows, offset) {
 				movesFound = true;
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
 
-				console.log(TITLE)
-				console.log(move)
-				console.log(moveChanges[TITLE])
+
 				if (moveChanges[TITLE]) {
 					if (moveChanges[TITLE][move]) {
 						move = moveChanges[TITLE][move]
@@ -699,15 +698,22 @@ function addSets(pokes, name) {
 	var addedpokes = 0;
 	currentParty = []
 	for (var i = 0; i < rows.length; i++) {
-		
+		var item = false
 		if (rows[i].split(" |Party")[1]) {
+			if (rows[i].includes("@")) {
+				item = rows[i].split("@")[1].trim()
+			}
 			rows[i] = rows[i].split(" |Party")[0]
+			console.log(rows[i])
 			currentParty.push(rows[i])
 		}
 
 
 		currentRow = rows[i].split(/[()@]/);
-		console.log(currentRow)
+		
+		if (item) {
+			currentRow.push(item)
+		}
 		
 		
 		for (var j = 0; j < currentRow.length; j++) {

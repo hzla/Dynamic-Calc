@@ -83,6 +83,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 // Initialize an array to store decrypted chunks
                 decryptedChunks = [];
+                decryptedBattleStats = []
 
                 // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk
                 
@@ -157,12 +158,11 @@ document.getElementById('save-upload').addEventListener('change', function(event
     });
 
     // The decryptData function, as described earlier
-    function decryptData(encryptedData, checksum) {
+    function decryptData(encryptedData, checksum, wordCount=64) {
         const decryptedData = [];
-        const WORD_COUNT = 64; // 64 2-byte words
         let X = checksum; // Initialize PRNG with checksum as seed
 
-        for (let i = 0; i < WORD_COUNT; i++) {
+        for (let i = 0; i < wordCount; i++) {
             // Advance the PRNG state
             X = (BigInt(BigInt(0x41C64E6D) * BigInt(X)) + BigInt(0x6073)); 
 
@@ -228,9 +228,11 @@ document.getElementById('save-upload').addEventListener('change', function(event
         const checksum = (chunk[0x07] << 8) | chunk[0x06];
 
         
-
         
+
+        battleStats = chunk.slice(136)
         chunk = chunk.slice(8,136)
+
 
 
         // Convert chunk to array of 16-bit words (2-byte integers) for decryption
@@ -243,10 +245,27 @@ document.getElementById('save-upload').addEventListener('change', function(event
         // Step 3: Decrypt the data using the checksum
         const decryptedData = decryptData(encryptedData, checksum);
 
+
+
+        if (is_party) {
+            const encryptedBattleStat = []
+            for (let j = 0; j < 100; j += 2) {
+                const word = (battleStats[j + 1] << 8) | battleStats[j];
+                encryptedBattleStat.push(word);
+            }
+
+            const decryptedBattleStat = decryptData(encryptedBattleStat, pv, 50)
+            decryptedBattleStats.push(decryptedBattleStat)
+        }
+        
+
      
 
         // Store decrypted chunk
         decryptedChunks.push(decryptedData);
+        
+
+
 
     
 
@@ -283,12 +302,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
 
         ivs = getIVs(iv_value) 
-
-
-
-
-
-
 
 
         if (is_party) {
@@ -333,9 +346,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
             showdownString += `- ${move_name}\n`
         }
         showdownString += "\n"
-
         return showdownString    
-
     }
 
 
