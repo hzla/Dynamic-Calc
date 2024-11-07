@@ -10,6 +10,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 bigBlockStart = boxDataOffset - 4
                 bigBlockSize = 0x121E4
                 footerSize = 20
+                partyPokSize = 236
             } else if (baseGame == "HGSS") {
                 partyCountOffset = 0x94
                 smallBlockSize = 0xF628
@@ -17,10 +18,16 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 bigBlockStart = boxDataOffset
                 bigBlockSize = 0x12310
                 footerSize = 16
+                partyPokSize - 236
             } else if (baseGame == "BW") {
                 partyCountOffset = 0x18e00 + 4
                 boxDataOffset = 0x400
+                boxSize = 0xFF0
+                partySize = 0x534
+                checksumsOffset = 0x23F00
+                partyPokSize = 220
             }
+            battleStatSize = (partyPokSize - 136) / 2
 
             reader.onload = function(e) {
                 // Convert the binary string to ArrayBuffer for easier access
@@ -91,12 +98,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                 // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk
                 
-                if (baseGame == "Pt" || baseGame == "HGSS") {
-                    CHUNK_SIZE = 236
-                } else {
-                    CHUNK_SIZE = 220
-                }
-
+                
+                CHUNK_SIZE = partyPokSize
                 var offset = partyCountOffset + 4;
                 
                 var showdownImport = ""
@@ -160,6 +163,35 @@ document.getElementById('save-upload').addEventListener('change', function(event
             console.log("No file selected.");
         }
     });
+
+    function setBWChecksums() {
+        
+        // set box checksums
+        for (let i = 0; i < 24;i++) {
+            // calcualte checksum for pc box
+            var boxStart = boxDataOffset + (i * 0x1000)
+            var checksum = getCheckSum(view.slice(boxStart, boxStart + boxSize))
+ 
+            // set new checksum
+            view.set([checksum & 0xFF, (checksum >>> 8) & 0xFF], boxStart + boxSize + 2)
+            view.set([checksum & 0xFF, (checksum >>> 8) & 0xFF], checksumsOffset + (i * 2) + 2)
+        }
+
+        // set party checksum
+
+        var partyChecksum = getCheckSum(view.slice(0x18e00, 0x18e00 + partySize))
+        view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], 0x18e00 + partySize + 2)
+        view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], checksumsOffset + 52)
+
+
+        // set checksum table
+
+        checksumsChecksum = getCheckSum(view.slice(0x23F00, 0x23F00 + 0x8C))
+        view.set([checksumsChecksum & 0xFF, (checksumsChecksum >>> 8) & 0xFF], 0x23F9A)
+    }
+
+
+
 
     // The decryptData function, as described earlier
     function decryptData(encryptedData, checksum, wordCount=64) {
@@ -257,7 +289,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 encryptedBattleStat.push(word);
             }
 
-            const decryptedBattleStat = decryptData(encryptedBattleStat, pv, 50)
+            const decryptedBattleStat = decryptData(encryptedBattleStat, pv, battleStatSize)
             decryptedBattleStats.push(decryptedBattleStat)
         }
         
@@ -468,24 +500,27 @@ function updatePartyPKMN(edge=false) {
 
 
         // write checksum for main pkmn data
-        view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * 236) + 6)
-        view.set(uint8PokArray, partyOffset + (i * 236) + 8)  
+        view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * partyPokSize) + 6)
+        view.set(uint8PokArray, partyOffset + (i * partyPokSize) + 8)  
         changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} edged</p>`
     }
     
 
 
+
     // update battle stats
-    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], 50)
+    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
     uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
 
-    view.set(uint8PokArray, partyOffset + (partyIndex * 236) + 136)
+    view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
 
     changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} hp/status updated</p>`
     $('#changelog').html(changelog)
 
-
-    setSmallBlockChecksum()
+    if (baseGame != "BW") {
+        setSmallBlockChecksum()   
+    }
+    
     addSaveBtn()
 }
 
@@ -516,7 +551,7 @@ function edgeSelected() {
 
     for (let i = 0;i < selected.length; i++) {
         if (!boxPokOffsets[selected[i]]) {
-            alert(`${selected[i]} not found in pc box`)
+            alert(`${selected[i]} not found in pc box, please select ${selected[i]} and edit the level there click save changes to edge party pokemon`)
             return
         }
 
@@ -546,15 +581,16 @@ function edgeSelected() {
 
     }
 
-    var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
-    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
+    if (baseGame != "BW") {
+        var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
+        view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
+    } 
+
+    
 
     addSaveBtn()
 
     $('#changelog').html(changelog)
-
-    // downloadSave(view)
-
 }
 
 
@@ -605,7 +641,14 @@ function convert16BitWordsToUint8Array(words) {
 
 
 function downloadSave() {
+    if (baseGame == "BW") {
+        setBWChecksums()
+    }
+
     // Create a Blob from the Uint8Array, specifying the MIME type as 'application/octet-stream' for binary data
+    
+
+
     const blob = new Blob([view], { type: 'application/octet-stream' });
 
     // Create a URL for the Blob
@@ -648,7 +691,10 @@ function updateBattleStat(battleStat) {
 
     const status = $('#statusL1').val()
 
-    battleStat[2] = level
+
+    const newLevel = (battleStat[2] & 0xFF00) | level
+
+    battleStat[2] = newLevel
     battleStat[3] = currentHp
     battleStat[4] = hp
     battleStat[5] = ata
@@ -657,20 +703,38 @@ function updateBattleStat(battleStat) {
     battleStat[8] = spa
     battleStat[9] = spd
 
-
-    if (status == "Poisoned") {
-        battleStat[0] = battleStat[0] | (1 << 3)
-    } else if (status == "Asleep") {
-        battleStat[0] = 1
-    } else if (status == "Burned") {
-        battleStat[0] = battleStat[0] | (1 << 4)   
-    } else if (status == "Paralyzed") {
-        battleStat[0] = battleStat[0] | (1 << 6)   
-    } else if (status == "Frozen") {
-        battleStat[0] = battleStat[0] | (1 << 5)   
-    } else if (status == "Badly Poisoned") {
-        battleStat[0] = battleStat[0] | (1 << 7)   
+    if (baseGame != "BW") {
+        if (status == "Poisoned") {
+            battleStat[0] = 0 | (1 << 3)
+        } else if (status == "Asleep") {
+            battleStat[0] = 2
+        } else if (status == "Burned") {
+            battleStat[0] = 0 | (1 << 4)   
+        } else if (status == "Paralyzed") {
+            battleStat[0] = 0| (1 << 6)   
+        } else if (status == "Frozen") {
+            battleStat[0] = 0 | (1 << 5)   
+        } else if (status == "Badly Poisoned") {
+            battleStat[0] = 0 | (1 << 7)   
+        }
+    } else {
+        if (status == "Poisoned") {
+            battleStat[0] = 5
+        } else if (status == "Asleep") {
+            battleStat[0] = 2
+        } else if (status == "Burned") {
+            battleStat[0] = 4  
+        } else if (status == "Paralyzed") {
+            battleStat[0] = 1 
+        } else if (status == "Frozen") {
+            battleStat[0] = 3 
+        } else if (status == "Badly Poisoned") {
+            battleStat[0] = 6
+        }
     }
+    
+
+
 
     return battleStat
 }

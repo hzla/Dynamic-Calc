@@ -1152,7 +1152,7 @@ function displayParty() {
         $('.player-party').css('display', 'flex')
         $('#clear-party').css('display', 'inline-block')
 
-        if (saveUploaded && (baseGame != "BW")) {
+        if (saveUploaded) {
             $('#edge').css('display', 'inline-block')
         }
 
@@ -2101,7 +2101,7 @@ $(document).ready(function() {
             $('.player-party').css('display', 'flex')
             $('#clear-party').css('display', 'inline-block')
 
-            if (saveUploaded && (baseGame != "BW")) {
+            if (saveUploaded) {
                 $('#edge').css('display', 'inline-block')
             }
             destination.append(pok)
