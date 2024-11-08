@@ -312,7 +312,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
         boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
     }
 
-    showdownString += `$${shiftValue}$`
     showdownString += `${mon_name} @ ${item_name}\n`
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
