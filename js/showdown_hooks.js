@@ -1716,7 +1716,7 @@ function loadDataSource(data) {
             pokedex[pok]["abilities"] = jsonPok["abilities"]
     }
 
-    if (damageGen >= 3) {
+    if (damageGen >= 3 && damageGen < 6) {
         pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
     }
     if (damageGen == 4) {

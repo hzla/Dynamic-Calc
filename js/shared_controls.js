@@ -27,6 +27,12 @@ if (!Array.prototype.indexOf) {
 	};
 }
 
+boxSprites = ["newhd", "pokesprite"]
+if (!localStorage.boxspriteindex) {
+localStorage.boxspriteindex = 0
+}
+sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
+
 function startsWith(string, target) {
 	return (string || '').slice(0, target.length) === target;
 }
@@ -1727,8 +1733,8 @@ $(document).ready(function () {
 		playerSprites = "back"
 		suffix = "gif"
 	} else {
-		trainerSprites = sprite_style
-		playerSprites = sprite_style
+		trainerSprites = "newhd"
+		playerSprites = "newhd"
 		$('.poke-sprite').css('background', 'none')
 		suffix = "png"
 	}
