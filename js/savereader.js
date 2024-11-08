@@ -18,7 +18,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
             bigBlockStart = boxDataOffset
             bigBlockSize = 0x12310
             footerSize = 16
-            partyPokSize - 236
+            partyPokSize = 236
         } else if (baseGame == "BW") {
             partyCountOffset = 0x18e00 + 4
             boxDataOffset = 0x400
@@ -312,6 +312,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
         boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
     }
 
+    showdownString += `$${shiftValue}$`
     showdownString += `${mon_name} @ ${item_name}\n`
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
