@@ -627,7 +627,7 @@ table td {
     overflow: scroll;
     min-height: 96px;
     max-height: 595px;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top:  26px;
 
 }
