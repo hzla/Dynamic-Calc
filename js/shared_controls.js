@@ -516,7 +516,7 @@ function refresh_next_in() {
 		}
 
 		var pok = `<div class="trainer-pok-container">
-			<img class="trainer-pok right-side ${highlight}" src="./img/newhd/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">`
+			<img class="trainer-pok right-side ${highlight}" src="./img/${sprite_style}/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">`
 
 
 		var species = next_poks[i][0].split(" (")[0]
@@ -1727,8 +1727,8 @@ $(document).ready(function () {
 		playerSprites = "back"
 		suffix = "gif"
 	} else {
-		trainerSprites = "newhd"
-		playerSprites = "newhd"
+		trainerSprites = sprite_style
+		playerSprites = sprite_style
 		$('.poke-sprite').css('background', 'none')
 		suffix = "png"
 	}

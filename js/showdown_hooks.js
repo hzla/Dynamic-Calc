@@ -5,6 +5,11 @@ function load_js() {
   script.src= './js/shared_controls.js?0b3ea005';
   head.appendChild(script);
   saveUploaded = false
+  boxSprites = ["newhd", "pokesprite"]
+  if (!localStorage.boxspriteindex) {
+    localStorage.boxspriteindex = 0
+  }
+  sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
 }
 
 function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
@@ -139,7 +144,7 @@ function get_box() {
             box.push(names[i].split("[")[0])
 
             var pok_name = names[i].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace(".","").replace("’","")
-            var pok = `<img class="trainer-pok left-side" src="./img/newhd/${pok_name}.png" data-id="${names[i].split("[")[0]}">`
+            var pok = `<img class="trainer-pok left-side ${sprite_style}" src="./img/${sprite_style}/${pok_name}.png" data-id="${names[i].split("[")[0]}">`
 
             box_html += pok
         }   
@@ -1163,8 +1168,9 @@ function displayParty() {
             var set_data = setdex[species_name]["My Box"]
             var data_id = species_name + " (My Box)"
 
+
             var pok = `<div class="trainer-pok-container">
-                <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">
+                <img class="trainer-pok left-side" src="./img/${sprite_style}/${sprite_name}.png" data-id="${data_id}">
                 <div class="bp-info">${abv(set_data['moves'][0].replace("Hidden Power", "HP"))}</div>
                 <div class="bp-info">${abv(set_data['moves'][1].replace("Hidden Power", "HP"))}</div>
                 <div class="bp-info">${abv(set_data['moves'][2].replace("Hidden Power", "HP"))}</div>
@@ -1190,6 +1196,22 @@ function get_encs() {
     return all_encs
 }
 
+function toggleBoxSpriteStyle() {
+    var oldStyle = boxSprites[parseInt(localStorage.boxspriteindex)]
+    localStorage.boxspriteindex = (parseInt(localStorage.boxspriteindex) + 1) % 2
+    sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
+
+    $('.player-poks').removeClass(oldStyle)
+    $('.player-poks').addClass(sprite_style)
+
+    $('.trainer-pok').each(function() {
+        $(this).removeClass(oldStyle)
+        var newURL = $(this).attr('src').replace(oldStyle, sprite_style)
+        $(this).attr('src', newURL)
+    })
+
+
+}
 
 function get_next_in() {  
     if (switchIn == 4) {
@@ -2078,7 +2100,7 @@ $(document).ready(function() {
         console.log(set_data)
 
         var pok = `<div class="trainer-pok-container">
-            <img class="trainer-pok left-side" src="./img/newhd/${sprite_name}.png" data-id="${data_id}">`
+            <img class="trainer-pok left-side" src="./img/${sprite_style}/${sprite_name}.png" data-id="${data_id}">`
 
         if (set_data['item']) {
             item_name = set_data['item'].toLowerCase().replace(" ", "_").replace("'", "") 
@@ -2189,6 +2211,11 @@ $(document).ready(function() {
            url += '?invert=true'
         }
         window.location.href = url;
+   })
+
+   $(document).on('click', '#sprite-toggle', function() {
+        toggleBoxSpriteStyle()
+
    })
 
 

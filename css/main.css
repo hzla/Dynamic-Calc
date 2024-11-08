@@ -768,13 +768,17 @@ table td {
     border:  1px solid rgb(0,0,0,0);
 }
 
+.trainer-pok.left-side.pokesprite {
+    margin: 10px 0px;
+}
+
 .trainer-pok.right-side {
     height: 100%;
     width:  100%;
 }
 
 .left-side:hover {
-    border:  1px solid #1abc9c;
+    border:  3px solid #1abc9c;
     border-radius: 10px;
 }
 
