@@ -618,7 +618,7 @@ function updateBattleStat(battleStat) {
         if (status == "Poisoned") {
             battleStat[0] = 0 | (1 << 3)
         } else if (status == "Asleep") {
-            battleStat[0] = 2
+            battleStat[0] = 1
         } else if (status == "Burned") {
             battleStat[0] = 0 | (1 << 4)   
         } else if (status == "Paralyzed") {
