@@ -303,10 +303,14 @@ function parsePKM(chunk, is_party=false, offset=0) {
         boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
     }
 
+
     showdownString += `${mon_name} @ ${item_name}\n`
+
+
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
     var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]
+
     var level = get_level(exp_table, exp) 
     var ability = sav_abilities[(decryptedData[mon_data_offset + 6] >> 8 & 0xFF) ]
 
