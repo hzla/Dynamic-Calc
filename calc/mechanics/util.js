@@ -510,7 +510,11 @@ function countBoosts(gen, boosts) {
 }
 exports.countBoosts = countBoosts;
 function getEVDescriptionText(gen, pokemon, stat, natureName) {
+    if (natureName == "-") {
+        natureName = "Hardy"
+    }
     var nature = gen.natures.get((0, util_1.toID)(natureName));
+
     return (pokemon.evs[stat] +
         (nature.plus === nature.minus ? ''
             : nature.plus === stat ? '+'

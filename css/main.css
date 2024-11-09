@@ -698,6 +698,7 @@ table td {
 #player-poks-filter {
     margin-left:  12px;
     margin-bottom:  20px;
+    display: none;
 }
 
 .filter-row {
@@ -1377,6 +1378,10 @@ table.field {
 #footer {
     display: flex;
     justify-content: space-between;
+}
+
+.footer-title {
+    margin-top: 0px;
 }
 
 

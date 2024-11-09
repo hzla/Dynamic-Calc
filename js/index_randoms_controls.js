@@ -100,7 +100,7 @@ function performCalculations() {
 		var dmgInfo = $(resultLocations[1][i].damage).text()
 
 		
-		if (moveProbabilities[i] != 0) {
+		if (moveProbabilities[i] != 0 && damageGen >= 8) {
 			
 			if (!is100) {
 				var probability = `  (${(Math.round(moveProbabilities[i] * 1000) / 10).toString()}% top roll)` 

@@ -10,6 +10,13 @@ function load_js() {
     localStorage.boxspriteindex = 0
   }
   sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
+  
+  if (!localStorage.boxrolls) {
+    localStorage.boxrolls = 0
+  } else {
+    $('#player-poks-filter').show()
+  }
+
 }
 
 function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
@@ -195,6 +202,9 @@ function get_trainer_poks(trainer_name)
 }
 
 function box_rolls() {
+    if (!parseInt(localStorage.boxrolls)) {
+        return
+    }
     var box = get_box()
 
     var dealt_min_roll = $("#min-dealt").val()
@@ -246,6 +256,7 @@ function box_rolls() {
         }
 
         var monHp = mon.originalCurHP
+
 
         var all_results = calculateAllMoves(damageGen, p1, p1field, mon, p2field, false);
         var opposing_results = all_results[0]
@@ -528,6 +539,8 @@ function get_next_in_g4() {
         if (effectiveness == 8) {
             effectiveness = 1.75
         }
+        var full_immune = (effectiveness == 0)
+
         // check moves for SE
         var isSE = false
         for (j in pok_data["moves"]) {
@@ -572,7 +585,7 @@ function get_next_in_g4() {
                 isSE = false
             }
 
-            if (isSE) {   
+            if (isSE && !full_immune) {   
                 se_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], effectiveness])
                 se_indexes.push(sub_index)
                 break
@@ -613,9 +626,6 @@ function get_next_in_g4() {
 
          // because the game only counts multihits moves as 1 
         
-        // console.log(p1)
-        // console.log(pok_data["moves"])
-        // console.log("p1 again")
 
 
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
@@ -1098,7 +1108,7 @@ function get_current_in() {
     var pok_name = setInfo.split(" (")[0]
     var tr_name = setInfo.split(" (")[1].replace(")", "").split("[")[0]
 
-    // box_rolls()
+    box_rolls()
     return SETDEX_BW[pok_name][tr_name]
 }
 
@@ -1209,9 +1219,16 @@ function toggleBoxSpriteStyle() {
         var newURL = $(this).attr('src').replace(oldStyle, sprite_style)
         $(this).attr('src', newURL)
     })
-
-
 }
+
+function toggle_box_rolls() {
+    localStorage.boxrolls = (parseInt(localStorage.boxrolls) + 1) % 2   
+}
+
+$('#toggle-boxroll').click(function(){
+    toggle_box_rolls()
+    $('#player-poks-filter').toggle()
+})
 
 function get_next_in() {  
     if (switchIn == 4) {
@@ -2022,7 +2039,7 @@ $(document).ready(function() {
         $('.panel:not(.panel-mid)').toggleClass('third')
    })
 
-   $(document).on('click', '#open-menu', function() {
+   $(document).on('click', '#open-menu, #settings-menu div', function() {
         $('#settings-menu').toggle()
    })
 
@@ -2190,6 +2207,12 @@ $(document).ready(function() {
              } else if (e.key == "l" && $("#learnset-show:visible").length > 0) {
                  get_current_learnset()
                 $('#learnset-container').toggle()
+             } else if (e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS"))  {
+                 if (confirm("Put full party to sleep?")) {
+                    bedtime()
+                 }   
+             } else if (e.key == "s")  {
+                 toggleBoxSpriteStyle()  
              }
         }    
     })
@@ -2285,7 +2308,7 @@ $('.set-selector, .move-selector').on("select2-close", function () {
             $('.info-group:not(.opp) > * > .forme').change()
         }
         get_box()
-        // box_rolls()
+        box_rolls()
 
         var right_max_hp = $("#p1 .max-hp").text()
         $("#p1 .current-hp").val(right_max_hp).change()

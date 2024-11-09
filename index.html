@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Dynamic Calc</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css?01" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9680" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9681" />
     <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c967" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css?1" />
     <!-- Global site tag (gtag.js) - Google Analytics -->    
@@ -95,7 +95,7 @@
             <div id="img-toggle" class="menu-item">Backup Mode</div>
             <div id="invert-types" class="menu-item">Invert Types</div>
             <div id="sprite-toggle" class="menu-item">Toggle Sprite Icons</div>
-            <!-- <div id="show-encs" class="menu-item">Encounters</div> -->
+            <div id="toggle-boxroll" class="menu-item">Toggle Box Filter</div>
         </div>
 
         <span class="title-text">
@@ -618,7 +618,7 @@
 
             </div>
 
-<!--              <div id="player-poks-filter">
+             <div id="player-poks-filter">
                 <div class="filter-row">
                     <div class="filter-desc" id="min-dealt-label">Search Minimum % Dealt: </div>
                     <input id="min-dealt"/>
@@ -631,7 +631,7 @@
                 <div class="filter-row">
                     <div class="filter-desc" id="faster-label">Faster</div>
                 </div>
-            </div> -->
+            </div>
 
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -1741,7 +1741,7 @@
 
 
     <script type="text/javascript" src="./js/expert_ai.js?8fa0c7fc"></script>
-    <script type="text/javascript" src="./calc/util.js?8fa0c7fc"></script>
+    <script type="text/javascript" src="./calc/util.js?8fa0c7fd"></script>
     <script type="text/javascript" src="./calc/stats.js?da4066f9"></script>
     <script type="text/javascript" src="./calc/data/species.js?66abc351"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?6f60aa5c"></script>
@@ -1757,9 +1757,9 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100128"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100129"></script>
     <script type="text/javascript" src="./js/enums.js?100126"></script>
-    <script type="text/javascript" src="./js/savereader.js?100131"></script>
+    <script type="text/javascript" src="./js/savereader.js?100132"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17b"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?c1788576"></script>
@@ -1771,7 +1771,7 @@
     <script type="text/javascript" src="./calc/pokemon.js?59377ee3"></script>
     <script type="text/javascript" src="./calc/field.js?51ae3fda"></script>
     <script type="text/javascript" src="./calc/items.js?6c1bfef0"></script>
-    <script type="text/javascript" src="./calc/mechanics/util.js?13c1ef45"></script>
+    <script type="text/javascript" src="./calc/mechanics/util.js?13c1ef46"></script>
     <script type="text/javascript" src="./calc/mechanics/gen78.js?b5cb13c6"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?326e578d"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?7d2b7676"></script>
@@ -1786,7 +1786,7 @@
     <script type="text/javascript" src="./js/shared_controls.js?0b3ea073"></script>
 
 
-    <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f8"></script>
+    <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6f9"></script>
     <script type="text/javascript" src="./js/moveset_import.js?a707180"></script>
     <script type="text/javascript" src="./js/sharecalc.js?a7071f74"></script>
 </div>
@@ -1804,10 +1804,13 @@
     </div>
 
     <div class="shortcut-info">
+        <h3 class="footer-title">Shortcuts</h3>
         f - toggle "F"ield info<br>
         i - "I"mports set data from clipboard<br>
         c - toggle all opposing moves "C"rit<br>
-        l - toggle "L"earnset window if available
+        l - toggle "L"earnset window if available<br>
+        b - "B"edtime presleep full party if gen 4 save is uploaded<br>
+        s - toggle "S"prite style
         <br><br>
         Right click box icon to add to party view.
     </div>

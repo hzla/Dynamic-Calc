@@ -61,8 +61,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     smallBlockStart = 0x40000
                 } else {
                     console.log("now reading party from block 1")
-                    blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize - 20)
-                    
+                    blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize - 20)       
                 }
                 block1Id = read32BitIntegerFromUint8Array(view,  bigBlockStart + bigBlockSize - 20)
                 if (block1Id != blockId) {
@@ -147,7 +146,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
 });
 
 function setBWChecksums() {
-    
     // set box checksums
     for (let i = 0; i < 24;i++) {
         // calcualte checksum for pc box
@@ -160,14 +158,12 @@ function setBWChecksums() {
     }
 
     // set party checksum
-
     var partyChecksum = getCheckSum(view.slice(0x18e00, 0x18e00 + partySize))
     view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], 0x18e00 + partySize + 2)
     view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], checksumsOffset + 52)
 
 
     // set checksum table
-
     checksumsChecksum = getCheckSum(view.slice(0x23F00, 0x23F00 + 0x8C))
     view.set([checksumsChecksum & 0xFF, (checksumsChecksum >>> 8) & 0xFF], 0x23F9A)
 }
@@ -183,13 +179,11 @@ function decryptData(encryptedData, checksum, wordCount=64) {
 
 
         // Extract the top 16 bits for XOR
-
         prngValue = parseInt(BigInt(X) >> BigInt(16) & BigInt(0XFFFF))
 
         // Decrypt by reversing the XOR operation
 
         const decryptedWord = encryptedData[i] ^ prngValue;
-
         // Store decrypted word
         decryptedData.push(decryptedWord);
     }
@@ -224,9 +218,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
      // Extract the first 4 bytes and convert them to a 32-bit integer
     pv = read32BitIntegerFromUint8Array(chunk)
-
-
-
 
     if (pv == 0) {
         return ""
@@ -450,7 +441,6 @@ function updatePartyPKMN(edge=false) {
     // update battle stats
     var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
     uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
-
     view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
 
     changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} hp/status updated</p>`
@@ -459,12 +449,8 @@ function updatePartyPKMN(edge=false) {
     if (baseGame != "BW") {
         setSmallBlockChecksum()   
     }
-    
     addSaveBtn()
 }
-
-
-
 
 $('#edge').click(function() {
     edgeSelected()
@@ -589,7 +575,25 @@ function getSelectedPoks() {
     return selected
 }
 
-function updateBattleStat(battleStat) {
+function bedtime() {
+    for (let i=0;i<partyCount;i++) {
+        var battleStat = decryptedBattleStats[i]
+
+        battleStat[0] = 1
+
+        var encryptedBattleStat = encryptData(battleStat, partyPIDs[i], battleStatSize)
+        uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
+        view.set(uint8PokArray, partyCountOffset + 4 + (i * partyPokSize) + 136)
+    }
+
+    changelog += `<p>Full Party set to 1 turn sleep </p>`
+    $('#changelog').html(changelog)
+    setSmallBlockChecksum()   
+    addSaveBtn()
+
+}
+
+function updateBattleStat(battleStat, onlySleep=false) {
     const level = parseInt($('#levelL1').val())
     const currentHp = parseInt($('#currentHpL1').val())
 
