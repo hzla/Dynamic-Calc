@@ -11,7 +11,7 @@ function load_js() {
   }
   sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
   
-  if (!localStorage.boxrolls) {
+  if (!parseInt(localStorage.boxrolls)) {
     localStorage.boxrolls = 0
   } else {
     $('#player-poks-filter').show()
