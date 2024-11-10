@@ -222,7 +222,8 @@ function parsePKM(chunk, is_party=false, offset=0) {
     if (pv == 0) {
         return ""
     }
-    var nature = natures[Math.abs(pv) % 25]
+
+    
 
 
     // Perform the function on pv: ((pv & 0x3E000) >> 0xD) % 24
@@ -268,6 +269,8 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var mon_name = sav_pok_names[decryptedData[mon_data_offset]]
 
 
+
+
     if (mon_name in mon_forms) {
         var form_index = (decryptedData[move_data_offset + 12] >> 3 & 0x1F) - 1 
         if (form_index >= 0 ) {
@@ -286,6 +289,15 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF) 
     ivs = getIVs(iv_value) 
+
+    if (baseGame != "BW") {
+        var nature = natures[Math.abs(pv) % 25]
+    } else {
+        var natureIndex = decryptedData[move_data_offset + 12] >> 8  
+        var nature = natures[natureIndex]
+    }
+
+    
 
     if (is_party) {
         partyMons[mon_name] = decryptedBattleStats.length - 1
