@@ -432,16 +432,21 @@ function updatePartyPKMN(edge=false) {
     const updatedBattleStat = updateBattleStat(decryptedBattleStat)
     const level = decryptedBattleStat[2] 
 
+
+
     edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update hp and status")
     if (edge) {
         // edge exp
-        i = partyIndex
+        var i = partyIndex
         // get target exp from exp tables
         var desiredExp = expTables[partyExpTables[i]][level] - 1
 
         // write the new exp to the pokemon data 
         savParty[i][partyExpIndexes[i]] = desiredExp & 0xFFFF
         savParty[i][partyExpIndexes[i] + 1] = (desiredExp >>> 16) & 0xFFFF
+
+
+        console.log(desiredExp)
 
         var newPartyPokCheckSum = getPKMNCheckSum(savParty[i])
         var encryptedPok = encryptData(savParty[i], newPartyPokCheckSum)
@@ -498,7 +503,6 @@ function edgeSelected() {
         var desiredExp = expTable[level - 1] - 1
 
         var decryptedData = boxPokData["decryptedData"]
-
         decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
 
@@ -516,9 +520,6 @@ function edgeSelected() {
         var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
         view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
     } 
-
-    
-
     addSaveBtn()
 
     $('#changelog').html(changelog)
@@ -623,7 +624,7 @@ function updateBattleStat(battleStat, onlySleep=false) {
     const spe = parseInt(monStats[6].innerHTML)
 
     const status = $('#statusL1').val()
-    const newLevel = (battleStat[2] & 0xFF00) | level
+    const newLevel = level
 
     battleStat[2] = newLevel
     battleStat[3] = currentHp
