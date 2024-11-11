@@ -5018,7 +5018,50 @@ var BW_PATCH = {
         weightkg: 50,
         abilities: { 0: 'Hustle' },
         nfe: true
+    },
+    F00: {
+        types: ['Steel', 'Normal'],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Volt Absorb' },
+        nfe: true
+    },
+    F002: {
+        types: ['Steel', 'Normal'],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Reckless' },
+        nfe: true
+    },
+    MT: {
+        types: ['Steel'],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Analytic' },
+        nfe: true
+    },
+    MT2: {
+        types: ['Steel', 'Electric'],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Flash Fire' },
+        nfe: true
+    },
+    UFO: {
+        types: ['Flying', "Electric"],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Magic Bounce' },
+        nfe: true
+    },
+    UFO2: {
+        types: ['Psychic', "Electric"],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 50,
+        abilities: { 0: 'Levitate' },
+        nfe: true
     }
+
 };
 var BW = (0, util_1.extend)(true, {}, DPP, BW_PATCH);
 delete BW['Pichu'].otherFormes;

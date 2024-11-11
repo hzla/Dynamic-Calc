@@ -287,7 +287,15 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var spe_ev = decryptedData[mon_data_offset + 9] >> 8 & 0xFF
     var spd_ev = decryptedData[mon_data_offset + 10] >> 8 & 0xFF
 
-    var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF) 
+    
+    // cheat mode
+    // decryptedData[move_data_offset + 8] = 65535  
+    // decryptedData[move_data_offset + 9] = 16383  
+
+    var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
+
+
+
     ivs = getIVs(iv_value) 
 
     if (baseGame != "BW") {
@@ -482,7 +490,7 @@ function setSmallBlockChecksum() {
     view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], smallBlockSize + smallBlockStart - 2)
 }
 
-function edgeSelected() {
+function edgeSelected(maxIVs=false) {
     var selected = getSelectedPoks()
 
     var level = parseInt(prompt("Edge selection to level: "))
@@ -506,6 +514,7 @@ function edgeSelected() {
         decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
 
+
         var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
         var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
         var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
@@ -523,6 +532,36 @@ function edgeSelected() {
     addSaveBtn()
 
     $('#changelog').html(changelog)
+}
+
+function maxAll() {
+    var selected = getAllPoks()
+
+     for (let i = 0;i < selected.length; i++) {
+        if (!boxPokOffsets[selected[i]]) {
+            continue
+        
+        }
+
+        var boxPokData = boxPokOffsets[selected[i]]
+        var decryptedData = boxPokData["decryptedData"]
+
+        var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
+        var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
+        var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
+
+        view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
+        view.set(uint8PokArray, boxPokData["offset"] + 8)
+
+    }
+
+    if (baseGame != "BW") {
+        var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
+        view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
+    } 
+    setSmallBlockChecksum()   
+    addSaveBtn()
+
 }
 
 function addSaveBtn() {
@@ -587,6 +626,14 @@ function downloadSave() {
 function getSelectedPoks() {
     var selected = []
     $('.player-party .left-side').each(function() {
+        selected.push($(this).attr('data-id').split(" (My")[0])
+    })
+    return selected
+}
+
+function getAllPoks() {
+    var selected = []
+    $('#p1 .trainer-pok-list .left-side').each(function() {
         selected.push($(this).attr('data-id').split(" (My")[0])
     })
     return selected
