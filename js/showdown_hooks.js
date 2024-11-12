@@ -17,9 +17,212 @@ function load_js() {
     $('#player-poks-filter').show()
   }
 
+  // if first time
+  if (typeof localStorage.battlenotes === 'undefined') {
+    localStorage.battlenotes = '1'
+  } else if (localStorage.battlenotes == '0'){
+    $('.poke-import').first().hide()
+  } 
+
+  if (localStorage.states && isValidJSON(localStorage.states)) {
+    states = JSON.parse(localStorage.states)
+  } else {
+    states = {}
+  }
+  calcing = false
+
+  if (localStorage.notes) {
+    $('#battle-notes .notes-text').html(localStorage.notes);
+  }
 }
 
+
+function isValidJSON(str) {
+    try {
+        JSON.parse(str);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+
 function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
+
+
+// status
+
+
+function saveState() {
+    var state = {}
+
+    state["left"] = $('.set-selector')[0].value
+    state["right"] = $('.set-selector')[2].value
+
+
+    const stats = ["at", "df", "sa", "sd", "sp"]
+    
+    state["rightBoosts"] = []
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = $(`#p2 .${stats[i]} select`).val()
+        state["rightBoosts"].push(boostVal)
+    }
+
+    state["leftBoosts"] = []
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = $(`#p1 .${stats[i]} select`).val()
+        state["leftBoosts"].push(boostVal)
+    }
+
+    state["rightHP"] = ''
+    if ($('#p2 .percent-hp').val() != '100') {
+        state["rightHP"] = $('#p2 .current-hp').val()
+    }
+
+    state["leftHP"] = ''
+    if ($('#p1 .percent-hp').val() != '100') {
+        state["leftHP"] = $('#p1 .current-hp').val()
+    }
+
+    state["rightStatus"] = ''
+    if ($('#statusR1').val() != 'Healthy') {
+        state["rightStatus"] = $('#statusR1').val()
+    }
+
+    state["leftStatus"] = ''
+    if ($('#statusL1').val() != 'Healthy') {
+        state["leftStatus"] = $('#statusL1').val()
+    }
+
+    stateKeyLeft = `${state['left'].split(" (")[0]}` 
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = state["leftBoosts"][i]
+        if (boostVal != '0') {
+            if (parseInt(boostVal) > 0) {
+                boostVal = "+" + boostVal
+            }
+
+            boostVal += stats[i].toUpperCase()
+            stateKeyLeft = `${boostVal} ${stateKeyLeft}`
+        }  
+    }
+
+    if (state["leftStatus"]) {
+        stateKeyLeft += ` (${state["leftStatus"]})`
+    }
+
+    if (state["leftHP"]) {
+        stateKeyLeft += ` (${state["leftHP"]}HP)`
+    }
+
+    stateKeyRight = `${state['right'].split(" (")[0]}` 
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = state["rightBoosts"][i]
+        if (boostVal != '0') {
+            if (parseInt(boostVal) > 0) {
+                boostVal = "+" + boostVal
+            }
+            boostVal += stats[i].toUpperCase()
+            stateKeyRight = `${boostVal} ${stateKeyRight}`
+        }  
+    }
+
+    if (state["rightStatus"]) {
+        stateKeyRight += ` (${state["rightStatus"]})`
+    }
+
+    if (state["rightHP"]) {
+        stateKeyRight += ` (${state["rightHP"]}HP)`
+    }
+
+    stateKey = `${stateKeyLeft} vs ${stateKeyRight}`
+
+    states[stateKey] = state
+    return `<span class="state" contenteditable="false">${stateKey}</span>`
+}
+
+
+$('#save-state').click(function(){
+    stateHTML = saveState()
+    $('#battle-notes .notes-text').append(stateHTML)
+
+    localStorage.notes = $('#battle-notes .notes-text').html()
+    localStorage.states = JSON.stringify(states)
+})
+
+$('#battle-notes .notes-text').blur(function() {
+    localStorage.notes = $('#battle-notes .notes-text').html()
+})
+
+$(document).on('click', '.state', function() {
+    loadState($(this).text())
+
+})
+
+function loadState(id) {
+    state = states[id]
+
+    $('#p1').find(`.trainer-pok.left-side[data-id="${state['left']}"]`).click()
+
+    const stats = ["at", "df", "sa", "sd", "sp"]
+
+    // set boosts
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = stats[i]
+        if (stats[i] != "0") {
+            $(`#p1 .${stats[i]} select`).val(state["leftBoosts"][i])
+        }
+    }
+
+    // set hp
+    if (state["leftHP"]) {
+        $('#p1 .current-hp').val(state["leftHP"])
+    }
+
+    
+    // set status
+    if (state["leftStatus"]) {
+        $('#statusL1').val(state["leftStatus"])
+    }
+
+    setOpposing(state["right"])
+
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = stats[i]
+        if (stats[i] != "0") {
+            $(`#p2 .${stats[i]} select`).val(state["rightBoosts"][i])
+        }
+    }
+
+    if (state["rightHP"]) {
+        $('#p2 .current-hp').val(state["rightHP"])
+    }
+
+    if (state["rightStatus"]) {
+        $('#statusR1').val(state["rightStatus"])
+    }
+}
+
+$('#battle-notes .notes-text').on('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default behavior of creating a new <div> or <p>
+        
+        // Insert a line break at the caret position
+        document.execCommand('insertLineBreak');
+    }
+});
+
+function setOpposing(id) {
+    currentTrainerSet = id
+    localStorage["right"] = currentTrainerSet
+
+    $('.opposing').val(currentTrainerSet)
+    $('.opposing').change()
+    $('.opposing .select2-chosen').text(currentTrainerSet)
+    if ($('.info-group.opp > * > .forme').is(':visible')) {
+        $('.info-group.opp > * > .forme').change()
+    }
+}
 
 function get_trainer_names() {
     var all_poks = SETDEX_BW
@@ -95,7 +298,7 @@ function sort_box_by_dex(attr) {
 }
 
 function abv(s) {
-    if (($('.player-party').width() / s.length <= 65)) {
+    if (($('.player-party').width() / s.length <= 70)) {
         if (s.split(" ")[1]) {
             return (s.split(" ")[0][0] + " " + s.split(" ")[1])
         } else {
@@ -1230,7 +1433,13 @@ $('#toggle-boxroll').click(function(){
     $('#player-poks-filter').toggle()
 })
 
+$('#toggle-battle-notes').click(function(){
+    localStorage.battlenotes = (parseInt(localStorage.battlenotes) + 1) % 2   
+    $('.poke-import').first().toggle()
+})
+
 function get_next_in() {  
+    
     if (switchIn == 4) {
         return get_next_in_g4()
     }
@@ -2013,17 +2222,10 @@ $(document).ready(function() {
   
 
    $(document).on('click', '.trainer-pok.right-side, .sim-trainer', function() {
-        currentTrainerSet = $(this).attr('data-id')
-        localStorage["right"] = currentTrainerSet
-
-        $('.opposing').val(currentTrainerSet)
-        $('.opposing').change()
-        $('.opposing .select2-chosen').text(currentTrainerSet)
-        if ($('.info-group.opp > * > .forme').is(':visible')) {
-            $('.info-group.opp > * > .forme').change()
-        }
+        setOpposing($(this).attr('data-id'))
    })
 
+   
    $(document).on('click', '.nav-tag', function() {
         var set = customLeads[$(this).attr('data-next')].split("[")[0]
 
@@ -2188,7 +2390,7 @@ $(document).ready(function() {
 
    // shortcuts
     $(document).keyup(async function (e) {
-        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0] && $('.pokemon-filter:visible').length === 0 )  {
+        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0] && $('.pokemon-filter:visible').length === 0  && document.activeElement != $('#battle-notes .notes-text')[0])  {
             if(e.key == "i") {
                 const text = await navigator.clipboard.readText();
                 addSets(text)
@@ -2287,10 +2489,6 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         }     
    })
 
-   
-
-
-
     $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
         localStorage["left"] = set 
@@ -2313,6 +2511,9 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         var right_max_hp = $("#p1 .max-hp").text()
         $("#p1 .current-hp").val(right_max_hp).change()
     })
+
+
+
 
 
 })

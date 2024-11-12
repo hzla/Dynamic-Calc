@@ -1318,6 +1318,17 @@ table.field {
     padding: 4px;
 }
 
+.notes-text {
+    text-align: left;
+    border: 1px solid rgb(118, 118, 118);
+    margin-bottom: 10px;
+    color: #f1f1f1;
+    min-height: 10em;
+    resize: vertical;
+    width: calc(100% - 14px);
+    padding: 4px;
+}
+
 .import-name-text {
 	width: calc(100% - 20px);
     min-height: 1em;
