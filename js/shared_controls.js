@@ -509,7 +509,7 @@ function refresh_next_in() {
 		if (next_poks[i][0].includes($('input.opposing').val())){
 			continue
 		}
-		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","")
+		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","").replace(":","-")
 		var highlight = "hl-enabled"
 		if (switchIn == 0) {
 			highlight = "hl-disabled"
@@ -637,7 +637,7 @@ $(".set-selector").change(function () {
 		} else {
 			$('#trainer-sprite').hide()
 		}
-		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
+		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","").replace(":","-")
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
 
