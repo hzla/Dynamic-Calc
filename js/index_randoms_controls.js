@@ -154,7 +154,7 @@ $(".result-move").change(function () {
 	}
 
 	var move = $(".results-right .visually-hidden:checked + .btn").text()
-    if (move != "") {
+    if (move != "" && jsonMoves[move]) {
 
 	    var effect_code = parseInt(jsonMoves[move]["e_id"])
 

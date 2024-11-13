@@ -378,9 +378,6 @@ function get_trainer_poks(trainer_name)
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
-    console.log(trainer_name)
-    console.log(og_trainer_name)
-
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name + " ")) {
@@ -1765,6 +1762,12 @@ function loadDataSource(data) {
     SETDEX_XY = data["formatted_sets"]
     setdex = data["formatted_sets"]
 
+    if (data["title"]) {
+        TITLE = data["title"]
+        $('.genSelection').hide()
+        $('#rom-title').text(TITLE).show()
+    }
+
     TR_NAMES = get_trainer_names()
     if ('move_replacements' in data) {
         CHANGES = data['move_replacements']
@@ -1808,7 +1811,7 @@ function loadDataSource(data) {
 
 		if (move in special_case_power_overrides) {
 			moves[move]["bp"] = special_case_power_overrides[move]
-	MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
+	       MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
 		}
         
         var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
@@ -1847,7 +1850,6 @@ function loadDataSource(data) {
 
             moves[move] = jsonMoves[move]
             moves[move]["bp"] = jsonMoves[move]["basePower"]
-            console.log(move)
             MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
         }
     }
@@ -1915,6 +1917,8 @@ function loadDataSource(data) {
         }
     }
 
+
+
     if (TITLE == "Cascade White 2") {
         moves['Pay Day'].willCrit = true;
     }
@@ -1931,11 +1935,18 @@ function loadDataSource(data) {
 		}
         else if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
-            // console.log(jsonPok)
         } else {
-            console.log("skipping")
+            console.log(pok)
             continue //skip weird smogon pokemon and arceus forms
         }
+
+        // revert fairy pokemon base stats for sgss
+        if (TITLE == "Sacred Gold/Storm Silver" && !FAIRY ) {
+            if (jsonPok["types"].includes('Fairy')) {
+                jsonPok["bs"] = pokedex[pok]["bs"]
+            }
+        }
+
         pokedex[pok]["bs"] = jsonPok["bs"]
         pokedex[pok]["types"] = jsonPok["types"]
         if (jsonPok.hasOwnProperty("abilities"))
@@ -1955,18 +1966,12 @@ function loadDataSource(data) {
         if (TITLE.includes("Sterling")) {
             gen4Forms.pop()
         }
-
-
-        
+      
         for (i in gen4Forms) {
             var base = gen4Forms[i][0]
             var forms = gen4Forms[i][1]
 
-
-
-
             for (j in forms) {
-                console.log(`${base}-${forms[j]}`)
                 pokedex[`${base}-${forms[j]}`]['bs'] = pokedex[base]['bs']
             }
         }
@@ -2007,6 +2012,7 @@ type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
+FAIRY = params.get('fairy')
 misc = params.get('misc')
 invert = params.get('invert')
 DEFAULTS_LOADED = false
@@ -2024,6 +2030,7 @@ $(document).ready(function() {
    SETDEX_BW = null
    TR_NAMES = null
    BACKUP_MODE = params.get('backup')
+
 
    params = new URLSearchParams(window.location.search)
     SOURCES = {"9aa37533b7c000992d92": "Blaze Black/Volt White",
@@ -2053,11 +2060,6 @@ $(document).ready(function() {
    "de22f896c09fceb0b273": "Maximum Platinum",
    "a0ff5953fbf39bcdddd3": "Cascade White 2"
     }
-    // if (SOURCES[params.get('data')]) {
-    //     TITLE = SOURCES[params.get('data')] || "NONE"
-    //     document.title = TITLE + " Calculator"
-        
-    // }
 
     MASTERSHEETS = {
         "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux",
@@ -2066,7 +2068,6 @@ $(document).ready(function() {
     }
     encs = `https://api.npoint.io/c39f79b412a6f19f3c4f`
 
-   
     INC_EM = false
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')] || "NONE"
@@ -2080,8 +2081,6 @@ $(document).ready(function() {
             baseGame = "HGSS"
         }
 
-        
-
         if (!baseGame) {
             $('#read-save').hide()
         }
@@ -2094,7 +2093,6 @@ $(document).ready(function() {
             $("#harsh-sunshine").next().text("Ability Sun")
             $("#heavy-rain").next().text("Ability Rain")
         }
-
 
         if ( TITLE == "Cascade White 2") {
             $('.cascade-effects .btn-small').show()
@@ -2126,9 +2124,6 @@ $(document).ready(function() {
 
    var g =  parseInt(params.get('gen'));
    
-
-   
-
    if (BACKUP_MODE) {
         setTimeout(function() {
             console.log("loading backups")
@@ -2191,9 +2186,7 @@ $(document).ready(function() {
 
                 if (localStorage["right"]) {
                     $(`[data-id='${localStorage["left"]}']`).click()
-                }
-
-                
+                }             
             }, 100)
            
         })
