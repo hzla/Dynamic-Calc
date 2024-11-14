@@ -2058,7 +2058,8 @@ $(document).ready(function() {
    "8f199f3f40194ecc4b8e": "Sterling Silver",
    "5b789b0056c18c5c668b": "Platinum Redux 2.6",
    "de22f896c09fceb0b273": "Maximum Platinum",
-   "a0ff5953fbf39bcdddd3": "Cascade White 2"
+   "a0ff5953fbf39bcdddd3": "Cascade White 2",
+   "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon"
     }
 
     MASTERSHEETS = {
