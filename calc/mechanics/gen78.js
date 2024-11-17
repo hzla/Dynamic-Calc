@@ -996,9 +996,6 @@ function calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCrit
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
-    if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion')) {
-        defense = (0, util_2.pokeRound)(defense / 2);
-    }
     var dfMods = calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCritical, hitsPhysical);
     return (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((defense * (0, util_2.chainMods)(dfMods)) / 4096)));
 }
