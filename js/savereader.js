@@ -2,6 +2,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
+        savExt = $('#save-upload').val().slice(-3)
 
         if (baseGame == "Pt") {
             partyCountOffset = 0x9C
@@ -35,7 +36,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
             const buffer = new ArrayBuffer(binaryData.length);
             view = new Uint8Array(buffer);
 
-
             saveUploaded = true
             for (let i = 0; i < binaryData.length; i++) {
                 view[i] = binaryData.charCodeAt(i);
@@ -48,6 +48,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
             partyExpTables = []
             partyExpIndexes = []
+            partyMovesIndexes = []
 
             smallBlockStart = 0
 
@@ -313,6 +314,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
         mon_name += " |Party|"
         partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
         partyExpIndexes.push(mon_data_offset + 4)
+        partyMovesIndexes.push(move_data_offset)
         savParty.push(decryptedData)
     } else {
         boxPokOffsets[mon_name] = {}
@@ -321,6 +323,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
         boxPokOffsets[mon_name]["exp_table"] = sav_pok_growths[decryptedData[mon_data_offset]]
         boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
+        boxPokOffsets[mon_name]["moves_index"] = move_data_offset
     }
 
 
@@ -431,64 +434,65 @@ function getPKMNCheckSum(array) {
 }
 
 
-// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
-function updatePartyPKMN(edge=false) {
-    var partyOffset = partyCountOffset + 4
 
-    const partyIndex = partyMons[$('.set-selector')[0].value.split("(")[0].trim()]
-    const decryptedBattleStat = decryptedBattleStats[partyIndex]
-    const updatedBattleStat = updateBattleStat(decryptedBattleStat)
-    const level = decryptedBattleStat[2] 
+function updateBoxPKMN(edge=false) {
+    var selected = $('.set-selector')[0].value.split("(")[0].trim()
+    var level = parseInt($('#levelL1').val())
 
-
-
-    edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update hp and status")
-    if (edge) {
-        // edge exp
-        var i = partyIndex
-        // get target exp from exp tables
-        var desiredExp = expTables[partyExpTables[i]][level] - 1
-
-        // write the new exp to the pokemon data 
-        savParty[i][partyExpIndexes[i]] = desiredExp & 0xFFFF
-        savParty[i][partyExpIndexes[i] + 1] = (desiredExp >>> 16) & 0xFFFF
-
-
-        console.log(desiredExp)
-
-        var newPartyPokCheckSum = getPKMNCheckSum(savParty[i])
-        var encryptedPok = encryptData(savParty[i], newPartyPokCheckSum)
-        var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
-
-
-        // write checksum for main pkmn data
-        view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyOffset + (i * partyPokSize) + 6)
-        view.set(uint8PokArray, partyOffset + (i * partyPokSize) + 8)  
-        changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} edged</p>`
-    }
+     
+     edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update level/items/moves")
+     var boxPokData = boxPokOffsets[selected]
+     var decryptedData = boxPokData["decryptedData"]
+     
     
-    // update battle stats
-    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
-    uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
-    view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
-
-    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} hp/status updated</p>`
-    $('#changelog').html(changelog)
-
-    if (baseGame != "BW") {
-        setSmallBlockChecksum()   
+    // edge exp
+    if (edge) {     
+        var expTable = expTables[boxPokData["exp_table"]]
+        var desiredExp = expTable[level - 1] - 1
+        
+        decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
+        decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
+        changelog += `<p>${selected} edged to level ${level}</p>`
     }
+
+    // max friendship
+    decryptedData[boxPokData["exp_index"] + 2] = ( decryptedData[boxPokData["exp_index"] + 2] & 0xFF00) | 255
+
+
+    // write item 
+    var item_index = sav_item_names.indexOf($('#itemL1').val())
+    if (item_index > -1) {
+        decryptedData[boxPokData["exp_index"]  - 3] = item_index
+    }
+
+    //write moves 
+
+    var reverseMoveChanges = Object.fromEntries(
+      Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+    );
+
+    for (let moveID = 0;moveID<4;moveID++) {
+        var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
+
+        // swap move back to original for rom hacks
+        if (reverseMoveChanges[move_name]) {
+            move_name = reverseMoveChanges[move_name]
+        }
+
+        var move_index = sav_move_names.indexOf(move_name)
+        if (move_index > -1) {
+            decryptedData[boxPokData["moves_index"] + moveID] = move_index
+        }
+    }
+
+    setBoxPokCheckSum(decryptedData, boxPokData)
+    setBigBlockCheckSum()
     addSaveBtn()
+
+    changelog += `<p>${selected} updated</p>`
+     
 }
 
-$('#edge').click(function() {
-    edgeSelected()
-})
-
-function setSmallBlockChecksum() {
-    var checkSum = getCheckSum(view.slice(smallBlockStart, smallBlockSize + smallBlockStart - footerSize))
-    view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], smallBlockSize + smallBlockStart - 2)
-}
 
 function edgeSelected(maxIVs=false) {
     var selected = getSelectedPoks()
@@ -502,7 +506,7 @@ function edgeSelected(maxIVs=false) {
 
     for (let i = 0;i < selected.length; i++) {
         if (!boxPokOffsets[selected[i]]) {
-            alert(`${selected[i]} not found in pc box, please select ${selected[i]} and edit the level there click save changes to edge party pokemon`)
+            alert(`${selected[i]} not found in PC, batch edging only available for PC pokemon, party pokemon can be edged individually by selecting pokemon and clicking Save Changes`)
             return
         }
 
@@ -513,25 +517,121 @@ function edgeSelected(maxIVs=false) {
         var decryptedData = boxPokData["decryptedData"]
         decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
-
-
-        var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
-        var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
-        var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
-
-        view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
-        view.set(uint8PokArray, boxPokData["offset"] + 8)
-
+        setBoxPokCheckSum(decryptedData, boxPokData)
         changelog += `<p>${selected[i]} edged to level ${level}</p>`
     }
 
-    if (baseGame != "BW") {
-        var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
-        view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
-    } 
+    setBigBlockCheckSum()
     addSaveBtn()
 
     $('#changelog').html(changelog)
+}
+
+// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
+function updatePartyPKMN(edge=false) {
+    var partyOffset = partyCountOffset + 4
+
+    const partyIndex = partyMons[$('.set-selector')[0].value.split("(")[0].trim()]
+    
+    // search box if not in party
+    if (typeof partyIndex === 'undefined') {
+        return updateBoxPKMN(edge)
+    }
+
+
+    const decryptedBattleStat = decryptedBattleStats[partyIndex]
+    const updatedBattleStat = updateBattleStat(decryptedBattleStat)
+    const level = decryptedBattleStat[2] 
+
+
+    edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update level/hp/status/items/moves")
+    if (edge) {
+        // edge exp
+        
+        // get target exp from exp tables
+        var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1
+
+        // write the new exp to the pokemon data 
+        savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
+        savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
+        changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} edged</p>` 
+    }
+
+    // write item 
+    var item_index = sav_item_names.indexOf($('#itemL1').val())
+    if (item_index > -1) {
+        savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
+    }
+
+    // max friendship
+   savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
+
+    // write moves
+    // swap move replacements
+
+    var reverseMoveChanges = Object.fromEntries(
+      Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+    );
+
+    for (let moveID = 0;moveID<4;moveID++) {
+        var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
+
+        // swap move back to original for rom hacks
+        if (reverseMoveChanges[move_name]) {
+            move_name = reverseMoveChanges[move_name]
+        }
+
+        var move_index = sav_move_names.indexOf(move_name)
+        if (move_index > -1) {
+            savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
+        }
+    }
+
+    // write checksum for main pkmn data
+    setPartyPokCheckSum(partyIndex)
+    
+
+    // update battle stats
+    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
+    uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
+    view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
+
+    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} updated</p>`
+    $('#changelog').html(changelog)
+
+
+    setSmallBlockChecksum()   
+
+    addSaveBtn()
+}
+
+$('#edge').click(function() {
+    edgeSelected()
+})
+
+function setPartyPokCheckSum(partyIndex) {
+    var newPartyPokCheckSum = getPKMNCheckSum(savParty[partyIndex])
+    var encryptedPok = encryptData(savParty[partyIndex], newPartyPokCheckSum)
+    var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
+
+    view.set([newPartyPokCheckSum & 0xFF, (newPartyPokCheckSum >>> 8) & 0xFF], partyCountOffset + 4 + (partyIndex * partyPokSize) + 6)
+    view.set(uint8PokArray, partyCountOffset + 4 + (partyIndex * partyPokSize) + 8)  
+}
+
+function setBoxPokCheckSum(decryptedData, boxPokData) {
+    var newBoxPokCheckSum = getPKMNCheckSum(decryptedData)
+    var encryptedPok = encryptData(decryptedData, newBoxPokCheckSum)
+    var uint8PokArray = convert16BitWordsToUint8Array(encryptedPok)
+
+    view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
+    view.set(uint8PokArray, boxPokData["offset"] + 8)
+}
+
+function setSmallBlockChecksum() {
+    if (baseGame != "BW") {
+        var checkSum = getCheckSum(view.slice(smallBlockStart, smallBlockSize + smallBlockStart - footerSize))
+        view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], smallBlockSize + smallBlockStart - 2)
+    }
 }
 
 function maxAll() {
@@ -555,13 +655,17 @@ function maxAll() {
 
     }
 
+    setBigBlockCheckSum()
+    setSmallBlockChecksum()   
+    addSaveBtn()
+
+}
+
+function setBigBlockCheckSum() {
     if (baseGame != "BW") {
         var checkSum = getCheckSum(view.slice(bigBlockStart, bigBlockStart + bigBlockSize - footerSize))
         view.set([checkSum & 0xFF, (checkSum >>> 8) & 0xFF], bigBlockStart + bigBlockSize - 2)
     } 
-    setSmallBlockChecksum()   
-    addSaveBtn()
-
 }
 
 function addSaveBtn() {
@@ -615,7 +719,7 @@ function downloadSave() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${TITLE}_edited.sav`; 
+    a.download = `${TITLE}_edited.${savExt}`; 
 
     document.body.appendChild(a);
     a.click();
@@ -712,6 +816,12 @@ function updateBattleStat(battleStat, onlySleep=false) {
         }
     }
     return battleStat
+}
+
+function setSelectedAsParty() {
+    var selected = getSelectedPoks()
+
+    // loop thru selected
 }
 
 

@@ -629,6 +629,7 @@ table td {
     max-height: 595px;
     justify-content: flex-start;
     margin-top:  26px;
+    padding-bottom: 15px;
 
 }
 
@@ -769,8 +770,13 @@ table td {
     border:  1px solid rgb(0,0,0,0);
 }
 
-.trainer-pok.left-side.pokesprite {
-    margin: 10px 0px;
+
+
+.trainer-pok-list .pokesprite.left-side, .pokesprite .trainer-pok.left-side {
+    margin: -10px;
+    margin-top: 0px;
+    height: 80px;
+    width: auto;
 }
 
 .trainer-pok.right-side {
