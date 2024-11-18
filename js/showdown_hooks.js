@@ -138,17 +138,37 @@ function saveState() {
     stateKey = `${stateKeyLeft} vs ${stateKeyRight}`
 
     states[stateKey] = state
-    return `<span class="state" contenteditable="false">${stateKey}</span>`
+    return $(`<span class="state" contenteditable="false">${stateKey}</span>`)[0]
 }
 
 
 $('#save-state').click(function(){
     stateHTML = saveState()
-    $('#battle-notes .notes-text').append(stateHTML)
+
+    // Restore the saved range
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(savedRange);
+
+    savedRange.insertNode(stateHTML)
+
+    // $('#battle-notes .notes-text').append(stateHTML)
 
     localStorage.notes = $('#battle-notes .notes-text').html()
     localStorage.states = JSON.stringify(states)
 })
+
+
+$('.notes-text').on("mouseup keyup", function () {
+    const selection = window.getSelection();
+    if (selection.rangeCount > 0) {
+      savedRange = selection.getRangeAt(0);
+
+    }
+});
+
+
+
 
 $('#battle-notes .notes-text').blur(function() {
     localStorage.notes = $('#battle-notes .notes-text').html()
