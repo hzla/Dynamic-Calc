@@ -467,9 +467,15 @@ function updateBoxPKMN(edge=false) {
 
     //write moves 
 
-    var reverseMoveChanges = Object.fromEntries(
-      Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
-    );
+    if (moveChanges[TITLE]) {
+        reverseMoveChanges = Object.fromEntries(
+          Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+        );
+    } else {
+        reverseMoveChanges = {}
+    }
+
+    
 
     for (let moveID = 0;moveID<4;moveID++) {
         var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
@@ -652,9 +658,7 @@ function maxAll() {
 
         view.set([newBoxPokCheckSum & 0xFF, (newBoxPokCheckSum >>> 8) & 0xFF], boxPokData["offset"] + 6)
         view.set(uint8PokArray, boxPokData["offset"] + 8)
-
     }
-
     setBigBlockCheckSum()
     setSmallBlockChecksum()   
     addSaveBtn()
