@@ -2383,35 +2383,47 @@ $(document).ready(function() {
 
 
    // shortcuts
-    $(document).keyup(async function (e) {
-        if ($('.select2-drop-active:visible').length == 0 && document.activeElement != $('textarea.import-team-text')[0] && $('.pokemon-filter:visible').length === 0  && document.activeElement != $('#battle-notes .notes-text')[0])  {
-            if(e.key == "i") {
-                const text = await navigator.clipboard.readText();
-                addSets(text)
-             } else if(e.key == "e") {
-                $('#encounter-container').toggle()
-             } else if (e.key == "f"){
-                $('.panel-mid').toggle()
-                $('.panel:not(.panel-mid)').toggleClass('third')
-             } else if (e.key == "c") {
-                $("#critR1")[0].checked = !$("#critR1")[0].checked
-                $("#critR2")[0].checked = !$("#critR2")[0].checked
-                $("#critR3")[0].checked = !$("#critR3")[0].checked
-                $("#critR4")[0].checked = !$("#critR4")[0].checked
-                $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
-                $('.move-crit').last().change()
-             } else if (e.key == "l" && $("#learnset-show:visible").length > 0) {
-                 get_current_learnset()
-                $('#learnset-container').toggle()
-             } else if (e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS"))  {
-                 if (confirm("Put full party to sleep?")) {
-                    bedtime()
-                 }   
-             } else if (e.key == "s")  {
-                 toggleBoxSpriteStyle()  
-             }
-        }    
-    })
+    $(document).keydown(async function (e) {
+    if ($('.select2-drop-active:visible').length == 0 && 
+        document.activeElement != $('textarea.import-team-text')[0] && 
+        $('.pokemon-filter:visible').length === 0 && 
+        document.activeElement != $('#battle-notes .notes-text')[0]) {
+        
+
+
+        if(e.ctrlKey && e.key == "i") {
+            e.preventDefault()
+            const text = await navigator.clipboard.readText();
+            addSets(text)
+        } else if(e.ctrlKey && e.key == "e") {
+            e.preventDefault()
+            $('#encounter-container').toggle()
+        } else if (e.ctrlKey && e.key == "f"){ 
+            e.preventDefault()
+            $('.panel-mid').toggle()
+            $('.panel:not(.panel-mid)').toggleClass('third')
+        } else if (e.ctrlKey && e.key == "c") {
+            e.preventDefault()
+            $("#critR1")[0].checked = !$("#critR1")[0].checked
+            $("#critR2")[0].checked = !$("#critR2")[0].checked
+            $("#critR3")[0].checked = !$("#critR3")[0].checked
+            $("#critR4")[0].checked = !$("#critR4")[0].checked
+            $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
+            $('.move-crit').last().change()
+        } else if (e.ctrlKey && e.key == "l" && $("#learnset-show:visible").length > 0) {
+            e.preventDefault()
+            get_current_learnset()
+            $('#learnset-container').toggle()
+        } else if (e.ctrlKey && e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS")) {
+            e.preventDefault()
+            if (confirm("Put full party to sleep?")) {
+                bedtime()
+            }
+        } else if (e.ctrlKey && e.key == "s") {
+            toggleBoxSpriteStyle()
+        }
+    }
+})
 
     $(document).keydown(function(e) {
         var keyCode = e.keyCode || e.which;
