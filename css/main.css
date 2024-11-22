@@ -1333,6 +1333,8 @@ table.field {
     resize: vertical;
     width: calc(100% - 14px);
     padding: 4px;
+    max-height: 80vh;
+    overflow: scroll;
 }
 
 .import-name-text {

@@ -6,6 +6,7 @@ function load_js() {
   head.appendChild(script);
   saveUploaded = false
   boxSprites = ["newhd", "pokesprite"]
+  fainted = []
   if (!localStorage.boxspriteindex) {
     localStorage.boxspriteindex = 0
   }
@@ -222,6 +223,15 @@ function loadState(id) {
         $('#statusR1').val(state["rightStatus"])
     }
 }
+
+$('#battle-notes .notes-text').on('keydown', function(event) {
+    if (event.key === '[') {
+        event.preventDefault(); // Prevent default behavior of creating a new <div> or <p>
+        
+        // Insert a line break at the caret position
+        $('#save-state').click()
+    }
+});
 
 $('#battle-notes .notes-text').on('keydown', function(event) {
     if (event.key === 'Enter') {
@@ -2317,6 +2327,14 @@ $(document).ready(function() {
         }
         window.location.href = url;
    })
+
+    $(document).on('contextmenu', '.trainer-pok.right-side', function(e) {
+        e.preventDefault()
+        $(this).addClass('fainted')
+        
+        fainted.push($(this).attr('data-id'))
+
+    })
 
 
    $(document).on('contextmenu', '.trainer-pok.left-side', function(e) {
