@@ -521,8 +521,14 @@ function refresh_next_in() {
 			}
 		}
 
+		var dataID = next_poks[i][0].split("[")[0]
+		var isFainted = ""
+		if (fainted.includes(dataID)) {
+			isFainted = "fainted"
+		}
+
 		var pok = `<div class="trainer-pok-container">
-			<img class="trainer-pok right-side ${highlight}" src="./img/${sprite_style}/${pok_name}.png" data-id="${next_poks[i][0].split("[")[0]}">`
+			<img class="trainer-pok right-side ${highlight} ${isFainted}" src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
 
 
 		var species = next_poks[i][0].split(" (")[0]

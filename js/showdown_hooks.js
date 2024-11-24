@@ -2329,10 +2329,15 @@ $(document).ready(function() {
 
     $(document).on('contextmenu', '.trainer-pok.right-side', function(e) {
         e.preventDefault()
-        $(this).addClass('fainted')
-        
-        fainted.push($(this).attr('data-id'))
+        $(this).toggleClass('fainted')
 
+        var set = $(this).attr('data-id')
+
+        if (fainted.includes(set)) {
+            fainted = fainted.filter(function(e) { return e !== set})
+        } else {
+            fainted.push(set)
+        }
     })
 
 
