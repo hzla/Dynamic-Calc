@@ -996,7 +996,7 @@ th {
 /* general button styling */
 .btn {
     text-align: center;
-    border: solid 1px #f1f1f1;
+    border: solid 1px rgba(255,255,255,0.4);
     padding: 4px 4px;
     position: relative;
     cursor: pointer;
