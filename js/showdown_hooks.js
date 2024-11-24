@@ -330,9 +330,9 @@ function sort_box_by_dex(attr) {
 function abv(s) {
     if (($('.player-party').width() / s.length <= 70)) {
         if (s.split(" ")[1]) {
-            return (s.split(" ")[0][0] + " " + s.split(" ")[1]).slice(0,9)
+            return (s.split(" ")[0][0] + " " + s.split(" ")[1]).slice(0,11)
         } else {
-            return s.slice(0,9)
+            return s.slice(0,11)
         }
         
     } else {

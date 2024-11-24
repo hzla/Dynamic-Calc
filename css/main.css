@@ -162,11 +162,16 @@ input[type="file"] {
 #ai-tags div, #nav-tags div, #learnset-show, #box-remove, #save-pok {
     line-height: 20px;
     margin-right: 10px;
-    background: #3700bc;
+    color: #bb86fc;
     border-radius: 5px;
+    border: 1px solid #bb86fc;
     padding: 0px 4px;
     display: none;
-    color: rgb(248, 248, 242);
+/*    color: rgb(248, 248, 242);*/
+}
+
+.bp-info {
+    font-size: 14px;
 }
 
 #ai-tags div {
@@ -179,7 +184,8 @@ input[type="file"] {
 }
 
 #box-remove {
-    background: #FF5555;
+    color: #FF5555;
+    border: 1px solid #f55555;
     display: block;
 }
 
@@ -661,6 +667,7 @@ table td {
     margin: 0;
     padding: 0;
     position: relative;
+    margin-right: 3px;
 }
 
 .player-party .trainer-pok.left-side {
