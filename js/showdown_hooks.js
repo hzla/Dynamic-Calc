@@ -7,8 +7,8 @@ function load_js() {
   saveUploaded = false
   boxSprites = ["newhd", "pokesprite"]
   fainted = []
-  if (!localStorage.boxspriteindex) {
-    localStorage.boxspriteindex = 0
+  if (typeof localStorage.boxspriteindex === 'undefined') {
+    localStorage.boxspriteindex = 1
   }
   sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
   
@@ -330,7 +330,7 @@ function sort_box_by_dex(attr) {
 function abv(s) {
     if (($('.player-party').width() / s.length <= 70)) {
         if (s.split(" ")[1]) {
-            return (s.split(" ")[0][0] + " " + s.split(" ")[1])
+            return (s.split(" ")[0][0] + " " + s.split(" ")[1]).slice(0,9)
         } else {
             return s.slice(0,9)
         }
@@ -1966,7 +1966,6 @@ function loadDataSource(data) {
         else if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
         } else {
-            console.log(pok)
             continue //skip weird smogon pokemon and arceus forms
         }
 
@@ -2428,38 +2427,16 @@ $(document).ready(function() {
         document.activeElement != $('#battle-notes .notes-text')[0]) {
         
 
-
-        if(e.ctrlKey && e.key == "i") {
-            e.preventDefault()
-            const text = await navigator.clipboard.readText();
-            addSets(text)
-        } else if(e.ctrlKey && e.key == "e") {
-            e.preventDefault()
-            $('#encounter-container').toggle()
-        } else if (e.ctrlKey && e.key == "f"){ 
+        if ((e.ctrlKey || e.metaKey) && e.key == "f"){ 
             e.preventDefault()
             $('.panel-mid').toggle()
             $('.panel:not(.panel-mid)').toggleClass('third')
-        } else if (e.ctrlKey && e.key == "c") {
-            e.preventDefault()
-            $("#critR1")[0].checked = !$("#critR1")[0].checked
-            $("#critR2")[0].checked = !$("#critR2")[0].checked
-            $("#critR3")[0].checked = !$("#critR3")[0].checked
-            $("#critR4")[0].checked = !$("#critR4")[0].checked
-            $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
-            $('.move-crit').last().change()
-        } else if (e.ctrlKey && e.key == "l" && $("#learnset-show:visible").length > 0) {
-            e.preventDefault()
-            get_current_learnset()
-            $('#learnset-container').toggle()
-        } else if (e.ctrlKey && e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS")) {
+        } else if ((e.ctrlKey || e.metaKey) && e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS")) {
             e.preventDefault()
             if (confirm("Put full party to sleep?")) {
                 bedtime()
             }
-        } else if (e.ctrlKey && e.key == "s") {
-            toggleBoxSpriteStyle()
-        }
+        } 
     }
 })
 

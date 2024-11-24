@@ -4,6 +4,8 @@ a img {
 }
 .wrapper * {
     box-sizing: content-box;
+/*    max-width: 1980px;*/
+    
  }
 
 
@@ -11,20 +13,16 @@ input[type="file"] {
   display: none;
 }
 
-#read-save {
-  border: 1px solid #bd93f9;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  color: #bd93f9;
-}
+/*fieldset #read-save {
+    margin: 0;
+}*/
 
 #download-sav {
-  border: 1px solid #bd93f9;
+  border: 1px solid #bb86fc;
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
-  color: #bd93f9;
+  color: #bb86fc;
   margin-left: 10px;
   background: none;
 }
@@ -97,7 +95,7 @@ input[type="file"] {
     z-index: 100;
     position: absolute;
     top: 70px;
-    background: #282a36;
+    background: #121212;
     width: 160px;
     padding: 4px;
     display: none;
@@ -164,11 +162,16 @@ input[type="file"] {
 #ai-tags div, #nav-tags div, #learnset-show, #box-remove, #save-pok {
     line-height: 20px;
     margin-right: 10px;
-    background: #ff79c6;
+    background: #3700bc;
     border-radius: 5px;
     padding: 0px 4px;
     display: none;
     color: rgb(248, 248, 242);
+}
+
+#ai-tags div {
+    color: #bb86fc;
+    background: none;
 }
 
 #learnset-show {
@@ -213,7 +216,7 @@ input[type="file"] {
 
 #nav-tags div {
     background: none;   
-    color: #bd93f9;
+    color: #bb86fc;
 }
 
 .nav-tag.partner {
@@ -227,6 +230,7 @@ input[type="file"] {
     width: 100%;
     justify-content: space-between;
     min-width:  calc(1256px);
+    padding-bottom: 8px;
 }
 
 #rom-title {
@@ -319,13 +323,13 @@ input {
     padding-top: 10px;
     border-radius: 5px;
     transform: translateY(-16px);
-    background: #282a36;
+    background: #121212;
     color: #f1f1f1;
     font-size: 18px;
 }
 
 .select2-results .select2-no-results {
-     background: #282a36;
+     background: #121212;
 }
 
 .select2-drop-active {
@@ -355,7 +359,7 @@ input {
 
 #show-mid, #show-ai {
     position:  absolute;
-    background: #bd93f9;
+    background: #bb86fc;
     height:  24px;
     font-size: 14px;
     line-height: 24px;
@@ -370,7 +374,7 @@ input {
 
 #show-ai {
     width: 140px;
-    top: 272px;
+    top: 237px;
 }
 
 #ai-container {
@@ -404,7 +408,7 @@ input {
     max-width: calc(100% - 430px);
     right: 13px;
     top: 80px;
-    background: url(../img/battle_bg.png);
+/*    background: rgba(255,255,255,0.1);*/
     border-bottom-left-radius: 10px;
     height: 128px;
     background-size: cover;
@@ -561,7 +565,7 @@ input {
 /* general page styling */
 html, body {
     font: 10pt Verdana, sans-serif;
-    background-color: #282a36;
+    background-color: #121212;
     color: #f8f8f2;
     margin: 0;
     padding: 0;
@@ -615,11 +619,11 @@ table td {
 }
 
 .filterable .expanded-card-content {
-    background: #282a36;
+    background: #121212;
 }
 
 .player-poks {
-    background: url(../img/box_bg_city.png);
+    background: rgba(255,255,255,0.1);
     background-size: 100% 595px;
     background-repeat: no-repeat;
     height: auto;
@@ -660,7 +664,7 @@ table td {
 }
 
 .player-party .trainer-pok.left-side {
-    background: url(../img/box_bg_city.png);
+    background: rgba(255,255,255,0.1);
     background-size: cover ;
     height:  100%;
     width:  100%;
@@ -669,25 +673,27 @@ table td {
 #clear-party {
     line-height: 20px;
     margin-right: 10px;
-    background: #ff79c6;
+    background: none;
     border-radius: 5px;
     padding: 0px 4px;
     display: none; 
-    color: rgb(248, 248, 242);
+    color: #bb86fc;
     width: 60px;
     text-align: center;
     cursor: pointer;
     margin-left: 13px;
     margin-top:  20px;
+    border: 1px solid #bb86fc;
 }
 
 #edge {
     line-height: 20px;
     margin-right: 10px;
-    background: #ff79c6;
+    background: none;
     border-radius: 5px;
+    border: 1px solid #bb86fc;
     padding: 0px 4px;
-    color: rgb(248, 248, 242);
+    color: #bb86fc;
     width: 60px;
     text-align: center;
     cursor: pointer;
@@ -755,9 +761,9 @@ table td {
     width:  96px;
     cursor: pointer;
     box-sizing: border-box;
-    border: 1px solid #282a36;
+    border: 1px solid #121212;
     /*background: #6272a4;*/
-    background: url(../img/box_bg_city.png);
+    background: rgba(255,255,255,0.1);
     border-radius: 10px;
     margin:  10px;
     background-position-x: -20px;
@@ -768,6 +774,7 @@ table td {
 .trainer-pok.left-side {
     background: none;
     border:  1px solid rgb(0,0,0,0);
+    min-content: 64px;
 }
 
 
@@ -794,7 +801,6 @@ table td {
     flex-direction: column;
     margin-left:  10px;
     align-items: center;
-    border:  1px solid #282a36;
     padding:  5px;
     width: calc(20% - 24px);
     position: relative;
@@ -858,10 +864,10 @@ table td {
 }
 
 .wrapper {
-    max-width: calc(100vw - 40px);
+    width: calc(100vw - 40px);
+    max-width: 1720px;
     min-width:  1540px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 auto;
     position: relative;
 }
 .credits {
@@ -886,6 +892,7 @@ fieldset {
     float: left;
     border: 1px solid #44475a;
     position: relative;
+    background: rgba(255,255,255,0.1);
 }
 legend {
     font-weight: bold;
@@ -918,6 +925,7 @@ th {
     font-size:  18px;
     max-width:  calc(50vw - 20px);
     position: relative;
+
 }
 .poke-info {
     width: 100%;
@@ -957,7 +965,7 @@ th {
 }
 
 .sim-trainer:hover {
-    color: #bd93f9;
+    color: #bb86fc;
 }
 
 .holder-0 {
@@ -1084,7 +1092,7 @@ th {
 }
 
 .move-result-group label {
-    background:  #282a36;
+    background:  #121212;
     color: #f1f1f1;
 }
 .move-result-subgroup {
@@ -1120,7 +1128,7 @@ th {
 #toggle-analysis {
     font-size: 16px;
     font-weight: 400;
-    background: #bd93f9;
+    background: #bb86fc;
     padding: 5px;
     border-radius: 6px;
     margin-left: 20px;
@@ -1215,15 +1223,24 @@ select.toxic-counter {
 /* field info */
 .field-info .btn{
     font-size: 0.8em;
-    background: #282a36;;
+    background: rgba(18, 18, 18, 0.5);
     color: #f1f1f1;
     margin-top: 2px
 }
 
-.field-info button {
-    background: #bd93f9;
+.field-info button, #save-state, #read-save, #import, #clearSets {
+    color: #bb86fc;
     border-radius: 8px;
-    color: #f1f1f1;
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #bb86fc ;
+}
+
+#save-state {
+/*    border: 1px solid #bb86fc ;*/
 }
 table.field {
     width: 100%;
@@ -1252,7 +1269,7 @@ table.field {
 
 .player .select2-chosen, .opposing .select2-chosen {
     color: #f1f1f1;
-    border:  1px solid #bd93f9;
+    border:  1px solid #bb86fc;
     height: 37px;
     padding-left: 10px;
 }
@@ -1262,7 +1279,7 @@ table.field {
 }
 
 .select2-search .input {
-    background:  #282a36;
+    background:  #121212;
 }
 
 .move-selector {
@@ -1290,12 +1307,12 @@ table.field {
 }
 
 .panel.third:not(.panel-mid) {
-    max-width:  calc(50vw - 255px);
+    max-width:  630px;
     min-width: calc(805px - 255px);
 }
 
 .panel.panel-mid {
-    display: none;
+/*    display: none;*/
     max-width: 450px;
 }
 
@@ -1397,6 +1414,8 @@ table.field {
 #footer {
     display: flex;
     justify-content: space-between;
+    max-width: 1730px;
+    margin: 0 auto;
 }
 
 .footer-title {

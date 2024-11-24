@@ -160,7 +160,7 @@
     </div>
     <hr />
 
-    <div id="show-mid">Import/Options</div>
+    <!-- <div id="show-mid">Import/Options</div> -->
     <div id="show-ai">View Expert AI</div>
     <div id="ai-container"></div>
     <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
@@ -225,10 +225,10 @@
     
 
     <div class="panel-wrapper">
-    <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
+    <div aria-label="Pok&eacute;mon 1" class="panel third" role="region">
         <div id="player-tags">
             <div id="learnset-show">Toggle Learnset View</div>
-            <div id="save-pok">Save Changes</div>
+            <div id="save-pok">Save</div>
             <div id="box-remove">Remove</div>
         </div>
         <div id="learnset-container">
@@ -1164,11 +1164,6 @@
                                 <button id="exportR">Export</button>
                             </div></td>
                         </tr>
-                         <tr>
-                            <td><div class="left" title="Export all sets">
-                                <button id="exportLAll" onclick="exportAll()">Export All</button>
-                            </div></td>
-                        </tr>
                     </tbody>
                 </table>
             </fieldset>
@@ -1197,7 +1192,7 @@
                     <label for="save-upload" class="bs-btn" id="read-save">
                             Read .sav
                     </label>
-                    <input id="save-upload" type="file" onclick="this.value=null;"/>
+                    <input id="save-upload" type="file" />
                 </div>
                 <span class="importedSetsOptions" style="width:auto;">
                     <button id="clearSets">Clear Imported Sets</button>
@@ -1207,7 +1202,7 @@
             
         </div>
     </div>
-    <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
+    <div aria-label="Pok&eacute;mon 2" role="region" class="panel third">
         <a href="https://pastebin.com/77NL8Dnx" target="_blank">
             <div id="ai-tags">
                 <div id="ai1">Basic</div>
@@ -1814,12 +1809,7 @@
 
     <div class="shortcut-info">
         <h3 class="footer-title">Shortcuts</h3>
-        cntrl + f - toggle "F"ield info<br>
-        cntrl + i - "I"mports set data from clipboard<br>
-        cntrl + c - toggle all opposing moves "C"rit<br>
-        cntrl + l - toggle "L"earnset window if available<br>
         cntrl + b - "B"edtime presleep full party if gen 4 save is uploaded<br>
-        cntrl + s - toggle "S"prite style
         <br><br>
         Right click box icon to add to party view.
     </div>

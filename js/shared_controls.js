@@ -29,7 +29,7 @@ if (!Array.prototype.indexOf) {
 
 boxSprites = ["newhd", "pokesprite"]
 if (!localStorage.boxspriteindex) {
-localStorage.boxspriteindex = 0
+localStorage.boxspriteindex = 1
 }
 sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
 
