@@ -792,9 +792,8 @@ table td {
 
 
 .trainer-pok-list .pokesprite.left-side, .pokesprite .trainer-pok.left-side {
-    margin: -10px;
-    margin-top: 0px;
-    height: 80px;
+    margin: 0px;
+    height: 66px;
     width: auto;
 }
 
@@ -1173,7 +1172,7 @@ th {
     width: 3em;
 }
 
-.poke-info input, .poke-info select, textarea {
+.poke-info input, .poke-info select, textarea, .notes-text {
     background: rgba(18,18,18,0.5);
 }
 
@@ -1221,6 +1220,10 @@ select.toxic-counter {
     height: 1em;
     padding: 3px 3px;
     margin: 0px 1px;
+    color: #f8f8f2;
+    background: none;
+    text-align: center;
+    border: 1px solid #f8f8f2;
 }
 .poke-info .z-btn {
     font-size: 0.8em;
