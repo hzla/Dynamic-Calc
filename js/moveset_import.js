@@ -437,7 +437,7 @@ $('#save-pok').click(function () {
 	$('.import-team-text').val("")
 	
 	setTimeout(function() {
-		$('#save-pok').text("Save Changes")
+		$('#save-pok').text("Save")
 	}, 500)
 })
 

@@ -2443,8 +2443,11 @@ $(document).ready(function() {
     $(document).keydown(function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 9) {
-         $('.wrapper').toggle();
-         $('#content-container').toggle()
+         if (location.href.includes("mastersheet")) {
+            $('.wrapper').toggle();
+            $('#content-container').toggle()
+         }
+         
         }   
     });
 

@@ -63,6 +63,10 @@
     cursor: pointer;
 }
 
+.select2-container .select2-choice .select2-arrow {
+    background: none;
+    background-image: none;
+}
 
 
 

@@ -663,7 +663,7 @@ table td {
 .trainer-pok-item {
     position: absolute;
     left: 6px;
-    width: 40px;
+    width: 30px;
     top: 14px;
 }
 
@@ -1365,7 +1365,7 @@ table.field {
     border: 1px solid rgb(118, 118, 118);
     margin-bottom: 10px;
     color: #f1f1f1;
-    min-height: 10em;
+    min-height: 220px;
     resize: vertical;
     width: calc(100% - 14px);
     padding: 4px;

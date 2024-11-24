@@ -512,7 +512,7 @@ function edgeSelected(maxIVs=false) {
 
     for (let i = 0;i < selected.length; i++) {
         if (!boxPokOffsets[selected[i]]) {
-            alert(`${selected[i]} not found in PC, batch edging only available for PC pokemon, party pokemon can be edged individually by selecting pokemon and clicking Save Changes`)
+            alert(`${selected[i]} not found in PC, batch edging only available for PC pokemon, party pokemon can be edged individually by selecting pokemon and clicking Save`)
             return
         }
 
