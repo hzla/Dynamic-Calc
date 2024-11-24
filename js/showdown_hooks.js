@@ -508,7 +508,7 @@ function box_rolls() {
 
             opposing_dmg = opposing_results[j].damage
 
-            if (!can_kill(opposing_dmg, monHp * taken_max_roll / 100)) {
+            if (!can_topkill(opposing_dmg, monHp * taken_max_roll / 100)) {
                 defend_count += 1
                 if (defend_count == 4) {
                     defenders.push({"set": box[m], "move": opposing_results[j].move.originalName})
