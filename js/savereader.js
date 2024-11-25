@@ -575,9 +575,15 @@ function updatePartyPKMN(edge=false) {
     // write moves
     // swap move replacements
 
-    var reverseMoveChanges = Object.fromEntries(
+    if (typeof moveChanges[TITLE] != "undefined") {
+        var reverseMoveChanges = Object.fromEntries(
       Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
     );
+    } else {
+        var reverseMoveChanges = {}
+    }
+
+    
 
     for (let moveID = 0;moveID<4;moveID++) {
         var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
