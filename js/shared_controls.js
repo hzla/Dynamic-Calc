@@ -504,6 +504,10 @@ function smogonAnalysis(pokemonName) {
 function refresh_next_in() {
 	var next_poks = get_next_in()
 
+	if (damageGen < 8) {
+        $("#p2 .evs, #p2 .ev-label").hide()
+    }
+
 	var trpok_html = ""
 	for (i in next_poks ) {
 		if (next_poks[i][0].includes($('input.opposing').val())){
@@ -573,6 +577,15 @@ $(".set-selector").change(function () {
 	} else {
 		var right_max_hp = $("#p1 .max-hp").text()		
 		$("#p1 .current-hp").val(right_max_hp).change()
+	}
+
+	var evs = $('#p1 .evs')
+	if (evs[0].value + evs[1].value + evs[2].value + evs[3].value + evs[4].value + evs[5].value == "000000") {
+		evs.hide()
+		$("#p1 .ev-label").hide()
+	} else {
+		evs.show()
+		$("#p1 .ev-label").show()
 	}
 
 	refresh_next_in()

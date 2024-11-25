@@ -296,6 +296,7 @@ input[type="file"] {
 
 .opposing .select2-choice {
     padding-right: 30px;
+    max-width: 586px;
 }
 
 select {
@@ -368,7 +369,7 @@ input {
     font-size: 15px;
 }
 
-#show-mid, #show-ai {
+#show-ai {
     position:  absolute;
     background: #bb86fc;
     height:  24px;
@@ -770,8 +771,8 @@ table td {
 
 
 .trainer-pok {
-    height:  96px;
-    width:  96px;
+    height:  65px;
+    width:  65px;
     cursor: pointer;
     box-sizing: border-box;
     border: 1px solid #121212;
@@ -906,11 +907,12 @@ table td {
 div.wrapper > div > span {
     padding-right: 5px;
 }
-fieldset {
+.poke-info, fieldset {
     float: left;
     border: 1px solid #44475a;
     position: relative;
     background: rgba(255,255,255,0.1);
+    min-inline-size: auto;
 }
 legend {
     font-weight: bold;
@@ -1255,7 +1257,7 @@ select.toxic-counter {
     margin-top: 2px
 }
 
-.field-info button, #save-state, #read-save, #import, #clearSets {
+.field-info button, #save-state, #read-save, #import, #clearSets, #download-sav {
     color: #bb86fc;
     border-radius: 8px;
     background: none;
@@ -1286,6 +1288,7 @@ table.field {
     font-size: 0.9em;
     height: 24px;
     line-height: 24px;
+    background: rgba(18,18,18,0.5);
 
 }
 .small-select.select2-container .select2-choice .select2-arrow b {
@@ -1339,6 +1342,9 @@ table.field {
     max-width:  630px;
     min-width: calc(805px - 255px);
 }
+
+
+
 
 .panel.panel-mid {
 /*    display: none;*/
@@ -1453,6 +1459,58 @@ table.field {
 
 
 
+@media (width <= 1540px) {
+  /* … */
+
+  .panel-wrapper {
+    justify-content: flex-start;
+  }
+
+  .panel:not(.panel-mid) {
+    min-width: 0px;
+    max-width: 50vw;
+  }
+
+  .poke-sprite {
+    display: none;
+  }
+
+  .wrapper {
+    width: 100vw;
+    min-width: 0px;
+    margin: 0;
+  }
+
+  #show-ai {
+    display: none;
+  }
+  .header-settings{
+    width: 100vw;
+    min-width: 0px;
+  }
+
+  .calc-select {
+    width: 188px;
+  }
+
+  .info-group.info-selectors {
+    max-width: 100px;
+  }
+
+  .trainer-pok-container {
+    padding: 2px;
+    margin-left: 0px;
+    width: calc(20% - 5px);
+  }
+
+  #footer {
+    max-width: 100vw;
+  }
+
+
+
+
+}
 
 
 

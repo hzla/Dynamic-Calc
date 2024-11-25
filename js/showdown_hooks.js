@@ -2006,7 +2006,10 @@ function loadDataSource(data) {
         }
     }
 
+    
+
     load_js() 
+    
 
     if (localStorage.customsets) {
         console.log("loading box")
