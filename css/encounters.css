@@ -68,5 +68,36 @@
     background-image: none;
 }
 
+html.old, body.old {
+    background: #282a36;
+}
+
+.old .wrapper{
+    max-width: calc(100vw - 40px);
+    min-width: 1540px;
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.old .panel:not(.panel-mid) {
+    max-width: calc(50vw - 255px);
+    min-width: calc(805px - 255px);
+}
+
+.old fieldset, .old .poke-info {
+    background: none;
+}
+
+.old .select2-container .select2-choice {
+    max-width: 100%;
+}
+
+.old #footer {
+    max-width: calc(100vw - 40px);
+    margin-left: 20px;
+}
+
 
 

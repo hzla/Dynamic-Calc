@@ -6,9 +6,17 @@ function load_js() {
   head.appendChild(script);
   saveUploaded = false
   boxSprites = ["newhd", "pokesprite"]
+  themes = ["old", "new"]
   fainted = []
   if (typeof localStorage.boxspriteindex === 'undefined') {
     localStorage.boxspriteindex = 1
+  }
+  if (typeof localStorage.themeIndex === 'undefined') {
+    localStorage.themeIndex = 1
+  }
+
+  if (parseInt(localStorage.themeIndex) == 0) {
+    $('body, html').addClass('old')
   }
   sprite_style = boxSprites[parseInt(localStorage.boxspriteindex)]
   
@@ -1451,6 +1459,17 @@ function toggleBoxSpriteStyle() {
     })
 }
 
+$('#theme-toggle').click(toggleThemes)
+
+function toggleThemes() {
+    var oldStyle = themes[parseInt(localStorage.themeIndex)]
+    localStorage.themeIndex = (parseInt(localStorage.themeIndex) + 1) % 2
+    themeStyle = themes[parseInt(localStorage.themeIndex)]
+
+    $('html, body').removeClass(oldStyle)
+    $('html, body').addClass(themeStyle)
+}
+
 function toggle_box_rolls() {
     localStorage.boxrolls = (parseInt(localStorage.boxrolls) + 1) % 2   
 }
@@ -2009,7 +2028,7 @@ function loadDataSource(data) {
     
 
     load_js() 
-    
+
 
     if (localStorage.customsets) {
         console.log("loading box")
@@ -2427,7 +2446,7 @@ $(document).ready(function() {
 
 
 
-   // shortcuts
+
     $(document).keydown(async function (e) {
     if ($('.select2-drop-active:visible').length == 0 && 
         document.activeElement != $('textarea.import-team-text')[0] && 
@@ -2435,17 +2454,29 @@ $(document).ready(function() {
         document.activeElement != $('#battle-notes .notes-text')[0]) {
         
 
-        if ((e.ctrlKey || e.metaKey) && e.key == "f"){ 
+        if ((e.altKey || e.metaKey) && (e.key == "f" || e.key == "ƒ")){ 
             e.preventDefault()
             $('.panel-mid').toggle()
             $('.panel:not(.panel-mid)').toggleClass('third')
-        } else if ((e.ctrlKey || e.metaKey) && e.key == "b" && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS")) {
+        } else if ((e.altKey || e.metaKey) && (e.key == "b" || e.key == "∫") && saveUploaded && (baseGame == "Pt" || baseGame == "HGSS")) {
             e.preventDefault()
             if (confirm("Put full party to sleep?")) {
                 bedtime()
             }
-        } 
+        } else if (e.altKey && e.key == "c" || e.key == "ç") {
+            console.log("asdf")
+            e.preventDefault()
+            $("#critR1")[0].checked = !$("#critR1")[0].checked
+            $("#critR2")[0].checked = !$("#critR2")[0].checked
+            $("#critR3")[0].checked = !$("#critR3")[0].checked
+            $("#critR4")[0].checked = !$("#critR4")[0].checked
+            $('#resultDamageR1, #resultDamageR2, #resultDamageR3, #resultDamageR4').toggleClass('crit-text')
+            $('.move-crit').last().change()
+        } else if (e.altKey && e.key == "s" || e.key == "ß") {
+            toggleBoxSpriteStyle()
+        }
     }
+
 })
 
     $(document).keydown(function(e) {
