@@ -579,15 +579,6 @@ $(".set-selector").change(function () {
 		$("#p1 .current-hp").val(right_max_hp).change()
 	}
 
-	var evs = $('#p1 .evs')
-	if (evs[0].value + evs[1].value + evs[2].value + evs[3].value + evs[4].value + evs[5].value == "000000") {
-		evs.hide()
-		$("#p1 .ev-label").hide()
-	} else {
-		evs.show()
-		$("#p1 .ev-label").show()
-	}
-
 	refresh_next_in()
 
 	
