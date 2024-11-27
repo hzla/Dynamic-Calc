@@ -28,6 +28,7 @@ if (!Array.prototype.indexOf) {
 }
 
 boxSprites = ["newhd", "pokesprite"]
+fainted = []
 if (!localStorage.boxspriteindex) {
 localStorage.boxspriteindex = 1
 }

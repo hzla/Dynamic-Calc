@@ -95,7 +95,7 @@ input[type="file"] {
     z-index: 100;
     position: absolute;
     top: 70px;
-    background: #121212;
+    background: #181818;
     width: 160px;
     padding: 4px;
     display: none;
@@ -335,13 +335,13 @@ input {
     padding-top: 10px;
     border-radius: 5px;
     transform: translateY(-16px);
-    background: #121212;
+    background: #181818;
     color: #f1f1f1;
     font-size: 18px;
 }
 
 .select2-results .select2-no-results {
-     background: #121212;
+     background: #181818;
 }
 
 .select2-drop-active {
@@ -577,7 +577,7 @@ input {
 /* general page styling */
 html, body {
     font: 10pt Verdana, sans-serif;
-    background-color: #121212;
+    background-color: #181818;
     color: #f8f8f2;
     margin: 0;
     padding: 0;
@@ -631,7 +631,7 @@ table td {
 }
 
 .filterable .expanded-card-content {
-    background: #121212;
+    background: #181818;
 }
 
 .player-poks {
@@ -775,7 +775,7 @@ table td {
     width:  65px;
     cursor: pointer;
     box-sizing: border-box;
-    border: 1px solid #121212;
+    border: 1px solid #181818;
     /*background: #6272a4;*/
     background: rgba(255,255,255,0.1);
     border-radius: 10px;
@@ -1113,7 +1113,7 @@ th {
 }
 
 .move-result-group label {
-    background:  #121212;
+    background:  #181818;
     color: #f1f1f1;
 }
 .move-result-subgroup {
@@ -1185,7 +1185,7 @@ th {
 }
 
 .poke-info input, .poke-info select, textarea, .notes-text {
-    background: rgba(18,18,18,0.5);
+    background: rgba(24,24,24,0.5);
 }
 
 .info-group {
@@ -1288,7 +1288,7 @@ table.field {
     font-size: 0.9em;
     height: 24px;
     line-height: 24px;
-    background: rgba(18,18,18,0.5);
+    background: rgba(24,24,24,0.5);
 
 }
 .small-select.select2-container .select2-choice .select2-arrow b {
@@ -1303,7 +1303,7 @@ table.field {
     border:  1px solid #bb86fc;
     height: 37px;
     padding-left: 10px;
-    background: rgba(18,18,18,0.5);
+    background: rgba(24,24,24,0.5);
 }
 
 #p2 .select2-chosen {
@@ -1311,7 +1311,7 @@ table.field {
 }
 
 .select2-search .input {
-    background:  #121212;
+    background:  #181818;
 }
 
 .move-selector {
