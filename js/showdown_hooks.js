@@ -1203,6 +1203,9 @@ function get_next_in_cfru() {
         var all_neutral = true
         var is_wall = false
         var kill_found = false
+        var is_hazard_remover = false
+
+        var hazards = $(':checked + #srR-label, :checked + #spikesR1-label, :checked + #spikesR2-label, :checked + #spikesR3-label').length > 0
 
 
         var pok_name = trainer_poks[i].split(" (")[0]
@@ -1216,6 +1219,8 @@ function get_next_in_cfru() {
         var player_results = all_results[0]
 
 
+
+
         for (let n = 0; n < 4; n++) {
             var dmg = 0
 
@@ -1224,6 +1229,12 @@ function get_next_in_cfru() {
             } else {
                 dmg = results[n].damage
             }
+
+            if (hazards && (results[n].move.name == "Rapid Spin" || results[n].move.name == "Defog")) {
+                score += 10
+                reasoning += "+10 removes hazards, "
+            }
+
 
             // add 4 if kills, add +2 if revenge kill
             if (can_kill(dmg, currentHp)) {

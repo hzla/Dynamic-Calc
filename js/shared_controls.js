@@ -560,13 +560,29 @@ function refresh_next_in() {
 	}
 	$('.opposing.trainer-pok-list').html(trpok_html)
 }
-$('.current-hp, .percent-hp').blur(refresh_next_in)
+$('.current-hp, .percent-hp').blur(function() {
+	
+	$('.trainer-pok-list.opposing').addClass('shake')
+	setTimeout(function(){
+		refresh_next_in()
+		$('.trainer-pok-list.opposing').removeClass('shake')
+	}, 100)
+})
 $('#maxL, #refresh-baits').click(function() {
 	refresh_next_in()
 	$('.trainer-pok-list.opposing').addClass('shake')
 	setTimeout(function(){
 		$('.trainer-pok-list.opposing').removeClass('shake')
-	}, 500)
+	}, 100)
+})
+
+$('#srR-label, #spikesR1-label, #spikesR2-label, #spikesR3-label, #spikesR0-label').click(function() {
+	
+	$('.trainer-pok-list.opposing').addClass('shake')
+	setTimeout(function(){
+		refresh_next_in()
+		$('.trainer-pok-list.opposing').removeClass('shake')
+	}, 100)
 })
 
 
