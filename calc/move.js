@@ -96,6 +96,11 @@ var Move = (function () {
             if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(data.id)) {
                 this.bp = 102;
             }
+            else if (data.id === 'naturepower') {
+                this.bp = 80;
+                if (gen.num >= 5)
+                    this.secondaries = true;
+            }
         }
     }
     Move.prototype.named = function () {

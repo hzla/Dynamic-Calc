@@ -270,7 +270,7 @@ function get_trainer_names() {
         var pok_tr_names = Object.keys(poks)
         for (i in pok_tr_names) {
            var trainer_name = pok_tr_names[i]
-           var sub_index = poks[trainer_name]["sub_index"]
+           var sub_index = 0
            trainer_names.push(`${pok_name} (${trainer_name})[${sub_index}]`) 
         }      
     }
@@ -404,7 +404,8 @@ function get_box() {
 }
 
 function get_trainer_poks(trainer_name)
-{
+{   
+    console.log(trainer_name)
     var all_poks = SETDEX_BW
     var matches = []
 
@@ -416,9 +417,11 @@ function get_trainer_poks(trainer_name)
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
+    console.log(og_trainer_name)
+
     for (i in TR_NAMES) {
 
-        if (TR_NAMES[i].includes(og_trainer_name + " ")) {
+        if (TR_NAMES[i].includes(og_trainer_name)) {
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                matches.push(TR_NAMES[i])
             }    
@@ -905,12 +908,13 @@ function get_next_in_g4() {
 // check if ai mon has >= 50% chance kills player
 function can_kill(damages, hp) {
     kill_count = 0
+
     for (n in damages) {
         if (damages[n] >= hp) {
             kill_count += 1
         }
     }
-    return (kill_count >= 16)
+    return (kill_count >= 8)
 }
 
 // check if ai mon highest roll kills player
@@ -1178,6 +1182,9 @@ function get_next_in_cfru() {
     var p1info = $("#p1");
     var p2info = $("#p2");
     var p1 = createPokemon(p1info);
+    if (!p1.name) {
+        p1.name = $('.set-selector')[1].value.split(" (")[0]
+    }
 
     var p1field = createField();
     var p2field = p1field.clone().swap();
@@ -1222,18 +1229,18 @@ function get_next_in_cfru() {
             if (can_kill(dmg, currentHp)) {
                 var kills = true
                 
-                if (kill_found) {
-                    reasoning += `killing with ${results[n].move.name}, `
+                if (!kill_found) {
+                    reasoning += `+4 killing with ${results[n].move.name}, `
                 } else {
-                    reasoning += `kills with ${results[n].move.name}, `
+                    reasoning += `${results[n].move.name}, `
                 }
                 
                 kill_found = true
 
-                // if (["Moxie", "Soul Heart","Beast Boost", "Shadow Tag"].includes(p2.ability) ) {
-                //     var revenge_kills = true
-                //     reasoning += `+2 from boosting ability, `
-                // }
+                if (["Moxie", "Soul Heart","Beast Boost"].includes(p2.ability) || results[n].move.name == "Fell Stinger"  ) {
+                    var revenge_kills = true
+                    reasoning += `+2 from post-KO boost, `
+                }
 
                 // if (p1.ability != "Levitate" && !p1.types.includes("Flying") && (p2.ability == "Arena Trap")) {
                 //      var revenge_kills = true
@@ -1246,13 +1253,19 @@ function get_next_in_cfru() {
                 // }
 
                 if (results[n].move.priority >= 1) {
-                    var revenge_kills = true
-                    reasoning += `priority kill with ${results[n].move.name}, `
+                    if (!revenge_kills) {
+                        reasoning += `+2 from priority kill with ${results[n].move.name}, `
+                    }
+                    
+                    var revenge_kills = true  
                 }
             } else { // add +1 if non kill and super effective
                 if ( (results[n].move.category != "Status") && type_info[results[n].move.type] > 1 && !kills ) {
+                    if (!is_se) {
+                        reasoning += `+1 non kill super effective ${results[n].move.name}, `
+                    }
                     is_se = true
-                    reasoning += `non kill super effective ${results[n].move.name}, `
+                    
                 }
             }
         }
@@ -1291,42 +1304,44 @@ function get_next_in_cfru() {
         }
 
         if (full_resist) {
-            reasoning += "full resist, "
+            reasoning += "+2 full resist, "
         }
 
         if (is_weak) {
-            reasoning += "weak to move, "
+            reasoning += "-1 weak to you, "
         }
 
         // check if trainer def > player highest offensive stat
-        if (all_neutral) {
-            var player_offense = 0
-            var trainer_def = 0
+        // if (all_neutral) {
+        //     var player_offense = 0
+        //     var trainer_def = 0
 
-            if (p1.rawStats.atk >= p1.rawStats.spa) {
-                player_offense = p1.rawStats.atk 
-                trainer_def = p2.rawStats.def
-            } else {
-                player_offense = p1.rawStats.spa
-                trainer_def = p2.rawStats.spd
-            }
-            is_wall = (trainer_def > player_offense)
-            if (is_wall) {
-               reasoning += "walls you" 
-            }         
-        }
+        //     if (p1.rawStats.atk >= p1.rawStats.spa) {
+        //         player_offense = p1.rawStats.atk 
+        //         trainer_def = p2.rawStats.def
+        //     } else {
+        //         player_offense = p1.rawStats.spa
+        //         trainer_def = p2.rawStats.spd
+        //     }
+        //     is_wall = (trainer_def > player_offense)
+        //     if (is_wall) {
+        //        reasoning += "walls you" 
+        //     }         
+        // }
 
         
         // calculate final scores
-        var pok_scores = {"kills": kills, "revenge_kills": revenge_kills, "is_se": is_se, "full_resist": full_resist, "is_weak": is_weak, "is_wall": is_wall}
-        var score_mods = {"kills": 4, "revenge_kills": 2, "is_se": 1, "full_resist": 4, "is_weak": -1, "is_wall": 2}
+        var pok_scores = {"kills": kills, "revenge_kills": revenge_kills, "is_se": is_se, "full_resist": full_resist, "is_weak": is_weak,}
+        var score_mods = {"kills": 4, "revenge_kills": 2, "is_se": 1, "full_resist": 2, "is_weak": -1}
 
         for (mod in score_mods) {
             if (pok_scores[mod]) {
                score += score_mods[mod]
             }
         }
-        score -= (sub_index / 100) 
+
+        score = Math.min(score, 10)
+
 
         // reasoning += `, Final Score: ${score}`
 
@@ -1804,13 +1819,10 @@ function get_type_info(pok_types, move=false) {
 }
 
 function loadDataSource(data) {
-    SETDEX_BW = data["formatted_sets"]
-    SETDEX_ADV = data["formatted_sets"]
-    SETDEX_DPP = data["formatted_sets"]
-    SETDEX_SM = data["formatted_sets"]
-    SETDEX_SS = data["formatted_sets"]
-    SETDEX_XY = data["formatted_sets"]
-    setdex = data["formatted_sets"]
+    SETDEX_BW = formatted_sets[MODE]
+    setdex = formatted_sets[MODE]
+
+
 
     if (data["title"]) {
         TITLE = data["title"]
@@ -2066,6 +2078,7 @@ switchIn = parseInt(params.get('switchIn'))
 challengeMode = params.get('challengeMode')
 FAIRY = params.get('fairy')
 misc = params.get('misc')
+MODE = params.get('m')
 invert = params.get('invert')
 DEFAULTS_LOADED = false
 analyze = false
@@ -2079,9 +2092,10 @@ if (switchIn != 11) {
 }  
 
 $(document).ready(function() {
-   SETDEX_BW = null
-   TR_NAMES = null
+   SETDEX_BW = formatted_sets[MODE]
+   TR_NAMES = get_trainer_names()
    BACKUP_MODE = params.get('backup')
+
 
 
    params = new URLSearchParams(window.location.search)
@@ -2103,7 +2117,7 @@ $(document).ready(function() {
    "78381c312866ee2e6ff9": "Black/White",
    "83c196dce6759252b3f4": "Black 2/White 2",
    "8d1ab90a3b3c494d8485": "Eternal X/Wilting Y Insanity Rebalanced",
-   "68bfb2ccba14b7f6b1f0": "Inclement Emerald",
+   "68bfb2ccba14b7f6b1f0": "Unbound 2.1.1",
    "e9030beba9c1ba8804e8": "Kaizo Colloseum",
    "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
    "d6364c8b89ad50905e6a": "Sterling Silver",
@@ -2139,6 +2153,7 @@ $(document).ready(function() {
         }
 
         $('.genSelection').hide()
+
         $('#rom-title').text(TITLE).show()
         if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
             INC_EM = true
@@ -2159,6 +2174,8 @@ $(document).ready(function() {
     } else {
         TITLE = "NONE"
     }
+
+
 
 
     $(document).on('change', '.calc-select', function() {
@@ -2222,9 +2239,13 @@ $(document).ready(function() {
         
    } else {
         $.get(npoint, function(data){
-            npoint_data = data
-            loadDataSource(data)
-            final_type_chart = construct_type_chart()
+            // npoint_data = data
+            // loadDataSource(data)
+            // final_type_chart = construct_type_chart()
+            SETDEX_BW = formatted_sets[MODE]
+            setdex = formatted_sets[MODE]
+
+            load_js()
 
             setTimeout(function() {
                 if (localStorage["left"]) {

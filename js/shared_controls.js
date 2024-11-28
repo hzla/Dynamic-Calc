@@ -551,12 +551,23 @@ function refresh_next_in() {
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][1])}">${next_poks[i][4][1].replace("Hidden Power", "HP")}</div>
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][2])}">${next_poks[i][4][2].replace("Hidden Power", "HP")}</div>
 			<div class="bp-info" data-strong="${next_poks[i][2].includes(next_poks[i][4][3])}">${next_poks[i][4][3].replace("Hidden Power", "HP")}</div>
+			<br>
+			<div class="bp-info">Bait Score: ${next_poks[i][1]}</div>
+
 
 		</div>`
 		trpok_html += pok
 	}
 	$('.opposing.trainer-pok-list').html(trpok_html)
 }
+$('.current-hp, .percent-hp').blur(refresh_next_in)
+$('#maxL, #refresh-baits').click(function() {
+	refresh_next_in()
+	$('.trainer-pok-list.opposing').addClass('shake')
+	setTimeout(function(){
+		$('.trainer-pok-list.opposing').removeClass('shake')
+	}, 500)
+})
 
 
 $('#p1 .boost, #statusL1, #p1 .percent-hp').change(function() {
@@ -1153,6 +1164,10 @@ function createField() {
 	var isMagicRoom = $("#magicroom").prop("checked");
 	var isWonderRoom = $("#wonderroom").prop("checked");
 	var isGravity = $("#gravity").prop("checked");
+	var isInverseBattle = $("#inverse").prop("checked");
+	var isBigMoField = $("#bigmo").prop("checked");
+	var isShadowyVeil = $("#shadowyveil").prop("checked");
+	var isCamomonsBattle = $("#camomons").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
 	var spikes;
@@ -1180,35 +1195,21 @@ function createField() {
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
 	var isPowerSpot = [$("#powerSpotL").prop("checked"), $("#powerSpotR").prop("checked")];
-	var isFlowerGift = [$("#flowerGiftL").prop("checked"), $("#flowerGiftR").prop("checked")];
-	
-	var is10Buff = [$("#is10BuffL").prop("checked"), $("#is10BuffR").prop("checked")];
-	var is15Buff = [$("#is15BuffL").prop("checked"), $("#is15BuffR").prop("checked")];
-	var is20Buff = [$("#is20BuffL").prop("checked"), $("#is20BuffR").prop("checked")];
-	var is25Buff = [$("#is25BuffL").prop("checked"), $("#is25BuffR").prop("checked")];
-	var is30Buff = [$("#is30BuffL").prop("checked"), $("#is30BuffR").prop("checked")];
-	var is50Buff = [$("#is50BuffL").prop("checked"), $("#is50BuffR").prop("checked")];
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
-
-	var isBadgeAtk = [$("#AtkL").prop("checked"), $("#AtkR").prop("checked")];
-	var isBadgeSpec = [$("#SpecL").prop("checked"), $("#SpecR").prop("checked")];
-	var isBadgeDef = [$("#DefL").prop("checked"), $("#DefR").prop("checked")];
-	var isBadgeSpeed = [$("#SpeL").prop("checked"), $("#SpeR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i],
 			vinelash: vinelash[i], wildfire: wildfire[i], cannonade: cannonade[i], volcalith: volcalith[i],
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
-			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i], isFlowerGift: isFlowerGift[i],
-			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i], isBadgeAtk: isBadgeAtk[i],isBadgeSpec: isBadgeSpec[i], isBadgeDef: isBadgeDef[i], isBadgeSpeed: isBadgeSpeed[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i], is10Buff: is10Buff[i], is15Buff: is15Buff[i], is20Buff: is20Buff[i], is25Buff: is25Buff[i], is30Buff: is30Buff[i], is50Buff: is50Buff[i] ? 'out' : undefined
+			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
+			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
 		});
 	};
-	// console.log(is10Buff)
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity, isInverseBattle: isInverseBattle, isBigMoField: isBigMoField, isShadowyVeil: isShadowyVeil, isCamomonsBattle: isCamomonsBattle,  
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }
@@ -1730,7 +1731,7 @@ $(document).ready(function () {
             		reasoning = RR_SORTED[i][6]
             	}
             }
-            $('#reasoning').text(reasoning)
+            $('#reasoning').show().text(reasoning)
         })
    }
 

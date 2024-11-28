@@ -587,6 +587,48 @@ function getMoves(currentPoke, rows, offset) {
 	return currentPoke;
 }
 
+function checkExeptions(poke) {
+	switch (poke) {
+	case 'Aegislash':
+		poke = "Aegislash-Blade";
+		break;
+	case 'Basculin-Blue-Striped':
+		poke = "Basculin";
+		break;
+	case 'Gastrodon-East':
+		poke = "Gastrodon";
+		break;
+	case 'Mimikyu-Busted-Totem':
+		poke = "Mimikyu-Totem";
+		break;
+	case 'Mimikyu-Busted':
+		poke = "Mimikyu";
+		break;
+	case 'Pikachu-Belle':
+	case 'Pikachu-Cosplay':
+	case 'Pikachu-Libre':
+	case 'Pikachu-Original':
+	case 'Pikachu-Partner':
+	case 'Pikachu-PhD':
+	case 'Pikachu-Pop-Star':
+	case 'Pikachu-Rock-Star':
+		poke = "Pikachu";
+		break;
+	case 'Vivillon-Fancy':
+	case 'Vivillon-Pokeball':
+		poke = "Vivillon";
+		break;
+	case 'Florges-White':
+	case 'Florges-Blue':
+	case 'Florges-Orange':
+	case 'Florges-Yellow':
+		poke = "Florges";
+		break;
+	}
+	return poke;
+
+}
+
 function addToDex(poke) {
 	var dexObject = {};
 	if ($("#randoms").prop("checked")) {
@@ -684,45 +726,12 @@ function isValidJSON(str) {
 }
 
 function addSets(pokes, name) {
-	if (isValidJSON(pokes)) {
-		newSets = JSON.parse(pokes)
-		localStorage.customsets = newSets
-		location.reload()
-		return
-
-		// for (let set in newSets) {
-		// 	SETDEX_BW[set] ||= {}
-		// 	SETDEX_BW[set]["My Box"] = newSets[set]["My Box"]
-		// }
-		// console.log("sets updated")
-		// get_box()
-		// return
-	}	
-
 	var rows = pokes.split("\n");
 	var currentRow;
 	var currentPoke;
 	var addedpokes = 0;
-	currentParty = []
 	for (var i = 0; i < rows.length; i++) {
-		var item = false
-		if (rows[i].split(" |Party")[1]) {
-			if (rows[i].includes("@")) {
-				item = rows[i].split("@")[1].trim()
-			}
-			rows[i] = rows[i].split(" |Party")[0]
-			console.log(rows[i])
-			currentParty.push(rows[i])
-		}
-
-
 		currentRow = rows[i].split(/[()@]/);
-		
-		if (item) {
-			currentRow.push(item)
-		}
-		
-		
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
@@ -730,21 +739,12 @@ function addSets(pokes, name) {
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
-					currentPoke.nameProp = "My Box";
+					currentPoke.nameProp = currentRow[0].trim();
 				} else {
-					currentPoke.nameProp = "My Box";
+					currentPoke.nameProp = name;
 				}
 				currentPoke.isCustomSet = true;
-
-				if (INC_EM) {
-					currentPoke.ability = getAbility(rows[i + 4].split(":"), currentPoke.name);
-				} else {
-					currentPoke.ability = getAbility(rows[i + 1].split(":"));
-				}
-
-				console.log(currentPoke.ability)
-				console.log("........")
-				
+				currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
@@ -753,6 +753,7 @@ function addSets(pokes, name) {
 		}
 	}
 	if (addedpokes > 0) {
+		console.log(addedpokes)
 		get_box()
 		// alert("Successfully imported " + addedpokes + " set(s)");
 		$('.player-poks').addClass('shake')
@@ -765,10 +766,7 @@ function addSets(pokes, name) {
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
-	 $(".trainer-pok.left-side" ).attr("draggable", "true")
 }
-
-
 
 
 
@@ -853,7 +851,8 @@ $(document).ready(function () {
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
 
-		// updateDex(customSets);
+		updateDex(customSets);
+		get_box()
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		loadDefaultLists();

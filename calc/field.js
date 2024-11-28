@@ -26,6 +26,10 @@ var Field = (function () {
         this.isMagicRoom = !!field.isMagicRoom;
         this.isWonderRoom = !!field.isWonderRoom;
         this.isGravity = !!field.isGravity;
+        this.isInverseBattle = !!field.isInverseBattle;
+        this.isBigMoField = !!field.isBigMoField;
+        this.isShadowyVeil = !!field.isShadowyVeil;
+        this.isCamomonsBattle = !!field.isCamomonsBattle;
         this.isAuraBreak = field.isAuraBreak || false;
         this.isFairyAura = field.isFairyAura || false;
         this.isDarkAura = field.isDarkAura || false;
@@ -59,6 +63,10 @@ var Field = (function () {
             isMagicRoom: this.isMagicRoom,
             isWonderRoom: this.isWonderRoom,
             isGravity: this.isGravity,
+            isInverseBattle: this.isInverseBattle,
+            isBigMoField: this.isBigMoField,
+            isShadowyVeil: this.isShadowyVeil,
+            isCamomonsBattle: this.isCamomonsBattle,
             attackerSide: this.attackerSide,
             defenderSide: this.defenderSide,
             isAuraBreak: this.isAuraBreak,
@@ -86,22 +94,11 @@ var Side = (function () {
         this.isForesight = !!side.isForesight;
         this.isTailwind = !!side.isTailwind;
         this.isHelpingHand = !!side.isHelpingHand;
-        this.isBadgeAtk = !!side.isBadgeAtk;
-        this.isBadgeDef = !!side.isBadgeDef;
-        this.isBadgeSpeed = !!side.isBadgeSpeed;
-        this.isBadgeSpec = !!side.isBadgeSpec;
-        this.isFlowerGift = !!side.isFlowerGift;
         this.isFriendGuard = !!side.isFriendGuard;
         this.isAuroraVeil = !!side.isAuroraVeil;
         this.isBattery = !!side.isBattery;
         this.isPowerSpot = !!side.isPowerSpot;
         this.isSwitching = side.isSwitching;
-        this.is10Buff = !!side.is10Buff
-        this.is15Buff = !!side.is15Buff
-        this.is20Buff = !!side.is20Buff
-        this.is25Buff = !!side.is25Buff
-        this.is30Buff = !!side.is30Buff
-        this.is50Buff = !!side.is50Buff
     }
     Side.prototype.clone = function () {
         return new Side(this);
