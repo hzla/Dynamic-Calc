@@ -2314,7 +2314,10 @@ $(document).ready(function() {
 
    $(document).on('click', '#show-ai', function() {
         $("#ai-container").toggle()
+   })
 
+   $('body').on('click', function() {
+        $("#ai-container").hide()
    })
 
    $(document).on('click', '.results-right label', function() {
