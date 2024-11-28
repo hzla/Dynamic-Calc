@@ -1873,10 +1873,10 @@ function loadDataSource(data) {
             }
         }
 
-        if (jsonMove["sf"]) {
-            moves[move]["secondaries"] = true
-            MOVES_BY_ID[g][move_id]["secondaries"] = true
-        }
+        // if (jsonMove["sf"]) {
+        //     moves[move]["secondaries"] = true
+        //     MOVES_BY_ID[g][move_id]["secondaries"] = true
+        // }
 
         if (jsonMove['flags']) {
             if (jsonMove['flags']['punch']) {
