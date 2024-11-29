@@ -1920,6 +1920,7 @@ function loadDataSource(data) {
     if ( TITLE.includes("Platinum") ) {
         var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
         var deoxys_info = ['Attack', 'Defense','Speed']
+        var wormadam_info = ['Sandy', 'Trash']
         
         for (let i = 0; i < rotom_info.length; i++) {
             pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
@@ -1965,6 +1966,52 @@ function loadDataSource(data) {
                 "Shaymin-Sky"
             ]
         }
+
+        pokedex['Wormadam-Trash-Glitched'] = {
+            "types": [
+                "Bug",
+                "Steel"
+            ],
+            "bs": {
+                "at": 50,
+                "df": 90,
+                "hp": 60,
+                "sa": 110,
+                "sd": 110,
+                "sp": 30
+            },
+            "weightkg": 6.5,
+            "abilities": {
+                "0": "Anticipation"
+            },
+            "otherFormes": [
+                "Wormadam-Sandy",
+                "Wormadam-Trash"
+            ]
+        }
+
+        pokedex['Wormadam-Sandy-Glitched'] = {
+            "types": [
+                "Bug",
+                "Ground"
+            ],
+            "bs": {
+                "at": 50,
+                "df": 90,
+                "hp": 60,
+                "sa": 110,
+                "sd": 110,
+                "sp": 30
+            },
+            "weightkg": 6.5,
+            "abilities": {
+                "0": "Anticipation"
+            },
+            "otherFormes": [
+                "Wormadam-Sandy",
+                "Wormadam-Trash"
+            ]
+        }
     }
 
 
@@ -2008,13 +2055,12 @@ function loadDataSource(data) {
     if (damageGen == 4) {
         var gen4Forms = [
             ["Deoxys", ["Attack", "Defense", "Speed"]],
-            ["Shaymin", ["Sky"]],
-            ["Castform", ["Rainy", "Sunny", "Snowy"]],
-            ["Wormadam", ["Trash", "Sandy"]]]
+            ["Castform", ["Rainy", "Sunny", "Snowy"]]
+            ]
 
-        if (TITLE.includes("Sterling")) {
-            gen4Forms.pop()
-        }
+        // if (TITLE.includes("Sterling")) {
+        //     gen4Forms.pop()
+        // }
       
         for (i in gen4Forms) {
             var base = gen4Forms[i][0]
