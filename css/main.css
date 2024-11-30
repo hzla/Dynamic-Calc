@@ -841,7 +841,7 @@ table td {
 .info-group.info-selectors {
     position: absolute;
     right: 0;
-    top: 235px;
+    top: 240px;
     max-width: calc(100% - 390px);
 }
 
