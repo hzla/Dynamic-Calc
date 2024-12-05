@@ -63,7 +63,36 @@ moveChanges = {
 		"X-scissor":        "X-Scissor",
 		"Faint Attack": "Feint Attack"},
 
-	"Sterling Silver": 
+	"Sterling Silver 1.14": 
+    {
+        "Defend Order": "HP Bug",
+        "Dark Void": "HP Dark",
+        "Twister": "HP Dragon",
+        "Thunder Shock": "HP Electric",
+        "Submission": "HP Fighting",
+        "Ember": "HP Fire",
+        "Feather Dance": "HP Flying",
+        "Astonish": "HP Ghost",
+        "Vine Whip": "HP Grass",
+        "Mud Sport": "HP Ground",
+        "Powder Snow": "HP Ice",
+        "Pound": "HP Normal",
+        "Sludge": "HP Poison",
+        "Psywave": "HP Psychic",
+        "Rock Throw": "HP Rock",
+        "Iron Defense": "HP Steel",
+        "Water Sport": "HP Water",
+        "Charge Beam": "Volt Switch",
+        "Gust": "Hurricane",
+        "Magnitude": "Bulldoze",
+        "Horn Drill": "Drill Run",
+        "Spider Web": "Electroweb",
+        "Slam": "Night Daze",
+        "Fury Swipes": "Dual Chop",
+        "Rollout": "Accelerock",
+        "Fissure": "Headlong Rush"
+    },
+    "Sterling Silver 1.15": 
     {
         "Defend Order": "HP Bug",
         "Dark Void": "HP Dark",
