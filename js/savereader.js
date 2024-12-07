@@ -907,7 +907,7 @@ function bedtime() {
 function updateBattleStat(battleStat, speciesName, batch=false) {
     var level = 1
     if (!batch) {
-        level = parseInt($('#levelL1').val())      
+        level = parseInt($('#levelL1').val()) - 1      
     } else {
         level = desiredLevel - 1
     }
@@ -916,11 +916,6 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
 
     const currentHp = parseInt($('#currentHpL1').val())
         
-
-
-    level = 30
-    speciesName = 'Kingler'
-
     var set = customSets[speciesName]["My Box"]
     var pokeinfo = pokedex[speciesName]
 
@@ -932,9 +927,6 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level)
     const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp, level)
 
-
-    console.log(level)
-    console.log([hp,at,df,sa,sp,sd])
 
     const status = $('#statusL1').val()
 
