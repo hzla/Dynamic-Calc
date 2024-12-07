@@ -49,9 +49,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
             changelog = "<h4>Changelog:</h4>"
             changelog += `<p>${saveFileName} loaded</p>`
-
-
-
             if ($('#changelog').length == 0) {
                $('#clearSets').after("<p id='changelog'></p>") 
             }
@@ -85,11 +82,9 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 }
             }
 
-
             // Step 1: Get 'n' from offset 0x9C (single byte)
             var n = view[partyCountOffset];
             partyCount = n
-
 
             // Initialize an array to store decrypted chunks
             decryptedChunks = [];
@@ -97,9 +92,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
             partyMons = {}
             partyPIDs = []
 
-            // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk
-            
-            
+            // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk       
             CHUNK_SIZE = partyPokSize
             var offset = partyCountOffset + 4;
             
@@ -125,9 +118,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
             }
 
             boxPokOffsets = {}
-
             savBox = []
-
 
             for (let i = 0; i < n; i++) {
                 // Extract the chunk of 236 bytes from the binary data
@@ -174,7 +165,6 @@ function setBWChecksums() {
     view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], 0x18e00 + partySize + 2)
     view.set([partyChecksum & 0xFF, (partyChecksum >>> 8) & 0xFF], checksumsOffset + 52)
 
-
     // set checksum table
     checksumsChecksum = getCheckSum(view.slice(0x23F00, 0x23F00 + 0x8C))
     view.set([checksumsChecksum & 0xFF, (checksumsChecksum >>> 8) & 0xFF], 0x23F9A)
@@ -189,12 +179,10 @@ function decryptData(encryptedData, checksum, wordCount=64) {
         // Advance the PRNG state
         X = (BigInt(BigInt(0x41C64E6D) * BigInt(X)) + BigInt(0x6073)); 
 
-
         // Extract the top 16 bits for XOR
         prngValue = parseInt(BigInt(X) >> BigInt(16) & BigInt(0XFFFF))
 
         // Decrypt by reversing the XOR operation
-
         const decryptedWord = encryptedData[i] ^ prngValue;
         // Store decrypted word
         decryptedData.push(decryptedWord);
@@ -223,7 +211,6 @@ function toLittleEndian(value) {
     return littleEndianValue;
 }
 
-
 function parsePKM(chunk, is_party=false, offset=0) {
 
     var showdownString = ""
@@ -247,7 +234,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
     chunk = chunk.slice(8,136)
 
 
-
     // Convert chunk to array of 16-bit words (2-byte integers) for decryption
     const encryptedData = [];
     for (let j = 0; j < 128; j += 2) {
@@ -268,7 +254,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
         decryptedBattleStats.push(decryptedBattleStat)
     }
     
-
     // Store decrypted chunk
     decryptedChunks.push(decryptedData);
     
@@ -276,9 +261,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var move_data_offset = shiftOrder.indexOf(1) * 16
 
     var mon_name = sav_pok_names[decryptedData[mon_data_offset]]
-
-
-
 
     if (mon_name in mon_forms) {
         var form_index = (decryptedData[move_data_offset + 12] >> 3 & 0x1F) - 1 
@@ -295,7 +277,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var atk_ev = decryptedData[mon_data_offset + 8] >> 8 & 0xFF
     var spe_ev = decryptedData[mon_data_offset + 9] >> 8 & 0xFF
     var spd_ev = decryptedData[mon_data_offset + 10] >> 8 & 0xFF
-
     
     // dev functions
     if (devMode) {
@@ -303,11 +284,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
         decryptedData[move_data_offset + 9] = 16383          
     }
 
-
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
-
-
-
     ivs = getIVs(iv_value) 
 
     if (baseGame != "BW") {
@@ -316,8 +293,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
         var natureIndex = decryptedData[move_data_offset + 12] >> 8  
         var nature = natures[natureIndex]
     }
-
-    
 
     if (is_party) {
         partyMons[mon_name] = decryptedBattleStats.length - 1
@@ -339,8 +314,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
 
     showdownString += `${mon_name} @ ${item_name}\n`
-
-
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
     var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]
@@ -444,8 +417,6 @@ function getPKMNCheckSum(array) {
     return sum & 0xFFFF; 
 }
 
-
-
 function updateBoxPKMN(edge=false) {
     var selected = $('.set-selector')[0].value.split("(")[0].trim()
     var level = parseInt($('#levelL1').val())
@@ -502,8 +473,6 @@ function updateBoxPKMN(edge=false) {
         reverseMoveChanges = {}
     }
 
-    
-
     for (let moveID = 0;moveID<4;moveID++) {
         var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
 
@@ -532,7 +501,7 @@ function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
     if (edge) {
         // get target exp from exp tables
         var desiredExp = expTable[level] - 1   
-        changelog += `<p>${speciesName} edged to level ${level}</p>`    
+        changelog += `<p>Edged to level ${level}</p>`    
     } else {
         var desiredExp = expTable[level]
     }
@@ -596,13 +565,11 @@ function updatePKMNProps(decryptedData, expIndex, movesIndex) {
     return decryptedData
 }
 
-
-
 // updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
 // partyIndex is set when this function is called from running the batch edge function, otherwise will be false
 function updatePartyPKMN(edge=false, speciesNameOverride=false) {
     var partyOffset = partyCountOffset + 4
-    const speciesName = speciesNameOverride || $('.set-selector')[0].value.split("(")[0].trim()
+    speciesName = speciesNameOverride || $('.set-selector')[0].value.split("(")[0].trim()
 
     if (!partyIndex) {
         var partyIndex = partyMons[speciesName]
@@ -623,73 +590,10 @@ function updatePartyPKMN(edge=false, speciesNameOverride=false) {
 
     savParty[partyIndex] = updatePKMNLevel(savParty[partyIndex], partyExpIndexes[partyIndex], expTables[partyExpTables[partyIndex]], level, edge)
 
-    // if (edge) {
-    //     // edge exp  
-    //     // get target exp from exp tables
-    //     var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1   
-    //     changelog += `<p>Party ${speciesName} edged to level ${level}</p>`    
-    // } else {
-    //     var desiredExp = expTables[partyExpTables[partyIndex]][level] 
-    // }
-
-    // // write the new exp to the pokemon data 
-    // savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
-    // savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
-    
-
     decryptedData = savParty[partyIndex]
     if (!speciesNameOverride) {
         
         decryptedData = updatePKMNProps(savParty[partyIndex], partyExpIndexes[partyIndex], partyMovesIndexes[partyIndex])
-       //  // write item 
-       //  var item_index = sav_item_names.indexOf($('#itemL1').val())
-       //  if (item_index > -1) {
-       //      savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
-       //  }
-
-       //  // write EVs      
-       //  var hp_ev  = parseInt($('#p1').find('.hp .evs').val())
-       //  var df_ev = parseInt($('#p1').find('.df .evs').val())
-       //  var sa_ev = parseInt($('#p1').find('.sa .evs').val())
-       //  var at_ev = parseInt($('#p1').find('.at .evs').val()) 
-       //  var sp_ev = parseInt($('#p1').find('.sp .evs').val()) 
-       //  var spd_ev = parseInt($('#p1').find('.spd .evs').val()) 
-
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 4] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 4] & 0xFF00) | hp_ev
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 5] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 5] & 0xFF00) | df_ev
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 6] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 6] & 0xFF00) | sa_ev
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 4] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 4] & 0xFF) | (at_ev << 8)
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 5] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 5] & 0xFF) | (sp_ev << 8)
-       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 6] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 6] & 0xFF) | (spd_ev << 8)
-
-
-       //  // max friendship
-       // savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
-
-       //  // write moves
-       //  // swap move replacements
-
-       //  if (typeof moveChanges[TITLE] != "undefined") {
-       //      var reverseMoveChanges = Object.fromEntries(
-       //    Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
-       //  );
-       //  } else {
-       //      var reverseMoveChanges = {}
-       //  }
-
-       //  for (let moveID = 0;moveID<4;moveID++) {
-       //      var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
-
-       //      // swap move back to original for rom hacks
-       //      if (reverseMoveChanges[move_name]) {
-       //          move_name = reverseMoveChanges[move_name]
-       //      }
-
-       //      var move_index = sav_move_names.indexOf(move_name)
-       //      if (move_index > -1) {
-       //          savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
-       //      }
-       //  }
     }
     
 
@@ -801,7 +705,6 @@ function maxAll() {
     setBigBlockCheckSum()
     setSmallBlockChecksum()   
     addSaveBtn()
-
 }
 
 function setBigBlockCheckSum() {
@@ -815,7 +718,6 @@ function addSaveBtn() {
     $('#download-sav').remove()
     $('#read-save').after(`<button id="download-sav" class="bs-btn bs-btn-default" onClick='downloadSave()'>Download .sav</button>`)
 }
-
 
 function encryptData(decryptedData, checksum, wordCount=64) {
     const encryptedData = [];
@@ -857,7 +759,6 @@ function downloadSave() {
     if (baseGame == "BW") {
         setBWChecksums()
     }
-
     const blob = new Blob([view], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -897,11 +798,10 @@ function bedtime() {
         view.set(uint8PokArray, partyCountOffset + 4 + (i * partyPokSize) + 136)
     }
 
-    changelog += `<p>Full Party set to 1 turn sleep </p>`
+    changelog += `<p>Party set to 1 turn sleep</p>`
     $('#changelog').html(changelog)
     setSmallBlockChecksum()   
     addSaveBtn()
-
 }
 
 function updateBattleStat(battleStat, speciesName, batch=false) {
@@ -912,26 +812,23 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
         level = desiredLevel - 1
     }
 
-
-
     const currentHp = parseInt($('#currentHpL1').val())
         
     var set = customSets[speciesName]["My Box"]
     var pokeinfo = pokedex[speciesName]
 
         
-    const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'hp', pokeinfo.bs.hp, set.ivs.hp, set.evs.hp, level)
-    const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
-    const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
-    const sa = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spa', pokeinfo.bs.sa, set.ivs.sa, set.evs.sa,level)
-    const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level)
-    const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp, level)
-
+    const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level)
+    const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
+    const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
+    const sa = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spa', pokeinfo.bs.sa, set.ivs.sa, set.evs.sa,level)
+    const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level)
+    const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp,level)
 
     const status = $('#statusL1').val()
 
     battleStat[2] = level
-    
+    battleStat[3] = hp
     battleStat[4] = hp
     battleStat[5] = at
     battleStat[6] = df
@@ -972,21 +869,7 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
             }
         }
     }
-
     return battleStat
-}
-
-function setSelectedAsParty() {
-    var selected = getSelectedPoks()
-
-    if (selected.length > 6) {
-        alert("Too many selected")
-        return
-    }
-
-    // for each selected
-
-
 }
 
 function getStat(mods, stat, base, iv, ev, level) {
@@ -1011,32 +894,5 @@ function getStat(mods, stat, base, iv, ev, level) {
         }
     };
 
-natMods = {
-  Hardy: { plus: 'atk', minus: 'atk' },
-  Lonely: { plus: 'atk', minus: 'def' },
-  Brave: { plus: 'atk', minus: 'spe' },
-  Adamant: { plus: 'atk', minus: 'spa' },
-  Naughty: { plus: 'atk', minus: 'spd' },
-  Bold: { plus: 'def', minus: 'atk' },
-  Docile: { plus: 'atk', minus: 'atk' },
-  Relaxed: { plus: 'def', minus: 'spe' },
-  Impish: { plus: 'def', minus: 'spa' },
-  Lax: { plus: 'def', minus: 'spd' },
-  Timid: { plus: 'spe', minus: 'atk' },
-  Hasty: { plus: 'spe', minus: 'def' },
-  Serious: { plus: 'atk', minus: 'atk' },
-  Jolly: { plus: 'spe', minus: 'spa' },
-  Naive: { plus: 'spe', minus: 'spd' },
-  Modest: { plus: 'spa', minus: 'atk' },
-  Mild: { plus: 'spa', minus: 'def' },
-  Quiet: { plus: 'spa', minus: 'spe' },
-  Bashful: { plus: 'atk', minus: 'atk' },
-  Rash: { plus: 'spa', minus: 'spd' },
-  Calm: { plus: 'spd', minus: 'atk' },
-  Gentle: { plus: 'spd', minus: 'def' },
-  Sassy: { plus: 'spd', minus: 'spe' },
-  Careful: { plus: 'spd', minus: 'spa' },
-  Quirky: { plus: 'atk', minus: 'atk' }
-};
 
 
