@@ -1,3 +1,8 @@
+
+$('#read-save').click(function(){
+    $('#save-upload')[0].value = null
+})
+
 document.getElementById('save-upload').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
@@ -43,7 +48,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
             changelog = "<h4>Changelog:</h4>"
 
-            $('#clearSets').after("<p id='changelog'></p>")
+
+            if ($('#changelog').length == 0) {
+               $('#clearSets').after("<p id='changelog'></p>") 
+            }
             console.log("reader init")
 
             partyExpTables = []
@@ -440,20 +448,20 @@ function updateBoxPKMN(edge=false) {
     var level = parseInt($('#levelL1').val())
 
      
-     edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update level/items/moves")
+     // edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update level/items/moves")
      var boxPokData = boxPokOffsets[selected]
      var decryptedData = boxPokData["decryptedData"]
      
-    
+    var expTable = expTables[boxPokData["exp_table"]]
+    var desiredExp = expTable[level - 1] 
+
     // edge exp
     if (edge) {     
-        var expTable = expTables[boxPokData["exp_table"]]
-        var desiredExp = expTable[level - 1] - 1
-        
-        decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
-        decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
+        desiredExp -= 1
         changelog += `<p>${selected} edged to level ${level}</p>`
-    }
+    } 
+    decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
+    decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
 
     // max friendship
     decryptedData[boxPokData["exp_index"] + 2] = ( decryptedData[boxPokData["exp_index"] + 2] & 0xFF00) | 255
@@ -496,6 +504,7 @@ function updateBoxPKMN(edge=false) {
     addSaveBtn()
 
     changelog += `<p>${selected} updated</p>`
+    $('#changelog').html(changelog)
      
 }
 
@@ -503,7 +512,7 @@ function updateBoxPKMN(edge=false) {
 function edgeSelected(maxIVs=false) {
     var selected = getSelectedPoks()
 
-    var level = parseInt(prompt("Edge selection to level: "))
+    desiredLevel = parseInt(prompt("Edge selection to level: "))
 
     if (selected.length == 0) {
         alert("Nothing selected")
@@ -511,20 +520,23 @@ function edgeSelected(maxIVs=false) {
     }
 
     for (let i = 0;i < selected.length; i++) {
+        
+        // if not found in party
         if (!boxPokOffsets[selected[i]]) {
-            alert(`${selected[i]} not found in PC, batch edging only available for PC pokemon, party pokemon can be edged individually by selecting pokemon and clicking Save`)
-            return
+            console.log(`${selected[i]} not found in PC, edging in party instead`)
+            updatePartyPKMN(true, selected[i])
+            continue
         }
 
         var boxPokData = boxPokOffsets[selected[i]]
         var expTable = expTables[boxPokData["exp_table"]]
-        var desiredExp = expTable[level - 1] - 1
+        var desiredExp = expTable[desiredLevel - 1] - 1
 
         var decryptedData = boxPokData["decryptedData"]
         decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
         setBoxPokCheckSum(decryptedData, boxPokData)
-        changelog += `<p>${selected[i]} edged to level ${level}</p>`
+        changelog += `<p>${selected[i]} edged to level ${desiredLevel}</p>`
     }
 
     setBigBlockCheckSum()
@@ -533,11 +545,20 @@ function edgeSelected(maxIVs=false) {
     $('#changelog').html(changelog)
 }
 
-// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
-function updatePartyPKMN(edge=false) {
-    var partyOffset = partyCountOffset + 4
 
-    const partyIndex = partyMons[$('.set-selector')[0].value.split("(")[0].trim()]
+
+// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
+// partyIndex is set when this function is called from running the batch edge function, otherwise will be false
+function updatePartyPKMN(edge=false, speciesNameOverride=false) {
+    var partyOffset = partyCountOffset + 4
+    const speciesName = speciesNameOverride || $('.set-selector')[0].value.split("(")[0].trim()
+
+    if (!partyIndex) {
+        var partyIndex = partyMons[speciesName]
+    } else {
+       
+    }
+    
     
     // search box if not in party
     if (typeof partyIndex === 'undefined') {
@@ -546,58 +567,61 @@ function updatePartyPKMN(edge=false) {
 
 
     const decryptedBattleStat = decryptedBattleStats[partyIndex]
-    const updatedBattleStat = updateBattleStat(decryptedBattleStat)
+    const updatedBattleStat = updateBattleStat(decryptedBattleStat, speciesName, speciesNameOverride != false)
     const level = decryptedBattleStat[2] 
 
 
-    edge = confirm("Would you like to edge exp to max as well? Clicking cancel will only update level/hp/status/items/moves")
     if (edge) {
-        // edge exp
-        
+        // edge exp  
         // get target exp from exp tables
-        var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1
-
-        // write the new exp to the pokemon data 
-        savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
-        savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
-        changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} edged</p>` 
-    }
-
-    // write item 
-    var item_index = sav_item_names.indexOf($('#itemL1').val())
-    if (item_index > -1) {
-        savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
-    }
-
-    // max friendship
-   savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
-
-    // write moves
-    // swap move replacements
-
-    if (typeof moveChanges[TITLE] != "undefined") {
-        var reverseMoveChanges = Object.fromEntries(
-      Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
-    );
+        var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1   
+        changelog += `<p>Party ${speciesName} edged to level ${level}</p>`    
     } else {
-        var reverseMoveChanges = {}
+        var desiredExp = expTables[partyExpTables[partyIndex]][level] 
     }
 
+    // write the new exp to the pokemon data 
+    savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
+    savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
     
 
-    for (let moveID = 0;moveID<4;moveID++) {
-        var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
 
-        // swap move back to original for rom hacks
-        if (reverseMoveChanges[move_name]) {
-            move_name = reverseMoveChanges[move_name]
+    if (!speciesNameOverride) {
+        // write item 
+        var item_index = sav_item_names.indexOf($('#itemL1').val())
+        if (item_index > -1) {
+            savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
         }
 
-        var move_index = sav_move_names.indexOf(move_name)
-        if (move_index > -1) {
-            savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
+        // max friendship
+       savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
+
+        // write moves
+        // swap move replacements
+
+        if (typeof moveChanges[TITLE] != "undefined") {
+            var reverseMoveChanges = Object.fromEntries(
+          Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+        );
+        } else {
+            var reverseMoveChanges = {}
+        }
+
+        for (let moveID = 0;moveID<4;moveID++) {
+            var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
+
+            // swap move back to original for rom hacks
+            if (reverseMoveChanges[move_name]) {
+                move_name = reverseMoveChanges[move_name]
+            }
+
+            var move_index = sav_move_names.indexOf(move_name)
+            if (move_index > -1) {
+                savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
+            }
         }
     }
+    
 
     // write checksum for main pkmn data
     setPartyPokCheckSum(partyIndex)
@@ -608,7 +632,7 @@ function updatePartyPKMN(edge=false) {
     uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
     view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
 
-    changelog += `<p>Party ${$('.set-selector')[0].value.split("(")[0].trim()} updated</p>`
+    changelog += `<p>Party ${speciesName} stats updated</p>`
     $('#changelog').html(changelog)
 
 
@@ -771,67 +795,86 @@ function bedtime() {
 
 }
 
-function updateBattleStat(battleStat, onlySleep=false) {
-    const level = parseInt($('#levelL1').val())
-    const currentHp = parseInt($('#currentHpL1').val())
+function updateBattleStat(battleStat, speciesName, batch=false) {
+    var level = 1
+    if (!batch) {
+        level = parseInt($('#levelL1').val()) - 1       
+    } else {
+        level = desiredLevel - 1
+    }
 
-    var monStats = $('tbody span.total') 
+    const currentHp = parseInt($('#currentHpL1').val())
+    
+
+    var set = customSets[speciesName]["My Box"]
+    var pokeinfo = pokedex[speciesName]
         
-    const hp = parseInt(monStats[0].innerHTML)
-    const ata = parseInt(monStats[1].innerHTML)
-    const def = parseInt(monStats[2].innerHTML)
-    const spa = parseInt(monStats[3].innerHTML)
-    const spd = parseInt(monStats[4].innerHTML)
-    const spe = parseInt(monStats[6].innerHTML)
+    const hp = calc.calcStat(damageGen, "hp", pokeinfo.bs.hp, set.ivs.hp , set.evs.hp, level, set.nature)
+    const at = calc.calcStat(damageGen, "at", pokeinfo.bs.at, set.ivs.at , set.evs.at, level, set.nature)
+    const df = calc.calcStat(damageGen, "df", pokeinfo.bs.df, set.ivs.df , set.evs.df, level, set.nature)
+    const sa = calc.calcStat(damageGen, "sa", pokeinfo.bs.sa, set.ivs.sa , set.evs.sa, level, set.nature)
+    const sd = calc.calcStat(damageGen, "sd", pokeinfo.bs.sd, set.ivs.sd , set.evs.sd, level, set.nature)
+    const se = calc.calcStat(damageGen, "se", pokeinfo.bs.se, set.ivs.se , set.evs.se, level, set.nature)
 
     const status = $('#statusL1').val()
-    const newLevel = level
 
-    battleStat[2] = newLevel
-    battleStat[3] = currentHp
+    battleStat[2] = level
+    
     battleStat[4] = hp
-    battleStat[5] = ata
-    battleStat[6] = def
-    battleStat[7] = spe
-    battleStat[8] = spa
-    battleStat[9] = spd
+    battleStat[5] = at
+    battleStat[6] = df
+    battleStat[7] = se
+    battleStat[8] = sa
+    battleStat[9] = sd
 
-    if (baseGame != "BW") {
-        if (status == "Poisoned") {
-            battleStat[0] = 0 | (1 << 3)
-        } else if (status == "Asleep") {
-            battleStat[0] = 1
-        } else if (status == "Burned") {
-            battleStat[0] = 0 | (1 << 4)   
-        } else if (status == "Paralyzed") {
-            battleStat[0] = 0| (1 << 6)   
-        } else if (status == "Frozen") {
-            battleStat[0] = 0 | (1 << 5)   
-        } else if (status == "Badly Poisoned") {
-            battleStat[0] = 0 | (1 << 7)   
-        }
-    } else {
-        if (status == "Poisoned") {
-            battleStat[0] = 5
-        } else if (status == "Asleep") {
-            battleStat[0] = 2
-        } else if (status == "Burned") {
-            battleStat[0] = 4  
-        } else if (status == "Paralyzed") {
-            battleStat[0] = 1 
-        } else if (status == "Frozen") {
-            battleStat[0] = 3 
-        } else if (status == "Badly Poisoned") {
-            battleStat[0] = 6
+    // only edit current hp and status if manually editing
+    if (!batch) {
+        battleStat[3] = currentHp  
+        if (baseGame != "BW") {
+            if (status == "Poisoned") {
+                battleStat[0] = 0 | (1 << 3)
+            } else if (status == "Asleep") {
+                battleStat[0] = 1
+            } else if (status == "Burned") {
+                battleStat[0] = 0 | (1 << 4)   
+            } else if (status == "Paralyzed") {
+                battleStat[0] = 0| (1 << 6)   
+            } else if (status == "Frozen") {
+                battleStat[0] = 0 | (1 << 5)   
+            } else if (status == "Badly Poisoned") {
+                battleStat[0] = 0 | (1 << 7)   
+            }
+        } else {
+            if (status == "Poisoned") {
+                battleStat[0] = 5
+            } else if (status == "Asleep") {
+                battleStat[0] = 2
+            } else if (status == "Burned") {
+                battleStat[0] = 4  
+            } else if (status == "Paralyzed") {
+                battleStat[0] = 1 
+            } else if (status == "Frozen") {
+                battleStat[0] = 3 
+            } else if (status == "Badly Poisoned") {
+                battleStat[0] = 6
+            }
         }
     }
+
     return battleStat
 }
 
 function setSelectedAsParty() {
     var selected = getSelectedPoks()
 
-    // loop thru selected
+    if (selected.length > 6) {
+        alert("Too many selected")
+        return
+    }
+
+    // for each selected
+
+
 }
 
 

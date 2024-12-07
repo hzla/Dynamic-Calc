@@ -1,0 +1,7 @@
+Save Testing Checklist
+
+Can edge a selection of party and non party pokemon
+Can save a party pokemon moves/items/current hp/status/level
+Can save a box pokemon moves/items/level
+
+Boxing pokemon shouldn't affect stats

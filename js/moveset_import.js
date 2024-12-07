@@ -554,7 +554,6 @@ function getStats(currentPoke, rows, offset) {
 		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
 		if (currentAbility[0] == "Ability") {
 			currentPoke.ability = currentAbility[1].trim();
-			console.log(currentPoke.ability)
 			if (abilityChanges[TITLE] && abilityChanges[TITLE][currentPoke.ability]) {
 				currentPoke.ability = abilityChanges[TITLE][currentPoke.ability]
 			}
@@ -575,7 +574,6 @@ function isInt(value) {
 }
 
 function getItem(currentRow, j) {
-	console.log(currentRow)
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
 		item = item.replace("’", "'");
