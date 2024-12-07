@@ -7,7 +7,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        savExt = $('#save-upload').val().slice(-3)
+        saveFileName = $('#save-upload').val().split("\\").pop()
+        savExt = saveFileName.slice(-3)
 
         if (baseGame == "Pt") {
             partyCountOffset = 0x9C
@@ -47,13 +48,15 @@ document.getElementById('save-upload').addEventListener('change', function(event
             }
 
             changelog = "<h4>Changelog:</h4>"
+            changelog += `<p>${saveFileName} loaded</p>`
+
 
 
             if ($('#changelog').length == 0) {
                $('#clearSets').after("<p id='changelog'></p>") 
             }
-            console.log("reader init")
-
+            $('#changelog').html(changelog).show()
+            
             partyExpTables = []
             partyExpIndexes = []
             partyMovesIndexes = []
@@ -232,9 +235,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
         return ""
     }
 
-    
-
-
     // Perform the function on pv: ((pv & 0x3E000) >> 0xD) % 24
     const shiftValue = ((pv & 0x3E000) >> 0xD) % 24;
 
@@ -297,9 +297,12 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var spd_ev = decryptedData[mon_data_offset + 10] >> 8 & 0xFF
 
     
-    // cheat mode
-    // decryptedData[move_data_offset + 8] = 65535  
-    // decryptedData[move_data_offset + 9] = 16383  
+    // dev functions
+    if (devMode) {
+        decryptedData[move_data_offset + 8] = 65535  
+        decryptedData[move_data_offset + 9] = 16383          
+    }
+
 
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
 
@@ -473,6 +476,22 @@ function updateBoxPKMN(edge=false) {
         decryptedData[boxPokData["exp_index"]  - 3] = item_index
     }
 
+    // write EVs      
+    var hp_ev  = parseInt($('#p1').find('.hp .evs').val())
+    var df_ev = parseInt($('#p1').find('.df .evs').val())
+    var sa_ev = parseInt($('#p1').find('.sa .evs').val())
+    var at_ev = parseInt($('#p1').find('.at .evs').val()) 
+    var sp_ev = parseInt($('#p1').find('.sp .evs').val()) 
+    var spd_ev = parseInt($('#p1').find('.spd .evs').val()) 
+
+    decryptedData[boxPokData["exp_index"] + 4] = (decryptedData[boxPokData["exp_index"] + 4] & 0xFF00) | hp_ev
+    decryptedData[boxPokData["exp_index"] + 5] = (decryptedData[boxPokData["exp_index"] + 5] & 0xFF00) | df_ev
+    decryptedData[boxPokData["exp_index"] + 6] = (decryptedData[boxPokData["exp_index"] + 6] & 0xFF00) | sa_ev
+    decryptedData[boxPokData["exp_index"] + 4] = (decryptedData[boxPokData["exp_index"] + 4] & 0xFF) | (at_ev << 8)
+    decryptedData[boxPokData["exp_index"] + 5] = (decryptedData[boxPokData["exp_index"] + 5] & 0xFF) | (sp_ev << 8)
+    decryptedData[boxPokData["exp_index"] + 6] = (decryptedData[boxPokData["exp_index"] + 6] & 0xFF) | (spd_ev << 8)
+
+
     //write moves 
 
     if (moveChanges[TITLE]) {
@@ -509,6 +528,194 @@ function updateBoxPKMN(edge=false) {
 }
 
 
+function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
+    if (edge) {
+        // get target exp from exp tables
+        var desiredExp = expTable[level] - 1   
+        changelog += `<p>${speciesName} edged to level ${level}</p>`    
+    } else {
+        var desiredExp = expTable[level]
+    }
+
+    // write the new exp to the pokemon data 
+    decryptedData[expIndex] = desiredExp & 0xFFFF
+    decryptedData[expIndex + 1] = (desiredExp >>> 16) & 0xFFFF  
+
+    return decryptedData    
+}
+
+function updatePKMNProps(decryptedData, expIndex, movesIndex) {
+     // write item 
+    var item_index = sav_item_names.indexOf($('#itemL1').val())
+    if (item_index > -1) {
+        decryptedData[expIndex - 3] = item_index
+    }
+
+     // write EVs      
+    var hp_ev  = parseInt($('#p1').find('.hp .evs').val())
+    var df_ev = parseInt($('#p1').find('.df .evs').val())
+    var sa_ev = parseInt($('#p1').find('.sa .evs').val())
+    var at_ev = parseInt($('#p1').find('.at .evs').val()) 
+    var sp_ev = parseInt($('#p1').find('.sp .evs').val()) 
+    var spd_ev = parseInt($('#p1').find('.spd .evs').val()) 
+
+    decryptedData[expIndex + 4] = (decryptedData[expIndex + 4] & 0xFF00) | hp_ev
+    decryptedData[expIndex + 5] = (decryptedData[expIndex + 5] & 0xFF00) | df_ev
+    decryptedData[expIndex + 6] = (decryptedData[expIndex + 6] & 0xFF00) | sa_ev
+    decryptedData[expIndex + 4] = (decryptedData[expIndex + 4] & 0xFF) | (at_ev << 8)
+    decryptedData[expIndex + 5] = (decryptedData[expIndex + 5] & 0xFF) | (sp_ev << 8)
+    decryptedData[expIndex + 6] = (decryptedData[expIndex + 6] & 0xFF) | (spd_ev << 8)
+
+    // max friendship
+    decryptedData[expIndex + 2] = ( decryptedData[expIndex + 2] & 0xFF00) | 255
+
+     // write moves
+    // swap move replacements
+
+    if (typeof moveChanges[TITLE] != "undefined") {
+        var reverseMoveChanges = Object.fromEntries(
+        Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+    );
+    } else {
+        var reverseMoveChanges = {}
+    }
+
+    for (let moveID = 0;moveID<4;moveID++) {
+        var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
+
+        // swap move back to original for rom hacks
+        if (reverseMoveChanges[move_name]) {
+            move_name = reverseMoveChanges[move_name]
+        }
+
+        var move_index = sav_move_names.indexOf(move_name)
+        if (move_index > -1) {
+            decryptedData[movesIndex + moveID] = move_index
+        }
+    }
+    return decryptedData
+}
+
+
+
+// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
+// partyIndex is set when this function is called from running the batch edge function, otherwise will be false
+function updatePartyPKMN(edge=false, speciesNameOverride=false) {
+    var partyOffset = partyCountOffset + 4
+    const speciesName = speciesNameOverride || $('.set-selector')[0].value.split("(")[0].trim()
+
+    if (!partyIndex) {
+        var partyIndex = partyMons[speciesName]
+    } else {
+       
+    }
+    
+    
+    // search box if not in party
+    if (typeof partyIndex === 'undefined') {
+        return updateBoxPKMN(edge)
+    }
+
+    const decryptedBattleStat = decryptedBattleStats[partyIndex]
+    const updatedBattleStat = updateBattleStat(decryptedBattleStat, speciesName, speciesNameOverride != false)
+    const level = decryptedBattleStat[2] 
+
+
+    savParty[partyIndex] = updatePKMNLevel(savParty[partyIndex], partyExpIndexes[partyIndex], expTables[partyExpTables[partyIndex]], level, edge)
+
+    // if (edge) {
+    //     // edge exp  
+    //     // get target exp from exp tables
+    //     var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1   
+    //     changelog += `<p>Party ${speciesName} edged to level ${level}</p>`    
+    // } else {
+    //     var desiredExp = expTables[partyExpTables[partyIndex]][level] 
+    // }
+
+    // // write the new exp to the pokemon data 
+    // savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
+    // savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
+    
+
+    decryptedData = savParty[partyIndex]
+    if (!speciesNameOverride) {
+        
+        decryptedData = updatePKMNProps(savParty[partyIndex], partyExpIndexes[partyIndex], partyMovesIndexes[partyIndex])
+       //  // write item 
+       //  var item_index = sav_item_names.indexOf($('#itemL1').val())
+       //  if (item_index > -1) {
+       //      savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
+       //  }
+
+       //  // write EVs      
+       //  var hp_ev  = parseInt($('#p1').find('.hp .evs').val())
+       //  var df_ev = parseInt($('#p1').find('.df .evs').val())
+       //  var sa_ev = parseInt($('#p1').find('.sa .evs').val())
+       //  var at_ev = parseInt($('#p1').find('.at .evs').val()) 
+       //  var sp_ev = parseInt($('#p1').find('.sp .evs').val()) 
+       //  var spd_ev = parseInt($('#p1').find('.spd .evs').val()) 
+
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 4] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 4] & 0xFF00) | hp_ev
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 5] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 5] & 0xFF00) | df_ev
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 6] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 6] & 0xFF00) | sa_ev
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 4] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 4] & 0xFF) | (at_ev << 8)
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 5] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 5] & 0xFF) | (sp_ev << 8)
+       //  savParty[partyIndex][partyExpIndexes[partyIndex] + 6] = (savParty[partyIndex][partyExpIndexes[partyIndex] + 6] & 0xFF) | (spd_ev << 8)
+
+
+       //  // max friendship
+       // savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
+
+       //  // write moves
+       //  // swap move replacements
+
+       //  if (typeof moveChanges[TITLE] != "undefined") {
+       //      var reverseMoveChanges = Object.fromEntries(
+       //    Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
+       //  );
+       //  } else {
+       //      var reverseMoveChanges = {}
+       //  }
+
+       //  for (let moveID = 0;moveID<4;moveID++) {
+       //      var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
+
+       //      // swap move back to original for rom hacks
+       //      if (reverseMoveChanges[move_name]) {
+       //          move_name = reverseMoveChanges[move_name]
+       //      }
+
+       //      var move_index = sav_move_names.indexOf(move_name)
+       //      if (move_index > -1) {
+       //          savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
+       //      }
+       //  }
+    }
+    
+
+    // write checksum for main pkmn data
+    setPartyPokCheckSum(partyIndex)
+    
+
+    // encrypt and write battle stats
+    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
+    uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
+    view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
+
+    changelog += `<p>Party ${speciesName} stats updated</p>`
+    $('#changelog').html(changelog)
+
+
+    setSmallBlockChecksum()   
+
+    addSaveBtn()
+}
+
+$('#edge').click(function() {
+    edgeSelected()
+})
+
+
 function edgeSelected(maxIVs=false) {
     var selected = getSelectedPoks()
 
@@ -535,6 +742,7 @@ function edgeSelected(maxIVs=false) {
         var decryptedData = boxPokData["decryptedData"]
         decryptedData[boxPokData["exp_index"]] = desiredExp & 0xFFFF
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
+
         setBoxPokCheckSum(decryptedData, boxPokData)
         changelog += `<p>${selected[i]} edged to level ${desiredLevel}</p>`
     }
@@ -545,105 +753,6 @@ function edgeSelected(maxIVs=false) {
     $('#changelog').html(changelog)
 }
 
-
-
-// updates the selected party pokemon with the battle stats displayed on showdown calc, and edges exp to max
-// partyIndex is set when this function is called from running the batch edge function, otherwise will be false
-function updatePartyPKMN(edge=false, speciesNameOverride=false) {
-    var partyOffset = partyCountOffset + 4
-    const speciesName = speciesNameOverride || $('.set-selector')[0].value.split("(")[0].trim()
-
-    if (!partyIndex) {
-        var partyIndex = partyMons[speciesName]
-    } else {
-       
-    }
-    
-    
-    // search box if not in party
-    if (typeof partyIndex === 'undefined') {
-        return updateBoxPKMN(edge)
-    }
-
-
-    const decryptedBattleStat = decryptedBattleStats[partyIndex]
-    const updatedBattleStat = updateBattleStat(decryptedBattleStat, speciesName, speciesNameOverride != false)
-    const level = decryptedBattleStat[2] 
-
-
-    if (edge) {
-        // edge exp  
-        // get target exp from exp tables
-        var desiredExp = expTables[partyExpTables[partyIndex]][level] - 1   
-        changelog += `<p>Party ${speciesName} edged to level ${level}</p>`    
-    } else {
-        var desiredExp = expTables[partyExpTables[partyIndex]][level] 
-    }
-
-    // write the new exp to the pokemon data 
-    savParty[partyIndex][partyExpIndexes[partyIndex]] = desiredExp & 0xFFFF
-    savParty[partyIndex][partyExpIndexes[partyIndex] + 1] = (desiredExp >>> 16) & 0xFFFF   
-    
-
-
-    if (!speciesNameOverride) {
-        // write item 
-        var item_index = sav_item_names.indexOf($('#itemL1').val())
-        if (item_index > -1) {
-            savParty[partyIndex][partyExpIndexes[partyIndex] - 3] = item_index
-        }
-
-        // max friendship
-       savParty[partyIndex][partyExpIndexes[partyIndex] + 2] = ( savParty[partyIndex][partyExpIndexes[partyIndex] + 2] & 0xFF00) | 255
-
-        // write moves
-        // swap move replacements
-
-        if (typeof moveChanges[TITLE] != "undefined") {
-            var reverseMoveChanges = Object.fromEntries(
-          Object.entries(moveChanges[TITLE]).map(([key, value]) => [value, key])
-        );
-        } else {
-            var reverseMoveChanges = {}
-        }
-
-        for (let moveID = 0;moveID<4;moveID++) {
-            var move_name = $(`.move${moveID + 1} .select2-container`).first().text().trim()
-
-            // swap move back to original for rom hacks
-            if (reverseMoveChanges[move_name]) {
-                move_name = reverseMoveChanges[move_name]
-            }
-
-            var move_index = sav_move_names.indexOf(move_name)
-            if (move_index > -1) {
-                savParty[partyIndex][partyMovesIndexes[partyIndex] + moveID] = move_index
-            }
-        }
-    }
-    
-
-    // write checksum for main pkmn data
-    setPartyPokCheckSum(partyIndex)
-    
-
-    // update battle stats
-    var encryptedBattleStat = encryptData(updatedBattleStat, partyPIDs[partyIndex], battleStatSize)
-    uint8PokArray = convert16BitWordsToUint8Array(encryptedBattleStat)
-    view.set(uint8PokArray, partyOffset + (partyIndex * partyPokSize) + 136)
-
-    changelog += `<p>Party ${speciesName} stats updated</p>`
-    $('#changelog').html(changelog)
-
-
-    setSmallBlockChecksum()   
-
-    addSaveBtn()
-}
-
-$('#edge').click(function() {
-    edgeSelected()
-})
 
 function setPartyPokCheckSum(partyIndex) {
     var newPartyPokCheckSum = getPKMNCheckSum(savParty[partyIndex])
@@ -798,23 +907,34 @@ function bedtime() {
 function updateBattleStat(battleStat, speciesName, batch=false) {
     var level = 1
     if (!batch) {
-        level = parseInt($('#levelL1').val()) - 1       
+        level = parseInt($('#levelL1').val())      
     } else {
         level = desiredLevel - 1
     }
 
+
+
     const currentHp = parseInt($('#currentHpL1').val())
-    
+        
+
+
+    level = 30
+    speciesName = 'Kingler'
 
     var set = customSets[speciesName]["My Box"]
     var pokeinfo = pokedex[speciesName]
+
         
-    const hp = calc.calcStat(damageGen, "hp", pokeinfo.bs.hp, set.ivs.hp , set.evs.hp, level, set.nature)
-    const at = calc.calcStat(damageGen, "at", pokeinfo.bs.at, set.ivs.at , set.evs.at, level, set.nature)
-    const df = calc.calcStat(damageGen, "df", pokeinfo.bs.df, set.ivs.df , set.evs.df, level, set.nature)
-    const sa = calc.calcStat(damageGen, "sa", pokeinfo.bs.sa, set.ivs.sa , set.evs.sa, level, set.nature)
-    const sd = calc.calcStat(damageGen, "sd", pokeinfo.bs.sd, set.ivs.sd , set.evs.sd, level, set.nature)
-    const se = calc.calcStat(damageGen, "se", pokeinfo.bs.se, set.ivs.se , set.evs.se, level, set.nature)
+    const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'hp', pokeinfo.bs.hp, set.ivs.hp, set.evs.hp, level)
+    const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
+    const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
+    const sa = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spa', pokeinfo.bs.sa, set.ivs.sa, set.evs.sa,level)
+    const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level)
+    const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus] , 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp, level)
+
+
+    console.log(level)
+    console.log([hp,at,df,sa,sp,sd])
 
     const status = $('#statusL1').val()
 
@@ -823,7 +943,7 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     battleStat[4] = hp
     battleStat[5] = at
     battleStat[6] = df
-    battleStat[7] = se
+    battleStat[7] = sp
     battleStat[8] = sa
     battleStat[9] = sd
 
@@ -877,5 +997,54 @@ function setSelectedAsParty() {
 
 }
 
+function getStat(mods, stat, base, iv, ev, level) {
+        if (!ev) {
+            ev = 0
+        }
+        if (stat === 'hp') {
+            return base === 1
+                ? base
+                : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
+        }
+        else {
+            console.log(mods)
+            var n = mods[0] === stat && mods[1] === stat
+                ? 1
+                : mods[0] === stat
+                    ? 1.1
+                    : mods[1] === stat
+                        ? 0.9
+                        : 1;
+            return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
+        }
+    };
+
+natMods = {
+  Hardy: { plus: 'atk', minus: 'atk' },
+  Lonely: { plus: 'atk', minus: 'def' },
+  Brave: { plus: 'atk', minus: 'spe' },
+  Adamant: { plus: 'atk', minus: 'spa' },
+  Naughty: { plus: 'atk', minus: 'spd' },
+  Bold: { plus: 'def', minus: 'atk' },
+  Docile: { plus: 'atk', minus: 'atk' },
+  Relaxed: { plus: 'def', minus: 'spe' },
+  Impish: { plus: 'def', minus: 'spa' },
+  Lax: { plus: 'def', minus: 'spd' },
+  Timid: { plus: 'spe', minus: 'atk' },
+  Hasty: { plus: 'spe', minus: 'def' },
+  Serious: { plus: 'atk', minus: 'atk' },
+  Jolly: { plus: 'spe', minus: 'spa' },
+  Naive: { plus: 'spe', minus: 'spd' },
+  Modest: { plus: 'spa', minus: 'atk' },
+  Mild: { plus: 'spa', minus: 'def' },
+  Quiet: { plus: 'spa', minus: 'spe' },
+  Bashful: { plus: 'atk', minus: 'atk' },
+  Rash: { plus: 'spa', minus: 'spd' },
+  Calm: { plus: 'spd', minus: 'atk' },
+  Gentle: { plus: 'spd', minus: 'def' },
+  Sassy: { plus: 'spd', minus: 'spe' },
+  Careful: { plus: 'spd', minus: 'spa' },
+  Quirky: { plus: 'atk', minus: 'atk' }
+};
 
 

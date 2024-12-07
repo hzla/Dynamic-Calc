@@ -2104,6 +2104,7 @@ function loadDataSource(data) {
 
 
 params = new URLSearchParams(window.location.search);
+devMode = params.get('dev') == '1'
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
 type_chart = parseInt(params.get('types'))

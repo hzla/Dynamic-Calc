@@ -94,14 +94,15 @@ exports.Stats = new ((function () {
         }
         return ivs;
     };
-    class_1.prototype.calcStat = function (gen, stat, base, iv, ev, level, nature) {
+    class_1.prototype.calcStat = function (gen, stat, base, iv, ev, level, nature, manual=null) {
         if (gen.num < 1 || gen.num > 8)
             throw new Error("Invalid generation ".concat(gen.num));
         if (gen.num < 3)
             return this.calcStatRBY(stat, base, iv, level);
-        return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature);
+        return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature, manual);
     };
-    class_1.prototype.calcStatADV = function (natures, stat, base, iv, ev, level, nature) {
+    class_1.prototype.calcStatADV = function (natures, stat, base, iv, ev, level, nature, manual=null) {
+
         if (stat === 'hp') {
             return base === 1
                 ? base
@@ -110,9 +111,15 @@ exports.Stats = new ((function () {
         else {
             var mods = [undefined, undefined];
             if (nature) {
+                
+                
+
                 var nat = natures.get((0, util_1.toID)(nature));
+
+
                 mods = [nat === null || nat === void 0 ? void 0 : nat.plus, nat === null || nat === void 0 ? void 0 : nat.minus];
-            }
+            } 
+
             var n = mods[0] === stat && mods[1] === stat
                 ? 1
                 : mods[0] === stat
