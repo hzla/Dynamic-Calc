@@ -501,7 +501,7 @@ function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
     if (edge) {
         // get target exp from exp tables
         var desiredExp = expTable[level] - 1   
-        changelog += `<p>Edged to level ${level}</p>`    
+        changelog += `<p>${speciesName} edged to level ${level + 1}</p>`    
     } else {
         var desiredExp = expTable[level]
     }
