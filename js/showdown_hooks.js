@@ -2622,6 +2622,8 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         get_box()
         box_rolls()
 
+        currentLvl = parseInt($('#levelL1').val())
+
         var right_max_hp = $("#p1 .max-hp").text()
         $("#p1 .current-hp").val(right_max_hp).change()
     })

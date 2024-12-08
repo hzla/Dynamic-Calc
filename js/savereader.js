@@ -445,14 +445,20 @@ function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
     if (edge) {
         // get target exp from exp tables
         var desiredExp = expTable[level] - 1   
+        
+        decryptedData[expIndex] = desiredExp & 0xFFFF
+        decryptedData[expIndex + 1] = (desiredExp >>> 16) & 0xFFFF  
+        
         changelog += `<p>${speciesName} edged to level ${level + 1}</p>`    
     } else {
         var desiredExp = expTable[level]
-    }
+        if (parseInt($('#levelL1').val()) > currentLvl) {
+            console.log("updating level to " + $('#levelL1').val())
+            decryptedData[expIndex] = desiredExp & 0xFFFF
+            decryptedData[expIndex + 1] = (desiredExp >>> 16) & 0xFFFF  
+        }
 
-    // write the new exp to the pokemon data 
-    decryptedData[expIndex] = desiredExp & 0xFFFF
-    decryptedData[expIndex + 1] = (desiredExp >>> 16) & 0xFFFF  
+    }
 
     return decryptedData    
 }
@@ -604,7 +610,7 @@ function edgeSelected(maxIVs=false) {
         decryptedData[boxPokData["exp_index"] + 1] = (desiredExp >>> 16) & 0xFFFF
 
         setPKMNCheckSum(decryptedData, boxPokData["offset"])
-        changelog += `<p>${selected[i]} edged to level ${desiredLevel}</p>`
+        changelog += `<p>${selected[i]} edged to level ${desiredLevel - 1}</p>`
     }
 
     setBigBlockCheckSum()
@@ -727,7 +733,11 @@ function bedtime() {
 function updateBattleStat(battleStat, speciesName, batch=false) {
     var level = 1
     if (!batch) {
-        level = parseInt($('#levelL1').val()) - 1      
+        // 0 indexed for BW?
+        level = parseInt($('#levelL1').val())     
+        if (baseGame == 'BW') {
+            level = level - 1
+        }
     } else {
         level = desiredLevel - 1
     }
@@ -744,19 +754,24 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     if (typeof set.evs === 'undefined') {
         set.ivs = {'hp': 0, 'at': 0, 'df':0, 'sa':0, 'sd':0, 'sp':0}
     }
+
+    battleStat[2] = level
+    if (baseGame == 'BW') {
+        level += 1
+    }
      
-    const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level + 1)
-    const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level + 1)
-    const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level + 1)
-    const sa = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spa', pokeinfo.bs.sa, set.ivs.sa, set.evs.sa,level + 1)
-    const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level + 1)
-    const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp,level + 1)
+    const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level)
+    const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
+    const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
+    const sa = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spa', pokeinfo.bs.sa, set.ivs.sa, set.evs.sa,level)
+    const sd = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spd', pokeinfo.bs.sd, set.ivs.sd, set.evs.sd,level)
+    const sp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'spe', pokeinfo.bs.sp, set.ivs.sp, set.evs.sp,level)
 
 
 
     const status = $('#statusL1').val()
 
-    battleStat[2] = level
+    
     battleStat[3] = hp
     battleStat[4] = hp
     battleStat[5] = at
