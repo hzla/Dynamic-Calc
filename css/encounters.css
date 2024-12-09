@@ -88,6 +88,11 @@ html.old, body.old {
 
 .old fieldset, .old .poke-info {
     background: none;
+    
+}
+
+.old fieldset {
+    border: 1px solid #44475a;
 }
 
 .old .select2-container .select2-choice {
