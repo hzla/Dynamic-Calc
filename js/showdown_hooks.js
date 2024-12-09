@@ -2119,6 +2119,11 @@ analyze = false
 limitHits = false
 FIELD_EFFECTS = {}
 
+if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
+    location.href = 'https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6'
+}
+
+
 
 
 if (switchIn != 11) {
@@ -2171,6 +2176,12 @@ $(document).ready(function() {
     INC_EM = false
     if (SOURCES[params.get('data')]) {
         TITLE = SOURCES[params.get('data')] || "NONE"
+
+        // redirect for old ren plat url
+        if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
+            location.href = 'https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6'
+        }
+
 
         baseGame = ""
         if (TITLE.includes("White") || TITLE.includes("Black") ) {
