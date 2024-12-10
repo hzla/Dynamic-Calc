@@ -1,25 +1,49 @@
 #mastersheet {
 	color:  #f1f1f1;
 	padding-top:  20px;
+	max-width: calc(82vw - 40px);
+	margin-left: calc(18vw + 20px);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
-.wrapper {
-    display: none;
-    position: fixed;
-    top: 0;
-    left:  0;
-    overflow: scroll;
-    height: 100vh;
-    width:  100vw;
+#content-container {
+	background: #121212;
+}
+
+.master-sidebar.pokemon-filter {
+	background: rgba(255,255,255,0.05);
 }
 
 #mastersheet .filterable, #mastersheet .expanded-card-content {
 	margin-top:  0px;
+	width: auto;
 }
+
+#mastersheet .expanded-card-content.expanded-spring {
+	margin-top:  20px;
+}
+
+
+#mastersheet .filterable.doc-enc {
+	width: 100%;
+}
+
+#mastersheet .filterable {
+	background: rgba(255,255,255,0.05);
+	margin-right: 20px;
+}
+
+
+
+
+
 
 #ms-source {
 	height: 90vh;
 	width:  400px;
+	opacity: 0.8;
 }
 
 #ms-editor {
@@ -45,10 +69,15 @@
 
 .master-sidebar input {
 	height:  40px;
+	padding-left: 10px;
 }
 
 .ms-pok td {
 	color:  #f1f1f1;
+}
+
+.ms-trainer {
+	margin-right: 20px;
 }
 
 #manip-lvl {
@@ -66,6 +95,7 @@
 #mastersheet h1, #mastersheet h2 {
 	margin-top: 40px;
 	padding-left: 60px;
+	width: 100%;
 }
 
 #mastersheet h3 {
@@ -73,6 +103,11 @@
 	margin-bottom:  20px;
 	font-size:  30px;
 	padding-left: 60px;
+	width: 100%;
+}
+
+#mastersheet p {
+	width: 100%;
 }
 
 #mastersheet h2 {
@@ -85,14 +120,22 @@
 #mastersheet h1 {
 	text-align: center;
 	font-size:  48px;
+	border-bottom: 4px solid #f1f1f1;
 }
 .ms-trainer .expanded-field-main {
-	width:  160px;
+	width:  120px;
 }
 
 .ms-trainer.mand {
-	border:  3px solid #bd93f9;
+	border:  1px solid #bd93f9;
+
 }
+
+.ms-trainer .expanded-field-main {
+	margin-right: 20px;
+	
+}
+
 
 .ms-trainer.mand .trainer-name {
 	color: bd93f9;
@@ -100,8 +143,9 @@
 
 .ms-trainer.expanded-field.filterable {
 	display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
+    border-radius: 5px;
 }
 
 .ms-trainer .expanded-card-content {
@@ -112,18 +156,27 @@
 	width: 160px;
 }
 
+#mastersheet .filterable {
+	margin-bottom: 10px;
+}
+
 #mastersheet .trainer-doc-item {
-	transform: translate(0px, -20px);
+	width: 190px;
+	margin-bottom: 10px;
+}
+
+#mastersheet .expanded-field.filterable.ms-trainer {
+	width: auto;
 }
 
 #mastersheet .expanded-field .move-info.expand-grass, #mastersheet .expanded-field:hover .move-info.expand-grass  {
-	bottom:  0px;
-	left:  40px;
+	bottom:  -15px;
+	left:  60px;
 }
 
 #mastersheet .expanded-field .move-info.expand-water {
-	bottom:  0px;
-	left:  80px;
+	bottom:  -15px;
+	left:  100px;
 }
 
 #mastersheet .move-info {
@@ -132,12 +185,20 @@
 
 #mastersheet .encounter-wilds {
 	width:  calc(100% - 180px);
+	background: rgba(255, 255, 255, 0.1);
+	margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+#mastersheet .encounter-locations {
+	margin-right: 10px;
 }
 
 .doc-enc {
 	cursor: pointer;
 	border:  2px solid transparent;
 	box-sizing:  content-box;
+	width: 100%;
 }
 
 .doc-enc:hover {
@@ -256,4 +317,50 @@
 	border: 1px solid #1abc9c;	
 	border-radius: 10px;
 }
+
+#mastersheet .filterable:nth-child(2n) {
+    background: rgba(255,255,255,0.05);
+}
+
+#mastersheet .filterable:nth-child(2n) .expanded-card-content, .filterable:nth-child(2n) .expanded-card-subcontent, #mastersheet .filterable .expanded-card-content{
+    background: rgba(255,255,255, 0.1);
+    border-radius: 10px;
+}
+
+#mastersheet .trpok-item-info {
+	width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 1px;
+}
+
+.ms-pok.expanded-evos, .ms-pok.expanded-learnset {
+	background: none;
+}
+
+#masterhsheet .expanded-spring {
+	margin-top: 20px;
+}
+
+/* Dynamic Calc Stuff */
+
+
+.wrapper {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left:  0;
+
+    overflow: scroll;
+
+    height: 100vh;
+
+    width:  100vw;
+}
+
+
+
 

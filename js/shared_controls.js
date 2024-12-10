@@ -503,6 +503,7 @@ function smogonAnalysis(pokemonName) {
 // auto-update set details on select
 
 function refresh_next_in() {
+	console.log("refreshing next in " + lastSetName)
 	var next_poks = get_next_in()
 
 	if (damageGen < 8) {
@@ -559,8 +560,8 @@ function refresh_next_in() {
 }
 
 
-$('#p1 .boost, #statusL1, #p1 .percent-hp').change(function() {
-	refresh_next_in()
+$('#p1 .boost, #statusL1, #p1 .percent-hp').blur(function() {
+	refresh_next_in()	
 })
 
 
@@ -568,7 +569,6 @@ $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
-
 
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
@@ -579,12 +579,15 @@ $(".set-selector").change(function () {
 		var right_max_hp = $("#p1 .max-hp").text()		
 		$("#p1 .current-hp").val(right_max_hp).change()
 	}
+	
+	// don't get new switch ins if set was the same
+	if (fullSetName != lastSetName) {
+		refresh_next_in()
+	} else {
+		return
+	}
+	lastSetName = fullSetName
 
-	refresh_next_in()
-
-	
-	
-	
 	if ($(this).hasClass('opposing')) {
 		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
 			if (setName != "Blank Set") {

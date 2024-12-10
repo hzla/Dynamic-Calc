@@ -1354,11 +1354,11 @@ table.field {
 .panel.panel-mid {
 /*    display: none;*/
     max-width: 450px;
+    width: 450px;
 }
 
 .poke-import {
-    min-width:  450px;
-    width:  450px;
+    min-width:  0px;
 }
 
 .panel-wrapper {

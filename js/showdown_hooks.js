@@ -8,6 +8,7 @@ function load_js() {
   boxSprites = ["newhd", "pokesprite"]
   themes = ["old", "new"]
   fainted = []
+  lastSetName = ""
   if (typeof localStorage.boxspriteindex === 'undefined') {
     localStorage.boxspriteindex = 1
   }
@@ -848,7 +849,6 @@ function get_next_in_g4() {
 
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
-        console.log(pok_name)
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
         var type1 = pokedex[pok_name]["types"][0]
         var type2 = pokedex[pok_name]["types"][1] || type1
