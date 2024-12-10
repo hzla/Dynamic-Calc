@@ -359,6 +359,8 @@ function get_custom_trainer_names() {
            var trainer_name = pok_tr_names[i]
            var sub_index = poks[trainer_name]["sub_index"]
 
+
+
            // If there's a mastersheet
            if (npoint_data["order"]) {
                 // If this trainer is listed in the mastersheet
@@ -1816,6 +1818,11 @@ function loadDataSource(data) {
         TITLE = data["title"]
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+    }
+
+
+    if (TITLE == 'Ancestral X') {
+        npoint_data["order"] = ax_order
     }
 
     TR_NAMES = get_trainer_names()

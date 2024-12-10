@@ -1187,7 +1187,7 @@ th {
 }
 
 .poke-info input, .poke-info select, textarea, .notes-text {
-    background: rgba(24,24,24,0.5);
+    background: rgba(24,24,24,0.8);
 }
 
 .info-group {
@@ -1285,15 +1285,21 @@ table.field {
 .select2-container .select2-choice > .select2-chosen {
     width: calc(100% - 20px);
     text-align: left;
-    border: none;
+    border: 1px solid #f1f1f1;
     border-radius: 5px;
     background: rgba(24, 24, 24, 0.8);
 }
+
+.move-selector .select2-choice > .select2-chosen {
+    border: none;
+}
+
+
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;
     height: 24px;
     line-height: 24px;
-    background: rgba(24,24,24,0.5);
+    background: rgba(24,24,24,0.8);
 
 }
 .small-select.select2-container .select2-choice .select2-arrow b {
@@ -1308,8 +1314,10 @@ table.field {
     border:  1px solid #bb86fc;
     height: 37px;
     padding-left: 10px;
-    background: rgba(24,24,24,0.5);
+    background: rgba(24,24,24,0.8);
 }
+
+
 
 #p2 .select2-chosen {
     width: calc(100% + 10px);
@@ -1454,7 +1462,7 @@ table.field {
 #footer {
     display: flex;
     justify-content: space-between;
-    max-width: 1730px;
+    max-width: 1680px;
     margin: 0 auto;
 }
 
