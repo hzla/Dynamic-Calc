@@ -301,7 +301,7 @@ input[type="file"] {
 
 select {
     background: none;
-    border: 1px solid rgb(248, 248, 242);
+    border: 1px solid rgb(118, 118, 118);
     color: rgb(248, 248, 242);
     font-size: 16px;
 }
@@ -324,7 +324,7 @@ input {
     padding: 2px;
     margin: 2px;
     background: none;
-    border: 1px solid rgb(248, 248, 242);
+    border: 1px solid rgb(118, 118, 118);
     color: rgb(248, 248, 242);
 }
 
@@ -345,8 +345,8 @@ input {
 }
 
 .select2-drop-active {
-    border: 1px solid #f1f1f1;
-    border-top: 1px solid #f1f1f1;
+    border: 1px solid rgb(118,118,118);
+    border-top: 1px solid rgb(118,118,118);
 }
 
 .move-result-subgroup {
@@ -1285,7 +1285,7 @@ table.field {
 .select2-container .select2-choice > .select2-chosen {
     width: calc(100% - 20px);
     text-align: left;
-    border: 1px solid #f1f1f1;
+    border: 1px solid rgb(118,118,118);
     border-radius: 5px;
     background: rgba(24, 24, 24, 0.8);
 }
@@ -1328,7 +1328,7 @@ table.field {
 }
 
 .move-selector {
-    border: 1px solid #f1f1f1;
+    border: 1px solid rgb(118,118,118);
 }
 
 .player .select2-arrow, .opposing .select2-arrow {

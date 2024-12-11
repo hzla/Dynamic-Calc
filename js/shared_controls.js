@@ -580,13 +580,7 @@ $(".set-selector").change(function () {
 		$("#p1 .current-hp").val(right_max_hp).change()
 	}
 	
-	// don't get new switch ins if set was the same
-	if (fullSetName != lastSetName) {
-		refresh_next_in()
-	} else {
-		return
-	}
-	lastSetName = fullSetName
+
 
 	if ($(this).hasClass('opposing')) {
 		if (SETDEX_BW && SETDEX_BW[pokemonName]) {
@@ -827,6 +821,16 @@ $(".set-selector").change(function () {
 			pokeObj.find(".gender").val("");
 		} else pokeObj.find(".gender").parent().show();
 	}
+
+	// don't get new switch ins if set was the same
+	
+	if (fullSetName != lastSetName) {
+		refresh_next_in()
+	} else {
+		return
+	}
+	lastSetName = fullSetName
+	console.log("last set name set to: " + lastSetName)
 });
 
 function formatMovePool(moves) {
