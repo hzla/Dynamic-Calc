@@ -147,7 +147,7 @@ exports.Stats = new ((function () {
             return undefined;
         return gen.num === 2 ? exports.Stats.DVsToIVs(hp.dvs) : hp.ivs;
     };
-    class_1.prototype.getHiddenPower = function (gen, ivs) {
+    class_1.prototype.getHiddenPower = function (gen, ivs, trueBP=false) {
         var tr = function (num, bits) {
             if (bits === void 0) { bits = 0; }
             if (bits)
@@ -174,13 +174,15 @@ exports.Stats = new ((function () {
             var hpPowerX = 0;
             var i = 1;
             for (var s in stats) {
+                console.log(s)
                 hpTypeX += i * (ivs[s] % 2);
                 hpPowerX += i * (tr(ivs[s] / 2) % 2);
                 i *= 2;
             }
+            console.log(ivs)
             return {
                 type: HP_TYPES[tr(hpTypeX * 15 / 63)],
-                power: (gen.num && gen.num < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60
+                power: (gen.num && gen.num < 6) ? tr(hpPowerX * 40 / 63) + 30 : (trueBP ? (tr(hpPowerX * 40 / 63) + 30) : 60)
             };
         }
     };

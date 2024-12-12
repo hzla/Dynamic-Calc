@@ -419,7 +419,15 @@ $(".move-selector").change(function () {
 	if (m) {
 		var pokeObj = $(this).closest(".poke-info");
 		var pokemon = createPokemon(pokeObj);
-		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs);
+
+		if ( TITLE.includes("Sterling") || TITLE.includes("Ancestral") || TITLE.includes("Maximum")) {
+			trueHP = false
+		} else {
+			trueHP = true
+		}
+
+		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs, trueHP);
+		console.log(actual)
 		if (actual.type !== m[1]) {
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (hpIVs && gen < 7) {
@@ -930,7 +938,7 @@ function correctHiddenPower(pokemon) {
 		if (iv !== 31) maxed = false;
 	}
 
-	var expected = calc.Stats.getHiddenPower(GENERATION, ivs);
+	var expected = calc.Stats.getHiddenPower(GENERATION, ivs, trueHP);
 	for (var i = 0; i < pokemon.moves.length; i++) {
 		var m = pokemon.moves[i].match(HIDDEN_POWER_REGEX);
 		if (!m) continue;

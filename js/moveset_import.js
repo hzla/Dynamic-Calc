@@ -46,17 +46,37 @@ moveChanges = {
 
 
 	"Renegade Platinum": 
-		{"Barrage":     "Draining Kiss",
-		"Brine":        "Scald",
-		"Constrict":    "Icicle Crash",
-		"Horn Drill":   "Drill Run",
-		"Lunar Dance":  "Moonblast",
-		"Luster Purge": "Dazzling Gleam",
-		"Mist Ball":    "Disarming Voice",
-		"Sand Tomb":    "Bulldoze",
-		"Submission":   "Play Rough",
-		"Twister":      "Hurricane",
-		"Volt Tackle":  "Wild Charge"},
+		{
+			"Barrage":     "Draining Kiss",
+			"Brine":        "Scald",
+			"Constrict":    "Icicle Crash",
+			"Horn Drill":   "Drill Run",
+			"Lunar Dance":  "Moonblast",
+			"Luster Purge": "Dazzling Gleam",
+			"Mist Ball":    "Disarming Voice",
+			"Sand Tomb":    "Bulldoze",
+			"Submission":   "Play Rough",
+			"Twister":      "Hurricane",
+			"Volt Tackle":  "Wild Charge",
+			"HP Bug": "Hidden Power Bug",
+			"HP Dark": "Hidden Power Dark",
+			"HP Dragon": "Hidden Power Dragon",
+			"HP Electric": "Hidden Power Electric",
+			"HP Fighting": "Hidden Power Fighting",
+			"HP Fire": "Hidden Power Fire",
+			"HP Flying": "Hidden Power Flying",
+			"HP Ghost": "Hidden Power Ghost",
+			"HP Grass": "Hidden Power Grass",
+			"HP Ground": "Hidden Power Ground",
+			"HP Ice": "Hidden Power Ice",
+			"HP Normal": "Hidden Power Normal",
+			"HP Poison": "Hidden Power Poison",
+			"HP Psychic": "Hidden Power Psychic",
+			"HP Rock": "Hidden Power Rock",
+			"HP Steel": "Hidden Power Steel",
+			"HP Water": "Hidden Power Water",
+
+		},
 	
 	"Emerald Kaizo": 
 		{"Ancientpower":     "Ancient Power",
@@ -602,6 +622,12 @@ function getMoves(currentPoke, rows, offset) {
 						console.log(`changed to ${move}`)
 					}
 				}
+
+				// ignore hacks with predefined hidden power
+				if (!TITLE.includes("Sterling") && !TITLE.includes("Maximum") && !TITLE.includes("Ancestral")) {
+					move = move.replace("HP ", "Hidden Power")
+				}
+
 				moves.push(move);
 			} else {
 				if (movesFound == true) {

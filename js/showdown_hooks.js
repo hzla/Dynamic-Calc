@@ -7,6 +7,7 @@ function load_js() {
   saveUploaded = false
   boxSprites = ["newhd", "pokesprite"]
   themes = ["old", "new"]
+  trueHP = true
   fainted = []
   lastSetName = ""
   if (typeof localStorage.boxspriteindex === 'undefined') {
