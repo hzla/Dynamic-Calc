@@ -2176,7 +2176,8 @@ $(document).ready(function() {
     MASTERSHEETS = {
         "Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux",
         "Sterling Silver 1.14": "sterlingsilver",
-        "Renegade Platinum": "renplat"
+        "Renegade Platinum": "renplat",
+        "Vintage White": "vw"
     }
     encs = `https://api.npoint.io/c39f79b412a6f19f3c4f`
 
