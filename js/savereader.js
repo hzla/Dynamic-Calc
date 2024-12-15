@@ -40,12 +40,19 @@ document.getElementById('save-upload').addEventListener('change', function(event
             // Convert the binary string to ArrayBuffer for easier access
             const binaryData = e.target.result;
             const buffer = new ArrayBuffer(binaryData.length);
+
+
+
+
             view = new Uint8Array(buffer);
+
 
             saveUploaded = true
             for (let i = 0; i < binaryData.length; i++) {
                 view[i] = binaryData.charCodeAt(i);
             }
+
+            console.log(gen3Save.read(view))
 
             changelog = "<h4>Changelog:</h4>"
             changelog += `<p>${saveFileName} loaded</p>`
@@ -756,9 +763,10 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     }
 
     battleStat[2] = level
-    if (baseGame == 'BW') {
+    if (baseGame == 'BW' && batch == false) {
         level += 1
     }
+    
      
     const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level)
     const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)

@@ -541,6 +541,7 @@ function getStats(currentPoke, rows, offset) {
 	var currentIV;
 	var currentAbility;
 	var currentNature;
+	var natureIsSet = false
 	currentPoke.level = 100;
 	for (var x = offset; x < offset + 8; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
@@ -580,8 +581,9 @@ function getStats(currentPoke, rows, offset) {
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] == "Nature") {
+		if (currentNature[1] == "Nature" && !natureIsSet) {
 			currentPoke.nature = currentNature[0];
+			natureIsSet = true
 		}
 	}
 	return currentPoke;
