@@ -52,7 +52,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
                 view[i] = binaryData.charCodeAt(i);
             }
 
-            console.log(gen3Save.read(view))
+
 
             changelog = "<h4>Changelog:</h4>"
             changelog += `<p>${saveFileName} loaded</p>`
