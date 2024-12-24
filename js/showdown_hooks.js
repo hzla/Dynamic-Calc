@@ -2203,6 +2203,8 @@ $(document).ready(function() {
 
         if (!baseGame) {
             $('#read-save').hide()
+        } else {
+            $('.save-editor-guide').show()
         }
 
         $('.genSelection').hide()

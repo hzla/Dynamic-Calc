@@ -1470,6 +1470,12 @@ table.field {
     margin-top: 0px;
 }
 
+.save-editor-guide {
+    color: #bb86fc;
+    font-size: 18px;
+    display: none;
+}
+
 
 
 @media (width <= 1540px) {
