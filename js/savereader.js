@@ -41,9 +41,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
             const binaryData = e.target.result;
             const buffer = new ArrayBuffer(binaryData.length);
 
-
-
-
             view = new Uint8Array(buffer);
 
 
@@ -51,7 +48,6 @@ document.getElementById('save-upload').addEventListener('change', function(event
             for (let i = 0; i < binaryData.length; i++) {
                 view[i] = binaryData.charCodeAt(i);
             }
-
 
 
             changelog = "<h4>Changelog:</h4>"
@@ -448,9 +444,9 @@ function updateBoxPKMN(edge=false) {
 
 function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
     
-
     if (edge) {
         // get target exp from exp tables
+        
         var desiredExp = expTable[level] - 1   
         
         decryptedData[expIndex] = desiredExp & 0xFFFF
@@ -458,8 +454,9 @@ function updatePKMNLevel(decryptedData, expIndex, expTable, level, edge=false) {
         
         changelog += `<p>${speciesName} edged to level ${level + 1}</p>`    
     } else {
+        level = level - 1
         var desiredExp = expTable[level]
-        if (parseInt($('#levelL1').val()) > currentLvl) {
+        if (parseInt($('#levelL1').val()) != currentLvl) {
             console.log("updating level to " + $('#levelL1').val())
             decryptedData[expIndex] = desiredExp & 0xFFFF
             decryptedData[expIndex + 1] = (desiredExp >>> 16) & 0xFFFF  
@@ -560,7 +557,8 @@ function updatePartyPKMN(edge=false, speciesNameOverride=false) {
 
     const decryptedBattleStat = decryptedBattleStats[partyIndex]
     const updatedBattleStat = updateBattleStat(decryptedBattleStat, speciesName, speciesNameOverride != false)
-    const level = decryptedBattleStat[2] 
+    const level = updatedBattleStat[2]
+    console.log(level)
 
 
     savParty[partyIndex] = updatePKMNLevel(savParty[partyIndex], partyExpIndexes[partyIndex], expTables[partyExpTables[partyIndex]], level, edge)
@@ -740,11 +738,7 @@ function bedtime() {
 function updateBattleStat(battleStat, speciesName, batch=false) {
     var level = 1
     if (!batch) {
-        // 0 indexed for BW?
         level = parseInt($('#levelL1').val())     
-        if (baseGame == 'BW') {
-            level = level - 1
-        }
     } else {
         level = desiredLevel - 1
     }
@@ -763,11 +757,8 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     }
 
     battleStat[2] = level
-    if (baseGame == 'BW' && batch == false) {
-        level += 1
-    }
-    
-     
+
+         
     const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level)
     const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
     const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
@@ -804,6 +795,8 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
                 battleStat[0] = 0 | (1 << 5)   
             } else if (status == "Badly Poisoned") {
                 battleStat[0] = 0 | (1 << 7)   
+            } else { // healthy
+                battleStat[0] = 0 
             }
         } else {
             if (status == "Poisoned") {
@@ -818,6 +811,8 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
                 battleStat[0] = 3 
             } else if (status == "Badly Poisoned") {
                 battleStat[0] = 6
+            } else { // healthy
+                battleStat[0] = 0 
             }
         }
     }
