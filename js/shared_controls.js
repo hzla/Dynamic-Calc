@@ -565,6 +565,7 @@ function refresh_next_in() {
 		trpok_html += pok
 	}
 	$('.opposing.trainer-pok-list').html(trpok_html)
+
 }
 
 
@@ -656,6 +657,9 @@ $(".set-selector").change(function () {
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","").replace(":","-")
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
+		if ($("#min-dealt").val() != "" || $("#max-taken").val() != "") {
+	       box_rolls() 
+	    } 
 
 	} else {
 		if (SETDEX_BW) {

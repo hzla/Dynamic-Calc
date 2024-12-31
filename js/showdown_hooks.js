@@ -483,6 +483,10 @@ function box_rolls() {
     var p1hp = $('#p2').find('#currentHpL1').val()
     var p1speed = parseInt($('.total.totalMod')[1].innerHTML)
 
+    if (p1.ability == "Intimidate") {
+        p1.ability = "Minus"
+    }
+
 
 
     var killers = []
@@ -494,6 +498,10 @@ function box_rolls() {
     for (m = 0; m < box.length; m++) {
         var mon = createPokemon(box[m])
         var monSpeed = mon.rawStats.spe
+
+        if (mon.ability == "Intimidate") {
+            mon.ability = "Minus"
+        }
 
         if (monSpeed > p1speed) {
             faster.push({"set": box[m]})
