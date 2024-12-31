@@ -740,7 +740,7 @@ table td {
 }
 
 .faster {
-    box-shadow: inset 0 0 0 10px #f1fa8c;
+    box-shadow: inset 0 0 0 4px #f1fa8c;
 }
 
 .trainer-pok.left-side.killer {
@@ -751,6 +751,12 @@ table td {
     background:  rgba(98, 114, 164, 1);
     border: 10px solid rgba(98, 114, 164, 1);
     border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+}
+
+#clear-filters {
+    cursor: pointer;
+    margin-left: 20px;
+    text-align: right;
 }
 
 .trainer-pok.left-side.killer.defender {

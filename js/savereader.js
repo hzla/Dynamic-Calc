@@ -315,6 +315,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
 
     showdownString += `${mon_name} @ ${item_name}\n`
+    console.log(showdownString)
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
     var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]

@@ -262,6 +262,9 @@ function setOpposing(id) {
     if ($('.info-group.opp > * > .forme').is(':visible')) {
         $('.info-group.opp > * > .forme').change()
     }
+    if ($("#min-dealt").val() != "" || $("#max-taken").val() != "") {
+       box_rolls() 
+    } 
 }
 
 function get_trainer_names() {
@@ -2648,6 +2651,22 @@ $('.set-selector, .move-selector').on("select2-close", function () {
 
         var right_max_hp = $("#p1 .max-hp").text()
         $("#p1 .current-hp").val(right_max_hp).change()
+    })
+
+    $(document).on('blur', '#max-taken, #min-dealt', function() {
+        if ($(this).val() != "") {
+           box_rolls() 
+        } 
+    })
+
+    $(document).on('click', '#clear-filters', function(){
+        $('#max-taken').val("")
+        $('#min-dealt').val("")
+        var poks = $('#p1').find(".trainer-pok")
+
+        poks.removeClass('faster')
+        poks.removeClass('defender')
+        poks.removeClass('killer')
     })
 
 
