@@ -774,6 +774,18 @@ table td {
 
 
 
+.no-switch-1.trainer-pok-container {
+    width: calc(16.66% - 12px);
+    padding: 0;
+}
+
+.no-switch-1 .bp-info[data-strong="true"] {
+    color: #f1f1f1;
+} 
+
+#p2 .no-switch-1 .bp-info{
+    font-size: 12px;
+} 
 
 
 .trainer-pok {

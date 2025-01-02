@@ -1664,7 +1664,13 @@ function get_next_in() {
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
 
-    ranked_trainer_poks.sort(sort_trpoks)
+    if (typeof noSwitch != "undefined" && noSwitch == "1") {
+       ranked_trainer_poks.sort(sort_subindex)
+   } else {
+        ranked_trainer_poks.sort(sort_trpoks)
+   }
+
+    
     
     // Auto-sorts Megas to come out last - this should only run on switchIn=5
     var endSwap = null
@@ -1697,6 +1703,16 @@ function sort_trpoks(a, b) {
     }
     else {
         return (b[1] < a[1]) ? -1 : 1;
+    }
+}
+
+function sort_subindex(a, b) {
+    console.log([a,b])
+    if (a[3] === b[3]) {
+        return (parseInt(b[3]) < parseInt(a[3])) ? -1 : 1;
+    }
+    else {
+        return (parseInt(b[3]) > parseInt(a[3])) ? -1 : 1;
     }
 }
 
@@ -2129,6 +2145,7 @@ damageGen = parseInt(params.get('dmgGen'))
 type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
+noSwitch = params.get('noSwitch')
 challengeMode = params.get('challengeMode')
 FAIRY = params.get('fairy')
 misc = params.get('misc')

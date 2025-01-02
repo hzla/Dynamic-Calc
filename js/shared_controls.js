@@ -520,7 +520,9 @@ function refresh_next_in() {
 
 	var trpok_html = ""
 	for (i in next_poks ) {
-		if (next_poks[i][0].includes($('input.opposing').val())){
+		
+
+		if (next_poks[i][0].includes($('input.opposing').val()) && noSwitch != "1"){
 			continue
 		}
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","").replace(":","-")
@@ -541,8 +543,8 @@ function refresh_next_in() {
 			isFainted = "fainted"
 		}
 
-		var pok = `<div class="trainer-pok-container">
-			<img class="trainer-pok right-side ${highlight} ${isFainted}" src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
+		var pok = `<div class="trainer-pok-container no-switch-${noSwitch}">
+			<img class="trainer-pok right-side ${highlight} ${isFainted} " src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
 
 
 		var species = next_poks[i][0].split(" (")[0]
