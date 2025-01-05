@@ -559,7 +559,11 @@ function updatePartyPKMN(edge=false, speciesNameOverride=false) {
     const decryptedBattleStat = decryptedBattleStats[partyIndex]
     const updatedBattleStat = updateBattleStat(decryptedBattleStat, speciesName, speciesNameOverride != false)
     const level = updatedBattleStat[2]
-    console.log(level)
+    
+    if (level == 0 || level == 1) {
+        console.log(updatedBattleStat)
+        alert("Something went wrong, please refresh page and try again. Please contact hzla on discord and let me know what you were doing right before seeing this message if possible.")
+    }
 
 
     savParty[partyIndex] = updatePKMNLevel(savParty[partyIndex], partyExpIndexes[partyIndex], expTables[partyExpTables[partyIndex]], level, edge)
@@ -737,12 +741,13 @@ function bedtime() {
 }
 
 function updateBattleStat(battleStat, speciesName, batch=false) {
-    var level = 1
     if (!batch) {
         level = parseInt($('#levelL1').val())     
     } else {
         level = desiredLevel - 1
     }
+
+
 
     const currentHp = parseInt($('#currentHpL1').val())
         
@@ -759,7 +764,6 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
 
     battleStat[2] = level
 
-         
     const hp = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'hp' , pokeinfo.bs.hp, set.ivs.hp, set.evs.hp,level)
     const at = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'atk', pokeinfo.bs.at, set.ivs.at, set.evs.at,level)
     const df = getStat([natMods[set.nature].plus, natMods[set.nature].minus], 'def', pokeinfo.bs.df, set.ivs.df, set.evs.df,level)
@@ -769,9 +773,15 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
 
 
 
+
+
     const status = $('#statusL1').val()
 
     
+    if ([hp,at,df,sp,sa,sd].includes(0)) {
+        alert("Something went wrong, please refresh page and try again. Please contact hzla on discord and let me know what you were doing right before seeing this message if possible.")
+    }
+
     battleStat[3] = hp
     battleStat[4] = hp
     battleStat[5] = at
