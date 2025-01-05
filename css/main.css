@@ -740,7 +740,7 @@ table td {
 }
 
 .faster {
-    box-shadow: inset 0 0 0 4px #f1fa8c;
+    box-shadow: inset 0 0 0 2px #f1fa8c;
 }
 
 .trainer-pok.left-side.killer {
@@ -748,9 +748,7 @@ table td {
 }
 
 .trainer-pok.left-side.defender {
-    background:  rgba(98, 114, 164, 1);
-    border: 10px solid rgba(98, 114, 164, 1);
-    border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+    background: rgba(98, 114, 164, 1);
 }
 
 #clear-filters {
@@ -760,8 +758,7 @@ table td {
 }
 
 .trainer-pok.left-side.killer.defender {
-    background:  rgba(255, 85, 85, 0.4);
-    border: 10px solid rgba(98, 114, 164, 1);
+    background: linear-gradient(to right, rgba(255, 85, 85, 0.4) 50%, rgba(98, 114, 164, 1) 50%);
 }
 
 .filter-desc {

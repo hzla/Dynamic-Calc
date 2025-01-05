@@ -455,19 +455,19 @@ function box_rolls() {
     var dealt_min_roll = $("#min-dealt").val()
     var taken_max_roll = $("#max-taken").val()
 
-    if ($("#min-dealt").val() == "" && $("#max-taken").val() == "") {
-        return
-    }
+    // if ($("#min-dealt").val() == "" && $("#max-taken").val() == "") {
+    //     return
+    // }
 
 
     if ($("#min-dealt").val() == "") {
-        $("#min-dealt").val(100)
-        dealt_min_roll=100
+        // $("#min-dealt").val(10000)
+        dealt_min_roll=10000
     } 
 
     if ($("#max-taken").val() == "") {
-        $("#max-taken").val(0)
-        taken_max_roll=0
+        // $("#max-taken").val(0)
+        taken_max_roll=-1
     }
 
     
@@ -1492,6 +1492,9 @@ function toggle_box_rolls() {
 $('#toggle-boxroll').click(function(){
     toggle_box_rolls()
     $('#player-poks-filter').toggle()
+    if ($('#player-poks-filter:visible').length > 0) {
+        box_rolls()
+    }
 })
 
 $('#toggle-battle-notes').click(function(){
@@ -2691,7 +2694,6 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         $('#min-dealt').val("")
         var poks = $('#p1').find(".trainer-pok")
 
-        poks.removeClass('faster')
         poks.removeClass('defender')
         poks.removeClass('killer')
     })
