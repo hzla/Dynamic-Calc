@@ -659,7 +659,7 @@ $(".set-selector").change(function () {
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","").replace(":","-")
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
-		if ($("#min-dealt").val() != "" || $("#max-taken").val() != "") {
+		if ($('#player-poks-filter:visible').length > 0) {
 	       box_rolls() 
 	    } 
 

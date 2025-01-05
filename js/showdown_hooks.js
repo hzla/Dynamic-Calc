@@ -262,7 +262,7 @@ function setOpposing(id) {
     if ($('.info-group.opp > * > .forme').is(':visible')) {
         $('.info-group.opp > * > .forme').change()
     }
-    if ($("#min-dealt").val() != "" || $("#max-taken").val() != "") {
+    if ($('#player-poks-filter:visible').length > 0) {
        box_rolls() 
     } 
 }
