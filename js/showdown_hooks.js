@@ -2196,6 +2196,7 @@ $(document).ready(function() {
    "6875151cfa5eea00eafa": "Inclement Emerald No EVs",
    "8f199f3f40194ecc4b8e": "Sterling Silver 1.14",
    "7ea3ff9a608c1963a0a5": "Sterling Silver 1.15",
+   "b819708dba8f8c0641d5": "Sterling Silver 1.16",
    "5b789b0056c18c5c668b": "Platinum Redux 2.6",
    "de22f896c09fceb0b273": "Maximum Platinum",
    "a0ff5953fbf39bcdddd3": "Cascade White 2",
