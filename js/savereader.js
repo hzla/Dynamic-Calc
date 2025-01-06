@@ -851,6 +851,9 @@ function getStat(mods, stat, base, iv, ev, level) {
     if (!ev) {
         ev = 0
     }
+    if (!iv) {
+        iv = 31
+    }
     if (stat === 'hp') {
         return base === 1
             ? base
