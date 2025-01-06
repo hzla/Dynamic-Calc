@@ -495,6 +495,7 @@ function box_rolls() {
 
 
 
+
     for (m = 0; m < box.length; m++) {
         var mon = createPokemon(box[m])
         var monSpeed = mon.rawStats.spe
@@ -1955,6 +1956,7 @@ function loadDataSource(data) {
 
 
 
+
     if ( TITLE.includes("Platinum") ) {
         var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
         var deoxys_info = ['Attack', 'Defense','Speed']
@@ -2058,6 +2060,9 @@ function loadDataSource(data) {
         moves['Pay Day'].willCrit = true;
     }
 
+
+    const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
     for (pok in pokedex) {
 
         if (pok.includes("Glitched")) {
@@ -2085,6 +2090,18 @@ function loadDataSource(data) {
         pokedex[pok]["types"] = jsonPok["types"]
         if (jsonPok.hasOwnProperty("abilities"))
             pokedex[pok]["abilities"] = jsonPok["abilities"]
+
+        const pok_id = cleanString(pok)
+        SPECIES_BY_ID[gen][pok_id].types = jsonPok["types"]
+
+        SPECIES_BY_ID[gen][pok_id].baseStats = {
+            "atk": jsonPok["bs"]["at"],
+            "def": jsonPok["bs"]["df"],
+            "hp": jsonPok["bs"]["hp"],
+            "spa": jsonPok["bs"]["sa"],
+            "spd": jsonPok["bs"]["sd"],
+            "spe": jsonPok["bs"]["sp"],
+        }
     }
 
     if (damageGen >= 3 && damageGen < 6) {
