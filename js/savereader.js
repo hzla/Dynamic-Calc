@@ -759,7 +759,7 @@ function updateBattleStat(battleStat, speciesName, batch=false) {
     }
 
     if (typeof set.evs === 'undefined') {
-        set.ivs = {'hp': 0, 'at': 0, 'df':0, 'sa':0, 'sd':0, 'sp':0}
+        set.evs = {'hp': 0, 'at': 0, 'df':0, 'sa':0, 'sd':0, 'sp':0}
     }
 
     battleStat[2] = level
