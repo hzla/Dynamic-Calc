@@ -8,6 +8,19 @@ a img {
     
  }
 
+/* Hide scrollbars but keep scrolling functionality */
+* {
+    /* Firefox */
+    scrollbar-width: none;
+    
+    /* IE/Edge */
+    -ms-overflow-style: none;
+}
+
+/* Webkit browsers (Chrome, Safari, Opera) */
+*::-webkit-scrollbar {
+    display: none;
+}
 
 input[type="file"] {
   display: none;
