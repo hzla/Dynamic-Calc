@@ -185,7 +185,10 @@ input[type="file"] {
 
 .bp-info {
     font-size: 14px;
+    min-height: 17px;
 }
+
+
 
 #ai-tags div {
     color: #bb86fc;

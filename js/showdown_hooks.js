@@ -2087,7 +2087,11 @@ function loadDataSource(data) {
         }
 
         pokedex[pok]["bs"] = jsonPok["bs"]
-        pokedex[pok]["types"] = jsonPok["types"]
+
+        if (jsonPok["types"]) {
+            pokedex[pok]["types"] = jsonPok["types"]
+        }
+        
         if (jsonPok.hasOwnProperty("abilities"))
             pokedex[pok]["abilities"] = jsonPok["abilities"]
 
@@ -2104,7 +2108,7 @@ function loadDataSource(data) {
         }
     }
 
-    if (damageGen >= 3 && damageGen < 6) {
+    if (damageGen > 3 && damageGen < 6) {
         pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
     }
     if (damageGen == 4) {
@@ -2179,6 +2183,9 @@ if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
     location.href = 'https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6'
 }
 
+if (damageGen <= 3) {
+    $('#player-poks-filter').remove()
+}
 
 
 
@@ -2221,7 +2228,8 @@ $(document).ready(function() {
    "de22f896c09fceb0b273": "Maximum Platinum",
    "a0ff5953fbf39bcdddd3": "Cascade White 2",
    "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon",
-   "d3501821feaa976d581a": "Azure Platinum"
+   "d3501821feaa976d581a": "Azure Platinum",
+   "9abb79df1e356642c229": "Fire Red Omega"
     }
 
     MASTERSHEETS = {
