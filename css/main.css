@@ -894,6 +894,10 @@ table td {
     font-size: 14px;
 }
 
+#p1 .bp-info {
+    font-size: 12px;
+}
+
 .bp-info[data-strong="true"] {
     color: #ff5555;
 }

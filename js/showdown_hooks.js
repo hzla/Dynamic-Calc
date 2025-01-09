@@ -341,11 +341,11 @@ function sort_box_by_dex(attr) {
 }
 
 function abv(s) {
-    if (($('.player-party').width() / s.length <= 70)) {
+    if (($('.player-party').width() / s.length <= 50)) {
         if (s.split(" ")[1]) {
-            return (s.split(" ")[0][0] + " " + s.split(" ")[1]).slice(0,11)
+            return (s.split(" ")[0][0] + " " + s.split(" ")[1]).slice(0,13)
         } else {
-            return s.slice(0,11)
+            return s.slice(0,13)
         }
         
     } else {
@@ -2229,7 +2229,8 @@ $(document).ready(function() {
    "a0ff5953fbf39bcdddd3": "Cascade White 2",
    "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon",
    "d3501821feaa976d581a": "Azure Platinum",
-   "9abb79df1e356642c229": "Fire Red Omega"
+   "9abb79df1e356642c229": "Fire Red Omega",
+   "12f82557ed0e08145660": "Fire Red"
     }
 
     MASTERSHEETS = {
