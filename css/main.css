@@ -322,12 +322,15 @@ select {
     font-size: 16px;
 }
 
+optgroup {color: black;}
+
 .import-name-text {
     display: none;
 }
 
 option {
     color: black;
+    background: #f1f1f1;
 }
 .boost,.totalMod {
     margin-left: 4px;
