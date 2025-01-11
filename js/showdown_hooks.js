@@ -2230,7 +2230,8 @@ $(document).ready(function() {
    "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon",
    "d3501821feaa976d581a": "Azure Platinum",
    "9abb79df1e356642c229": "Fire Red Omega",
-   "12f82557ed0e08145660": "Fire Red"
+   "12f82557ed0e08145660": "Fire Red",
+   "aeb373b7631d4afd7a53": "Emerald"
     }
 
     MASTERSHEETS = {
