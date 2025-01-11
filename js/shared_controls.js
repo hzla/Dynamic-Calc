@@ -932,6 +932,7 @@ $(".forme").change(function () {
 });
 
 function correctHiddenPower(pokemon) {
+	return pokemon
 	// After Gen 7 bottlecaps means you can have a HP without perfect IVs
 	if (gen >= 7 && pokemon.level >= 100) return pokemon;
 

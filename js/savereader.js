@@ -851,7 +851,9 @@ function getStat(mods, stat, base, iv, ev, level) {
     if (!ev) {
         ev = 0
     }
-    if (!iv) {
+
+
+    if (!iv && iv != 0) {
         iv = 31
     }
     if (stat === 'hp') {
@@ -867,7 +869,6 @@ function getStat(mods, stat, base, iv, ev, level) {
                 : mods[1] === stat
                     ? 0.9
                     : 1;
-        console.log(base, iv, ev, level)
         console.log(`${stat}: ${Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n)}`)
         return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
     }
