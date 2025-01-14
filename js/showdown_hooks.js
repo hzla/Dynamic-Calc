@@ -904,9 +904,6 @@ function get_next_in_g4() {
                 highestDamage = dmg
                 highestDamageName = results[n].move.name
             }
-            if (highestDamage >= currentHp) {
-                highestDamage = 1000
-            }   
         }
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage, highestDamageName])
     }
