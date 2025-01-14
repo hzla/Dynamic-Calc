@@ -882,6 +882,10 @@ function get_next_in_g4() {
             p2.ability = "Minus"
         }
 
+        if (p2.item == "Life Orb") {
+            p2.item = "Leftovers"
+        }
+
          // because the game only counts multihits moves as 1 
         
 
