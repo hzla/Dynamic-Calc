@@ -227,6 +227,11 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.isHelpingHand = true;
     }
 
+    if ((attacker.hasAbility('Technician') && basePower <= 60 && !(move.named('Pursuit') && field.defenderSide.isSwitching))) {
+        basePower = Math.floor(basePower * 1.5);
+        desc.attackerAbility = attacker.ability;
+    }
+
     // console.log(field.attackerSide)
 
     if (field.attackerSide.is10Buff) {
@@ -284,8 +289,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
         ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
             (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
             (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-            (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
-        (attacker.hasAbility('Technician') && basePower <= 60 && !(move.named('Pursuit') && field.defenderSide.isSwitching))) {
+            (attacker.hasAbility('Swarm') && move.hasType('Bug'))))
+        ) {
         basePower = Math.floor(basePower * 1.5);
         desc.attackerAbility = attacker.ability;
     }
