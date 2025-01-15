@@ -80,6 +80,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
     if (move.drain) {
         var percentHealed = move.drain[0] / move.drain[1];
         var max = Math.round(defender.maxHP() * percentHealed);
+        
         for (var i = 0; i < minD.length; i++) {
             var range = [minD[i], maxD[i]];
             for (var j in recovery) {
@@ -87,8 +88,10 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
                 if (attacker.hasItem('Big Root'))
                     if (TITLE == "Cascade White 2") {
                         drained = Math.trunc(drained * 7168 / 4096);
+                        max = Math.trunc(max * 7168 / 4096)
                     } else {
                        drained = Math.trunc(drained * 5324 / 4096); 
+                       max = Math.trunc(max * 5324 / 4096)
                     }                   
                 recovery[j] += Math.min(drained * move.hits, max);
             }

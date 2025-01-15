@@ -1092,6 +1092,14 @@ function get_next_in_g4() {
         // create mon with ignoteStatMods = true
         p2 = createPokemon(p2info, pok_data["moves"], true)
 
+        if (p2.ability == "Reckless" || p2.ability == "Adaptability") {
+            p2.ability = "Minus"
+        }
+
+        if (p2.item == "Life Orb") {
+            p2.item = "Leftovers"
+        }
+
          // because the game only counts multihits moves as 1 
         
 
@@ -1118,9 +1126,6 @@ function get_next_in_g4() {
                 highestDamage = dmg
                 highestDamageName = results[n].move.name
             }
-            if (highestDamage >= currentHp) {
-                highestDamage = 1000
-            }   
         }
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage, highestDamageName])
     }
