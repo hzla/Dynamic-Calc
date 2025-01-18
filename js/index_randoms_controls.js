@@ -286,7 +286,14 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
-		p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
+		if (p2.moves[i] == "(No Move)" || p2.moves[i].name == "Smokescreen") {
+			p2.moves[i].name = "Growl"
+			p2.moves[i].category = "Status"
+		} else {
+			console.log(p2.moves[i])
+			p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
+		}
+		
 		p2.moves[i].overrides = {}
 
 
