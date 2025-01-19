@@ -700,7 +700,7 @@ $(".set-selector").change(function () {
 
 
 
-			if (damageGen <= 5) {
+			if (damageGen <= 5 || TITLE.includes("Lumi")) {
 				$('#p1 .poke-sprite').addClass('no-flip')
 			}
 			if (TITLE == "Emerald Kaizo") {

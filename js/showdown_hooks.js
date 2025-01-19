@@ -2337,8 +2337,6 @@ function loadDataSource(data) {
             var pok_id = cleanString(pok)
 
             if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
-                console.log(pok)
-                console.log(pok_id)
 
                 if (!jsonPoks[pok]) {
                     continue
