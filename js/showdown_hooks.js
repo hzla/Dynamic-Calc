@@ -2282,6 +2282,30 @@ function loadDataSource(data) {
 
     const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
+   
+    if (TITLE.includes("Lumi")) {
+
+        for (pok in jsonPoks) {
+            var pok_id = cleanString(pok)
+
+            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
+
+                if (!jsonPoks[pok]) {
+                    console.log(pok)
+                    continue
+
+                } 
+
+                jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
+                jsonPoks[pok]["id"] = pok_id
+                jsonPoks[pok]["kind"] = "Species"
+                SPECIES_BY_ID[gen][pok_id] = jsonPoks[pok]
+                pokedex[pok] = jsonPoks[pok]
+            }
+            
+        }
+    }
+
     for (pok in pokedex) {
 
         if (pok.includes("Glitched")) {
@@ -2331,26 +2355,7 @@ function loadDataSource(data) {
         }
     }
 
-    if (TITLE.includes("Lumi")) {
-
-        for (pok in jsonPoks) {
-            var pok_id = cleanString(pok)
-
-            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
-
-                if (!jsonPoks[pok]) {
-                    continue
-                } 
-
-                jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
-                jsonPoks[pok]["id"] = pok_id
-                jsonPoks[pok]["kind"] = "Species"
-                SPECIES_BY_ID[gen][pok_id] = jsonPoks[pok]
-                pokedex[pok] = jsonPoks[pok]
-            }
-            
-        }
-    }
+    
 
     if (damageGen > 3 && damageGen < 6) {
         pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
