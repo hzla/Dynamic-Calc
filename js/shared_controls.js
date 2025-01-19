@@ -526,6 +526,20 @@ function refresh_next_in() {
 			continue
 		}
 		var pok_name = next_poks[i][0].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace("’","").replace(":","-")
+
+		if (pok_name.includes("galarian-")) {
+			pok_name = pok_name.split("galarian-")[1] +  "-galar"
+		}
+
+		if (pok_name.includes("hisuian-")) {
+			pok_name = pok_name.split("hisuian-")[1] +  "-hisui"
+		}
+
+		if ((pok_name).includes("alolan-")) {
+			pok_name = pok_name.split("alolan-")[1] +  "-alola"
+		}
+
+
 		var highlight = "hl-enabled"
 		if (switchIn == 0) {
 			highlight = "hl-disabled"
@@ -657,6 +671,20 @@ $(".set-selector").change(function () {
 			$('#trainer-sprite').hide()
 		}
 		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","").replace(":","-")
+
+		if (pokesprite.includes("galarian-")) {
+			pokesprite = pokesprite.split("galarian-")[1] +  "-galar"
+		}
+
+		if (pokesprite.includes("hisuian-")) {
+			pokesprite = pokesprite.split("hisuian-")[1] +  "-hisui"
+		}
+
+		if ((pokesprite).includes("alolan-")) {
+			pokesprite = pokesprite.split("alolan-")[1] +  "-alola"
+		}
+
+
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
 		if ($('#player-poks-filter:visible').length > 0) {
@@ -668,6 +696,10 @@ $(".set-selector").change(function () {
 			var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
 			
 			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
+
+
+
+
 			if (damageGen <= 5) {
 				$('#p1 .poke-sprite').addClass('no-flip')
 			}
@@ -697,6 +729,7 @@ $(".set-selector").change(function () {
 	var pokemon = pokedex[pokemonName];
 
 
+	console.log(pokemon)
 
 
 	if (pokemon) {
@@ -816,7 +849,7 @@ $(".set-selector").change(function () {
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
 		var baseForme;
-		if (pokemon.baseSpecies && pokemon.baseSpecies !== pokemon.name) {
+		if (pokemon.baseSpecies && pokemon.baseSpecies !== pokemon.name && !TITLE.includes("Lumi")) {
 			baseForme = pokedex[pokemon.baseSpecies];
 		}
 		if (pokemon.otherFormes) {
@@ -1034,6 +1067,9 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 			
 			var species = pokedex[pokemonName];
 			name = (species.otherFormes || (species.baseSpecies && species.baseSpecies !== pokemonName)) ? pokeInfo.find(".forme").val() : pokemonName;
+			if (TITLE.includes("Lumi")) {
+				name = pokemonName
+			}
 		}
 
 
@@ -1761,7 +1797,7 @@ $(document).ready(function () {
    // }
     
 
-	if (damageGen <= 5 && switchIn < 10 && TITLE != "Platinum Redux 2.6") {
+	if (damageGen <= 5 && switchIn < 10 && TITLE != "Platinum Redux 2.6" || TITLE.includes("Lumi")) {
 		trainerSprites = "front"
 		playerSprites = "back"
 		suffix = "gif"

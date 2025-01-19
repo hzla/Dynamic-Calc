@@ -2340,6 +2340,10 @@ function loadDataSource(data) {
                 console.log(pok)
                 console.log(pok_id)
 
+                if (!jsonPoks[pok]) {
+                    continue
+                } 
+
                 jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
                 jsonPoks[pok]["id"] = pok_id
                 jsonPoks[pok]["kind"] = "Species"
