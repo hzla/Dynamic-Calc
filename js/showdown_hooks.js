@@ -2451,7 +2451,8 @@ $(document).ready(function() {
    "d3501821feaa976d581a": "Azure Platinum",
    "9abb79df1e356642c229": "Fire Red Omega",
    "12f82557ed0e08145660": "Fire Red",
-   "aeb373b7631d4afd7a53": "Emerald"
+   "aeb373b7631d4afd7a53": "Emerald",
+   "006ac04e900ccb3110df": "Luminescent Platinum"
     }
 
     MASTERSHEETS = {
@@ -2475,7 +2476,7 @@ $(document).ready(function() {
         baseGame = ""
         if (TITLE.includes("White") || TITLE.includes("Black") ) {
             baseGame = "BW"
-        } else if (TITLE.includes("Platinum") ) {
+        } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
             baseGame = "Pt"
         } else if (TITLE.includes("Silver")) {
             baseGame = "HGSS"

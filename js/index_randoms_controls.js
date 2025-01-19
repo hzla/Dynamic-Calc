@@ -290,7 +290,6 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 			p2.moves[i].name = "Growl"
 			p2.moves[i].category = "Status"
 		} else {
-			console.log(p2.moves[i])
 			p2.moves[i].category = moves[p2.moves[i].originalName]["category"]
 		}
 		
