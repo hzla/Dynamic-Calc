@@ -2176,7 +2176,7 @@ function loadDataSource(data) {
 
 
 
-    if ( TITLE.includes("Platinum") ) {
+    if ( TITLE.includes("Platinum") && !TITLE.includes("Lumi") ) {
         var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
         var deoxys_info = ['Attack', 'Defense','Speed']
         var wormadam_info = ['Sandy', 'Trash']
@@ -2295,7 +2295,10 @@ function loadDataSource(data) {
         else if (jsonPoks[pok]) {
             jsonPok = jsonPoks[pok]
         } else {
-            continue //skip weird smogon pokemon and arceus forms
+            // override for lumi plat
+           
+                continue //skip weird smogon pokemon and arceus forms
+
         }
 
         // revert fairy pokemon base stats for sgss
@@ -2325,6 +2328,25 @@ function loadDataSource(data) {
             "spa": jsonPok["bs"]["sa"],
             "spd": jsonPok["bs"]["sd"],
             "spe": jsonPok["bs"]["sp"],
+        }
+    }
+
+    if (TITLE.includes("Lumi")) {
+
+        for (pok in jsonPoks) {
+            var pok_id = cleanString(pok)
+
+            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
+                console.log(pok)
+                console.log(pok_id)
+
+                jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
+                jsonPoks[pok]["id"] = pok_id
+                jsonPoks[pok]["kind"] = "Species"
+                SPECIES_BY_ID[gen][pok_id] = jsonPoks[pok]
+                pokedex[pok] = jsonPoks[pok]
+            }
+            
         }
     }
 
