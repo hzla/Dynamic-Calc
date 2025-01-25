@@ -2909,7 +2909,7 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         var cast_regx = /castform-?[a-z]*/i
         var cherr_regx = /cherrim-?[a-z]*/i
 
-        if ($('.forme:visible').length < 1) {
+        if ($('.opposing .forme:visible').length < 1) {
             return
         }
 
