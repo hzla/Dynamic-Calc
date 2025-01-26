@@ -5,7 +5,7 @@ function load_js() {
   script.src= './js/shared_controls.js?0b3ea005';
   head.appendChild(script);
   saveUploaded = false
-  boxSprites = ["pokesprite", "pokesprite"]
+  boxSprites = ["newhd", "pokesprite"]
   themes = ["old", "new"]
   trueHP = true
   fainted = []
@@ -1777,7 +1777,6 @@ function get_next_in() {
         var strongest_move_bp = 0
         var strongest_move = "None"
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
-        console.log(pok_name)
         var types = pokedex[pok_name].types
 
 
@@ -2058,19 +2057,19 @@ function get_type_info(pok_types, move=false) {
 }
 
 function loadDataSource(data) {
-    SETDEX_BW = data
-    SETDEX_ADV = data
-    SETDEX_DPP = data
-    SETDEX_SM = data
-    SETDEX_SS = data
-    SETDEX_XY = data
-    setdex = data
+    SETDEX_BW = data["formatted_sets"]
+    SETDEX_ADV = data["formatted_sets"]
+    SETDEX_DPP = data["formatted_sets"]
+    SETDEX_SM = data["formatted_sets"]
+    SETDEX_SS = data["formatted_sets"]
+    SETDEX_XY = data["formatted_sets"]
+    setdex = data["formatted_sets"]
 
-    // if (data["title"]) {
-    //     TITLE = data["title"]
-    //     $('.genSelection').hide()
-    //     $('#rom-title').text(TITLE).show()
-    // }
+    if (data["title"]) {
+        TITLE = data["title"]
+        $('.genSelection').hide()
+        $('#rom-title').text(TITLE).show()
+    }
 
 
     if (TITLE == 'Ancestral X') {
@@ -2091,295 +2090,295 @@ function loadDataSource(data) {
     customMoves = data["custom_moves"]
     var jsonMove
 
-
-    $("#show-ai").hide()
-
+    if (!jsonMoves["Fire Blast"]["e_id"]){
+        $("#show-ai").hide()
+    }
 
     console.log("loaded custom poks data")
-    // for (move in moves) {
+    for (move in moves) {
 
-    //     var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
+        var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
 
-    //     if (jsonMoves[move]) {
-    //         jsonMove = jsonMoves[move]
-    //     } else {
-    //         // moves[move] = jsonMoves[move]
-    //         continue //completely overite if custom move data found
-    //     }
+        if (jsonMoves[move]) {
+            jsonMove = jsonMoves[move]
+        } else {
+            // moves[move] = jsonMoves[move]
+            continue //completely overite if custom move data found
+        }
 
-    //     if (move == '(No Move)') {
-    //         continue
-    //     }
-    //     moves[move]["bp"] = jsonMove["basePower"]
-    //     MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
+        if (move == '(No Move)') {
+            continue
+        }
+        moves[move]["bp"] = jsonMove["basePower"]
+        MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
-	// 	var special_case_power_overrides = {
-	// 		"Return": 102,
-	// 		"Magnitude": 70
-	// 	}
+		var special_case_power_overrides = {
+			"Return": 102,
+			"Magnitude": 70
+		}
 
-	// 	if (move in special_case_power_overrides) {
-	// 		moves[move]["bp"] = special_case_power_overrides[move]
-	//        MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
-	// 	}
+		if (move in special_case_power_overrides) {
+			moves[move]["bp"] = special_case_power_overrides[move]
+	       MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
+		}
         
-    //     var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
-    //     for (n in optional_move_params) {
-    //         var param = optional_move_params[n]
-    //         if (jsonMove[param]) {
-    //           moves[move][param] = jsonMove[param]
-    //           MOVES_BY_ID[g][move_id][param] = jsonMove[param]  
-    //         }
-    //     }
+        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
+        for (n in optional_move_params) {
+            var param = optional_move_params[n]
+            if (jsonMove[param]) {
+              moves[move][param] = jsonMove[param]
+              MOVES_BY_ID[g][move_id][param] = jsonMove[param]  
+            }
+        }
 
-    //     // if (jsonMove["sf"]) {
-    //     //     moves[move]["secondaries"] = true
-    //     //     MOVES_BY_ID[g][move_id]["secondaries"] = true
-    //     // }
+        // if (jsonMove["sf"]) {
+        //     moves[move]["secondaries"] = true
+        //     MOVES_BY_ID[g][move_id]["secondaries"] = true
+        // }
 
-    //     if (jsonMove['flags']) {
-    //         if (jsonMove['flags']['punch']) {
-    //             moves[move]['isPunch'] = true
-    //             MOVES_BY_ID[g][move_id]["flags"]["punch"] = 1
-    //         }
-    //         if (jsonMove['flags']['sound']) {
-    //             moves[move]['isSound'] = true
-    //             MOVES_BY_ID[g][move_id]["flags"]["sound"] = 1
-    //         }
-    //     }
-    // }
+        if (jsonMove['flags']) {
+            if (jsonMove['flags']['punch']) {
+                moves[move]['isPunch'] = true
+                MOVES_BY_ID[g][move_id]["flags"]["punch"] = 1
+            }
+            if (jsonMove['flags']['sound']) {
+                moves[move]['isSound'] = true
+                MOVES_BY_ID[g][move_id]["flags"]["sound"] = 1
+            }
+        }
+    }
 
-    // for (move in jsonMoves) {
+    for (move in jsonMoves) {
         
-    //     // if defined in showdown move list
-    //     if (moves[move]) {
-    //     } else {
-    //         // custom move
-    //         jsonMoves[move]["flags"] = {}
+        // if defined in showdown move list
+        if (moves[move]) {
+        } else {
+            // custom move
+            jsonMoves[move]["flags"] = {}
 
-    //         moves[move] = jsonMoves[move]
-    //         moves[move]["bp"] = jsonMoves[move]["basePower"]
-    //         MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
-    //     }
-    // }
+            moves[move] = jsonMoves[move]
+            moves[move]["bp"] = jsonMoves[move]["basePower"]
+            MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
+        }
+    }
 
-    // jsonPoks = data["poks"]
-    // var jsonPok 
+    jsonPoks = data["poks"]
+    var jsonPok 
     
 
 
-    // if (jsonPoks["Bulbasaur"]["learnset_info"]) {
-    //     $('#learnset-show').show()
-    // }
+    if (jsonPoks["Bulbasaur"]["learnset_info"]) {
+        $('#learnset-show').show()
+    }
 
-    // $('#save-pok').show()
-
-
+    $('#save-pok').show()
 
 
-    // if ( TITLE.includes("Platinum") && !TITLE.includes("Lumi") ) {
-    //     var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
-    //     var deoxys_info = ['Attack', 'Defense','Speed']
-    //     var wormadam_info = ['Sandy', 'Trash']
+
+
+    if ( TITLE.includes("Platinum") && !TITLE.includes("Lumi") ) {
+        var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
+        var deoxys_info = ['Attack', 'Defense','Speed']
+        var wormadam_info = ['Sandy', 'Trash']
         
-    //     for (let i = 0; i < rotom_info.length; i++) {
-    //         pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
-    //             "types": [
-    //                 "Electric",
-    //                 rotom_info[i][1]
-    //             ],
-    //             "bs": jsonPoks['Rotom']['bs'],
-    //             "weightkg": 0.3,
-    //             "abilities": {
-    //                 "0": "Levitate"
-    //             },
-    //             "gender": "N"
-    //         }
-    //     }
+        for (let i = 0; i < rotom_info.length; i++) {
+            pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+                "types": [
+                    "Electric",
+                    rotom_info[i][1]
+                ],
+                "bs": jsonPoks['Rotom']['bs'],
+                "weightkg": 0.3,
+                "abilities": {
+                    "0": "Levitate"
+                },
+                "gender": "N"
+            }
+        }
 
-    //     for (let i = 0; i < deoxys_info.length; i++) {
-    //         pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
-    //             "types": [
-    //                 "Psychic"
-    //             ],
-    //             "bs": jsonPoks['Deoxys']['bs'],
-    //             "weightkg": 60.8,
-    //             "abilities": {
-    //                 "0": "Pressure"
-    //             },
-    //             "gender": "N",
-    //         }
-    //     }
+        for (let i = 0; i < deoxys_info.length; i++) {
+            pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
+                "types": [
+                    "Psychic"
+                ],
+                "bs": jsonPoks['Deoxys']['bs'],
+                "weightkg": 60.8,
+                "abilities": {
+                    "0": "Pressure"
+                },
+                "gender": "N",
+            }
+        }
 
-    //     pokedex['Shaymin-Sky-Glitched'] = {
-    //         "types": [
-    //             "Grass",
-    //             "Flying"
-    //         ],
-    //         "bs": jsonPoks['Shaymin']['bs'],
-    //         "weightkg": 2.1,
-    //         "abilities": {
-    //             "0": "Natural Cure"
-    //         },
-    //         "gender": "N",
-    //         "otherFormes": [
-    //             "Shaymin-Sky"
-    //         ]
-    //     }
+        pokedex['Shaymin-Sky-Glitched'] = {
+            "types": [
+                "Grass",
+                "Flying"
+            ],
+            "bs": jsonPoks['Shaymin']['bs'],
+            "weightkg": 2.1,
+            "abilities": {
+                "0": "Natural Cure"
+            },
+            "gender": "N",
+            "otherFormes": [
+                "Shaymin-Sky"
+            ]
+        }
 
-    //     pokedex['Wormadam-Trash-Glitched'] = {
-    //         "types": [
-    //             "Bug",
-    //             "Steel"
-    //         ],
-    //         "bs": {
-    //             "at": 50,
-    //             "df": 90,
-    //             "hp": 60,
-    //             "sa": 110,
-    //             "sd": 110,
-    //             "sp": 30
-    //         },
-    //         "weightkg": 6.5,
-    //         "abilities": {
-    //             "0": "Anticipation"
-    //         },
-    //         "otherFormes": [
-    //             "Wormadam-Sandy",
-    //             "Wormadam-Trash"
-    //         ]
-    //     }
+        pokedex['Wormadam-Trash-Glitched'] = {
+            "types": [
+                "Bug",
+                "Steel"
+            ],
+            "bs": {
+                "at": 50,
+                "df": 90,
+                "hp": 60,
+                "sa": 110,
+                "sd": 110,
+                "sp": 30
+            },
+            "weightkg": 6.5,
+            "abilities": {
+                "0": "Anticipation"
+            },
+            "otherFormes": [
+                "Wormadam-Sandy",
+                "Wormadam-Trash"
+            ]
+        }
 
-    //     pokedex['Wormadam-Sandy-Glitched'] = {
-    //         "types": [
-    //             "Bug",
-    //             "Ground"
-    //         ],
-    //         "bs": {
-    //             "at": 50,
-    //             "df": 90,
-    //             "hp": 60,
-    //             "sa": 110,
-    //             "sd": 110,
-    //             "sp": 30
-    //         },
-    //         "weightkg": 6.5,
-    //         "abilities": {
-    //             "0": "Anticipation"
-    //         },
-    //         "otherFormes": [
-    //             "Wormadam-Sandy",
-    //             "Wormadam-Trash"
-    //         ]
-    //     }
-    // }
-
-
-
-    // if (TITLE == "Cascade White 2") {
-    //     moves['Pay Day'].willCrit = true;
-    // }
+        pokedex['Wormadam-Sandy-Glitched'] = {
+            "types": [
+                "Bug",
+                "Ground"
+            ],
+            "bs": {
+                "at": 50,
+                "df": 90,
+                "hp": 60,
+                "sa": 110,
+                "sd": 110,
+                "sp": 30
+            },
+            "weightkg": 6.5,
+            "abilities": {
+                "0": "Anticipation"
+            },
+            "otherFormes": [
+                "Wormadam-Sandy",
+                "Wormadam-Trash"
+            ]
+        }
+    }
 
 
-    // const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+    if (TITLE == "Cascade White 2") {
+        moves['Pay Day'].willCrit = true;
+    }
+
+
+    const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
    
-    // if (TITLE.includes("Lumi")) {
+    if (TITLE.includes("Lumi")) {
 
-    //     for (pok in jsonPoks) {
-    //         var pok_id = cleanString(pok)
+        for (pok in jsonPoks) {
+            var pok_id = cleanString(pok)
 
-    //         if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
+            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
 
-    //             if (!jsonPoks[pok]) {
-    //                 console.log(pok)
-    //                 continue
+                if (!jsonPoks[pok]) {
+                    console.log(pok)
+                    continue
 
-    //             } 
+                } 
 
-    //             jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
-    //             jsonPoks[pok]["id"] = pok_id
-    //             jsonPoks[pok]["kind"] = "Species"
-    //             SPECIES_BY_ID[gen][pok_id] = jsonPoks[pok]
-    //             pokedex[pok] = jsonPoks[pok]
-    //         }
+                jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
+                jsonPoks[pok]["id"] = pok_id
+                jsonPoks[pok]["kind"] = "Species"
+                SPECIES_BY_ID[gen][pok_id] = jsonPoks[pok]
+                pokedex[pok] = jsonPoks[pok]
+            }
             
-    //     }
-    // }
+        }
+    }
 
-    // for (pok in pokedex) {
+    for (pok in pokedex) {
 
-    //     if (pok.includes("Glitched")) {
-    //         continue
-    //     }
+        if (pok.includes("Glitched")) {
+            continue
+        }
 
-	// 	// Allow import of Farfetch'd w/ unicode standard apostrophe
-	// 	if (pok == "Farfetch’d" && jsonPoks["Farfetch'd"]) {
-	// 		jsonPok = jsonPoks["Farfetch'd"];
-	// 	}
-    //     else if (jsonPoks[pok]) {
-    //         jsonPok = jsonPoks[pok]
-    //     } else {
-    //         // override for lumi plat
+		// Allow import of Farfetch'd w/ unicode standard apostrophe
+		if (pok == "Farfetch’d" && jsonPoks["Farfetch'd"]) {
+			jsonPok = jsonPoks["Farfetch'd"];
+		}
+        else if (jsonPoks[pok]) {
+            jsonPok = jsonPoks[pok]
+        } else {
+            // override for lumi plat
            
-    //             continue //skip weird smogon pokemon and arceus forms
+                continue //skip weird smogon pokemon and arceus forms
 
-    //     }
+        }
 
-    //     // revert fairy pokemon base stats for sgss
-    //     if (TITLE == "Sacred Gold/Storm Silver" && !FAIRY ) {
-    //         if (jsonPok["types"].includes('Fairy')) {
-    //             jsonPok["bs"] = pokedex[pok]["bs"]
-    //             jsonPok["types"] = pokedex[pok]["types"]
-    //         }
-    //     }
+        // revert fairy pokemon base stats for sgss
+        if (TITLE == "Sacred Gold/Storm Silver" && !FAIRY ) {
+            if (jsonPok["types"].includes('Fairy')) {
+                jsonPok["bs"] = pokedex[pok]["bs"]
+                jsonPok["types"] = pokedex[pok]["types"]
+            }
+        }
 
-    //     pokedex[pok]["bs"] = jsonPok["bs"]
+        pokedex[pok]["bs"] = jsonPok["bs"]
 
-    //     if (jsonPok["types"]) {
-    //         pokedex[pok]["types"] = jsonPok["types"]
-    //     }
+        if (jsonPok["types"]) {
+            pokedex[pok]["types"] = jsonPok["types"]
+        }
         
-    //     if (jsonPok.hasOwnProperty("abilities"))
-    //         pokedex[pok]["abilities"] = jsonPok["abilities"]
+        if (jsonPok.hasOwnProperty("abilities"))
+            pokedex[pok]["abilities"] = jsonPok["abilities"]
 
-    //     const pok_id = cleanString(pok)
-    //     SPECIES_BY_ID[gen][pok_id].types = jsonPok["types"]
+        const pok_id = cleanString(pok)
+        SPECIES_BY_ID[gen][pok_id].types = jsonPok["types"]
 
-    //     SPECIES_BY_ID[gen][pok_id].baseStats = {
-    //         "atk": jsonPok["bs"]["at"],
-    //         "def": jsonPok["bs"]["df"],
-    //         "hp": jsonPok["bs"]["hp"],
-    //         "spa": jsonPok["bs"]["sa"],
-    //         "spd": jsonPok["bs"]["sd"],
-    //         "spe": jsonPok["bs"]["sp"],
-    //     }
-    // }
+        SPECIES_BY_ID[gen][pok_id].baseStats = {
+            "atk": jsonPok["bs"]["at"],
+            "def": jsonPok["bs"]["df"],
+            "hp": jsonPok["bs"]["hp"],
+            "spa": jsonPok["bs"]["sa"],
+            "spd": jsonPok["bs"]["sd"],
+            "spe": jsonPok["bs"]["sp"],
+        }
+    }
 
     
 
-    // if (damageGen > 3 && damageGen < 6) {
-    //     pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
-    // }
-    // if (damageGen == 4) {
-    //     var gen4Forms = [
-    //         ["Deoxys", ["Attack", "Defense", "Speed"]],
-    //         ["Castform", ["Rainy", "Sunny", "Snowy"]]
-    //         ]
+    if (damageGen > 3 && damageGen < 6) {
+        pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
+    }
+    if (damageGen == 4) {
+        var gen4Forms = [
+            ["Deoxys", ["Attack", "Defense", "Speed"]],
+            ["Castform", ["Rainy", "Sunny", "Snowy"]]
+            ]
 
-    //     // if (TITLE.includes("Sterling")) {
-    //     //     gen4Forms.pop()
-    //     // }
+        // if (TITLE.includes("Sterling")) {
+        //     gen4Forms.pop()
+        // }
       
-    //     for (i in gen4Forms) {
-    //         var base = gen4Forms[i][0]
-    //         var forms = gen4Forms[i][1]
+        for (i in gen4Forms) {
+            var base = gen4Forms[i][0]
+            var forms = gen4Forms[i][1]
 
-    //         for (j in forms) {
-    //             pokedex[`${base}-${forms[j]}`]['bs'] = pokedex[base]['bs']
-    //         }
-    //     }
-    // }
+            for (j in forms) {
+                pokedex[`${base}-${forms[j]}`]['bs'] = pokedex[base]['bs']
+            }
+        }
+    }
 
     
 
@@ -2394,14 +2393,14 @@ function loadDataSource(data) {
     }
     
     customLeads = get_custom_trainer_names()
-    // if (customMoves) {
-    //     for (move in customMoves) {
-    //         moves[move] = customMoves[move]
-    //         moves[move]["bp"] = customMoves[move]["basePower"]
+    if (customMoves) {
+        for (move in customMoves) {
+            moves[move] = customMoves[move]
+            moves[move]["bp"] = customMoves[move]["basePower"]
 
-    //         MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = customMoves[move]
-    //     }
-    // }
+            MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = customMoves[move]
+        }
+    }
     moves['(No Move)'] = moves['-'] = {
         "bp": 0,
         "category": "Status",
@@ -2458,7 +2457,6 @@ $(document).ready(function() {
    "03e577af7cc9856a1f42": "Sacred Gold/Storm Silver",
    "9e7113f0ee22dad116e1": "Platinum Redux 5.2 TC6",
    "b6e2693147e215f10f4a": "Radical Red 3.02",
-   "e91164d90d06a009e6cc": "Radical Red 4.1 Hardcore",
    "7a1ed35468b22ea01103": "Ancestral X",
    "8c3ca30ba346734d5e4f": "Run & Bun",
    "f109940e5639c3702e6d": "Rising Ruby/Sinking Saphire",
@@ -2483,8 +2481,7 @@ $(document).ready(function() {
    "9abb79df1e356642c229": "Fire Red Omega",
    "12f82557ed0e08145660": "Fire Red",
    "aeb373b7631d4afd7a53": "Emerald",
-   "006ac04e900ccb3110df": "Luminescent Platinum",
-   "2ec049ba9513d189a915": "Emerald Imperium"
+   "006ac04e900ccb3110df": "Luminescent Platinum"
     }
 
     MASTERSHEETS = {
@@ -2522,11 +2519,11 @@ $(document).ready(function() {
 
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
-        if (TITLE.includes("Radical Red") || TITLE.includes("Emerald Imperium")) {
-            // INC_EM = true
+        if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
+            INC_EM = true
             $("#lvl-cap").show()
-            // $("#harsh-sunshine").next().text("Ability Sun")
-            // $("#heavy-rain").next().text("Ability Rain")
+            $("#harsh-sunshine").next().text("Ability Sun")
+            $("#heavy-rain").next().text("Ability Rain")
         }
 
         if ( TITLE == "Cascade White 2") {

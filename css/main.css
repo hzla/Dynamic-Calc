@@ -640,7 +640,7 @@ table td {
 
 .trainer-pok-list.opposing {
     /*margin-top:  70px;*/
-/*    flex-wrap:  nowrap;*/
+    flex-wrap:  nowrap;
 }
 
 

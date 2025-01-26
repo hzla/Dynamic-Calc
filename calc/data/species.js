@@ -5068,14 +5068,6 @@ delete BW['Pichu'].otherFormes;
 delete BW['Pichu-Spiky-eared'];
 var XY_PATCH = {
     Abomasnow: { otherFormes: ['Abomasnow-Mega'] },
-    Luxray: { otherFormes: ['Luxray-Mega'] },
-    Infernape: { otherFormes: ['Infernape-Mega'] },
-    Torterra: { otherFormes: ['Torterra-Mega'] },
-    Roserade: { otherFormes: ['Roserade-Mega'] },
-    Empoleon: { otherFormes: ['Empoleon-Mega-O', 'Empoleon-Mega-D'] },
-    Dusknoir: { otherFormes: ['Dusknoir-Mega'] },
-    Slaking: { otherFormes: ['Slaking-Mega'] },
-    Abomasnow: { otherFormes: ['Abomasnow-Mega'] },
     Absol: { otherFormes: ['Absol-Mega'] },
     Aerodactyl: { otherFormes: ['Aerodactyl-Mega'] },
     Aggron: { otherFormes: ['Aggron-Mega'] },
@@ -5563,69 +5555,6 @@ var XY_PATCH = {
         weightkg: 185,
         abilities: { 0: 'Snow Warning' },
         baseSpecies: 'Abomasnow'
-    },
-    'Luxray-Mega': {
-        types: ['Electric', 'Dark'],
-        bs: { hp: 95, at: 130, df: 79, sa: 110, sd: 79, sp: 130 },
-        weightkg: 185,
-        abilities: { 0: 'Strong Jaw' },
-        baseSpecies: 'Luxray'
-    },
-    'Infernape-Mega': {
-        types: ['Fire', 'Fighting'],
-        bs: { hp: 76, at: 137, df: 71, sa: 137, sd: 71, sp: 142 },
-        weightkg: 185,
-        abilities: { 0: 'Adaptability' },
-        baseSpecies: 'Infernape'
-    },
-    'Torterra-Mega': {
-        types: ['Grass', 'Ground'],
-        bs: { hp: 115, at: 139, df: 135, sa: 75, sd: 105, sp: 56 },
-        weightkg: 185,
-        abilities: { 0: 'Ice Eater' },
-        baseSpecies: 'Torterra'
-    },
-    'Roserade-Mega': {
-        types: ['Grass', 'Poison'],
-        bs: { hp: 60, at: 70, df: 85, sa: 150, sd: 120, sp: 130 },
-        weightkg: 185,
-        abilities: { 0: 'Technician' },
-        baseSpecies: 'Roserade'
-    },
-    'Empoleon-Mega-O': {
-        types: ['Water', 'Steel'],
-        bs: { hp: 100, at: 150, df: 75, sa: 110, sd: 75, sp: 120 },
-        weightkg: 185,
-        abilities: { 0: "Emperor's Prescence" },
-        baseSpecies: 'Empoleon'
-    },
-    'Empoleon-Mega-D': {
-        types: ['Water', 'Steel'],
-        bs: { hp: 140, at: 75, df: 145, sa: 75, sd: 145, sp: 50 },
-        weightkg: 185,
-        abilities: { 0: "Lightning Rod" },
-        baseSpecies: 'Empoleon'
-    },
-    'Dusknoir-Mega': {
-        types: ['Ghost', 'Dark'],
-        bs: { hp: 105, at: 110, df: 150, sa: 65, sd: 150, sp: 45 },
-        weightkg: 185,
-        abilities: { 0: 'Prankster' },
-        baseSpecies: 'Dusknoir'
-    },
-    'Grimmsnarl-Mega': {
-        types: ['Dark', 'Fairy'],
-        bs: { hp: 115, at: 100, df: 95, sa: 145, sd: 95, sp: 60 },
-        weightkg: 185,
-        abilities: { 0: 'Sheer Force' },
-        baseSpecies: 'Grimmsnarl'
-    },
-    'Slaking-Mega': {
-        types: ['Normal'],
-        bs: { hp: 150, at: 160, df: 110, sa: 60, sd: 110, sp: 110 },
-        weightkg: 185,
-        abilities: { 0: 'Comatose' },
-        baseSpecies: 'Slaking'
     },
     'Absol-Mega': {
         types: ['Dark'],
@@ -8157,7 +8086,7 @@ var SS_PATCH = {
         bs: { hp: 95, at: 120, df: 65, sa: 95, sd: 75, sp: 60 },
         weightkg: 61,
         abilities: { 0: 'Prankster' },
-        otherFormes: ['Grimmsnarl-Gmax', 'Grimmsnarl-Mega']
+        otherFormes: ['Grimmsnarl-Gmax']
     },
     'Grimmsnarl-Gmax': {
         types: ['Dark', 'Fairy'],
