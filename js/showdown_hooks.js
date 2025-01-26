@@ -2420,6 +2420,7 @@ type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
 noSwitch = params.get('noSwitch')
+hasEvs = params.get('evs') != '0'
 challengeMode = params.get('challengeMode')
 FAIRY = params.get('fairy') == '1'
 misc = params.get('misc')
