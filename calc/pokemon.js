@@ -36,20 +36,26 @@ var Pokemon = (function () {
         this.gen = gen;
         this.name = options.name || name;
         this.types = this.species.types;
-        this.isDynamaxed = !!options.isDynamaxed;
         this.weightkg = this.species.weightkg;
-        if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
-            this.weightkg = gen.species.get((0, util_1.toID)(this.species.baseSpecies)).weightkg;
-        }
         this.level = options.level || 100;
         this.gender = options.gender || this.species.gender || 'M';
         this.ability = options.ability || ((_b = this.species.abilities) === null || _b === void 0 ? void 0 : _b[0]) || undefined;
         this.abilityOn = !!options.abilityOn;
+        this.isDynamaxed = !!options.isDynamaxed;
+        this.dynamaxLevel = this.isDynamaxed
+            ? (options.dynamaxLevel === undefined ? 10 : options.dynamaxLevel) : undefined;
+        this.isSaltCure = !!options.isSaltCure;
+        this.alliesFainted = options.alliesFainted;
+        this.boostedStat = options.boostedStat;
+        this.teraType = options.teraType;
         this.item = options.item;
         this.nature = options.nature || 'Serious';
         this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
         this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
         this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
+        if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
+            this.weightkg = gen.species.get((0, util_1.toID)(this.species.baseSpecies)).weightkg;
+        }
         if (gen.num < 3) {
             this.ivs.hp = stats_1.Stats.DVToIV(stats_1.Stats.getHPDV({
                 atk: this.ivs.atk,
@@ -83,15 +89,17 @@ var Pokemon = (function () {
     }
     Pokemon.prototype.maxHP = function (original) {
         if (original === void 0) { original = false; }
-        return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
-            ? this.rawStats.hp * 2
-            : this.rawStats.hp;
+        if (!original && this.isDynamaxed && this.species.baseStats.hp !== 1) {
+            return Math.floor((this.rawStats.hp * (150 + 5 * this.dynamaxLevel)) / 100);
+        }
+        return this.rawStats.hp;
     };
     Pokemon.prototype.curHP = function (original) {
         if (original === void 0) { original = false; }
-        return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
-            ? this.originalCurHP * 2
-            : this.originalCurHP;
+        if (!original && this.isDynamaxed && this.species.baseStats.hp !== 1) {
+            return Math.ceil((this.originalCurHP * (150 + 5 * this.dynamaxLevel)) / 100);
+        }
+        return this.originalCurHP;
     };
     Pokemon.prototype.hasAbility = function () {
         var abilities = [];
@@ -123,7 +131,7 @@ var Pokemon = (function () {
         try {
             for (var types_1 = __values(types), types_1_1 = types_1.next(); !types_1_1.done; types_1_1 = types_1.next()) {
                 var type = types_1_1.value;
-                if (this.types.includes(type))
+                if (this.teraType ? this.teraType === type : this.types.includes(type))
                     return true;
             }
         }
@@ -133,6 +141,28 @@ var Pokemon = (function () {
                 if (types_1_1 && !types_1_1.done && (_a = types_1["return"])) _a.call(types_1);
             }
             finally { if (e_2) throw e_2.error; }
+        }
+        return false;
+    };
+    Pokemon.prototype.hasOriginalType = function () {
+        var e_3, _a;
+        var types = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            types[_i] = arguments[_i];
+        }
+        try {
+            for (var types_2 = __values(types), types_2_1 = types_2.next(); !types_2_1.done; types_2_1 = types_2.next()) {
+                var type = types_2_1.value;
+                if (this.types.includes(type))
+                    return true;
+            }
+        }
+        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+        finally {
+            try {
+                if (types_2_1 && !types_2_1.done && (_a = types_2["return"])) _a.call(types_2);
+            }
+            finally { if (e_3) throw e_3.error; }
         }
         return false;
     };
@@ -149,6 +179,10 @@ var Pokemon = (function () {
             ability: this.ability,
             abilityOn: this.abilityOn,
             isDynamaxed: this.isDynamaxed,
+            dynamaxLevel: this.dynamaxLevel,
+            isSaltCure: this.isSaltCure,
+            alliesFainted: this.alliesFainted,
+            boostedStat: this.boostedStat,
             item: this.item,
             gender: this.gender,
             nature: this.nature,
@@ -157,6 +191,7 @@ var Pokemon = (function () {
             boosts: (0, util_1.extend)(true, {}, this.boosts),
             originalCurHP: this.originalCurHP,
             status: this.status,
+            teraType: this.teraType,
             toxicCounter: this.toxicCounter,
             moves: this.moves.slice(),
             overrides: this.species
@@ -167,7 +202,7 @@ var Pokemon = (function () {
     };
     Pokemon.getForme = function (gen, speciesName, item, moveName) {
         var species = gen.species.get((0, util_1.toID)(speciesName));
-        if (!species || !species.otherFormes) {
+        if (!(species === null || species === void 0 ? void 0 : species.otherFormes)) {
             return speciesName;
         }
         var i = 0;

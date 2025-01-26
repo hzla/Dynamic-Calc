@@ -27,7 +27,7 @@ if (!Array.prototype.indexOf) {
 	};
 }
 
-boxSprites = ["newhd", "pokesprite"]
+boxSprites = ["pokesprite", "pokesprite"]
 fainted = []
 if (!localStorage.boxspriteindex) {
 localStorage.boxspriteindex = 1
@@ -558,7 +558,7 @@ function refresh_next_in() {
 		}
 
 		var pok = `<div class="trainer-pok-container no-switch-${noSwitch}">
-			<img class="trainer-pok right-side ${highlight} ${isFainted} " src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
+			<img class="trainer-pok right-side ${highlight} ${isFainted} " src="./img/${sprite_style}/${pok_name.replace(" ", "")}.png" data-id="${dataID}">`
 
 
 		var species = next_poks[i][0].split(" (")[0]
@@ -656,7 +656,7 @@ $(".set-selector").change(function () {
 				// $('#trainer-sprite').attr('src', `./img/${sprite}`)
 				// $('#trainer-sprite').show()
 
-				if (INC_EM && $("#lvl-cap").val() != "") {
+				if ($("#lvl-cap").val() != "" && SETDEX_BW[pokemonName][setName]["sublevel"]) {
 					var lvl_delta = parseInt(SETDEX_BW[pokemonName][setName]["sublevel"])
 					var current_cap = parseInt($("#lvl-cap").val())
 					setTimeout(function() {
@@ -670,7 +670,7 @@ $(".set-selector").change(function () {
 		} else {
 			$('#trainer-sprite').hide()
 		}
-		var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","").replace(":","-")
+		var pokesprite = pokemonName.toLowerCase().replace(" ", "").replace(".","").replace("’","").replace(":","-")
 
 		if (pokesprite.includes("galarian-")) {
 			pokesprite = pokesprite.split("galarian-")[1] +  "-galar"
@@ -684,6 +684,8 @@ $(".set-selector").change(function () {
 			pokesprite = pokesprite.split("alolan-")[1] +  "-alola"
 		}
 
+	
+
 
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
@@ -693,16 +695,16 @@ $(".set-selector").change(function () {
 
 	} else {
 		if (SETDEX_BW) {
-			var pokesprite = pokemonName.toLowerCase().replace(" ", "-").replace(".","").replace("’","")
+			var pokesprite = pokemonName.toLowerCase().replace(" ", "").replace(".","").replace("’","")
 			
 			$('#p1 .poke-sprite').attr('src', `./img/${playerSprites}/${pokesprite}.${suffix}`)
 
 
 
 
-			if (damageGen <= 5 || TITLE.includes("Lumi")) {
+	
 				$('#p1 .poke-sprite').addClass('no-flip')
-			}
+
 			if (TITLE == "Emerald Kaizo") {
 				caps = [15, 29, 48, 70]
 				current_tr_mon_level = parseInt($("#levelL1").val())
@@ -1802,10 +1804,10 @@ $(document).ready(function () {
 		playerSprites = "back"
 		suffix = "gif"
 	} else {
-		trainerSprites = "newhd"
-		playerSprites = "newhd"
+		trainerSprites = "front"
+		playerSprites = "back"
 		$('.poke-sprite').css('background', 'none')
-		suffix = "png"
+		suffix = "gif"
 	}
 	console.log(`Initializing Calc with moves from gen ${g} and mechanics from gen ${damageGen}`)
 	$("#gen" + g).prop("checked", true);

@@ -5,7 +5,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -79,7 +79,6 @@ var GSC = [
     'Charcoal',
     'Dragon Fang',
     'Dragon Scale',
-    'Energy Powder',
     'Fast Ball',
     'Fire Stone',
     'Focus Band',
@@ -124,7 +123,6 @@ var GSC = [
     'Soft Sand',
     'Spell Tag',
     'Sport Ball',
-    'Stick',
     'Sun Stone',
     'Thick Club',
     'Thunder Stone',
@@ -132,8 +130,6 @@ var GSC = [
     'Ultra Ball',
     'Up-Grade',
     'Water Stone',
-    'Megite X',
-    'Megite Y'
 ];
 var GSC_ONLY = [
     'Berry',
@@ -149,7 +145,6 @@ var GSC_ONLY = [
     'Pink Bow',
     'Polkadot Bow',
     'PSN Cure Berry',
-    'Enigma Berry',
 ];
 var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Aguav Berry',
@@ -321,6 +316,7 @@ var DPP = ADV.concat([
 var BW = DPP.concat([
     'Absorb Bulb',
     'Air Balloon',
+    'Big Nugget',
     'Binding Band',
     'Bug Gem',
     'Burn Drive',
@@ -354,14 +350,6 @@ var BW = DPP.concat([
     'Shock Drive',
     'Steel Gem',
     'Water Gem',
-    'Fairy Gem',
-    'Fairy Dust',
-    "Colress Prototype",
-    "Colress's Invention",
-    "Mysterious Device",
-    "Lucky Charm"
-
-
 ]);
 exports.MEGA_STONES = {
     Absolite: 'Absol',
@@ -369,19 +357,29 @@ exports.MEGA_STONES = {
     Aerodactylite: 'Aerodactyl',
     Aggronite: 'Aggron',
     Alakazite: 'Alakazam',
+    Alcremite: 'Alcremie',
     Altarianite: 'Altaria',
     Ampharosite: 'Ampharos',
+    Appletunite: 'Appletun',
     Audinite: 'Audino',
     Banettite: 'Banette',
     Beedrillite: 'Beedrill',
     Blastoisinite: 'Blastoise',
     Blazikenite: 'Blaziken',
+    Butterfrite: 'Butterfree',
     Cameruptite: 'Camerupt',
+    Centiskite: 'Centiskorch',
     'Charizardite X': 'Charizard',
     'Charizardite Y': 'Charizard',
+    Coalossite: 'Coalossal',
+    Copperajite: 'Copperajah',
     Crucibellite: 'Crucibelle',
     Diancite: 'Diancie',
+    Drednawite: 'Drednaw',
+    Duraludonite: 'Duraludonite',
+    Flapplite: 'Flapple',
     Galladite: 'Gallade',
+    Garbodorite: 'Garbodor',
     Garchompite: 'Garchomp',
     Gardevoirite: 'Gardevoir',
     Gengarite: 'Gengar',
@@ -390,26 +388,34 @@ exports.MEGA_STONES = {
     Heracronite: 'Heracross',
     Houndoominite: 'Houndoom',
     Kangaskhanite: 'Kangaskhan',
+    Kinglerite: 'Kingler',
+    Laprasite: 'Lapras',
     Latiasite: 'Latias',
     Latiosite: 'Latios',
     Lopunnite: 'Lopunny',
     Lucarionite: 'Lucario',
+    Machampite: 'Machamp',
     Manectite: 'Manectric',
     Mawilite: 'Mawile',
     Medichamite: 'Medicham',
     Metagrossite: 'Metagross',
     'Mewtwonite X': 'Mewtwo',
     'Mewtwonite Y': 'Mewtwo',
+    Orbeetlite: 'Orbeetle',
     Pidgeotite: 'Pidgeot',
     Pinsirite: 'Pinsir',
     Sablenite: 'Sableye',
     Salamencite: 'Salamence',
+    Sandacondite: 'Sandaconda',
     Sceptilite: 'Sceptile',
     Scizorite: 'Scizor',
     Sharpedonite: 'Sharpedo',
     Slowbronite: 'Slowbro',
+    Snorlaxite: 'Snorlax',
     Steelixite: 'Steelix',
     Swampertite: 'Swampert',
+    Toxtricitite: 'Toxtricity',
+    'Toxtricitite Low Key': 'Toxtricity-Low-Key',
     Tyranitarite: 'Tyranitar',
     Venusaurite: 'Venusaur'
 };
@@ -512,6 +518,7 @@ var SS = SM.concat([
     'Galarica Wreath',
     'Heavy-Duty Boots',
     'Leek',
+    'Leek Stick',
     'Love Sweet',
     'Ribbon Sweet',
     'Room Service',
@@ -528,6 +535,30 @@ for (var i = 0; i < 100; i++) {
 }
 SS.push('Utility Umbrella', 'Vile Vial');
 SS.push.apply(SS, __spreadArray(__spreadArray([], __read(GSC_ONLY), false), ['Old Amber'], false));
+var SV = SS.concat([
+    'Adamant Crystal',
+    'Auspicious Armor',
+    'Ability Shield',
+    'Booster Energy',
+    'Clear Amulet',
+    'Cornerstone Mask',
+    'Covert Cloak',
+    'Fairy Feather',
+    'Hearthflame Mask',
+    'Loaded Dice',
+    'Malicious Armor',
+    'Masterpiece Teacup',
+    'Metal Alloy',
+    'Mirror Herb',
+    'Punching Glove',
+    'Lustrous Globe',
+    'Griseous Core',
+    'Strange Ball',
+    'Syrupy Apple',
+    'Unremarkable Teacup',
+    'Wellspring Mask',
+]);
+SV.push('Burnt Seed');
 var BERRIES = {
     'Aguav Berry': { t: 'Dragon', p: 80 },
     'Apicot Berry': { t: 'Ground', p: 100 },
@@ -607,7 +638,7 @@ var BERRIES = {
     'Wiki Berry': { t: 'Rock', p: 80 },
     'Yache Berry': { t: 'Ice', p: 80 }
 };
-exports.ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+exports.ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Items = (function () {
     function Items(gen) {
         this.gen = gen;
@@ -616,22 +647,25 @@ var Items = (function () {
         return ITEMS_BY_ID[this.gen][id];
     };
     Items.prototype[Symbol.iterator] = function () {
-        var _a, _b, _i, id;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        var _a, _b, _c, _i, id;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0:
-                    _a = [];
-                    for (_b in ITEMS_BY_ID[this.gen])
-                        _a.push(_b);
+                    _a = ITEMS_BY_ID[this.gen];
+                    _b = [];
+                    for (_c in _a)
+                        _b.push(_c);
                     _i = 0;
-                    _c.label = 1;
+                    _d.label = 1;
                 case 1:
-                    if (!(_i < _a.length)) return [3, 4];
-                    id = _a[_i];
+                    if (!(_i < _b.length)) return [3, 4];
+                    _c = _b[_i];
+                    if (!(_c in _a)) return [3, 3];
+                    id = _c;
                     return [4, this.get(id)];
                 case 2:
-                    _c.sent();
-                    _c.label = 3;
+                    _d.sent();
+                    _d.label = 3;
                 case 3:
                     _i++;
                     return [3, 1];
