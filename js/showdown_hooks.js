@@ -410,6 +410,32 @@ function get_box() {
     return box
 }
 
+
+function filterStringsByNumber(targetNum, strArray) {
+    // Define the acceptable range
+    const minNum = targetNum - 3;
+    const maxNum = targetNum + 3;
+    
+    // Helper function to find numbers that follow "Lvl " in a string
+    const findLevelNumbersInString = (str) => {
+        const matches = str.match(/Lvl (-?\d+)/g);
+        if (!matches) return [];
+        
+        // Extract just the numbers from the matches
+        return matches.map(match => parseInt(match.replace('Lvl ', '')));
+    };
+    
+    // Filter the array
+    return strArray.filter(str => {
+        const numbers = findLevelNumbersInString(str);
+        
+        // Check if any number in the string is within range
+        return numbers.some(num => 
+            num >= minNum && num <= maxNum
+        );
+    });
+}
+
 function get_trainer_poks(trainer_name)
 {
     var all_poks = SETDEX_BW
@@ -432,6 +458,8 @@ function get_trainer_poks(trainer_name)
         }
     }
 
+
+
     if (matches.length == 0) {
         for (i in TR_NAMES) {
 
@@ -443,6 +471,13 @@ function get_trainer_poks(trainer_name)
             }
         }
     }
+
+    // if there's too many matches, only return pokemon within 2 levels of the currently selected mon
+    if (matches.length > 6) {
+        return filterStringsByNumber(currentSetLevel, matches)
+    }
+
+
     return matches
 }
 
