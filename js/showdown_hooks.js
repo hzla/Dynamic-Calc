@@ -2520,7 +2520,8 @@ $(document).ready(function() {
    "12f82557ed0e08145660": "Fire Red",
    "aeb373b7631d4afd7a53": "Emerald",
    "006ac04e900ccb3110df": "Luminescent Platinum",
-   "2ec049ba9513d189a915": "Emerald Imperium"
+   "2ec049ba9513d189a915": "Emerald Imperium",
+   "ced457ba9aa55731616c": "Radical Red 4.1 Normal"
     }
 
     MASTERSHEETS = {
