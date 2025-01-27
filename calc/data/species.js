@@ -3198,6 +3198,22 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Giratina'
     },
+    'Palkia-Origin': {
+        types: ['Water', 'Dragon'],
+        bs: { hp: 90, at: 100, df: 100, sa: 150, sd: 120, sp: 120 },
+        weightkg: 650,
+        gender: 'N',
+        abilities: { 0: 'Levitate' },
+        baseSpecies: 'Giratina'
+    },
+    'Dialga-Origin': {
+        types: ['Steel', 'Dragon'],
+        bs: { hp: 100, at: 120, df: 120, sa: 150, sd: 100, sp: 90 },
+        weightkg: 650,
+        gender: 'N',
+        abilities: { 0: 'Levitate' },
+        baseSpecies: 'Giratina'
+    },
     Glaceon: {
         types: ['Ice'],
         bs: { hp: 65, at: 60, df: 110, sa: 130, sd: 95, sp: 65 },
@@ -3428,7 +3444,8 @@ var DPP_PATCH = {
         bs: { hp: 90, at: 120, df: 100, sa: 150, sd: 120, sp: 100 },
         weightkg: 336,
         gender: 'N',
-        abilities: { 0: 'Pressure' }
+        abilities: { 0: 'Pressure' },
+        otherFormes: ['Palkia-Origin'],
     },
     Phione: {
         types: ['Water'],
@@ -8902,7 +8919,7 @@ var RR_PATCH = {
     'Delibird': { bs: { at: 100, sp: 105 } },
     'Dewgong': { bs: { at: 50, sa: 90 } },
     'Dhelmise': { otherFormes: ['Dhelmise-Sevii'] },
-    'Dialga': { otherFormes: ['Dialga-Primal'] },
+    'Dialga': { otherFormes: ['Dialga-Primal', "Dialga-Origin"] },
     'Dodrio': { otherFormes: ['Dodrio-Sevii'] },
     'Doduo': { otherFormes: ['Doduo-Sevii'] },
     'Drampa': { bs: { hp: 103, at: 50 } },
