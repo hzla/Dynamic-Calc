@@ -809,8 +809,22 @@ function addSets(pokes, name) {
 		
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
+			
+			if (typeof calc.SPECIES[8][currentRow[j].trim()] == "undefined") {
+				currentRow[j] = currentRow[j].trim().replace(" ", "-")
+				console.log(currentRow[j])
+			}
+
+
 			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
 				currentPoke = calc.SPECIES[8][currentRow[j].trim()];
+				
+
+		
+				
+
+
+
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
