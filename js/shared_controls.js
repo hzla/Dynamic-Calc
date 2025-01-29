@@ -595,7 +595,7 @@ $(".set-selector").change(function () {
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
-	if (setName != 'Blank Set') {
+	if (setName != 'Blank Set' && typeof SETDEX_BW[pokemonName][setName] != undefined) {
 		currentSetLevel = SETDEX_BW[pokemonName][setName]["level"]
 	}
 
