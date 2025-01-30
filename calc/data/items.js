@@ -638,7 +638,7 @@ var BERRIES = {
     'Wiki Berry': { t: 'Rock', p: 80 },
     'Yache Berry': { t: 'Ice', p: 80 }
 };
-exports.ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+exports.ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SV, SV];
 var Items = (function () {
     function Items(gen) {
         this.gen = gen;

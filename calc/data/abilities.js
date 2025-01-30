@@ -392,7 +392,7 @@ var RR = SV.concat([
     'Striker',
     'Surprise!',
 ]);
-exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, RR];
+exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, RR, RR];
 var Abilities = (function () {
     function Abilities(gen) {
         this.gen = gen;
