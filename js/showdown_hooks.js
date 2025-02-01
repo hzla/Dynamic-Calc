@@ -1966,7 +1966,6 @@ function sort_trpoks(a, b) {
 }
 
 function sort_subindex(a, b) {
-    console.log([a,b])
     if (a[3] === b[3]) {
         return (parseInt(b[3]) < parseInt(a[3])) ? -1 : 1;
     }
@@ -2341,6 +2340,24 @@ function loadDataSource(data) {
             
     //     }
     // }
+
+    const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+    if (TITLE == "Emerald Imperium") {
+        for (i = 0; i < em_imp_changes.length;i++) {
+            var change = em_imp_changes[i]
+            var species_name = change[0]
+            var stat_name = change[1]
+            var stat_value = change[2]
+
+
+            console.log(species_name)
+
+            pokedex[species_name]["bs"][stat_name] = stat_value
+            const pok_id = cleanString(species_name)
+            SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
+        }
+    }
 
     // for (pok in pokedex) {
 
