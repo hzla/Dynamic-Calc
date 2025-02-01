@@ -304,8 +304,8 @@ function autosetWeather(ability, i) {
 		$("#sand").prop("checked", true);
 		break;
 	case "Snow Warning":
-		lastAutoWeather[i] = "Hail";
-		$("#hail").prop("checked", true);
+		lastAutoWeather[i] = "Snow";
+		$("#snow").prop("checked", true);
 		break;
 	case "Desolate Land":
 		lastAutoWeather[i] = "Harsh Sunshine";
