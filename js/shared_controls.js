@@ -215,29 +215,35 @@ $(".percent-hp").keyup(function () {
 });
 
 $(".ability").bind("keyup change", function () {
-	$(this).closest(".poke-info").find(".move-selector.select2-offscreen").each((_, obj) => {
-		var move = moves[$(obj).val()];
-		var moveHits = 3;
-
-		if (move.multihit) {
-			if (move.multihit[1] == 2)
-				moveHits = 2;
-			else if (move.multihit[1] == 5 && $(this).val() === "Skill Link")
-				moveHits = 5;
-		}
-
-		$(obj).siblings(".move-hits").val(moveHits);
-	});
-	//$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+	var moveHits =
+		$(this).val() === 'Skill Link' ? 5 :
+			$(this).closest(".poke-info").find(".item").val() === 'Loaded Dice' ? 4 : 3;
+	$(this).closest(".poke-info").find(".move-hits").val(moveHits);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Bull Rush', 'Quill Rush', 'Illusion'];
 
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
+	}
+	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
+
+	if (ability === "Protosynthesis" || ability === "Quark Drive") {
+		boostedStat.show();
+		autosetQP($(this).closest(".poke-info"));
+	} else {
+		boostedStat.hide();
+	}
+
+	if (ability === "Supreme Overlord") {
+		$(this).closest(".poke-info").find(".alliesFainted").show();
+	} else {
+		$(this).closest(".poke-info").find(".alliesFainted").val('0');
+		$(this).closest(".poke-info").find(".alliesFainted").hide();
+
 	}
 });
 
@@ -1164,6 +1170,7 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 			ivs: ivs,
 			evs: evs,
 			isDynamaxed: isDynamaxed,
+			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],

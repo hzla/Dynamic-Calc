@@ -832,6 +832,8 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(5120);
         desc.defenderAbility = defender.ability;
     }
+    console.log(attacker)
+
     if (attacker.hasAbility('Supreme Overlord') && attacker.alliesFainted) {
         var powMod = [4096, 4506, 4915, 5325, 5734, 6144];
         bpMods.push(powMod[Math.min(5, attacker.alliesFainted)]);
