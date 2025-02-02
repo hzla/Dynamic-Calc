@@ -1035,6 +1035,28 @@ function correctHiddenPower(pokemon) {
 	return pokemon;
 }
 
+function autosetQP(pokemon) {
+	var currentWeather = $("input:radio[name='weather']:checked").val();
+	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
+
+	var item = pokemon.find(".item").val();
+	var ability = pokemon.find(".ability").val();
+	var boostedStat = pokemon.find(".boostedStat").val();
+
+	if (!boostedStat || boostedStat === "auto") {
+		if (
+			(item === "Booster Energy") ||
+			(ability === "Protosynthesis" && currentWeather === "Sun") ||
+			(ability === "Quark Drive" && currentTerrain === "Electric")
+		) {
+			pokemon.find(".boostedStat").val("auto");
+		} else {
+			pokemon.find(".boostedStat").val("");
+		}
+	}
+}
+
+
 function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
@@ -1171,6 +1193,7 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 			evs: evs,
 			isDynamaxed: isDynamaxed,
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
+			boostedStat: pokeInfo.find(".boostedStat").val() || undefined,
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
