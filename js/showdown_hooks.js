@@ -2357,6 +2357,7 @@ function loadDataSource(data) {
             const pok_id = cleanString(species_name)
             SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
         }
+        pokedex["Raichu"]["types"] = ["Electric", "Normal"]
     }
 
     // for (pok in pokedex) {
