@@ -1,4 +1,28 @@
 moveChanges = {
+	'Righteous Red': {
+	    "Razor Wind": "Air Slash",
+	    "Sky Attack": "Brave Bird",
+	    "Psywave": "Bug Buzz",
+	    "Fissure": "Bulldoze",
+	    "Egg Bomb": "Dark Pulse",
+	    "Sing": "Disarming Voice",
+	    "Mega Punch": "Drain Punch",
+	    "Horn Drill": "Drill Run",
+	    "Aurora Beam": "Flash Cannon",
+	    "Whirlwind": "Hurricane",
+	    "Mist": "Icy Wind",
+	    "Headbutt": "Iron Head",
+	    "Guillotine": "Metal Claw",
+	    "New": "Tmtrainer",
+	    "Sand Attack": "Mud Slap",
+	    "Thrash": "Outrage",
+	    "Spike Cannon": "Rock Blast",
+	    "Barrage": "Shadow Ball",
+	    "Sonicboom": "Spark",
+	    "Tail Whip": "Tail Slap",
+	    "Gust": "Twister",
+	    "Poison Gas": "Will-O-Wisp"
+	},
 	'Maximum Platinum': {
 		"Pound": "Hidden Power Grass",
 		"Payday": "Hidden Power Rock",
