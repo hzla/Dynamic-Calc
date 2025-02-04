@@ -803,6 +803,10 @@ table td {
     font-size: 12px;
 } 
 
+.evs.calc-trigger.expanded {
+    width: 65px;
+}
+
 
 .trainer-pok {
     height:  65px;

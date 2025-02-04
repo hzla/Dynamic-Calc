@@ -81,6 +81,10 @@ var bounds = {
 	"dvs": [0, 15],
 	"move-bp": [0, 65535]
 };
+
+if (damageGen == 1) {
+	bounds["evs"] = [0,65535]
+}
 for (var bounded in bounds) {
 	attachValidation(bounded, bounds[bounded][0], bounds[bounded][1]);
 }
@@ -514,8 +518,14 @@ function refresh_next_in() {
 	console.log("refreshing next in " + lastSetName)
 	var next_poks = get_next_in()
 
-	if (damageGen < 8 && !TITLE.includes("Lumi")) {
+	if (damageGen < 8 && !TITLE.includes("Lumi") && damageGen != 1) {
         $("#p2 .evs, #p2 .ev-label").hide()
+
+    }
+
+    if (damageGen == 1) {
+    	$('.evs.calc-trigger').attr('max', '65535').addClass('expanded')
+    	$('.dvs.calc-trigger').removeAttr('disabled')
     }
 
 	var trpok_html = ""
@@ -784,8 +794,18 @@ $(".set-selector").change(function () {
 
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
+			
+
 			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
+
+			if (damageGen == 1 ) {
+				pokeObj.find(".hp .dvs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 15);
+			}
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
+				
+
+
+
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
 					(set.evs && set.evs[LEGACY_STATS[gen][i]] !== undefined) ?
 						set.evs[LEGACY_STATS[gen][i]] : ($("#randoms").prop("checked") ? 84 : 0));
@@ -793,6 +813,15 @@ $(".set-selector").change(function () {
 					(set.ivs && set.ivs[LEGACY_STATS[gen][i]] !== undefined) ? set.ivs[LEGACY_STATS[gen][i]] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
 					(set.dvs && set.dvs[LEGACY_STATS[gen][i]] !== undefined) ? set.dvs[LEGACY_STATS[gen][i]] : 15);
+
+				if (damageGen == 1) {
+					LEGACY_STATS[gen][i] = LEGACY_STATS[gen][i].replace("sa", "sl")
+
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
+					(set.ivs && set.ivs[LEGACY_STATS[gen][i]] !== undefined) ? set.ivs[LEGACY_STATS[gen][i]] : 15);
+				}
+
+
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
@@ -1026,6 +1055,10 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 
 			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
 			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
+
+			if (damageGen == 1) {
+				evs[stat] = Math.floor(evs[stat] / 255 * 4)
+			}
 		}
 
 		var pokemonMoves = [];
@@ -1091,6 +1124,9 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 				~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val(pokedex['Rotom']['bs'][stat_abvs[stat]])
 				ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
 				evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+				if (damageGen == 1) {
+					evs[stat] = Math.floor(evs[stat] / 255 * 4)
+				}
 				boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 			}
 		} else {
@@ -1099,6 +1135,9 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 				baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
 				ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
 				evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+				if (damageGen == 1) {
+					evs[stat] = Math.floor(evs[stat] / 255 * 4)
+				}
 				boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 			}
 		}
@@ -1295,14 +1334,16 @@ function calcStat(poke, StatID) {
 	var base = ~~stat.find(".base").val();
 	var level = ~~poke.find(".level").val();
 	var nature, ivs, evs;
-	if (gen < 3) {
+	if (gen < 3 || damageGen < 3) {
 		ivs = ~~stat.find(".dvs").val() * 2;
-		evs = 252;
+		evs = Math.floor(~~stat.find(".evs").val() / 255 * 4);
 	} else {
 		ivs = ~~stat.find(".ivs").val();
 		evs = ~~stat.find(".evs").val();
 		if (StatID !== "hp") nature = poke.find(".nature").val();
 	}
+
+
 	// Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
 	var total = calc.calcStat(gen, legacyStatToStat(StatID), base, ivs, evs, level, nature);
 	if (gen > 7 && StatID === "hp" && poke.isDynamaxed && total !== 1) {
