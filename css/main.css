@@ -848,6 +848,7 @@ table td {
 
 .trainer-pok.right-side.lead {
     border: 1px solid #bb86fc;
+    margin-bottom: 10px;
 }
 
 .left-side:hover {
