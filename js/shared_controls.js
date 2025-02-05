@@ -567,8 +567,15 @@ function refresh_next_in() {
 			isFainted = "fainted"
 		}
 
+		var isLead = ""
+
+		console.log(next_poks[i][0])
+		if (next_poks[i][0].includes("[0]")) {
+			isLead = "lead"
+		}
+
 		var pok = `<div class="trainer-pok-container no-switch-${noSwitch}">
-			<img class="trainer-pok right-side ${highlight} ${isFainted} " src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
+			<img class="trainer-pok right-side ${highlight} ${isFainted} ${isLead}" src="./img/${sprite_style}/${pok_name}.png" data-id="${dataID}">`
 
 
 		var species = next_poks[i][0].split(" (")[0]

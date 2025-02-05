@@ -29,7 +29,6 @@ function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
 
-	console.log(p1info)
 
 	var p1 = createPokemon(p1info);
 	var p2 = createPokemon(p2info);

@@ -846,6 +846,10 @@ table td {
     background: rgb(255, 85, 85, 0.5);
 }
 
+.trainer-pok.right-side.lead {
+    border: 1px solid #bb86fc;
+}
+
 .left-side:hover {
     border:  3px solid #1abc9c;
     border-radius: 10px;
