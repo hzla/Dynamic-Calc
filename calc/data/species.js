@@ -5931,7 +5931,7 @@ var XY_PATCH = {
     },
     'Sceptile-Mega': {
         types: ['Grass', 'Dragon'],
-        bs: { hp: 70, at: 110, df: 75, sa: 145, sd: 85, sp: 145 },
+        bs: { hp: 70, at: 135, df: 75, sa: 110, sd: 85, sp: 145 },
         weightkg: 55.2,
         abilities: { 0: 'Lightning Rod' },
         baseSpecies: 'Sceptile'
