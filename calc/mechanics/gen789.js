@@ -256,6 +256,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     }
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
+        (move.hasType('Ice') && defender.hasAbility('Ice Eater')) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
         (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
         (move.hasType('Rock') && defender.hasAbility('Mountaineer')) ||
@@ -793,7 +794,8 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         (attacker.hasAbility('Punk Rock') && move.flags.sound) ||
         (attacker.hasAbility('Iron Fist') && move.flags.punch) ||
         (attacker.hasAbility('Striker') && move.flags.kick) ||
-        (attacker.hasAbility('Illusion') && attacker.abilityOn)) {
+        (attacker.hasAbility('Illusion') && attacker.abilityOn) ||
+         (attacker.hasAbility("Emperor's Prescence") && move.hasType( 'Water', 'Steel'))) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }

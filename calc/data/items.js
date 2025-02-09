@@ -417,7 +417,17 @@ exports.MEGA_STONES = {
     Toxtricitite: 'Toxtricity',
     'Toxtricitite Low Key': 'Toxtricity-Low-Key',
     Tyranitarite: 'Tyranitar',
-    Venusaurite: 'Venusaur'
+    Venusaurite: 'Venusaur',
+    'Empoleonite O': 'Empoleon',
+    'Empoleonite D': 'Empoleon',
+    Infernapite: 'Infernape',
+    Kinglerite: 'Kingler',
+    Applite: 'Appletun',
+    Grimmite: 'Grimmsnarl',
+    Slakite: 'Slaking',
+    Roseradite: 'Roserade',
+    Dusknoirite: 'Dusknoir',
+    Luxrite: 'Luxray'
 };
 var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.MEGA_STONES)), false), [
     'Assault Vest',
