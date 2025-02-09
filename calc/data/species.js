@@ -10507,7 +10507,7 @@ var SV_PATCH = {
     },
     'Terapagos': {
         types: ['Normal'],
-        bs: { hp: 90, at: 65, df: 85, sa: 65, sd: 85, sp: 60 },
+        bs: { hp: 110, at: 65, df: 85, sa: 65, sd: 85, sp: 60 },
         weightkg: 6.5,
         abilities: { 0: 'Tera Shift' },
         otherFormes: ['Terapagos-Stellar', 'Terapagos-Terastal']
