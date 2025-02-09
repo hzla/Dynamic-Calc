@@ -32,6 +32,8 @@ function display(gen, attacker, defender, move, field, damage, rawDesc, notation
     var damageText = "".concat(min, "-").concat(max, " (").concat(minDisplay, " - ").concat(maxDisplay).concat(notation, ")");
     if (move.category === 'Status' && !move.named('Nature Power'))
         return "".concat(desc, ": ").concat(damageText);
+    console.log(damage)
+    console.log(move.hits)
     var koChanceText = getKOChance(gen, attacker, defender, move, field, damage, err).text;
     return koChanceText ? "".concat(desc, ": ").concat(damageText, " -- ").concat(koChanceText) : "".concat(desc, ": ").concat(damageText);
 }
@@ -201,6 +203,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
         move.timesUsed = 1;
     if (move.timesUsedWithMetronome === undefined)
         move.timesUsedWithMetronome = 1;
+    
     if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.timesUsedWithMetronome === 1) {
         return { chance: 1, n: 1, text: 'guaranteed OHKO' };
     }
@@ -208,10 +211,13 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
     var eot = getEndOfTurn(gen, attacker, defender, move, field);
     var toxicCounter = defender.hasStatus('tox') && !defender.hasAbility('Magic Guard') ? defender.toxicCounter : 0;
     var qualifier = '';
-    if (move.hits > 1) {
-        qualifier = 'approx. ';
-        damage = squashMultihit(gen, damage, move.hits, err);
-    }
+
+
+    // if (move.hits > 1) {
+    //     qualifier = 'approx. ';
+    //     damage = squashMultihit(gen, damage, move.hits, err);
+    // }
+
     var hazardsText = hazards.texts.length > 0
         ? ' after ' + serializeText(hazards.texts)
         : '';
