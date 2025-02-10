@@ -1164,7 +1164,8 @@ var GSC_PATCH = {
     Kingdra: {
         types: ['Water', 'Dragon'],
         bs: { hp: 75, at: 95, df: 95, sa: 95, sd: 95, sp: 85 },
-        weightkg: 152
+        weightkg: 152,
+        otherFormes: ['Kingdra-Mega']
     },
     Lanturn: {
         types: ['Water', 'Electric'],
@@ -2039,7 +2040,8 @@ var ADV_PATCH = {
         types: ['Ground', 'Dragon'],
         bs: { hp: 80, at: 100, df: 80, sa: 80, sd: 80, sp: 100 },
         weightkg: 82,
-        abilities: { 0: 'Levitate' }
+        abilities: { 0: 'Levitate' },
+        otherFormes: ['Flygon-Mega']
     },
     Gardevoir: {
         types: ['Psychic'],
@@ -8922,7 +8924,7 @@ var RR_PATCH = {
     'Meowstic': { bs: { sa: 63 } },
     'Meowstic-F': { bs: { sa: 63 } },
     'Mightyena': { bs: { at: 95 } },
-    'Milotic': { bs: { df: 84, sp: 86 }, otherFormes: ['Milotic-Sevii'] },
+    'Milotic': { bs: { df: 84, sp: 86 }, otherFormes: ['Milotic-Sevii', 'Milotic-Mega'] },
     'Miltank': { bs: { at: 85 } },
     'Minun': { bs: { at: 85, df: 75, sa: 50, sd: 40, sp: 110 } },
     'Mismagius': { types: ['Ghost', 'Fairy'], bs: { hp: 70, df: 70 } },
@@ -9392,6 +9394,30 @@ var RR_PATCH = {
         abilities: { 0: 'Shed Skin' },
         nfe: true,
         baseSpecies: 'Sizzlipede'
+    },
+    'Flygon-Mega': {
+        types: ['Ground', 'Dragon'],
+        bs: { hp: 80, at: 130, df: 100, sa: 120, sd: 100, sp: 110 },
+        weightkg: 1,
+        abilities: { 0: 'Sand Song' },
+        nfe: true,
+        baseSpecies: 'Flygon'
+    },
+    'Milotic-Mega': {
+        types: ['Water', 'Fairy'],
+        bs: { hp: 95, at: 70, df: 109, sa: 130, sd: 155, sp: 81 },
+        weightkg: 1,
+        abilities: { 0: 'Prism Scales' },
+        nfe: true,
+        baseSpecies: 'Milotic'
+    },
+    'Kingdra-Mega': {
+        types: ['Water', 'Dragon'],
+        bs: { hp: 75, at: 105, df: 100, sa: 145, sd: 100, sp: 115 },
+        weightkg: 1,
+        abilities: { 0: 'Swift Swim' },
+        nfe: true,
+        baseSpecies: 'Kingdra'
     },
     'Sliggoo-Hisui': {
         types: ['Dragon', 'Steel'],
