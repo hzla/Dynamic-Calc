@@ -561,6 +561,7 @@ var SV = SS.concat([
     'Metal Alloy',
     'Mirror Herb',
     'Punching Glove',
+    'Kicking Shoes',
     'Lustrous Globe',
     'Griseous Core',
     'Strange Ball',

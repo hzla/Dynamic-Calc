@@ -822,7 +822,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
-    if (attacker.hasItem('Punching Glove') && move.flags.punch) {
+    if (attacker.hasItem('Punching Glove') && move.flags.punch || attacker.hasItem('Kicking Shoes') && move.flags.kick ) {
         bpMods.push(4506);
         desc.attackerItem = attacker.item;
     }
