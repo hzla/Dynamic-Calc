@@ -3445,7 +3445,7 @@ var DPP_PATCH = {
         weightkg: 336,
         gender: 'N',
         abilities: { 0: 'Pressure' },
-        otherFormes: ['Palkia-Origin'],
+        otherFormes: ['Palkia-Origin', 'Palkia-Primal'],
     },
     Phione: {
         types: ['Water'],
@@ -9286,6 +9286,14 @@ var RR_PATCH = {
         abilities: { 0: 'Primal Armor' },
         gender: 'N',
         baseSpecies: 'Dialga'
+    },
+    'Palkia-Primal': {
+        types: ['Water', 'Dragon'],
+        bs: { hp: 90, at: 120, df: 130, sa: 185, sd: 150, sp: 100 },
+        weightkg: 683,
+        abilities: { 0: 'Primal Armor' },
+        gender: 'N',
+        baseSpecies: 'Palkia'
     },
     'Dodrio-Sevii': {
         types: ['Fire', 'Ground'],
