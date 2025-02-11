@@ -940,11 +940,25 @@ function checkExeptions(poke) {
 }
 
 $("#clearSets").click(function () {
-	if (confirm("Are you sure you want to delete your custom sets and refresh the page? This action cannot be undone.")) {
+	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
 		localStorage.removeItem("customsets");
 		$("#importedSetsOptions").hide();
-		loadDefaultLists();
-		location.reload()
+		
+		// Remove Set Data from Dropdown
+		$('.trainer-pok.left-side').each(function() {
+			var species_name = $(this).attr('data-id').replace(" (My Box)", "")
+			delete SETDEX_BW[species_name]["My Box"]
+		})
+
+		// Remove Icons
+		$('.trainer-pok.left-side').remove()
+		$('#clear-party').click()
+
+		// Shake box
+		$('.player-poks').addClass('shake')
+		setTimeout(function(){
+			$('.player-poks').removeClass('shake')
+		}, 500)
 	}
 });
 
