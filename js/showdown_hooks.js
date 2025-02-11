@@ -2206,7 +2206,7 @@ function loadDataSource(data) {
     //     $('#learnset-show').show()
     // }
 
-    // $('#save-pok').show()
+    $('#save-pok').show()
 
 
 
@@ -2357,6 +2357,9 @@ function loadDataSource(data) {
             const pok_id = cleanString(species_name)
             SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
         }
+
+        $('#maxL').next().remove()
+        $('#maxR').next().remove()
         pokedex["Raichu"]["types"] = ["Electric", "Normal"]
     }
 
