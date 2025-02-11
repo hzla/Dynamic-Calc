@@ -1317,6 +1317,15 @@ select.toxic-counter {
     border: 1px solid #bb86fc ;
 }
 
+#clearSets {
+    padding: 8px;
+    margin-top: 20px;
+
+}
+
+button:hover, label:hover {
+    background: rgba(0,0,0,0.1) !important;
+}
 #save-state {
 /*    border: 1px solid #bb86fc ;*/
 }
