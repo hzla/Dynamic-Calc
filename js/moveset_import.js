@@ -1,4 +1,28 @@
 moveChanges = {
+	'Righteous Red': {
+	    "Razor Wind": "Air Slash",
+	    "Sky Attack": "Brave Bird",
+	    "Psywave": "Bug Buzz",
+	    "Fissure": "Bulldoze",
+	    "Egg Bomb": "Dark Pulse",
+	    "Sing": "Disarming Voice",
+	    "Mega Punch": "Drain Punch",
+	    "Horn Drill": "Drill Run",
+	    "Aurora Beam": "Flash Cannon",
+	    "Whirlwind": "Hurricane",
+	    "Mist": "Icy Wind",
+	    "Headbutt": "Iron Head",
+	    "Guillotine": "Metal Claw",
+	    "New": "Tmtrainer",
+	    "Sand Attack": "Mud Slap",
+	    "Thrash": "Outrage",
+	    "Spike Cannon": "Rock Blast",
+	    "Barrage": "Shadow Ball",
+	    "Sonicboom": "Spark",
+	    "Tail Whip": "Tail Slap",
+	    "Gust": "Twister",
+	    "Poison Gas": "Will-O-Wisp"
+	},
 	'Maximum Platinum': {
 		"Pound": "Hidden Power Grass",
 		"Payday": "Hidden Power Rock",
@@ -556,6 +580,9 @@ function statToLegacyStat(stat) {
 	case 'def':
 		return "df";
 	case 'spa':
+		if (damageGen == 1) {
+			return "sl";
+		}
 		return "sa";
 	case 'spd':
 		return "sd";
@@ -809,22 +836,8 @@ function addSets(pokes, name) {
 		
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			
-			if (typeof calc.SPECIES[8][currentRow[j].trim()] == "undefined") {
-				currentRow[j] = currentRow[j].trim().replace(" ", "-")
-				console.log(currentRow[j])
-			}
-
-
 			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
 				currentPoke = calc.SPECIES[8][currentRow[j].trim()];
-				
-
-		
-				
-
-
-
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
@@ -927,11 +940,25 @@ function checkExeptions(poke) {
 }
 
 $("#clearSets").click(function () {
-	if (confirm("Are you sure you want to delete your custom sets and refresh the page? This action cannot be undone.")) {
+	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
 		localStorage.removeItem("customsets");
 		$("#importedSetsOptions").hide();
-		loadDefaultLists();
-		location.reload()
+		
+		// Remove Set Data from Dropdown
+		$('.trainer-pok.left-side').each(function() {
+			var species_name = $(this).attr('data-id').replace(" (My Box)", "")
+			delete SETDEX_BW[species_name]["My Box"]
+		})
+
+		// Remove Icons
+		$('.trainer-pok.left-side').remove()
+		$('#clear-party').click()
+
+		// Shake box
+		$('.player-poks').addClass('shake')
+		setTimeout(function(){
+			$('.player-poks').removeClass('shake')
+		}, 500)
 	}
 });
 
