@@ -822,7 +822,6 @@ function addSets(pokes, name) {
 				item = rows[i].split("@")[1].trim()
 			}
 			rows[i] = rows[i].split(" |Party")[0]
-			console.log(rows[i])
 			currentParty.push(rows[i])
 		}
 
@@ -934,6 +933,10 @@ function checkExeptions(poke) {
 	case 'Florges-Yellow':
 		poke = "Florges";
 		break;
+	}
+
+	if (typeof pokedex[poke] == 'undefined' && pokedex[poke.replace(" ", "-")]) {
+		poke = poke.replace(" ", "-")
 	}
 	return poke;
 
