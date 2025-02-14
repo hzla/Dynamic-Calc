@@ -736,7 +736,6 @@ $(".set-selector").change(function () {
 				if (current_tr_mon_level > caps[3]) {
 					$("#SpecL").prop("checked", true)
 				}
-
 			}
 		}
 	}
