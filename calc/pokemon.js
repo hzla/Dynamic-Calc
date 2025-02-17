@@ -32,6 +32,10 @@ var Pokemon = (function () {
         var e_1, _a;
         if (options === void 0) { options = {}; }
         var _b;
+
+        if (name == "Aegislash") {
+            name = "Aegislash-Shield"
+        }
         this.species = (0, util_1.extend)(true, {}, gen.species.get((0, util_1.toID)(name)), options.overrides);
         this.gen = gen;
         this.name = options.name || name;
