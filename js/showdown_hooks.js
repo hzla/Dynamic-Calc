@@ -2306,6 +2306,11 @@ function loadDataSource(data) {
         }
     }
 
+    if (TITLE.includes("Sterling")) {
+        delete moves.Barrage["multihit"]
+
+    }
+
     for (pok in pokedex) {
 
         if (pok.includes("Glitched")) {
