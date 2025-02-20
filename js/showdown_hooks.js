@@ -242,11 +242,13 @@ function get_trainer_poks(trainer_name)
 
     for (i in TR_NAMES) {
 
-        if (TR_NAMES[i].includes(og_trainer_name + " ") || (!partner_name || (TR_NAMES[i].includes(partner_name + " ")))) {
+        if (TR_NAMES[i].includes(og_trainer_name + " ") || ((TR_NAMES[i].includes(partner_name + " ")))) {
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+               console.log(`1 Adding ${TR_NAMES[i]}`)
                matches.push(TR_NAMES[i])
             }
             if (partner_name) {
+                console.log(`2 Adding ${TR_NAMES[i]}`)
                 if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }  
@@ -258,7 +260,7 @@ function get_trainer_poks(trainer_name)
         for (i in TR_NAMES) {
 
             if (TR_NAMES[i].includes(og_trainer_name)) {
-                
+                console.log(`3 Adding ${TR_NAMES[i]}`)
                 if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }    
