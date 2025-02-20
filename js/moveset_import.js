@@ -935,9 +935,25 @@ function checkExeptions(poke) {
 		break;
 	}
 
+	// try replacing spaces with dashes
 	if (typeof pokedex[poke] == 'undefined' && pokedex[poke.replace(" ", "-")]) {
 		poke = poke.replace(" ", "-")
+		return poke
 	}
+
+	// try replacing dashes with spaces
+	if (typeof pokedex[poke] == 'undefined' && pokedex[poke.replace("-", " ")]) {
+		poke = poke.replace("-", " ")
+		return poke
+	}
+
+	// try using only first part of name
+	if (typeof pokedex[poke] == 'undefined' && pokedex[poke.split("-")[0]]) {
+		poke = poke.split("-")[0]
+		return poke
+	}
+
+
 	return poke;
 
 }
