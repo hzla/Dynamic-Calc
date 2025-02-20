@@ -659,7 +659,7 @@ $(".set-selector").change(function () {
 					}
 				}
 
-				if (battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") {
+				if ((battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") && !partner_name) {
 					$('#singles-format').click()
 				} else {
 					$('#doubles-format').click()
