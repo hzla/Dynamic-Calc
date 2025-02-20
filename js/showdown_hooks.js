@@ -45,8 +45,8 @@ function load_js() {
   if (localStorage.notes) {
     $('#battle-notes .notes-text').html(localStorage.notes);
   }
-  partner_name = null
 }
+
 
 function isValidJSON(str) {
     try {
@@ -57,20 +57,202 @@ function isValidJSON(str) {
     }
 }
 
+
 function padArray(array, length, fill) {   return length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array; }
 
 
-function setOpposing(id) {
+// status
 
-    // if in multi battle mode and user selects pokemon from already set partner, switch partners
-    if (partner_name && id.includes(partner_name)) {
-        partner_name = $('.set-selector .select2-chosen')[1].innerHTML.split(/Lvl [-+]?\d+ /)[1]
-        if (partner_name) {
-            partner_name = partner_name.replace(/.?\)/, "")
+
+function saveState() {
+    var state = {}
+
+    state["left"] = $('.set-selector')[0].value
+    state["right"] = $('.set-selector')[2].value
+
+
+    const stats = ["at", "df", "sa", "sd", "sp"]
+    
+    state["rightBoosts"] = []
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = $(`#p2 .${stats[i]} select`).val()
+        state["rightBoosts"].push(boostVal)
+    }
+
+    state["leftBoosts"] = []
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = $(`#p1 .${stats[i]} select`).val()
+        state["leftBoosts"].push(boostVal)
+    }
+
+    state["rightHP"] = ''
+    if ($('#p2 .percent-hp').val() != '100') {
+        state["rightHP"] = $('#p2 .current-hp').val()
+    }
+
+    state["leftHP"] = ''
+    if ($('#p1 .percent-hp').val() != '100') {
+        state["leftHP"] = $('#p1 .current-hp').val()
+    }
+
+    state["rightStatus"] = ''
+    if ($('#statusR1').val() != 'Healthy') {
+        state["rightStatus"] = $('#statusR1').val()
+    }
+
+    state["leftStatus"] = ''
+    if ($('#statusL1').val() != 'Healthy') {
+        state["leftStatus"] = $('#statusL1').val()
+    }
+
+    stateKeyLeft = `${state['left'].split(" (")[0]}` 
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = state["leftBoosts"][i]
+        if (boostVal != '0') {
+            if (parseInt(boostVal) > 0) {
+                boostVal = "+" + boostVal
+            }
+
+            boostVal += stats[i].toUpperCase()
+            stateKeyLeft = `${boostVal} ${stateKeyLeft}`
+        }  
+    }
+
+    if (state["leftStatus"]) {
+        stateKeyLeft += ` (${state["leftStatus"]})`
+    }
+
+    if (state["leftHP"]) {
+        stateKeyLeft += ` (${state["leftHP"]}HP)`
+    }
+
+    stateKeyRight = `${state['right'].split(" (")[0]}` 
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = state["rightBoosts"][i]
+        if (boostVal != '0') {
+            if (parseInt(boostVal) > 0) {
+                boostVal = "+" + boostVal
+            }
+            boostVal += stats[i].toUpperCase()
+            stateKeyRight = `${boostVal} ${stateKeyRight}`
+        }  
+    }
+
+    if (state["rightStatus"]) {
+        stateKeyRight += ` (${state["rightStatus"]})`
+    }
+
+    if (state["rightHP"]) {
+        stateKeyRight += ` (${state["rightHP"]}HP)`
+    }
+
+    stateKey = `${stateKeyLeft} vs ${stateKeyRight}`
+
+    states[stateKey] = state
+    return $(`<span class="state" contenteditable="false">${stateKey}</span>`)[0]
+}
+
+
+$('#save-state').click(function(){
+    stateHTML = saveState()
+
+    // Restore the saved range
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(savedRange);
+
+    savedRange.insertNode(stateHTML)
+
+    // $('#battle-notes .notes-text').append(stateHTML)
+
+    localStorage.notes = $('#battle-notes .notes-text').html()
+    localStorage.states = JSON.stringify(states)
+})
+
+
+$('.notes-text').on("mouseup keyup", function () {
+    const selection = window.getSelection();
+    if (selection.rangeCount > 0) {
+      savedRange = selection.getRangeAt(0);
+
+    }
+});
+
+
+
+
+$('#battle-notes .notes-text').blur(function() {
+    localStorage.notes = $('#battle-notes .notes-text').html()
+})
+
+$(document).on('click', '.state', function() {
+    loadState($(this).text())
+
+})
+
+function loadState(id) {
+    state = states[id]
+
+    $('#p1').find(`.trainer-pok.left-side[data-id="${state['left']}"]`).click()
+
+    const stats = ["at", "df", "sa", "sd", "sp"]
+
+    // set boosts
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = stats[i]
+        if (stats[i] != "0") {
+            $(`#p1 .${stats[i]} select`).val(state["leftBoosts"][i])
         }
     }
-    
 
+    // set hp
+    if (state["leftHP"]) {
+        $('#p1 .current-hp').val(state["leftHP"])
+    }
+
+    
+    // set status
+    if (state["leftStatus"]) {
+        $('#statusL1').val(state["leftStatus"])
+    }
+
+    setOpposing(state["right"])
+
+    for (let i = 0;i<stats.length;i++) {
+        var boostVal = stats[i]
+        if (stats[i] != "0") {
+            $(`#p2 .${stats[i]} select`).val(state["rightBoosts"][i])
+        }
+    }
+
+    if (state["rightHP"]) {
+        $('#p2 .current-hp').val(state["rightHP"])
+    }
+
+    if (state["rightStatus"]) {
+        $('#statusR1').val(state["rightStatus"])
+    }
+}
+
+$('#battle-notes .notes-text').on('keydown', function(event) {
+    if (event.key === '[') {
+        event.preventDefault(); // Prevent default behavior of creating a new <div> or <p>
+        
+        // Insert a line break at the caret position
+        $('#save-state').click()
+    }
+});
+
+$('#battle-notes .notes-text').on('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default behavior of creating a new <div> or <p>
+        
+        // Insert a line break at the caret position
+        document.execCommand('insertLineBreak');
+    }
+});
+
+function setOpposing(id) {
     currentTrainerSet = id
     localStorage["right"] = currentTrainerSet
 
@@ -218,9 +400,12 @@ function get_box() {
 
             var pok_name = names[i].split(" (")[0].toLowerCase().replace(" ","-").replace(".","").replace(".","").replace("’","").replace(":","-")
             var pok = `<img class="trainer-pok left-side ${sprite_style}" src="./img/${sprite_style}/${pok_name}.png" data-id="${names[i].split("[")[0]}">`
+
             box_html += pok
         }   
     }
+
+
     $('.player-poks').html(box_html)
     return box
 }
@@ -233,23 +418,16 @@ function get_trainer_poks(trainer_name)
     var og_trainer_name = trainer_name.split(/Lvl [-+]?\d+ /)[1]
 
 
+
     if (og_trainer_name) {
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
-    console.log([og_trainer_name, partner_name])
-
-
     for (i in TR_NAMES) {
 
-        if (TR_NAMES[i].includes(og_trainer_name + " ") || (!partner_name || (TR_NAMES[i].includes(partner_name + " ")))) {
+        if (TR_NAMES[i].includes(og_trainer_name + " ")) {
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                matches.push(TR_NAMES[i])
-            }
-            if (partner_name) {
-                if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
-                   matches.push(TR_NAMES[i])
-                }  
             }    
         }
     }
@@ -267,8 +445,6 @@ function get_trainer_poks(trainer_name)
     }
     return matches
 }
-
-
 
 function box_rolls() {
     if (!parseInt(localStorage.boxrolls)) {
@@ -956,7 +1132,6 @@ function get_next_in_g4() {
 
     console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
-
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
 }
@@ -1410,6 +1585,10 @@ function get_current_in() {
     return SETDEX_BW[pok_name][tr_name]
 }
 
+function get_adjacent_sets() {
+    var current_in = get_current_in()
+
+}
 
 function get_current_learnset() {
     var pok_name = createPokemon($("#p1")).name
@@ -1545,7 +1724,7 @@ $('#toggle-battle-notes').click(function(){
 
 function get_next_in() {  
     
-    if (switchIn == 4 && !partner_name) {
+    if (switchIn == 4) {
         return get_next_in_g4()
     }
 
@@ -1560,6 +1739,11 @@ function get_next_in() {
     if (switchIn == 3) {
         return get_next_in_g3()
     }
+
+    
+
+
+    
 
     if (typeof CURRENT_TRAINER_POKS === "undefined") {
         return
@@ -1703,7 +1887,7 @@ function get_next_in() {
         ranked_trainer_poks.push([trainer_poks[i], strongest_move_bp, strongest_move, sub_index, pok_data["moves"]])
     }
 
-    if ((typeof noSwitch != "undefined" && noSwitch == "1") || partner_name) {
+    if (typeof noSwitch != "undefined" && noSwitch == "1") {
        ranked_trainer_poks.sort(sort_subindex)
    } else {
         ranked_trainer_poks.sort(sort_trpoks)
@@ -2679,19 +2863,6 @@ $(document).ready(function() {
             $('.move-crit').last().change()
         } else if (e.altKey && e.key == "s" || e.key == "ß") {
             toggleBoxSpriteStyle()
-        }  else if (e.altKey && e.key == "p" || e.key == "π") {
-            if (partner_name) {
-                partner_name = null
-                alert("Partner trainer cleared")
-            } else {
-                partner_name = $('.set-selector .select2-chosen')[1].innerHTML.split(/Lvl [-+]?\d+ /)[1]
-                if (partner_name) {
-                    partner_name = partner_name.replace(/.?\)/, "")
-                }
-                alert(`${partner_name} set as doubles partner for next trainer selected`)   
-            }
-
-            
         }
     }
 
