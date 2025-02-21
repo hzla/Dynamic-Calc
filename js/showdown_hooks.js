@@ -2101,7 +2101,7 @@ function loadDataSource(data) {
     const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
    
-    if (TITLE.includes("Lumi")) {
+    if (TITLE.includes("Lumi") || customPoks) {
 
         for (pok in jsonPoks) {
             var pok_id = cleanString(pok)
@@ -2238,6 +2238,7 @@ params = new URLSearchParams(window.location.search);
 devMode = params.get('dev') == '1'
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
+customPoks = params.get('customPoks');
 type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
