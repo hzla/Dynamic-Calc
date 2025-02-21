@@ -244,11 +244,9 @@ function get_trainer_poks(trainer_name)
 
         if (TR_NAMES[i].includes(og_trainer_name + " ") || ((TR_NAMES[i].includes(partner_name + " ")))) {
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
-               console.log(`1 Adding ${TR_NAMES[i]}`)
                matches.push(TR_NAMES[i])
             }
             if (partner_name) {
-                console.log(`2 Adding ${TR_NAMES[i]}`)
                 if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }  
@@ -260,7 +258,6 @@ function get_trainer_poks(trainer_name)
         for (i in TR_NAMES) {
 
             if (TR_NAMES[i].includes(og_trainer_name)) {
-                console.log(`3 Adding ${TR_NAMES[i]}`)
                 if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }    
@@ -1748,7 +1745,6 @@ function sort_trpoks(a, b) {
 }
 
 function sort_subindex(a, b) {
-    console.log([a,b])
     if (a[3] === b[3]) {
         return (parseInt(b[3]) < parseInt(a[3])) ? -1 : 1;
     }
@@ -2111,8 +2107,9 @@ function loadDataSource(data) {
                 if (!jsonPoks[pok]) {
                     console.log(pok)
                     continue
-
                 } 
+
+                console.log(`Creating custom pok: ${pok}`)
 
                 jsonPoks[pok]["baseStats"] = jsonPoks[pok]["bs"]
                 jsonPoks[pok]["id"] = pok_id
@@ -2428,6 +2425,13 @@ $(document).ready(function() {
         $.get(npoint, function(data){
             npoint_data = data
             loadDataSource(data)
+
+
+            if (TITLE.includes("Photonic")) {
+                $('.credits').prepend("Set data compiled by Questionable Specimen")
+            }
+            
+
             final_type_chart = construct_type_chart()
 
             setTimeout(function() {
@@ -2812,6 +2816,8 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         poks.removeClass('defender')
         poks.removeClass('killer')
     })
+
+
 
 
 
