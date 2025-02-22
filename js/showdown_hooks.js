@@ -1426,6 +1426,12 @@ function get_current_learnset() {
 
     var ls_html = ""
 
+    if (!current_learnset["learnset"]) {
+        lvl_up_data = current_learnset
+        current_learnset = {}
+        current_learnset["learnset"] = lvl_up_data
+    }
+
     for (let i = 0; i < current_learnset["learnset"].length; i++) {
         var lvl = current_learnset["learnset"][i][0]
         var mv_name = current_learnset["learnset"][i][1]
@@ -2102,7 +2108,7 @@ function loadDataSource(data) {
         for (pok in jsonPoks) {
             var pok_id = cleanString(pok)
 
-            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined") {
+            if (typeof SPECIES_BY_ID[gen][pok_id] === "undefined" || SPECIES_BY_ID[gen][pok_id].name != pok ) {
 
                 if (!jsonPoks[pok]) {
                     console.log(pok)
@@ -2301,6 +2307,7 @@ $(document).ready(function() {
    "d3501821feaa976d581a": "Azure Platinum",
    "9abb79df1e356642c229": "Fire Red Omega",
    "12f82557ed0e08145660": "Fire Red",
+   "2487bca2d6c21c388695": "Fire Red Deluxe",
    "aeb373b7631d4afd7a53": "Emerald",
    "006ac04e900ccb3110df": "Luminescent Platinum",
    "4d69b577b07a86fe790c": "Righteous Red"
