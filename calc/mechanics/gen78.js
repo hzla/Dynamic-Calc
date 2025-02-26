@@ -171,6 +171,16 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     var type2Effectiveness = defender.types[1]
         ? (0, util_2.getMoveEffectiveness)(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
         : 1;
+    if (field.isInverseBattle) {
+        if (type1Effectiveness === 0 || type1Effectiveness === 0.5)
+            type1Effectiveness = 2;
+        else if (type1Effectiveness === 2)
+            type1Effectiveness = 0.5;
+        if (type2Effectiveness === 0 || type2Effectiveness === 0.5)
+            type2Effectiveness = 2;
+        else if (type2Effectiveness === 2)
+            type2Effectiveness = 0.5;
+    }
     var typeEffectiveness = type1Effectiveness * type2Effectiveness;
     if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
         typeEffectiveness = 1;
@@ -194,16 +204,6 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         if (attacker.hasAbility('Bone Zone', 'Corrosion')) {
             desc.attackerAbility = attacker.ability;
         }
-    }
-    if (field.isInverseBattle) {
-        if (type1Effectiveness === 0 || type1Effectiveness === 0.5)
-            type1Effectiveness = 2;
-        else if (type1Effectiveness === 2)
-            type1Effectiveness = 0.5;
-        if (type2Effectiveness === 0 || type2Effectiveness === 0.5)
-            type2Effectiveness = 2;
-        else if (type2Effectiveness === 2)
-            type2Effectiveness = 0.5;
     }
     if (typeEffectiveness === 0) {
         return result;

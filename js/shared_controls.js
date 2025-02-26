@@ -1312,7 +1312,7 @@ function createField() {
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i], is10Buff: is10Buff[i], is15Buff: is15Buff[i], is20Buff: is20Buff[i], is25Buff: is25Buff[i], is30Buff: is30Buff[i], is50Buff: is50Buff[i] ? 'out' : undefined
 		});
 	};
-	// console.log(is10Buff)
+	console.log(isInverseBattle)
 	return new calc.Field({
 		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity, isInverseBattle: isInverseBattle,
 		attackerSide: createSide(0), defenderSide: createSide(1)
