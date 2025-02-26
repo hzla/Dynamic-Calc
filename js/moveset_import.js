@@ -629,6 +629,7 @@ function getStats(currentPoke, rows, offset) {
 
 		}
 		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
+		console.log(currentAbility)
 		if (currentAbility[0] == "Ability") {
 			currentPoke.ability = currentAbility[1].trim();
 			if (abilityChanges[TITLE] && abilityChanges[TITLE][currentPoke.ability]) {
@@ -724,8 +725,8 @@ function addToDex(poke) {
 	}
 
 
-	console.log(`${poke.name} - ${parseInt(poke.ability)}`)
-	console.log(pokedex[poke.name]['abilities'][parseInt(poke.ability)])
+	// console.log(`${poke.name} - ${poke.ability}`)
+	// console.log(pokedex[poke.name]['abilities'][parseInt(poke.ability)])
 
 	if (isInt(poke.ability)) {
 		console.log("ability updated")
@@ -751,6 +752,8 @@ function addToDex(poke) {
 	if (!customsets[poke.name]) {
 		customsets[poke.name] = {};
 	}
+
+	console.log(dexObject)
 	customsets[poke.name]["My Box"] = dexObject;
 	if (poke.name === "Aegislash-Blade") {
 		if (!customsets["Aegislash-Shield"]) {
@@ -849,6 +852,7 @@ function addSets(pokes, name) {
 				if (INC_EM) {
 					currentPoke.ability = getAbility(rows[i + 4].split(":"), currentPoke.name);
 				} else {
+					console.log(rows[i + 1])
 					currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				}
 
