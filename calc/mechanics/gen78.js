@@ -195,6 +195,16 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             desc.attackerAbility = attacker.ability;
         }
     }
+    if (field.isInverseBattle) {
+        if (type1Effectiveness === 0 || type1Effectiveness === 0.5)
+            type1Effectiveness = 2;
+        else if (type1Effectiveness === 2)
+            type1Effectiveness = 0.5;
+        if (type2Effectiveness === 0 || type2Effectiveness === 0.5)
+            type2Effectiveness = 2;
+        else if (type2Effectiveness === 2)
+            type2Effectiveness = 0.5;
+    }
     if (typeEffectiveness === 0) {
         return result;
     }
