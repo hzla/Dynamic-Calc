@@ -796,7 +796,14 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         (attacker.hasAbility('Striker') && move.flags.kick) ||
         (attacker.hasAbility('Illusion') && attacker.abilityOn) ||
          (attacker.hasAbility("Emperor's Prescence") && move.hasType( 'Water', 'Steel'))) {
-        bpMods.push(5325);
+        
+        if (TITLE == 'Emerald Imperium' && (move.flags.kick || move.flags.punch)) {
+            bpMods.push(4915);
+        } else {
+            bpMods.push(5325);
+        }
+
+        
         desc.attackerAbility = attacker.ability;
     }
     if (field.attackerSide.isBattery && move.category === 'Special') {
