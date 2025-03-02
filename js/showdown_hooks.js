@@ -237,7 +237,7 @@ function get_trainer_poks(trainer_name)
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
-    console.log([og_trainer_name, partner_name])
+    // console.log([og_trainer_name, partner_name])
 
 
     for (i in TR_NAMES) {
@@ -1890,11 +1890,11 @@ function removeEvs(sets) {
 
 function loadDataSource(data) {
     
-    if (evsOn = '0') {
+    if (evsOn == '0') {
         removeEvs(data["formatted_sets"])
         console.log("Evs removed")
     }
-    
+
     SETDEX_BW = data["formatted_sets"]
     SETDEX_ADV = data["formatted_sets"]
     SETDEX_DPP = data["formatted_sets"]
@@ -1948,6 +1948,8 @@ function loadDataSource(data) {
             continue
         }
         moves[move]["bp"] = jsonMove["basePower"]
+
+
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
 		var special_case_power_overrides = {
