@@ -517,7 +517,7 @@ function refresh_next_in() {
 	console.log("refreshing next in " + lastSetName)
 	var next_poks = get_next_in()
 
-	if (damageGen < 8 && !TITLE.includes("Lumi") && damageGen != 1) {
+	if (damageGen < 7 && !TITLE.includes("Lumi") && damageGen != 1) {
         $("#p2 .evs, #p2 .ev-label").hide()
 
     }
