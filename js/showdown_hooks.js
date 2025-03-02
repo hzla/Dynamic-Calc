@@ -2204,7 +2204,12 @@ function loadDataSource(data) {
     
 
     if (damageGen > 3 && damageGen < 6) {
-        pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"]
+        try {
+           pokedex['Cherrim-Sunshine']['bs'] = jsonPoks["Cherrim"]["bs"] 
+       } catch {
+            console.log("using vanilla Cherrim data")
+       }
+        
     }
     if (damageGen == 4) {
         var gen4Forms = [
