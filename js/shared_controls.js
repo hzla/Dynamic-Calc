@@ -431,7 +431,6 @@ $(".move-selector").change(function () {
 		}
 
 		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs, trueHP);
-		console.log(actual)
 		if (actual.type !== m[1]) {
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (hpIVs && gen < 7) {
@@ -569,7 +568,6 @@ function refresh_next_in() {
 
 		var isLead = ""
 
-		console.log(next_poks[i][0])
 		if (next_poks[i][0].includes("[0]")) {
 			isLead = "lead"
 		}
@@ -629,7 +627,6 @@ $(".set-selector").change(function () {
 			if (setName != "Blank Set") {
 				// var sprite = SETDEX_BW[pokemonName][setName]["sprite"]
 				
-				console.log(setName)
 
 				var battle_type = SETDEX_BW[pokemonName][setName]["battle_type"]
 				var ai = SETDEX_BW[pokemonName][setName]["ai"]
@@ -745,9 +742,6 @@ $(".set-selector").change(function () {
 
 
 	var pokemon = pokedex[pokemonName];
-
-
-	console.log(pokemon)
 
 
 	if (pokemon) {
@@ -1126,8 +1120,6 @@ function createPokemon(pokeInfo, customMoves=false, ignoreStatMods=false) {
 			for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
 				
-				console.log(stat)
-				console.log(pokedex['Rotom']['bs'][stat_abvs[stat]]) 
 				baseStats[stat === 'spc' ? 'spa' : stat] = pokedex['Rotom']['bs'][stat_abvs[stat]];
 				~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val(pokedex['Rotom']['bs'][stat_abvs[stat]])
 				ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
@@ -1312,7 +1304,6 @@ function createField() {
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i], is10Buff: is10Buff[i], is15Buff: is15Buff[i], is20Buff: is20Buff[i], is25Buff: is25Buff[i], is30Buff: is30Buff[i], is50Buff: is50Buff[i] ? 'out' : undefined
 		});
 	};
-	console.log(isInverseBattle)
 	return new calc.Field({
 		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity, isInverseBattle: isInverseBattle,
 		attackerSide: createSide(0), defenderSide: createSide(1)

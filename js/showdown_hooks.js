@@ -1876,7 +1876,25 @@ function get_type_info(pok_types, move=false) {
     return result
 }
 
+function removeEvs(sets) {
+    for (const species_name in sets) {
+        const setdata = sets[species_name];    
+        for (const set_name in setdata) {
+            const secondLevelValue = setdata[set_name];
+            if (Object.prototype.hasOwnProperty.call(secondLevelValue, 'evs')) {
+                delete secondLevelValue.evs;
+            }
+        }
+    }
+}
+
 function loadDataSource(data) {
+    
+    if (evsOn = '0') {
+        removeEvs(data["formatted_sets"])
+        console.log("Evs removed")
+    }
+    
     SETDEX_BW = data["formatted_sets"]
     SETDEX_ADV = data["formatted_sets"]
     SETDEX_DPP = data["formatted_sets"]
