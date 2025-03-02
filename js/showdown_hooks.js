@@ -2262,6 +2262,7 @@ devMode = params.get('dev') == '1'
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
 customPoks = params.get('customPoks');
+evsOn = params.get('evs');
 type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
