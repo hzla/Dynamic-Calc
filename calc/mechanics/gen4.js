@@ -124,7 +124,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         typeEffectiveness = type1Effectiveness * type2Effectiveness;
     }
 
-    if (move.named('Future Sight')) {
+    if (move.named('Future Sight') || move.named('Doom Desire')) {
         type1Effectiveness = 1;
         type2Effectiveness = 1;
         typeEffectiveness = 1;
@@ -478,7 +478,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         }
         desc.isCritical = isCritical;
     }
-    if (attacker.hasItem('Life Orb') && !move.named('Future Sight')) {
+    if (attacker.hasItem('Life Orb') && !move.named('Future Sight') && !move.named('Doom Desire')) {
         if (TITLE == "Platinum Redux 2.6") {
             baseDamage = Math.floor(baseDamage * 1.25);
         } else {
@@ -498,7 +498,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         // }
     }
     var stabMod = 1;
-    if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false)) && !move.named('Future Sight')) {
+    if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false)) && !move.named('Future Sight') && !move.named('Doom Desire')) {
         if (attacker.hasAbility('Adaptability')) {
             stabMod = 2;
             desc.attackerAbility = attacker.ability;
