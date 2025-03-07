@@ -498,7 +498,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         // }
     }
     var stabMod = 1;
-    if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false))) {
+    if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false)) && !move.named('Future Sight')) {
         if (attacker.hasAbility('Adaptability')) {
             stabMod = 2;
             desc.attackerAbility = attacker.ability;
