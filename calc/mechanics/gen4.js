@@ -123,6 +123,13 @@ function calculateDPP(gen, attacker, defender, move, field) {
         }
         typeEffectiveness = type1Effectiveness * type2Effectiveness;
     }
+
+    if (move.named('Future Sight')) {
+        type1Effectiveness = 1;
+        type2Effectiveness = 1;
+        typeEffectiveness = 1;
+    }
+
     if (typeEffectiveness === 0) {
         return result;
     }
@@ -471,7 +478,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         }
         desc.isCritical = isCritical;
     }
-    if (attacker.hasItem('Life Orb')) {
+    if (attacker.hasItem('Life Orb') && !move.named('Future Sight')) {
         if (TITLE == "Platinum Redux 2.6") {
             baseDamage = Math.floor(baseDamage * 1.25);
         } else {
