@@ -133,7 +133,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     if (typeEffectiveness === 0) {
         return result;
     }
-    var ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang');
+    var ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang') || move.named('Doom Desire') || move.named('Future Sight');
     if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
         (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||

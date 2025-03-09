@@ -431,7 +431,7 @@ $(".move-selector").change(function () {
 		}
 
 		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs, trueHP);
-		if (actual.type !== m[1]) {
+		if (false) {
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (hpIVs && gen < 7) {
 				for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
