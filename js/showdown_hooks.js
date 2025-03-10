@@ -2343,20 +2343,24 @@ function loadDataSource(data) {
 
     const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
-    if (TITLE == "Emerald Imperium") {
-        for (i = 0; i < em_imp_changes.length;i++) {
-            var change = em_imp_changes[i]
-            var species_name = change[0]
-            var stat_name = change[1]
-            var stat_value = change[2]
+    if (TITLE.includes("Emerald Imperium")) {
+        
+        if (!TITLE.includes("1.2")) {
+            for (i = 0; i < em_imp_changes.length;i++) {
+                var change = em_imp_changes[i]
+                var species_name = change[0]
+                var stat_name = change[1]
+                var stat_value = change[2]
 
 
-            console.log(species_name)
+                console.log(species_name)
 
-            pokedex[species_name]["bs"][stat_name] = stat_value
-            const pok_id = cleanString(species_name)
-            SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
+                pokedex[species_name]["bs"][stat_name] = stat_value
+                const pok_id = cleanString(species_name)
+                SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
+            }  
         }
+        
 
         $('#maxL').next().remove()
         $('#maxR').next().remove()
@@ -2542,6 +2546,7 @@ $(document).ready(function() {
    "aeb373b7631d4afd7a53": "Emerald",
    "006ac04e900ccb3110df": "Luminescent Platinum",
    "2ec049ba9513d189a915": "Emerald Imperium",
+   "55d895a19083b26c0c53": "Emerald Imperium 1.2",
    "ced457ba9aa55731616c": "Radical Red 4.1 Normal"
     }
 
