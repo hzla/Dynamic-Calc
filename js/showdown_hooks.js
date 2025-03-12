@@ -1986,6 +1986,10 @@ function loadDataSource(data) {
                 MOVES_BY_ID[g][move_id]["flags"]["sound"] = 1
             }
         }
+
+        if (!jsonMove['multihit']) {
+             delete MOVES_BY_ID[g][move_id].multihit 
+        }
     }
 
     for (move in jsonMoves) {

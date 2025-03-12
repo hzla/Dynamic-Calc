@@ -8,8 +8,6 @@ var util_2 = require("./custom/util");
 
 function calculateSMSS(gen, attacker, defender, move, field) {
 
-
-
     (0, util_2.checkAirLock)(attacker, field);
     (0, util_2.checkAirLock)(defender, field);
     (0, util_2.checkForecast)(attacker, field.weather);
