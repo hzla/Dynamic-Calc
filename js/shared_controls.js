@@ -41,7 +41,7 @@ function startsWith(string, target) {
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
-var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
+var HIDDEN_POWER_REGEX = /Hidden Power(\w*)/;
 
 var CALC_STATUS = {
 	'Healthy': '',
@@ -421,6 +421,7 @@ $(".move-selector").change(function () {
 	var m = moveName.match(HIDDEN_POWER_REGEX);
 
 
+	// console.log(`${moveName}`)
 
 	if (m) {
 		var pokeObj = $(this).closest(".poke-info");
@@ -434,7 +435,12 @@ $(".move-selector").change(function () {
 
 		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs, trueHP);
 		console.log(actual)
+		console.log(m)
+		console.log(pokemon.ivs)
 		if (actual.type !== m[1]) {
+			
+			$(this).val(`Hidden Power ${actual.type}`)
+
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (hpIVs && gen < 7) {
 				for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -607,6 +613,7 @@ $(".set-selector").change(function () {
 
 
 	if ($(this).hasClass('opposing')) {
+		console.log(fullSetName)
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
 		var left_max_hp = $("#p2 .max-hp").text()

@@ -3558,7 +3558,8 @@ var DPP_PATCH = {
         types: ['Grass', 'Poison'],
         bs: { hp: 60, at: 70, df: 55, sa: 125, sd: 105, sp: 90 },
         weightkg: 14.5,
-        abilities: { 0: 'Natural Cure' }
+        abilities: { 0: 'Natural Cure' },
+        otherFormes: ['Roserade-Mega']
     },
     Rotom: {
         types: ['Electric', 'Ghost'],

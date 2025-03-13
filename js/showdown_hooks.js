@@ -449,10 +449,14 @@ function get_trainer_poks(trainer_name)
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
+    console.log(og_trainer_name)
+
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name + " ")) {
+            
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+               console.log(TR_NAMES[i])
                matches.push(TR_NAMES[i])
             }    
         }
@@ -473,7 +477,7 @@ function get_trainer_poks(trainer_name)
     }
 
     // if there's too many matches, only return pokemon within 2 levels of the currently selected mon
-    if (matches.length > 6) {
+    if (matches.length > 7) {
         return filterStringsByNumber(currentSetLevel, matches)
     }
 
@@ -1812,7 +1816,6 @@ function get_next_in() {
         var strongest_move_bp = 0
         var strongest_move = "None"
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
-        console.log(pok_name)
         var types = pokedex[pok_name].types
 
 

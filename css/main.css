@@ -836,6 +836,7 @@ table td {
 .trainer-pok.right-side {
     height: 100%;
     width:  100%;
+    aspect-ratio: 40 / 30;
 }
 
 .trainer-pok.right-side.fainted {
