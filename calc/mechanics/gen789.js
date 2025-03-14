@@ -122,7 +122,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             desc.moveType = type;
         }
     }
-    else if (move.named('Revelation Dance', 'Multi-Attack', 'Raging Bull')) {
+    else if (move.named('Revelation Dance', 'Multi-Attack')) {
         if (attacker.teraType) {
             type = attacker.teraType;
         }
@@ -137,8 +137,19 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         else if (attacker.named('Morpeko-Hangry')) {
             type = 'Dark';
         }
-    }
-    else if (move.named('Ivy Cudgel')) {
+    } else if (move.named('Raging Bull')) {
+        if (attacker.named('Tauros-Paldea-Combat')) {
+          type = 'Fighting';
+        } else if (attacker.named('Tauros-Paldea-Blaze')) {
+          type = 'Fire';
+        } else if (attacker.named('Tauros-Paldea-Aqua')) {
+          type = 'Water';
+        }
+
+        field.defenderSide.isReflect = false;
+        field.defenderSide.isLightScreen = false;
+        field.defenderSide.isAuroraVeil = false;
+    } else if (move.named('Ivy Cudgel')) {
         if (attacker.name.includes('Ogerpon-Cornerstone')) {
             type = 'Rock';
         }
@@ -494,15 +505,19 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
             desc.moveBP = basePower;
             break;
-        case 'Hex':
+        
         case 'Barb Barrage':
+            if (TITLE == "Emerald Imperium" || TITLE == "Emerald Imperium 1.2") {
+                basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
+            } else {
+                basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);      
+            }
+            desc.moveBP = basePower;            
+            break;
+        case 'Hex':
         case 'Bitter Malice':
         case 'Infernal Parade':
             basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
-            desc.moveBP = basePower;
-            break;
-        case 'Barb Barrage':
-            basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
             desc.moveBP = basePower;
             break;
         case 'Heavy Slam':

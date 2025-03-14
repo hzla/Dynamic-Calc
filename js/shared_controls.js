@@ -434,9 +434,6 @@ $(".move-selector").change(function () {
 		}
 
 		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs, trueHP);
-		console.log(actual)
-		console.log(m)
-		console.log(pokemon.ivs)
 		if (actual.type !== m[1]) {
 			
 			$(this).val(`Hidden Power ${actual.type}`)
@@ -613,7 +610,6 @@ $(".set-selector").change(function () {
 
 
 	if ($(this).hasClass('opposing')) {
-		console.log(fullSetName)
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
 		var left_max_hp = $("#p2 .max-hp").text()
