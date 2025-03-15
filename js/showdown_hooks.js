@@ -1987,7 +1987,7 @@ function loadDataSource(data) {
             }
         }
 
-        if (!jsonMove['multihit']) {
+        if (!jsonMove['multihit'] && (damageGen >= 4 && damageGen <= 5)) {
              delete MOVES_BY_ID[g][move_id].multihit 
         }
     }
