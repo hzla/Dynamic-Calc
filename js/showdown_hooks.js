@@ -1907,6 +1907,9 @@ function loadDataSource(data) {
         TITLE = data["title"]
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
+        if (data["move_replacements"]) {
+            moveChanges[TITLE] = data["move_replacements"]
+        }
     }
 
     if (TITLE.includes("White") || TITLE.includes("Black") ) {
