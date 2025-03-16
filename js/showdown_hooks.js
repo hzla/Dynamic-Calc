@@ -1909,6 +1909,14 @@ function loadDataSource(data) {
         $('#rom-title').text(TITLE).show()
     }
 
+    if (TITLE.includes("White") || TITLE.includes("Black") ) {
+        baseGame = "BW"
+    } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
+        baseGame = "Pt"
+    } else if (TITLE.includes("Silver")) {
+        baseGame = "HGSS"
+    }
+
 
     if (TITLE == 'Ancestral X') {
         npoint_data["order"] = ax_order
