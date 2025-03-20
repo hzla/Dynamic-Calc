@@ -1311,7 +1311,7 @@ var GSC_PATCH = {
     },
     Qwilfish: {
         types: ['Water', 'Poison'],
-        bs: { hp: 65, at: 95, df: 75, sa: 55, sd: 55, sp: 85 },
+        bs: { hp: 80, at: 105, df: 85, sa: 55, sd: 55, sp: 85 },
         weightkg: 3.9
     },
     Raikou: {
@@ -1779,7 +1779,7 @@ var ADV_PATCH = {
     },
     Armaldo: {
         types: ['Rock', 'Bug'],
-        bs: { hp: 75, at: 125, df: 100, sa: 70, sd: 80, sp: 45 },
+        bs: { hp: 100, at: 125, df: 100, sa: 45, sd: 80, sp: 45 },
         weightkg: 68.2,
         abilities: { 0: 'Battle Armor' }
     },
@@ -8877,7 +8877,6 @@ var RR_PATCH = {
     'Arbok': { types: ['Poison', 'Dark'], bs: { hp: 75, df: 75 } },
     'Arcanine': { otherFormes: ['Arcanine-Hisui'] },
     'Arctovish': { bs: { sa: 55, sp: 80 } },
-    'Arctozolt': { bs: { sd: 55, sp: 80 } },
     'Ariados': { bs: { at: 95, sp: 70 } },
     'Aromatisse': { bs: { at: 62, df: 82 } },
     'Articuno': { bs: { at: 70, sp: 100 } },
@@ -8931,7 +8930,6 @@ var RR_PATCH = {
     'Dodrio': { otherFormes: ['Dodrio-Sevii'] },
     'Doduo': { otherFormes: ['Doduo-Sevii'] },
     'Drampa': { bs: { hp: 103, at: 50 } },
-    'Drapion': { bs: { at: 80 } },
     'Drednaw': { otherFormes: ['Drednaw-Mega'] },
     'Druddigon': { bs: { hp: 90, sp: 41 } },
     'Dubwool': { bs: { hp: 82 } },
@@ -9680,7 +9678,7 @@ var SV_PATCH = {
     },
     Bombirdier: {
         types: ['Flying', 'Dark'],
-        bs: { hp: 70, at: 103, df: 85, sa: 60, sd: 85, sp: 82 },
+        bs: { hp: 85, at: 103, df: 85, sa: 60, sd: 85, sp: 82 },
         weightkg: 42.9,
         abilities: { 0: 'Big Pecks' }
     },
@@ -9850,7 +9848,7 @@ var SV_PATCH = {
     },
     Flamigo: {
         types: ['Flying', 'Fighting'],
-        bs: { hp: 82, at: 115, df: 74, sa: 75, sd: 64, sp: 90 },
+        bs: { hp: 92, at: 115, df: 74, sa: 75, sd: 74, sp: 90 },
         weightkg: 37,
         abilities: { 0: 'Scrappy' }
     },
@@ -10370,13 +10368,13 @@ var SV_PATCH = {
     },
     Scovillain: {
         types: ['Grass', 'Fire'],
-        bs: { hp: 65, at: 108, df: 65, sa: 108, sd: 65, sp: 75 },
+        bs: { hp: 85, at: 78, df: 65, sa: 118, sd: 65, sp: 75 },
         weightkg: 15,
         abilities: { 0: 'Chlorophyll' }
     },
     'Scream Tail': {
         types: ['Fairy', 'Psychic'],
-        bs: { hp: 115, at: 65, df: 99, sa: 65, sd: 115, sp: 111 },
+        bs: { hp: 115, at: 65, df: 99, sa: 85, sd: 115, sp: 111 },
         weightkg: 8,
         gender: 'N',
         abilities: { 0: 'Protosynthesis' }
@@ -10426,7 +10424,7 @@ var SV_PATCH = {
     },
     Spidops: {
         types: ['Bug'],
-        bs: { hp: 60, at: 79, df: 92, sa: 52, sd: 86, sp: 35 },
+        bs: { hp: 85, at: 89, df: 92, sa: 32, sd: 86, sp: 35 },
         weightkg: 16.5,
         abilities: { 0: 'Insomnia' }
     },
@@ -10489,7 +10487,7 @@ var SV_PATCH = {
     },
     Tatsugiri: {
         types: ['Dragon', 'Water'],
-        bs: { hp: 68, at: 50, df: 60, sa: 120, sd: 95, sp: 82 },
+        bs: { hp: 78, at: 50, df: 70, sa: 120, sd: 95, sp: 82 },
         weightkg: 8,
         abilities: { 0: 'Commander' }
     },
@@ -10551,7 +10549,7 @@ var SV_PATCH = {
     },
     Tinkaton: {
         types: ['Fairy', 'Steel'],
-        bs: { hp: 85, at: 75, df: 77, sa: 70, sd: 105, sp: 94 },
+        bs: { hp: 85, at: 85, df: 87, sa: 70, sd: 105, sp: 94 },
         weightkg: 112.8,
         abilities: { 0: 'Mold Breaker' }
     },
@@ -10636,14 +10634,14 @@ var SV_PATCH = {
     },
     Wugtrio: {
         types: ['Water'],
-        bs: { hp: 35, at: 100, df: 50, sa: 50, sd: 70, sp: 120 },
+        bs: { hp: 35, at: 115, df: 50, sa: 35, sd: 70, sp: 120 },
         weightkg: 5.4,
         abilities: { 0: 'Gooey' }
     }
 };
 // var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);
 
-var SS = (0, util_1.extend)(true, {}, SS, SV_PATCH);
+var SS = (0, util_1.extend)(true, {}, SS, SV_PATCH, RR_PATCH);
 delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
 var gmaxes = ["Alcremie", "Appletun", "Blastoise", "Butterfree", "Centiskorch", "Charizard", "Cinderace", "Coalossal", "Copperajah", "Corviknight", "Drednaw", "Duraludon", "Eevee", "Flapple", "Garbodor", "Gengar", "Grimmsnarl", "Hatterene", "Inteleon", "Kingler", "Lapras", "Machamp", "Melmetal", "Meowth", "Orbeetle", "Pikachu", "Rillaboom", "Sandaconda", "Snorlax", "Toxtricity", "Urshifu", "Venusaur"];
