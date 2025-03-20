@@ -145,7 +145,7 @@ var RBY = {
     },
     Dewgong: {
         types: ['Water', 'Ice'],
-        bs: { hp: 90, at: 70, df: 80, sp: 70, sl: 95 },
+        bs: { hp: 95, at: 70, df: 80, sp: 70, sl: 95 },
         weightkg: 120
     },
     Diglett: {
@@ -1468,7 +1468,7 @@ var GSC_PATCH = {
     Umbreon: { types: ['Dark'], bs: { hp: 95, at: 65, df: 110, sa: 60, sd: 130, sp: 65 }, weightkg: 27 },
     Unown: {
         types: ['Psychic'],
-        bs: { hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 48 },
+        bs: { hp: 48, at: 48, df: 48, sa: 96, sd: 48, sp: 96 },
         weightkg: 5,
         gender: 'N'
     },
@@ -3140,7 +3140,7 @@ var DPP_PATCH = {
     },
     Floatzel: {
         types: ['Water'],
-        bs: { hp: 85, at: 105, df: 55, sa: 85, sd: 50, sp: 115 },
+        bs: { hp: 85, at: 105, df: 55, sa: 95, sd: 50, sp: 115 },
         weightkg: 33.5,
         abilities: { 0: 'Swift Swim' }
     },
@@ -3286,7 +3286,7 @@ var DPP_PATCH = {
     },
     Kricketot: {
         types: ['Bug'],
-        bs: { hp: 37, at: 25, df: 41, sa: 25, sd: 41, sp: 25 },
+        bs: { hp: 37, at: 40, df: 41, sa: 40, sd: 41, sp: 25 },
         weightkg: 2.2,
         nfe: true,
         abilities: { 0: 'Shed Skin' }
@@ -3504,7 +3504,7 @@ var DPP_PATCH = {
     },
     Purugly: {
         types: ['Normal'],
-        bs: { hp: 71, at: 82, df: 64, sa: 64, sd: 59, sp: 112 },
+        bs: { hp: 71, at: 82, df: 64, sa: 54, sd: 59, sp: 112 },
         weightkg: 43.8,
         abilities: { 0: 'Thick Fat' }
     },
@@ -4973,7 +4973,7 @@ var BW_PATCH = {
     },
     Watchog: {
         types: ['Normal'],
-        bs: { hp: 60, at: 85, df: 69, sa: 60, sd: 69, sp: 77 },
+        bs: { hp: 85, at: 100, df: 69, sa: 60, sd: 69, sp: 77 },
         weightkg: 27,
         abilities: { 0: 'Illuminate' }
     },
@@ -5186,7 +5186,7 @@ var XY_PATCH = {
     Togepi: { types: ['Fairy'] },
     Togetic: { types: ['Fairy', 'Flying'] },
     Tyranitar: { otherFormes: ['Tyranitar-Mega'] },
-    Unfezant: { bs: { at: 115 } },
+    Unfezant: { bs: { at: 105 } },
     Venusaur: { otherFormes: ['Venusaur-Mega'] },
     Victreebel: { bs: { sd: 70 } },
     Vileplume: { bs: { sa: 110 } },
@@ -6829,7 +6829,7 @@ var SM_PATCH = {
     },
     'Meowth-Alola': {
         types: ['Dark'],
-        bs: { hp: 40, at: 35, df: 35, sa: 50, sd: 40, sp: 90 },
+        bs: { hp: 40, at: 35, df: 35, sa: 40, sd: 40, sp: 90 },
         weightkg: 4.2,
         baseSpecies: 'Meowth',
         nfe: true,
@@ -7432,7 +7432,7 @@ var SM_PATCH = {
     },
     Steenee: {
         types: ['Grass'],
-        bs: { hp: 52, at: 40, df: 48, sa: 40, sd: 48, sp: 62 },
+        bs: { hp: 52, at: 70, df: 48, sa: 70, sd: 48, sp: 62 },
         weightkg: 8.2,
         nfe: true,
         abilities: { 0: 'Leaf Guard' }
@@ -9131,7 +9131,7 @@ var RR_PATCH = {
     'Voltorb': { otherFormes: ['Voltorb-Hisui'] },
     'Wailord': { bs: { hp: 150, at: 50, df: 80, sa: 105, sd: 80, sp: 50 } },
     'Walrein': { bs: { hp: 90 } },
-    'Watchog': { bs: { hp: 80, at: 100, df: 74, sd: 74 } },
+    'Watchog': { bs: { hp: 85, at: 100, df: 69, sd: 69 } },
     'Wishiwashi': { bs: { hp: 55 }, otherFormes: ['Wishiwashi-School', 'Wishiwashi-Sevii', 'Wishiwashi-Sevii-School'] },
     'Wishiwashi-School': { bs: { hp: 55 } },
     'Wormadam-Sandy': { bs: { at: 59, sa: 79 } },
@@ -9144,7 +9144,7 @@ var RR_PATCH = {
     'Zorua': { otherFormes: ['Zorua-Hisui'] },
     'Alcremie-Mega': {
         types: ['Fairy'],
-        bs: { hp: 65, at: 70, df: 90, sa: 140, sd: 131, sp: 84 },
+        bs: { hp: 65, at: 70, df: 95, sa: 140, sd: 131, sp: 84 },
         weightkg: 0.5,
         abilities: { 0: 'Self Sufficient' },
         baseSpecies: 'Alcremie'
@@ -9615,7 +9615,7 @@ var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH, RR_PATCH);
 
 var SV_PATCH = {
     Bisharp: { nfe: true },
-    Cresselia: { bs: { df: 110, sd: 120 } },
+    Cresselia: { bs: { df: 120, sd: 130 } },
     Dunsparce: { nfe: true },
     Duraludon: { nfe: true },
     Girafarig: { nfe: true },
@@ -10493,21 +10493,21 @@ var SV_PATCH = {
     },
     'Tauros-Paldea-Aqua': {
         types: ['Fighting', 'Water'],
-        bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
+        bs: { hp: 75, at: 110, df: 105, sa: 60, sd: 70, sp: 100 },
         weightkg: 110,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
     'Tauros-Paldea-Blaze': {
         types: ['Fighting', 'Fire'],
-        bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
+        bs: { hp: 75, at: 110, df: 105, sa: 60, sd: 70, sp: 100 },
         weightkg: 85,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
     },
     'Tauros-Paldea-Combat': {
         types: ['Fighting'],
-        bs: { hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100 },
+        bs: { hp: 75, at: 110, df: 105, sa: 60, sd: 70, sp: 100 },
         weightkg: 115,
         abilities: { 0: 'Intimidate' },
         baseSpecies: 'Tauros'
@@ -10569,7 +10569,7 @@ var SV_PATCH = {
     },
     Toedscruel: {
         types: ['Ground', 'Grass'],
-        bs: { hp: 80, at: 70, df: 65, sa: 80, sd: 120, sp: 100 },
+        bs: { hp: 80, at: 60, df: 80, sa: 90, sd: 120, sp: 100 },
         weightkg: 58,
         abilities: { 0: 'Mycelium Might' }
     },
@@ -10578,7 +10578,7 @@ var SV_PATCH = {
     },
     'Ursaluna-Bloodmoon': {
         types: ['Ground', 'Normal'],
-        bs: { hp: 113, at: 70, df: 120, sa: 135, sd: 65, sp: 52 },
+        bs: { hp: 113, at: 70, df: 120, sa: 140, sd: 65, sp: 52 },
         weightkg: 333,
         abilities: { 0: 'Mind\'s Eye' },
         baseSpecies: 'Ursaluna'
