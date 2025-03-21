@@ -832,6 +832,11 @@ function get_next_in_g4() {
         }
         var full_immune = (effectiveness == 0)
 
+        if (full_immune) {
+            console.log(trainer_poks[i])
+        }
+
+
         // check moves for SE
         var isSE = false
         for (j in pok_data["moves"]) {
@@ -930,7 +935,6 @@ function get_next_in_g4() {
         var results = calculateAllMoves(damageGen, p1, p1field, p2, p2field, false)[1];
         
 
-
         var highestDamage = 0
         var highestDamageName = ""
         for (n in results) {
@@ -940,6 +944,14 @@ function get_next_in_g4() {
             } else {
                 dmg = results[n].damage[results[n].damage.length - 1] % 255
             }
+
+            if (["Avalanche", "Payback", "Assurance"].includes(results[n].move.name) && results[n].attacker.rawStats.spe < results[n].defender.rawStats.spe) {
+                dmg = dmg / 2
+            }
+
+
+
+
 
 
             if (dmg > highestDamage && results[n].move.name != "Sonic Boom" && results[n].move.name != "Dragon Rage" && results[n].move.name != "Night Shade" && results[n].move.name != "Seismic Toss" ) {
@@ -2022,7 +2034,11 @@ function loadDataSource(data) {
     
 
 
-    if (jsonPoks["Bulbasaur"]["learnset_info"]) {
+    if (jsonPoks["Bulbasaur"] && jsonPoks["Bulbasaur"]["learnset_info"]) {
+        $('#learnset-show').show()
+    }
+
+    if (jsonPoks["Tepig"] && jsonPoks["Tepig"]["learnset_info"]) {
         $('#learnset-show').show()
     }
 
