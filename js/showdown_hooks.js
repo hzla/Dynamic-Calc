@@ -2655,7 +2655,11 @@ $(document).ready(function() {
                     backup_data = gcol_backup
                 } else if (TITLE == "Emerald Kaizo") {
                     backup_data = ek_backup
-                } else {dist
+                } else if (TITLE == "Emerald Imperium 1.2") {
+                    backup_data = imp_backup
+                }
+                else {
+                    // dist
                     "nothing"
                 }
                 npoint_data = backup_data

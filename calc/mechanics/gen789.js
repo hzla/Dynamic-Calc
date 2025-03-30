@@ -1232,7 +1232,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
-    if (defender.hasAbility('Fluffy') && move.flags.contact && !attacker.hasAbility('Long Reach')) {
+    if (defender.hasAbility('Fluffy') && move.flags.contact && !attacker.hasAbility('Long Reach') && !attacker.hasItem('Punching Glove')) {
         finalMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
