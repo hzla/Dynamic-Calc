@@ -2035,7 +2035,7 @@ function loadDataSource(data) {
     
 
 
-    if (jsonPoks["Bulbasaur"] && jsonPoks["Bulbasaur"]["learnset_info"]) {
+    if (jsonPoks["Bulbasaur"] && jsonPoks["Bulbasaur"]["learnset_info"] || TITLE == "Mariomon") {
         $('#learnset-show').show()
     }
 
