@@ -919,6 +919,7 @@ function get_next_in_g4() {
         // p1 = createPokemon($("#p1"))
         // create mon with ignoteStatMods = true
         p2 = createPokemon(p2info, pok_data["moves"], true)
+        p2.originalCurHP = 1
 
         if (p2.ability == "Reckless" || p2.ability == "Adaptability") {
             p2.ability = "Minus"
