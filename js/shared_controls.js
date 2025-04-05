@@ -835,6 +835,7 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(itemObj, set.item, "");
 			}
 			var moves = randset ? selectMovesFromRandomOptions(randset.moves) : set.moves;
+			console.log(moves)
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				moveObj.attr('data-prev', moveObj.val());

@@ -300,6 +300,8 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 
 		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
 		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
+
+
 	}
 	if (displayProbabilities) {
 

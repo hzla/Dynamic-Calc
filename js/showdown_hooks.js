@@ -1951,7 +1951,7 @@ function loadDataSource(data) {
     customMoves = data["custom_moves"]
     var jsonMove
 
-    if (!jsonMoves["Fire Blast"]["e_id"]){
+    if (!jsonMoves["FireBlast"] || !jsonMoves["Fire Blast"]["e_id"]){
         $("#show-ai").hide()
     }
 
@@ -2102,14 +2102,7 @@ function loadDataSource(data) {
                 "Bug",
                 "Steel"
             ],
-            "bs": {
-                "at": 50,
-                "df": 90,
-                "hp": 60,
-                "sa": 110,
-                "sd": 110,
-                "sp": 30
-            },
+            "bs": jsonPoks['Wormadam']['bs'],
             "weightkg": 6.5,
             "abilities": {
                 "0": "Anticipation"
@@ -2125,14 +2118,7 @@ function loadDataSource(data) {
                 "Bug",
                 "Ground"
             ],
-            "bs": {
-                "at": 50,
-                "df": 90,
-                "hp": 60,
-                "sa": 110,
-                "sd": 110,
-                "sp": 30
-            },
+            "bs": jsonPoks['Wormadam']['bs'],
             "weightkg": 6.5,
             "abilities": {
                 "0": "Anticipation"
@@ -2367,7 +2353,8 @@ $(document).ready(function() {
    "2487bca2d6c21c388695": "Fire Red Deluxe",
    "aeb373b7631d4afd7a53": "Emerald",
    "006ac04e900ccb3110df": "Luminescent Platinum",
-   "4d69b577b07a86fe790c": "Righteous Red"
+   "4d69b577b07a86fe790c": "Righteous Red",
+   "9fd7b1ba4583a9ba7166": "Mariomon"
     }
 
     MASTERSHEETS = {
