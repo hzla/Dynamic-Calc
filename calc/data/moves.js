@@ -3621,7 +3621,8 @@ var SS_PATCH = {
         secondaries: true,
         makesContact: true,
         zp: 175,
-        maxPower: 90
+        maxPower: 90,
+        isKick: true
     },
     '10,000,000 Volt Thunderbolt': { maxPower: 1 },
     Absorb: { maxPower: 90 },

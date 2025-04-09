@@ -5649,7 +5649,7 @@ var XY_PATCH = {
         types: ['Dark'],
         bs: { hp: 65, at: 150, df: 60, sa: 115, sd: 60, sp: 115 },
         weightkg: 49,
-        abilities: { 0: 'Magic Bounce' },
+        abilities: { 0: 'Sharpness' },
         baseSpecies: 'Absol'
     },
     'Aerodactyl-Mega': {
@@ -9828,7 +9828,7 @@ var SV_PATCH = {
     },
     Fezandipiti: {
         types: ['Poison', 'Fairy'],
-        bs: { hp: 88, at: 91, df: 82, sa: 70, sd: 125, sp: 99 },
+        bs: { hp: 88, at: 70, df: 82, sa: 91, sd: 125, sp: 99 },
         weightkg: 30.1,
         abilities: { 0: 'Toxic Chain' }
     },
