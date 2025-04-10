@@ -365,8 +365,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
     }
     else if ((!noWeatherBoost && defender.name && defender.name.includes("Primal")) &&
-        (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-        (field.hasWeather('Heavy Rain') && move.hasType('Fire'))) {
+        ((field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+        (field.hasWeather('Heavy Rain') && move.hasType('Fire')))) {
+        console.log(defender.name)
+        console.log("this triggered")
         return result;
     }
     else if (!noWeatherBoost &&
