@@ -851,11 +851,11 @@ function get_next_in_g4() {
             }
 
             if (!invert) {
-                if (TITLE == "Renegade Platinum" && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
+                if (damageGen == 4 && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
                     isSE = true
                 }
 
-                if (TITLE == "Renegade Platinum" && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
+                if (damageGen == 4 && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp,Gliscor".includes(player_pok)){
                     isSE = true
                 }
 
@@ -867,7 +867,7 @@ function get_next_in_g4() {
                     isSE = true
                 }
 
-                if (TITLE == "Renegade Platinum" && player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
+                if (damageGen == 4 && player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
                     isSE = true
                 }
 
