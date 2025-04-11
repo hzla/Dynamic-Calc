@@ -879,6 +879,11 @@ table td {
 .info-group.hp-cntrl {
     margin-bottom: 0;
     height: 40px;
+    margin-top: 4px;
+}
+
+.info-group.left-table, .info-group-right-table {
+    margin-bottom: 0px;
 }
 
 .info-group.info-selectors {
