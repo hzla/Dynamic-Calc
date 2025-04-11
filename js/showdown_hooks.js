@@ -1952,7 +1952,7 @@ function loadDataSource(data) {
     customMoves = data["custom_moves"]
     var jsonMove
 
-    if (!jsonMoves["FireBlast"] || !jsonMoves["Fire Blast"]["e_id"]){
+    if (!jsonMoves["Fire Blast"] || !jsonMoves["Fire Blast"]["e_id"]){
         $("#show-ai").hide()
     }
 
