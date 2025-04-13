@@ -8941,7 +8941,7 @@ var RR_PATCH = {
     'Eiscue': { bs: { at: 100, sa: 45 } },
     'Eiscue-Noice': { bs: { at: 100, sa: 45 } },
     'Eldegoss': { bs: { hp: 75, sa: 90 } },
-    'Electivire': { types: ['Electric', 'Fighting'], bs: { at: 113, sa: 105 } },
+    'Electivire': { types: ['Electric', 'Fighting'], bs: { at: 123, sa: 105 } },
     'Electrode': { bs: { at: 55, sa: 100 }, otherFormes: ['Electrode-Hisui'] },
     'Eternatus-Eternamax': { bs: { hp: 140, at: 105, df: 110, sa: 185, sd: 110, sp: 140 }, weightkg: 950, abilities: { 0: 'Levitate' } },
     'Emolga': { bs: { at: 55, sa: 95 } },
