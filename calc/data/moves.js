@@ -3612,6 +3612,14 @@ var SS_PATCH = {
     },
     'No Retreat': { bp: 0, type: 'Fighting' },
     Obstruct: { bp: 0, type: 'Dark', priority: 4 },
+    'Poisonous Graze': {
+        bp: 70,
+        type: 'Poison',
+        makesContact: true,
+        category: 'Physical',
+        zp: 185,
+        maxPower: 140
+    },
     Octolock: { bp: 0, type: 'Fighting' },
     Overdrive: {
         bp: 80,
@@ -4310,6 +4318,23 @@ var RR_PATCH = {
     Flash: { bp: 60, type: 'Electric', category: 'Special', zp: 0, maxPower: 100 },
     'Flash Cannon': { isBullet: true },
     'Fleur Cannon': { zp: 200 },
+     'Flaring Rush': {
+        bp: 85,
+        type: 'Fire',
+        category: 'Physical',
+        makesContact: true,
+        zp: 120,
+        maxPower: 110
+    },
+    'Tectonic Drift': {
+        bp: 80,
+        type: 'Rock',
+        category: 'Physical',
+        target: 'allAdjacent',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true
+    },
     'Freezing Glare': { zp: 100, maxPower: 90 },
     'Freezy Frost': { bp: 95, zp: 175 },
     'Frenzy Plant': { bp: 160, secondaries: true },

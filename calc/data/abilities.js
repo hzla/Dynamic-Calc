@@ -307,6 +307,7 @@ var SS = SM.concat([
     'Ice Scales',
     'Intrepid Sword',
     'Libero',
+    'Inverted Scales',
     'Mimicry',
     'Mirror Armor',
     'Neutralizing Gas',

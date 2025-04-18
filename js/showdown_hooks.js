@@ -2358,7 +2358,10 @@ $(document).ready(function() {
    "aeb373b7631d4afd7a53": "Emerald",
    "006ac04e900ccb3110df": "Luminescent Platinum",
    "4d69b577b07a86fe790c": "Righteous Red",
-   "9fd7b1ba4583a9ba7166": "Mariomon"
+   "9fd7b1ba4583a9ba7166": "Mariomon",
+   "b60bd402cbb993ed3b77": "Parallel Emerald ATO",
+    "17af2cc6ec56f8f293bd": "Parallel Emerald Hard",
+    "a0e5b4fa06d9e7762210": "Parallel Emerald Normal"
     }
 
     MASTERSHEETS = {

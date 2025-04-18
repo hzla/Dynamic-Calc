@@ -169,7 +169,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     var type2Effectiveness = defender.types[1]
         ? (0, util_2.getMoveEffectiveness)(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
         : 1;
-    if (field.isInverseBattle) {
+    if (field.isInverseBattle || defender.hasAbility("Inverted Scales")) {
         if (type1Effectiveness === 0 || type1Effectiveness === 0.5)
             type1Effectiveness = 2;
         else if (type1Effectiveness === 2)
@@ -358,6 +358,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     else if (!noWeatherBoost && attacker.hasAbility("Whiteout") && field.hasWeather('Hail') && move.hasType('Ice') && INC_EM) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 6144) / 4096);
+        desc.weather = field.weather;
+    }
+    else if (!noWeatherBoost && field.hasWeather('Hail') && attacker.hasType('Ice') && TITLE.includes("Parallel Emerald")) {
+        baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 5325) / 4096);
         desc.weather = field.weather;
     }
     else if (attacker.hasAbility("Chloroplast") && INC_EM && move.hasType('Fire')) {
@@ -1006,6 +1010,7 @@ function calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCrit
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
+
     var dfMods = calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCritical, hitsPhysical);
     return (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((defense * (0, util_2.chainMods)(dfMods)) / 4096)));
 }
