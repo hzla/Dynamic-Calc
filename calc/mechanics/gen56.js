@@ -38,6 +38,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if (move.category === 'Status' && !move.named('Nature Power')) {
         return result;
     }
+
     if (field.defenderSide.isProtected && !move.breaksProtect) {
         desc.isProtected = true;
         return result;
@@ -82,6 +83,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
                         : field.hasTerrain('Misty') ? 'Fairy'
                             : 'Normal';
         }
+    }
+    else if (move.named('Brick Break')) {
+        field.defenderSide.isReflect = false;
+        field.defenderSide.isLightScreen = false;
     }
     var isAerilate = false;
     var isPixilate = false;

@@ -97,6 +97,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         desc.terrain = field.terrain;
         desc.moveType = type;
     }
+    else if (move.named('Brick Break')) {
+        field.defenderSide.isReflect = false;
+        field.defenderSide.isLightScreen = false;
+    }
     else if (move.named('Revelation Dance', 'Multi-Attack')) {
         type = attacker.types[0];
     }

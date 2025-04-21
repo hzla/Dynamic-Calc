@@ -1,14 +1,10 @@
 // This is Javascript code to be pasted into the web console of a default showdown calculator. It will grab all pokedex, move, and set data and format it for use for Dynamic Calc.
 // Scraped data is stored in the variable npoint_data
 
-
-
 // Gets formatted sets
 
 newSets = {}
-
 trNameCounts = {}
-
 
 function isLastCharNumber(str) {
   const lastChar = str.charAt(str.length - 1);
@@ -40,6 +36,8 @@ for (species in pokedex) {
 	npoint_poks[species]["bs"] = pokedex[species]["bs"]
 	npoint_poks[species]["types"] = pokedex[species]["types"]
 }
+
+// Gets Moves
 
 npoint_moves = {}
 
