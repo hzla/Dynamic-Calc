@@ -3208,7 +3208,7 @@ var DPP_PATCH = {
     },
     'Dialga-Origin': {
         types: ['Steel', 'Dragon'],
-        bs: { hp: 100, at: 120, df: 120, sa: 150, sd: 100, sp: 90 },
+        bs: { hp: 100, at: 100, df: 120, sa: 150, sd: 120, sp: 90 },
         weightkg: 650,
         gender: 'N',
         abilities: { 0: 'Levitate' },
@@ -5417,7 +5417,7 @@ var XY_PATCH = {
     },
     'Floette-Eternal': {
         types: ['Fairy'],
-        bs: { hp: 54, at: 45, df: 47, sa: 75, sd: 98, sp: 52 },
+        bs: { hp: 74, at: 65, df: 67, sa: 125, sd: 128, sp: 92 },
         weightkg: 0.9,
         nfe: true,
         abilities: { 0: 'Flower Veil' }
@@ -7635,7 +7635,7 @@ var SS_PATCH = {
     },
     Darumaka: { otherFormes: ['Darumaka-Galar'] },
     Eevee: { otherFormes: ['Eevee-Gmax'] },
-    Equilibra: { bs: { sa: 121 } },
+    Equilibra: { bs: { sa: 133 } },
     'Farfetch\u2019d': { otherFormes: ['Farfetch\u2019d-Galar'] },
     Garbodor: { otherFormes: ['Garbodor-Gmax'] },
     Gengar: { otherFormes: ['Gengar-Gmax', 'Gengar-Mega'] },
@@ -7923,21 +7923,21 @@ var SS_PATCH = {
     },
     Cramorant: {
         types: ['Flying', 'Water'],
-        bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
+        bs: { hp: 85, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         otherFormes: ['Cramorant-Gorging', 'Cramorant-Gulping']
     },
     'Cramorant-Gorging': {
         types: ['Flying', 'Water'],
-        bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
+        bs: { hp: 85, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         baseSpecies: 'Cramorant'
     },
     'Cramorant-Gulping': {
         types: ['Flying', 'Water'],
-        bs: { hp: 70, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
+        bs: { hp: 85, at: 85, df: 55, sa: 85, sd: 95, sp: 85 },
         weightkg: 18,
         abilities: { 0: 'Gulp Missile' },
         baseSpecies: 'Cramorant'
@@ -8331,7 +8331,7 @@ var SS_PATCH = {
     },
     Miasmaw: {
         types: ['Bug', 'Dragon'],
-        bs: { hp: 85, at: 135, df: 60, sa: 115, sd: 85, sp: 92 },
+        bs: { hp: 85, at: 135, df: 60, sa: 88, sd: 105, sp: 99 },
         weightkg: 57,
         abilities: { 0: 'Neutralizing Gas' }
     },
@@ -8884,13 +8884,13 @@ var RR_PATCH = {
     'Avalugg': { otherFormes: ['Avalugg-Hisui'] },
     'Banette-Mega': { types: ['Ghost', 'Normal'] },
     'Beartic': { types: ['Ice', 'Fighting'], bs: { at: 140 } },
-    'Beautifly': { bs: { sa: 105, sp: 75 } },
+    'Beautifly': { bs: { sa: 105, sp: 75, at: 60 } },
     'Beheeyem': { bs: { hp: 95 } },
-    'Bellossom': { types: ['Grass', 'Fairy'], bs: { hp: 85, at: 70 } },
+    'Bellossom': { types: ['Grass', 'Fairy'], bs: { hp: 75, at: 80 } },
     'Bibarel': { bs: { df: 80, sd: 80, sp: 50 } },
     'Blitzle': { otherFormes: ['Blitzle-Sevii'] },
     'Boltund': { bs: { at: 100, sa: 80 } },
-    'Bouffalant': { bs: { sp: 65 } },
+    'Bouffalant': { bs: { sp: 65, hp: 100 } },
     'Braviary': { otherFormes: ['Braviary-Hisui'] },
     'Butterfree': { bs: { sa: 95 }, otherFormes: ['Butterfree-Mega'] },
     'Cacturne': { bs: { at: 120, sa: 120 } },
@@ -8941,7 +8941,7 @@ var RR_PATCH = {
     'Eiscue': { bs: { at: 100, sa: 45 } },
     'Eiscue-Noice': { bs: { at: 100, sa: 45 } },
     'Eldegoss': { bs: { hp: 75, sa: 90 } },
-    'Electivire': { types: ['Electric', 'Fighting'], bs: { at: 123, sa: 105 } },
+    'Electivire': { types: ['Electric', 'Fighting'], bs: { at: 123, sa: 95 } },
     'Electrode': { bs: { at: 55, sa: 100 }, otherFormes: ['Electrode-Hisui'] },
     'Eternatus-Eternamax': { bs: { hp: 140, at: 105, df: 110, sa: 185, sd: 110, sp: 140 }, weightkg: 950, abilities: { 0: 'Levitate' } },
     'Emolga': { bs: { at: 55, sa: 95 } },
@@ -9055,8 +9055,8 @@ var RR_PATCH = {
     'Quagsire': { bs: { hp: 100, df: 90 } },
     'Qwilfish': { bs: { at: 105 }, otherFormes: ['Qwilfish-Hisui'] },
     'Raichu': { bs: { hp: 70, at: 100, sa: 100 } },
-    'Rapidash': { bs: { sa: 60, sp: 125 } },
-    'Rapidash-Galar': { types: ['Fire', 'Fairy'], bs: { sa: 60, sp: 125 } },
+    'Rapidash': { bs: { sa: 80, sp: 125 } },
+    'Rapidash-Galar': { types: ['Fire', 'Fairy'], bs: { sa: 80, sp: 125 } },
     'Raticate': { bs: { hp: 60, at: 91 } },
     'Raticate-Alola': { bs: { at: 86 } },
     'Relicanth': { bs: { at: 105, df: 115 } },
@@ -9121,7 +9121,7 @@ var RR_PATCH = {
     'Tropius': { types: ['Grass', 'Dragon'], bs: { sa: 92, sp: 81 } },
     'Turtonator': { bs: { hp: 70, at: 58 } },
     'Typhlosion': { otherFormes: ['Typhlosion-Hisui'] },
-    'Unfezant': { bs: { sp: 108 } },
+    'Unfezant': { bs: { sp: 93 } },
     'Ursaring': { nfe: true, otherFormes: ['Ursaring-Sevii'] },
     'Vanilluxe': { bs: { at: 90, sp: 84 } },
     'Venomoth': { types: ['Bug', 'Psychic'], bs: { df: 65, sa: 95 } },
@@ -9137,7 +9137,7 @@ var RR_PATCH = {
     'Wormadam-Sandy': { bs: { at: 59, sa: 79 } },
     'Wormadam-Trash': { bs: { at: 59, sa: 79 } },
     'Xatu': { bs: { sa: 105, sp: 105 } },
-    'Xurkitree': { bs: { at: 74, sp: 98 } },
+    'Xurkitree': { bs: { at: 69, sp: 98 } },
     'Zangoose': { bs: { df: 70, sd: 70, sp: 100 } },
     'Zebstrika': { otherFormes: ['Zebstrika-Sevii'] },
     'Zoroark': { otherFormes: ['Zoroark-Hisui'] },
@@ -9384,7 +9384,7 @@ var RR_PATCH = {
     },
     'Kingler-Mega': {
         types: ['Water', 'Steel'],
-        bs: { hp: 55, at: 150, df: 125, sa: 50, sd: 70, sp: 110 },
+        bs: { hp: 55, at: 150, df: 130, sa: 50, sd: 75, sp: 110 },
         weightkg: 60,
         abilities: { 0: 'Tough Claws' },
         baseSpecies: 'Kingler'
@@ -10514,7 +10514,7 @@ var SV_PATCH = {
     },
     'Terapagos': {
         types: ['Normal'],
-        bs: { hp: 110, at: 65, df: 85, sa: 65, sd: 85, sp: 60 },
+        bs: { hp: 90, at: 65, df: 85, sa: 65, sd: 85, sp: 60 },
         weightkg: 6.5,
         abilities: { 0: 'Tera Shift' },
         otherFormes: ['Terapagos-Stellar', 'Terapagos-Terastal']
@@ -10528,7 +10528,7 @@ var SV_PATCH = {
     },
     'Terapagos-Terastal': {
         types: ['Normal'],
-        bs: { hp: 95, at: 95, df: 110, sa: 105, sd: 110, sp: 85 },
+        bs: { hp: 110, at: 95, df: 110, sa: 105, sd: 110, sp: 85 },
         weightkg: 16,
         abilities: { 0: 'Tera Shell' },
         baseSpecies: 'Terapagos'
@@ -10592,7 +10592,7 @@ var SV_PATCH = {
     },
     Veluza: {
         types: ['Water', 'Psychic'],
-        bs: { hp: 90, at: 102, df: 73, sa: 78, sd: 65, sp: 70 },
+        bs: { hp: 95, at: 102, df: 83, sa: 78, sd: 75, sp: 70 },
         weightkg: 90,
         abilities: { 0: 'Mold Breaker' }
     },
