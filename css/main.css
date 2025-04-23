@@ -4,7 +4,7 @@ a img {
 }
 .wrapper * {
     box-sizing: content-box;
-/*    max-width: 1980px;*/
+   /* max-width: fit-content; */
     
  }
 
@@ -930,6 +930,7 @@ table td {
 .wrapper {
     width: calc(100vw - 40px);
     min-width:  1540px;
+    max-width: fit-content;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -1660,4 +1661,64 @@ table.field {
 }
 
 
+.calc-right-section {
+    max-width: 1000px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow-x: auto;
+  }
+        
+  .fight-line-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    min-width: 600px;
+  }
+    .figh-table-header {
+        font-size: 1.2em;
+        padding: 10px;
+        border-collapse: collapse;
+        border-bottom: 4px solid #ddd;
+    }
+
+  .fight-line-row {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+  }
+
+  .fight-line-table > th {
+    background-color: #141414;
+    font-weight: 600;
+  }
+
+  .fight-line-table > tr:nth-child(even) {
+    background-color: #3a3a3a;
+  }
+
+  .fight-line-table > tr:hover {
+    background-color: #253644;
+  }
+
+  .fight-line-table > img.sprite {
+    height: 136px;
+    max-width: 100%;
+  }    
+  .fight-line-sprite {
+    height: 56px;
+  }
+
+  @media (max-width: 768px) {
+    .fight-line-table > th, td {
+      padding: 8px;
+    }
+
+    .fight-line-sprite {
+      height: 42px;
+    }
+  }
 
