@@ -749,7 +749,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if (field.attackerSide.is50Buff) {
         bpMods.push(6144)
     }
-    if (isAerilate || isPixilate || isRefrigerate) {
+    if (isAerilate || isPixilate || isRefrigerate || isNormalize) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }

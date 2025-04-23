@@ -76,7 +76,7 @@ function calculateADV(gen, attacker, defender, move, field) {
                     : field.hasWeather('Sand') ? 'Rock'
                         : field.hasWeather('Hail') ? 'Ice'
                             : 'Normal';
-        move.category = ['Fire', 'Water', 'Ice'].includes(move.type) ? 'Special' : 'Physical'
+        move.category = move.type === 'Rock' ? 'Physical' : 'Special';
         desc.weather = field.weather;
         desc.moveType = move.type;
         desc.moveBP = move.bp;

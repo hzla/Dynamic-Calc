@@ -115,7 +115,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
             
 
             if (baseGame == "BW") {
-                n = 210
+                n = 690
             }
 
             boxPokOffsets = {}

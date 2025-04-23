@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark">
     <title>Dynamic Calc</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css?01" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9699" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9695" />
     <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c970" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css?1" />
     <!-- Global site tag (gtag.js) - Google Analytics -->    
@@ -43,12 +43,12 @@
        "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon",
        "9abb79df1e356642c229": "Fire Red Omega",
        "12f82557ed0e08145660": "Fire Red",
-       "2487bca2d6c21c388695": "Fire Red Deluxe",
        "aeb373b7631d4afd7a53": "Emerald",
        "006ac04e900ccb3110df": "Luminescent Platinum",
-       "4d69b577b07a86fe790c": "Righteous Red",
-       "55d895a19083b26c0c53": "Emerald Imperium 1.2",
-       "9fd7b1ba4583a9ba7166": "Mariomon"
+       "e91164d90d06a009e6cc": "Radical Red 4.1 Hardcore",
+       "ced457ba9aa55731616c": "Radical Red 4.1 Normal",
+       "2ec049ba9513d189a915": "Emerald Imperium",
+       "55d895a19083b26c0c53": "Emerald Imperium 1.2"
         }
         if (SOURCES[params.get('data')]) {
             TITLE = SOURCES[params.get('data')] || "NONE"
@@ -96,13 +96,14 @@
  -->
 
 <div class="wrapper" style="margin-top: 20px;">
-
+    <div class="calc-left-section">
     <div aria-label="Settings" role="region" class="header-settings">
         
         <img src="./img/menu.svg" id="open-menu">
 
         <div id="settings-menu">
             <div id="img-toggle" class="menu-item">Backup Mode</div>
+            <div id="invert-types" class="menu-item">Invert Types</div>
             <div id="sprite-toggle" class="menu-item">Toggle Sprite Icons</div>
             <div id="toggle-boxroll" class="menu-item">Toggle Box Filter</div>
             <div id="toggle-battle-notes" class="menu-item">Toggle Battle Notes</div>
@@ -137,7 +138,9 @@
                 <option data-source="https://hzla.github.io/Dynamic-Calc/?data=11c4eeca5a94f8edf413&gen=8&challengeMode=true&types=6">Blaze Black 2 Redux Challenge Mode</option>
                 <option data-source="https://hzla.github.io/Dynamic-Calc/?data=945a33720dbd6bc04488&gen=8&types=6">Blaze Black 2 Redux 1.4</option>
                 <option data-source="https://hzla.github.io/Dynamic-Calc/?data=945a33720dbd6bc04488&gen=8&challengeMode=true&types=6">Blaze Black 2 Redux Challenge Mode 1.4</option>
-                <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=55d895a19083b26c0c53&dmgGen=8&gen=8&types=6&noSwitch=1&evs=0">Emerald Imperium 1.2 No EVs</option>
+                <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=2ec049ba9513d189a915&dmgGen=8&gen=8&types=6&noSwitch=1&evs=0">Emerald Imperium 1.1 No EVs</option>
+                 <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=2ec049ba9513d189a915&dmgGen=8&gen=8&types=6&noSwitch=1&evs=1">Emerald Imperium 1.1 w/ EVs</option>
+                 <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=55d895a19083b26c0c53&dmgGen=8&gen=8&types=6&noSwitch=1&evs=0">Emerald Imperium 1.2 No EVs</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=55d895a19083b26c0c53&dmgGen=8&gen=8&types=6&noSwitch=1&evs=1">Emerald Imperium 1.2 w/ EVs</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=24bbfc0e69ff4a5c006b&dmgGen=3&gen=8&switchIn=11&types=3">Emerald Kaizo</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=8d1ab90a3b3c494d8485&dmgGen=6&gen=6">Eternal X/Wilting Y Insanity Rebalanced</option>  
@@ -147,13 +150,11 @@
 
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=e9030beba9c1ba8804e8&dmgGen=3&gen=8&switchIn=11&misc=Orre&types=5">Kaizo Colloseum</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=006ac04e900ccb3110df&dmgGen=8&gen=8&switchIn=6&types=6">Luminescent Platinum</option>  
-                 <option data-source="https://hzla.github.io/Dynamic-Calc/?data=9fd7b1ba4583a9ba7166&dmgGen=8&gen=8&noSwitch=1&types=6&customPoks=1">Mariomon</option> 
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=de22f896c09fceb0b273&gen=8&switchIn=4&types=5&dmgGen=4">Maximum Platinum</option> 
-                 <option data-source="https://hzla.github.io/Dynamic-Calc/index.html?data=ee9b421600cd6487e4e3&dmgGen=7&gen=7">Photonic Sun/Prismatic Moon</option>
+                 <option data-source="https://hzla.github.io/Dynamic-Calc/index.html?data=ee9b421600cd6487e4e3&dmgGen=8&gen=7">Photonic Sun/Prismatic Moon</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=eae4ac1396d4b82d8b87&gen=8&dmgGen=5&types=5">Pitch Black 2 Normal Mode</option>
-                 <option data-source="https://hzla.github.io/damage-calc/">Radical Red 4.0</option>  
+                 <option data-source="https://hzla.github.io/Dynamic-Calc-Decomps/?data=e91164d90d06a009e6cc&dmgGen=8&gen=8&types=6&noSwitch=1">Radical Red 4.1</option>
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6&dmgGen=4">Renegade Platinum</option> 
-                 <option data-source="https://hzla.github.io/Dynamic-Calc/?data=4d69b577b07a86fe790c&dmgGen=1&gen=7&noSwitch=1&types=6">Righteous Red</option> 
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=f109940e5639c3702e6d&dmgGen=6&gen=6&types=6">Rising Ruby/Sinking Saphire</option> 
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=5b789b0056c18c5c668b&gen=8&switchIn=4&types=6&dmgGen=4&type_mod=plat_redux">Platinum Redux 2.6</option> 
                  <option data-source="https://hzla.github.io/Dynamic-Calc/?data=03e577af7cc9856a1f42&gen=7&switchIn=4&types=6&dmgGen=4&fairy=1">Sacred Gold/Storm Silver</option> 
@@ -299,7 +300,7 @@
                             <th></th>
                             <th scope="col">Base</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">IVs</th>
-                            <th class="gen-specific g1 g3 g4 g5 g6 g7 g8 ev-label" scope="col">EVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 ev-label" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -316,7 +317,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -336,7 +337,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -372,7 +373,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -408,7 +409,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -444,7 +445,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -476,9 +477,6 @@
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
-                            </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
-                                <input class="evs calc-trigger" type="number" min="0" max="65535" step="4" value="0" />
                             </td>
                             <td>
                                 <input class="dvs calc-trigger" value="15" />
@@ -513,7 +511,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -577,6 +575,23 @@
                     <label for="abilityL1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
+                    <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
+                        <option value="0">Zero allies fainted</option>
+                        <option value="1">One ally fainted</option>
+                        <option value="2">Two allies fainted</option>
+                        <option value="3">Three allies fainted</option>
+                        <option value="4">Four allies fainted</option>
+                        <option value="5">Five allies fainted</option>
+                    </select>
+                    <select hidden aria-label="Boosted Stat" title="What stat is boosted by this ability?" class="boostedStat calc-trigger">
+                        <option value="auto">Auto-Select</option>
+                        <option value="">Inactive</option>
+                        <option value="atk">Attack</option>
+                        <option value="def">Defense</option>
+                        <option value="spa">Special Attack</option>
+                        <option value="spd">Special Defense</option>
+                        <option value="spe">Speed</option>
+                    </select>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
                     <label for="itemL1">Item</label>
@@ -814,8 +829,8 @@
                         <label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Snow" id="snow" />
+                        <label class="btn btn-small btn-right" for="snow">Snow</label>
                     </div>
                     <div class="gen-specific g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto; display: inline-block;">
                         <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
@@ -824,8 +839,6 @@
                         <label class="btn btn-xxxwide btn-left" for="magicroom">Magic Room</label>
                         <input aria-describedby="wonderRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wonderroom" />
                         <label class="btn btn-xxxwide btn-right" for="wonderroom">Wonder Room</label>
-                        <input aria-describedby="inverseInstruction" class="visually-hidden calc-trigger" type="checkbox" id="inverse">
-                        <label class="btn btn-xxxwide" for="inverse">Inverse</label>
                     </div>
                     <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                         <span hidden id="gravityInstruction">Is gravity in effect?</span>
@@ -1212,7 +1225,7 @@
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
                         <input class="import-name-text" value="My Box"></input>
-                        <textarea class="import-team-text" placeholder="Export your box and party using Pkhex/Save File"></textarea>
+                        <textarea class="import-team-text" placeholder="Export your box and party using http://fishbowlweb.cloud:3000/savereader/rad_red or http://fishbowlweb.cloud:3000/savereader/em_imp "></textarea>
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
                     <label for="save-upload" class="bs-btn" id="read-save">
@@ -1278,7 +1291,7 @@
                             <th></th>
                             <th scope="col">Base</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">IVs</th>
-                            <th class="gen-specific g1 g3 g4 g5 g6 g7 g8 ev-label" scope="col">EVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 ev-label" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -1295,7 +1308,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1315,7 +1328,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1351,7 +1364,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1387,7 +1400,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1423,7 +1436,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1455,9 +1468,6 @@
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
-                            </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
-                                <input class="evs calc-trigger" type="number" min="0" max="65535" step="4" value="0" />
                             </td>
                             <td>
                                 <input class="dvs calc-trigger" value="15" />
@@ -1492,7 +1502,7 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g1 g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1556,6 +1566,23 @@
                     <label for="abilityR1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
+                    <select hidden aria-label="Allies fainted" class="alliesFainted calc-trigger">
+                        <option value="0">Zero allies fainted</option>
+                        <option value="1">One ally fainted</option>
+                        <option value="2">Two allies fainted</option>
+                        <option value="3">Three allies fainted</option>
+                        <option value="4">Four allies fainted</option>
+                        <option value="5">Five allies fainted</option>
+                    </select>
+                    <select hidden aria-label="Boosted Stat" title="What stat is boosted by this ability?" class="boostedStat calc-trigger">
+                        <option value="auto">Auto-Select</option>
+                        <option value="">Inactive</option>
+                        <option value="atk">Attack</option>
+                        <option value="def">Defense</option>
+                        <option value="spa">Special Attack</option>
+                        <option value="spd">Special Defense</option>
+                        <option value="spe">Speed</option>
+                    </select>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
                     <label for="itemR1">Item</label>
@@ -1595,8 +1622,8 @@
                 <label for="currentHpL1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
-                     <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
-                     <label class="btn btn-xwide gen-specific g8 hide" for="maxL"
+                     <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
+                     <label class="btn btn-xwide gen-specific g8 hide" for="maxR"
                      title="Use the corresponding Max Move?">Dynamax</label>
                      <br />
                 <br />
@@ -1744,6 +1771,93 @@
         </fieldset>
     </div>
     </div>
+    </div>
+    <style scoped> 
+    
+        .calc-right-section {
+          max-width: 1000px;
+          margin: auto;
+          border: 1px solid #ddd;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+          overflow-x: auto;
+        }
+    
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          min-width: 600px;
+        }
+    
+        th, td {
+          text-align: center;
+          padding: 12px;
+          border-bottom: 1px solid #eee;
+        }
+    
+        th {
+          background-color: #141414;
+          font-weight: 600;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #3a3a3a;
+        }
+    
+        tr:hover {
+          background-color: #253644;
+        }
+    
+        img.sprite {
+          height: 136px;
+          max-width: 100%;
+        }
+    
+        @media (max-width: 768px) {
+          th, td {
+            padding: 8px;
+          }
+    
+          img.sprite {
+            height: 96px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+    
+    <div class="calc-right-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Round</th>
+            <th>Your Pokémon</th>
+            <th>Your Move</th>
+            <th>Opponent Pokémon</th>
+            <th>Predicted Move</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="https://img.pokemondb.net/sprites/home/normal/garchomp.png" alt="Garchomp" class="sprite"></td>
+            <td>Earthquake</td>
+            <td><img src="https://img.pokemondb.net/sprites/home/normal/togekiss.png" alt="Togekiss" class="sprite"></td>
+            <td>Air Slash</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="https://img.pokemondb.net/sprites/home/normal/rotom-wash.png" alt="Rotom-Wash" class="sprite"></td>
+            <td>Hydro Pump</td>
+            <td><img src="https://img.pokemondb.net/sprites/home/normal/excadrill.png" alt="Excadrill" class="sprite"></td>
+            <td>Iron Head</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    </div>
     <script type="text/javascript">
         var linkExtension = '.html';
     </script>
@@ -1759,19 +1873,21 @@
     </script>
     
 
-     <script type="text/javascript" src="./backups/bb2redux1-4.js"></script>
+  <!--    <script type="text/javascript" src="./backups/bb2redux1-4.js"></script>
      <script type="text/javascript" src="./backups/ax.js?1"></script>
      <script type="text/javascript" src="./backups/bb.js"></script>
      <script type="text/javascript" src="./backups/ek.js"></script>
      <script type="text/javascript" src="./backups/rp.js"></script>
      <script type="text/javascript" src="./backups/rrss.js"></script>
      <script type="text/javascript" src="./backups/sgss.js?1"></script>
-     <script type="text/javascript" src="./backups/vw.js"></script>
+     <script type="text/javascript" src="./backups/vw.js"></script> -->
+
+     <script type="text/javascript" src="./backups/imp.js"></script>
 
     <script type="text/javascript" src="./js/expert_ai.js?8fa0c7fc"></script>
-    <script type="text/javascript" src="./calc/util.js?8fa0c7fe"></script>
+    <script type="text/javascript" src="./calc/util.js?8fa0c7fd"></script>
     <script type="text/javascript" src="./calc/stats.js?da4066fa"></script>
-    <script type="text/javascript" src="./calc/data/species.js?66abc353"></script>
+    <script type="text/javascript" src="./calc/data/species.js?66abc357"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?6f60aa5c"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?b8c1b790"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
@@ -1781,46 +1897,47 @@
     <script type="text/javascript" src="./js/data/sets/gen3.js?13854f5b"></script>
     <script type="text/javascript" src="./js/data/sets/gen2.js?4cb8be40"></script>
     <script type="text/javascript" src="./js/data/sets/gen1.js?a2f6e086"></script>
-    <script type="text/javascript" src="./js/showdown_hooks.js?100160"></script>
-    <script type="text/javascript" src="./js/battle_notes.js?100159"></script>
+    <script type="text/javascript" src="./js/showdown_hooks.js?100163"></script>
 
-    <script type="text/javascript" src="./js/enums.js?100131"></script>
-    <script type="text/javascript" src="./js/savereader.js?100142"></script>
+    <script type="text/javascript" src="./js/enums.js?100129"></script>
+    <script type="text/javascript" src="./js/savereader.js?100141"></script>
     <script type="text/javascript" src="./calc/data/types.js?b935c17b"></script>
     <script type="text/javascript" src="./calc/data/natures.js?407b5243"></script>
-    <script type="text/javascript" src="./calc/data/abilities.js?c1788576"></script>
+    <script type="text/javascript" src="./calc/data/abilities.js?c1788577"></script>
     <script type="text/javascript" src="./calc/data/moves.js?dcd8d230"></script>
-    <script type="text/javascript" src="./calc/data/items.js?4724e4b3"></script>
-    <script type="text/javascript" src="./calc/data/index.js?083d2bca"></script>
+    <script type="text/javascript" src="./calc/data/items.js?4724e4b4"></script>
+    <script type="text/javascript" src="./calc/data/index.js?083d2bcc"></script>
     <script type="text/javascript" src="./calc/move.js?de87e36d"></script>
     
     <script type="text/javascript" src="./calc/pokemon.js?59377ee4"></script>
     <script type="text/javascript" src="./calc/field.js?51ae3fda"></script>
-    <script type="text/javascript" src="./calc/items.js?6c1bfef0"></script>
+    <script type="text/javascript" src="./calc/items.js?6c1bfef1"></script>
     <script type="text/javascript" src="./calc/mechanics/util.js?13c1ef46"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen78.js?b5cb13c8"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?b5cb13cc"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?326e578d"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen4.js?7d2b7681"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen4.js?7d2b7679"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?2fa3d6a2"></script>
     <script type="text/javascript" src="./calc/mechanics/gen12.js?468bc07c"></script>
-    <script type="text/javascript" src="./calc/calc.js?d7fc4fbd"></script>
+    <script type="text/javascript" src="./calc/calc.js?d7fc4fbc"></script>
     <script type="text/javascript" src="./calc/desc.js?0d17c5d6"></script>
     <script type="text/javascript" src="./calc/result.js?d5c7552c"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?0b3ea088"></script>
-    <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6fc"></script>
-    <script type="text/javascript" src="./js/moveset_import.js?a707185"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?0b3ea089"></script>
+    <script type="text/javascript" src="./js/index_randoms_controls.js?3375d6fb"></script>
+    <script type="text/javascript" src="./js/moveset_import.js?a707182"></script>
+
 </div>
 
 
 
-<div id="footer">
+<!-- <div id="footer">
     <div class="credits">
         <br><br>
         <a href="https://github.com/hzla/Dynamic-Calc/wiki/Save-Reading-and-Editing-(Gen-4-5)" class="pokeweb-link save-editor-guide" target="_blank">How to use save editor for in party statusing, pre-damaging, edging and more</a>
 
 
+        If you are seeing more than 6+ pokemon for a trainer (ie. Rocket Grunts), it's because Radical Red's github is not public so I can only guess which mon belongs to which trainer. 
 
         
         <br><br>
@@ -1834,28 +1951,52 @@
     </div>
 
     <div class="shortcut-info">
-        <h3 class="footer-title">Shortcuts/Info</h3>
+        <h3 class="footer-title">Shortcuts</h3>
         alt + b: "B"edtime presleep full party if gen 4 save is uploaded
         <br><br>
         alt + c: "C"ritical hits
         <br><br>
-        alt + p: Set current trainer as an opposing doubles "P"artner (for multibattles)
-        <br><br>
         Right click box icon to add to party view.
         <br>
         Right click trainer pok party icon to mark as fainted.
-        <br>
-        Lead Pokemon has purple border.
     </div>
 
-</div>
+</div> -->
 
 
 
 
 
+<script>
+// Initialize with default game data
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has('data')) {
+        // Find and click the Black/White option in the dropdown
+        const calcSelect = document.querySelector('.calc-select');
+        const blackWhiteOption = Array.from(calcSelect.options).find(option => 
+            option.text === "Black/White"
+        );
+        
+        if (blackWhiteOption) {
+            blackWhiteOption.selected = true;
+            // Trigger the change event
+            const event = new Event('change');
+            calcSelect.dispatchEvent(event);
+            
+            // Also directly navigate to the data source URL
+            const dataSource = blackWhiteOption.getAttribute('data-source');
+            if (dataSource) {
+                window.location.href = dataSource;
+            }
+        } else {
+            // Fallback to URL parameters if option not found
+            window.location.href = 'https://hzla.github.io/Dynamic-Calc/?data=78381c312866ee2e6ff9&gen=5&types=5';
+        }
+    }
+});
+</script>
 </body>
 
 
 </html>
-

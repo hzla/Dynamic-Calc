@@ -685,7 +685,11 @@ table td {
     position: absolute;
     left: 6px;
     width: 30px;
-    top: 14px;
+    top: 35px;
+}
+.trainer-pok-switchin-score {
+    position: inherit;
+    top: 10px;
 }
 
 .player-party .trainer-pok-container {
@@ -803,10 +807,6 @@ table td {
     font-size: 12px;
 } 
 
-.evs.calc-trigger.expanded {
-    width: 65px;
-}
-
 
 .trainer-pok {
     height:  65px;
@@ -840,15 +840,11 @@ table td {
 .trainer-pok.right-side {
     height: 100%;
     width:  100%;
+    aspect-ratio: 40 / 30;
 }
 
 .trainer-pok.right-side.fainted {
     background: rgb(255, 85, 85, 0.5);
-}
-
-.trainer-pok.right-side.lead {
-    border: 1px solid #bb86fc;
-    margin-bottom: 10px;
 }
 
 .left-side:hover {
@@ -933,10 +929,11 @@ table td {
 
 .wrapper {
     width: calc(100vw - 40px);
-    max-width: 1720px;
     min-width:  1540px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    gap: 3em;
 }
 .credits {
     clear: both;
@@ -1317,15 +1314,6 @@ select.toxic-counter {
     border: 1px solid #bb86fc ;
 }
 
-#clearSets {
-    padding: 8px;
-    margin-top: 20px;
-
-}
-
-button:hover, label:hover {
-    background: rgba(0,0,0,0.1) !important;
-}
 #save-state {
 /*    border: 1px solid #bb86fc ;*/
 }
@@ -1633,7 +1621,7 @@ table.field {
   }
 
   .trainer-pok-list.opposing {
-/*    flex-wrap: wrap;*/
+    flex-wrap: wrap;
   }
 
 }

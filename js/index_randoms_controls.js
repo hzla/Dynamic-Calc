@@ -28,8 +28,6 @@ var damageResults;
 function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
-
-
 	var p1 = createPokemon(p1info);
 	var p2 = createPokemon(p2info);
 	var p1field = createField();
@@ -103,8 +101,6 @@ function performCalculations() {
 		$(resultLocations[1][i].damage).text(result.moveDesc(notation));
 
 		var dmgInfo = $(resultLocations[1][i].damage).text()
-
-		
 		if (moveProbabilities[i] != 0 && damageGen >= 8) {
 			
 			if (!is100) {
@@ -159,23 +155,7 @@ $(".result-move").change(function () {
 	}
 
 	var move = $(".results-right .visually-hidden:checked + .btn").text()
-    if (move != "" && jsonMoves[move]) {
-
-	    var effect_code = parseInt(jsonMoves[move]["e_id"])
-
-
-	    var ai_content = expertAI[effect_code]
-
-	    ai_html = ""
-	    
-	    ai_html += `<h2>${move} AI</h2><br>`
-
-	    for (n in ai_content) {
-	        ai_html += ai_content[n].replace("\t", "&ensp;")
-	        ai_html += "<br>"
-	    }
-	    $("#ai-container").html(ai_html)
-    }
+   
 
     
 });
@@ -300,8 +280,6 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 
 		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
 		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
-
-
 	}
 	if (displayProbabilities) {
 

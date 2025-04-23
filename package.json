@@ -1,0 +1,42 @@
+{
+  "name": "dynamic-calc",
+  "version": "1.0.0",
+  "description": "A showdown calculator fork with dynamic data source loading and expanded features for nuzlockes",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080 -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd calc && npm run build",
+    "dev": "http-server -p 8080 -c-1 -o",
+    "lint": "eslint js/ --ext .js"
+  },
+  "keywords": [
+    "pokemon",
+    "calculator",
+    "damage",
+    "nuzlocke",
+    "rom-hack"
+  ],
+  "author": "hzla",
+  "contributors": [
+    "Austin Couturier",
+    "Kris"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "select2": "^4.1.0-rc.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "http-server": "^14.1.1",
+    "typescript": "^4.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hzla/Dynamic-Calc"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

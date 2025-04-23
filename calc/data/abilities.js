@@ -5,7 +5,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -196,7 +196,6 @@ var BW = DPP.concat([
     'Moxie',
     'Multiscale',
     'Mummy',
-    'Contagious',
     'Overcoat',
     'Pickpocket',
     'Poison Touch',
@@ -206,6 +205,8 @@ var BW = DPP.concat([
     'Sand Force',
     'Sand Rush',
     'Sap Sipper',
+    'Ice Eater',
+    "Emperor's Prescence",
     'Sheer Force',
     'Telepathy',
     'Teravolt',
@@ -326,10 +327,53 @@ var SS = SM.concat([
     'Unseen Fist',
     'Wandering Spirit',
 ]);
-
-SS = SS.concat([
+var SV = SS.concat([
+    'Anger Shell',
+    'Armor Tail',
+    'Beads of Ruin',
+    'Commander',
+    'Costar',
+    'Cud Chew',
+    'Earth Eater',
+    'Electromorphosis',
+    'Embody Aspect (Cornerstone)',
+    'Embody Aspect (Hearthflame)',
+    'Embody Aspect (Teal)',
+    'Embody Aspect (Wellspring)',
+    'Good as Gold',
+    'Guard Dog',
+    'Hadron Engine',
+    'Hospitality',
+    'Lingering Aroma',
+    'Mind\'s Eye',
+    'Mycelium Might',
+    'Opportunist',
+    'Orichalcum Pulse',
+    'Poison Puppeteer',
+    'Protosynthesis',
+    'Purifying Salt',
+    'Quark Drive',
+    'Rocky Payload',
+    'Seed Sower',
+    'Sharpness',
+    'Supersweet Syrup',
+    'Supreme Overlord',
+    'Sword of Ruin',
+    'Tablets of Ruin',
+    'Tera Shell',
+    'Tera Shift',
+    'Teraform Zero',
+    'Thermal Exchange',
+    'Toxic Chain',
+    'Toxic Debris',
+    'Vessel of Ruin',
+    'Well-Baked Body',
+    'Wind Power',
+    'Wind Rider',
+    'Zero to Hero',
+]);
+var RR = SV.concat([
     'Bad Company',
-    'Blademaster',
     'Blazing Soul',
     'Blubber Defense',
     'Bone Zone',
@@ -340,36 +384,15 @@ SS = SS.concat([
     'Mountaineer',
     'ORAORAORAORA',
     'Parasitic Waste',
-    'Pheonix Down',
+    'Phoenix Down',
     'Primal Armor',
     'Quill Rush',
     'Sage Power',
     'Self Sufficient',
     'Striker',
     'Surprise!',
-    "Chloroplast",
-    "Whiteout",
-    "Keen Edge",
-    "Prism Scales",
-    "Power Fists",
-    "Sand Song",
-    "Rampage",
-    "Vengeance",
-    "Pyromancy",
-    "Blitz Boxer",
-    "Majestic Ward",
-    "Resilient",
-    "Keen Senses",
-    "Patient",
-    "Strong Body",
-    "Exploit",
-    "Determined",
-    "Illumination"
 ]);
-
-
-
-exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SS];
+exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, RR, RR];
 var Abilities = (function () {
     function Abilities(gen) {
         this.gen = gen;
@@ -378,22 +401,25 @@ var Abilities = (function () {
         return ABILITIES_BY_ID[this.gen][id];
     };
     Abilities.prototype[Symbol.iterator] = function () {
-        var _a, _b, _i, id;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        var _a, _b, _c, _i, id;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0:
-                    _a = [];
-                    for (_b in ABILITIES_BY_ID[this.gen])
-                        _a.push(_b);
+                    _a = ABILITIES_BY_ID[this.gen];
+                    _b = [];
+                    for (_c in _a)
+                        _b.push(_c);
                     _i = 0;
-                    _c.label = 1;
+                    _d.label = 1;
                 case 1:
-                    if (!(_i < _a.length)) return [3, 4];
-                    id = _a[_i];
+                    if (!(_i < _b.length)) return [3, 4];
+                    _c = _b[_i];
+                    if (!(_c in _a)) return [3, 3];
+                    id = _c;
                     return [4, this.get(id)];
                 case 2:
-                    _c.sent();
-                    _c.label = 3;
+                    _d.sent();
+                    _d.label = 3;
                 case 3:
                     _i++;
                     return [3, 1];
