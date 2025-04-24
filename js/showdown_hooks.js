@@ -789,6 +789,17 @@ function get_next_in_g4() {
     var se_mons = []
     var se_indexes = []
 
+
+    var p1info = $("#p1");
+    var p2info = $("#p2");
+    var p1 = createPokemon(p1info);
+    var p2 = createPokemon(p2info);
+    var p1field = createField();
+    var p2field = p1field.clone().swap();
+
+
+    p1.ability = customSets[p1.name]["My Box"].ability
+
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
         var tr_name = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[0]
@@ -797,6 +808,9 @@ function get_next_in_g4() {
         }
         var type1 = pokedex[pok_name]["types"][0]
         var type2 = pokedex[pok_name]["types"][1] || type1
+
+
+
         var pok_data = SETDEX_BW[pok_name][tr_name]
         var sub_index = parseInt(trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", ""))
 
@@ -839,12 +853,18 @@ function get_next_in_g4() {
 
         // check moves for SE
         var isSE = false
+
+        console.log(p1)
+
         for (j in pok_data["moves"]) {
             var mov_data = moves[pok_data["moves"][j]]
 
             if (pok_data["moves"][j] == "Judgment") {
                 mov_data["type"] = plate_type
             }
+
+            console.log(mov_data["type"])
+
 
             if (!mov_data) {
                 continue
@@ -877,7 +897,10 @@ function get_next_in_g4() {
             }
             
 
-            if ($("#abilityL1").val() == 'Levitate' && mov_data["type"] == "Ground") {
+            
+
+            if (p1.ability == 'Levitate' && mov_data["type"] == "Ground") {
+                // console.log(pok_data)
                 isSE = false
             }
 
@@ -894,12 +917,7 @@ function get_next_in_g4() {
 
     var currentHp = parseInt($('.max-hp').first().text())
 
-    var p1info = $("#p1");
-    var p2info = $("#p2");
-    var p1 = createPokemon(p1info);
-    var p2 = createPokemon(p2info);
-    var p1field = createField();
-    var p2field = p1field.clone().swap();
+
 
 
 
