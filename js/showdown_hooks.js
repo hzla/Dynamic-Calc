@@ -797,8 +797,13 @@ function get_next_in_g4() {
     var p1field = createField();
     var p2field = p1field.clone().swap();
 
+    try {
+        p1.ability = customSets[p1.name]["My Box"].ability   
+    } catch {
+        p1.ability = "Pressure"
+    }
 
-    p1.ability = customSets[p1.name]["My Box"].ability
+    
 
     for (i in trainer_poks) {
         var pok_name = trainer_poks[i].split(" (")[0]
