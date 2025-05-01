@@ -4561,7 +4561,15 @@ var RR_PATCH = {
 };
 
 var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
-SS = (0, util_1.extend)(true, {}, SS, RR_PATCH);
+
+
+if (damageGen >= 6) {
+    SS = (0, util_1.extend)(true, {}, SS, RR_PATCH); 
+}
+
+
+
+
 var BW = SS
 var LGPE_MOVES = [
     'Baddy Bad',
