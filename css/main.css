@@ -1725,6 +1725,10 @@ table.field {
         margin-bottom: 10px;
     }
 
+    .info-group.info-selectors {
+        margin-top: 60px;
+    }
+
     .info-group.info-selectors select, .info-group.info-selectors label {
         height: 40px;
         font-size: 18px;
