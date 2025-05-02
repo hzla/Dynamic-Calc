@@ -1646,12 +1646,13 @@ table.field {
 @media (width <= 1180px) {
 
     .panel.third:not(.panel-mid):nth-child(3n) {
-        width: 310px;
-        min-width: 310px;
+        width: calc(50vw - 10px);
+        min-width: 280px;
     }
 
     .panel.third:not(.panel-mid):first-child {
-        min-width: 360px;
+        width: calc(50vw - 10px);
+        min-width: 280px;
     }
 
     .panel.panel-mid {
@@ -1673,6 +1674,128 @@ table.field {
 
     .move-result-group .btn  {
         min-width: 200px;
+    }
+
+    #ai-tags div {
+        display: none !important;
+    }
+
+    .panel-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .panel.panel-mid {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .field-info, .poke-import {
+        max-width: 100%;
+    }
+
+    .poke-import:first-child {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+
+    .panel-mid .btn-wide, .panel-mid .btn-xwide {
+        width: calc(20vw);
+    }
+
+    .panel-mid .btn {
+        height: 40px;
+        line-height: 40px;
+        font-size: 24px;
+    }
+
+    #player-tags div, #nav-tags div {
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    .info-group.top, .info-group.top.opp {
+        margin-top: 40px;
+    }
+
+    .info-group.info-selectors > div {
+        margin-bottom: 10px;
+    }
+
+    .info-group.info-selectors select, .info-group.info-selectors label {
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    .move-selector, .small-select.select2-container .select2-choice{
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+    }
+
+    .move1 input, .move1 label, .move1 select {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+        padding-left: 2px;
+    }
+
+    .move2 input, .move2 label, .move2 select {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+        padding-left: 2px;
+    }
+
+    .move3 input, .move3 label, .move3 select {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+        padding-left: 2px;
+    }
+
+    .move4 input, .move4 label, .move4 select {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+        padding-left: 2px;
+    }
+
+    .move-selector .select2-choice > .select2-chosen {
+        padding-left: 8px;
+    }
+
+    #exportL, #exportR {
+        width: calc(20vw);
+        height: 40px;
+        line-height: 40px;
+        font-size: 24px;
+    }
+
+    .poke-import .bs-btn, #clearSets {
+        width: 30vw;
+        height: 60px;
+        line-height: 60px;
+        font-size: 24px;
+    }
+
+
+    #clearSets {
+        margin-bottom: 40px;
+    }
+
+    .field-info > div {
+        width: 100% !important;
     }
 }
 
