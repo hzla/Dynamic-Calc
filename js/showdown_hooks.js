@@ -944,7 +944,7 @@ function get_next_in_g4() {
         p2 = createPokemon(p2info, pok_data["moves"], true)
         p2.originalCurHP = 1
 
-        if (p2.ability == "Reckless" || p2.ability == "Adaptability") {
+        if (p2.ability == "Reckless") {
             p2.ability = "Minus"
         }
 
@@ -966,6 +966,12 @@ function get_next_in_g4() {
             if (typeof results[n].damage === 'number') {
                 dmg = results[n].damage % 255
             } else {
+                if (results[n].move.name == "Zen Headbutt" || results[n].move.name == "Meteor Mash") {
+                    console.log(`${results[n].move.name} ${results[n].damage}`)
+                }
+                
+
+
                 dmg = results[n].damage[results[n].damage.length - 1] % 255
             }
 
@@ -1996,6 +2002,7 @@ function loadDataSource(data) {
         }
         moves[move]["bp"] = jsonMove["basePower"]
 
+        console.log(move)
 
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 
