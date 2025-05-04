@@ -1282,6 +1282,7 @@ select.toxic-counter {
     width: 1.5em;
     height: 1em;
     padding: 3px 3px;
+    display: none !important;
 }
 .poke-info .max-btn {
 	font-size: 0.8em;
@@ -1600,11 +1601,14 @@ table.field {
     width: 172px;
   }
 
-  .trainer-pok-container {
+  .trainer-pok-container, .no-switch-1.trainer-pok-container {
     padding: 2px;
     margin-left: 2px;
     width: calc(33% - 6px);
   }
+
+
+
 
   #footer {
     max-width: calc(100vw - 20px);
