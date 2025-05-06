@@ -1442,12 +1442,14 @@ function get_next_in_cfru() {
 
 }
 
-function get_current_in() {
+function get_current_in(refresh_box_rolls=true) {
     var setInfo = $('.set-selector')[3].value
     var pok_name = setInfo.split(" (")[0]
     var tr_name = setInfo.split(" (")[1].replace(")", "").split("[")[0]
 
-    box_rolls()
+    if (refresh_box_rolls) {
+        box_rolls()
+    }
     return SETDEX_BW[pok_name][tr_name]
 }
 
