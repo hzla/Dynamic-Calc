@@ -9234,6 +9234,12 @@ var RR_PATCH = {
         abilities: { 0: 'Arena Trap' },
         baseSpecies: 'Centiskorch'
     },
+    'Chillet': {
+        types: ['Ice', 'Dragon'],
+        bs: { hp: 85, at: 100, df: 74, sa: 45, sd: 65, sp: 111 },
+        weightkg: 32.5,
+        abilities: { 0: 'Refriegerate' }
+    },
     'Clauncher-Sevii': {
         types: ['Bug', 'Dark'],
         bs: { hp: 50, at: 38, df: 62, sa: 58, sd: 63, sp: 59 },
