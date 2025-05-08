@@ -2326,6 +2326,7 @@ type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
 noSwitch = params.get('noSwitch')
 challengeMode = params.get('challengeMode')
+hideDamage = params.get('hideDmg')
 FAIRY = params.get('fairy') == '1'
 misc = params.get('misc')
 invert = params.get('invert')
@@ -2340,6 +2341,10 @@ if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
 
 if (damageGen <= 3) {
     $('#player-poks-filter').remove()
+}
+
+if (hideDamage) {
+    $('.move-result-group span').css('opacity', '0')
 }
 
 
