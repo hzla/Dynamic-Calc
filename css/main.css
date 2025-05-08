@@ -1836,10 +1836,10 @@ table.field {
       background-color: #efefef;
     }*/
 
-    .select2-drop {
+/*    .select2-drop {
         left: 20px !important;
         width: calc(100vw - 40px) !important;
-    }
+    }*/
 
     .select2-search input, .select2-search {
         height: 40px !important;
@@ -1848,7 +1848,7 @@ table.field {
     }
 
     .select2-results li {
-        height: 40px;
+        min-height: 40px;
         font-size: 24px;
     }
 
