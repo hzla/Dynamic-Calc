@@ -1640,6 +1640,10 @@ table.field {
 /*    flex-wrap: wrap;*/
   }
 
+  .select2-drop.select2-drop-above .select2-search input {
+        font-size: 16px;
+  }
+
 }
 
 @media (width <= 1180px) {
@@ -1814,6 +1818,8 @@ table.field {
     #nav-tags {
         top: 112px;
     }
+
+
 }
 
 
