@@ -1719,7 +1719,7 @@ function loadDefaultLists() {
 				more: results.length >= query.page * pageSize
 			});
 		}
-	});
+	}).addClass('set-selectors');
 	$(".opposing.set-selector").select2({
 		formatResult: function (object) {
 			if ($("#randoms").prop("checked")) {

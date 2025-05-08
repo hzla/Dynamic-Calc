@@ -133,7 +133,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
         }
         if (!attacker.hasAbility('Rock Head', 'Determined')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
-            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil damage");
+            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil");
         }
     }
     else if (move.hasCrashDamage) {
@@ -186,7 +186,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
     }
     else if (move.mindBlownRecoil) {
         recoil = notation === '%' ? 24 : 50;
-        text = '50% recoil damage';
+        text = '50% recoil';
     }
     return { recoil: recoil, text: text };
 }
