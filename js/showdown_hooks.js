@@ -1454,6 +1454,7 @@ function get_current_in(refresh_box_rolls=true) {
 }
 
 
+
 function get_current_learnset() {
     var pok_name = createPokemon($("#p1")).name
     if (pok_name.includes("-Mega")) {
@@ -2667,6 +2668,12 @@ $(document).ready(function() {
         } else {
             fainted.push(set)
         }
+    })
+
+
+    $(document).on('click', '#add-party-pok', function() {
+        var currentPok = $('.set-selector')[1].value
+        $(`[data-id="${currentPok}"]`).trigger('contextmenu')
     })
 
 

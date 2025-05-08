@@ -172,7 +172,7 @@ input[type="file"] {
 
 
 
-#ai-tags div, #nav-tags div, #learnset-show, #box-remove, #save-pok {
+#ai-tags div, #nav-tags div,  #learnset-show, #box-remove, #save-pok, #add-party-pok {
     line-height: 20px;
     margin-right: 10px;
     color: #bb86fc;
@@ -1641,7 +1641,7 @@ table.field {
   }
 
   .select2-drop.select2-drop-above .select2-search input {
-        font-size: 16px;
+        font-size: max(1em, 16px);
   }
 
 }
@@ -1813,6 +1813,10 @@ table.field {
     #player-tags {
         top: 112px;
         left: 10px;
+    }
+
+    #add-party-pok {
+        display: block;
     }
 
     #nav-tags {
