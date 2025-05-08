@@ -200,3 +200,36 @@ window.alert = function(message) {
         isAlertShowing = false;
     }
 };
+
+
+document.addEventListener(
+    'blur',
+    (event) => {
+      const defaultViewportContent = 'width=device-width, initial-scale=1.0'
+
+      const isRelevantElement =
+        event.target instanceof Element &&
+          (['input', 'textarea', 'select'].includes(
+            event.target.tagName.toLowerCase()
+          ) ||
+        event.target.hasAttribute('contenteditable'))
+
+      console.log("blured")
+      if (isRelevantElement) {
+        const viewportMeta = document.querySelector('meta[name="viewport"]')
+        if (viewportMeta) {
+          setTimeout(() => {
+            viewportMeta.setAttribute(
+              'content',
+              defaultViewportContent + ', maximum-scale=1.0'
+            )
+          }, 50)
+
+          setTimeout(() => {
+            viewportMeta.setAttribute('content', defaultViewportContent)
+          }, 100)
+        }
+      }
+    },
+    true
+  )
