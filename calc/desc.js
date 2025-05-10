@@ -106,7 +106,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
         return { recovery: recovery, text: text };
     var minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
     var maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
-    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " recovered");
+    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " heal");
     return { recovery: recovery, text: text };
 }
 exports.getRecovery = getRecovery;
@@ -133,7 +133,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
         }
         if (!attacker.hasAbility('Rock Head', 'Determined')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
-            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil");
+            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " rec");
         }
     }
     else if (move.hasCrashDamage) {

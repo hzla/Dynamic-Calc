@@ -1959,6 +1959,10 @@ function loadDataSource(data) {
 
     if (TITLE.includes("White") || TITLE.includes("Black") ) {
         baseGame = "BW"
+
+        if (TITLE.includes("Black 2")) {
+            baseVersion = "BW2"
+        }
     } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
         baseGame = "Pt"
     } else if (TITLE.includes("Silver")) {
@@ -2005,7 +2009,6 @@ function loadDataSource(data) {
         }
         moves[move]["bp"] = jsonMove["basePower"]
 
-        console.log(move)
 
         MOVES_BY_ID[g][move_id].basePower = jsonMove["basePower"]
 

@@ -1678,7 +1678,8 @@ table.field {
     }
 
     .move-result-group .btn  {
-        min-width: 200px;
+        min-width: 160px;
+        width: 160px;
     }
 
     #ai-tags div {
@@ -1850,6 +1851,10 @@ table.field {
     .select2-results li {
         min-height: 40px;
         font-size: 24px;
+    }
+
+    .resultDamage {
+        font-size: 20px;
     }
 
 

@@ -5198,7 +5198,7 @@ var SV_PATCH = {
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
 // SV = (0, util_1.extend)(true, {}, SV, RR_PATCH);
 
-console.log(SS)
+
 
 var BW = SV
 var SM = SV
@@ -5208,7 +5208,6 @@ var SS = SV
 // 12 for grand colloseum
 if (damageGen == 12) {
    ADV = SV
-   console.log("this triggered")
 }
 
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
