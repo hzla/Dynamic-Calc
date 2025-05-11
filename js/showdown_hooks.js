@@ -2424,6 +2424,7 @@ $(document).ready(function() {
 
 
         baseGame = ""
+        baseVersion = ""
         if (TITLE.includes("White") || TITLE.includes("Black") ) {
             baseGame = "BW"
         } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
