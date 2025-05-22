@@ -828,6 +828,13 @@ table td {
     min-content: 64px;
 }
 
+.poke-sprite {
+    cursor: pointer;
+}
+
+.poke-sprite:hover {
+    border: 1px solid rgb(255, 85, 85, 0.5);
+}
 
 
 .trainer-pok-list .pokesprite.left-side, .pokesprite .trainer-pok.left-side {

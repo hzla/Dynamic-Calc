@@ -2203,6 +2203,8 @@ function loadDataSource(data) {
 
     if (TITLE.includes("Sterling")) {
         delete moves.Barrage["multihit"]
+
+        moves.Avalanche.target = 'allAdjacentFoes'
     }
 
     for (pok in pokedex) {
