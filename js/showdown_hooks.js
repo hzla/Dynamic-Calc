@@ -2319,6 +2319,11 @@ function loadDataSource(data) {
     //     moves['Pay Day'].willCrit = true;
     // }
 
+    if (TITLE.includes("Emerald Imperium")) {
+        moves['Chloroblast'].recoil = [50,100];
+        MOVES_BY_ID[g].chloroblast.recoil = [50,100]
+    }
+
 
     // const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
