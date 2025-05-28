@@ -689,9 +689,9 @@ function getFinalSpeed(gen, pokemon, field, side) {
         (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
         speed *= 2;
     }
-    else if (pokemon.named('Cherrim') && pokemon.hasAbility('Flower Gift') && weather.includes('Sun')) {
-        speed *= 1.5;
-    }
+    // else if (pokemon.named('Cherrim') && pokemon.hasAbility('Flower Gift') && weather.includes('Sun')) {
+    //     speed *= 1.5;
+    // }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
         mods *= 1.5;
     }

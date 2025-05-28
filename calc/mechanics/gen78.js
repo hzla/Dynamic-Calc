@@ -900,7 +900,10 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
         (attacker.named('Cherrim') &&
             attacker.hasAbility('Flower Gift') &&
             field.hasWeather('Sun', 'Harsh Sunshine') &&
-            move.category === 'Physical') ||
+            move.category === 'Physical') || (attacker.named('Cherrim') &&
+            attacker.hasAbility('Flower Gift') &&
+            field.hasWeather('Sun', 'Harsh Sunshine') &&
+            move.category === 'Special' && TITLE.includes("Luminescent")) ||
         (attacker.hasAbility('Gorilla Tactics') && move.category === 'Physical' &&
             !attacker.isDynamaxed) ||
         (attacker.hasAbility('Sage Power') && move.category === 'Special' &&
@@ -1027,6 +1030,14 @@ function calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCriti
     if (defender.hasAbility('Marvel Scale') && defender.status && hitsPhysical) {
         dfMods.push(6144);
         desc.defenderAbility = defender.ability;
+    }
+    else if (defender.named('Cherrim') &&
+        defender.hasAbility('Flower Gift') &&
+        field.hasWeather('Sun', 'Harsh Sunshine') &&
+        !hitsPhysical) {
+        dfMods.push(6144);
+        desc.defenderAbility = defender.ability;
+        desc.weather = field.weather;
     }
     else if (INC_EM && defender.hasAbility('Prism Scales') && !hitsPhysical) {
         dfMods.push(5324);
