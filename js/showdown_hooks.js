@@ -10,6 +10,7 @@ function load_js() {
   trueHP = true
   fainted = []
   lastSetName = ""
+  pokChanges = {}
   if (typeof localStorage.boxspriteindex === 'undefined') {
     localStorage.boxspriteindex = 1
   }
