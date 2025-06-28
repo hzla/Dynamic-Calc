@@ -457,6 +457,7 @@ itemChanges = {
 	}
 }
 
+
 if(typeof CHANGES === 'undefined') {
 	
 } else {
@@ -700,6 +701,11 @@ function getMoves(currentPoke, rows, offset) {
 
 function addToDex(poke) {
 	var dexObject = {};
+	
+	if (pokChanges[TITLE] && pokChanges[TITLE][poke.name]) {
+		poke.name = pokChanges[TITLE][poke.name] 
+	}
+
 	if ($("#randoms").prop("checked")) {
 		if (GEN8RANDOMBATTLE[poke.name] == undefined) GEN8RANDOMBATTLE[poke.name] = {};
 		if (GEN7RANDOMBATTLE[poke.name] == undefined) GEN7RANDOMBATTLE[poke.name] = {};
@@ -751,12 +757,18 @@ function addToDex(poke) {
 	}
 
 	customsets[poke.name]["My Box"] = dexObject;
+	
+	
+
+
 	if (poke.name === "Aegislash-Blade") {
 		if (!customsets["Aegislash-Shield"]) {
 			customsets["Aegislash-Shield"] = {};
 		}
 		customsets["Aegislash-Shield"][poke.nameProp] = dexObject;
 	}
+
+
 	updateDex(customsets);
 }
 

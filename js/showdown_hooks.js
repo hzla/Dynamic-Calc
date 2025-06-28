@@ -862,18 +862,21 @@ function get_next_in_g4() {
         console.log(p1)
 
         for (j in pok_data["moves"]) {
-            var mov_data = moves[pok_data["moves"][j]]
+            var mov_name = pok_data["moves"][j]
+            var mov_data = moves[mov_name]
 
             if (pok_data["moves"][j] == "Judgment") {
                 mov_data["type"] = plate_type
             }
 
-            console.log(mov_data["type"])
 
 
-            if (!mov_data) {
-                continue
-            }
+            
+
+
+            // if (!mov_data || mov_name == "Curse") {
+            //     continue
+            // }
 
             if (!invert) {
                 if (damageGen == 4 && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
@@ -1950,10 +1953,16 @@ function loadDataSource(data) {
 
     if (data["title"]) {
         TITLE = data["title"]
+        pokChanges = {}
+        console.log(`Custom Title ${TITLE}`)
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
         if (data["move_replacements"]) {
             moveChanges[TITLE] = data["move_replacements"]
+        }
+        if (data["poks_replacements"]) {
+            console.log(data["poks_replacements"])
+            pokChanges[TITLE] = data["poks_replacements"]
         }
     }
 
