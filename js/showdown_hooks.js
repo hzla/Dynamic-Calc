@@ -2362,9 +2362,6 @@ function loadDataSource(data) {
                 var stat_name = change[1]
                 var stat_value = change[2]
 
-
-                console.log(species_name)
-
                 pokedex[species_name]["bs"][stat_name] = stat_value
                 const pok_id = cleanString(species_name)
                 SPECIES_BY_ID[gen][pok_id].baseStats[stat_name] = stat_value
@@ -2579,12 +2576,10 @@ $(document).ready(function() {
 
 
         baseGame = ""
-        if (TITLE.includes("White") || TITLE.includes("Black") ) {
-            baseGame = "BW"
-        } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
-            baseGame = "Pt"
-        } else if (TITLE.includes("Silver")) {
-            baseGame = "HGSS"
+        if (TITLE.includes("Inclement") ) {
+            baseGame = "inc_em"
+        } else if (TITLE.includes("Imperium")) {
+            baseGame = "imp"
         }
 
         if (!baseGame) {
