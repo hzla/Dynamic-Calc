@@ -141,17 +141,17 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     let int1 = decrypted[evs_index * 3]
                     let int2 = decrypted[evs_index * 3 + 1]
 
-                    let ev_spread = []
+                    let evs = []
 
-                    ev_spread[0] = (int1 & 0xFF)
-                    ev_spread[1] = ((int1 >> 8) & 0xFF)
-                    ev_spread[2] = ((int1 >> 16) & 0xFF)
-                    ev_spread[3]= ((int1 >> 24) & 0xFF)
-                    ev_spread[4] = (int2 & 0xFF)
-                    ev_spread[5] = ((int2 >> 8) & 0xFF)
+                    evs[0] = (int1 & 0xFF)
+                    evs[1] = ((int1 >> 8) & 0xFF)
+                    evs[2] = ((int1 >> 16) & 0xFF)
+                    evs[3]= ((int1 >> 24) & 0xFF)
+                    evs[4] = (int2 & 0xFF)
+                    evs[5] = ((int2 >> 8) & 0xFF)
 
                     // skip if pokemon has evs and evs are turned off
-                    if (ev_spread[0] +  ev_spread[1] +  ev_spread[2] +  ev_spread[3] +  ev_spread[4] +  ev_spread[5] > 0 && !hasEvs) {
+                    if (evs[0] +  evs[1] +  evs[2] +  evs[3] +  evs[4] +  evs[5] > 0 && !hasEvs) {
                         offset = lastFoundAt + 2
                         continue
                     }
