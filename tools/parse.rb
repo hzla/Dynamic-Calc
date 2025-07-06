@@ -1,3 +1,5 @@
+# Converts a line separated list of trainer ids into json for creating next/prev buttons in dynamic calc
+
 require 'json'
 
 tr_ids = File.readlines('./tr_ids.txt')

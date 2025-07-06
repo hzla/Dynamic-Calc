@@ -1961,10 +1961,6 @@ function loadDataSource(data) {
         if (data["move_replacements"]) {
             moveChanges[TITLE] = data["move_replacements"]
         }
-        if (data["poks_replacements"]) {
-            console.log(data["poks_replacements"])
-            pokChanges[TITLE] = data["poks_replacements"]
-        }
     }
 
     if (TITLE.includes("White") || TITLE.includes("Black") ) {
