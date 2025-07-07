@@ -702,16 +702,20 @@ function getMoves(currentPoke, rows, offset) {
 function addToDex(poke) {
 	var dexObject = {};
 
-	if (typeof pokChanges === "undefined") {
-		pokChanges = {}
+
+	if (typeof npoint_data.poks_replacements != "undefined") {
+		if (typeof pokChanges === "undefined") {
+			pokChanges = {}
+		}
+		
+		pokChanges[TITLE] = npoint_data.poks_replacements
+
+		if (pokChanges[TITLE] && pokChanges[TITLE][poke.name]) {
+			poke.name = pokChanges[TITLE][poke.name] 
+		}
 	}
+
 	
-	pokChanges[TITLE] = npoint_data.poks_replacements
-
-	if (pokChanges[TITLE] && pokChanges[TITLE][poke.name]) {
-		poke.name = pokChanges[TITLE][poke.name] 
-	}
-
 	if ($("#randoms").prop("checked")) {
 		if (GEN8RANDOMBATTLE[poke.name] == undefined) GEN8RANDOMBATTLE[poke.name] = {};
 		if (GEN7RANDOMBATTLE[poke.name] == undefined) GEN7RANDOMBATTLE[poke.name] = {};
