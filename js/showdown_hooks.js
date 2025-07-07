@@ -879,6 +879,8 @@ function get_next_in_g4() {
             //     continue
             // }
 
+            console.log(mov_name)
+
             if (!invert) {
                 if (damageGen == 4 && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
                     isSE = true
@@ -2519,7 +2521,7 @@ $(document).ready(function() {
                     backup_data = gcol_backup
                 } else if (TITLE == "Emerald Kaizo") {
                     backup_data = ek_backup
-                } else {dist
+                } else {
                     "nothing"
                 }
                 npoint_data = backup_data

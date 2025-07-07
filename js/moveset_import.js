@@ -701,6 +701,10 @@ function getMoves(currentPoke, rows, offset) {
 
 function addToDex(poke) {
 	var dexObject = {};
+
+	if (typeof pokChanges === "undefined") {
+		pokChanges = {}
+	}
 	
 	pokChanges[TITLE] = npoint_data.poks_replacements
 
