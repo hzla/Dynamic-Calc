@@ -2521,6 +2521,8 @@ $(document).ready(function() {
                     backup_data = gcol_backup
                 } else if (TITLE == "Emerald Kaizo") {
                     backup_data = ek_backup
+                } else if (TITLE == "Sterling Silver 1.16") {
+                    backup_data = ster_backup
                 } else {
                     "nothing"
                 }
