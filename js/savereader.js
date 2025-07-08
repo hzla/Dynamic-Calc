@@ -269,6 +269,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
     
     var mon_data_offset = shiftOrder.indexOf(0) * 16
     var move_data_offset = shiftOrder.indexOf(1) * 16
+    var met_data_offset = shiftOrder.indexOf(3) * 16
 
     var mon_name = sav_pok_names[decryptedData[mon_data_offset]]
 
@@ -296,6 +297,17 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
     ivs = getIVs(iv_value) 
+
+    let met_location
+
+    if (baseGame == "Pt" || baseGame == "HGSS") {
+        met_location = locations[baseGame][decryptedData[move_data_offset + 15]] 
+    } else {
+        met_location = locations[baseGame][decryptedData[met_data_offset + 12]] 
+    }
+    
+
+
 
     if (baseGame != "BW") {
         var nature = natures[Math.abs(pv) % 25]
@@ -344,6 +356,8 @@ function parsePKM(chunk, is_party=false, offset=0) {
         var move_name = sav_move_names[decryptedData[move_data_offset + i]]
         showdownString += `- ${move_name}\n`
     }
+
+    showdownString += `Met: ${met_location}\n`
     showdownString += "\n"
     return showdownString    
 }

@@ -687,6 +687,11 @@ function getMoves(currentPoke, rows, offset) {
 					move = move.replace("HP ", "Hidden Power")
 				}
 
+				if (rows[x + 1][0] == "M") {
+					currentPoke.met = rows[x + 1].substr(5, rows[x + 1].length)
+					console.log(currentPoke.met)
+				}
+
 				moves.push(move);
 			} else {
 				if (movesFound == true) {
@@ -754,6 +759,11 @@ function addToDex(poke) {
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
 	dexObject.isCustomSet = poke.isCustomSet;
+
+	if (typeof poke["met"] != "undefined") {
+		dexObject.met = poke["met"] 
+	}
+
 	var customsets;
 	if (localStorage.customsets) {
 		customsets = JSON.parse(localStorage.customsets);
@@ -890,6 +900,7 @@ function addSets(pokes, name) {
 		}, 500)
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 		displayParty()
+		importEncounters()
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
