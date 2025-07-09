@@ -2237,14 +2237,14 @@ function loadDataSource(data) {
 
         }
 
-        // revert fairy pokemon base stats for sgss
+        // revert fairy typing for sgss
         const pok_id = cleanString(pok)
 
         if (TITLE == "Sacred Gold/Storm Silver" && !FAIRY ) {
 
             if (jsonPok["types"].includes('Fairy')) {
                 
-                jsonPok["bs"] = pokedex[pok]["bs"]
+                // jsonPok["bs"] = pokedex[pok]["bs"]
                 jsonPok["types"] = SPECIES_BY_ID[4][pok_id].types
             }
         }
