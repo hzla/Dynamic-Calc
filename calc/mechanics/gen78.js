@@ -900,7 +900,7 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
         (attacker.named('Cherrim') &&
             attacker.hasAbility('Flower Gift') &&
             field.hasWeather('Sun', 'Harsh Sunshine') &&
-            move.category === 'Physical') || (attacker.named('Cherrim') &&
+            move.category === 'Physical' && !TITLE.includes("Lumi") || (attacker.named('Cherrim') &&
             attacker.hasAbility('Flower Gift') &&
             field.hasWeather('Sun', 'Harsh Sunshine') &&
             move.category === 'Special' && TITLE.includes("Luminescent")) ||
