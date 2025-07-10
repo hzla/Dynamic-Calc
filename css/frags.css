@@ -1,0 +1,88 @@
+html, body {
+    font: 10pt Verdana, sans-serif;
+    background-color: #181818;
+    color: #f8f8f2;
+    margin: 0;
+    padding: 0;
+}
+    
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#sheet-title {
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+#myGrid {
+    height: 600px;
+    width: 85vw;
+    max-width: 1460px;
+}
+
+.ag-theme-alpine-dark {
+    --ag-grid-size: 0px;
+}
+
+.rank-1{ background-color: #ffd700 !important; }
+.rank-2 { background-color: #c0c0c0 !important; }
+.rank-3 { background-color: #cd7f32 !important; }
+.rank-4 { background-color: #9f7aea !important; }
+.rank-6 { background-color: #4299e1 !important; }
+.rank-8 { background-color: #48bb78 !important; }
+.rank-10 { background-color: #68d391 !important; }
+.rank-11 { background-color: #9ae6b4 !important; }
+.rank-13 { background-color: #c6f6d5 !important; }
+.rank-14 { background-color: #f0fff4 !important; }
+.rank-16 { background-color: #e2e8f0 !important; }
+.rank-17 { background-color: #f1f5f9 !important; }
+
+.status-alive { 
+    background-color: #48bb78;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.pokemon-sprite {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.progress-bar {
+    border-radius: 4px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+    background: none;
+    color: #f1f1f1;
+}
+
+.progress-fill {
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.splits-cell {
+    font-weight: bold;
+    text-align: left;
+}

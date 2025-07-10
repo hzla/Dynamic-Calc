@@ -10,17 +10,11 @@ function importEncounters() {
 	} else {
 		currentEncounters = {}
 	}
-	
-
 	for (const [speciesName, setData] of Object.entries(customSets)) {
-			
-
+		
 	  // add to encounters if doesn't exist
 	  if (!currentEncounters[speciesName]) {
-	  	
-
-		// console.log(currentEncounters)
-
+		// console.log(currentEncounters)s
 	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true}
 	  	currentEncounters[speciesName] = encounter
 
@@ -30,13 +24,8 @@ function importEncounters() {
 	  	encounter.fragCount = preFrags[0]
 
 	  	encounter.frags = preFrags[1]
-	  	// encounter.frags = 
-	  }
-
-
-	  
+	  } 
 	}
-
 	localStorage.encounters = JSON.stringify(currentEncounters)  	
 	return currentEncounters
 }
@@ -52,7 +41,6 @@ function resetEncounters() {
 	}
 	console.log("Encounters cleared")
 }
-
 
 function addFrag(e) {
 	e.preventDefault()
