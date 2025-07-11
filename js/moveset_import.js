@@ -687,7 +687,7 @@ function getMoves(currentPoke, rows, offset) {
 					move = move.replace("HP ", "Hidden Power")
 				}
 
-				if (rows[x + 1][0] == "M") {
+				if (typeof rows[x + 1] != "undefined" && rows[x + 1][0] == "M") {
 					currentPoke.met = rows[x + 1].substr(5, rows[x + 1].length)
 					console.log(currentPoke.met)
 				}

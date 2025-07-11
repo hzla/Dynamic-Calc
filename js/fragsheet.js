@@ -11,12 +11,11 @@ function extractLevel(str) {
     return match ? parseInt(match[1]) : null;
 }
 
-let allKos = 0
+allKos = 0
 
 for (enc in encounters) {
 
     encRow = {}
-
     encRow.totalKo = 0
 
    if (encounters[enc].alive) {
@@ -29,49 +28,31 @@ for (enc in encounters) {
    encRow.species = enc
    encRow.encounterLocation = customSets[enc]["My Box"].met
 
+   for (let i = 0; i < 9; i++) {
+        encRow[`split${i}`] = 0
+   }
+
    let totalKos = 0
 
    let splitFound = false
 
-   console.log(enc)
+
 
    for (const frag of encounters[enc].frags) {
     let level = extractLevel(frag)
-    console.log(level)
-
-    if (splitFound) {
-        splitFound = false; 
-        continue
-    }
+    // console.log(level)
 
     splitFound = false
 
     for( index in lvlcaps) {
-        
-        console.log(enc)
-        console.log(lvlcaps[index])
-
         if (level <= lvlcaps[index]) {
-            encRow[`split${index }`] ||= 0
             encRow[`split${index}`] += 1
-            encRow.totalKo += 1
-            allKos += 1
-            splitFound = true
-            console.log(frag)
-
             break
-        } else {
-            encRow[`split${index}`] ||= 0
-        }
-
-        if (index == 8) {
-            splitFound = true
-        }
-
-
-
-        
+        }  
+        if (index == 8) {encRow[`split8`] += 1}
     }
+    encRow.totalKo += 1 
+    allKos += 1
    }
 
    rowData.push(encRow)
@@ -83,7 +64,7 @@ rowData = rowData.sort((a, b) => b.totalKo - a.totalKo);
 
 for (rowIndex in rowData) {
     rowData[rowIndex].rank = parseInt(rowIndex) + 1
-    rowData[rowIndex].koShare = (rowData[parseInt(rowIndex)].totalKo / allKos).toFixed(1)
+    rowData[rowIndex].koShare = (rowData[parseInt(rowIndex)].totalKo / allKos * 100).toFixed(1)
 }
 
 

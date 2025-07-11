@@ -15,7 +15,7 @@ function importEncounters() {
 	  // add to encounters if doesn't exist
 	  if (!currentEncounters[speciesName]) {
 		// console.log(currentEncounters)s
-	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true}
+	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true, met: setData.met}
 	  	currentEncounters[speciesName] = encounter
 
 	  	let preFrags = prevoFrags(speciesName, currentEncounters)
