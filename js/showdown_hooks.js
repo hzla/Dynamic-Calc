@@ -226,6 +226,21 @@ function get_box() {
     return box
 }
 
+function haveSameMiddleSubstring(str1, str2="") {
+    if (!str2) {return false}
+    const parts1 = str1.split('|');
+    const parts2 = str2.split('|');
+    
+    // Check if both strings have exactly 3 parts (2 pipes)
+    if (parts1.length !== 3 || parts2.length !== 3) {
+        return false;
+    }
+    
+    // Compare the middle parts (index 1)
+    return parts1[1] === parts2[1];
+}
+
+
 function get_trainer_poks(trainer_name)
 {
     var all_poks = SETDEX_BW
@@ -238,7 +253,12 @@ function get_trainer_poks(trainer_name)
         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
     }
 
-    // console.log([og_trainer_name, partner_name])
+    let sameLocation = haveSameMiddleSubstring(og_trainer_name, partner_name)
+
+
+  
+
+
 
 
     for (i in TR_NAMES) {
@@ -246,8 +266,9 @@ function get_trainer_poks(trainer_name)
         if (TR_NAMES[i].includes(og_trainer_name + " ") || ((TR_NAMES[i].includes(partner_name + " ")))) {
             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                matches.push(TR_NAMES[i])
+
             }
-            if (partner_name) {
+            if (partner_name && !sameLocation) {
                 if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
                    matches.push(TR_NAMES[i])
                 }  
