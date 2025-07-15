@@ -1,9 +1,8 @@
-  // Sample data based on your spreadsheet
+
+// Generate Data for Fragsheet from encounters
 
 const lvlcaps = [14,22,29,38,47,55,64,68,78]
 const encounters = JSON.parse(localStorage.encounters)
-var customSets = JSON.parse(localStorage.customsets)
-
 let rowData = []
 
 function extractLevel(str) {
@@ -11,61 +10,136 @@ function extractLevel(str) {
     return match ? parseInt(match[1]) : null;
 }
 
-allKos = 0
+function extractTrainerName(str) {
+    // Find "Lvl " followed by numbers, then capture everything after it until the closing parenthesis
+    const match = str.match(/Lvl \d+\s+(.+?)\s*\)/);
+    return match ? match[1].trim() : null;
+}
 
-for (enc in encounters) {
+function extractPokemonName(str) {
+    // Match everything before the opening parenthesis and trim whitespace
+    const match = str.match(/^(.+?)\s*\(/);
+    return match ? match[1].trim() : null;
+}
 
-    encRow = {}
-    encRow.totalKo = 0
+function displayFragHistory(rowData) {
+    $('.frag-row').remove()
+    $('.split-container').hide()
+    $('#stat-title').text(`${rowData.species} Frag History`)
+    for (let i = 0; i < 9; i++) {
+        let container = $(`#split-${i}-container`)
+        let fragList = rowData[`split${i}FragInfo`]
+        let seenTrainers = {}
 
-   if (encounters[enc].alive) {
-    encRow.status = "Alive"
-   } else {
-    encRow.status = "Dead"
-   }
-
-   encRow.nickname = enc
-   encRow.species = enc
-   encRow.encounterLocation = customSets[enc]["My Box"].met
-
-   for (let i = 0; i < 9; i++) {
-        encRow[`split${i}`] = 0
-   }
-
-   let totalKos = 0
-
-   let splitFound = false
+        for (const frag of fragList) {
+            let trName = extractTrainerName(frag)
+            
+            let pokName = extractPokemonName(frag)
+            let spritePath = `./img/newhd/${pokName.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png`
 
 
+            if (!seenTrainers[trName]) {
+                let fragHTML = `<div class="frag-row">
+                                    <div class="fragged-tr">${trName}</div>
+                                    <div class="fragged-mons" data-tr="${trName}"><img src="${spritePath}"></div>
+                                </div>`
 
-   for (const frag of encounters[enc].frags) {
-    let level = extractLevel(frag)
-    // console.log(level)
+                container.append(fragHTML)
+                seenTrainers[trName] = true
+            } else {
+                let fragHTML = `<img src="${spritePath}">`
+                $(`[data-tr="${trName}"`).append(fragHTML)
+            }
 
-    splitFound = false
-
-    for( index in lvlcaps) {
-        if (level <= lvlcaps[index]) {
-            encRow[`split${index}`] += 1
-            break
-        }  
-        if (index == 8) {encRow[`split8`] += 1}
+            $(container).show()
+        }    
     }
-    encRow.totalKo += 1 
-    allKos += 1
-   }
+}
 
-   rowData.push(encRow)
+function createRowData() {
+    allKos = 0
+    aliveCount = 0
+    deadCount = 0
 
+    for (enc in encounters) {
+        encRow = {}
+        encRow.totalKo = 0
+
+        let evolutions = evoData[evoData[enc].anc].evos
+
+        console.log(evolutions)
+        let foundEvo = false
+        for (evo of evolutions) {
+            console.log(evo)
+            if (typeof encounters[evo] != "undefined" && evo != enc && evolutions.indexOf(enc) < evolutions.indexOf(evo)) {
+                foundEvo = true
+                break
+            }
+        }
+
+        if (foundEvo) {
+            continue
+        }
+
+
+
+
+       if (encounters[enc].alive) {
+        encRow.status = "Alive"
+        aliveCount++
+       } else {
+        encRow.status = "Dead"
+        deadCount++
+       }
+
+       encRow.nickname = enc
+       encRow.species = enc
+       encRow.encounterLocation = encounters[enc].setData["My Box"].met
+
+       for (let i = 0; i < 9; i++) {
+            encRow[`split${i}`] = 0
+            encRow[`split${i}FragInfo`] = []
+       }
+       let totalKos = 0
+       let splitFound = false
+
+       for (const frag of encounters[enc].frags) {
+        let level = extractLevel(frag)
+
+        splitFound = false
+
+        for( index in lvlcaps) {
+            if (level <= lvlcaps[index]) {
+                encRow[`split${index}`] += 1
+                encRow[`split${index}FragInfo`].push(frag)
+                break
+            }  
+            if (index == 8) {encRow[`split8`] += 1}
+        }
+        encRow.totalKo += 1 
+        allKos += 1
+       }
+       rowData.push(encRow)
+    }
+
+    rowData = rowData.sort((a, b) => b.totalKo - a.totalKo);
+    
+
+
+
+    for (rowIndex in rowData) {
+        rowData[rowIndex].rank = parseInt(rowIndex) + 1
+        rowData[rowIndex].koShare = (rowData[parseInt(rowIndex)].totalKo / allKos * 100).toFixed(1)
+    }
+
+    $('#alive-count').text(aliveCount)
+    $('#dead-count').text(deadCount)
+    $('#ko-count').text(allKos)
 
 }
 
-rowData = rowData.sort((a, b) => b.totalKo - a.totalKo);
 
-for (rowIndex in rowData) {
-    rowData[rowIndex].rank = parseInt(rowIndex) + 1
-    rowData[rowIndex].koShare = (rowData[parseInt(rowIndex)].totalKo / allKos * 100).toFixed(1)
-}
+
 
 
 // Custom cell renderers
@@ -110,100 +184,116 @@ const columnDefs = [
     {
         headerName: 'Status',
         field: 'status',
-        width: 100,
-        cellRenderer: statusCellRenderer
+        width: 85,
+        cellRenderer: statusCellRenderer,
+        menuTabs: []
     },
     {
-        headerName: 'IMG',
+        headerName: '',
         field: 'img',
         width: 80,
         cellRenderer: (params) => {
           if (params.data.species) {
-            return `<img src="./img/newhd/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 40px; height: 40px; object-fit: cover;" />`;
+            return `<img src="./img/newhd/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 60px; height: 60px; object-fit: cover;" />`;
           }
           return '';
-        }
+        },
+        menuTabs: []
     },
     {
         headerName: 'Nickname',
         field: 'nickname',
-        width: 120
+        width: 105,
+        menuTabs: []
     },
     {
         headerName: 'Species',
         field: 'species',
-        width: 120
+        width: 105,
+        menuTabs: []
     },
     {
         headerName: 'Met Location',
         field: 'encounterLocation',
-        width: 150
+        width: 135,
+        menuTabs: []
     },
     {
         headerName: 'S1',
         field: 'split0',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S2',
         field: 'split1',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: [] 
     },
     {
         headerName: 'S3',
         field: 'split2',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S4',
         field: 'split3',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S5',
         field: 'split4',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S6',
         field: 'split5',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S7',
         field: 'split6',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'S8',
         field: 'split7',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'E4',
         field: 'split8',
-        width: 70,
-        cellRenderer: splitsCellRenderer
+        width: 55,
+        cellRenderer: splitsCellRenderer,
+        menuTabs: []
     },
     {
         headerName: 'KOs',
         field: 'totalKo',
-        width: 80,
-        cellStyle: { 'font-weight': 'bold' }
+        width: 65,
+        cellStyle: { 'font-weight': 'bold' },
+        menuTabs: []
     },
     {
         headerName: 'KO Share',
         field: 'koShare',
-        width: 120,
-        cellRenderer: progressBarRenderer
+        width: 105,
+        cellRenderer: progressBarRenderer,
+        menuTabs: []
     }
 ];
 
@@ -217,15 +307,27 @@ const gridOptions = {
         filter: true
     },
     getRowStyle: params => {
-        return { class: `rank-${params.data.rank}` };
+        let styles = {}
+        styles.cursor = "pointer"
+
+        styles.class = `rank-${params.data.rank}`
+        // if (params.data.totalKo > 0) {
+        //   styles.background = "rgb(139, 233, 253, 0.5)"
+        // }
+
+        return styles
     },
-    suppressRowClickSelection: true,
-    rowHeight: 40,
+    onRowClicked: (event) => {
+        displayFragHistory(event.data)
+    },
+    rowHeight: 60,
     headerHeight: 40
 };
 
 // Initialize the grid
 document.addEventListener('DOMContentLoaded', () => {
+    createRowData()
+
     const gridDiv = document.querySelector('#myGrid');
     agGrid.createGrid(gridDiv, gridOptions);
 

@@ -15,7 +15,7 @@ function importEncounters() {
 	  // add to encounters if doesn't exist
 	  if (!currentEncounters[speciesName]) {
 		// console.log(currentEncounters)s
-	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true, met: setData.met}
+	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true, hide: false}
 	  	currentEncounters[speciesName] = encounter
 
 	  	let preFrags = prevoFrags(speciesName, currentEncounters)
@@ -51,22 +51,56 @@ function addFrag(e) {
 	if (currentEncounters[speciesName] && currentEncounters[speciesName].frags.indexOf(fragged) == -1 ) {
 		currentEncounters[speciesName].fragCount += 1
 		currentEncounters[speciesName].frags.push(fragged) 
-		
-
 		localStorage.encounters = JSON.stringify(currentEncounters)
+
+		$('#p2 .frag-text').show()
+
+		setTimeout(function() {
+			$('#p2 .frag-text').hide()
+		},300)
 
 		console.log(`${speciesName} fragged ${fragged}, frag count now at ${currentEncounters[speciesName].fragCount}`)
 	} else if (currentEncounters[speciesName].frags.indexOf(fragged) != -1) {
 		currentEncounters[speciesName].frags = currentEncounters[speciesName].frags.filter(item => item !== fragged)
 		currentEncounters[speciesName].fragCount -= 1
-
 		localStorage.encounters = JSON.stringify(currentEncounters)
+
+		$('#unfrag-text').show()
+
+		setTimeout(function() {
+			$('#unfrag-text').hide()
+		},300)
 
 		console.log(`${speciesName} unfragged ${fragged}, frag count now at ${currentEncounters[speciesName].fragCount}`)
 	} else {
 		alert(`${speciesName} not found in encounter list`)
 	}
 	return currentEncounters
+}
+
+function toggleEncounterStatus(e) {
+	e.preventDefault()
+	let speciesName = $('.select2-chosen')[0].innerHTML.split(" (")[0]
+	let currentEncounters = JSON.parse(localStorage.encounters)
+
+	currentEncounters[speciesName].alive = !currentEncounters[speciesName].alive
+	localStorage.encounters = JSON.stringify(currentEncounters)
+
+	if (currentEncounters[speciesName].alive) {
+		$('#p1 .unfrag-text').show()
+
+		setTimeout(function() {
+			$('#p1 .unfrag-text').hide()
+		},300)
+	} else {
+		$('#p1 .frag-text').show()
+
+		setTimeout(function() {
+			$('#p1 .frag-text').hide()
+		},300)
+	}
+
+	console.log(`${speciesName} marked as alive: ${currentEncounters[speciesName].alive}`)
 }
 
 // Returns [fragCount, frags]
@@ -95,6 +129,7 @@ function prevoFrags(speciesName, encounters) {
 
 $(document).ready(function(){
 	$(document).on('contextmenu', '#p2 .poke-sprite', addFrag)
+	$(document).on('contextmenu', '#p1 .poke-sprite', toggleEncounterStatus)
 })
 
 

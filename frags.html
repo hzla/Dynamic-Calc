@@ -7,6 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/31.0.1/ag-grid-community.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/styles/ag-theme-alpine-dark.css">
     <link type="text/css" rel="stylesheet" href="./css/frags.css?2f51c9702" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 
     <style>
        
@@ -16,8 +19,78 @@
     <div class="container">
         <h1 id="sheet-title">Fragsheet</h1>
         <div id="myGrid" class="ag-theme-alpine-dark"></div>
+
+        <div id="stats">
+            <div class="stat-row">
+                <div class="stat-label">Alive</div>
+                <div class="stat-value" id="alive-count">0</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-label">Dead</div>
+                <div class="stat-value" id="dead-count">0</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-label">KOs</div>
+                <div class="stat-value" id="ko-count">0</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-label">Battles</div>
+                <div class="stat-value" id="battle-count">0</div>
+            </div>
+        </div>
+
+        <div id="frag-history">
+            <h2 id="stat-title">Click Row to Show Frag History</h2>
+
+
+            <div class="split-container" id="split-1-container">
+                <div class="stat-header" id="split-1-header">Split 1</div>
+
+            </div>
+
+            <div class="split-container" id="split-2-container">
+                <div class="stat-header" id="split-2-header">Split 2</div>
+            </div>
+
+            <div class="split-container" id="split-3-container">
+                <div class="stat-header" id="split-3-header">Split 3</div>
+            </div>
+
+            <div class="split-container" id="split-4-container">
+                <div class="stat-header" id="split-4-header">Split 4</div>
+            </div>
+
+            <div class="split-container" id="split-5-container">
+                <div class="stat-header" id="split-5-header">Split 5</div>
+            </div>
+
+            <div class="split-container" id="split-6-container">
+                <div class="stat-header" id="split-6-header">Split 6</div>
+            </div>
+
+            <div class="split-container" id="split-7-container">
+                <div class="stat-header" id="split-7-header">Split 7</div>
+            </div>
+
+            <div class="split-container" id="split-8-container">
+                <div class="stat-header" id="split-8-header">Split 8</div>
+            </div>
+
+            <div class="split-container" id="split-9-container">
+                <div class="stat-header" id="split-9-header">E4+</div>
+            </div>
+            
+
+            
+
+
+        </div>
     </div>
 
+ 
+
+    
+    <script type="text/javascript" src="./calc/data/evos.js?100000"></script>
     <script type="text/javascript" src="./js/fragsheet.js?100000"></script>
 </body>
 </html>

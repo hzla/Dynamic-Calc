@@ -438,7 +438,7 @@ input {
     position: absolute;
     max-width: calc(100% - 430px);
     right: 13px;
-    top: 70px;
+    top: 80px;
 /*    background: rgba(255,255,255,0.1);*/
     border-bottom-left-radius: 10px;
     height: 96px;
@@ -447,6 +447,25 @@ input {
     border-radius:  20px;
     padding: 20px;
     z-index:  12;
+}
+
+.frag-text, .unfrag-text {
+    color: #FF5555;
+    position: absolute;
+    top: 190px;
+    right: 13px;
+    width: 96px;
+    text-align: center;
+    display: none;
+}
+
+.frag-counter {
+    position: absolute;
+    top: 220px;
+    right: 13px;
+    width: 96px;
+    text-align: right;
+    display: none;
 }
 
 

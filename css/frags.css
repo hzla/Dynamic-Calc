@@ -10,6 +10,11 @@ html, body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.ag-theme-alpine-dark .ag-ltr .ag-cell {
+    line-height: 60px
 }
 
 #sheet-title {
@@ -20,34 +25,111 @@ html, body {
 
 
 #myGrid {
-    height: 600px;
+    height: calc(100vh - 130px);
     width: 85vw;
-    max-width: 1460px;
+    max-width: 1235px;
 }
 
 .ag-theme-alpine-dark {
     --ag-grid-size: 0px;
 }
 
-.rank-1{ background-color: #ffd700 !important; }
-.rank-2 { background-color: #c0c0c0 !important; }
-.rank-3 { background-color: #cd7f32 !important; }
-.rank-4 { background-color: #9f7aea !important; }
-.rank-6 { background-color: #4299e1 !important; }
-.rank-8 { background-color: #48bb78 !important; }
-.rank-10 { background-color: #68d391 !important; }
-.rank-11 { background-color: #9ae6b4 !important; }
-.rank-13 { background-color: #c6f6d5 !important; }
-.rank-14 { background-color: #f0fff4 !important; }
-.rank-16 { background-color: #e2e8f0 !important; }
-.rank-17 { background-color: #f1f5f9 !important; }
+.rank-1{ background-color: #ffd700; }
+.rank-2 { background-color: #c0c0c0; }
+.rank-3 { background-color: #cd7f32; }
 
-.status-alive { 
+.split-container {
+    display: none;
+}
+
+
+#stats {
+    position: absolute;
+    top: 90px;
+    right: 40px;
+    border: solid 1px #68686e;
+    min-width: 320px;
+    border-radius: 5px;
+    width: calc(100vw - 1315px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#frag-history {
+    position: absolute;
+    top: 210px;
+    right: 40px;
+    border: solid 1px #68686e;
+    min-width: 320px;
+    border-radius: 5px;
+    width: calc(100vw - 1315px);
+    height: calc(100vh - 250px);
+    overflow: scroll;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0px 12px;
+    border-bottom: 1px solid #68686e;
+    width: 50%;
+    border-right: 1px solid #68686e;
+    box-sizing: border-box;
+}
+
+.frag-row {
+    justify-content: space-between;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0px 12px;
+}
+
+.fragged-tr {
+}
+
+.fragged-mons {
+    height: auto;
+    display: flex;
+    width: 100%;
+}
+
+.fragged-mons img {
+    display: flex;
+    width: calc(16.66% - 4px);
+    height: calc(16.66% - 4px);;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+#stat-title {
+    text-align: center;
+    border-bottom: 2px solid #68686e;
+    padding: 10px 0px;
+    margin: 0;
+}
+
+.stat-header {
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #68686e;
+    border-bottom: 1px solid #68686e;
+
+
+}
+
+.status-alive, .status-dead { 
     background-color: #48bb78;
     color: white;
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 12px;
+}
+
+.status-dead {
+    background-color: #FF5555;
 }
 
 .pokemon-sprite {
@@ -61,7 +143,7 @@ html, body {
     height: 30px;
     position: relative;
     overflow: hidden;
-    margin-top: 5px;
+    margin-top: 13px;
     background: none;
     color: #f1f1f1;
 }
