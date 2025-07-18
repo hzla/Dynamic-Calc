@@ -5,6 +5,10 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+div {
+    transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
     
 .container {
     padding: 20px;
@@ -20,9 +24,76 @@ html, body {
 #sheet-title {
     color: #f1f1f1;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
+#sheet-btns {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    width: calc(100vw - 1315px);
+    min-width: 320px;
+    justify-content: space-between; 
+}
+
+.sheet-btn {
+    width: auto;
+    text-align: center;
+    display: flex;
+    border: 1px solid #bb86fc;
+    color:  #bb86fc;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+
+#reset-sheet {
+    border: 1px solid #FF5555;
+    color: #FF5555;
+}
+
+.sheet-btn:hover {
+    background: #bb86fc;
+    color: #f1f1f1;
+}
+
+#reset-sheet:hover {
+    background: #FF5555;
+    color: #f1f1f1;
+}
+
+#tabs {
+    height: 40px;
+    background: rgba(255,255,255,0.08);
+    margin-bottom: 20px;
+    width: 85vw;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+}
+
+.tab {
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 32px;
+    height: 32px;
+    padding: 0px 8px;
+}
+
+.tab:hover {
+    background: rgba(255,255,255, 0.3);
+}
+
+.tab.active {
+    background: #f1f1f1;
+    color: #000;
+}
 
 #myGrid {
     height: calc(100vh - 130px);
@@ -45,7 +116,7 @@ html, body {
 
 #stats {
     position: absolute;
-    top: 90px;
+    top: 150px;
     right: 40px;
     border: solid 1px #68686e;
     min-width: 320px;
@@ -57,7 +128,7 @@ html, body {
 
 #frag-history {
     position: absolute;
-    top: 210px;
+    top: 270px;
     right: 40px;
     border: solid 1px #68686e;
     min-width: 320px;
@@ -104,20 +175,27 @@ html, body {
     margin-right: 4px;
 }
 
+.frag-row {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(88,86,82,0.5);
+}
+
+.frag-row:nth-child(2n) {
+    background: rgba(255,255,255,0.05);
+}
+
 #stat-title {
     text-align: center;
-    border-bottom: 2px solid #68686e;
     padding: 10px 0px;
     margin: 0;
 }
 
 .stat-header {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
+    border-top: 1px solid #68686e;
     border-bottom: 1px solid #68686e;
-    border-bottom: 1px solid #68686e;
-
-
+    margin-top: 10px;
 }
 
 .status-alive, .status-dead { 

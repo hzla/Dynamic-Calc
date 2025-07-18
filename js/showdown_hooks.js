@@ -2426,6 +2426,7 @@ $(document).ready(function() {
    "de22f896c09fceb0b273": "Maximum Platinum",
    "a0ff5953fbf39bcdddd3": "Cascade White 2",
    "ee9b421600cd6487e4e3": "Photonic Sun/Prismatic Moon",
+   "eae4ac1396d4b82d8b87": "Pitch Black 2",
    "d3501821feaa976d581a": "Azure Platinum",
    "9abb79df1e356642c229": "Fire Red Omega",
    "12f82557ed0e08145660": "Fire Red",

@@ -17,7 +17,28 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="sheet-title">Fragsheet</h1>
+        <h1 id="sheet-title">Sheet</h1>
+
+        <div id="sheet-btns">
+            <div class="sheet-btn" id="import-sheet">Import Backup</div>
+            <div class="sheet-btn" id="export-sheet">Export Backup</div>
+            <div class="sheet-btn" id="reset-sheet">Reset</div>
+
+        </div>
+
+        <div id="tabs">
+            <div class="tab active" id="all-tab" data-split="all">All Splits</div>
+            <div class="tab" id="split-0-tab" data-split="0"></div>
+            <div class="tab" id="split-1-tab" data-split="1"></div>
+            <div class="tab" id="split-2-tab" data-split="2"></div>
+            <div class="tab" id="split-3-tab" data-split="3"></div>
+            <div class="tab" id="split-4-tab" data-split="4"></div>
+            <div class="tab" id="split-5-tab" data-split="5"></div>
+            <div class="tab" id="split-6-tab" data-split="6"></div>
+            <div class="tab" id="split-7-tab" data-split="7"></div>
+            <div class="tab" id="split-8-tab" data-split="8"></div>
+        </div>
+
         <div id="myGrid" class="ag-theme-alpine-dark"></div>
 
         <div id="stats">
@@ -40,7 +61,7 @@
         </div>
 
         <div id="frag-history">
-            <h2 id="stat-title">Click Row to Show Frag History</h2>
+            <h2 id="stat-title">Click Row to Show Battle History</h2>
 
 
             <div class="split-container" id="split-1-container">
@@ -91,6 +112,8 @@
 
     
     <script type="text/javascript" src="./calc/data/evos.js?100000"></script>
-    <script type="text/javascript" src="./js/fragsheet.js?100000"></script>
+    <script type="text/javascript" src="./calc/data/splits.js?100000"></script>
+    <script type="text/javascript" src="./js/fragsheet/aggrid_options.js?100000"></script>
+    <script type="text/javascript" src="./js/fragsheet/controls.js?100000"></script>
 </body>
 </html>

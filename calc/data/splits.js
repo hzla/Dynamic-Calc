@@ -1,8 +1,4 @@
 splitData = {
-	"Renegade Platinum": {
-		"lvls": [16, 26, 33, 39, 44, 53, 56, 62, 75],
-		"titles": ["Roark", "Gardenia", "Fantina", "Maylene", "Wake", "Byron", "Candice", "Volkner", "Elite 4"]
-	},
 	"Ancestral X": {
 		"lvls": [16, 32, 39, 43, 49, 53, 64, 80, 97],
 		"titles": ["Viola", "Grant", "Korrina", "Ramos", "Clemont", "Valerie", "Olympia", "Wulfric", "Elite 4"]
@@ -42,7 +38,25 @@ splitData = {
 	"Luminescent Platinum": {
 		"lvls": [16, 26, 33, 39, 44, 53, 56, 62, 75],
 		"titles": ["Roark", "Gardenia", "Fantina", "Maylene", "Wake", "Byron", "Candice", "Volkner", "Elite 4"]
+	},
+	"Renegade Platinum": {
+		"lvls": [16, 26, 33, 39, 44, 53, 56, 62, 75],
+		"titles": ["Roark", "Gardenia", "Fantina", "Maylene", "Wake", "Byron", "Candice", "Volkner", "Elite 4"]
+	},
+	"Rising Ruby/Sinking Saphire": {
+		"lvls": [16, 19, 28, 38, 42, 50, 62, 67, 79],
+		"titles": ["Roxanne", "Brawly", "Wattson", "Flannery", "Norman", "Winona", "Tate&Liza", "Wallace", "Elite 4"]
+	},
+	"Sacred Gold/Storm Silver": {
+		"lvls": [15, 21, 22, 29, 35, 40, 44, 50, 55],
+		"titles": ["Falkner", "Bugsy", "Whitney", "Morty", "Chuck", "Jasmine", "Pryce", "Clair", "Elite 4"]
+	},
+	"Sterling Silver 1.16": {
+		"lvls": [17, 24, 29, 35, 39, 44, 50, 57, 69],
+		"titles": ["Falkner", "Bugsy", "Whitney", "Morty", "Chuck", "Jasmine", "Pryce", "Clair&Lance", "Elite 4"]
+	},
+	"Vintage White": {
+		"lvls": [15, 28, 35, 44, 58, 67, 74, 86, 73],
+		"titles": ["Cilan/Chili/Cress", "Lenora", "Burgh", "Elesa", "Clay", "Skyla", "Brycen", "Iris", "Elite 4"]
 	}
-
-
 }
