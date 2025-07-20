@@ -1,5 +1,3 @@
-
-
 function importSheet() {
     // Create file input element
     const fileInput = document.createElement('input');

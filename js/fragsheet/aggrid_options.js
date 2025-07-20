@@ -42,26 +42,27 @@ SOURCES = {
     "a0e5b4fa06d9e7762210": "Parallel Emerald Normal"
 }
 
-TITLE = SOURCES[params.get('data')]
-$('#sheet-title').text(`${TITLE} Sheet`)
-splitTitles = splitData[TITLE]["titles"]
-for (title in splitTitles) {
-    $(`#split-${parseInt(title)}-header`).text(`${splitTitles[title]} Split`)
-    $(`#split-${parseInt(title)}-tab`).text(`${splitTitles[title]}`)
-}
+function initializeSplits() {
+    TITLE = SOURCES[params.get('data')]
+    $('#sheet-title').text(`${TITLE} Sheet`)
+    splitTitles = splitData[TITLE]["titles"]
+    for (title in splitTitles) {
+        $(`#split-${parseInt(title)}-tab`).text(`${splitTitles[title]}`)
+    }
 
-const lvlcaps = splitData[TITLE]["lvls"]
-if (typeof localStorage.encounters != "undefined" && localStorage.encounters != "") {
+    lvlcaps = splitData[TITLE]["lvls"]
+    if (typeof localStorage.encounters != "undefined" && localStorage.encounters != "") {
 
-    encounters = JSON.parse(localStorage.encounters)
+        encounters = JSON.parse(localStorage.encounters)
+    }
+    else {
+        encounters = {}
+    }
+    rowData = []
+    globalSeenTrainers = {}
+    activeSplit = "all-simple"
+    columnDefs = []
 }
-else {
-    encounters = {}
-}
-let rowData = []
-globalSeenTrainers = {}
-activeSplit = "all"
-columnDefs = []
 
 // Custom cell renderers
 const statusCellRenderer = (params) => {
@@ -73,7 +74,10 @@ const pokemonImageRenderer = (params) => {
 };
 
 const progressBarRenderer = (params) => {
-    const percentage = params.value || 0;
+    let percentage = params.value || 0;
+    if (percentage == "NaN") {
+        percentage = 0
+    }
     return `
         <div class="progress-bar">
             <div class="progress-fill" style="width: ${percentage}%"></div>
@@ -95,6 +99,27 @@ function updateEncounterSetData(field, species, value) {
     encounters[species].setData["My Box"][field] = value
     localStorage.encounters = JSON.stringify(encounters)
 }
+
+
+function watchLocalStorageProperty(propertyName, callback) {
+  window.addEventListener('storage', (event) => {
+    // The storage event only fires when localStorage is changed in OTHER tabs/windows
+    if (event.key === propertyName) {
+      callback({
+        key: event.key,
+        oldValue: event.oldValue,
+        newValue: event.newValue,
+        url: event.url
+      });
+    }
+  });
+}
+
+watchLocalStorageProperty('encounters', (data) => {
+  console.log("Encounter Data Updated, refreshing table")
+  encounters = JSON.parse(localStorage.encounters)
+  refreshTables();
+});
 
 function setColumnDefs() {
     // Column definitions
@@ -126,7 +151,7 @@ function setColumnDefs() {
             width: 80,
             cellRenderer: (params) => {
               if (params.data.species) {
-                return `<img src="./img/newhd/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 60px; height: 60px; object-fit: cover;" />`;
+                return `<img src="./img/newhd/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 60px; height: 60px; object-fit: cover;margin-top: 10px;" />`;
               }
               return '';
             },
@@ -237,25 +262,87 @@ function setColumnDefs() {
             field: 'totalKo',
             width: 65,
             cellStyle: { 'font-weight': 'bold' },
-            menuTabs: []
+            menuTabs: [],
+            hide: activeSplit == 9
         },
         {
             headerName: 'KO Share',
             field: 'koShare',
             width: activeSplit == "all" ? 105 : 600,
             cellRenderer: progressBarRenderer,
-            menuTabs: []
-        }
+            menuTabs: [],
+            hide: activeSplit == 9
+        },
+        {
+            headerName: 'Ability',
+            field: 'ability',
+            width: 165,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'Nature',
+            field: 'nature',
+            width: 110,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'Hp',
+            field: 'hp',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'Atk',
+            field: 'at',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'Def',
+            field: 'df',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'SpA',
+            field: 'sa',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'SpD',
+            field: 'sd',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+        {
+            headerName: 'Spe',
+            field: 'sp',
+            width: 65,
+            menuTabs: [],
+            hide: activeSplit != 9
+        },
+
     ];
 }
 
 function displayFragHistory(rowData) {
     let battleCount = 0
+
+
+
     $('.frag-row').remove()
     $('.split-container').hide()
-    $('#stat-title').text(`${rowData.species} Battle History`)
+    $('#stat-title').text(`${rowData.species}'s Battles`)
     for (let i = 0; i < 9; i++) {
-        let container = $(`#split-${i}-container`)
+        let container = $(`#split-1-container`)
         let fragList = rowData[`split${i}FragInfo`]
         let seenTrainers = {}
 
@@ -263,11 +350,11 @@ function displayFragHistory(rowData) {
             let trName = extractTrainerName(frag)
             
             let pokName = extractPokemonName(frag)
-            let spritePath = `./img/newhd/${pokName.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png`
+            let spritePath = `./img/pokesprite/${pokName.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '').replace("-glitched", "")}.png`
 
             if (!seenTrainers[trName]) {
                 let fragHTML = `<div class="frag-row">
-                                    <div class="fragged-tr">${trName}</div>
+                                    <div class="fragged-tr"><div class="tr-name">${trName}</div> <div class="tr-split">${splitTitles[i]} Split</div></div>
                                     <div class="fragged-mons" data-tr="${trName}"><img src="${spritePath}"></div>
                                 </div>`
 
@@ -281,6 +368,7 @@ function displayFragHistory(rowData) {
             $(container).show()
         }
     }
+    $('#delete-enc').show().text(`Delete ${rowData.species}`)
     return battleCount    
 }
 
@@ -301,6 +389,14 @@ function extractPokemonName(str) {
     return match ? match[1].trim() : null;
 }
 
+function findRowDataBySpecies(speciesName) {
+    for (row of rowData) {
+        if (row.species == speciesName) {
+            return row
+        }
+    }
+    return {}
+}
 
 function createRowData() {
     allKos = 0
@@ -336,7 +432,17 @@ function createRowData() {
 
        encRow.nickname = encounters[enc].nn || enc
        encRow.species = enc
-       encRow.encounterLocation = encounters[enc].setData["My Box"].met
+
+       let setData = encounters[enc].setData["My Box"]
+       encRow.encounterLocation = setData.met
+       encRow.nature = setData.nature
+       encRow.ability = setData.ability
+       encRow.hp = setData.ivs.hp
+       encRow.at = setData.ivs.at
+       encRow.df = setData.ivs.df
+       encRow.sa = setData.ivs.sa
+       encRow.sd = setData.ivs.sd
+       encRow.sp = setData.ivs.sp
 
        for (let i = 0; i < 9; i++) {
             encRow[`split${i}`] = 0
@@ -364,15 +470,14 @@ function createRowData() {
                 minCap = lvlcaps[index - 1]
             }
 
-
-            if (level <= lvlcaps[index] && level > minCap && (activeSplit == "all" || activeSplit == index)) {
+            if (level <= lvlcaps[index] && level > minCap && (activeSplit == "all" || activeSplit == "all-simple" || activeSplit == index)) {
                 encRow[`split${index}`] += 1
                 encRow[`split${index}FragInfo`].push(frag)
                 encRow.totalKo += 1
                 allKos += 1 
                 break
             }  
-            if (index == 8 && level > minCap && (activeSplit == "all" || activeSplit == 8)) {
+            if (index == 8 && level > minCap && (activeSplit == "all" || activeSplit == "all-simple" || activeSplit == 8)) {
                 encRow[`split8`] += 1
                 encRow[`split${index}FragInfo`].push(frag)
                 encRow.totalKo += 1
@@ -397,31 +502,85 @@ function createRowData() {
     $('#battle-count').text(Object.keys(globalSeenTrainers).length)
 }
 
-$('.tab').click(function() {
-    $('.tab').removeClass('active')
-    $(this).addClass('active')
-    
-    if ($(this).attr('data-split') != "all") {
-        activeSplit = parseInt($(this).attr('data-split'))
-    } else {
-        activeSplit = "all"
-    }
-
-
+function refreshTables() {
     createRowData()
     setColumnDefs()
     gridApi.setGridOption('columnDefs', columnDefs);
     gridApi.setGridOption('rowData', rowData);
+
+    // Filter frag history if visible
+    if (typeof currentDisplayedSpecies != 'undefined') {
+        displayFragHistory(findRowDataBySpecies(currentDisplayedSpecies));
+    }
+}
+
+$('.tab').click(function() {
+    $('.tab').removeClass('active')
+    $(this).addClass('active')
+    
+    if (!$(this).attr('data-split').includes("all") ) {
+        activeSplit = parseInt($(this).attr('data-split'))
+    } else {
+        activeSplit = $(this).attr('data-split')
+    }
+
+    refreshTables()
 })
+
+$(document).on('click', '.status-alive', function() {
+    $(this).removeClass('status-alive').addClass('status-dead').text("Dead")
+    let speciesName = rowData[parseInt($(this).parent().parent().parent().attr('row-id'))].species
+    updateEncounter('alive', speciesName, false)
+})
+
+$(document).on('click', '.status-dead', function() {
+    $(this).removeClass('status-dead').addClass('status-alive').text("Alive")
+    let speciesName = rowData[parseInt($(this).parent().parent().parent().attr('row-id'))].species
+    updateEncounter('alive', speciesName, true)
+})
+
+$('#delete-enc').click(function() {
+    let speciesName = $(this).text().split("Delete ")[1]
+    if (confirm(`Delete ${speciesName} from your encounters?`)) {
+        delete encounters[speciesName]
+
+        localStorage.encounters = JSON.stringify(encounters);
+
+        createRowData()
+        gridApi.setGridOption('rowData', rowData);
+
+    }
+})
+
+
+function addRowTitles(gridApi) {
+
+   for (index in rowData) {
+        
+        let rowElement = $(`[row-id="${index}"]`)
+
+        let ivs = rowData[index].ivs
+        let ivInfo = `${ivs["hp"]} HP / ${ivs["at"]} Atk / ${ivs["df"]} Def / ${ivs["sa"]} SpA / ${ivs["sd"]} SpD / ${ivs["sp"]} Spe`
+
+        let setInfo = `${rowData[index].ability} ${rowData[index].nature} ${ivInfo}`
+
+        console.log(rowData[index].species)
+
+
+        $(rowElement).attr('title', setInfo)
+   }
+}
+
 
 
 
 // Initialize the grid
 document.addEventListener('DOMContentLoaded', () => {
+    initializeSplits()
     setColumnDefs()
     createRowData()
 
-    // Grid options
+
     const gridOptions = {
         columnDefs: columnDefs,
         rowData: rowData,
@@ -433,22 +592,18 @@ document.addEventListener('DOMContentLoaded', () => {
         getRowStyle: params => {
             let styles = {}
             styles.cursor = "pointer"
-
             styles.class = `rank-${params.data.rank}`
-            // if (params.data.totalKo > 0) {
-            //   styles.background = "rgb(139, 233, 253, 0.5)"
-            // }
-
+            styles.title = `test`
             return styles
         },
         onRowClicked: (event) => {
+            currentDisplayedSpecies = event.data.species;
             displayFragHistory(event.data)
         },
-        rowHeight: 60,
+        rowHeight: 80,
         headerHeight: 40
     };
-
     gridDiv = document.querySelector('#myGrid');
     gridApi = agGrid.createGrid(gridDiv, gridOptions);
-
 });
+

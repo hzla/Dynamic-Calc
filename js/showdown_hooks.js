@@ -49,6 +49,62 @@ function load_js() {
   partner_name = null
 }
 
+// Function to check if a local file exists and load it
+// Works with file:// protocol by using script loading attempt
+function checkAndLoadScript(src, options = {}) {
+    const {
+        onLoad = null,
+        onError = null,
+        onNotFound = null,
+        timeout = 10000
+    } = options;
+
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.type = 'text/javascript';
+        
+        let timeoutId;
+        let resolved = false;
+
+        // Set up timeout
+        if (timeout > 0) {
+            timeoutId = setTimeout(() => {
+                if (!resolved) {
+                    resolved = true;
+                    console.error(`Timeout loading: ${src}`);
+                    if (onError) onError(src, new Error('Timeout'));
+                    resolve(false);
+                }
+            }, timeout);
+        }
+
+        script.onload = () => {
+            if (!resolved) {
+                resolved = true;
+                if (timeoutId) clearTimeout(timeoutId);
+                console.log(`Successfully loaded: ${src}`);
+                if (onLoad) onLoad(src);
+                resolve(true);
+            }
+        };
+        
+        script.onerror = (error) => {
+            if (!resolved) {
+                resolved = true;
+                if (timeoutId) clearTimeout(timeoutId);
+                console.log(`File not found or failed to load: ${src}`);
+                if (onNotFound) onNotFound(src, error);
+                resolve(false);
+            }
+        };
+        
+        // Add script to document head
+        document.head.appendChild(script);
+    });
+}
+
+
 function isValidJSON(str) {
     try {
         JSON.parse(str);
@@ -2512,56 +2568,30 @@ $(document).ready(function() {
    jsonMoves = moves
 
    var g =  parseInt(params.get('gen'));
+   TITLE = SOURCES[params.get('data')] || "NONE"
    
-   if (BACKUP_MODE) {
-        setTimeout(function() {
-            console.log("loading backups")
-            if (SOURCES[params.get('data')]) {
-                TITLE = SOURCES[params.get('data')] || "NONE"
-                $('.genSelection').hide()
-                $('#rom-title').text(TITLE).show()
-                console.log(TITLE)
-                backup_data = {}
-                if (TITLE == "Blaze Black/Volt White") {
-                    backup_data = bb_backup
-                } else if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
-                    backup_data = bb2redux_backup
-                } else if (TITLE == "Blaze Black 2/Volt White 2 Redux 1.4") {
-                    backup_data = bb2redux_backup
-                } else if (TITLE == "Vintage White") {
-                    backup_data = vw_backup
-                } else if (TITLE == "Renegade Platinum") {
-                    backup_data = rp_backup
-                } else if (TITLE == "Sacred Gold/Storm Silver") {
-                    backup_data = sgss_backup
-                } else if (TITLE == "Ancestral X") {
-                    backup_data = ax_backup
-                } else if (TITLE == "Rising Ruby/Sinking Saphire") {
-                    console.log("loading rrss")
-                    backup_data = rrss_backup
-                } else if (TITLE == "Grand Colloseum 2.0") {
-                    backup_data = gcol_backup
-                } else if (TITLE == "Emerald Kaizo") {
-                    backup_data = ek_backup
-                } else if (TITLE == "Sterling Silver 1.16") {
-                    backup_data = ster_backup
-                } else {
-                    "nothing"
-                }
-                npoint_data = backup_data
-            } else {
-                TITLE = "NONE"
-            }
-            loadDataSource(backup_data)
+   if (backupFiles[TITLE]) {
+        console.log("now loading local data instead of npoint")
+        checkAndLoadScript(`./backups/${backupFiles[TITLE]}.js`, {
+                onLoad: (src) => {
+                    npoint_data = backup_data
+                    loadDataSource(npoint_data)
+                },
+                onNotFound: (src) => console.log(`Not found: ${src}`)
+        });
 
-        },500)
-            
-        
+
         
    } else {
         $.get(npoint, function(data){
             npoint_data = data
             loadDataSource(data)
+
+
+            // checkAndLoadScript('./backups/inc.js', {
+            //     onLoad: (src) => console.log(`Loaded: ${src}`),
+            //     onNotFound: (src) => console.log(`Not found: ${src}`)
+            // });
 
 
             if (TITLE.includes("Photonic")) {

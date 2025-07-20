@@ -65,10 +65,10 @@ function addFrag(e) {
 		currentEncounters[speciesName].fragCount -= 1
 		localStorage.encounters = JSON.stringify(currentEncounters)
 
-		$('#unfrag-text').show()
+		$('#p2 .unfrag-text').show()
 
 		setTimeout(function() {
-			$('#unfrag-text').hide()
+			$('#p2 .unfrag-text').hide()
 		},300)
 
 		console.log(`${speciesName} unfragged ${fragged}, frag count now at ${currentEncounters[speciesName].fragCount}`)
@@ -127,9 +127,15 @@ function prevoFrags(speciesName, encounters) {
 	return [0, []]
 }
 
+
 $(document).ready(function(){
-	$(document).on('contextmenu', '#p2 .poke-sprite', addFrag)
-	$(document).on('contextmenu', '#p1 .poke-sprite', toggleEncounterStatus)
+	$(document).on('click', '#p2 .poke-sprite', addFrag)
+	// $(document).on('contextmenu', '#p1 .poke-sprite', toggleEncounterStatus)
+
+	$(document).on('click', '#p1 .poke-sprite', function() {
+		let url = location.href.replace("index.html", "frags.html")
+		window.open(url, '_blank');
+	})
 })
 
 

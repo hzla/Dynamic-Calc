@@ -450,7 +450,7 @@ input {
 }
 
 .frag-text, .unfrag-text {
-    color: #FF5555;
+    color: #1abc9c;
     position: absolute;
     top: 190px;
     right: 13px;
@@ -852,7 +852,7 @@ table td {
 }
 
 .poke-sprite:hover {
-    border: 1px solid rgb(255, 85, 85, 0.5);
+    border: 1px solid #1abc9c;
 }
 
 
