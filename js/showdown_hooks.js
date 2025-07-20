@@ -2587,13 +2587,6 @@ $(document).ready(function() {
             npoint_data = data
             loadDataSource(data)
 
-
-            // checkAndLoadScript('./backups/inc.js', {
-            //     onLoad: (src) => console.log(`Loaded: ${src}`),
-            //     onNotFound: (src) => console.log(`Not found: ${src}`)
-            // });
-
-
             if (TITLE.includes("Photonic")) {
                 $('.credits').prepend("Set data compiled by Questionable Specimen")
             }
