@@ -678,7 +678,6 @@ function getMoves(currentPoke, rows, offset) {
 				if (moveChanges[TITLE]) {
 					if (moveChanges[TITLE][move]) {
 						move = moveChanges[TITLE][move]
-						console.log(`changed to ${move}`)
 					}
 				}
 
@@ -689,7 +688,6 @@ function getMoves(currentPoke, rows, offset) {
 
 				if (typeof rows[x + 1] != "undefined" && rows[x + 1][0] == "M") {
 					currentPoke.met = rows[x + 1].substr(5, rows[x + 1].length)
-					console.log(currentPoke.met)
 				}
 
 				moves.push(move);
@@ -758,6 +756,7 @@ function addToDex(poke) {
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
+	dexObject.nn = poke.nn
 	dexObject.isCustomSet = poke.isCustomSet;
 
 	if (typeof poke["met"] != "undefined") {
@@ -872,6 +871,7 @@ function addSets(pokes, name) {
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
 					currentPoke.nameProp = "My Box";
+					currentPoke.nn = currentRow[0].trim()
 				} else {
 					currentPoke.nameProp = "My Box";
 				}

@@ -270,6 +270,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var mon_data_offset = shiftOrder.indexOf(0) * 16
     var move_data_offset = shiftOrder.indexOf(1) * 16
     var met_data_offset = shiftOrder.indexOf(3) * 16
+    var nn_data_offset = shiftOrder.indexOf(2) * 16
 
     var mon_name = sav_pok_names[decryptedData[mon_data_offset]]
 
@@ -288,6 +289,31 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var atk_ev = decryptedData[mon_data_offset + 8] >> 8 & 0xFF
     var spe_ev = decryptedData[mon_data_offset + 9] >> 8 & 0xFF
     var spd_ev = decryptedData[mon_data_offset + 10] >> 8 & 0xFF
+
+    let nn = ""
+
+    console.log(mon_name)
+
+    
+    for (let i = 0;i < 10;i++) {
+        if (baseGame == "Pt" || baseGame == "HGSS") {
+            let letter = textTable[decryptedData[nn_data_offset + i]] || ""
+            nn += letter
+        } else {
+            let letter = String.fromCharCode(decryptedData[nn_data_offset + i])
+            if (decryptedData[nn_data_offset + i] != 65535) {
+                nn += letter
+            }  
+        }
+    }
+
+    nn = nn.replaceAll('\u0000', '');
+
+
+
+    
+
+
     
     // dev functions
     if (devMode) {
@@ -319,7 +345,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
     if (is_party) {
         partyMons[mon_name] = decryptedBattleStats.length - 1
         partyPIDs.push(pv)
-        mon_name += " |Party|"
         partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
         partyExpIndexes.push(mon_data_offset + 4)
         partyMovesIndexes.push(move_data_offset)
@@ -334,9 +359,13 @@ function parsePKM(chunk, is_party=false, offset=0) {
         boxPokOffsets[mon_name]["moves_index"] = move_data_offset
     }
 
-
-    showdownString += `${mon_name} @ ${item_name}\n`
-    console.log(showdownString)
+    if (nn.toLowerCase() != mon_name.toLowerCase()) {
+        console.log([nn, mon_name])
+        showdownString += `${nn} (${mon_name}) @ ${item_name}\n`
+    } else {
+        showdownString += `${mon_name} @ ${item_name}\n`
+    }
+    
 
     var exp = (decryptedData[mon_data_offset + 5] << 16) | (decryptedData[mon_data_offset + 4]  & 0xFFFF)
     var exp_table = expTables[sav_pok_growths[decryptedData[mon_data_offset]]]

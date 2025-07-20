@@ -430,10 +430,12 @@ function createRowData() {
         deadCount++
        }
 
-       encRow.nickname = encounters[enc].nn || enc
+       let setData = encounters[enc].setData["My Box"]
+
+       encRow.nickname = setData.nn || enc
        encRow.species = enc
 
-       let setData = encounters[enc].setData["My Box"]
+       
        encRow.encounterLocation = setData.met
        encRow.nature = setData.nature
        encRow.ability = setData.ability
