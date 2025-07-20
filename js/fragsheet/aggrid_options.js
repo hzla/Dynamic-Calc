@@ -151,7 +151,7 @@ function setColumnDefs() {
             width: 80,
             cellRenderer: (params) => {
               if (params.data.species) {
-                return `<img src="./img/newhd/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 60px; height: 60px; object-fit: cover;margin-top: 10px;" />`;
+                return `<img src="./img/pokesprite/${params.data.species.toLowerCase().replace(/[ :]/g, '-').replace(/[.']/g, '')}.png" style="width: 60px; height: 60px; object-fit: cover;margin-top: 10px;" />`;
               }
               return '';
             },
@@ -160,7 +160,7 @@ function setColumnDefs() {
         {
             headerName: 'Nickname',
             field: 'nickname',
-            width: 105,
+            width: 115,
             menuTabs: [],
             editable: true,
             cellEditor: 'agTextCellEditor',
@@ -171,7 +171,7 @@ function setColumnDefs() {
         {
             headerName: 'Species',
             field: 'species',
-            width: 105,
+            width: 115,
             menuTabs: []
         },
         {
@@ -268,7 +268,7 @@ function setColumnDefs() {
         {
             headerName: 'KO Share',
             field: 'koShare',
-            width: activeSplit == "all" ? 105 : 600,
+            width: activeSplit == "all" ? 105 : 575,
             cellRenderer: progressBarRenderer,
             menuTabs: [],
             hide: activeSplit == 9
@@ -276,14 +276,14 @@ function setColumnDefs() {
         {
             headerName: 'Ability',
             field: 'ability',
-            width: 165,
+            width: 145,
             menuTabs: [],
             hide: activeSplit != 9
         },
         {
             headerName: 'Nature',
             field: 'nature',
-            width: 110,
+            width: 105,
             menuTabs: [],
             hide: activeSplit != 9
         },
@@ -437,12 +437,23 @@ function createRowData() {
        encRow.encounterLocation = setData.met
        encRow.nature = setData.nature
        encRow.ability = setData.ability
-       encRow.hp = setData.ivs.hp
-       encRow.at = setData.ivs.at
-       encRow.df = setData.ivs.df
-       encRow.sa = setData.ivs.sa
-       encRow.sd = setData.ivs.sd
-       encRow.sp = setData.ivs.sp
+
+       if (!setData.ivs) {
+           encRow.hp = 31
+           encRow.at = 31
+           encRow.df = 31
+           encRow.sa = 31
+           encRow.sd = 31
+           encRow.sp = 31
+       } else {
+           encRow.hp = setData.ivs.hp
+           encRow.at = setData.ivs.at
+           encRow.df = setData.ivs.df
+           encRow.sa = setData.ivs.sa
+           encRow.sd = setData.ivs.sd
+           encRow.sp = setData.ivs.sp 
+       }
+       
 
        for (let i = 0; i < 9; i++) {
             encRow[`split${i}`] = 0

@@ -1338,7 +1338,7 @@ select.toxic-counter {
     margin-top: 2px
 }
 
-.field-info button, #save-state, #read-save, #import, #clearSets, #download-sav {
+.field-info button, #save-state, #read-save, #import, #clearSets, #download-sav, #fragsheet-howto {
     color: #bb86fc;
     border-radius: 8px;
     background: none;
@@ -1349,10 +1349,15 @@ select.toxic-counter {
     border: 1px solid #bb86fc ;
 }
 
-#clearSets {
+#fragsheet-howto {
+    border: 1px solid #1abc9c;
+    color: #1abc9c;
+    display: none;
+}
+
+#clearSets, #fragsheet-howto {
     padding: 8px;
     margin-top: 20px;
-
 }
 
 button:hover, label:hover {

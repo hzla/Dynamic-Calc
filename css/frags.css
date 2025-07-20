@@ -31,16 +31,42 @@ div {
     box-sizing: border-box;
 }
 
+#sheet-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    height: 32px;
+    line-height: 32px;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 #sheet-title {
     color: #f1f1f1;
-    margin-bottom: 20px;
     text-align: left;
     margin-top: 0px;
+    height: 32px;
+    line-height: 32px;
+}
+
+#how-to {
+    color: #f1f1f1;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #1abc9c;
+
+}
+#how-to:hover {
+    text-decoration: underline;
 }
 
 #sheet-btns {
     position: absolute;
-    top: 82px;
+    top: 72px;
     right: 40px;
     display: flex;
     width: calc(100vw - 1335px);

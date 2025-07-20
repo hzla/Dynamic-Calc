@@ -901,6 +901,10 @@ function addSets(pokes, name) {
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 		displayParty()
 		importEncounters()
+
+		if (splitData[TITLE]) {
+			$('#fragsheet-howto').show()
+		}
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}

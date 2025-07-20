@@ -80,6 +80,9 @@ function addFrag(e) {
 
 function toggleEncounterStatus(e) {
 	e.preventDefault()
+	if (!splitData[TITLE]) {
+		return
+	}
 	let speciesName = $('.select2-chosen')[0].innerHTML.split(" (")[0]
 	let currentEncounters = JSON.parse(localStorage.encounters)
 
@@ -130,9 +133,12 @@ function prevoFrags(speciesName, encounters) {
 
 $(document).ready(function(){
 	$(document).on('click', '#p2 .poke-sprite', addFrag)
+	if (localStorage.encounters && localStorage.encounters != "") {
+		$('#fragsheet-howto').show()
+	}
 	// $(document).on('contextmenu', '#p1 .poke-sprite', toggleEncounterStatus)
 
-	$(document).on('click', '#p1 .poke-sprite', function() {
+	$(document).on('click', '#p1 .poke-sprite, #fragsheet-howto', function() {
 		let url = location.href.replace("index.html", "frags.html")
 		window.open(url, '_blank');
 	})
