@@ -140,6 +140,9 @@ $(document).ready(function(){
 
 	$(document).on('click', '#p1 .poke-sprite, #fragsheet-howto', function() {
 		let url = location.href.replace("index.html", "frags.html")
+		if (location.href.includes("/?data")){
+		  url = url.split("?data").join("frags.html?data");
+		}
 		window.open(url, '_blank');
 	})
 })

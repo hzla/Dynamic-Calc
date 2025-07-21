@@ -165,7 +165,7 @@ function setColumnDefs() {
             editable: true,
             cellEditor: 'agTextCellEditor',
             onCellValueChanged: (event) => {
-                updateEncounter('nn', event.data.species, event.newValue);
+                updateEncounterSetData('nn', event.data.species, event.newValue);
             },
         },
         {
