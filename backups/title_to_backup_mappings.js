@@ -1,6 +1,7 @@
 backupFiles = {
 	"Blaze Black/Volt White": "bb",
 	"Blaze Black 2/Volt White 2 Original": "bb2",
+	"Blaze Black 2/Volt White 2 Redux 1.4": "bb2redux1-4",
 	"Vintage White": "vw",
 	"Renegade Platinum": "rp",
 	"Sacred Gold/Storm Silver": "sgss",
