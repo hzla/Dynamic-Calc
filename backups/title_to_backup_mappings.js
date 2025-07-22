@@ -14,7 +14,7 @@ backupFiles = {
 	"Black 2/White 2": "bw2",
 	"Eternal X/Wilting Y Insanity Rebalanced": "exwy",
 	"Inclement Emerald": "inc",
-	"Inclement Emerald No EVs": "inc",
+	"Inclement Emerald No EVs": "inc-noev",
 	"Sterling Silver 1.16": "ster",
 	"Cascade White 2": "casc",
 	"Photonic Sun/Prismatic Moon": "pspm",
