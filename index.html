@@ -259,10 +259,20 @@
     <div class="panel-wrapper">
     <div aria-label="Pok&eacute;mon 1" class="panel third" role="region">
         <div id="player-tags">
-            <div id="learnset-show">Learnset</div>
-            <div id="save-pok">Save</div>
-            <div id="add-party-pok">Add to Party</div>
-            <div id="box-remove">Remove</div>
+            <div id="tags-left">
+              <div id="learnset-show">Learnset</div>
+              <div id="save-pok">Save</div>
+              <div id="add-party-pok">Add to Party</div>
+              <div id="box-remove">Remove</div>
+            </div>
+
+            <div id="tags-right">
+              <div id="met-loc">Met:</div>
+              <div id="frag-count">Frags:</div>
+            </div>
+
+            
+
         </div>
         <div id="learnset-container">
             <h2>Level Up Moves</h2>
@@ -1231,8 +1241,7 @@
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
                         <input class="import-name-text" value="My Box"></input>
-                        <textarea class="import-team-text" placeholder="Import your box and party from save file/pkhex to see fragsheet"></textarea>
-
+                        <textarea class="import-team-text" placeholder="Import your box and party from save file/pkhex to see fragsheet, click mon sprites to mark kills"></textarea>
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
                     <label for="save-upload" class="bs-btn" id="read-save">
@@ -1242,7 +1251,7 @@
                 </div>
                 <span class="importedSetsOptions" style="width:auto;">
                     <button id="clearSets">Clear Imported Sets</button>
-                    <button id="fragsheet-howto">Fragsheet (New)</button>
+                    <button id="fragsheet-howto">View Fragsheet</button>
                 </span>
             </fieldset>
 

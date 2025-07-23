@@ -156,6 +156,18 @@ input[type="file"] {
     z-index: 12;
 }
 
+#player-tags {
+    justify-content: space-between;
+    width: calc(100% - 12px);
+    left: 10px;
+}
+
+#tags-left, #tags-right {
+    display: flex;
+}
+
+
+
 .info-group.top {
     min-height: 100px;
 }
@@ -172,7 +184,7 @@ input[type="file"] {
 
 
 
-#ai-tags div, #nav-tags div,  #learnset-show, #box-remove, #save-pok, #add-party-pok {
+#ai-tags div, #nav-tags div,  #learnset-show, #box-remove, #save-pok, #add-party-pok, #met-loc, #frag-count {
     line-height: 20px;
     margin-right: 10px;
     color: #bb86fc;
@@ -180,7 +192,12 @@ input[type="file"] {
     border: 1px solid #bb86fc;
     padding: 0px 4px;
     display: none;
-/*    color: rgb(248, 248, 242);*/
+}
+
+#met-loc, #frag-count {
+    color: #f8f8f2;
+    border: 1px solid rgb(118, 118, 118);
+    background: rgba(12,12,12,0.5);
 }
 
 .bp-info {

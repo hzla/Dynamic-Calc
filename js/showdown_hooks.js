@@ -2952,11 +2952,39 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         }     
    })
 
+   function extractPokemonName(str) {
+        // Match everything before the opening parenthesis and trim whitespace
+        const match = str.match(/^(.+?)\s*\(/);
+        return match ? match[1].trim() : null;
+    }
+
+    function toTitleCase(str) {
+      return str
+        .toLowerCase()
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
+
+
     $(document).on('click', '.trainer-pok.left-side', function() {
         var set = $(this).attr('data-id')
         localStorage["left"] = set 
         $('.player').val(set)
 
+        let speciesName = extractPokemonName(set)
+
+        if (typeof localStorage.encounters != "undefined") {
+            let encounters = getEncounters()
+
+            const met = toTitleCase(encounters[speciesName].setData["My Box"].met)
+            const fragCount = encounters[speciesName].fragCount
+
+            $('#met-loc').text(`${met}`).show()
+            $('#frag-count').text(`Frags: ${fragCount}`).show()
+        } else {
+            $('#met-loc, #frag-count').hide()
+        }
 
         console.log("switching")
         $('.player').change()
