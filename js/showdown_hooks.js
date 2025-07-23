@@ -2987,7 +2987,7 @@ $('.set-selector, .move-selector').on("select2-close", function () {
                 $('#met-loc, #frag-count').hide()
             }            
         } else {
-            
+            $('#met-loc, #frag-count').hide()
         }
 
         console.log("switching")
