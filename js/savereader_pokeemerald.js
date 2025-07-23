@@ -182,7 +182,24 @@ document.getElementById('save-upload').addEventListener('change', function(event
                         }           
                     }
                     
-                    showdownText += `${speciesName}`
+
+
+
+
+                    if (nn.toLowerCase() != speciesName.toLowerCase() && !(speciesName.toLowerCase().includes(nn.toLowerCase().trim()))) {
+                    
+                        if (nn.toLowerCase().includes(speciesName.toLowerCase())) {
+                            showdownText += `${speciesName}`
+                        } else {
+                            showdownText += `${nn} (${speciesName})`
+                        }
+
+                       
+                    } else {
+                        showdownText += `${speciesName}`
+                    }
+
+                    
                     if (itemId != 0) {
                         showdownText += ` @ ${itemTitleize(emImpItems[itemId])}`
                     }
