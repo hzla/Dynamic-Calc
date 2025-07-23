@@ -2977,13 +2977,17 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         if (typeof localStorage.encounters != "undefined") {
             let encounters = getEncounters()
 
-            const met = toTitleCase(encounters[speciesName].setData["My Box"].met)
-            const fragCount = encounters[speciesName].fragCount
+            if (encounters[speciesName] && encounters[speciesName].setData["My Box"].met) {
+                const met = toTitleCase(encounters[speciesName].setData["My Box"].met)
+                const fragCount = encounters[speciesName].fragCount
 
-            $('#met-loc').text(`${met}`).show()
-            $('#frag-count').text(`Frags: ${fragCount}`).show()
+                $('#met-loc').text(`${met}`).show()
+                $('#frag-count').text(`Frags: ${fragCount}`).show()
+            } else {
+                $('#met-loc, #frag-count').hide()
+            }            
         } else {
-            $('#met-loc, #frag-count').hide()
+            
         }
 
         console.log("switching")
