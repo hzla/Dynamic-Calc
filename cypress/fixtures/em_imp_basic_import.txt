@@ -1,0 +1,180 @@
+Impidimp
+Level: 20
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Prankster
+- Thunder Wave
+- Fake Out
+- Bite
+- Assurance
+
+Smoliv
+Level: 20
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Early Bird
+- Tackle
+- Razor Leaf
+- Mega Drain
+- Growth
+
+Frigibax @ Oran Berry
+Level: 20
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Thermal Exchange
+- Tackle
+- Leer
+- Dragon Tail
+- Icy Wind
+
+Dubwool @ Sitrus Berry
+Level: 20
+Rash Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Bulletproof
+- Growl
+- Headbutt
+- Defense Curl
+- Double Kick
+
+Skrelp
+Level: 20
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Poison Touch
+- Tackle
+- Water Gun
+- Feint Attack
+- Tail Whip
+
+Pansage
+Level: 20
+Docile Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Gluttony
+- Leech Seed
+- Bite
+- Seed Bomb
+- Torment
+
+Mightyena
+Level: 20
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Strong Jaw
+- Tackle
+- Poison Fang
+- Bite
+- Sucker Punch
+
+Shellder
+Level: 20
+Relaxed Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Skill Link
+- Icicle Spear
+- Water Gun
+- Icy Wind
+- Leer
+
+Croagunk @ Sitrus Berry
+Level: 20
+Careful Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Dry Skin
+- Pursuit
+- Revenge
+- Sludge
+- Low Kick
+
+Venusaur @ Sitrus Berry
+Level: 20
+Hardy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Overgrow
+- Sludge
+- Growth
+- Double-Edge
+- Sludge Bomb
+
+Kricketune @ Oran Berry
+Level: 20
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Technician
+- Cut
+- Bug Bite
+- Rock Tomb
+- Bulldoze
+
+Charizard @ Sitrus Berry
+Level: 20
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Blaze
+- Fire Fang
+- Dragon Rage
+- Flame Burst
+- Thunder Punch
+
+Primeape @ Sitrus Berry
+Level: 20
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Anger Point
+- Bulldoze
+- Brick Break
+- Aerial Ace
+- Rock Tomb
+
+Torracat @ Sitrus Berry
+Level: 20
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Blaze
+- Fire Fang
+- Double Kick
+- Scorching Sands
+- Fake Out
+
+Floette
+Level: 20
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Flower Veil
+- Lucky Chant
+- Magical Leaf
+- Wish
+- Dazzling Gleam
+
+Zoroark-Hisui @ Sitrus Berry
+Level: 20
+Quirky Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Illusion
+- Leer
+- Bitter Malice
+- Hex
+- Fury Swipes
+
+Slowpoke-Galar @ Sitrus Berry
+Level: 20
+Hardy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Gluttony
+- Confusion
+- Disable
+- Yawn
+- Water Pulse
+
+None @ 
+Level: 20
+Lonely Nature
+IVs: 6 HP / 1 Atk / 0 Def / 12 Spe / 5 SpA / 0 SpD
+Ability: 0
+- Heat Wave
+- Esper Wing
+- Stomp
+- Solar Beam
+

@@ -84,8 +84,10 @@ function checkAndLoadScript(src, options = {}) {
                 resolved = true;
                 if (timeoutId) clearTimeout(timeoutId);
                 console.log(`Successfully loaded: ${src}`);
+                
                 if (onLoad) onLoad(src);
                 resolve(true);
+
             }
         };
         
@@ -323,9 +325,6 @@ function get_trainer_poks(trainer_name)
     }
 
 
-
-
-
     for (i in TR_NAMES) {
 
         if (TR_NAMES[i].includes(og_trainer_name + og_white_space) || ((TR_NAMES[i].includes(partner_name + partner_white_space)))) {
@@ -365,18 +364,12 @@ function box_rolls() {
     var dealt_min_roll = $("#min-dealt").val()
     var taken_max_roll = $("#max-taken").val()
 
-    // if ($("#min-dealt").val() == "" && $("#max-taken").val() == "") {
-    //     return
-    // }
-
 
     if ($("#min-dealt").val() == "") {
-        // $("#min-dealt").val(10000)
         dealt_min_roll=10000
     } 
 
     if ($("#max-taken").val() == "") {
-        // $("#max-taken").val(0)
         taken_max_roll=-1
     }
 
@@ -2585,6 +2578,7 @@ $(document).ready(function() {
                 onLoad: (src) => {
                     npoint_data = backup_data
                     loadDataSource(npoint_data)
+
                 },
                 onNotFound: (src) => console.log(`Not found: ${src}`)
         });
@@ -2891,25 +2885,10 @@ $(document).ready(function() {
     });
 
 
-   $(document).on('click', '#invert-types', function() {
-        let url = window.location.href;    
-        if (url.indexOf('?') > -1){
-           url += '&invert=true'
-        } else {
-           url += '?invert=true'
-        }
-        window.location.href = url;
-   })
-
    $(document).on('click', '#sprite-toggle', function() {
         toggleBoxSpriteStyle()
 
    })
-
-
-
-
-
 
 $('.set-selector, .move-selector').on("select2-close", function () {
     setTimeout(function() {
@@ -2929,7 +2908,6 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         if ($('.opposing .forme:visible').length < 1) {
             return
         }
-
         
         if (weather == "Rain" && $('.forme').last().val().includes("Castform")) {
             $('.forme').last().val("Castform-Rainy").change()
@@ -2977,7 +2955,7 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         if (typeof localStorage.encounters != "undefined") {
             let encounters = getEncounters()
 
-            if (encounters[speciesName] && encounters[speciesName].setData["My Box"].met) {
+            if (encounters[speciesName] && encounters[speciesName].setData["My Box"] && encounters[speciesName].setData["My Box"].met) {
                 const met = toTitleCase(encounters[speciesName].setData["My Box"].met)
                 const fragCount = encounters[speciesName].fragCount
 
@@ -3023,11 +3001,4 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         poks.removeClass('defender')
         poks.removeClass('killer')
     })
-
-
-
-
-
-
-
 })
