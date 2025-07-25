@@ -1,1 +1,0 @@
-describe('Cypress Studio Demo', () => {});
