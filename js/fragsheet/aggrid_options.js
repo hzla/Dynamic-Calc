@@ -484,7 +484,7 @@ function createRowData() {
         encRow.status = "Dead"
         deadCount++
        }
-
+       
        let setData = encounters[enc].setData["My Box"]
 
        encRow.nickname = setData.nn || enc

@@ -18,12 +18,23 @@ function importEncounters() {
 	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true, hide: false}
 	  	currentEncounters[speciesName] = encounter
 
-	  	let preFrags = prevoFrags(speciesName, currentEncounters)
+	  	let preFrags = prevoData(speciesName, currentEncounters)
 	
 	  	encounter.prevoFragCount = preFrags[0]
-	  	encounter.fragCount = preFrags[0]
 
+
+	  	encounter.fragCount = preFrags[0]
 	  	encounter.frags = preFrags[1]
+
+
+
+	  	if (preFrags[2]) {
+	  		encounter.setData["My Box"].met = preFrags[2]
+	  	}
+
+	  	if (preFrags[3]) {
+	  		encounter.setData["My Box"].nn = preFrags[3]
+	  	}	  	
 	  } 
 	}
 	localStorage.encounters = JSON.stringify(currentEncounters)  	
@@ -113,6 +124,7 @@ function toggleEncounterStatus(e) {
 
 	console.log(`${speciesName} marked as alive: ${currentEncounters[speciesName].alive}`)
 }
+
 
 
 // Returns [fragCount, frags, met location, nickname]
