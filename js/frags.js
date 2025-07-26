@@ -31,7 +31,13 @@ function importEncounters() {
 }
 
 function getEncounters() {
-	return JSON.parse(localStorage.encounters)
+	if (localStorage.encounters && localStorage.encounters != "" ) {
+		return JSON.parse(localStorage.encounters)
+	} else {
+		return {}
+	}
+
+	
 }
 
 function resetEncounters() {
@@ -108,28 +114,30 @@ function toggleEncounterStatus(e) {
 	console.log(`${speciesName} marked as alive: ${currentEncounters[speciesName].alive}`)
 }
 
-// Returns [fragCount, frags]
-function prevoFrags(speciesName, encounters) {
-	let ancestor = evoData[speciesName]["anc"]
 
-	if (ancestor == speciesName) {
-		console.log("Does not evolve")
-		return [0, []]
-	}
+// Returns [fragCount, frags, met location, nickname]
+function prevoData(speciesName, encounters) {
+    let ancestor = evoData[speciesName]["anc"]
 
-	let evos = evoData[ancestor]["evos"]
+    if (ancestor == speciesName) {
+        console.log("Does not evolve")
+        return [0, [], false, false]
+    }
 
-	// Look for later evolutions first
-	for (let i = evos.length - 1; i >= 0; i--) {
-	    mon = evos[i]
-	    if (encounters[mon] && mon != speciesName) {
-			console.log(mon)
-			return [encounters[mon].fragCount, encounters[mon].frags]
-		}
-	}
+    let evos = [ancestor].concat(evoData[ancestor]["evos"])
 
-	console.log("prevo data not found")
-	return [0, []]
+
+    // Look for later evolutions first
+    for (let i = evos.length - 1; i >= 0; i--) {
+        mon = evos[i]
+
+        if (encounters[mon] && mon != speciesName) {
+            return [encounters[mon].fragCount, encounters[mon].frags, encounters[mon].setData["My Box"].met, encounters[mon].setData["My Box"].nn]
+        }
+    }
+
+    console.log("prevo data not found")
+    return [0, [], false, false]
 }
 
 
