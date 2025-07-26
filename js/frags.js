@@ -130,12 +130,10 @@ function prevoData(speciesName, encounters) {
     // Look for later evolutions first
     for (let i = evos.length - 1; i >= 0; i--) {
         mon = evos[i]
-
         if (encounters[mon] && mon != speciesName) {
             return [encounters[mon].fragCount, encounters[mon].frags, encounters[mon].setData["My Box"].met, encounters[mon].setData["My Box"].nn]
         }
     }
-
     console.log("prevo data not found")
     return [0, [], false, false]
 }
