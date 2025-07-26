@@ -688,6 +688,27 @@ table td {
     background: #181818;
 }
 
+#search-row {
+    display: flex;
+    height: 32px;
+    padding-left: 12px;
+    margin-top: 10px;
+    display: none;
+}
+
+#search-label {
+    line-height: 32px;
+    background: none;
+}
+
+#search-box {
+    width: 360px;
+    margin-left: 10px;
+    padding-left: 4px;
+}
+
+
+
 .player-poks {
     background: rgba(255,255,255,0.1);
     background-size: 100% 595px;
@@ -700,7 +721,7 @@ table td {
     min-height: 65px;
     max-height: 595px;
     justify-content: flex-start;
-    margin-top:  26px;
+    margin-top:  10px;
 
 }
 
@@ -893,7 +914,7 @@ table td {
     margin-bottom: 10px;
 }
 
-.left-side:hover {
+.left-side:hover, .left-side.active {
     border:  3px solid #1abc9c;
     border-radius: 10px;
 }

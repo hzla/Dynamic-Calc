@@ -264,6 +264,28 @@ function get_custom_trainer_names() {
     return trainer_names
 }
 
+function sort_box_by_name(aToZ = true) {
+    var box = $('.player-poks'),
+    mons = box.children('.trainer-pok');
+ 
+    mons.sort(function(a,b){
+        mon1_id = a.getAttribute('data-id');
+        mon1_species = mon1_id.split(" (")[0];
+
+        mon2_id = b.getAttribute('data-id');
+        mon2_species = mon2_id.split(" (")[0];
+
+        if(mon1_species > mon2_species) {
+            return aToZ ? 1 : -1;
+        }
+        if(mon1_species < mon2_species) {
+            return aToZ ? -1 : 1;
+        }
+        return 0;
+    });   
+    mons.detach().appendTo(box);
+}
+
 function get_box() {
     var names = get_trainer_names()
 
@@ -281,8 +303,41 @@ function get_box() {
         }   
     }
     $('.player-poks').html(box_html)
+    sort_box_by_name()
+
+    if ($('.trainer-pok.left-side').length >= 10) {
+        $('#search-row').css('display', 'flex')
+    }
     return box
 }
+
+
+function filter_box() {
+    let search_string = $('#search-box').val().toLowerCase()
+    let container = $('.trainer-pok-list.player-poks')
+
+    if (search_string.length < 2) {
+        container.find('.pokesprite').removeClass('active')
+        return
+    }
+ 
+    container.find('.pokesprite').removeClass('active')
+
+    for (set in customSets) {
+        
+        let set_string = JSON.stringify(customSets[set])
+        let set_id = `${set} (My Box)`
+
+        
+        if (set_string.toLowerCase().includes(search_string) || set.toLowerCase().includes(search_string)) {
+            container.find(`[data-id='${set_id}']`).addClass('active')
+        }
+    }
+}
+
+
+
+
 
 function haveSameMiddleSubstring(str1, str2="") {
     if (!str2) {return false}
@@ -2662,6 +2717,8 @@ $(document).ready(function() {
    $(document).on('click', '#open-menu, #settings-menu div', function() {
         $('#settings-menu').toggle()
    })
+
+   $(document).on('keyup', '#search-box', filter_box)
 
 
    $(document).on('click', '#learnset-show', function() {
