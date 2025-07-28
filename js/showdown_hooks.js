@@ -329,7 +329,14 @@ function filter_box() {
     for (set in customSets) {
         
         let setInfo = JSON.stringify(customSets[set]).toLowerCase()
-        let pokedexInfo = JSON.stringify(jsonPoks[set]).toLowerCase()
+        let pokedexInfo = {}
+        
+        try {
+            pokedexInfo = JSON.stringify(jsonPoks[set]).toLowerCase() 
+        } catch {
+            pokedexInfo = JSON.stringify(pokedex[set]).toLowerCase() 
+        }
+        
         let set_id = `${set} (My Box)`
 
 
@@ -2507,9 +2514,9 @@ if (hideDamage) {
 
 
 
-if (switchIn != 11) {
-    $('#toggle-analysis').addClass('gone')
-}  
+
+$('#toggle-analysis').addClass('gone')
+
 
 $(document).ready(function() {
    SETDEX_BW = null
@@ -2640,21 +2647,36 @@ $(document).ready(function() {
                 onLoad: (src) => {
                     npoint_data = backup_data
                     loadDataSource(npoint_data)
+                    final_type_chart = construct_type_chart()
+
+                    setTimeout(function() {
+                        if (localStorage["left"]) {
+                            var set = localStorage["right"]
+                            $('.opposing').val(set)
+                            $('.opposing').change()
+                            $('.opposing .select2-chosen').text(set)
+                            if ($('.info-group.opp > * > .forme').is(':visible')) {
+                                $('.info-group.opp > * > .forme').change()
+                            }
+                        }
+
+                        if (localStorage["right"]) {
+                            $(`[data-id='${localStorage["left"]}']`).click()
+                        }             
+                    }, 20)
 
                 },
                 onNotFound: (src) => console.log(`Not found: ${src}`)
         });
-
-
-        
+        if (TITLE.includes("Photonic")) {
+            $('.credits').prepend("Set data compiled by Questionable Specimen")
+        }        
    } else {
         $.get(npoint, function(data){
             npoint_data = data
             loadDataSource(data)
 
-            if (TITLE.includes("Photonic")) {
-                $('.credits').prepend("Set data compiled by Questionable Specimen")
-            }
+           
             
 
             final_type_chart = construct_type_chart()
@@ -2776,16 +2798,6 @@ $(document).ready(function() {
             ai_html += "<br>"
         }
         $("#ai-container").html(ai_html)
-   })
-
-   $(document).on('click', '#img-toggle', function() {
-        let url = window.location.href;    
-        if (url.indexOf('?') > -1){
-           url += '&backup=true'
-        } else {
-           url += '?backup=true'
-        }
-        window.location.href = url;
    })
 
     $(document).on('contextmenu', '.trainer-pok.right-side', function(e) {
