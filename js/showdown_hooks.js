@@ -2094,6 +2094,23 @@ function loadDataSource(data) {
         console.log("Evs removed")
     }
 
+
+    hasPokReplacements = false
+    pok_subs = {}
+
+    if (data.poks_replacements) {
+        hasPokReplacements = true
+        pok_subs = data.poks_replacements
+    }
+
+
+    for (let pok in pok_subs) {
+        if (data["formatted_sets"][pok] && typeof data["formatted_sets"][pok_subs[pok]]  == "undefined" ) {
+            data["formatted_sets"][pok_subs[pok]] = data["formatted_sets"][pok]
+            delete data["formatted_sets"][pok]
+        }  
+    }
+
     SETDEX_BW = data["formatted_sets"]
     SETDEX_ADV = data["formatted_sets"]
     SETDEX_DPP = data["formatted_sets"]
