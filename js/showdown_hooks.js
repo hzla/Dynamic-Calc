@@ -332,8 +332,10 @@ function filter_box() {
         let pokedexInfo = JSON.stringify(jsonPoks[set]).toLowerCase()
         let set_id = `${set} (My Box)`
 
+
+
         
-        if (setInfo.includes(search_string) || set.includes(search_string) || pokedexInfo.includes(search_string)) {
+        if (setInfo.includes(search_string) || set.toLowerCase().includes(search_string) || pokedexInfo.includes(search_string)) {
             container.find(`[data-id='${set_id}']`).addClass('active')
         }
     }
