@@ -8,6 +8,10 @@
 	justify-content: flex-start;
 }
 
+#player-tags {
+	justify-content: flex-start !important; 
+}
+
 #content-container {
 	background: #121212;
 }
