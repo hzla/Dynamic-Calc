@@ -1084,6 +1084,22 @@ th {
     width: calc(100% - 5px);
 }
 
+.field-info.sun {
+    background-color: rgba(168, 71, 0, 0.15);
+}
+
+.field-info.rain {
+    background-color: rgba(26, 88, 174, 0.15);
+}
+
+.field-info.sand {
+    background-color: rgba(120, 102, 0, 0.15);
+}
+
+.field-info.snow, .field-info.hail {
+    background-color: rgba(92, 153, 153, 0.15);
+}
+
 #similarTrainers {
     width: 450px;
     box-sizing: border-box;

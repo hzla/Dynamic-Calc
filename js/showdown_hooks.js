@@ -3082,6 +3082,21 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         } 
     })
 
+    $(document).on('change', '.set-selector', function() {
+        setTimeout(function() {
+            let weather = $('#weather-bar input:checked').first().val().toLowerCase()
+            $('.field-info').attr('class', 'field-info')
+            $('.field-info').addClass(weather)
+        }, 1)
+        
+    })
+
+    $(document).on('click', '#weather-bar input', function() {
+        let weather = $('#weather-bar input:checked').first().val().toLowerCase()
+        $('.field-info').attr('class', 'field-info')
+        $('.field-info').addClass(weather)
+    })
+
     $(document).on('click', '#clear-filters', function(){
         $('#max-taken').val("")
         $('#min-dealt').val("")
