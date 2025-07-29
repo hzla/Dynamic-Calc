@@ -355,10 +355,12 @@ function displayFragHistory(rowData) {
             
             let pokName = extractPokemonName(frag)
             let spritePath = `./img/pokesprite/${pokName.toLowerCase().replace(/[ :'.-]+/g, '-').replace(/^-|-glitched$|-$/g, '')}.png`
+            let typing = splitData[TITLE]["types"][i]
+
 
             if (!seenTrainers[trName]) {
                 let fragHTML = `<div class="frag-row">
-                                    <div class="fragged-tr"><div class="tr-name">${trName}</div> <div class="tr-split">${splitTitles[i]} Split</div></div>
+                                    <div class="fragged-tr ${typing}-type"><div class="tr-name">${trName}</div> <div class="tr-split">${splitTitles[i]} Split</div></div>
                                     <div class="fragged-mons" data-tr="${trName}"><img src="${spritePath}"></div>
                                 </div>`
 
