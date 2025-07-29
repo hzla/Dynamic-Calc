@@ -425,9 +425,9 @@ function prevoData(speciesName, encounters) {
 
     let evos = [ancestor].concat(evoData[ancestor]["evos"])
 
-    if (speciesName.includes("Rotom-")) {
-        ancestor = ["Rotom", "Rotom-Mow", "Rotom-Frost", "Rotom-Heat", "Rotom-Fan", "Rotom-Wash"]
-    }
+    // if (speciesName.includes("Rotom-")) {
+    //     ancestor = ["Rotom", "Rotom-Mow", "Rotom-Frost", "Rotom-Heat", "Rotom-Fan", "Rotom-Wash"]
+    // }
 
     // Look for later evolutions first
     for (let i = evos.length - 1; i >= 0; i--) {
