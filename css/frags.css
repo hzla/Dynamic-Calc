@@ -13,75 +13,75 @@ div {
 /* type backgrounds */
 
 .normal-type {
-    background-color: rgba(108, 109, 65, 0.15);
+    background-color: rgba(108, 109, 65, 0.25);
 }
 
 .fighting-type {
-    background-color: rgba(178, 146, 0, 0.15);
+    background-color: rgba(178, 146, 0, 0.25);
 }
 
 .flying-type {
-    background-color: rgba(106, 87, 175, 0.15);
+    background-color: rgba(106, 87, 175, 0.25);
 }
 
 .poison-type {
-    background-color: rgba(99, 0, 101, 0.15);
+    background-color: rgba(99, 0, 101, 0.25);
 }
 
 .ground-type {
-    background-color: rgba(158, 131, 48, 0.15);
+    background-color: rgba(158, 131, 48, 0.25);
 }
 
 .rock-type {
-    background-color: rgba(120, 102, 0, 0.15);
+    background-color: rgba(120, 102, 0, 0.25);
 }
 
 .bug-type {
-    background-color: rgba(105, 124, 0, 0.15);
+    background-color: rgba(105, 124, 0, 0.25);
 }
 
 .ghost-type {
-    background-color: rgba(56, 37, 94, 0.15);
+    background-color: rgba(56, 37, 94, 0.25);
 }
 
 .steel-type {
-    background-color: rgba(124, 124, 146, 0.15);
+    background-color: rgba(124, 124, 146, 0.25);
 }
 
 .fire-type {
-    background-color: rgba(168, 71, 0, 0.15);
+    background-color: rgba(168, 71, 0, 0.25);
 }
 
 .water-type {
-    background-color: rgba(26, 88, 174, 0.15);
+    background-color: rgba(26, 88, 174, 0.25);
 }
 
 .grass-type {
-    background-color: rgba(57, 137, 18, 0.15);
+    background-color: rgba(57, 137, 18, 0.25);
 }
 
 .electric-type {
-    background-color: rgba(178, 146, 0, 0.15);
+    background-color: rgba(178, 146, 0, 0.25);
 }
 
 .psychic-type {
-    background-color: rgba(177, 5, 81, 0.15);
+    background-color: rgba(177, 5, 81, 0.25);
 }
 
 .ice-type {
-    background-color: rgba(92, 153, 153, 0.15);
+    background-color: rgba(92, 153, 153, 0.25);
 }
 
 .dragon-type {
-    background-color: rgba(21, 0, 181, 0.15);
+    background-color: rgba(21, 0, 181, 0.25);
 }
 
 .dark-type {
-    background-color: rgba(58, 38, 24, 0.15);
+    background-color: rgba(58, 38, 24, 0.25);
 }
 
 .fairy-type {
-    background-color: rgba(188, 109, 189, 0.15);
+    background-color: rgba(188, 109, 189, 0.25);
 }
 
 
