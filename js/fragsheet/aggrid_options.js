@@ -417,12 +417,17 @@ function findRowDataBySpecies(speciesName) {
 function prevoData(speciesName, encounters) {
     let ancestor = evoData[speciesName]["anc"]
 
+
+
     if (ancestor == speciesName) {
-        console.log("Is not evolved form")
         return [0, [], false, false]
     }
 
     let evos = [ancestor].concat(evoData[ancestor]["evos"])
+
+    if (speciesName.includes("Rotom-")) {
+        ancestor = ["Rotom", "Rotom-Mow", "Rotom-Frost", "Rotom-Heat", "Rotom-Fan", "Rotom-Wash"]
+    }
 
     // Look for later evolutions first
     for (let i = evos.length - 1; i >= 0; i--) {
@@ -432,7 +437,6 @@ function prevoData(speciesName, encounters) {
         }
     }
 
-    console.log("prevo data not found")
     return [0, [], false, false]
 }
 
@@ -484,16 +488,34 @@ function createRowData() {
         encRow.status = "Dead"
         deadCount++
        }
+
+
        
        let setData = encounters[enc].setData["My Box"]
 
-       encRow.nickname = setData.nn || enc
-       encRow.species = enc
+       if (typeof setData == "undefined" && enc.includes("Rotom-") && typeof encounters["Rotom"].setData != "undefined") {
+            setData = encounters["Rotom"].setData
+       } 
+
+
+
+
 
        
-       encRow.encounterLocation = setData.met
-       encRow.nature = setData.nature
-       encRow.ability = setData.ability
+       encRow.species = enc
+
+        if (typeof setData == "undefined") {
+            encRow.nickname = enc
+            encRow.encounterLocation = "Click to Edit"
+            encRow.nature = "Unknown"
+            encRow.ability = "Unknown"
+        } else {
+            encRow.nickname = setData.nn || enc
+            encRow.encounterLocation = setData.met
+            encRow.nature = setData.nature
+            encRow.ability = setData.ability
+        }
+       
 
        if (!setData.ivs) {
            encRow.hp = 31

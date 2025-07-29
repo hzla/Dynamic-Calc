@@ -1007,7 +1007,7 @@ function get_next_in_g4() {
         // check moves for SE
         var isSE = false
 
-        console.log(p1)
+   
 
         for (j in pok_data["moves"]) {
             var mov_name = pok_data["moves"][j]
@@ -1026,7 +1026,7 @@ function get_next_in_g4() {
             //     continue
             // }
 
-            console.log(mov_name)
+
 
             if (!invert) {
                 if (damageGen == 4 && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
@@ -1058,7 +1058,6 @@ function get_next_in_g4() {
             
 
             if (p1.ability == 'Levitate' && mov_data["type"] == "Ground") {
-                // console.log(pok_data)
                 isSE = false
             }
 
@@ -1148,7 +1147,7 @@ function get_next_in_g4() {
         other_mons.push([trainer_poks[i], 0, "", sub_index, pok_data["moves"], highestDamage, highestDamageName])
     }
 
-    console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
+    // console.log(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
 
 
     return(se_mons.sort(sort_trpoks_g4).concat(other_mons.sort(sort_trpoks_g4)))
@@ -2165,7 +2164,6 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
-    console.log("loaded custom poks data")
     for (move in moves) {
 
         var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
@@ -2659,7 +2657,6 @@ $(document).ready(function() {
    TITLE = SOURCES[params.get('data')] || "NONE"
    
    if (backupFiles[TITLE]) {
-        console.log("now loading local data instead of npoint")
         checkAndLoadScript(`./backups/${backupFiles[TITLE]}.js`, {
                 onLoad: (src) => {
                     npoint_data = backup_data
@@ -3061,7 +3058,6 @@ $('.set-selector, .move-selector').on("select2-close", function () {
             $('#met-loc, #frag-count').hide()
         }
 
-        console.log("switching")
         $('.player').change()
 
         $('.set-selector').first().change()

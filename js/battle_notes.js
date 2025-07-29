@@ -214,7 +214,6 @@ document.addEventListener(
           ) ||
         event.target.hasAttribute('contenteditable'))
 
-      console.log("blured")
       if (isRelevantElement) {
         const viewportMeta = document.querySelector('meta[name="viewport"]')
         if (viewportMeta) {

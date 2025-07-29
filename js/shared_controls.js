@@ -514,7 +514,6 @@ function smogonAnalysis(pokemonName) {
 // auto-update set details on select
 
 function refresh_next_in() {
-	console.log("refreshing next in " + lastSetName)
 	var next_poks = get_next_in()
 
 	if (damageGen < 7 && !TITLE.includes("Lumi") && damageGen != 1) {
@@ -1420,7 +1419,6 @@ $(".gen").change(function () {
 
 	if (!DEFAULTS_LOADED) {
 		pokedex = calc.SPECIES[gen];
-		console.log("loading defaults")
 		setdex = SETDEX[gen];
 		if (TITLE == "Ancestral X")
 			moves = calc.MOVES[6];
@@ -1855,13 +1853,19 @@ $(document).ready(function () {
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
 	loadDefaultLists();
-	$(".move-selector").select2({
+
+	try {
+		$(".move-selector").select2({
 		dropdownAutoWidth: true,
 		matcher: function (term, text) {
 			// 2nd condition is for Hidden Power
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
 		}
 	});
+	} catch {
+		console.log("Select2 Error supressed")
+	}
+	
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	
 
