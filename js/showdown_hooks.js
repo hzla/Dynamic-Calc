@@ -3051,7 +3051,14 @@ $('.set-selector, .move-selector').on("select2-close", function () {
 
                 $('#met-loc').text(`${met}`).show()
                 $('#frag-count').text(`Frags: ${fragCount}`).show()
-            } else {
+            } else if (encounters[speciesName] && encounters[speciesName].setData["My Box"]){
+                const met = "Unknown Origin"
+                const fragCount = encounters[speciesName].fragCount
+
+                $('#met-loc').text(`${met}`).show()
+                $('#frag-count').text(`Frags: ${fragCount}`).show()
+            }
+            else {
                 $('#met-loc, #frag-count').hide()
             }            
         } else {

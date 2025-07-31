@@ -121,6 +121,9 @@ watchLocalStorageProperty('encounters', (data) => {
   refreshTables();
 });
 
+
+
+
 function setColumnDefs() {
     // Column definitions
     columnDefs = [
@@ -679,7 +682,8 @@ document.addEventListener('DOMContentLoaded', () => {
         defaultColDef: {
             sortable: true,
             resizable: true,
-            filter: true
+            filter: true,
+            cellClass: (params) => `field-${params.colDef.field}`
         },
         getRowStyle: params => {
             let styles = {}

@@ -10,12 +10,19 @@ function importEncounters() {
 	} else {
 		currentEncounters = {}
 	}
-	for (const [speciesName, setData] of Object.entries(customSets)) {
+	for (let [speciesName, setData] of Object.entries(customSets)) {
 		
 	  // add to encounters if doesn't exist
 	  if (!currentEncounters[speciesName]) {
 		// console.log(currentEncounters)s
-	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true, hide: false}
+	  	
+	  	// console.log(setData)
+	  	delete setData["My Box"].moves
+	  	delete setData["My Box"].isCustomSet
+	  	delete setData["My Box"].level
+
+
+	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true}
 	  	currentEncounters[speciesName] = encounter
 
 	  	let preFrags = prevoData(speciesName, currentEncounters)
@@ -86,6 +93,8 @@ function addFrag(e) {
 
 		$('#p2 .unfrag-text').show()
 
+		$('#frag-count').text(`Frags: ${currentEncounters[speciesName].fragCount}`)
+
 		setTimeout(function() {
 			$('#p2 .unfrag-text').hide()
 		},300)
@@ -132,7 +141,6 @@ function prevoData(speciesName, encounters) {
     let ancestor = evoData[speciesName]["anc"]
 
     if (ancestor == speciesName) {
-        console.log("Does not evolve")
         return [0, [], false, false]
     }
 
@@ -146,7 +154,6 @@ function prevoData(speciesName, encounters) {
             return [encounters[mon].fragCount, encounters[mon].frags, encounters[mon].setData["My Box"].met, encounters[mon].setData["My Box"].nn]
         }
     }
-    console.log("prevo data not found")
     return [0, [], false, false]
 }
 

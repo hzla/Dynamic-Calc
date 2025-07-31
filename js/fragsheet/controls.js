@@ -3,6 +3,10 @@ function importSheet() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
     fileInput.accept = '.json';
+    fileInput.style.display = 'none'; // Keep it hidden
+    
+    // Add to DOM so Cypress can find it
+    document.body.appendChild(fileInput);
     
     // Handle file selection
     fileInput.addEventListener('change', function(event) {
@@ -15,23 +19,34 @@ function importSheet() {
                 try {
                     // Parse JSON content and set encounters variable
                     encounters = JSON.parse(e.target.result);
-                    localStorage.encounters = JSON.stringify(encounters)                    
+                    localStorage.encounters = JSON.stringify(encounters);
                     
-                    location.reload()
-
+                    // Clean up - remove from DOM
+                    document.body.removeChild(fileInput);
+                    
+                    location.reload();
                 } catch (error) {
                     console.error('Error parsing JSON file:', error);
                     alert('Invalid fragsheet file. Please select a valid fragsheet file.');
+                    
+                    // Clean up on error too
+                    document.body.removeChild(fileInput);
                 }
             };
             
             reader.onerror = function() {
                 console.error('Error reading file');
                 alert('Error reading file. Please try again.');
+                
+                // Clean up on error
+                document.body.removeChild(fileInput);
             };
             
             // Read file as text
             reader.readAsText(file);
+        } else {
+            // No file selected, clean up
+            document.body.removeChild(fileInput);
         }
     });
     
@@ -40,8 +55,8 @@ function importSheet() {
 }
 
 function exportSheet(obj, filename = 'data.json') {
-  // Convert object to JSON string with pretty formatting
-  const jsonString = JSON.stringify(encounters, null, 2);
+  // Convert object to JSON string with minified formatting
+  const jsonString = JSON.stringify(encounters, null, 0);
   
   // Create a blob with the JSON data
   const blob = new Blob([jsonString], { type: 'application/json' });

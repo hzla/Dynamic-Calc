@@ -1,0 +1,324 @@
+MUSASHI (Grotle) @ None
+Level: 22
+Impish Nature
+Ability: Shell Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Bullet Seed
+- Sand Tomb
+- Razor Leaf
+Met: Sandgem Town
+
+Gyarados @ Muscle Band
+Level: 29
+Adamant Nature
+Ability: Intimidate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Bounce
+- Ice Fang
+- Aqua Tail
+Met: Route 218
+
+Marowak @ Thick Club
+Level: 29
+Adamant Nature
+Ability: Lightning Rod
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Knock Off
+- Bonemerang
+- Sing
+- Bone Rush
+Met: Route 203
+
+Kingler @ Leftovers
+Level: 29
+Adamant Nature
+Ability: Shell Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Protect
+- Hammer Arm
+- Crabhammer
+Met: Route 219
+
+Gengar @ Leftovers
+Level: 29
+Modest Nature
+Ability: Levitate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Confuse Ray
+- Ominous Wind
+- Sucker Punch
+Met: Old Chateau
+
+Metang @ Leftovers
+Level: 29
+Adamant Nature
+Ability: Iron Fist
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Take Down
+- Zen Headbutt
+- Iron Head
+- Bullet Punch
+Met: Oreburgh City
+
+Umbreon @ Leftovers
+Level: 31
+Bold Nature
+Ability: Synchronize
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quick Attack
+- Baton Pass
+- Crunch
+- Covet
+Met: Twinleaf Town
+
+Starly @ None
+Level: 9
+Modest Nature
+Ability: Reckless
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 26 Atk / 22 Def / 29 SpA / 6 SpD / 31 Spe
+- Tackle
+- Growl
+- Quick Attack
+- Wing Attack
+Met: Route 201
+
+Crobat @ Leftovers
+Level: 28
+Impish Nature
+Ability: Inner Focus
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leech Life
+- Crunch
+- Poison Fang
+- Wing Attack
+Met: Oreburgh Gate
+
+YOSHI (Monferno) @ Expert Belt
+Level: 27
+Adamant Nature
+Ability: Blaze
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Flame Wheel
+- Brick Break
+- Flamethrower
+Met: Route 201
+
+Masquerain @ None
+Level: 26
+Modest Nature
+Ability: Intimidate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Signal Beam
+- Psybeam
+- Air Cutter
+Met: Lake Verity
+
+Graveler @ Leftovers
+Level: 26
+Impish Nature
+Ability: Sturdy
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Rock Slide
+- Sand Tomb
+- Rock Polish
+Met: Ravaged Path
+
+Phanpy @ None
+Level: 9
+Bashful Nature
+Ability: Sand Veil
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 16 Atk / 14 Def / 10 SpA / 20 SpD / 14 Spe
+- Growl
+- Defense Curl
+- Mud-Slap
+- Headbutt
+Met: Route 207
+
+Growlithe @ None
+Level: 14
+Adamant Nature
+Ability: Intimidate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Leer
+- Ember
+- Howl
+Met: Route 202
+
+Gligar @ None
+Level: 21
+Naive Nature
+Ability: Hyper Cutter
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 20 Atk / 2 Def / 20 SpA / 8 SpD / 26 Spe
+- Knock Off
+- Wing Attack
+- Sand Tomb
+- Feint Attack
+Met: Route 206
+
+Shellder @ None
+Level: 10
+Impish Nature
+Ability: Skill Link
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 31 Atk / 29 Def / 7 SpA / 17 SpD / 1 Spe
+- Withdraw
+- Water Gun
+- Supersonic
+- Clamp
+Met: Route 205
+
+Cherubi @ None
+Level: 12
+Quiet Nature
+Ability: Chlorophyll
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 3 HP / 14 Atk / 27 Def / 1 SpA / 6 SpD / 13 Spe
+- Morning Sun
+- Tackle
+- Growth
+- Leech Seed
+Met: Floaroma Meadow
+
+Lopunny @ None
+Level: 29
+Adamant Nature
+Ability: Scrappy
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Return
+- Fake Out
+- Jump Kick
+- Baton Pass
+Met: Eterna Forest
+
+Butterfree @ None
+Level: 12
+Timid Nature
+Ability: Compound Eyes
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 21 HP / 4 Atk / 7 Def / 16 SpA / 15 SpD / 10 Spe
+- Sleep Powder
+- Silver Wind
+- Psybeam
+- Air Slash
+Met: Valley Windworks
+
+Chimecho @ None
+Level: 29
+Modest Nature
+Ability: Levitate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Extrasensory
+- Heal Bell
+- Yawn
+- Astonish
+Met: Trainers’ School
+
+Swablu @ None
+Level: 16
+Naive Nature
+Ability: Natural Cure
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 13 HP / 1 Atk / 31 Def / 14 SpA / 14 SpD / 19 Spe
+- Sing
+- Mist Ball
+- Fury Attack
+- Safeguard
+Met: Route 211
+
+Milotic @ None
+Level: 25
+Calm Nature
+Ability: Marvel Scale
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 1 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mist Ball
+- Water Pulse
+- Dragon Breath
+- Aqua Ring
+Met: Mt. Coronet
+
+Sneasel @ None
+Level: 26
+Adamant Nature
+Ability: Technician
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Icy Wind
+- Feint Attack
+- Metal Claw
+- Ice Shard
+Met: Route 216
+
+Whismur @ None
+Level: 10
+Lax Nature
+Ability: Soundproof
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 9 Atk / 21 Def / 5 SpA / 23 SpD / 16 Spe
+- Howl
+- Mist Ball
+- Astonish
+- Uproar
+Met: Oreburgh Mine
+
+Porygon @ None
+Level: 31
+Careful Nature
+Ability: Download
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 13 Atk / 28 Def / 19 SpA / 13 SpD / 19 Spe
+- Recover
+- Charge Beam
+- Signal Beam
+- Recycle
+Met: T.G. Eterna Bldg
+
+Togetic @ None
+Level: 29
+Bold Nature
+Ability: Super Luck
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Yawn
+- Charm
+- Extrasensory
+- Mist Ball
+Met: Eterna City
+
+Ralts @ None
+Level: 7
+Quirky Nature
+Ability: Synchronize
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 0 Atk / 15 Def / 21 SpA / 17 SpD / 30 Spe
+- Growl
+- Confusion
+- Double Team
+- Mist Ball
+Met: Route 204
+

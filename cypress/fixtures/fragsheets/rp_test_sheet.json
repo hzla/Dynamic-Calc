@@ -1,0 +1,2538 @@
+{
+  "Chimchar": {
+    "setData": {
+      "My Box": {
+        "ability": "Iron Fist",
+        "level": 5,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 7,
+          "at": 6,
+          "df": 15,
+          "sa": 11,
+          "sd": 3,
+          "sp": 31
+        },
+        "moves": [
+          "Scratch",
+          "Leer",
+          "Ember",
+          "-----"
+        ],
+        "nature": "Lax",
+        "nn": "Beethoven",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 3,
+    "frags": [
+      "Piplup (Lvl 5 Pkmn Trainer Cedric27 )",
+      "Bulbasaur (Lvl 5 Reporter Kayla )",
+      "Seedot (Lvl 10 Camper Curtis )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Turtwig": {
+    "setData": {
+      "My Box": {
+        "ability": "Shell Armor",
+        "level": 5,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 1,
+          "df": 8,
+          "sa": 30,
+          "sd": 30,
+          "sp": 31
+        },
+        "moves": [
+          "Tackle",
+          "Withdraw",
+          "Absorb",
+          "-----"
+        ],
+        "nature": "Gentle",
+        "nn": "Mozart",
+        "isCustomSet": true,
+        "met": "Sandgem Town"
+      }
+    },
+    "fragCount": 11,
+    "frags": [
+      "Squirtle (Lvl 5 Reporter Kayla )",
+      "Charmander (Lvl 5 Reporter Kayla )",
+      "Psyduck (Lvl 8 School Kid Harrison )",
+      "Staryu (Lvl 8 School Kid Christine )",
+      "Shinx (Lvl 10 Youngster Dallas )",
+      "Sandshrew (Lvl 10 Youngster Dallas )",
+      "Cubone (Lvl 9 Lass Kaitlin )",
+      "Psyduck (Lvl 10 Lass Madeline )",
+      "Sunkern (Lvl 10 Lass Madeline )",
+      "Diglett (Lvl 10 Camper Curtis )",
+      "Onix (Lvl 15 Leader Roark )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Eevee": {
+    "setData": {
+      "My Box": {
+        "ability": "Run Away",
+        "level": 10,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 8,
+          "at": 17,
+          "df": 23,
+          "sa": 17,
+          "sd": 13,
+          "sp": 20
+        },
+        "moves": [
+          "Quick Attack",
+          "Tail Whip",
+          "Bite",
+          "Covet"
+        ],
+        "nature": "Hasty",
+        "nn": "Chopin",
+        "isCustomSet": true,
+        "met": "Twinleaf Town"
+      }
+    },
+    "fragCount": 7,
+    "frags": [
+      "Hoothoot (Lvl 7 Youngster Tristan )",
+      "Starly (Lvl 7 Youngster Tristan )",
+      "Spearow (Lvl 9 Lass Kaitlin )",
+      "Azurill (Lvl 9 Lass Kaitlin )",
+      "Wooper (Lvl 10 Picnicker Diana )",
+      "Torchic (Lvl 10 Reporter Helen )",
+      "Mudkip (Lvl 10 Reporter Helen )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Nidoran-M": {
+    "setData": {
+      "My Box": {
+        "ability": "Rivalry",
+        "level": 10,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 17,
+          "df": 9,
+          "sa": 13,
+          "sd": 8,
+          "sp": 21
+        },
+        "moves": [
+          "Leer",
+          "Peck",
+          "Double Kick",
+          "Poison Sting"
+        ],
+        "nature": "Mild",
+        "nn": "Britten",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Sentret (Lvl 7 Lass Natalie )",
+      "Bidoof (Lvl 7 Lass Natalie )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Starly": {
+    "setData": {
+      "My Box": {
+        "ability": "Reckless",
+        "level": 10,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 11,
+          "at": 30,
+          "df": 17,
+          "sa": 18,
+          "sd": 13,
+          "sp": 25
+        },
+        "moves": [
+          "Tackle",
+          "Growl",
+          "Quick Attack",
+          "Wing Attack"
+        ],
+        "nature": "Modest",
+        "nn": "VaughanWil",
+        "isCustomSet": true,
+        "met": "Lake Verity"
+      }
+    },
+    "fragCount": 5,
+    "frags": [
+      "Turtwig (Lvl 9 Pkmn Trainer Lucas8 )",
+      "Growlithe (Lvl 7 Youngster Logan )",
+      "Zigzagoon (Lvl 7 Youngster Logan )",
+      "Burmy (Lvl 7 Youngster Logan )",
+      "Treecko (Lvl 10 Reporter Helen )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Burmy": {
+    "setData": {
+      "My Box": {
+        "ability": "Shed Skin",
+        "level": 10,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 14,
+          "at": 27,
+          "df": 20,
+          "sa": 24,
+          "sd": 1,
+          "sp": 24
+        },
+        "moves": [
+          "Protect",
+          "Tackle",
+          "Bug Bite",
+          "Hidden Power"
+        ],
+        "nature": "Jolly",
+        "nn": "Wagner",
+        "isCustomSet": true,
+        "met": "Route 202"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Abra (Lvl 8 School Kid Harrison )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Charmander": {
+    "setData": {
+      "My Box": {
+        "ability": "Blaze",
+        "level": 11,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 22,
+          "df": 18,
+          "sa": 14,
+          "sd": 11,
+          "sp": 12
+        },
+        "moves": [
+          "Scratch",
+          "Growl",
+          "Ember",
+          "Metal Claw"
+        ],
+        "nature": "Serious",
+        "item": "Charcoal",
+        "nn": "Shore",
+        "isCustomSet": true,
+        "met": "Jubilife City"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Ralts (Lvl 8 School Kid Christine )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Tyrogue": {
+    "setData": {
+      "My Box": {
+        "ability": "Steadfast",
+        "level": 1,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 5,
+          "at": 29,
+          "df": 18,
+          "sa": 28,
+          "sd": 9,
+          "sp": 9
+        },
+        "moves": [
+          "Fake Out",
+          "Low Kick",
+          "Mach Punch",
+          "Rapid Spin"
+        ],
+        "nature": "Mild",
+        "nn": "Brahms",
+        "isCustomSet": true,
+        "met": "Trainers’ School"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Munchlax (Lvl 10 Pkmn Trainer Cedric3 )",
+      "Whismur (Lvl 10 Picnicker Diana )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Butterfree": {
+    "setData": {
+      "My Box": {
+        "ability": "Compound Eyes",
+        "level": 11,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 12,
+          "at": 21,
+          "df": 12,
+          "sa": 29,
+          "sd": 9,
+          "sp": 2
+        },
+        "moves": [
+          "Gust",
+          "String Shot",
+          "Bug Bite",
+          "Confusion"
+        ],
+        "nature": "Mild",
+        "nn": "Durufle",
+        "isCustomSet": true,
+        "met": "Route 204"
+      }
+    },
+    "fragCount": 53,
+    "frags": [
+      "Starly (Lvl 10 Pkmn Trainer Cedric3 )",
+      "Piplup (Lvl 11 Pkmn Trainer Cedric3 )",
+      "Kricketot (Lvl 9 Youngster Michael )",
+      "Zubat (Lvl 9 Youngster Michael )",
+      "Rattata (Lvl 9 Youngster Michael )",
+      "Makuhita (Lvl 10 Youngster Sebastian )",
+      "Machop (Lvl 10 Youngster Sebastian )",
+      "Shinx (Lvl 8 Lass Sarah )",
+      "Pidgey (Lvl 8 Lass Sarah )",
+      "Nidoran-F (Lvl 8 Lass Sarah )",
+      "Magikarp (Lvl 11 Youngster Tyler )",
+      "Oddish (Lvl 8 Lass Samantha )",
+      "Budew (Lvl 8 Lass Samantha )",
+      "Bellsprout (Lvl 8 Lass Samantha )",
+      "Cherubi (Lvl 13 Aroma Lady Taylor )",
+      "Hoppip (Lvl 13 Aroma Lady Taylor )",
+      "Shroomish (Lvl 13 Aroma Lady Taylor )",
+      "Wurmple (Lvl 14 Bug Catcher Brandon )",
+      "Kricketune (Lvl 14 Bug Catcher Brandon )",
+      "Chikorita (Lvl 15 Reporter Jenny )",
+      "Zubat (Lvl 18 Commander Mars )",
+      "Ponyta (Lvl 15 Camper Jacob )",
+      "Mareep (Lvl 15 Camper Jacob )",
+      "Buizel (Lvl 15 Camper Jacob )",
+      "Piplup (Lvl 16 Picnicker Karina )",
+      "Chimchar (Lvl 16 Picnicker Karina )",
+      "Drifloon (Lvl 19 Pkmn Trainer Cheryl3 )",
+      "Slowpoke (Lvl 17 Psychic Lindsey )",
+      "Natu (Lvl 17 Psychic Lindsey )",
+      "Exeggcute (Lvl 17 Psychic Lindsey )",
+      "Lotad (Lvl 22 Lass Caroline )",
+      "Cacnea (Lvl 22 Lass Caroline )",
+      "Shroomish (Lvl 22 Lass Caroline )",
+      "Exeggcute (Lvl 22 Lass Caroline )",
+      "Weepinbell (Lvl 23 Aroma Lady Jenna )",
+      "Ivysaur (Lvl 23 Aroma Lady Jenna )",
+      "Gloom (Lvl 23 Aroma Lady Jenna )",
+      "Roselia (Lvl 23 Aroma Lady Angela )",
+      "Bayleef (Lvl 23 Aroma Lady Angela )",
+      "Skiploom (Lvl 23 Aroma Lady Angela )",
+      "Bellossom (Lvl 25 Leader Gardenia )",
+      "Breloom (Lvl 25 Leader Gardenia )",
+      "Koffing (Lvl 23 Galactic Grunt5 )",
+      "Nidoran-M (Lvl 23 Galactic Grunt5 )",
+      "Stunky (Lvl 23 Galactic Grunt5 )",
+      "Cleffa (Lvl 23 Galactic Grunt17 )",
+      "Grotle (Lvl 30 Pkmn Trainer Lucas10 )",
+      "Machoke (Lvl 29 Black Belt Kyle )",
+      "Roselia (Lvl 27 Aroma Lady Hannah )",
+      "Sunflora (Lvl 27 Aroma Lady Hannah )",
+      "Taillow (Lvl 19 Cyclist Nicole )",
+      "Doduo (Lvl 19 Cyclist Nicole )",
+      "Wingull (Lvl 19 Cyclist Nicole )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Infernape": {
+    "setData": {
+      "My Box": {
+        "ability": "Iron Fist",
+        "level": 78,
+        "evs": {
+          "hp": 72,
+          "at": 252,
+          "df": 0,
+          "sa": 0,
+          "sd": 1,
+          "sp": 185
+        },
+        "ivs": {
+          "hp": 2,
+          "at": 17,
+          "df": 21,
+          "sa": 22,
+          "sd": 19,
+          "sp": 22
+        },
+        "moves": [
+          "Close Combat",
+          "U-turn",
+          "Swords Dance",
+          "Fake Out"
+        ],
+        "nature": "Naive",
+        "item": "Persim Berry",
+        "nn": "Beethoven",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 15,
+    "frags": [
+      "Piplup (Lvl 5 Pkmn Trainer Cedric27 )",
+      "Bulbasaur (Lvl 5 Reporter Kayla )",
+      "Bonsly (Lvl 15 Leader Roark )",
+      "Glameow (Lvl 13 Galactic Grunt10 )",
+      "Cascoon (Lvl 13 Galactic Grunt10 )",
+      "Stunky (Lvl 13 Galactic Grunt9 )",
+      "Silcoon (Lvl 13 Galactic Grunt9 )",
+      "Aipom (Lvl 15 Camper Zackary )",
+      "Taillow (Lvl 15 Camper Zackary )",
+      "Slakoth (Lvl 15 Camper Zackary )",
+      "Snover (Lvl 20 Skier Edward )",
+      "Swinub (Lvl 20 Skier Edward )",
+      "Snorunt (Lvl 20 Skier Edward )",
+      "Dustox (Lvl 31 Elite Four Aaron3 )",
+      "Beautifly (Lvl 31 Elite Four Aaron3 )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Umbreon": {
+    "setData": {
+      "My Box": {
+        "ability": "Synchronize",
+        "level": 65,
+        "evs": {
+          "hp": 154,
+          "at": 70,
+          "df": 1,
+          "sa": 24,
+          "sd": 4,
+          "sp": 7
+        },
+        "ivs": {
+          "hp": 23,
+          "at": 28,
+          "df": 25,
+          "sa": 4,
+          "sd": 31,
+          "sp": 22
+        },
+        "moves": [
+          "Crunch",
+          "Protect",
+          "Sucker Punch",
+          "Moonlight"
+        ],
+        "nature": "Relaxed",
+        "nn": "Chopin",
+        "isCustomSet": true,
+        "met": "Twinleaf Town"
+      }
+    },
+    "fragCount": 7,
+    "frags": [
+      "Hoothoot (Lvl 7 Youngster Tristan )",
+      "Starly (Lvl 7 Youngster Tristan )",
+      "Spearow (Lvl 9 Lass Kaitlin )",
+      "Azurill (Lvl 9 Lass Kaitlin )",
+      "Wooper (Lvl 10 Picnicker Diana )",
+      "Torchic (Lvl 10 Reporter Helen )",
+      "Mudkip (Lvl 10 Reporter Helen )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Nidoking": {
+    "setData": {
+      "My Box": {
+        "ability": "Rivalry",
+        "level": 65,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 8,
+          "at": 16,
+          "df": 10,
+          "sa": 8,
+          "sd": 2,
+          "sp": 6
+        },
+        "moves": [
+          "Poison Tail",
+          "Sucker Punch",
+          "Earthquake",
+          "Megahorn"
+        ],
+        "nature": "Timid",
+        "nn": "Britten",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Sentret (Lvl 7 Lass Natalie )",
+      "Bidoof (Lvl 7 Lass Natalie )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Magikarp": {
+    "setData": {
+      "My Box": {
+        "ability": "Swift Swim",
+        "level": 10,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 10,
+          "at": 26,
+          "df": 12,
+          "sa": 19,
+          "sd": 22,
+          "sp": 4
+        },
+        "moves": [
+          "Splash",
+          "Tackle",
+          "Flail",
+          "-----"
+        ],
+        "nature": "Naive",
+        "nn": "Tchaikvsky",
+        "isCustomSet": true,
+        "met": "Route 218"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Spearow": {
+    "setData": {
+      "My Box": {
+        "ability": "Sniper",
+        "level": 11,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 2,
+          "at": 23,
+          "df": 29,
+          "sa": 9,
+          "sd": 27,
+          "sp": 24
+        },
+        "moves": [
+          "Peck",
+          "Growl",
+          "Leer",
+          "Pursuit"
+        ],
+        "nature": "Mild",
+        "nn": "Handel",
+        "isCustomSet": true,
+        "met": "Route 203"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Mudkip": {
+    "setData": {
+      "My Box": {
+        "ability": "Damp",
+        "level": 12,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 22,
+          "at": 30,
+          "df": 22,
+          "sa": 14,
+          "sd": 5,
+          "sp": 25
+        },
+        "moves": [
+          "Tackle",
+          "Growl",
+          "Water Pulse",
+          "Mud-Slap"
+        ],
+        "nature": "Modest",
+        "item": "Mystic Water",
+        "nn": "Bach",
+        "isCustomSet": true,
+        "met": "Oreburgh City"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Diglett": {
+    "setData": {
+      "My Box": {
+        "ability": "Arena Trap",
+        "level": 8,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 23,
+          "at": 2,
+          "df": 3,
+          "sa": 30,
+          "sd": 1,
+          "sp": 26
+        },
+        "moves": [
+          "Scratch",
+          "Mud-Slap",
+          "Growl",
+          "Astonish"
+        ],
+        "nature": "Quiet",
+        "nn": "Mussorgsky",
+        "isCustomSet": true,
+        "met": "Oreburgh Gate"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Aron": {
+    "setData": {
+      "My Box": {
+        "ability": "Sturdy",
+        "level": 9,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 31,
+          "df": 10,
+          "sa": 23,
+          "sd": 9,
+          "sp": 22
+        },
+        "moves": [
+          "Tackle",
+          "Harden",
+          "Mud-Slap",
+          "Headbutt"
+        ],
+        "nature": "Relaxed",
+        "item": "Hard Stone",
+        "nn": "Copland",
+        "isCustomSet": true,
+        "met": "Oreburgh Mine"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Cranidos (Lvl 16 Leader Roark )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Machop": {
+    "setData": {
+      "My Box": {
+        "ability": "Guts",
+        "level": 9,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 24,
+          "at": 2,
+          "df": 13,
+          "sa": 18,
+          "sd": 19,
+          "sp": 4
+        },
+        "moves": [
+          "Low Kick",
+          "Leer",
+          "Focus Energy",
+          "Karate Chop"
+        ],
+        "nature": "Hasty",
+        "nn": "LloydWeber",
+        "isCustomSet": true,
+        "met": "Route 207"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": false,
+    "hide": false
+  },
+  "Monferno": {
+    "setData": {
+      "My Box": {
+        "ability": "Iron Fist",
+        "level": 16,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 7,
+          "at": 6,
+          "df": 15,
+          "sa": 11,
+          "sd": 3,
+          "sp": 31
+        },
+        "moves": [
+          "Rock Smash",
+          "Mach Punch",
+          "Flame Wheel",
+          "Taunt"
+        ],
+        "nature": "Lax",
+        "item": "Bright Powder",
+        "nn": "Beethoven",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 15,
+    "frags": [
+      "Piplup (Lvl 5 Pkmn Trainer Cedric27 )",
+      "Bulbasaur (Lvl 5 Reporter Kayla )",
+      "Bonsly (Lvl 15 Leader Roark )",
+      "Glameow (Lvl 13 Galactic Grunt10 )",
+      "Cascoon (Lvl 13 Galactic Grunt10 )",
+      "Stunky (Lvl 13 Galactic Grunt9 )",
+      "Silcoon (Lvl 13 Galactic Grunt9 )",
+      "Aipom (Lvl 15 Camper Zackary )",
+      "Taillow (Lvl 15 Camper Zackary )",
+      "Slakoth (Lvl 15 Camper Zackary )",
+      "Snover (Lvl 20 Skier Edward )",
+      "Swinub (Lvl 20 Skier Edward )",
+      "Snorunt (Lvl 20 Skier Edward )",
+      "Dustox (Lvl 31 Elite Four Aaron3 )",
+      "Beautifly (Lvl 31 Elite Four Aaron3 )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Charmeleon": {
+    "setData": {
+      "My Box": {
+        "ability": "Blaze",
+        "level": 16,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 22,
+          "df": 18,
+          "sa": 14,
+          "sd": 11,
+          "sp": 12
+        },
+        "moves": [
+          "Bite",
+          "Growl",
+          "Ember",
+          "Dragon Breath"
+        ],
+        "nature": "Serious",
+        "item": "Charcoal",
+        "nn": "Shore",
+        "isCustomSet": true,
+        "met": "Jubilife City"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Ralts (Lvl 8 School Kid Christine )",
+      "Scizor (Lvl 31 Elite Four Aaron3 )"
+    ],
+    "prevoFragCount": 1,
+    "alive": true,
+    "hide": false
+  },
+  "Staravia": {
+    "setData": {
+      "My Box": {
+        "ability": "Reckless",
+        "level": 16,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 11,
+          "at": 30,
+          "df": 17,
+          "sa": 18,
+          "sd": 13,
+          "sp": 25
+        },
+        "moves": [
+          "Double Team",
+          "Growl",
+          "Quick Attack",
+          "Wing Attack"
+        ],
+        "nature": "Modest",
+        "item": "Sharp Beak",
+        "nn": "VaughanWil",
+        "isCustomSet": true,
+        "met": "Lake Verity"
+      }
+    },
+    "fragCount": 5,
+    "frags": [
+      "Turtwig (Lvl 9 Pkmn Trainer Lucas8 )",
+      "Growlithe (Lvl 7 Youngster Logan )",
+      "Zigzagoon (Lvl 7 Youngster Logan )",
+      "Burmy (Lvl 7 Youngster Logan )",
+      "Treecko (Lvl 10 Reporter Helen )"
+    ],
+    "prevoFragCount": 5,
+    "alive": true,
+    "hide": false
+  },
+  "Nidorino": {
+    "setData": {
+      "My Box": {
+        "ability": "Rivalry",
+        "level": 16,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 17,
+          "df": 9,
+          "sa": 13,
+          "sd": 8,
+          "sp": 21
+        },
+        "moves": [
+          "Leer",
+          "Horn Attack",
+          "Double Kick",
+          "Poison Fang"
+        ],
+        "nature": "Mild",
+        "item": "Bright Powder",
+        "nn": "Britten",
+        "isCustomSet": true,
+        "met": "Route 201"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Sentret (Lvl 7 Lass Natalie )",
+      "Bidoof (Lvl 7 Lass Natalie )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Marshtomp": {
+    "setData": {
+      "My Box": {
+        "ability": "Damp",
+        "level": 16,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 22,
+          "at": 30,
+          "df": 22,
+          "sa": 14,
+          "sd": 5,
+          "sp": 25
+        },
+        "moves": [
+          "Bulldoze",
+          "Growl",
+          "Water Pulse",
+          "Mud-Slap"
+        ],
+        "nature": "Modest",
+        "item": "Mystic Water",
+        "nn": "Bach",
+        "isCustomSet": true,
+        "met": "Oreburgh City"
+      }
+    },
+    "fragCount": 7,
+    "frags": [
+      "Nosepass (Lvl 15 Leader Roark )",
+      "Geodude (Lvl 15 Leader Roark )",
+      "Larvitar (Lvl 15 Leader Roark )",
+      "Cyndaquil (Lvl 15 Reporter Jenny )",
+      "Geodude (Lvl 19 Hiker Louis )",
+      "Beldum (Lvl 19 Hiker Louis )",
+      "Slugma (Lvl 19 Hiker Louis )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Grotle": {
+    "setData": {
+      "My Box": {
+        "ability": "Shell Armor",
+        "level": 18,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 1,
+          "df": 8,
+          "sa": 30,
+          "sd": 30,
+          "sp": 31
+        },
+        "moves": [
+          "Bite",
+          "Curse",
+          "Bulldoze",
+          "Bullet Seed"
+        ],
+        "nature": "Gentle",
+        "item": "Bright Powder",
+        "nn": "Mozart",
+        "isCustomSet": true,
+        "met": "Sandgem Town"
+      }
+    },
+    "fragCount": 19,
+    "frags": [
+      "Squirtle (Lvl 5 Reporter Kayla )",
+      "Charmander (Lvl 5 Reporter Kayla )",
+      "Psyduck (Lvl 8 School Kid Harrison )",
+      "Staryu (Lvl 8 School Kid Christine )",
+      "Shinx (Lvl 10 Youngster Dallas )",
+      "Sandshrew (Lvl 10 Youngster Dallas )",
+      "Cubone (Lvl 9 Lass Kaitlin )",
+      "Psyduck (Lvl 10 Lass Madeline )",
+      "Sunkern (Lvl 10 Lass Madeline )",
+      "Diglett (Lvl 10 Camper Curtis )",
+      "Onix (Lvl 15 Leader Roark )",
+      "Totodile (Lvl 15 Reporter Jenny )",
+      "Shellos (Lvl 16 Hiker Nicholas )",
+      "Onix (Lvl 16 Hiker Nicholas )",
+      "Wailmer (Lvl 19 Pkmn Trainer Cheryl3 )",
+      "Drapion (Lvl 32 Elite Four Aaron3 )",
+      "Mismagius (Lvl 33 Leader Fantina )",
+      "Gengar (Lvl 32 Leader Fantina )",
+      "Snorlax (Lvl 32 Pkmn Trainer Cedric4 )"
+    ],
+    "prevoFragCount": 11,
+    "alive": true,
+    "hide": false
+  },
+  "Mothim": {
+    "setData": {
+      "My Box": {
+        "ability": "Swarm",
+        "level": 20,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 14,
+          "at": 27,
+          "df": 20,
+          "sa": 24,
+          "sd": 1,
+          "sp": 24
+        },
+        "moves": [
+          "Protect",
+          "Tackle",
+          "Bug Bite",
+          "Gust"
+        ],
+        "nature": "Jolly",
+        "nn": "Wagner",
+        "isCustomSet": true,
+        "met": "Route 202"
+      }
+    },
+    "fragCount": 6,
+    "frags": [
+      "Abra (Lvl 8 School Kid Harrison )",
+      "Grotle (Lvl 25 Leader Gardenia )",
+      "Cherrim (Lvl 25 Leader Gardenia )",
+      "Drowzee (Lvl 24 Scientist Travon )",
+      "Kadabra (Lvl 24 Scientist Travon )",
+      "Metang (Lvl 24 Scientist Travon )"
+    ],
+    "prevoFragCount": 1,
+    "alive": true,
+    "hide": false
+  },
+  "Fearow": {
+    "setData": {
+      "My Box": {
+        "ability": "Sniper",
+        "level": 20,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 2,
+          "at": 23,
+          "df": 29,
+          "sa": 9,
+          "sd": 27,
+          "sp": 24
+        },
+        "moves": [
+          "Aerial Ace",
+          "Growl",
+          "Facade",
+          "Pursuit"
+        ],
+        "nature": "Mild",
+        "nn": "Handel",
+        "isCustomSet": true,
+        "met": "Route 203"
+      }
+    },
+    "fragCount": 13,
+    "frags": [
+      "Zubat (Lvl 15 Galactic Grunt1 )",
+      "Spinarak (Lvl 15 Galactic Grunt1 )",
+      "Ledyba (Lvl 15 Galactic Grunt2 )",
+      "Yanma (Lvl 18 Commander Mars )",
+      "Bulbasaur (Lvl 16 Aroma Lady Elizabeth )",
+      "Chikorita (Lvl 16 Aroma Lady Elizabeth )",
+      "Machop (Lvl 16 Battle Girl Kelsey )",
+      "Meditite (Lvl 16 Battle Girl Kelsey )",
+      "Mankey (Lvl 16 Battle Girl Kelsey )",
+      "Natu (Lvl 20 Bird Keeper Alexandra )",
+      "Swablu (Lvl 20 Bird Keeper Alexandra )",
+      "Staravia (Lvl 20 Bird Keeper Alexandra )",
+      "Haunter (Lvl 27 Pkmn Trainer Mira3 )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Hitmonlee": {
+    "setData": {
+      "My Box": {
+        "ability": "Reckless",
+        "level": 20,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 5,
+          "at": 29,
+          "df": 18,
+          "sa": 28,
+          "sd": 9,
+          "sp": 9
+        },
+        "moves": [
+          "Fake Out",
+          "Low Kick",
+          "Mach Punch",
+          "Rapid Spin"
+        ],
+        "nature": "Mild",
+        "nn": "Brahms",
+        "isCustomSet": true,
+        "met": "Trainers’ School"
+      }
+    },
+    "fragCount": 4,
+    "frags": [
+      "Munchlax (Lvl 10 Pkmn Trainer Cedric3 )",
+      "Whismur (Lvl 10 Picnicker Diana )",
+      "Croagunk (Lvl 15 Galactic Grunt2 )",
+      "Piloswine (Lvl 29 Pkmn Trainer Lucas10 )"
+    ],
+    "prevoFragCount": 2,
+    "alive": true,
+    "hide": false
+  },
+  "Gyarados": {
+    "setData": {
+      "My Box": {
+        "ability": "Intimidate",
+        "level": 20,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 10,
+          "at": 26,
+          "df": 12,
+          "sa": 19,
+          "sd": 22,
+          "sp": 4
+        },
+        "moves": [
+          "Bite",
+          "Tackle",
+          "Flail",
+          "Bounce"
+        ],
+        "nature": "Naive",
+        "nn": "Tchaikvsky",
+        "isCustomSet": true,
+        "met": "Route 218"
+      }
+    },
+    "fragCount": 5,
+    "frags": [
+      "Poochyena (Lvl 14 Galactic Grunt51 )",
+      "Houndour (Lvl 14 Galactic Grunt51 )",
+      "Gulpin (Lvl 14 Galactic Grunt51 )",
+      "Bronzor (Lvl 18 Commander Mars )",
+      "Graveler (Lvl 25 Hiker Justin )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Makuhita": {
+    "setData": {
+      "My Box": {
+        "ability": "Guts",
+        "level": 7,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 28,
+          "at": 27,
+          "df": 20,
+          "sa": 15,
+          "sd": 21,
+          "sp": 9
+        },
+        "moves": [
+          "Tackle",
+          "Focus Energy",
+          "Sand Attack",
+          "Arm Thrust"
+        ],
+        "nature": "Quiet",
+        "nn": "Vivaldi",
+        "isCustomSet": true,
+        "met": "Ravaged Path"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Cyndaquil": {
+    "setData": {
+      "My Box": {
+        "ability": "Blaze",
+        "level": 15,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 2,
+          "at": 19,
+          "df": 24,
+          "sa": 23,
+          "sd": 3,
+          "sp": 2
+        },
+        "moves": [
+          "Ember",
+          "Smokescreen",
+          "Quick Attack",
+          "Flame Wheel"
+        ],
+        "nature": "Rash",
+        "item": "Charcoal",
+        "nn": "Debussy",
+        "isCustomSet": true,
+        "met": "Floaroma Town"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Skorupi": {
+    "setData": {
+      "My Box": {
+        "ability": "Sniper",
+        "level": 18,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 31,
+          "df": 31,
+          "sa": 15,
+          "sd": 15,
+          "sp": 31
+        },
+        "moves": [
+          "Leer",
+          "Knock Off",
+          "Bug Bite",
+          "Poison Fang"
+        ],
+        "nature": "Jolly",
+        "item": "Poison Barb",
+        "nn": "Stingi",
+        "isCustomSet": true,
+        "met": "undefined"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Heracross": {
+    "setData": {
+      "My Box": {
+        "ability": "Guts",
+        "level": 17,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 6,
+          "at": 10,
+          "df": 23,
+          "sa": 5,
+          "sd": 10,
+          "sp": 24
+        },
+        "moves": [
+          "Facade",
+          "Bug Bite",
+          "Rock Smash",
+          "Aerial Ace"
+        ],
+        "nature": "Naive",
+        "nn": "Gershwin",
+        "isCustomSet": true,
+        "met": "Route 205"
+      }
+    },
+    "fragCount": 31,
+    "frags": [
+      "Koffing (Lvl 15 Galactic Grunt3 )",
+      "Grimer (Lvl 15 Galactic Grunt3 )",
+      "Metapod (Lvl 14 Galactic Grunt4 )",
+      "Pineco (Lvl 14 Galactic Grunt4 )",
+      "Kakuna (Lvl 14 Galactic Grunt4 )",
+      "Purugly (Lvl 19 Commander Mars )",
+      "Diglett (Lvl 15 Hiker Daniel )",
+      "Numel (Lvl 15 Hiker Daniel )",
+      "Shieldon (Lvl 15 Hiker Daniel )",
+      "Pachirisu (Lvl 17 Picnicker Siena )",
+      "Chansey (Lvl 20 Pkmn Trainer Cheryl3 )",
+      "Makuhita (Lvl 19 Pkmn Trainer Cheryl3 )",
+      "Baltoy (Lvl 17 Psychic Elijah )",
+      "Spoink (Lvl 17 Psychic Elijah )",
+      "Drowzee (Lvl 17 Psychic Elijah )",
+      "Tangela (Lvl 25 Leader Gardenia )",
+      "Ekans (Lvl 23 Galactic Grunt16 )",
+      "Glameow (Lvl 23 Galactic Grunt16 )",
+      "Nidoran-F (Lvl 23 Galactic Grunt16 )",
+      "Tangela (Lvl 26 Commander Jupiter )",
+      "Magby (Lvl 24 Camper Anthony )",
+      "Charmander (Lvl 24 Camper Anthony )",
+      "Trapinch (Lvl 24 Camper Anthony )",
+      "Porygon2 (Lvl 27 Pkmn Trainer Mira3 )",
+      "Smeargle (Lvl 26 Artist William 1)",
+      "Smeargle (Lvl 26 Artist William 2)",
+      "Smeargle (Lvl 26 Artist William )",
+      "Farfetch’d (Lvl 21 Cyclist John )",
+      "Pichu (Lvl 19 Cyclist Axel 1)",
+      "Pichu (Lvl 19 Cyclist Axel 2)",
+      "Pikachu (Lvl 19 Cyclist Axel )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Magnemite": {
+    "setData": {
+      "My Box": {
+        "ability": "Sturdy",
+        "level": 17,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 1,
+          "at": 14,
+          "df": 20,
+          "sa": 8,
+          "sd": 7,
+          "sp": 31
+        },
+        "moves": [
+          "Shock Wave",
+          "Thunder Wave",
+          "Light Screen",
+          "Magnet Bomb"
+        ],
+        "nature": "Quiet",
+        "nn": "Dvorakte",
+        "isCustomSet": true,
+        "met": "Valley Windworks"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Swellow (Lvl 23 Ace Trainer Laura )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Milotic": {
+    "setData": {
+      "My Box": {
+        "ability": "Cute Charm",
+        "level": 21,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 25,
+          "at": 13,
+          "df": 10,
+          "sa": 21,
+          "sd": 26,
+          "sp": 12
+        },
+        "moves": [
+          "Water Pulse",
+          "Aqua Ring",
+          "Confuse Ray",
+          "Dragon Breath"
+        ],
+        "nature": "Bashful",
+        "nn": "Faure",
+        "isCustomSet": true,
+        "met": "Mt. Coronet"
+      }
+    },
+    "fragCount": 2,
+    "frags": [
+      "Togetic (Lvl 23 Ace Trainer Laura )",
+      "Sandslash (Lvl 25 Hiker Justin )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Meditite": {
+    "setData": {
+      "My Box": {
+        "ability": "Pure Power",
+        "level": 21,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 24,
+          "at": 25,
+          "df": 25,
+          "sa": 10,
+          "sd": 31,
+          "sp": 16
+        },
+        "moves": [
+          "Confusion",
+          "Endure",
+          "Feint",
+          "Force Palm"
+        ],
+        "nature": "Quiet",
+        "nn": "Bartoke",
+        "isCustomSet": true,
+        "met": "Route 211"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Shroomish": {
+    "setData": {
+      "My Box": {
+        "ability": "Technician",
+        "level": 21,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 11,
+          "at": 14,
+          "df": 3,
+          "sa": 7,
+          "sd": 5,
+          "sp": 2
+        },
+        "moves": [
+          "Headbutt",
+          "Spore",
+          "Leech Seed",
+          "Bullet Seed"
+        ],
+        "nature": "Docile",
+        "nn": "Boccherini",
+        "isCustomSet": true,
+        "met": "Eterna Forest"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Breloom": {
+    "setData": {
+      "My Box": {
+        "ability": "Technician",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 11,
+          "at": 14,
+          "df": 3,
+          "sa": 7,
+          "sd": 5,
+          "sp": 2
+        },
+        "moves": [
+          "Mach Punch",
+          "Spore",
+          "Force Palm",
+          "Bullet Seed"
+        ],
+        "nature": "Docile",
+        "nn": "Boccherini",
+        "isCustomSet": true,
+        "met": "Eterna Forest"
+      }
+    },
+    "fragCount": 6,
+    "frags": [
+      "Lickilicky (Lvl 29 Pkmn Trainer Lucas10 )",
+      "Hippopotas (Lvl 26 Hiker Jonathan )",
+      "Bronzor (Lvl 26 Hiker Jonathan )",
+      "Shuckle (Lvl 26 Hiker Jonathan )",
+      "Marowak (Lvl 28 Hiker Robert )",
+      "Graveler (Lvl 28 Hiker Alexander )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Hariyama": {
+    "setData": {
+      "My Box": {
+        "ability": "Guts",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 28,
+          "at": 27,
+          "df": 20,
+          "sa": 15,
+          "sd": 21,
+          "sp": 9
+        },
+        "moves": [
+          "Fake Out",
+          "Knock Off",
+          "Facade",
+          "Belly Drum"
+        ],
+        "nature": "Quiet",
+        "nn": "Vivaldi",
+        "isCustomSet": true,
+        "met": "Ravaged Path"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Skuntank (Lvl 27 Commander Jupiter )"
+    ],
+    "prevoFragCount": 0,
+    "alive": false,
+    "hide": false
+  },
+  "Dugtrio": {
+    "setData": {
+      "My Box": {
+        "ability": "Arena Trap",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 23,
+          "at": 2,
+          "df": 3,
+          "sa": 30,
+          "sd": 1,
+          "sp": 26
+        },
+        "moves": [
+          "Bulldoze",
+          "Mud-Slap",
+          "Dig",
+          "Sucker Punch"
+        ],
+        "nature": "Quiet",
+        "nn": "Mussorgsky",
+        "isCustomSet": true,
+        "met": "Oreburgh Gate"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Snorunt": {
+    "setData": {
+      "My Box": {
+        "ability": "Ice Body",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "at": 12,
+          "df": 15,
+          "sa": 2,
+          "sd": 23,
+          "sp": 11
+        },
+        "moves": [
+          "Ice Shard",
+          "Ice Fang",
+          "Bite",
+          "Disable"
+        ],
+        "nature": "Lonely",
+        "nn": "Griegt",
+        "isCustomSet": true,
+        "met": "Route 216"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Lairon": {
+    "setData": {
+      "My Box": {
+        "ability": "Sturdy",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 4,
+          "at": 31,
+          "df": 10,
+          "sa": 23,
+          "sd": 9,
+          "sp": 22
+        },
+        "moves": [
+          "Iron Head",
+          "Rock Slide",
+          "Protect",
+          "Headbutt"
+        ],
+        "nature": "Relaxed",
+        "item": "Leftovers",
+        "nn": "Copland",
+        "isCustomSet": true,
+        "met": "Oreburgh Mine"
+      }
+    },
+    "fragCount": 3,
+    "frags": [
+      "Cranidos (Lvl 16 Leader Roark )",
+      "Sableye (Lvl 26 Commander Jupiter )",
+      "Granbull (Lvl 29 Pkmn Trainer Lucas10 )"
+    ],
+    "prevoFragCount": 1,
+    "alive": true,
+    "hide": false
+  },
+  "Aerodactyl": {
+    "setData": {
+      "My Box": {
+        "ability": "Rock Head",
+        "level": 26,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "at": 5,
+          "df": 29,
+          "sa": 5,
+          "sd": 25,
+          "sp": 1
+        },
+        "moves": [
+          "Scary Face",
+          "Ancient Power",
+          "Crunch",
+          "Wing Attack"
+        ],
+        "nature": "Serious",
+        "nn": "Bernstein",
+        "isCustomSet": true,
+        "met": "Mining Museum"
+      }
+    },
+    "fragCount": 8,
+    "frags": [
+      "Roserade (Lvl 26 Leader Gardenia )",
+      "Ledian (Lvl 24 Galactic Grunt55 )",
+      "Ariados (Lvl 24 Galactic Grunt55 )",
+      "Golbat (Lvl 26 Commander Jupiter )",
+      "Smoochum (Lvl 24 Picnicker Lauren )",
+      "Treecko (Lvl 24 Picnicker Lauren )",
+      "Snubbull (Lvl 24 Picnicker Lauren )",
+      "Venomoth (Lvl 31 Elite Four Aaron3 )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Magnezone": {
+    "setData": {
+      "My Box": {
+        "ability": "Sturdy",
+        "level": 31,
+        "ivs": {
+          "hp": 1,
+          "at": 14,
+          "df": 20,
+          "sa": 8,
+          "sd": 7
+        },
+        "moves": [
+          "Shock Wave",
+          "Thunder Wave",
+          "Light Screen",
+          "Discharge"
+        ],
+        "nature": "Quiet",
+        "item": "Magnet",
+        "isCustomSet": true,
+        "met": "Valley Windworks",
+        "nn": "Dvorakte"
+      }
+    },
+    "fragCount": 3,
+    "frags": [
+      "Swellow (Lvl 23 Ace Trainer Laura )",
+      "Togetic (Lvl 27 Pkmn Trainer Mira3 )",
+      "Kadabra (Lvl 28 Pkmn Trainer Mira3 )"
+    ],
+    "prevoFragCount": 1,
+    "alive": true,
+    "hide": false
+  },
+  "Porygon": {
+    "setData": {
+      "My Box": {
+        "ability": "Download",
+        "level": 22,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 3,
+          "sa": 30,
+          "sd": 4,
+          "sp": 12
+        },
+        "moves": [
+          "Recover",
+          "Charge Beam",
+          "Signal Beam",
+          "Recycle"
+        ],
+        "nature": "Sassy",
+        "nn": "Cage",
+        "isCustomSet": true,
+        "met": "T.G. Eterna Bldg"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Togepi": {
+    "setData": {
+      "My Box": {
+        "ability": "Super Luck",
+        "level": 1,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 21,
+          "at": 26,
+          "df": 19,
+          "sa": 19,
+          "sd": 2,
+          "sp": 31
+        },
+        "moves": [
+          "Growl",
+          "Charm",
+          "Extrasensory",
+          "Disarming Voice"
+        ],
+        "nature": "Calm",
+        "nn": "Schumann",
+        "isCustomSet": true,
+        "met": "Cycle Shop"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Torterra": {
+    "setData": {
+      "My Box": {
+        "ability": "Shell Armor",
+        "level": 32,
+        "ivs": {
+          "hp": 15,
+          "at": 1,
+          "df": 8,
+          "sa": 30,
+          "sd": 30
+        },
+        "moves": [
+          "Mega Drain",
+          "Curse",
+          "Bulldoze",
+          "Seed Bomb"
+        ],
+        "nature": "Gentle",
+        "item": "Leftovers",
+        "isCustomSet": true,
+        "met": "Sandgem Town",
+        "nn": "Mozart"
+      }
+    },
+    "fragCount": 19,
+    "frags": [
+      "Squirtle (Lvl 5 Reporter Kayla )",
+      "Charmander (Lvl 5 Reporter Kayla )",
+      "Psyduck (Lvl 8 School Kid Harrison )",
+      "Staryu (Lvl 8 School Kid Christine )",
+      "Shinx (Lvl 10 Youngster Dallas )",
+      "Sandshrew (Lvl 10 Youngster Dallas )",
+      "Cubone (Lvl 9 Lass Kaitlin )",
+      "Psyduck (Lvl 10 Lass Madeline )",
+      "Sunkern (Lvl 10 Lass Madeline )",
+      "Diglett (Lvl 10 Camper Curtis )",
+      "Onix (Lvl 15 Leader Roark )",
+      "Totodile (Lvl 15 Reporter Jenny )",
+      "Shellos (Lvl 16 Hiker Nicholas )",
+      "Onix (Lvl 16 Hiker Nicholas )",
+      "Wailmer (Lvl 19 Pkmn Trainer Cheryl3 )",
+      "Drapion (Lvl 32 Elite Four Aaron3 )",
+      "Mismagius (Lvl 33 Leader Fantina )",
+      "Gengar (Lvl 32 Leader Fantina )",
+      "Snorlax (Lvl 32 Pkmn Trainer Cedric4 )"
+    ],
+    "prevoFragCount": 15,
+    "alive": true,
+    "hide": false
+  },
+  "Stunky": {
+    "setData": {
+      "My Box": {
+        "ability": "Aftermath",
+        "level": 21,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 20,
+          "at": 19,
+          "df": 19,
+          "sa": 28,
+          "sd": 4,
+          "sp": 28
+        },
+        "moves": [
+          "Bite",
+          "Fury Swipes",
+          "Smog",
+          "Smokescreen"
+        ],
+        "nature": "Sassy",
+        "nn": "Bizet",
+        "isCustomSet": true,
+        "met": "Route 206"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Seviper": {
+    "setData": {
+      "My Box": {
+        "ability": "Shed Skin",
+        "level": 23,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 4,
+          "df": 31,
+          "sa": 22,
+          "sd": 6,
+          "sp": 1
+        },
+        "moves": [
+          "Feint",
+          "Screech",
+          "Glare",
+          "Poison Tail"
+        ],
+        "nature": "Lax",
+        "nn": "Haydnr",
+        "isCustomSet": true,
+        "met": "Route 208"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Rotom": {
+    "setData": {
+      "My Box": {
+        "ability": "Levitate",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 11,
+          "df": 13,
+          "sa": 12,
+          "sd": 29,
+          "sp": 23
+        },
+        "moves": [
+          "Discharge",
+          "Will-O-Wisp",
+          "Ominous Wind",
+          "Substitute"
+        ],
+        "nature": "Brave",
+        "nn": "Collier",
+        "isCustomSet": true,
+        "met": "Old Chateau"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Skuntank": {
+    "setData": {
+      "My Box": {
+        "ability": "Aftermath",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 20,
+          "at": 19,
+          "df": 19,
+          "sa": 28,
+          "sd": 4,
+          "sp": 28
+        },
+        "moves": [
+          "Night Slash",
+          "Poison Jab",
+          "Feint",
+          "Toxic"
+        ],
+        "nature": "Sassy",
+        "nn": "Bizet",
+        "isCustomSet": true,
+        "met": "Route 206"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Gible": {
+    "setData": {
+      "My Box": {
+        "ability": "Sand Veil",
+        "level": 31,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 16,
+          "at": 17,
+          "df": 11,
+          "sa": 21,
+          "sd": 6,
+          "sp": 5
+        },
+        "moves": [
+          "Bulldoze",
+          "Dragon Claw",
+          "Scary Face",
+          "Sandstorm"
+        ],
+        "nature": "Impish",
+        "nn": "Mahler",
+        "isCustomSet": true,
+        "met": "Wayward Cave"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Togetic": {
+    "setData": {
+      "My Box": {
+        "ability": "Super Luck",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 21,
+          "at": 26,
+          "df": 19,
+          "sa": 19,
+          "sd": 2,
+          "sp": 31
+        },
+        "moves": [
+          "Encore",
+          "Moonblast",
+          "Baton Pass",
+          "Nasty Plot"
+        ],
+        "nature": "Calm",
+        "nn": "Schumann",
+        "isCustomSet": true,
+        "met": "Cycle Shop"
+      }
+    },
+    "fragCount": 4,
+    "frags": [
+      "Spiritomb (Lvl 32 Leader Fantina )",
+      "Dusclops (Lvl 32 Leader Fantina )",
+      "Banette (Lvl 32 Leader Fantina )",
+      "Staravia (Lvl 32 Pkmn Trainer Cedric4 )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Glalie": {
+    "setData": {
+      "My Box": {
+        "ability": "Ice Body",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "at": 12,
+          "df": 15,
+          "sa": 2,
+          "sd": 23,
+          "sp": 11
+        },
+        "moves": [
+          "Ice Shard",
+          "Avalanche",
+          "Rock Slide",
+          "Disable"
+        ],
+        "nature": "Lonely",
+        "nn": "Griegt",
+        "isCustomSet": true,
+        "met": "Route 216"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Drapion": {
+    "setData": {
+      "My Box": {
+        "ability": "Sniper",
+        "level": 33,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 15,
+          "at": 31,
+          "df": 31,
+          "sa": 15,
+          "sd": 15,
+          "sp": 31
+        },
+        "moves": [
+          "Toxic Spikes",
+          "Knock Off",
+          "X-Scissor",
+          "Poison Jab"
+        ],
+        "nature": "Jolly",
+        "item": "Poison Barb",
+        "nn": "Stingi",
+        "isCustomSet": true,
+        "met": "undefined"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Medicham": {
+    "setData": {
+      "My Box": {
+        "ability": "Pure Power",
+        "level": 33,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 24,
+          "at": 25,
+          "df": 25,
+          "sa": 10,
+          "sd": 31,
+          "sp": 16
+        },
+        "moves": [
+          "Psycho Cut",
+          "High Jump Kick",
+          "Feint",
+          "Force Palm"
+        ],
+        "nature": "Quiet",
+        "nn": "Bartoke",
+        "isCustomSet": true,
+        "met": "Route 211"
+      }
+    },
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Rotom-Mow": {
+    "setData": {},
+    "fragCount": 0,
+    "frags": [],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Porygon2": {
+    "setData": {
+      "My Box": {
+        "ability": "Download",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 3,
+          "sa": 30,
+          "sd": 4,
+          "sp": 12
+        },
+        "moves": [
+          "Recover",
+          "Charge Beam",
+          "Discharge",
+          "Tri Attack"
+        ],
+        "nature": "Sassy",
+        "nn": "Cage",
+        "isCustomSet": true,
+        "met": "T.G. Eterna Bldg"
+      }
+    },
+    "fragCount": 1,
+    "frags": [
+      "Drifblim (Lvl 32 Leader Fantina )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  },
+  "Togekiss": {
+    "setData": {
+      "My Box": {
+        "ability": "Super Luck",
+        "level": 32,
+        "evs": {
+          "hp": 0,
+          "at": 0,
+          "df": 0,
+          "sa": 0,
+          "sd": 0,
+          "sp": 0
+        },
+        "ivs": {
+          "hp": 21,
+          "at": 26,
+          "df": 19,
+          "sa": 19,
+          "sd": 2,
+          "sp": 31
+        },
+        "moves": [
+          "Encore",
+          "Moonblast",
+          "Baton Pass",
+          "Nasty Plot"
+        ],
+        "nature": "Calm",
+        "item": "Leftovers",
+        "nn": "Schumann",
+        "isCustomSet": true,
+        "met": "Cycle Shop"
+      }
+    },
+    "fragCount": 4,
+    "frags": [
+      "Spiritomb (Lvl 32 Leader Fantina )",
+      "Dusclops (Lvl 32 Leader Fantina )",
+      "Banette (Lvl 32 Leader Fantina )",
+      "Staravia (Lvl 32 Pkmn Trainer Cedric4 )"
+    ],
+    "prevoFragCount": 0,
+    "alive": true,
+    "hide": false
+  }
+}
