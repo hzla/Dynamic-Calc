@@ -3,7 +3,7 @@ $('#read-save').click(function(){
     $('#save-upload')[0].value = null
 })
 
-document.getElementById('save-upload').addEventListener('change', function(event) {
+document.getElementById('save-upload').addEventListener('change', function(event, forceBlock2=false) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
@@ -46,109 +46,150 @@ document.getElementById('save-upload').addEventListener('change', function(event
         battleStatSize = (partyPokSize - 136) / 2
 
         reader.onload = function(e) {
-            // Convert the binary string to ArrayBuffer for easier access
-            const binaryData = e.target.result;
-            const buffer = new ArrayBuffer(binaryData.length);
+            // Extract the processing logic into a separate function for retry
+            function processSaveFile(forceBlock2 = false) {
+                try {
+                    // Convert the binary string to ArrayBuffer for easier access
+                    const binaryData = e.target.result;
+                    const buffer = new ArrayBuffer(binaryData.length);
 
-            view = new Uint8Array(buffer);
+                    view = new Uint8Array(buffer);
 
+                    saveUploaded = true
+                    for (let i = 0; i < binaryData.length; i++) {
+                        view[i] = binaryData.charCodeAt(i);
+                    }
 
-            saveUploaded = true
-            for (let i = 0; i < binaryData.length; i++) {
-                view[i] = binaryData.charCodeAt(i);
-            }
+                    changelog = "<h4>Changelog:</h4>"
+                    changelog += `<p>${saveFileName} loaded</p>`
+                    if ($('#changelog').length == 0) {
+                       $('#clearSets').after("<p id='changelog'></p>") 
+                    }
+                    $('#changelog').html(changelog).show()
+                    
+                    partyExpTables = []
+                    partyExpIndexes = []
+                    partyMovesIndexes = []
 
+                    smallBlockStart = 0
 
-            changelog = "<h4>Changelog:</h4>"
-            changelog += `<p>${saveFileName} loaded</p>`
-            if ($('#changelog').length == 0) {
-               $('#clearSets').after("<p id='changelog'></p>") 
-            }
-            $('#changelog').html(changelog).show()
-            
-            partyExpTables = []
-            partyExpIndexes = []
-            partyMovesIndexes = []
+                    if (baseGame == "Pt" || baseGame == "HGSS") {
+                        smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize - 16)
+                        smallBlock2SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 16)
+                        if (smallBlock2SaveCount > smallBlock1SaveCount || forceBlock2) {
+                            partyCountOffset += 0x40000
+                            blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 20)
+                            console.log("now reading party from block 2")
+                            smallBlockStart = 0x40000
+                        } else {
+                            console.log("now reading party from block 1")
+                            blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize - 20)       
+                        }
+                        block1Id = read32BitIntegerFromUint8Array(view,  bigBlockStart + bigBlockSize - 20)
+                        if (block1Id != blockId || forceBlock2) {
+                            boxDataOffset += 0x40000
+                            bigBlockStart += 0x40000
+                            console.log("now reading box from block 2")
+                        } else {
+                            console.log("now reading box from block 1")
+                        }
+                    }
 
-            smallBlockStart = 0
+                    // Step 1: Get 'n' from offset 0x9C (single byte)
+                    var n = view[partyCountOffset];
+                    partyCount = n
 
-            if (baseGame == "Pt" || baseGame == "HGSS") {
-                smallBlock1SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize - 16)
-                smallBlock2SaveCount = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 16)
-                if (smallBlock2SaveCount > smallBlock1SaveCount) {
-                    partyCountOffset += 0x40000
-                    blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize + 0x40000 - 20)
-                    console.log("now reading party from block 2")
-                    smallBlockStart = 0x40000
-                } else {
-                    console.log("now reading party from block 1")
-                    blockId = read32BitIntegerFromUint8Array(view,  smallBlockSize - 20)       
+                    // Initialize an array to store decrypted chunks
+                    decryptedChunks = [];
+                    decryptedBattleStats = []
+                    partyMons = {}
+                    partyPIDs = []
+
+                    console.log(partyCount)
+
+                    // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk       
+                    CHUNK_SIZE = partyPokSize
+                    var offset = partyCountOffset + 4;
+                    
+                    showdownImport = ""
+                    savParty = []
+
+                    for (let i = 0; i < n; i++) {
+                        // Extract the chunk of 236 bytes from the binary data
+                       chunk = view.slice(offset, offset + CHUNK_SIZE);
+                       showdownImport += parsePKM(chunk, true)
+                       offset += CHUNK_SIZE                 
+                    }
+
+                    offset = boxDataOffset
+                    CHUNK_SIZE = 136
+                    n = 510
+
+                    if (baseGame == "BW") {
+                        n = 210
+                    }
+
+                    boxPokOffsets = {}
+                    savBox = []
+
+                    for (let i = 0; i < n; i++) {
+                        // Extract the chunk of 236 bytes from the binary data
+
+                       if (baseGame == "HGSS") {
+                         if (i > 0 && i % 30 == 0) {
+                            offset += 16
+                         } 
+                       } else if (baseGame == "BW") {
+                         if (i > 0 && i % 30 == 0) {
+                            offset += 16
+                         } 
+                       }
+                      
+                       chunk = view.slice(offset, offset + CHUNK_SIZE);
+                       
+                       showdownImport += parsePKM(chunk, false, offset)
+                       offset += CHUNK_SIZE                 
+                    }
+                    $('.import-team-text').val(showdownImport)
+                    
+                    // If we get here, processing was successful
+                    return true;
+                    
+                } catch (error) {
+                    console.log('Processing failed:', error.message);
+                    throw error; // Re-throw to trigger retry
                 }
-                block1Id = read32BitIntegerFromUint8Array(view,  bigBlockStart + bigBlockSize - 20)
-                if (block1Id != blockId) {
-                    boxDataOffset += 0x40000
-                    bigBlockStart += 0x40000
-                    console.log("now reading box from block 2")
-                } else {
-                    console.log("now reading box from block 1")
+            }
+
+            // Try processing the save file
+            try {
+                processSaveFile(forceBlock2);
+            } catch (error) {
+                console.log('First attempt failed, retrying with forceBlock2=true');
+                
+                // Reset any modified offsets before retry
+                if (baseGame == "Pt") {
+                    partyCountOffset = 0x9C
+                    boxDataOffset = 0xCF30
+                    bigBlockStart = boxDataOffset - 4
+                } else if (baseGame == "HGSS") {
+                    partyCountOffset = 0x94
+                    boxDataOffset = 0x0f700
+                    bigBlockStart = boxDataOffset
+                } else if (baseGame == "BW") {
+                    partyCountOffset = 0x18e00 + 4
+                    boxDataOffset = 0x400
+                }
+                
+                try {
+                    processSaveFile(true); // Retry with forceBlock2=true
+                    console.log('Retry with forceBlock2=true succeeded');
+                } catch (retryError) {
+                    console.error('Both attempts failed:', retryError.message);
+                    // You might want to show an error message to the user here
+                    alert('Failed to load save file. The file may be corrupted or incompatible.');
                 }
             }
-
-            // Step 1: Get 'n' from offset 0x9C (single byte)
-            var n = view[partyCountOffset];
-            partyCount = n
-
-            // Initialize an array to store decrypted chunks
-            decryptedChunks = [];
-            decryptedBattleStats = []
-            partyMons = {}
-            partyPIDs = []
-
-            // Step 2: Loop 'n' times to read and decrypt each 236-byte chunk       
-            CHUNK_SIZE = partyPokSize
-            var offset = partyCountOffset + 4;
-            
-            showdownImport = ""
-            savParty = []
-
-            for (let i = 0; i < n; i++) {
-                // Extract the chunk of 236 bytes from the binary data
-               chunk = view.slice(offset, offset + CHUNK_SIZE);
-               showdownImport += parsePKM(chunk, true)
-               offset += CHUNK_SIZE                 
-            }
-
-            offset = boxDataOffset
-            CHUNK_SIZE = 136
-            n = 510
-            
-
-            if (baseGame == "BW") {
-                n = 210
-            }
-
-            boxPokOffsets = {}
-            savBox = []
-
-            for (let i = 0; i < n; i++) {
-                // Extract the chunk of 236 bytes from the binary data
-
-               if (baseGame == "HGSS") {
-                 if (i > 0 && i % 30 == 0) {
-                    offset += 16
-                 } 
-               } else if (baseGame == "BW") {
-                 if (i > 0 && i % 30 == 0) {
-                    offset += 16
-                 } 
-               }
-              
-               chunk = view.slice(offset, offset + CHUNK_SIZE);
-               
-               showdownImport += parsePKM(chunk, false, offset)
-               offset += CHUNK_SIZE                 
-            }
-            $('.import-team-text').val(showdownImport)
         };
 
         // Read file as binary string
@@ -292,7 +333,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
     let nn = ""
 
-    console.log(mon_name)
 
     
     for (let i = 0;i < 10;i++) {
@@ -358,6 +398,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
         boxPokOffsets[mon_name]["exp_index"] = mon_data_offset + 4
         boxPokOffsets[mon_name]["moves_index"] = move_data_offset
     }
+
 
     if (nn.toLowerCase() != mon_name.toLowerCase()) {
         console.log([nn, mon_name])
