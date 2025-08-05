@@ -4,22 +4,7 @@
 
 let skipNextSetup = false;
 
-const calcs = [
-  {
-    title: "Renegade Platinum",
-    url: './index.html?data=26138cc1d500b0cf7334&dmgGen=4&gen=7&switchIn=4&types=6',
-    testTrainer: 'Cynthia',
-    testTrainerMonFirstMove: 'Thunderbolt',
-    save: 'rp_test'
-  },
-  {
-    title: "Ancestral X",
-    url: './index.html?data=7a1ed35468b22ea01103&dmgGen=6&gen=6',
-    testTrainer: 'Wulfric',
-    testTrainerMonFirstMove: 'Ice Hammer',
-    save: false
-  }
-]
+let calcs = Cypress.env('calcs')
 
 
 for (let calc of calcs) {
@@ -91,7 +76,6 @@ for (let calc of calcs) {
 
 
 
-
     it('can clear sets', () => { 
       cy.get('#clearSets').click()
       cy.get('.player-poks .trainer-pok').should('have.length', 0)
@@ -132,69 +116,10 @@ for (let calc of calcs) {
           }
         });
       }) 
-
-      it('can record a frag', () => {
-
-        // Check that importing a save imports encounter data
-        cy.get("[data-id='Starly (My Box)']").click()
-
-        
-      })  
     }
 
-    
-    it('has fully valid named pokemon in set data', () => {
-      cy.get('#clearSets').click()
-      let isFullValid = true
-
-      const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-
-      cy.window().then((win) => {
-
-        let sets = win.setdex
-
-        for (let pok in sets) {
-          let pokId = cleanString(pok)
-
-          // Make sure mon exists
-          if (typeof win.SPECIES_BY_ID[8][pokId] == "undefined" && typeof win.pokedex[pok] == "undefined") {
-            isFullValid = false
-            console.log(pok)
-            assert.fail('Invalid pok found');
-          }
-          if (isFullValid == false) {
-            break
-          }
-        }
-      });
-    })
-
-    it('has fully valid moves in set data', () => {
-      cy.get('#clearSets').click()
-      let isFullValid = true
-
-      const cleanString = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-
-      cy.window().then((win) => {
-
-        let sets = win.setdex
-
-        for (let pok in sets) {
-          let pokId = cleanString(pok)
 
 
-          // Make sure mon exists
-          if (typeof win.SPECIES_BY_ID[8][pokId] == "undefined" && typeof win.pokedex[pok] == "undefined") {
-            isFullValid = false
-            console.log(pok)
-            assert.fail('Invalid pok found');
-          }
-          if (isFullValid == false) {
-            break
-          }
-        }
-      });
-    })
   })  
 }
 

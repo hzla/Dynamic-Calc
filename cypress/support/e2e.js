@@ -26,3 +26,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 //   // Wait for your app's main variable to be ready
 //   cy.window().should('have.property', 'setdex');
 // });
+
