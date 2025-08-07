@@ -3045,7 +3045,7 @@ $('.set-selector, .move-selector').on("select2-close", function () {
         if (typeof localStorage.encounters != "undefined") {
             let encounters = getEncounters()
 
-            if (encounters[speciesName] && encounters[speciesName].setData["My Box"] && encounters[speciesName].setData["My Box"].met) {
+            if (encounters[speciesName] && encounters[speciesName].setData && encounters[speciesName].setData["My Box"] && encounters[speciesName].setData["My Box"].met) {
                 const met = toTitleCase(encounters[speciesName].setData["My Box"].met)
                 const fragCount = encounters[speciesName].fragCount
 
