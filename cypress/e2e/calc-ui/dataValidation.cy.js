@@ -41,7 +41,7 @@ for (let calc of calcs) {
           if (typeof win.SPECIES_BY_ID[8][pokId] == "undefined" && typeof win.pokedex[pok] == "undefined") {
             isFullValid = false
             console.log(pok)
-            assert.fail('Invalid pok found');
+            assert.fail(`Invalid pok found: ${pok}`);
           }
           if (isFullValid == false) {
             break
@@ -78,12 +78,16 @@ for (let calc of calcs) {
             }
 
             let item = pok_sets[set]["item"]
-            let itemId = cleanString(item)
 
-            if (typeof win.ITEMS_BY_ID[8][itemId] == "undefined" && item != "None" && item != "-" && win.items.indexOf(item) == -1 ) {
-              isFullValid = false
-              cy.task('warn', `Invalid item found: ${item} on ${set}`)
+            if (item) {
+              let itemId = cleanString(item)
+
+              if (typeof win.ITEMS_BY_ID[8][itemId] == "undefined" && item != "None" && item != "-" && win.items.indexOf(item) == -1 ) {
+                isFullValid = false
+                cy.task('warn', `Invalid item found: ${item} on ${set}`)
+              }
             }
+            
           }
           // Make sure move exists
           if (isFullValid == false) {
