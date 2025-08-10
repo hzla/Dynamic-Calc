@@ -2107,7 +2107,11 @@ function loadDataSource(data) {
         if (data["formatted_sets"][pok] && typeof data["formatted_sets"][pok_subs[pok]]  == "undefined" ) {
             data["formatted_sets"][pok_subs[pok]] = data["formatted_sets"][pok]
             delete data["formatted_sets"][pok]
-        }  
+        }
+
+        if (data.poks[pok]) {
+            data.poks[pok_subs[pok]] = data.poks[pok]
+        }
     }
 
     SETDEX_BW = data["formatted_sets"]
