@@ -384,7 +384,7 @@ function get_trainer_poks(trainer_name)
     let og_white_space = " "
     let partner_white_space = " "
 
-    if (og_trainer_name.includes(" - ")) {
+    if (og_trainer_name && og_trainer_name.includes(" - ")) {
         og_white_space = ""
     }
 
