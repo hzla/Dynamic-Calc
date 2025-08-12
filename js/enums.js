@@ -16,6 +16,8 @@ locations["BW2"] = ["Unknown","Mystery Zone","Faraway place","VAR(256, 0)s VAR(2
 locations["BW"] = locations["BW2"]
 
 
+
+
 natMods = {
   Hardy: { plus: 'atk', minus: 'atk' },
   Lonely: { plus: 'atk', minus: 'def' },
@@ -43,8 +45,6 @@ natMods = {
   Careful: { plus: 'spd', minus: 'spa' },
   Quirky: { plus: 'atk', minus: 'atk' }
 };
-
-
 
 natures = ["Hardy",
         "Lonely",
@@ -231,6 +231,18 @@ mon_forms["Thundurus"] = ["Therian"]
 mon_forms["Landorus"] = ["Therian"]
 mon_forms["Wormadam"] = ["Sandy", "Trash"]
 mon_forms["Genesect"] = ["Douse", "Chill", "Burn", "Shock"]
+alola_mons = ["Rattata", "Raticate", "Raichu", "Sandshrew", "Sandslash", "Vulpix", "Ninetales", "Diglett", "Dugtrio", "Meowth", "Persian", "Geodude", "Graveler", "Golem", "Grimer", "Muk", "Exeggutor", "Marowak"]
+alola_mons.forEach(species => {
+  mon_forms[species] = mon_forms[species] || [];
+  mon_forms[species].push("Alola");
+});
+
+
+galar_mons = ["Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Farfetch’d", "Weezing", "Mr. Mime", "Articuno", "Zapdos", "Moltres", "Slowking", "Corsola", "Zigzagoon", "Linoone", "Darumaka", "Darmanitan", "Yamask", "Stunfisk"]
+galar_mons.forEach(species => {
+  mon_forms[species] = mon_forms[species] || [];
+  mon_forms[species].push("Galar");
+});
 
 
 textTable = {

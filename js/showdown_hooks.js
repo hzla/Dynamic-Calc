@@ -1011,6 +1011,8 @@ function get_next_in_g4() {
 
         for (j in pok_data["moves"]) {
             var mov_name = pok_data["moves"][j]
+
+
             var mov_data = moves[mov_name]
 
             if (pok_data["moves"][j] == "Judgment") {
@@ -1028,7 +1030,10 @@ function get_next_in_g4() {
 
 
 
-            if (!invert) {
+            if (!invert && mov_data) {
+
+
+
                 if (damageGen == 4 && mov_data["type"] == "Ground" && "Skarmory,Aerodactyl,Zapdos,Crobat,Moltres".includes(player_pok)){
                     isSE = true
                 }
@@ -1048,6 +1053,8 @@ function get_next_in_g4() {
                 if (damageGen == 4 && player_pok == "Girafarig" && mov_data["type"] == "Ghost") {
                     isSE = true
                 }
+
+
 
                 if (type_info[mov_data["type"]] >= 2) {
                     isSE = true
@@ -2141,7 +2148,7 @@ function loadDataSource(data) {
         }
     } else if (TITLE.includes("Platinum") && !TITLE.includes("Lumi")) {
         baseGame = "Pt"
-    } else if (TITLE.includes("Silver")) {
+    } else if (TITLE.includes("Silver") || mechanics == "hge") {
         baseGame = "HGSS"
     }
 
@@ -2501,6 +2508,8 @@ function loadDataSource(data) {
 
 params = new URLSearchParams(window.location.search);
 devMode = params.get('dev') == '1'
+save_expansion = params.get('savExp') == '1'
+mechanics = params.get('mechanics') || "default" 
 g = params.get('gen');
 damageGen = parseInt(params.get('dmgGen'))
 customPoks = params.get('customPoks');
@@ -2518,6 +2527,7 @@ DEFAULTS_LOADED = false
 analyze = false
 limitHits = false
 FIELD_EFFECTS = {}
+
 
 if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
     location.href = 'https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6'
@@ -2695,6 +2705,16 @@ $(document).ready(function() {
             npoint_data = data
             loadDataSource(data)
 
+            if (mechanics == "hge") {
+                includes = npoint_data["includes"]
+                ac_encs = npoint_data["encs"]
+                sav_pok_names = includes["poks"]
+                sav_move_names = includes["moves"] 
+                sav_item_names = includes["items"]
+                sav_pok_growths = includes["growths"]
+                sav_abilities = includes["abilities"]
+            }
+
            
             
 
@@ -2718,6 +2738,7 @@ $(document).ready(function() {
            
         })
    }
+
 
 
 

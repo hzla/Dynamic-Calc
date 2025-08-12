@@ -22,6 +22,15 @@ document.getElementById('save-upload').addEventListener('change', function(event
             partyCountOffset = 0x94
             smallBlockSize = 0xF628
             boxDataOffset = 0x0f700
+
+            if (mechanics == "hge") {
+                smallBlockSize = 0xFFA0
+            }
+
+            if (save_expansion) {
+                boxDataOffset = 0x10000
+            }
+
             bigBlockStart = boxDataOffset
             bigBlockSize = 0x12310
             footerSize = 16
@@ -124,6 +133,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     offset = boxDataOffset
                     CHUNK_SIZE = 136
                     n = 510
+
+                    if (save_expansion) {
+                       n = 870 
+                    } 
 
                     if (baseGame == "BW") {
                         n = 210
