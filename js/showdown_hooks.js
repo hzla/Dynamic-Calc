@@ -2594,7 +2594,8 @@ $(document).ready(function() {
    "b60bd402cbb993ed3b77": "Parallel Emerald ATO",
     "17af2cc6ec56f8f293bd": "Parallel Emerald Hard",
     "a0e5b4fa06d9e7762210": "Parallel Emerald Normal",
-    "0d8b65ba6796bf2b3d4c": "White 2 Kaizo"
+    "0d8b65ba6796bf2b3d4c": "White 2 Kaizo",
+    "bb8579a3798fd63b429d": "Royal Saphire"
     }
 
     MASTERSHEETS = {

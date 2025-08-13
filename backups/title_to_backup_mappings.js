@@ -23,7 +23,8 @@ backupFiles = {
 	"Fire Red": "fr",
 	"Emerald": "em",
 	"Luminescent Platinum": "lumi",
-	"White 2 Kaizo": "w2k"
+	"White 2 Kaizo": "w2k",
+	"Royal Saphire": "roysaph"
 }
 
 
