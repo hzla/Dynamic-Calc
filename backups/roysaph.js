@@ -32801,7 +32801,7 @@ backup_data = {
           "Rock Slide"
         ],
         "ability": "Serene Grace",
-        "nature": "Careful",
+        "nature": "Naive",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -33153,7 +33153,7 @@ backup_data = {
           "Protect"
         ],
         "ability": "Speed Boost",
-        "nature": "Quiet",
+        "nature": "Mild",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -36020,7 +36020,7 @@ backup_data = {
           "Bounce"
         ],
         "ability": "Intimidate",
-        "nature": "Naive",
+        "nature": "Bashful",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -36826,7 +36826,7 @@ backup_data = {
           "Swords Dance"
         ],
         "ability": "Insomnia",
-        "nature": "Naughty",
+        "nature": "Naive",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -37932,7 +37932,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "ability": "Swift Swim",
-        "nature": "Modest",
+        "nature": "Naive",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -39119,7 +39119,7 @@ backup_data = {
           "Rest"
         ],
         "ability": "Swift Swim",
-        "nature": "Quirky",
+        "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -39550,7 +39550,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "ability": "Levitate",
-        "nature": "Hasty",
+        "nature": "Docile",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -39754,7 +39754,7 @@ backup_data = {
           "Toxic"
         ],
         "ability": "Intimidate",
-        "nature": "Hardy",
+        "nature": "Calm",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -39981,7 +39981,7 @@ backup_data = {
           "Double Team"
         ],
         "ability": "Pressure",
-        "nature": "Modest",
+        "nature": "Brave",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -40562,7 +40562,7 @@ backup_data = {
           "Rock Slide"
         ],
         "ability": "Inner Focus",
-        "nature": "Serious",
+        "nature": "Hasty",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -41975,7 +41975,7 @@ backup_data = {
           "Crunch"
         ],
         "ability": "Overgrow",
-        "nature": "Gentle",
+        "nature": "Hardy",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -43720,7 +43720,7 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Rough Skin",
-        "nature": "Hasty",
+        "nature": "Modest",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -43949,7 +43949,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "ability": "Intimidate",
-        "nature": "Brave",
+        "nature": "Timid",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -49488,7 +49488,7 @@ backup_data = {
           "Rock Slide"
         ],
         "ability": "Intimidate",
-        "nature": "Lax",
+        "nature": "Naughty",
         "sub_index": 4,
         "battle_type": "Singles"
       }
@@ -49565,7 +49565,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "ability": "Levitate",
-        "nature": "Quiet",
+        "nature": "Impish",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -49842,7 +49842,7 @@ backup_data = {
           "Rock Slide"
         ],
         "ability": "Thick Fat",
-        "nature": "Lonely",
+        "nature": "Lax",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -56746,7 +56746,7 @@ backup_data = {
           "Perish Song"
         ],
         "ability": "Levitate",
-        "nature": "Timid",
+        "nature": "Bashful",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -60611,7 +60611,7 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Trace",
-        "nature": "Sassy",
+        "nature": "Lax",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -65607,7 +65607,7 @@ backup_data = {
           "Signal Beam"
         ],
         "ability": "Inner Focus",
-        "nature": "Mild",
+        "nature": "Calm",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -66221,7 +66221,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "ability": "Rock Head",
-        "nature": "Quiet",
+        "nature": "Impish",
         "sub_index": 3,
         "battle_type": "Singles"
       }
@@ -66248,7 +66248,7 @@ backup_data = {
           "Luster Purge"
         ],
         "ability": "Water Absorb",
-        "nature": "Modest",
+        "nature": "Naive",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -66375,7 +66375,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "ability": "Poison Point",
-        "nature": "Lonely",
+        "nature": "Jolly",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -66427,7 +66427,7 @@ backup_data = {
           "Leech Seed"
         ],
         "ability": "Chlorophyll",
-        "nature": "Serious",
+        "nature": "Quirky",
         "sub_index": 2,
         "battle_type": "Singles"
       },
