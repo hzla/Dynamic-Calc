@@ -24,7 +24,9 @@ backupFiles = {
 	"Emerald": "em",
 	"Luminescent Platinum": "lumi",
 	"White 2 Kaizo": "w2k",
-	"Royal Saphire": "roysaph"
+	"Royal Saphire": "roysaph",
+	"Garbage Gold Deluxe": "garbgold",
+	"Azure Platinum": "azure"
 }
 
 
