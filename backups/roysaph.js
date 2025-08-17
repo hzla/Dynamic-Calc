@@ -363,7 +363,7 @@ backup_data = {
           ],
           [
             42,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ]
         ],
         "tms": []
@@ -427,7 +427,7 @@ backup_data = {
           ],
           [
             42,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             44,
@@ -713,7 +713,7 @@ backup_data = {
       }
     },
     "Butterfree": {
-      "ab": "Compound Eyes",
+      "ab": "Compoundeyes",
       "types": [
         "Bug",
         "Flying"
@@ -990,7 +990,7 @@ backup_data = {
           ],
           [
             34,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             39,
@@ -1054,7 +1054,7 @@ backup_data = {
           ],
           [
             34,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             39,
@@ -1208,7 +1208,7 @@ backup_data = {
           ],
           [
             20,
-            "Rage"
+            "Secret Power"
           ],
           [
             23,
@@ -1268,7 +1268,7 @@ backup_data = {
           ],
           [
             20,
-            "Bug Buzz"
+            "Secret Power"
           ],
           [
             23,
@@ -1284,7 +1284,7 @@ backup_data = {
           ],
           [
             43,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ]
         ],
         "tms": []
@@ -2527,7 +2527,7 @@ backup_data = {
         "learnset": [
           [
             1,
-            "Absorb"
+            "Weather Ball"
           ],
           [
             1,
@@ -2678,7 +2678,7 @@ backup_data = {
       }
     },
     "Venonat": {
-      "ab": "Compound Eyes",
+      "ab": "Compoundeyes",
       "types": [
         "Bug",
         "Poison"
@@ -6058,8 +6058,8 @@ backup_data = {
         "df": 85,
         "at": 105,
         "sp": 45,
-        "sa": 125,
-        "sd": 75
+        "sa": 75,
+        "sd": 125
       }
     },
     "Cubone": {
@@ -7320,7 +7320,7 @@ backup_data = {
           ],
           [
             64,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             68,
@@ -8278,7 +8278,7 @@ backup_data = {
           ],
           [
             43,
-            "Protect"
+            "Muddy Water"
           ],
           [
             47,
@@ -8458,7 +8458,7 @@ backup_data = {
           ],
           [
             45,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             50,
@@ -8689,7 +8689,7 @@ backup_data = {
           ],
           [
             37,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             49,
@@ -8899,7 +8899,7 @@ backup_data = {
           ],
           [
             59,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             61,
@@ -10750,7 +10750,7 @@ backup_data = {
         "learnset": [
           [
             1,
-            "Absorb"
+            "Weather Ball"
           ],
           [
             1,
@@ -12184,7 +12184,7 @@ backup_data = {
           ],
           [
             52,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ]
         ],
         "tms": []
@@ -12638,11 +12638,11 @@ backup_data = {
           ],
           [
             12,
-            "Rock Smash"
+            "Low Kick"
           ],
           [
             14,
-            "Low Kick"
+            "Rock Smash"
           ],
           [
             15,
@@ -13256,12 +13256,12 @@ backup_data = {
             "Bubble Beam"
           ],
           [
-            22,
-            "Take Down"
+            26,
+            "Icy Wind"
           ],
           [
-            29,
-            "Agility"
+            35,
+            "Air Slash"
           ],
           [
             38,
@@ -14608,7 +14608,7 @@ backup_data = {
           ],
           [
             22,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             33,
@@ -15776,7 +15776,7 @@ backup_data = {
       }
     },
     "Beautifly": {
-      "ab": "Compound Eyes",
+      "ab": "Compoundeyes",
       "types": [
         "Bug",
         "Flying"
@@ -16210,7 +16210,7 @@ backup_data = {
       }
     },
     "Nincada": {
-      "ab": "Compound Eyes",
+      "ab": "Compoundeyes",
       "types": [
         "Bug",
         "Ground"
@@ -16331,7 +16331,7 @@ backup_data = {
           ],
           [
             48,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             60,
@@ -16511,7 +16511,7 @@ backup_data = {
           ],
           [
             40,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             48,
@@ -16602,10 +16602,6 @@ backup_data = {
           ],
           [
             1,
-            "Mud-Slap"
-          ],
-          [
-            1,
             "Counter"
           ],
           [
@@ -16651,6 +16647,10 @@ backup_data = {
           [
             61,
             "Bulk Up"
+          ],
+          [
+            75,
+            "Spore"
           ]
         ],
         "tms": []
@@ -18892,48 +18892,48 @@ backup_data = {
             "Growl"
           ],
           [
-            1,
+            4,
             "Water Gun"
           ],
           [
-            1,
+            8,
             "Encore"
           ],
           [
-            7,
-            "Encore"
-          ],
-          [
-            13,
+            10,
             "Ice Shard"
           ],
           [
-            19,
-            "Body Slam"
+            15,
+            "Secret Power"
           ],
           [
-            25,
+            17,
             "Aurora Beam"
           ],
           [
-            31,
-            "Hail"
+            20,
+            "Water Pulse"
           ],
           [
-            39,
-            "Rest"
+            23,
+            "Rollout"
           ],
           [
-            39,
-            "Snore"
+            26,
+            "Body Slam"
           ],
           [
-            47,
-            "Blizzard"
+            30,
+            "Icy Wind"
           ],
           [
-            55,
-            "Draco Meteor"
+            33,
+            "Bubble Beam"
+          ],
+          [
+            42,
+            "Super Fang"
           ]
         ],
         "tms": []
@@ -19120,7 +19120,7 @@ backup_data = {
           ],
           [
             9,
-            "Growth"
+            "Feint Attack"
           ],
           [
             13,
@@ -19995,8 +19995,8 @@ backup_data = {
             "Hyper Voice"
           ],
           [
-            38,
-            "Mirror Move"
+            32,
+            "Psywave"
           ],
           [
             36,
@@ -20059,8 +20059,8 @@ backup_data = {
             "Hyper Voice"
           ],
           [
-            27,
-            "Hyper Voice"
+            32,
+            "Fly"
           ],
           [
             36,
@@ -20072,7 +20072,7 @@ backup_data = {
           ],
           [
             47,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             54,
@@ -20736,7 +20736,7 @@ backup_data = {
           ],
           [
             38,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             40,
@@ -22561,7 +22561,7 @@ backup_data = {
           ],
           [
             68,
-            "Dual Wingbeat"
+            "Dualwingbeat"
           ],
           [
             72,
@@ -23944,11 +23944,7 @@ backup_data = {
     },
     "2x-Ironbash": {
       "basePower": 60,
-      "type": "Steel",
-      "multihit": [
-        2,
-        2
-      ]
+      "type": "Steel"
     },
     "Spike Cannon": {
       "basePower": 20,
@@ -24220,11 +24216,7 @@ backup_data = {
     },
     "Bone Rush": {
       "basePower": 25,
-      "type": "Ground",
-      "multihit": [
-        2,
-        2
-      ]
+      "type": "Ground"
     },
     "Lock-On": {
       "basePower": 0,
@@ -24755,12 +24747,8 @@ backup_data = {
       "type": "Water"
     },
     "Bullet Seed": {
-      "type": "Grass",
       "basePower": 25,
-      "multihit": [
-        2,
-        2
-      ]
+      "type": "Grass"
     },
     "Aerial Ace": {
       "basePower": 60,
@@ -24806,13 +24794,9 @@ backup_data = {
       "basePower": 100,
       "type": "Poison"
     },
-    "Dual Wingbeat": {
+    "Dualwingbeat": {
       "basePower": 40,
-      "type": "Flying",
-      "multihit": [
-        2,
-        2
-      ]
+      "type": "Flying"
     },
     "Volt Tackle": {
       "basePower": 120,
@@ -24961,7 +24945,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 20 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 20 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -24982,7 +24966,7 @@ backup_data = {
           "Baton Pass"
         ],
         "ability": "Guts",
-        "nature": "Sassy",
+        "nature": "Hasty",
         "sub_index": 5,
         "battle_type": "Singles"
       }
@@ -25267,7 +25251,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 88 Elite Four Sidney Post ": {
+      "Lvl 88 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -25288,11 +25272,11 @@ backup_data = {
           "Baton Pass"
         ],
         "ability": "Synchronize",
-        "nature": "Jolly",
+        "nature": "Hasty",
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 32 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 32 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -25469,7 +25453,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 69 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 69 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -25490,7 +25474,7 @@ backup_data = {
           "Crunch"
         ],
         "ability": "Volt Absorb",
-        "nature": "Quiet",
+        "nature": "Careful",
         "sub_index": 1,
         "battle_type": "Singles"
       }
@@ -25546,7 +25530,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 32 Aqua Leader Archie Chimney ": {
+      "Lvl 32 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -26656,7 +26640,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -26677,7 +26661,7 @@ backup_data = {
           "Giga Drain"
         ],
         "ability": "Clear Body",
-        "nature": "Docile",
+        "nature": "Hasty",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -27085,7 +27069,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 33 Aqua Leader Archie Chimney ": {
+      "Lvl 33 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -27333,7 +27317,7 @@ backup_data = {
           "Seismic Toss"
         ],
         "ability": "Insomnia",
-        "nature": "Calm",
+        "nature": "Hasty",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -28172,7 +28156,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -28193,11 +28177,11 @@ backup_data = {
           "Self-Destruct"
         ],
         "ability": "Static",
-        "nature": "Modest",
+        "nature": "Sassy",
         "sub_index": 1,
         "battle_type": "Doubles"
       },
-      "Lvl 26 Leader Wattson ": {
+      "Lvl 26 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -28247,7 +28231,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 83 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 83 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -28268,11 +28252,11 @@ backup_data = {
           "Explosion"
         ],
         "ability": "Static",
-        "nature": "Quirky",
+        "nature": "Docile",
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 90 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 90 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -28293,11 +28277,11 @@ backup_data = {
           "Explosion"
         ],
         "ability": "Static",
-        "nature": "Bold",
+        "nature": "Docile",
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 93 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 93 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -28318,11 +28302,11 @@ backup_data = {
           "Explosion"
         ],
         "ability": "Static",
-        "nature": "Quirky",
+        "nature": "Docile",
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -28343,7 +28327,7 @@ backup_data = {
           "Explosion"
         ],
         "ability": "Static",
-        "nature": "Lonely",
+        "nature": "Impish",
         "sub_index": 1,
         "battle_type": "Singles"
       }
@@ -28703,7 +28687,7 @@ backup_data = {
         "sub_index": 5,
         "battle_type": "Doubles"
       },
-      "Lvl 76 Elite Four Glacia E4 ": {
+      "Lvl 76 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -28724,7 +28708,7 @@ backup_data = {
           "Toxic"
         ],
         "ability": "Rain Dish",
-        "nature": "Bold",
+        "nature": "Jolly",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -28798,7 +28782,7 @@ backup_data = {
           "Earth Power",
           "Rock Slide",
           "Iron Tail",
-          "Dual Wingbeat"
+          "Dualwingbeat"
         ],
         "ability": "Hyper Cutter",
         "nature": "Sassy",
@@ -28982,7 +28966,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -29003,7 +28987,7 @@ backup_data = {
           "Ice Beam"
         ],
         "ability": "Swift Swim",
-        "nature": "Naive",
+        "nature": "Adamant",
         "sub_index": 3,
         "battle_type": "Doubles"
       },
@@ -29465,7 +29449,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -29486,7 +29470,7 @@ backup_data = {
           "Brick Break"
         ],
         "ability": "Intimidate",
-        "nature": "Lax",
+        "nature": "Mild",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -31604,7 +31588,7 @@ backup_data = {
         "moves": [
           "Signal Beam",
           "Surf",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Aurora Beam"
         ],
         "ability": "Intimidate",
@@ -31864,7 +31848,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 50 Leader Winona ": {
+      "Lvl 50 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -31930,7 +31914,7 @@ backup_data = {
         "level": 60,
         "moves": [
           "Steel Wing",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Fly",
           "Toxic"
         ],
@@ -32193,7 +32177,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 25 Leader Wattson ": {
+      "Lvl 25 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -32522,7 +32506,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "ability": "Swift Swim",
-        "nature": "Timid",
+        "nature": "Docile",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -32603,7 +32587,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 32 Aqua Leader Archie Chimney ": {
+      "Lvl 32 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -32705,7 +32689,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 32 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 32 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -32780,7 +32764,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Sidney E4 ": {
+      "Lvl 76 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -32957,7 +32941,7 @@ backup_data = {
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 33 Aqua Leader Archie Chimney ": {
+      "Lvl 33 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -32982,7 +32966,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 95 Elite Four Sidney Post ": {
+      "Lvl 95 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -33003,7 +32987,7 @@ backup_data = {
           "Blizzard"
         ],
         "ability": "Speed Boost",
-        "nature": "Brave",
+        "nature": "Careful",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -33132,7 +33116,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 77 Elite Four Sidney E4 ": {
+      "Lvl 77 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -33434,7 +33418,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 31 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 31 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -33511,7 +33495,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -33532,7 +33516,7 @@ backup_data = {
           "Superpower"
         ],
         "ability": "Intimidate",
-        "nature": "Serious",
+        "nature": "Adamant",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -33969,7 +33953,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 68 Leader Wallace ": {
+      "Lvl 68 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -34300,7 +34284,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 20 Leader Brawly ": {
+      "Lvl 20 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -34894,7 +34878,7 @@ backup_data = {
           "Flail"
         ],
         "ability": "Swift Swim",
-        "nature": "Naive",
+        "nature": "Bold",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -35647,7 +35631,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -35668,7 +35652,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "ability": "Swift Swim",
-        "nature": "Rash",
+        "nature": "Impish",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -35799,7 +35783,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -35820,7 +35804,7 @@ backup_data = {
           "Bounce"
         ],
         "ability": "Intimidate",
-        "nature": "Modest",
+        "nature": "Naughty",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -35999,7 +35983,7 @@ backup_data = {
         "sub_index": 5,
         "battle_type": "Doubles"
       },
-      "Lvl 76 Elite Four Drake E4 ": {
+      "Lvl 76 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -36024,7 +36008,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 50 Leader Winona ": {
+      "Lvl 50 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -36351,7 +36335,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -36372,7 +36356,7 @@ backup_data = {
           "Muddy Water"
         ],
         "ability": "Swift Swim",
-        "nature": "Gentle",
+        "nature": "Adamant",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -36780,7 +36764,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 92 Elite Four Phoebe Post ": {
+      "Lvl 92 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -36801,11 +36785,11 @@ backup_data = {
           "Swords Dance"
         ],
         "ability": "Insomnia",
-        "nature": "Sassy",
+        "nature": "Bashful",
         "sub_index": 5,
         "battle_type": "Doubles"
       },
-      "Lvl 76 Elite Four Phoebe E4 ": {
+      "Lvl 76 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -36826,7 +36810,7 @@ backup_data = {
           "Swords Dance"
         ],
         "ability": "Insomnia",
-        "nature": "Naive",
+        "nature": "Quirky",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -37132,7 +37116,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -37153,7 +37137,7 @@ backup_data = {
           "Screech"
         ],
         "ability": "Magnet Pull",
-        "nature": "Bashful",
+        "nature": "Careful",
         "sub_index": 4,
         "battle_type": "Doubles"
       },
@@ -37484,7 +37468,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -37505,7 +37489,7 @@ backup_data = {
           "Shock Wave"
         ],
         "ability": "Drizzle",
-        "nature": "Lax",
+        "nature": "Hardy",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -37911,7 +37895,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 78 Elite Four Drake E4 ": {
+      "Lvl 78 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -38921,7 +38905,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -38942,7 +38926,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "ability": "Poison Point",
-        "nature": "Bold",
+        "nature": "Serious",
         "sub_index": 1,
         "battle_type": "Doubles"
       }
@@ -39098,7 +39082,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Glacia E4 ": {
+      "Lvl 76 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -39123,7 +39107,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 68 Leader Wallace ": {
+      "Lvl 68 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -39225,7 +39209,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 68 Leader Wallace ": {
+      "Lvl 68 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -39529,7 +39513,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Doubles"
       },
-      "Lvl 76 Elite Four Glacia E4 ": {
+      "Lvl 76 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -39575,7 +39559,7 @@ backup_data = {
           "Scary Face"
         ],
         "ability": "Levitate",
-        "nature": "Relaxed",
+        "nature": "Careful",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -39708,7 +39692,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 88 Elite Four Sidney Post ": {
+      "Lvl 88 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -39729,11 +39713,11 @@ backup_data = {
           "Destiny Bond"
         ],
         "ability": "Intimidate",
-        "nature": "Sassy",
+        "nature": "Brave",
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 77 Elite Four Sidney E4 ": {
+      "Lvl 77 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -39910,7 +39894,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 88 Elite Four Phoebe Post ": {
+      "Lvl 88 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -39931,7 +39915,7 @@ backup_data = {
           "Curse"
         ],
         "ability": "Pressure",
-        "nature": "Modest",
+        "nature": "Sassy",
         "sub_index": 1,
         "battle_type": "Doubles"
       },
@@ -39960,7 +39944,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Phoebe E4 ": {
+      "Lvl 76 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -40037,7 +40021,7 @@ backup_data = {
       }
     },
     "Sableye": {
-      "Lvl 32 Aqua Leader Archie Chimney ": {
+      "Lvl 32 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -40239,7 +40223,7 @@ backup_data = {
       }
     },
     "Crobat": {
-      "Lvl 32 Aqua Leader Archie Chimney ": {
+      "Lvl 32 Aqua Leader Archie2 ": {
         "evs": {
           "df": 0
         },
@@ -40541,7 +40525,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Doubles"
       },
-      "Lvl 77 Elite Four Glacia E4 ": {
+      "Lvl 77 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -40641,7 +40625,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -40662,7 +40646,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "ability": "Inner Focus",
-        "nature": "Lax",
+        "nature": "Careful",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -40818,7 +40802,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -40839,7 +40823,7 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Shell Armor",
-        "nature": "Modest",
+        "nature": "Docile",
         "sub_index": 0,
         "battle_type": "Doubles"
       },
@@ -40972,7 +40956,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -40993,11 +40977,11 @@ backup_data = {
           "Surf"
         ],
         "ability": "Swift Swim",
-        "nature": "Quiet",
+        "nature": "Jolly",
         "sub_index": 5,
         "battle_type": "Doubles"
       },
-      "Lvl 26 Leader Wattson ": {
+      "Lvl 26 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -41449,7 +41433,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 68 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 68 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -41470,7 +41454,7 @@ backup_data = {
           "Crunch"
         ],
         "ability": "Rock Head",
-        "nature": "Hardy",
+        "nature": "Lax",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -41524,7 +41508,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 83 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 83 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -41545,11 +41529,11 @@ backup_data = {
           "Howl"
         ],
         "ability": "Rock Head",
-        "nature": "Rash",
+        "nature": "Quiet",
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 90 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 90 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -41570,11 +41554,11 @@ backup_data = {
           "Howl"
         ],
         "ability": "Rock Head",
-        "nature": "Adamant",
+        "nature": "Quiet",
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 94 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 94 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -41595,11 +41579,11 @@ backup_data = {
           "Howl"
         ],
         "ability": "Rock Head",
-        "nature": "Rash",
+        "nature": "Quiet",
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -41620,7 +41604,7 @@ backup_data = {
           "Howl"
         ],
         "ability": "Rock Head",
-        "nature": "Gentle",
+        "nature": "Rash",
         "sub_index": 2,
         "battle_type": "Singles"
       }
@@ -41904,7 +41888,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Doubles"
       },
-      "Lvl 87 Elite Four Sidney Post ": {
+      "Lvl 87 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -41925,7 +41909,7 @@ backup_data = {
           "X-Scissor"
         ],
         "ability": "Overgrow",
-        "nature": "Lax",
+        "nature": "Hardy",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -41954,7 +41938,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Sidney E4 ": {
+      "Lvl 76 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -42058,7 +42042,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Doubles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -42079,11 +42063,11 @@ backup_data = {
           "Whirlpool"
         ],
         "ability": "Volt Absorb",
-        "nature": "Calm",
+        "nature": "Bashful",
         "sub_index": 2,
         "battle_type": "Doubles"
       },
-      "Lvl 67 Leader Wallace ": {
+      "Lvl 67 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -42789,7 +42773,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -42810,7 +42794,7 @@ backup_data = {
           "Sky Uppercut"
         ],
         "ability": "Effect Spore",
-        "nature": "Rash",
+        "nature": "Timid",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -43699,7 +43683,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 75 Elite Four Glacia E4 ": {
+      "Lvl 75 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -43751,7 +43735,7 @@ backup_data = {
       }
     },
     "Machamp": {
-      "Lvl 88 Elite Four Sidney Post ": {
+      "Lvl 88 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -43772,7 +43756,7 @@ backup_data = {
           "Strength"
         ],
         "ability": "Guts",
-        "nature": "Serious",
+        "nature": "Rash",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -43801,7 +43785,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Doubles"
       },
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -43822,7 +43806,7 @@ backup_data = {
           "Cross Chop"
         ],
         "ability": "Guts",
-        "nature": "Quirky",
+        "nature": "Naughty",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -43853,7 +43837,7 @@ backup_data = {
       }
     },
     "Houndoom": {
-      "Lvl 88 Elite Four Sidney Post ": {
+      "Lvl 88 Elite Four Sidney ": {
         "evs": {
           "df": 0
         },
@@ -43874,11 +43858,11 @@ backup_data = {
           "Sludge Bomb"
         ],
         "ability": "Intimidate",
-        "nature": "Relaxed",
+        "nature": "Gentle",
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 31 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 31 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -43928,7 +43912,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 77 Elite Four Sidney E4 ": {
+      "Lvl 77 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -43953,7 +43937,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -43974,7 +43958,7 @@ backup_data = {
           "Heat Wave"
         ],
         "ability": "Intimidate",
-        "nature": "Bold",
+        "nature": "Timid",
         "sub_index": 4,
         "battle_type": "Doubles"
       }
@@ -45980,7 +45964,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -46001,7 +45985,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "ability": "Thick Fat",
-        "nature": "Quirky",
+        "nature": "Calm",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -46905,7 +46889,7 @@ backup_data = {
           "Psychic",
           "Wing Attack"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Lax",
         "sub_index": 1,
         "battle_type": "Doubles"
@@ -46930,7 +46914,7 @@ backup_data = {
           "Sleep Powder",
           "Giga Drain"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Brave",
         "sub_index": 0,
         "battle_type": "Singles"
@@ -46955,7 +46939,7 @@ backup_data = {
           "Signal Beam",
           "Air Slash"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Singles"
@@ -46980,7 +46964,7 @@ backup_data = {
           "Silver Wind",
           "Wing Attack"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Quiet",
         "sub_index": 2,
         "battle_type": "Singles"
@@ -47003,9 +46987,9 @@ backup_data = {
           "Psychic",
           "Giga Drain",
           "Bug Buzz",
-          "Dual Wingbeat"
+          "Dualwingbeat"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Jolly",
         "sub_index": 1,
         "battle_type": "Doubles"
@@ -49080,7 +49064,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -49101,11 +49085,11 @@ backup_data = {
           "Recover"
         ],
         "ability": "Marvel Scale",
-        "nature": "Quiet",
+        "nature": "Jolly",
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 70 Leader Wallace ": {
+      "Lvl 70 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -49351,7 +49335,7 @@ backup_data = {
         "moves": [
           "-",
           "Ancient Power",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Feather Dance"
         ],
         "ability": "Pressure",
@@ -49458,7 +49442,7 @@ backup_data = {
         "level": 87,
         "moves": [
           "Draco Meteor",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Fire Blast",
           "Earthquake"
         ],
@@ -49467,7 +49451,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 78 Elite Four Drake E4 ": {
+      "Lvl 78 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -49482,7 +49466,7 @@ backup_data = {
         "item": "Dragon Fang",
         "level": 78,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Dragon Claw",
           "Flamethrower",
           "Rock Slide"
@@ -49544,7 +49528,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 77 Elite Four Drake E4 ": {
+      "Lvl 77 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -49569,7 +49553,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 50 Leader Winona ": {
+      "Lvl 50 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -49594,7 +49578,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Doubles"
       },
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -49615,7 +49599,7 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Levitate",
-        "nature": "Impish",
+        "nature": "Quirky",
         "sub_index": 0,
         "battle_type": "Singles"
       },
@@ -49787,7 +49771,7 @@ backup_data = {
         "level": 88,
         "moves": [
           "Draco Meteor",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Earthquake",
           "Dragon Dance"
         ],
@@ -49811,7 +49795,7 @@ backup_data = {
         "item": "Sitrus Berry",
         "level": 57,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Dynamic Punch",
           "Fire Punch",
           "Extreme Speed"
@@ -49821,7 +49805,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 77 Elite Four Drake E4 ": {
+      "Lvl 77 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -49836,7 +49820,7 @@ backup_data = {
         "item": "Lum Berry",
         "level": 77,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Dragon Dance",
           "Extreme Speed",
           "Rock Slide"
@@ -49846,7 +49830,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 82 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 82 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -49867,11 +49851,11 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Thick Fat",
-        "nature": "Bold",
+        "nature": "Timid",
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 90 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 90 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -49892,11 +49876,11 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Thick Fat",
-        "nature": "Calm",
+        "nature": "Timid",
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 96 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 96 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -49917,7 +49901,7 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Thick Fat",
-        "nature": "Bold",
+        "nature": "Timid",
         "sub_index": 4,
         "battle_type": "Singles"
       }
@@ -49988,7 +49972,7 @@ backup_data = {
         "item": "Charcoal",
         "level": 44,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Flamethrower",
           "Thunder Punch",
           "Seismic Toss"
@@ -50013,7 +49997,7 @@ backup_data = {
         "item": "Charcoal",
         "level": 44,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Flamethrower",
           "Thunder Punch",
           "Seismic Toss"
@@ -50100,7 +50084,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 88 Elite Four Phoebe Post ": {
+      "Lvl 88 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -50121,7 +50105,7 @@ backup_data = {
           "Fire Punch"
         ],
         "ability": "Synchronize",
-        "nature": "Naive",
+        "nature": "Serious",
         "sub_index": 2,
         "battle_type": "Doubles"
       },
@@ -50175,7 +50159,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 73 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 73 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -50196,11 +50180,11 @@ backup_data = {
           "Thunderbolt"
         ],
         "ability": "Synchronize",
-        "nature": "Docile",
+        "nature": "Quirky",
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -50221,11 +50205,11 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Synchronize",
-        "nature": "Bashful",
+        "nature": "Mild",
         "sub_index": 2,
         "battle_type": "Doubles"
       },
-      "Lvl 85 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 85 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -50246,11 +50230,11 @@ backup_data = {
           "Double Team"
         ],
         "ability": "Synchronize",
-        "nature": "Calm",
+        "nature": "Mild",
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 95 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 95 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -50271,11 +50255,11 @@ backup_data = {
           "Double Team"
         ],
         "ability": "Synchronize",
-        "nature": "Jolly",
+        "nature": "Mild",
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 98 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 98 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -50296,11 +50280,11 @@ backup_data = {
           "Double Team"
         ],
         "ability": "Synchronize",
-        "nature": "Calm",
+        "nature": "Mild",
         "sub_index": 5,
         "battle_type": "Singles"
       },
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -50321,7 +50305,7 @@ backup_data = {
           "Double Team"
         ],
         "ability": "Synchronize",
-        "nature": "Adamant",
+        "nature": "Quirky",
         "sub_index": 5,
         "battle_type": "Singles"
       }
@@ -50352,7 +50336,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -50373,7 +50357,7 @@ backup_data = {
           "Air Slash"
         ],
         "ability": "Natural Cure",
-        "nature": "Relaxed",
+        "nature": "Adamant",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -50394,7 +50378,7 @@ backup_data = {
         "moves": [
           "Ice Beam",
           "Earthquake",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Dragon Dance"
         ],
         "ability": "Natural Cure",
@@ -50402,7 +50386,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Doubles"
       },
-      "Lvl 51 Leader Winona ": {
+      "Lvl 51 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -50419,7 +50403,7 @@ backup_data = {
         "moves": [
           "Dragon Dance",
           "Earthquake",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Mist Ball"
         ],
         "ability": "Natural Cure",
@@ -50444,7 +50428,7 @@ backup_data = {
         "moves": [
           "Wing Attack",
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze"
         ],
         "ability": "Natural Cure",
@@ -50468,7 +50452,7 @@ backup_data = {
         "level": 41,
         "moves": [
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw"
         ],
@@ -50493,7 +50477,7 @@ backup_data = {
         "level": 44,
         "moves": [
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw"
         ],
@@ -50518,7 +50502,7 @@ backup_data = {
         "level": 46,
         "moves": [
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw"
         ],
@@ -50542,10 +50526,10 @@ backup_data = {
         "item": "",
         "level": 49,
         "moves": [
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw",
-          "Dual Wingbeat"
+          "Dualwingbeat"
         ],
         "ability": "Natural Cure",
         "nature": "Naughty",
@@ -50570,7 +50554,7 @@ backup_data = {
           "Dragon Breath",
           "Wing Attack",
           "Hyper Voice",
-          "Hyper Voice"
+          "Fly"
         ],
         "ability": "Natural Cure",
         "nature": "Careful",
@@ -50594,7 +50578,7 @@ backup_data = {
         "moves": [
           "Wing Attack",
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze"
         ],
         "ability": "Natural Cure",
@@ -50618,7 +50602,7 @@ backup_data = {
         "level": 41,
         "moves": [
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw"
         ],
@@ -50668,7 +50652,7 @@ backup_data = {
         "level": 40,
         "moves": [
           "Hyper Voice",
-          "Hyper Voice",
+          "Fly",
           "Haze",
           "Dragon Claw"
         ],
@@ -50933,7 +50917,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 88 Elite Four Phoebe Post ": {
+      "Lvl 88 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -50954,7 +50938,7 @@ backup_data = {
           "Swords Dance"
         ],
         "ability": "Chlorophyll",
-        "nature": "Sassy",
+        "nature": "Brave",
         "sub_index": 4,
         "battle_type": "Doubles"
       },
@@ -51010,7 +50994,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 88 Leader Wallace Post ": {
+      "Lvl 88 Leader Wallace ": {
         "evs": {
           "df": 0
         },
@@ -51031,7 +51015,7 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Rain Dish",
-        "nature": "Jolly",
+        "nature": "Hasty",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -51412,7 +51396,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -51433,7 +51417,7 @@ backup_data = {
           "Tri Attack"
         ],
         "ability": "Vital Spirit",
-        "nature": "Serious",
+        "nature": "Quiet",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -51664,7 +51648,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -51685,7 +51669,7 @@ backup_data = {
           "Tri Attack"
         ],
         "ability": "Trace",
-        "nature": "Jolly",
+        "nature": "Brave",
         "sub_index": 3,
         "battle_type": "Doubles"
       },
@@ -51741,7 +51725,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 68 Leader Wallace ": {
+      "Lvl 68 Leader Wallace2 ": {
         "evs": {
           "df": 0
         },
@@ -52024,7 +52008,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 18 Leader Brawly ": {
+      "Lvl 18 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -52203,7 +52187,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -52224,7 +52208,7 @@ backup_data = {
           "Sandstorm"
         ],
         "ability": "Rock Head",
-        "nature": "Naive",
+        "nature": "Serious",
         "sub_index": 2,
         "battle_type": "Doubles"
       },
@@ -52557,7 +52541,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 84 Leader Wattson Post ": {
+      "Lvl 84 Leader Wattson ": {
         "evs": {
           "df": 0
         },
@@ -52578,7 +52562,7 @@ backup_data = {
           "Quick Attack"
         ],
         "ability": "Intimidate",
-        "nature": "Docile",
+        "nature": "Sassy",
         "sub_index": 0,
         "battle_type": "Doubles"
       },
@@ -52682,7 +52666,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 27 Leader Wattson ": {
+      "Lvl 27 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -54618,7 +54602,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -54639,7 +54623,7 @@ backup_data = {
           "Psychic"
         ],
         "ability": "Pure Power",
-        "nature": "Naive",
+        "nature": "Serious",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -55045,7 +55029,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -55066,7 +55050,7 @@ backup_data = {
           "Solar Beam"
         ],
         "ability": "Drought",
-        "nature": "Naive",
+        "nature": "Gentle",
         "sub_index": 1,
         "battle_type": "Doubles"
       },
@@ -55526,7 +55510,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 18 Leader Brawly ": {
+      "Lvl 18 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -55757,7 +55741,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Doubles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -55778,7 +55762,7 @@ backup_data = {
           "Earth Power"
         ],
         "ability": "Sand Stream",
-        "nature": "Calm",
+        "nature": "Hasty",
         "sub_index": 0,
         "battle_type": "Doubles"
       }
@@ -55911,7 +55895,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 87 Elite Four Phoebe Post ": {
+      "Lvl 87 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -55932,7 +55916,7 @@ backup_data = {
           "Ice Punch"
         ],
         "ability": "Levitate",
-        "nature": "Sassy",
+        "nature": "Jolly",
         "sub_index": 0,
         "battle_type": "Doubles"
       },
@@ -55961,7 +55945,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -55982,7 +55966,7 @@ backup_data = {
           "Fire Punch"
         ],
         "ability": "Levitate",
-        "nature": "Naive",
+        "nature": "Timid",
         "sub_index": 5,
         "battle_type": "Doubles"
       },
@@ -56548,7 +56532,7 @@ backup_data = {
       }
     },
     "Kangaskhan": {
-      "Lvl 88 Elite Four Phoebe Post ": {
+      "Lvl 88 Elite Four Phoebe ": {
         "evs": {
           "df": 0
         },
@@ -56569,7 +56553,7 @@ backup_data = {
           "Counter"
         ],
         "ability": "Insomnia",
-        "nature": "Relaxed",
+        "nature": "Gentle",
         "sub_index": 3,
         "battle_type": "Doubles"
       },
@@ -56725,7 +56709,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Phoebe E4 ": {
+      "Lvl 76 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -57463,7 +57447,7 @@ backup_data = {
       }
     },
     "Electabuzz": {
-      "Lvl 83 Leader Brawly Post ": {
+      "Lvl 83 Leader Brawly ": {
         "evs": {
           "df": 0
         },
@@ -57484,7 +57468,7 @@ backup_data = {
           "Cross Chop"
         ],
         "ability": "Volt Absorb",
-        "nature": "Mild",
+        "nature": "Bold",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -57590,7 +57574,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 71 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 71 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -57611,11 +57595,11 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Swift Swim",
-        "nature": "Rash",
+        "nature": "Sassy",
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 82 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 82 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -57636,11 +57620,11 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Swift Swim",
-        "nature": "Docile",
+        "nature": "Sassy",
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 90 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 90 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -57661,11 +57645,11 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Swift Swim",
-        "nature": "Lax",
+        "nature": "Sassy",
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 94 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 94 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -57686,7 +57670,7 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Swift Swim",
-        "nature": "Docile",
+        "nature": "Sassy",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -57996,7 +57980,7 @@ backup_data = {
       }
     },
     "Swellow": {
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -58012,12 +57996,12 @@ backup_data = {
         "level": 86,
         "moves": [
           "Facade",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Heat Wave",
           "Steel Wing"
         ],
         "ability": "Guts",
-        "nature": "Naive",
+        "nature": "Gentle",
         "sub_index": 1,
         "battle_type": "Singles"
       },
@@ -58139,7 +58123,7 @@ backup_data = {
           "Facade",
           "Heat Wave",
           "Steel Wing",
-          "Dual Wingbeat"
+          "Dualwingbeat"
         ],
         "ability": "Guts",
         "nature": "Careful",
@@ -58237,7 +58221,7 @@ backup_data = {
         "level": 45,
         "moves": [
           "Facade",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Quick Attack",
           "Endeavor"
         ],
@@ -58286,7 +58270,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58311,7 +58295,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58336,7 +58320,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58361,7 +58345,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58386,7 +58370,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58411,7 +58395,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58536,7 +58520,7 @@ backup_data = {
         "item": "",
         "level": 46,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Heat Wave",
           "Quick Attack",
           "Steel Wing"
@@ -58573,7 +58557,7 @@ backup_data = {
       }
     },
     "Scizor": {
-      "Lvl 86 Leader Winona Post ": {
+      "Lvl 86 Leader Winona ": {
         "evs": {
           "df": 0
         },
@@ -58594,7 +58578,7 @@ backup_data = {
           "Bullet Punch"
         ],
         "ability": "Swarm",
-        "nature": "Hasty",
+        "nature": "Lax",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -58829,7 +58813,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 31 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 31 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -59033,7 +59017,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 23 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 23 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -59054,7 +59038,7 @@ backup_data = {
           "Ice Punch"
         ],
         "ability": "Torrent",
-        "nature": "Gentle",
+        "nature": "Adamant",
         "sub_index": 2,
         "battle_type": "Singles"
       }
@@ -59106,7 +59090,7 @@ backup_data = {
           "Bullet Seed"
         ],
         "ability": "Hustle",
-        "nature": "Hardy",
+        "nature": "Mild",
         "sub_index": 4,
         "battle_type": "Singles"
       }
@@ -59899,7 +59883,7 @@ backup_data = {
         "item": "",
         "level": 56,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Soft-Boiled",
           "Psychic",
           "Calm Mind"
@@ -60007,7 +59991,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "ability": "Battle Armor",
-        "nature": "Bold",
+        "nature": "Lonely",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -60036,7 +60020,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Doubles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -60057,7 +60041,7 @@ backup_data = {
           "Attract"
         ],
         "ability": "Battle Armor",
-        "nature": "Hardy",
+        "nature": "Gentle",
         "sub_index": 5,
         "battle_type": "Doubles"
       },
@@ -60278,7 +60262,7 @@ backup_data = {
         "item": "",
         "level": 57,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Leech Life",
           "Swords Dance",
           "Baton Pass"
@@ -60590,7 +60574,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Glacia E4 ": {
+      "Lvl 76 Elite Four Glacia2 ": {
         "evs": {
           "df": 0
         },
@@ -60640,7 +60624,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -60661,7 +60645,7 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Trace",
-        "nature": "Gentle",
+        "nature": "Timid",
         "sub_index": 3,
         "battle_type": "Doubles"
       }
@@ -61300,7 +61284,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 50 Leader Winona ": {
+      "Lvl 50 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -61316,7 +61300,7 @@ backup_data = {
         "level": 50,
         "moves": [
           "X-Scissor",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Swords Dance",
           "Brick Break"
         ],
@@ -61350,7 +61334,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 69 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 69 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -61371,11 +61355,11 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Guts",
-        "nature": "Calm",
+        "nature": "Relaxed",
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 82 Pkmn Trainer~3 Wally Post1 ": {
+      "Lvl 82 Pkmn Trainer~3 Wally3 ": {
         "evs": {
           "df": 0
         },
@@ -61396,11 +61380,11 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Guts",
-        "nature": "Lonely",
+        "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 90 Pkmn Trainer~3 Wally Post2 ": {
+      "Lvl 90 Pkmn Trainer~3 Wally4 ": {
         "evs": {
           "df": 0
         },
@@ -61421,11 +61405,11 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Guts",
-        "nature": "Jolly",
+        "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 94 Pkmn Trainer~3 Wally Post3 ": {
+      "Lvl 94 Pkmn Trainer~3 Wally5 ": {
         "evs": {
           "df": 0
         },
@@ -61446,7 +61430,7 @@ backup_data = {
           "Earthquake"
         ],
         "ability": "Guts",
-        "nature": "Lonely",
+        "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Singles"
       },
@@ -61804,7 +61788,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 19 Leader Brawly ": {
+      "Lvl 19 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -62308,7 +62292,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 31 Pkmn Trainer~3 Sidney 111 ": {
+      "Lvl 31 Pkmn Trainer~3 Sidney ": {
         "evs": {
           "df": 0
         },
@@ -62633,7 +62617,7 @@ backup_data = {
           "Ancient Power"
         ],
         "ability": "Levitate",
-        "nature": "Lax",
+        "nature": "Hardy",
         "sub_index": 1,
         "battle_type": "Singles"
       }
@@ -64004,7 +63988,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -64025,7 +64009,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "ability": "Blaze",
-        "nature": "Lonely",
+        "nature": "Docile",
         "sub_index": 4,
         "battle_type": "Doubles"
       }
@@ -64108,7 +64092,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 82 Leader Roxanne Post ": {
+      "Lvl 82 Leader Roxanne2 ": {
         "evs": {
           "df": 0
         },
@@ -64129,7 +64113,7 @@ backup_data = {
           "Attract"
         ],
         "ability": "Rock Head",
-        "nature": "Relaxed",
+        "nature": "Serious",
         "sub_index": 4,
         "battle_type": "Doubles"
       }
@@ -64364,7 +64348,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 50 Leader Winona ": {
+      "Lvl 50 Leader Winona2 ": {
         "evs": {
           "df": 0
         },
@@ -64379,7 +64363,7 @@ backup_data = {
         "item": "Leftovers",
         "level": 50,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Petal Dance",
           "Substitute",
           "Leech Seed"
@@ -64894,7 +64878,7 @@ backup_data = {
           "Mud-Slap",
           "Fury Swipes"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Serious",
         "sub_index": 0,
         "battle_type": "Singles"
@@ -64919,7 +64903,7 @@ backup_data = {
           "Leech Life",
           "Mud-Slap"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Naughty",
         "sub_index": 1,
         "battle_type": "Singles"
@@ -64944,7 +64928,7 @@ backup_data = {
           "Fury Swipes",
           "Mind Reader"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Serious",
         "sub_index": 0,
         "battle_type": "Singles"
@@ -64969,7 +64953,7 @@ backup_data = {
           "Mind Reader",
           "Dig"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Timid",
         "sub_index": 0,
         "battle_type": "Singles"
@@ -65173,7 +65157,7 @@ backup_data = {
           "Gust",
           "Stun Spore"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Brave",
         "sub_index": 2,
         "battle_type": "Singles"
@@ -65198,7 +65182,7 @@ backup_data = {
           "Signal Beam",
           "Giga Drain"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Gentle",
         "sub_index": 4,
         "battle_type": "Singles"
@@ -65223,7 +65207,7 @@ backup_data = {
           "Absorb",
           "Morning Sun"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Naughty",
         "sub_index": 0,
         "battle_type": "Singles"
@@ -65248,7 +65232,7 @@ backup_data = {
           "Air Slash",
           "Stun Spore"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Bashful",
         "sub_index": 0,
         "battle_type": "Doubles"
@@ -65273,7 +65257,7 @@ backup_data = {
           "Wing Attack",
           "-"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Hasty",
         "sub_index": 2,
         "battle_type": "Doubles"
@@ -65298,7 +65282,7 @@ backup_data = {
           "Attract",
           "Stun Spore"
         ],
-        "ability": "Compound Eyes",
+        "ability": "Compoundeyes",
         "nature": "Lonely",
         "sub_index": 1,
         "battle_type": "Doubles"
@@ -65586,7 +65570,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Phoebe E4 ": {
+      "Lvl 76 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -65844,7 +65828,7 @@ backup_data = {
         "sub_index": 1,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -65865,7 +65849,7 @@ backup_data = {
           "Sleep Powder"
         ],
         "ability": "Chlorophyll",
-        "nature": "Bold",
+        "nature": "Adamant",
         "sub_index": 2,
         "battle_type": "Doubles"
       },
@@ -66200,7 +66184,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 76 Elite Four Phoebe E4 ": {
+      "Lvl 76 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -66227,7 +66211,7 @@ backup_data = {
       }
     },
     "Slowking": {
-      "Lvl 77 Elite Four Phoebe E4 ": {
+      "Lvl 77 Elite Four Phoebe2 ": {
         "evs": {
           "df": 0
         },
@@ -66302,7 +66286,7 @@ backup_data = {
         "sub_index": 4,
         "battle_type": "Singles"
       },
-      "Lvl 87 Leader Tate&liza Post ": {
+      "Lvl 87 Leader Tate&liza2 ": {
         "evs": {
           "df": 0
         },
@@ -66323,7 +66307,7 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Water Absorb",
-        "nature": "Naughty",
+        "nature": "Hasty",
         "sub_index": 1,
         "battle_type": "Doubles"
       },
@@ -66354,7 +66338,7 @@ backup_data = {
       }
     },
     "Nidoking": {
-      "Lvl 76 Elite Four Sidney E4 ": {
+      "Lvl 76 Elite Four Sidney2 ": {
         "evs": {
           "df": 0
         },
@@ -66406,7 +66390,7 @@ backup_data = {
       }
     },
     "Exeggutor": {
-      "Lvl 78 Elite Four Drake E4 ": {
+      "Lvl 78 Elite Four Drake2 ": {
         "evs": {
           "df": 0
         },
@@ -66529,7 +66513,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "ability": "Hustle",
-        "nature": "Hasty",
+        "nature": "Relaxed",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -66556,7 +66540,7 @@ backup_data = {
           "Defense Curl"
         ],
         "ability": "Rock Head",
-        "nature": "Gentle",
+        "nature": "Quiet",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -66606,7 +66590,7 @@ backup_data = {
           "-"
         ],
         "ability": "Rock Head",
-        "nature": "Impish",
+        "nature": "Docile",
         "sub_index": 2,
         "battle_type": "Singles"
       },
@@ -66708,7 +66692,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "ability": "Rock Head",
-        "nature": "Quirky",
+        "nature": "Calm",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -66760,7 +66744,7 @@ backup_data = {
           "Bite"
         ],
         "ability": "Rock Head",
-        "nature": "Adamant",
+        "nature": "Quirky",
         "sub_index": 5,
         "battle_type": "Singles"
       },
@@ -66814,7 +66798,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 23 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 23 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -66835,13 +66819,13 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "ability": "Rock Head",
-        "nature": "Modest",
+        "nature": "Adamant",
         "sub_index": 1,
         "battle_type": "Singles"
       }
     },
     "Elekid": {
-      "Lvl 17 Leader Brawly ": {
+      "Lvl 17 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -66868,7 +66852,7 @@ backup_data = {
       }
     },
     "Meditite": {
-      "Lvl 19 Leader Brawly ": {
+      "Lvl 19 Leader Brawly2 ": {
         "evs": {
           "df": 0
         },
@@ -67120,7 +67104,7 @@ backup_data = {
       }
     },
     "Volbeat": {
-      "Lvl 25 Leader Wattson ": {
+      "Lvl 25 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -67322,7 +67306,7 @@ backup_data = {
       }
     },
     "Metang": {
-      "Lvl 25 Leader Wattson ": {
+      "Lvl 25 Leader Wattson2 ": {
         "evs": {
           "df": 0
         },
@@ -67424,7 +67408,7 @@ backup_data = {
         "sub_index": 3,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -67445,7 +67429,7 @@ backup_data = {
           "Psychic"
         ],
         "ability": "Flash Fire",
-        "nature": "Lonely",
+        "nature": "Modest",
         "sub_index": 3,
         "battle_type": "Doubles"
       }
@@ -67501,7 +67485,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -67522,7 +67506,7 @@ backup_data = {
           "Solar Beam"
         ],
         "ability": "Blaze",
-        "nature": "Quiet",
+        "nature": "Jolly",
         "sub_index": 5,
         "battle_type": "Doubles"
       }
@@ -67655,7 +67639,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 25 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 25 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -67676,7 +67660,7 @@ backup_data = {
           "Growl"
         ],
         "ability": "Synchronize",
-        "nature": "Mild",
+        "nature": "Hasty",
         "sub_index": 4,
         "battle_type": "Singles"
       }
@@ -68013,7 +67997,7 @@ backup_data = {
           "Spikes"
         ],
         "ability": "Hustle",
-        "nature": "Lonely",
+        "nature": "Quirky",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -68040,7 +68024,7 @@ backup_data = {
           "Ice Shard"
         ],
         "ability": "Thick Fat",
-        "nature": "Modest",
+        "nature": "Jolly",
         "sub_index": 1,
         "battle_type": "Singles"
       }
@@ -68351,7 +68335,7 @@ backup_data = {
         "level": 79,
         "moves": [
           "Rock Slide",
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Earthquake",
           "Flamethrower"
         ],
@@ -68375,7 +68359,7 @@ backup_data = {
         "item": "",
         "level": 58,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Ancient Power",
           "Earth Power",
           "Crunch"
@@ -69176,10 +69160,10 @@ backup_data = {
         "item": "",
         "level": 32,
         "moves": [
-          "Refresh",
           "Dragon Breath",
           "Wing Attack",
-          "Hyper Voice"
+          "Hyper Voice",
+          "Psywave"
         ],
         "ability": "Natural Cure",
         "nature": "Adamant",
@@ -69516,7 +69500,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 85 Leader Flannery Post ": {
+      "Lvl 85 Leader Flannery2 ": {
         "evs": {
           "df": 0
         },
@@ -69537,7 +69521,7 @@ backup_data = {
           "Overheat"
         ],
         "ability": "Speed Boost",
-        "nature": "Bashful",
+        "nature": "Lax",
         "sub_index": 0,
         "battle_type": "Doubles"
       },
@@ -70199,7 +70183,7 @@ backup_data = {
         "sub_index": 0,
         "battle_type": "Singles"
       },
-      "Lvl 23 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 23 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -70220,7 +70204,7 @@ backup_data = {
           "Silver Wind"
         ],
         "ability": "Swarm",
-        "nature": "Hasty",
+        "nature": "Serious",
         "sub_index": 3,
         "battle_type": "Singles"
       }
@@ -70359,7 +70343,7 @@ backup_data = {
         "sub_index": 2,
         "battle_type": "Singles"
       },
-      "Lvl 22 Pkmn Trainer~3 Wally Mauv ": {
+      "Lvl 22 Pkmn Trainer~3 Wally2 ": {
         "evs": {
           "df": 0
         },
@@ -70380,7 +70364,7 @@ backup_data = {
           "Steel Wing"
         ],
         "ability": "Keen Eye",
-        "nature": "Calm",
+        "nature": "Naive",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -70713,7 +70697,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "ability": "Insomnia",
-        "nature": "Sassy",
+        "nature": "Jolly",
         "sub_index": 0,
         "battle_type": "Singles"
       }
@@ -70823,7 +70807,7 @@ backup_data = {
       }
     },
     "Pidgeot": {
-      "Lvl 70 Pkmn Trainer~3 Wally Vr ": {
+      "Lvl 70 Pkmn Trainer~3 Wally ": {
         "evs": {
           "df": 0
         },
@@ -70844,7 +70828,7 @@ backup_data = {
           "Steel Wing"
         ],
         "ability": "Keen Eye",
-        "nature": "Adamant",
+        "nature": "Bashful",
         "sub_index": 4,
         "battle_type": "Singles"
       },
@@ -70938,7 +70922,7 @@ backup_data = {
         "item": "",
         "level": 58,
         "moves": [
-          "Dual Wingbeat",
+          "Dualwingbeat",
           "Heat Wave",
           "Steel Wing",
           "Extreme Speed"
@@ -72342,7 +72326,7 @@ backup_data = {
       }
     },
     "Latios": {
-      "Lvl 100 Pkmn Trainer~3 Wally Post4 ": {
+      "Lvl 100 Pkmn Trainer~3 Wally6 ": {
         "evs": {
           "df": 0
         },
@@ -72363,7 +72347,7 @@ backup_data = {
           "Calm Mind"
         ],
         "ability": "Levitate",
-        "nature": "Jolly",
+        "nature": "Bashful",
         "sub_index": 4,
         "battle_type": "Singles"
       }
