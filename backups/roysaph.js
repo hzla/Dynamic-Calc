@@ -363,7 +363,7 @@ backup_data = {
           ],
           [
             42,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ]
         ],
         "tms": []
@@ -427,7 +427,7 @@ backup_data = {
           ],
           [
             42,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             44,
@@ -990,7 +990,7 @@ backup_data = {
           ],
           [
             34,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             39,
@@ -1054,7 +1054,7 @@ backup_data = {
           ],
           [
             34,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             39,
@@ -1284,7 +1284,7 @@ backup_data = {
           ],
           [
             43,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ]
         ],
         "tms": []
@@ -7320,7 +7320,7 @@ backup_data = {
           ],
           [
             64,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             68,
@@ -8458,7 +8458,7 @@ backup_data = {
           ],
           [
             45,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             50,
@@ -8689,7 +8689,7 @@ backup_data = {
           ],
           [
             37,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             49,
@@ -8899,7 +8899,7 @@ backup_data = {
           ],
           [
             59,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             61,
@@ -12184,7 +12184,7 @@ backup_data = {
           ],
           [
             52,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ]
         ],
         "tms": []
@@ -14608,7 +14608,7 @@ backup_data = {
           ],
           [
             22,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             33,
@@ -16331,7 +16331,7 @@ backup_data = {
           ],
           [
             48,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             60,
@@ -16511,7 +16511,7 @@ backup_data = {
           ],
           [
             40,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             48,
@@ -20072,7 +20072,7 @@ backup_data = {
           ],
           [
             47,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             54,
@@ -20736,7 +20736,7 @@ backup_data = {
           ],
           [
             38,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             40,
@@ -22561,7 +22561,7 @@ backup_data = {
           ],
           [
             68,
-            "Dualwingbeat"
+            "Dual Wingbeat"
           ],
           [
             72,
@@ -23652,7 +23652,8 @@ backup_data = {
     },
     "Surf": {
       "basePower": 80,
-      "type": "Water"
+      "type": "Water",
+      "target": "allAdjacentFoes"
     },
     "Ice Beam": {
       "basePower": 95,
@@ -23908,7 +23909,8 @@ backup_data = {
     },
     "Egg Bomb": {
       "basePower": 95,
-      "type": "Grass"
+      "type": "Grass",
+      "recoil": [25,100]
     },
     "Lick": {
       "basePower": 20,
@@ -23944,7 +23946,8 @@ backup_data = {
     },
     "2x-Ironbash": {
       "basePower": 60,
-      "type": "Steel"
+      "type": "Steel",
+      "multihit": [2,2]
     },
     "Spike Cannon": {
       "basePower": 20,
@@ -24794,9 +24797,10 @@ backup_data = {
       "basePower": 100,
       "type": "Poison"
     },
-    "Dualwingbeat": {
+    "Dual Wingbeat": {
       "basePower": 40,
-      "type": "Flying"
+      "type": "Flying",
+      "multihit": [2,2]
     },
     "Volt Tackle": {
       "basePower": 120,
@@ -28782,7 +28786,7 @@ backup_data = {
           "Earth Power",
           "Rock Slide",
           "Iron Tail",
-          "Dualwingbeat"
+          "Dual Wingbeat"
         ],
         "ability": "Hyper Cutter",
         "nature": "Sassy",
@@ -31588,7 +31592,7 @@ backup_data = {
         "moves": [
           "Signal Beam",
           "Surf",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Aurora Beam"
         ],
         "ability": "Intimidate",
@@ -31914,7 +31918,7 @@ backup_data = {
         "level": 60,
         "moves": [
           "Steel Wing",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Fly",
           "Toxic"
         ],
@@ -46987,7 +46991,7 @@ backup_data = {
           "Psychic",
           "Giga Drain",
           "Bug Buzz",
-          "Dualwingbeat"
+          "Dual Wingbeat"
         ],
         "ability": "Compoundeyes",
         "nature": "Jolly",
@@ -49335,7 +49339,7 @@ backup_data = {
         "moves": [
           "-",
           "Ancient Power",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Feather Dance"
         ],
         "ability": "Pressure",
@@ -49442,7 +49446,7 @@ backup_data = {
         "level": 87,
         "moves": [
           "Draco Meteor",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Fire Blast",
           "Earthquake"
         ],
@@ -49466,7 +49470,7 @@ backup_data = {
         "item": "Dragon Fang",
         "level": 78,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Dragon Claw",
           "Flamethrower",
           "Rock Slide"
@@ -49771,7 +49775,7 @@ backup_data = {
         "level": 88,
         "moves": [
           "Draco Meteor",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Earthquake",
           "Dragon Dance"
         ],
@@ -49795,7 +49799,7 @@ backup_data = {
         "item": "Sitrus Berry",
         "level": 57,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Dynamic Punch",
           "Fire Punch",
           "Extreme Speed"
@@ -49820,7 +49824,7 @@ backup_data = {
         "item": "Lum Berry",
         "level": 77,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Dragon Dance",
           "Extreme Speed",
           "Rock Slide"
@@ -49972,7 +49976,7 @@ backup_data = {
         "item": "Charcoal",
         "level": 44,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Flamethrower",
           "Thunder Punch",
           "Seismic Toss"
@@ -49997,7 +50001,7 @@ backup_data = {
         "item": "Charcoal",
         "level": 44,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Flamethrower",
           "Thunder Punch",
           "Seismic Toss"
@@ -50378,7 +50382,7 @@ backup_data = {
         "moves": [
           "Ice Beam",
           "Earthquake",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Dragon Dance"
         ],
         "ability": "Natural Cure",
@@ -50403,7 +50407,7 @@ backup_data = {
         "moves": [
           "Dragon Dance",
           "Earthquake",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Mist Ball"
         ],
         "ability": "Natural Cure",
@@ -50529,7 +50533,7 @@ backup_data = {
           "Fly",
           "Haze",
           "Dragon Claw",
-          "Dualwingbeat"
+          "Dual Wingbeat"
         ],
         "ability": "Natural Cure",
         "nature": "Naughty",
@@ -57996,7 +58000,7 @@ backup_data = {
         "level": 86,
         "moves": [
           "Facade",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Heat Wave",
           "Steel Wing"
         ],
@@ -58123,7 +58127,7 @@ backup_data = {
           "Facade",
           "Heat Wave",
           "Steel Wing",
-          "Dualwingbeat"
+          "Dual Wingbeat"
         ],
         "ability": "Guts",
         "nature": "Careful",
@@ -58221,7 +58225,7 @@ backup_data = {
         "level": 45,
         "moves": [
           "Facade",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Quick Attack",
           "Endeavor"
         ],
@@ -58270,7 +58274,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58295,7 +58299,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58320,7 +58324,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58345,7 +58349,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58370,7 +58374,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58395,7 +58399,7 @@ backup_data = {
         "item": "Silk Scarf",
         "level": 45,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Steel Wing",
           "Heat Wave",
           "Facade"
@@ -58520,7 +58524,7 @@ backup_data = {
         "item": "",
         "level": 46,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Heat Wave",
           "Quick Attack",
           "Steel Wing"
@@ -59883,7 +59887,7 @@ backup_data = {
         "item": "",
         "level": 56,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Soft-Boiled",
           "Psychic",
           "Calm Mind"
@@ -60262,7 +60266,7 @@ backup_data = {
         "item": "",
         "level": 57,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Leech Life",
           "Swords Dance",
           "Baton Pass"
@@ -61300,7 +61304,7 @@ backup_data = {
         "level": 50,
         "moves": [
           "X-Scissor",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Swords Dance",
           "Brick Break"
         ],
@@ -64363,7 +64367,7 @@ backup_data = {
         "item": "Leftovers",
         "level": 50,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Petal Dance",
           "Substitute",
           "Leech Seed"
@@ -68335,7 +68339,7 @@ backup_data = {
         "level": 79,
         "moves": [
           "Rock Slide",
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Earthquake",
           "Flamethrower"
         ],
@@ -68359,7 +68363,7 @@ backup_data = {
         "item": "",
         "level": 58,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Ancient Power",
           "Earth Power",
           "Crunch"
@@ -70922,7 +70926,7 @@ backup_data = {
         "item": "",
         "level": 58,
         "moves": [
-          "Dualwingbeat",
+          "Dual Wingbeat",
           "Heat Wave",
           "Steel Wing",
           "Extreme Speed"

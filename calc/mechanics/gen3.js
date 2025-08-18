@@ -263,7 +263,7 @@ function calculateADV(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 2);
         desc.isSwitching = 'out';
     }
-    if (field.gameType !== 'Singles' && move.target === 'allAdjacentFoes') {
+    if (field.gameType !== 'Singles' && (move.target === 'allAdjacentFoes')) {
         if (gen >= 4) {
             baseDamage = Math.floor(baseDamage * 0.75);
             console.log("0.75 not half")
