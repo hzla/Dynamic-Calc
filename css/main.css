@@ -324,12 +324,12 @@ input[type="file"] {
     height: 40px;
     line-height: 34px;
     border-radius: 0px;
-    max-width: 617px;
+    /*max-width: 617px;*/
 }
 
 .opposing .select2-choice {
     padding-right: 30px;
-    max-width: 586px;
+    /*max-width: 586px;*/
 }
 
 select {
@@ -1662,7 +1662,9 @@ table.field {
   }
 
   .poke-sprite {
-    display: none;
+    height: 60px;
+    max-width: initial;
+    top: 120px;
   }
 
   .wrapper {
