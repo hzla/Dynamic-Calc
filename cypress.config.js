@@ -32,7 +32,7 @@ module.exports = defineConfig({
 	  //   save: false
 	  // },
     {
-      title: "Lumi Plat",
+      title: "Luminescent Plat",
       url: './index.html?data=006ac04e900ccb3110df&dmgGen=8&gen=8&switchIn=6&types=6',
       testTrainer: 'Cynthia',
       testTrainerMonFirstMove: 'Tail Glow',
