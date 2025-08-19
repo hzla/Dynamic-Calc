@@ -1003,6 +1003,11 @@ function get_next_in_g4() {
             console.log(trainer_poks[i])
         }
 
+        console.log([type_info[type1] ,type_info[type2]])
+        console.log(pok_name)
+        console.log(effectiveness)
+
+
 
         // check moves for SE
         var isSE = false
@@ -1038,7 +1043,7 @@ function get_next_in_g4() {
                     isSE = true
                 }
 
-                if (damageGen == 4 && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp,Gliscor".includes(player_pok)){
+                if (damageGen == 4 && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
                     isSE = true
                 }
 
