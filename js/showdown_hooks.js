@@ -2273,82 +2273,98 @@ function loadDataSource(data) {
         var deoxys_info = ['Attack', 'Defense','Speed']
         var wormadam_info = ['Sandy', 'Trash']
         
-        for (let i = 0; i < rotom_info.length; i++) {
-            pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
-                "types": [
-                    "Electric",
-                    rotom_info[i][1]
-                ],
-                "bs": jsonPoks['Rotom']['bs'],
-                "weightkg": 0.3,
-                "abilities": {
-                    "0": "Levitate"
-                },
-                "gender": "N"
+        
+
+
+        if (jsonPoks['Rotom']) {
+           for (let i = 0; i < rotom_info.length; i++) {
+                pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
+                    "types": [
+                        "Electric",
+                        rotom_info[i][1]
+                    ],
+                    "bs": jsonPoks['Rotom']['bs'],
+                    "weightkg": 0.3,
+                    "abilities": {
+                        "0": "Levitate"
+                    },
+                    "gender": "N"
+                }
+            } 
+        }
+        
+
+        if (jsonPoks['Deoxys']) {
+            for (let i = 0; i < deoxys_info.length; i++) {
+                pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
+                    "types": [
+                        "Psychic"
+                    ],
+                    "bs": jsonPoks['Deoxys']['bs'],
+                    "weightkg": 60.8,
+                    "abilities": {
+                        "0": "Pressure"
+                    },
+                    "gender": "N",
+                }
             }
         }
 
-        for (let i = 0; i < deoxys_info.length; i++) {
-            pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
+        if (jsonPoks['Shaymin']) {
+            pokedex['Shaymin-Sky-Glitched'] = {
                 "types": [
-                    "Psychic"
+                    "Grass",
+                    "Flying"
                 ],
-                "bs": jsonPoks['Deoxys']['bs'],
-                "weightkg": 60.8,
+                "bs": jsonPoks['Shaymin']['bs'],
+                "weightkg": 2.1,
                 "abilities": {
-                    "0": "Pressure"
+                    "0": "Natural Cure"
                 },
                 "gender": "N",
+                "otherFormes": [
+                    "Shaymin-Sky"
+                ]
             }
         }
 
-        pokedex['Shaymin-Sky-Glitched'] = {
-            "types": [
-                "Grass",
-                "Flying"
-            ],
-            "bs": jsonPoks['Shaymin']['bs'],
-            "weightkg": 2.1,
-            "abilities": {
-                "0": "Natural Cure"
-            },
-            "gender": "N",
-            "otherFormes": [
-                "Shaymin-Sky"
-            ]
+        
+
+        if (jsonPoks['Wormadam']) {
+            pokedex['Wormadam-Trash-Glitched'] = {
+                "types": [
+                    "Bug",
+                    "Steel"
+                ],
+                "bs": jsonPoks['Wormadam']['bs'],
+                "weightkg": 6.5,
+                "abilities": {
+                    "0": "Anticipation"
+                },
+                "otherFormes": [
+                    "Wormadam-Sandy",
+                    "Wormadam-Trash"
+                ]
+            }
+
+            pokedex['Wormadam-Sandy-Glitched'] = {
+                "types": [
+                    "Bug",
+                    "Ground"
+                ],
+                "bs": jsonPoks['Wormadam']['bs'],
+                "weightkg": 6.5,
+                "abilities": {
+                    "0": "Anticipation"
+                },
+                "otherFormes": [
+                    "Wormadam-Sandy",
+                    "Wormadam-Trash"
+                ]
+            }
         }
 
-        pokedex['Wormadam-Trash-Glitched'] = {
-            "types": [
-                "Bug",
-                "Steel"
-            ],
-            "bs": jsonPoks['Wormadam']['bs'],
-            "weightkg": 6.5,
-            "abilities": {
-                "0": "Anticipation"
-            },
-            "otherFormes": [
-                "Wormadam-Sandy",
-                "Wormadam-Trash"
-            ]
-        }
-
-        pokedex['Wormadam-Sandy-Glitched'] = {
-            "types": [
-                "Bug",
-                "Ground"
-            ],
-            "bs": jsonPoks['Wormadam']['bs'],
-            "weightkg": 6.5,
-            "abilities": {
-                "0": "Anticipation"
-            },
-            "otherFormes": [
-                "Wormadam-Sandy",
-                "Wormadam-Trash"
-            ]
-        }
+        
     }
 
 

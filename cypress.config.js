@@ -17,27 +17,27 @@ module.exports = defineConfig({
   },
   env: {
   	calcs: [
-	  // {
-	  //   title: "Renegade Platinum",
-	  //   url: './index.html?data=26138cc1d500b0cf7334&dmgGen=4&gen=7&switchIn=4&types=6',
-	  //   testTrainer: 'Cynthia',
-	  //   testTrainerMonFirstMove: 'Thunderbolt',
-	  //   save: 'rp_test'
-	  // },
-	  // {
-	  //   title: "Ancestral X",
-	  //   url: './index.html?data=7a1ed35468b22ea01103&dmgGen=6&gen=6',
-	  //   testTrainer: 'Wulfric',
-	  //   testTrainerMonFirstMove: 'Ice Hammer',
-	  //   save: false
-	  // },
-    {
-      title: "Luminescent Plat",
-      url: './index.html?data=006ac04e900ccb3110df&dmgGen=8&gen=8&switchIn=6&types=6',
-      testTrainer: 'Cynthia',
-      testTrainerMonFirstMove: 'Tail Glow',
-      save: false
-    }
+	  {
+	    title: "Renegade Platinum",
+	    url: './index.html?data=26138cc1d500b0cf7334&dmgGen=4&gen=7&switchIn=4&types=6',
+	    testTrainer: 'Cynthia',
+	    testTrainerMonFirstMove: 'Thunderbolt',
+	    save: 'rp_test'
+	  },
+	  {
+	    title: "Ancestral X",
+	    url: './index.html?data=7a1ed35468b22ea01103&dmgGen=6&gen=6',
+	    testTrainer: 'Wulfric',
+	    testTrainerMonFirstMove: 'Ice Hammer',
+	    save: false
+	  }
+    // {
+    //   title: "Luminescent Plat",
+    //   url: './index.html?data=006ac04e900ccb3110df&dmgGen=8&gen=8&switchIn=6&types=6',
+    //   testTrainer: 'Cynthia',
+    //   testTrainerMonFirstMove: 'Tail Glow',
+    //   save: false
+    // }
 	]
   }
 
