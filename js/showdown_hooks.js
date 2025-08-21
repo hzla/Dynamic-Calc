@@ -2206,7 +2206,7 @@ function loadDataSource(data) {
 	       MOVES_BY_ID[g][move_id].basePower = special_case_power_overrides[move]
 		}
         
-        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "makesContact"]  
+        var optional_move_params = ["type", "category", "e_id", "multihit", "target", "recoil", "overrideBP", "secondaries", "drain", "priority", "willCrit"]  
         for (n in optional_move_params) {
             var param = optional_move_params[n]
             if (jsonMove[param]) {
@@ -2214,6 +2214,17 @@ function loadDataSource(data) {
               MOVES_BY_ID[g][move_id][param] = jsonMove[param]  
             }
         }
+
+        var optional_flag_params = ["makesContact", "isPunch", "isBite", "isBullet", "isSound", "isPulse", "isKick", "isSword", "isBone", "isWind"]  
+        for (n in optional_flag_params) {
+            var param = optional_flag_params[n]
+            if (jsonMove[param]) {
+              moves[move][param] = jsonMove[param]
+              MOVES_BY_ID[g][move_id]["flags"][param] = jsonMove[param]  
+            }
+        }
+
+
 
         // if (jsonMove["sf"]) {
         //     moves[move]["secondaries"] = true
