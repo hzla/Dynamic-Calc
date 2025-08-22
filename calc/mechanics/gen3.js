@@ -177,8 +177,12 @@ function calculateADV(gen, attacker, defender, move, field) {
             df = Math.floor(df * 1.1);
         }
     }
+
     if (!attacker.hasItem('Sea Incense') && move.hasType((0, items_1.getItemBoostType)(attacker.item))) {
         at = Math.floor(at * 1.1);
+        if (TITLE.includes("Pokemon Colors")) {
+            at = Math.floor(at * 1.2);
+        }
         desc.attackerItem = attacker.item;
     }
     else if (attacker.hasItem('Sea Incense') && move.hasType('Water')) {
