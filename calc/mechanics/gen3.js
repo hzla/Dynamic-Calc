@@ -233,8 +233,8 @@ function calculateADV(gen, attacker, defender, move, field) {
         bp = Math.floor(bp * 1.5);
         desc.attackerAbility = attacker.ability;
     }
-    if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion')) {
-        console.log("asdf")
+    if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion') && !TITLE.includes("Pokemon Colors")) {
+        
         df = Math.floor(df / 2);
     }
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');

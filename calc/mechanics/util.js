@@ -527,7 +527,7 @@ if (damageGen != 8 && damageGen != 7) {
         if (move.named('Seismic Toss', 'Night Shade')) {
             return attacker.level;
         }
-        else if (move.named('Dragon Rage')) {
+        else if (move.named('Dragon Rage') && !TITLE.includes("Pokemon Colors")) {
             return 40;
         }
         else if (move.named('Sonic Boom')) {

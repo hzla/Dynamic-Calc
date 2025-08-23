@@ -21770,6 +21770,159 @@ backup_data = {
         "sd": 70
       }
     },
+    "Castform-Rainy": {
+      "ab": "Forecast",
+      "types": [
+        "Water"
+      ],
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Hyper Voice"
+          ],
+          [
+            15,
+            "Water Pulse"
+          ],
+          [
+            20,
+            "Icy Wind"
+          ],
+          [
+            25,
+            "Shadow Ball"
+          ],
+          [
+            30,
+            "Weather Ball"
+          ],
+          [
+            60,
+            "Sunny Day"
+          ],
+          [
+            60,
+            "Hail"
+          ],
+          [
+            60,
+            "Rain Dance"
+          ]
+        ],
+        "tms": []
+      },
+      "bs": {
+        "hp": 70,
+        "df": 70,
+        "at": 70,
+        "sp": 70,
+        "sa": 70,
+        "sd": 70
+      }
+    },
+    "Castform-Sunny": {
+      "ab": "Forecast",
+      "types": [
+        "Fire"
+      ],
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Hyper Voice"
+          ],
+          [
+            15,
+            "Water Pulse"
+          ],
+          [
+            20,
+            "Icy Wind"
+          ],
+          [
+            25,
+            "Shadow Ball"
+          ],
+          [
+            30,
+            "Weather Ball"
+          ],
+          [
+            60,
+            "Sunny Day"
+          ],
+          [
+            60,
+            "Hail"
+          ],
+          [
+            60,
+            "Rain Dance"
+          ]
+        ],
+        "tms": []
+      },
+      "bs": {
+        "hp": 70,
+        "df": 70,
+        "at": 70,
+        "sp": 70,
+        "sa": 70,
+        "sd": 70
+      }
+    },
+    "Castform-Snowy": {
+      "ab": "Forecast",
+      "types": [
+        "Ice"
+      ],
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Hyper Voice"
+          ],
+          [
+            15,
+            "Water Pulse"
+          ],
+          [
+            20,
+            "Icy Wind"
+          ],
+          [
+            25,
+            "Shadow Ball"
+          ],
+          [
+            30,
+            "Weather Ball"
+          ],
+          [
+            60,
+            "Sunny Day"
+          ],
+          [
+            60,
+            "Hail"
+          ],
+          [
+            60,
+            "Rain Dance"
+          ]
+        ],
+        "tms": []
+      },
+      "bs": {
+        "hp": 70,
+        "df": 70,
+        "at": 70,
+        "sp": 70,
+        "sa": 70,
+        "sd": 70
+      }
+    },
     "Volbeat": {
       "ab": "Illuminate",
       "types": [
