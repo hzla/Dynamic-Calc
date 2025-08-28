@@ -2177,6 +2177,14 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
+    if (TITLE == "Pokemon Colors") {
+        jsonMoves["Bulldoze"]["target"] = "allAdjacentFoes"
+        jsonMoves["Dragon Rage"]["category"] = "Physical"
+        jsonMoves["Egg Bomb"]["category"] = "Special"
+        jsonMoves["Self-Destruct"]["category"] = "Special"
+    }
+
+
     for (move in moves) {
 
         var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
@@ -2247,6 +2255,8 @@ function loadDataSource(data) {
         }
     }
 
+
+
     for (move in jsonMoves) {
         
         // if defined in showdown move list
@@ -2275,6 +2285,8 @@ function loadDataSource(data) {
     }
 
     $('#save-pok').show()
+
+
 
 
 
