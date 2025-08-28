@@ -2099,9 +2099,7 @@ function loadDataSource(data) {
     
     if (evsOn == '0') {
         removeEvs(data["formatted_sets"])
-        console.log("Evs removed")
     }
-
 
     hasPokReplacements = false
     pok_subs = {}
@@ -2144,7 +2142,6 @@ function loadDataSource(data) {
 
     if (TITLE.includes("White") || TITLE.includes("Black") ) {
         baseGame = "BW"
-
         if (TITLE.includes("Black 2")) {
             baseVersion = "BW2"
         }
@@ -2177,15 +2174,7 @@ function loadDataSource(data) {
         $("#show-ai").hide()
     }
 
-    if (TITLE == "Pokemon Colors") {
-        jsonMoves["Bulldoze"]["target"] = "allAdjacentFoes"
-        jsonMoves["Dragon Rage"]["category"] = "Physical"
-        jsonMoves["Egg Bomb"]["category"] = "Special"
-        jsonMoves["Self-Destruct"]["category"] = "Special"
-        setTimeout(function(){
-         $('.badge-boost').hide()   
-     }, 100)
-    }
+    if (TITLE == "Pokemon Colors") initColors();
 
 
     for (move in moves) {
@@ -2236,12 +2225,6 @@ function loadDataSource(data) {
         }
 
 
-
-        // if (jsonMove["sf"]) {
-        //     moves[move]["secondaries"] = true
-        //     MOVES_BY_ID[g][move_id]["secondaries"] = true
-        // }
-
         if (jsonMove['flags']) {
             if (jsonMove['flags']['punch']) {
                 moves[move]['isPunch'] = true
@@ -2289,111 +2272,9 @@ function loadDataSource(data) {
 
     $('#save-pok').show()
 
-
-
-
-
-
     if ( TITLE.includes("Platinum") && !TITLE.includes("Lumi") ) {
-        var rotom_info = [["Heat", "Fire"],["Wash", "Water"],["Mow", "Grass"],["Frost", "Ice"],["Fan", "Flying"]]
-        var deoxys_info = ['Attack', 'Defense','Speed']
-        var wormadam_info = ['Sandy', 'Trash']
-        
-        
-
-
-        if (jsonPoks['Rotom']) {
-           for (let i = 0; i < rotom_info.length; i++) {
-                pokedex[`Rotom-${rotom_info[i][0]}-Glitched`] = {
-                    "types": [
-                        "Electric",
-                        rotom_info[i][1]
-                    ],
-                    "bs": jsonPoks['Rotom']['bs'],
-                    "weightkg": 0.3,
-                    "abilities": {
-                        "0": "Levitate"
-                    },
-                    "gender": "N"
-                }
-            } 
-        }
-        
-
-        if (jsonPoks['Deoxys']) {
-            for (let i = 0; i < deoxys_info.length; i++) {
-                pokedex[`Deoxys-${deoxys_info[i]}-Glitched`] = {
-                    "types": [
-                        "Psychic"
-                    ],
-                    "bs": jsonPoks['Deoxys']['bs'],
-                    "weightkg": 60.8,
-                    "abilities": {
-                        "0": "Pressure"
-                    },
-                    "gender": "N",
-                }
-            }
-        }
-
-        if (jsonPoks['Shaymin']) {
-            pokedex['Shaymin-Sky-Glitched'] = {
-                "types": [
-                    "Grass",
-                    "Flying"
-                ],
-                "bs": jsonPoks['Shaymin']['bs'],
-                "weightkg": 2.1,
-                "abilities": {
-                    "0": "Natural Cure"
-                },
-                "gender": "N",
-                "otherFormes": [
-                    "Shaymin-Sky"
-                ]
-            }
-        }
-
-        
-
-        if (jsonPoks['Wormadam']) {
-            pokedex['Wormadam-Trash-Glitched'] = {
-                "types": [
-                    "Bug",
-                    "Steel"
-                ],
-                "bs": jsonPoks['Wormadam']['bs'],
-                "weightkg": 6.5,
-                "abilities": {
-                    "0": "Anticipation"
-                },
-                "otherFormes": [
-                    "Wormadam-Sandy",
-                    "Wormadam-Trash"
-                ]
-            }
-
-            pokedex['Wormadam-Sandy-Glitched'] = {
-                "types": [
-                    "Bug",
-                    "Ground"
-                ],
-                "bs": jsonPoks['Wormadam']['bs'],
-                "weightkg": 6.5,
-                "abilities": {
-                    "0": "Anticipation"
-                },
-                "otherFormes": [
-                    "Wormadam-Sandy",
-                    "Wormadam-Trash"
-                ]
-            }
-        }
-
-        
+        initPlatinum()  
     }
-
-
 
     if (TITLE == "Cascade White 2") {
         moves['Pay Day'].willCrit = true;
@@ -2725,15 +2606,7 @@ $(document).ready(function() {
                     final_type_chart = construct_type_chart()
 
                     if (mechanics == "hge") {
-                        includes = npoint_data["includes"]
-                        ac_encs = npoint_data["encs"]
-                        sav_pok_names = includes["poks"]
-                        sav_move_names = includes["moves"] 
-                        sav_item_names = includes["items"]
-                        sav_pok_growths = includes["growths"]
-                        sav_abilities = includes["abilities"]
-                        $('label[for="hail"]').hide()
-                        $('label[for="snow"]').show()
+                        initHGE()
                     }
 
                     setTimeout(function() {
@@ -2768,17 +2641,8 @@ $(document).ready(function() {
             loadDataSource(data)
 
             if (mechanics == "hge") {
-                includes = npoint_data["includes"]
-                ac_encs = npoint_data["encs"]
-                sav_pok_names = includes["poks"]
-                sav_move_names = includes["moves"] 
-                sav_item_names = includes["items"]
-                sav_pok_growths = includes["growths"]
-                sav_abilities = includes["abilities"]
+                initHGE()
             }
-
-           
-            
 
             final_type_chart = construct_type_chart()
 
@@ -3057,8 +2921,7 @@ $(document).ready(function() {
          if (location.href.includes("mastersheet")) {
             $('.wrapper').toggle();
             $('#content-container').toggle()
-         }
-         
+         }  
         }   
     });
 
