@@ -2182,6 +2182,9 @@ function loadDataSource(data) {
         jsonMoves["Dragon Rage"]["category"] = "Physical"
         jsonMoves["Egg Bomb"]["category"] = "Special"
         jsonMoves["Self-Destruct"]["category"] = "Special"
+        setTimeout(function(){
+         $('.badge-boost').hide()   
+     }, 100)
     }
 
 
