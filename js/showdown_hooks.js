@@ -2717,6 +2717,8 @@ $(document).ready(function() {
                         sav_item_names = includes["items"]
                         sav_pok_growths = includes["growths"]
                         sav_abilities = includes["abilities"]
+                        $('label[for="hail"]').hide()
+                        $('label[for="snow"]').show()
                     }
 
                     setTimeout(function() {
@@ -2728,6 +2730,10 @@ $(document).ready(function() {
                             if ($('.info-group.opp > * > .forme').is(':visible')) {
                                 $('.info-group.opp > * > .forme').change()
                             }
+                        }
+
+                        if (mechanics == "hge") {
+                            $('.hp-cntrl label, .z-btn').hide()
                         }
 
                         if (localStorage["right"]) {

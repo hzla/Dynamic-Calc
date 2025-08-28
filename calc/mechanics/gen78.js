@@ -1009,7 +1009,7 @@ function calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCrit
         defense = defender.stats[defenseStat];
         desc.defenseBoost = defender.boosts[defenseStat];
     }
-    if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
+    if ((field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) || (field.hasWeather('Snow') && defender.hasType('Ice') && hitsPhysical)) {
         defense = (0, util_2.pokeRound)((defense * 3) / 2);
         desc.weather = field.weather;
     }
