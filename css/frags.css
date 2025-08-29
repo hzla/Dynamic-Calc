@@ -218,6 +218,7 @@ div {
         line-height: 32px;
         height: 32px;
         padding: 0px 8px;
+        font-size: 0.9em
     }
 
     #stats-tab {

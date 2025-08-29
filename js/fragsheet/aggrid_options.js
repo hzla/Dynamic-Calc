@@ -438,7 +438,12 @@ function prevoData(speciesName, encounters) {
     for (let i = evos.length - 1; i >= 0; i--) {
         mon = evos[i]
         if (encounters[mon] && mon != speciesName) {
-            return [encounters[mon].fragCount, encounters[mon].frags, encounters[mon].setData["My Box"].met, encounters[mon].setData["My Box"].nn]
+            if (typeof encounters[mon].setData["My Box"] == "undefined" ) {
+                return [encounters[mon].fragCount, encounters[mon].frags, "Unknown", speciesName]
+            } else {
+               return [encounters[mon].fragCount, encounters[mon].frags, encounters[mon].setData["My Box"].met, encounters[mon].setData["My Box"].nn] 
+            }
+            
         }
     }
 
@@ -494,13 +499,20 @@ function createRowData() {
         deadCount++
        }
 
-
+  
        
        let setData = encounters[enc].setData["My Box"]
 
        if (typeof setData == "undefined" && enc.includes("Rotom-") && typeof encounters["Rotom"].setData != "undefined") {
             setData = encounters["Rotom"].setData
        } 
+
+       if (typeof setData == "undefined" || setData == {}) {
+            setData = JSON.parse(localStorage.customsets)[enc]
+       }
+
+       if (typeof setData == "undefined") continue;
+
 
 
 
