@@ -16,6 +16,7 @@ function init_calc() {
   calcing = false
   partner_name = null
 
+
   // local storage settings
   if (typeof localStorage.boxspriteindex === 'undefined') {
     localStorage.boxspriteindex = 1
@@ -23,6 +24,7 @@ function init_calc() {
   if (typeof localStorage.themeIndex === 'undefined') {
     localStorage.themeIndex = 1
   }
+  localStorage.toDelete = ""
 
   if (parseInt(localStorage.themeIndex) == 0) {
     $('body, html').addClass('old')

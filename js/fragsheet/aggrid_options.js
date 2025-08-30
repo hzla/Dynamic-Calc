@@ -648,13 +648,21 @@ $(document).on('click', '.status-dead', function() {
 
 $('#delete-enc').click(function() {
     let speciesName = $(this).text().split("Delete ")[1]
-    if (confirm(`Delete ${speciesName} from your encounters?`)) {
+    if (confirm(`Delete ${speciesName} from your encounters and custom sets?`)) {
         delete encounters[speciesName]
-
         localStorage.encounters = JSON.stringify(encounters);
 
         createRowData()
         gridApi.setGridOption('rowData', rowData);
+
+        var sets = JSON.parse(localStorage.customsets)
+
+        delete sets[speciesName]['My Box']
+        localStorage.toDelete = speciesName
+        localStorage.customsets = JSON.stringify(sets)
+
+
+
 
     }
 })

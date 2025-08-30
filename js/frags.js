@@ -13,10 +13,13 @@ function importEncounters() {
 	for (let [speciesName, setData] of Object.entries(customSets)) {
 		
 	  // add to encounters if doesn't exist
-	  if (!currentEncounters[speciesName]) {
+	  console.log(speciesName)
+	  console.log(setData)
+	  if (!currentEncounters[speciesName] && setData["My Box"]) {
 		// console.log(currentEncounters)s
 	  	
-	  	// console.log(setData)
+	  	
+	  	
 	  	delete setData["My Box"].moves
 	  	delete setData["My Box"].isCustomSet
 	  	delete setData["My Box"].level
@@ -46,6 +49,20 @@ function importEncounters() {
 	}
 	localStorage.encounters = JSON.stringify(currentEncounters)  	
 	return currentEncounters
+}
+
+function watchLocalStorageProperty(propertyName, callback) {
+  window.addEventListener('storage', (event) => {
+    // The storage event only fires when localStorage is changed in OTHER tabs/windows
+    if (event.key === propertyName) {
+      callback({
+        key: event.key,
+        oldValue: event.oldValue,
+        newValue: event.newValue,
+        url: event.url
+      });
+    }
+  });
 }
 
 function getEncounters() {
@@ -172,6 +189,20 @@ $(document).ready(function(){
 		}
 		window.open(url, '_blank');
 	})
+
+	watchLocalStorageProperty('customsets', (data) => {
+	  console.log("Customsets Updated, refreshing table")
+
+	  customSets = JSON.parse(localStorage.customsets)
+
+	  delete SETDEX_BW[localStorage.toDelete]['My Box']
+
+            // $(`[data-id='${$('.set-selector')[0].value}']`).remove()
+
+	  get_box()
+      box_rolls()
+	});
+
 })
 
 
