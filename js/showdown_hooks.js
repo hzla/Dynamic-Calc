@@ -427,6 +427,8 @@ function box_rolls() {
 
             opposing_dmg = opposing_results[j].damage
 
+
+            console.log([opposing_dmg, monHp * taken_max_roll / 100])
             if (!can_topkill(opposing_dmg, monHp * taken_max_roll / 100)) {
                 defend_count += 1
                 if (defend_count == 4) {
@@ -455,6 +457,9 @@ function can_kill(damages, hp) {
 
 // check if ai mon highest roll kills player
 function can_topkill(damages, hp) {
+    if (hp < 0) {
+        return true;
+    }
     kill_count = 0
     for (n in damages) {
         if (damages[n] >= hp) {
