@@ -794,20 +794,31 @@ table td {
 #player-poks-filter {
     margin-left:  12px;
     margin-bottom:  20px;
+    margin-top: 10px;
     display: none;
 }
 
 .filter-row {
     display: flex;
     align-items: center;
+    width: calc(100% - 10px);
+    justify-content: space-between;
+    height: 30px;
+    line-height: 30px;
+
 }
 
 #min-dealt-label {
     color:  #ff5555;
 }
 
-#max-taken-label {
+#max-taken-label, #filter-move-label {
     color:  #6272a4;
+}
+
+#filter-move {
+    height: 26px;
+    margin: 2px 0px;
 }
 
 #faster-label {

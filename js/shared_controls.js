@@ -614,6 +614,8 @@ $(".set-selector").change(function () {
 		var sprite = SETDEX_BW
 		var left_max_hp = $("#p2 .max-hp").text()
 		$("#p2 .current-hp").val(left_max_hp).change()
+
+
 	} else {
 		var right_max_hp = $("#p1 .max-hp").text()		
 		$("#p1 .current-hp").val(right_max_hp).change()
@@ -662,6 +664,14 @@ $(".set-selector").change(function () {
 					$('#singles-format').click()
 				} else {
 					$('#doubles-format').click()
+				}
+
+				let enemy_moves = SETDEX_BW[pokemonName][setName].moves
+
+				$('#filter-move').html(`<option value="All Moves">All Moves</option>`)
+				
+				for (move of enemy_moves) {
+					$('#filter-move').append(`<option value="${move}">${move}</option>`)
 				}
 
 
