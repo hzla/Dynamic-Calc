@@ -1091,9 +1091,9 @@ if (params.get('data') == 'bd7fc78f8fa2500dfcca') {
     location.href = 'https://hzla.github.io/Dynamic-Calc/?data=26138cc1d500b0cf7334&gen=7&switchIn=4&types=6'
 }
 
-if (damageGen <= 3) {
-    $('#player-poks-filter').remove()
-}
+// if (damageGen <= 3) {
+//     $('#player-poks-filter').remove()
+// }
 
 if (hideDamage) {
     $('.move-result-group span').css('opacity', '0')
