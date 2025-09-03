@@ -42,7 +42,6 @@ function get_next_in() {
         var strongest_move_bp = 0
         var strongest_move = "None"
         var sub_index = trainer_poks[i].split(" (")[1].replace(")", "").split("[")[1].replace("]", "")
-        console.log(pok_name)
         var types = pokedex[pok_name].types
 
 
