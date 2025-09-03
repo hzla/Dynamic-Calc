@@ -15,6 +15,8 @@ function initHGE() {
 
 function initColors() {
     jsonMoves["Bulldoze"]["target"] = "allAdjacentFoes"
+    jsonMoves["Flame Burst"]["target"] = "allAdjacentFoes"
+    jsonMoves["Boomburst"]["target"] = "allAdjacentFoes"
     jsonMoves["Dragon Rage"]["category"] = "Physical"
     jsonMoves["Egg Bomb"]["category"] = "Special"
     jsonMoves["Self-Destruct"]["category"] = "Special"
