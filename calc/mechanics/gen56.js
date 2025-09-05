@@ -665,7 +665,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
-    if (defender.hasAbility('Toxic Boost') && move.hasType('Poison')) {
+    if (defender.hasAbility('Toxic Boost') && move.hasType('Poison') && TITLE == "Cascade White 2") {
         bpMods.push(2048);
         desc.defenderAbility = defender.ability;
     }
