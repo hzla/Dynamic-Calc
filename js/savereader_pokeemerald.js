@@ -39,6 +39,8 @@ $(document).on('change', '#save-upload', function(event) {
             var block_offset = 0
 
 
+            
+            // Get which section of the save to use depending on which save index is higher
             if (save_index_b > save_index_a || save_index_a == 65535) {
                  block_offset = save_block_b_offset
             }
@@ -52,6 +54,8 @@ $(document).on('change', '#save-upload', function(event) {
             if (save_index_b > save_index_a || save_index_a == 65535) {
                 block_offset = save_block_b_offset
             }
+
+            // Comment the next two lines out if there is no backup save
             buffer = buffer.slice(block_offset, block_offset + 0xE000)
             saveFile = new DataView(buffer);
 
@@ -61,12 +65,9 @@ $(document).on('change', '#save-upload', function(event) {
             let offset = 0;
             const magicValue = 0x0202;
 
-            let pokCount = 0
-
-
             let lastFoundAt = 0
-
             let showdownText = ""
+
 
             while (offset < saveFile.byteLength - 1) { 
                 const value = saveFile.getUint16(offset, true); 
@@ -74,7 +75,7 @@ $(document).on('change', '#save-upload', function(event) {
                 if (value === magicValue) {
                     lastFoundAt = offset
 
-                    // move back 18 bytes and get PID, TID, and custom nature info
+                    // move back 18 bytes and get PID, TID
                     offset -= 18
                     let pid = saveFile.getUint32(offset, true)
                     offset += 4
@@ -82,11 +83,16 @@ $(document).on('change', '#save-upload', function(event) {
                     offset += 4
 
 
+                    // Get nickname
                     let nn = ""
-
                     for (let i = 0; i <10; i++) {
                         let letter = gen3TextTable[saveFile.getUint8(offset + i, true)] || ""
                         nn += letter
+                    }
+
+                    if (nn.includes("DontMoveMe")) {
+                        offset = lastFoundAt + 2;
+                        continue;
                     }
 
                     // substructs are scrambled according to PID
@@ -99,60 +105,55 @@ $(document).on('change', '#save-upload', function(event) {
 
                     offset = lastFoundAt + 14
 
-                    // decrypt substructs
+                    // decrypt substructs into an array of 12 32bit chunks
                     for (let i = 0; i <= 11; i++) {
                         let block = saveFile.getUint32(offset , true) ^ key
                         decrypted.push(block)
                         offset += 4
                     }
 
-                    let growth_index = suborder.indexOf(1)
-                    let moves_index = suborder.indexOf(2)
-                    let evs_index = suborder.indexOf(3)
-                    let misc_index = suborder.indexOf(4)
+                    // these correspond to substruct1 through 4 
+                    let growth_index = suborder.indexOf(1) * 3
+                    let moves_index = suborder.indexOf(2) * 3
+                    let evs_index = suborder.indexOf(3) * 3
+                    let misc_index = suborder.indexOf(4) * 3
 
 
                     // get Species
-                    let speciesId = [decrypted[growth_index * 3]] & 0x07FF
+                    let speciesId = [decrypted[growth_index]] & 0x07FF
                     // for Inclement Emerald
                     if (TITLE.includes("Inclement") && speciesId > 899) {
                         speciesId += 7
                     }
                     let speciesName = emMons[speciesId]
 
-
-                    
-
-
-
                     // Skip if species id out of bounds
                     if (!speciesName || speciesName == "None") {
                         offset = lastFoundAt + 2
                         continue
                     }
-
-
                     // Try Substitute Spaces for Dashes if pokemon name doesn't exist
 
-                    if (!pokedex[speciesName]) {
-       
+                    if (!pokedex[speciesName]) {       
                         speciesName = speciesName.replaceAll(" ", "-")
                     }
 
-                    // get Item
-                    let itemId = [decrypted[growth_index * 3]] >> 16 & 0x07FF
 
+                    // get Item
+                    let itemId = [decrypted[growth_index]] >> 16 & 0x07FF
+
+                    // For some reason item ids don't map properly for inc em
                     if (TITLE.includes('Inclement Emerald')) {
                        itemId = 0
                     }
 
 
-                    // get Level
+                    // get Level using growth values defined in constants 
                     let speciesNameId = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
-                    let exp = [decrypted[growth_index * 3 + 1]] & 0x1FFFFF
+                    let exp = [decrypted[growth_index + 1]] & 0x1FFFFF
                     let gr = 0
 
-                    
+                  
                     if (typeof growths[speciesName] == "undefined") {
                         speciesName = speciesName.split("-").slice(0,2).join("-")
                         speciesName = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
@@ -162,7 +163,6 @@ $(document).on('change', '#save-upload', function(event) {
                         speciesName = speciesName.split("-")[0]
                         speciesName = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
                     } 
-
 
                     if (typeof growths[speciesName] == "undefined") {
                         console.log(`can't find growth for ${speciesName}`)
@@ -178,27 +178,23 @@ $(document).on('change', '#save-upload', function(event) {
 
 
                     let level = get_level(expTables[gr], exp)
-                    let nn11 = gen3TextTable[decrypted[growth_index * 3 + 1] >> 21 & 0xFF] || ""
-                    let nn12 = gen3TextTable[decrypted[growth_index * 3 + 2] >> 14 & 0xFF] || ""
 
-                    nn += nn11
-                    nn += nn12
-
-                    met = locations["EM"][decrypted[misc_index * 3] >> 8 & 0xFF] 
+                    // Get encounter location
+                    met = locations["EM"][decrypted[misc_index] >> 8 & 0xFF] 
                     
                     // get nature
                     let monNature = 0
 
                     if (TITLE.includes("Inclement")) {
-                        let natureByte = [decrypted[misc_index * 3]] >> 16 & 0x07FF
-                        monNature = natures[((decrypted[misc_index * 3] >>> 16) & 0x7C00) >>> 10] 
+                        let natureByte = [decrypted[misc_index]] >> 16 & 0x07FF
+                        monNature = natures[((decrypted[misc_index] >>> 16) & 0x7C00) >>> 10] 
                     } else {
                         monNature = natures[pid % 25]
                     }
 
                     // get evs
-                    let int1 = decrypted[evs_index * 3]
-                    let int2 = decrypted[evs_index * 3 + 1]
+                    let int1 = decrypted[evs_index]
+                    let int2 = decrypted[evs_index + 1]
 
                     let evs = []
 
@@ -216,10 +212,10 @@ $(document).on('change', '#save-upload', function(event) {
                     }
 
                     // get moves
-                    let move1 = pokeemeraldMoves[[decrypted[moves_index * 3]] & 0x07FF]
-                    let move2 = pokeemeraldMoves[[decrypted[moves_index * 3]] >> 16 & 0x07FF]
-                    let move3 = pokeemeraldMoves[[decrypted[moves_index * 3 + 1]] & 0x07FF]
-                    let move4 = pokeemeraldMoves[[decrypted[moves_index * 3 + 1]] >> 16 & 0x07FF]
+                    let move1 = pokeemeraldMoves[[decrypted[moves_index]] & 0x07FF]
+                    let move2 = pokeemeraldMoves[[decrypted[moves_index]] >> 16 & 0x07FF]
+                    let move3 = pokeemeraldMoves[[decrypted[moves_index + 1]] & 0x07FF]
+                    let move4 = pokeemeraldMoves[[decrypted[moves_index + 1]] >> 16 & 0x07FF]
 
                     let moves = [move1, move2, move3, move4]
 
@@ -230,14 +226,14 @@ $(document).on('change', '#save-upload', function(event) {
                     }
 
                     // get ivs 
-                    let ivs = getIVs(decrypted[misc_index * 3 + 1])
+                    let ivs = getIVs(decrypted[misc_index + 1])
 
                     // get ability
 
                     let abilitySlot = 0
 
 
-                    abilitySlot = decrypted[misc_index * 3 + 2] & 96 >> 5
+                    abilitySlot = decrypted[misc_index + 2] & 96 >> 5
 
                     
                     if (nn.toLowerCase() != speciesName.toLowerCase() && !(speciesName.toLowerCase().includes(nn.toLowerCase().trim()))) {

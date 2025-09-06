@@ -13,8 +13,6 @@ function importEncounters() {
 	for (let [speciesName, setData] of Object.entries(customSets)) {
 		
 	  // add to encounters if doesn't exist
-	  console.log(speciesName)
-	  console.log(setData)
 	  if (!currentEncounters[speciesName] && setData["My Box"]) {
 		// console.log(currentEncounters)s
 	  	
