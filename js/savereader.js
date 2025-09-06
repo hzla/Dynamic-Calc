@@ -1,13 +1,16 @@
 
 $('#read-save').click(function(){
-    $('#save-upload')[0].value = null
+    if ($('#save-upload').length > 0) return;
+    $('#save-upload-g45')[0].value = null
 })
 
-document.getElementById('save-upload').addEventListener('change', function(event, forceBlock2=false) {
+
+document.getElementById('save-upload-g45').addEventListener('change', function(event, forceBlock2=false) {
+    if ($('#save-upload').length > 0) return;
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        saveFileName = $('#save-upload').val().split("\\").pop()
+        saveFileName = $('#save-upload-g45').val().split("\\").pop()
         savExt = saveFileName.slice(-3)
 
         if (baseGame == "Pt") {

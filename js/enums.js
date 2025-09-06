@@ -14,6 +14,8 @@ locations["Pt"] = ["Mystery Zone","Twinleaf Town","Sandgem Town","Floaroma Town"
 locations["HGSS"] = locations["Pt"]
 locations["BW2"] = ["Unknown","Mystery Zone","Faraway place","VAR(256, 0)s VAR(261, 1)","Nuvema Town","Accumula Town","Striaton City","Nacrene City","Castelia City","Nimbasa City","Driftveil City","Mistralton City","Icirrus City","Opelucid City","Route 1","Route 2","Route 3","Route 4","Route 5","Route 6","Route 7","Route 8","Route 9","Route 10","Route 11","Route 12","Route 13","Route 14","Route 15","Route 16","Route 17","Route 18","Dreamyard","Pinwheel Forest","Desert Resort","Relic Castle","PWT","Chargestone Cave","Twist Mountain","Dragonspiral Tower","Victory Road","Lacunosa Town","Undella Town","Anville Town","Pokemon League","N's Castle","Royal Unova","Gear Station","Battle Subway","Musical Theater","Black City","White Forest","Unity Tower","Wellspring Cave","Mistralton Cave","Rumination Field","Celestial Tower","Moor of Icirrus","Castelia Gardens","Challenger's Cave","Poke Transfer Lab","Giant Chasm","Liberty Garden","P2 Laboratory","Skyarrow Bridge","Driftveil Drawbridge","Tubeline Bridge","Village Bridge","Marvelous Bridge","Entralink","Abundant Shrine","Undella Bay","Lostlorn Forest","Trial Chamber","Mistralton Cave","Entree Forest","Nimbasa City","Driftveil City","Mistralton City","Icirrus City","Opelucid City","Nuvema Town","White Forest","Black City","Cold Storage","Chargestone Cave","Twist Mountain","Dragonspiral Tower","Giant Chasm","Driftveil Drawbridge","Tubeline Bridge","Village Bridge","Marvelous Bridge","Route 5","Route 6","Route 7","Route 8","Route 9","Route 11","Route 12","Route 13","Route 14","Route 15","Route 16","Lacunosa Town","Undella Town","Accumula Gate","Undella Gate","Nacrene Gate","Castelia Gate","Nimbasa Gate","Opelucid Gate","Black Gate","White Gate","Bridge Gate","Route Gate","Abyssal Ruins","Aspertia City","Virbank City","Humilau City","Pokestar Studios","Join Avenue","Floccesy Town","Lentimas Town","Route 19","Route 20","Route 21","Route 22","Route 23","Castelia Sewers","Floccesy Ranch","Virbank Complex","Reversal Mountain","Strange House","Victory Road","Plasma Frigate","Relic Passage","Clay Tunnel","Unknown","White Treehollow","Black Tower","Seaside Cave","Cave of Being","Hidden Grotto","Marine Tube","Virbank Gate","Aspertia Gate","Nature Preserve","Medal Office","Underground Ruins","Rock Peak Chamber","Iceberg Chamber","Iron Chamber","Pledge Grove","Inner Complex","Faraway Island"]
 locations["BW"] = locations["BW2"]
+locations["EM"] = ["LITTLEROOT TOWN","OLDALE TOWN","DEWFORD TOWN","LAVARIDGE TOWN","FALLARBOR TOWN","VERDANTURF TOWN","PACIFIDLOG TOWN","PETALBURG CITY","SLATEPORT CITY","MAUVILLE CITY","RUSTBORO CITY","FORTREE CITY","LILYCOVE CITY","MOSSDEEP CITY","SOOTOPOLIS CITY","EVER GRANDE CITY","ROUTE 101","ROUTE 102","ROUTE 103","ROUTE 104","ROUTE 105","ROUTE 106","ROUTE 107","ROUTE 108","ROUTE 109","ROUTE 110","ROUTE 111","ROUTE 112","ROUTE 113","ROUTE 114","ROUTE 115","ROUTE 116","ROUTE 117","ROUTE 118","ROUTE 119","ROUTE 120","ROUTE 121","ROUTE 122","ROUTE 123","ROUTE 124","ROUTE 125","ROUTE 126","ROUTE 127","ROUTE 128","ROUTE 129","ROUTE 130","ROUTE 131","ROUTE 132","ROUTE 133","ROUTE 134","UNDERWATER","UNDERWATER","UNDERWATER","UNDERWATER","UNDERWATER","GRANITE CAVE","MT. CHIMNEY","SAFARI ZONE","BATTLE FRONTIER","PETALBURG WOODS","RUSTURF TUNNEL","ABANDONED SHIP","NEW MAUVILLE","METEOR FALLS","METEOR FALLS","MT. PYRE","{AQUA} HIDEOUT","SHOAL CAVE","SEAFLOOR CAVERN","UNDERWATER","VICTORY ROAD","MIRAGE ISLAND","CAVE OF ORIGIN","SOUTHERN ISLAND","FIERY PATH","FIERY PATH","JAGGED PASS","JAGGED PASS","SEALED CHAMBER","UNDERWATER","SCORCHED SLAB","ISLAND CAVE","DESERT RUINS","ANCIENT TOMB","INSIDE OF TRUCK","SKY PILLAR","SECRET BASE","","PALLET TOWN","VIRIDIAN CITY","PEWTER CITY","CERULEAN CITY","LAVENDER TOWN","VERMILION CITY","CELADON CITY","FUCHSIA CITY","CINNABAR ISLAND","INDIGO PLATEAU","SAFFRON CITY","ROUTE 4","ROUTE 10","ROUTE 1","ROUTE 2","ROUTE 3","ROUTE 4","ROUTE 5","ROUTE 6","ROUTE 7","ROUTE 8","ROUTE 9","ROUTE 10","ROUTE 11","ROUTE 12","ROUTE 13","ROUTE 14","ROUTE 15","ROUTE 16","ROUTE 17","ROUTE 18","ROUTE 19","ROUTE 20","ROUTE 21","ROUTE 22","ROUTE 23","ROUTE 24","ROUTE 25","VIRIDIAN FOREST","MT. MOON","S.S. ANNE","UNDERGROUND PATH","UNDERGROUND PATH","DIGLETT'S CAVE","VICTORY ROAD","ROCKET HIDEOUT","SILPH CO.","POKéMON MANSION","SAFARI ZONE","POKéMON LEAGUE","ROCK TUNNEL","SEAFOAM ISLANDS","POKéMON TOWER","CERULEAN CAVE","POWER PLANT","ONE ISLAND","TWO ISLAND","THREE ISLAND","FOUR ISLAND","FIVE ISLAND","SEVEN ISLAND","SIX ISLAND","KINDLE ROAD","TREASURE BEACH","CAPE BRINK","BOND BRIDGE","THREE ISLE PORT","SEVII ISLE 6","SEVII ISLE 7","SEVII ISLE 8","SEVII ISLE 9","RESORT GORGEOUS","WATER LABYRINTH","FIVE ISLE MEADOW","MEMORIAL PILLAR","OUTCAST ISLAND","GREEN PATH","WATER PATH","RUIN VALLEY","TRAINER TOWER","CANYON ENTRANCE","SEVAULT CANYON","TANOBY RUINS","SEVII ISLE 22","SEVII ISLE 23","SEVII ISLE 24","NAVEL ROCK","MT. EMBER","BERRY FOREST","ICEFALL CAVE","ROCKET WAREHOUSE","TRAINER TOWER","DOTTED HOLE","LOST CAVE","PATTERN BUSH","ALTERING CAVE","TANOBY CHAMBERS","THREE ISLE PATH","TANOBY KEY","BIRTH ISLAND","MONEAN CHAMBER","LIPTOO CHAMBER","WEEPTH CHAMBER","DILFORD CHAMBER","SCUFIB CHAMBER","RIXY CHAMBER","VIAPOIS CHAMBER","EMBER SPA","SPECIAL AREA","AQUA HIDEOUT","MAGMA HIDEOUT","MIRAGE TOWER","BIRTH ISLAND","FARAWAY ISLAND","ARTISAN CAVE","MARINE CAVE","UNDERWATER","TERRA CAVE","UNDERWATER","UNDERWATER","UNDERWATER","DESERT UNDERPASS","ALTERING CAVE","NAVEL ROCK","TRAINER HILL","FLOATING SLAB","ROCKY SLAB","GRASSY SLAB"]
+
 
 
 
@@ -699,6 +701,64 @@ textTable = {
       0x01C3: "~",
       0x01C4: ":",
       0x01C5: ";"
+}
+
+gen3TextTable = {
+    "0": " ",
+    "163": "2",
+    "174": "-",
+    "187": "A",
+    "188": "B",
+    "189": "C",
+    "190": "D",
+    "191": "E",
+    "192": "F",
+    "193": "G",
+    "194": "H",
+    "195": "I",
+    "196": "J",
+    "197": "K",
+    "198": "L",
+    "199": "M",
+    "200": "N",
+    "201": "O",
+    "202": "P",
+    "203": "Q",
+    "204": "R",
+    "205": "S",
+    "206": "T",
+    "207": "U",
+    "208": "V",
+    "209": "W",
+    "210": "X",
+    "211": "Y",
+    "212": "Z",
+    "213": "a",
+    "214": "b",
+    "215": "c",
+    "216": "d",
+    "217": "e",
+    "218": "f",
+    "219": "g",
+    "220": "h",
+    "221": "i",
+    "222": "j",
+    "223": "k",
+    "224": "l",
+    "225": "m",
+    "226": "n",
+    "227": "o",
+    "228": "p",
+    "229": "q",
+    "230": "r",
+    "231": "s",
+    "232": "t",
+    "233": "u",
+    "234": "v",
+    "235": "w",
+    "236": "x",
+    "237": "y",
+    "238": "z"
 }
 
 

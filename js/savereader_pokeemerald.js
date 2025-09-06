@@ -3,7 +3,8 @@ $('#read-save').click(function(){
     $('#save-upload')[0].value = null
 })
 
-document.getElementById('save-upload').addEventListener('change', function(event) {
+$(document).on('change', '#save-upload', function(event) {
+    console.log("reading new save")
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
@@ -12,7 +13,7 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
         reader.onload = function(e) {
             // Convert the binary string to ArrayBuffer for easier access
-            const buffer = e.target.result;
+            let buffer = e.target.result;
             view = new Uint8Array(buffer);
             saveFile = new DataView(buffer);
             saveUploaded = true;
@@ -46,6 +47,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
             if (save_index_b == 65535) {save_index = save_index_a }
             if (save_index_a == 65535) { save_index = save_index_b }
 
+
+  
+            if (save_index_b > save_index_a || save_index_a == 65535) {
+                block_offset = save_block_b_offset
+            }
+            buffer = buffer.slice(block_offset, block_offset + 0xE000)
+            saveFile = new DataView(buffer);
+
             const rotation = (save_index % 14) 
             const total_offset = rotation * 4096
 
@@ -71,7 +80,14 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     offset += 4
                     let tid = saveFile.getUint32(offset, true)
                     offset += 4
-                    let moddedNature = (saveFile.getUint16(offset, true) >> 13) && 0b11111
+
+
+                    let nn = ""
+
+                    for (let i = 0; i <10; i++) {
+                        let letter = gen3TextTable[saveFile.getUint8(offset + i, true)] || ""
+                        nn += letter
+                    }
 
                     // substructs are scrambled according to PID
                     let suborder = orderFormats[pid % 24]
@@ -102,7 +118,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     if (TITLE.includes("Inclement") && speciesId > 899) {
                         speciesId += 7
                     }
-                    let speciesName = emImpMons[speciesId]
+                    let speciesName = emMons[speciesId]
+
+
+                    
 
 
 
@@ -114,23 +133,67 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
 
                     // Try Substitute Spaces for Dashes if pokemon name doesn't exist
+
                     if (!pokedex[speciesName]) {
-                        speciesName = speciesName.replace(" ", "-")
+       
+                        speciesName = speciesName.replaceAll(" ", "-")
                     }
 
                     // get Item
                     let itemId = [decrypted[growth_index * 3]] >> 16 & 0x07FF
+
+                    if (TITLE.includes('Inclement Emerald')) {
+                       itemId = 0
+                    }
+
+
+                    // get Level
+                    let speciesNameId = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+                    let exp = [decrypted[growth_index * 3 + 1]] & 0x1FFFFF
+                    let gr = 0
+
+                    
+                    if (typeof growths[speciesName] == "undefined") {
+                        speciesName = speciesName.split("-").slice(0,2).join("-")
+                        speciesName = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+                    } 
+
+                    if (typeof growths[speciesName] == "undefined") {
+                        speciesName = speciesName.split("-")[0]
+                        speciesName = speciesName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+                    } 
+
+
+                    if (typeof growths[speciesName] == "undefined") {
+                        console.log(`can't find growth for ${speciesName}`)
+                    } else {
+                        gr = growths[speciesName].gr 
+                    }
+                    
+                    if (typeof gr == "undefined") {
+                       console.log(learnsets[speciesName])
+                       console.log(`${speciesName} growth not found`)
+                       gr = 0 
+                    }
+
+
+                    let level = get_level(expTables[gr], exp)
+                    let nn11 = gen3TextTable[decrypted[growth_index * 3 + 1] >> 21 & 0xFF] || ""
+                    let nn12 = gen3TextTable[decrypted[growth_index * 3 + 2] >> 14 & 0xFF] || ""
+
+                    nn += nn11
+                    nn += nn12
+
+                    met = locations["EM"][decrypted[misc_index * 3] >> 8 & 0xFF] 
                     
                     // get nature
                     let monNature = 0
+
                     if (TITLE.includes("Inclement")) {
                         let natureByte = [decrypted[misc_index * 3]] >> 16 & 0x07FF
-                        monNature = natures[natureByte & 31744 >> 10]   
+                        monNature = natures[((decrypted[misc_index * 3] >>> 16) & 0x7C00) >>> 10] 
                     } else {
                         monNature = natures[pid % 25]
-                        if (moddedNature <= 26) {
-                            monNature = natures[moddedNature]
-                        }
                     }
 
                     // get evs
@@ -173,19 +236,10 @@ document.getElementById('save-upload').addEventListener('change', function(event
 
                     let abilitySlot = 0
 
-                    if (TITLE.includes("Inclement")) {
-                        abilitySlot = decrypted[misc_index * 3 + 2] & 96 >> 5
-                    } else {
-                        abilitySlot = decrypted[misc_index * 3 + 2] >> 29 & 0b11
-                        if (abils[speciesName]) {
-                            abilitySlot = abils[speciesName][abilitySlot]
-                        }           
-                    }
+
+                    abilitySlot = decrypted[misc_index * 3 + 2] & 96 >> 5
+
                     
-
-
-
-
                     if (nn.toLowerCase() != speciesName.toLowerCase() && !(speciesName.toLowerCase().includes(nn.toLowerCase().trim()))) {
                     
                         if (nn.toLowerCase().includes(speciesName.toLowerCase())) {
@@ -199,12 +253,11 @@ document.getElementById('save-upload').addEventListener('change', function(event
                         showdownText += `${speciesName}`
                     }
 
-                    
                     if (itemId != 0) {
-                        showdownText += ` @ ${itemTitleize(emImpItems[itemId])}`
+                        showdownText += ` @ ${itemTitleize(emItems[itemId])}`
                     }
                     showdownText += "\n"
-                    showdownText += `Level: ${lvlCap}\n`
+                    showdownText += `Level: ${level}\n`
                     showdownText += `${monNature} Nature\n`
 
                     if (hasEvs) {
@@ -216,7 +269,8 @@ document.getElementById('save-upload').addEventListener('change', function(event
                     showdownText += `- ${move1}\n`
                     showdownText += `- ${move2}\n`
                     showdownText += `- ${move3}\n`
-                    showdownText += `- ${move4}\n\n`
+                    showdownText += `- ${move4}\n`
+                    showdownText += `Met: ${met}\n\n`
                     offset = lastFoundAt + 2
                 } else {
                     offset += 2; 
@@ -268,7 +322,7 @@ function hasInvalidMoves(arr) {
 }
 
 function itemTitleize(item) {
-    return item.toLowerCase().split(/([ _-])/).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('').replace("_", " ").replace("Never Melt", "Never-Melt")
+    return item.toLowerCase().split(/([ _-])/).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('').replace("_", " ").replace("Never Melt_Ice", "Never-Melt Ice")
 }
 
 const orderFormats = [[1,2,3,4],         
@@ -295,7 +349,6 @@ const orderFormats = [[1,2,3,4],
                         [4,2,3,1],
                         [4,3,1,2],
                         [4,3,2,1]]
-
 
 
 

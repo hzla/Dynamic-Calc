@@ -1081,6 +1081,7 @@ type_chart = parseInt(params.get('types'))
 type_mod = params.get('type_mod')
 switchIn = parseInt(params.get('switchIn'))
 noSwitch = params.get('noSwitch')
+hasEvs = params.get('evs') != '0'
 challengeMode = params.get('challengeMode')
 hideDamage = params.get('hideDmg')
 FAIRY = params.get('fairy') == '1'
@@ -1199,6 +1200,19 @@ $(document).ready(function() {
         $('.genSelection').hide()
         $('#rom-title').text(TITLE).show()
         if (TITLE == "Inclement Emerald" || TITLE == "Inclement Emerald No EVs") {
+            
+            $('#save-upload-g45').attr('id', "save-upload")
+            $('#read-save').attr('for', "save-upload")
+
+            checkAndLoadScript(`./js/save_constants/inclementemerald.js`, {
+                onLoad: (src) => {
+                    console.log("Inclement Emerald Save Constants Loaded")
+                    $('#read-save').show()
+
+                },
+                onNotFound: (src) => console.log(`Not found: ${src}`)
+            });
+            
             INC_EM = true
             $("#lvl-cap").show()
             $("#harsh-sunshine").next().text("Ability Sun")
