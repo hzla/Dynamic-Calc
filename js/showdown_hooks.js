@@ -1204,7 +1204,7 @@ $(document).ready(function() {
             $('#save-upload-g45').attr('id', "save-upload")
             $('#read-save').attr('for', "save-upload")
 
-            checkAndLoadScript(`./js/save_constants/inclementemerald.js`, {
+            checkAndLoadScript(`./js/save_constants/inclement.js`, {
                 onLoad: (src) => {
                     console.log("Inclement Emerald Save Constants Loaded")
                     $('#read-save').show()

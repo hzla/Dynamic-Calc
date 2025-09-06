@@ -1215,7 +1215,7 @@ emMons = ["-----",
 "Calyrex-Ice",
 "Calyrex-Shadow"]
 
-pokeemeraldMoves = ["None",
+emMoves = ["None",
 "Pound",
 "Karate Chop",
 "Double Slap",
