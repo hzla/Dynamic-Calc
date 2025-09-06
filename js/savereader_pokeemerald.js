@@ -132,6 +132,10 @@ $(document).on('change', '#save-upload', function(event) {
 
                             // get Species
                             let speciesId = [decrypted[growth_index]] & 0x07FF
+
+                            let teraType = allTypes[([decrypted[growth_index]] & 0xF800) >> 11]
+
+
                             // for Inclement Emerald
                             
                             if (TITLE.includes("Inclement") && speciesId > 899) {
@@ -215,6 +219,8 @@ $(document).on('change', '#save-upload', function(event) {
                                 monNature = natures[pid % 25]
                             }
 
+  
+
                             // get evs
                             let int1 = decrypted[evs_index]
                             let int2 = decrypted[evs_index + 1]
@@ -273,6 +279,10 @@ $(document).on('change', '#save-upload', function(event) {
                             showdownText += "\n"
                             showdownText += `Level: ${level}\n`
                             showdownText += `${monNature} Nature\n`
+
+                            if (TITLE.includes("scrambled")) {
+                                showdownText += `Tera Type: ${teraType}\n`
+                            }
 
                             if (hasEvs) {
                                 showdownText += `EVs: ${evs[0]} HP / ${evs[1]} Atk / ${evs[2]} Def / ${evs[3]} Spe / ${evs[4]} SpA / ${evs[5]} SpD\n`
