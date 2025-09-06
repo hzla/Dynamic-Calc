@@ -83,7 +83,7 @@ for (let calc of calcs) {
 
     if (calc.save) {
       it('can import a save', () => {
-        cy.get('#save-upload').selectFile(`cypress/fixtures/saves/${calc.save}.sav`, {force: true})
+        cy.get('#save-upload-g45').selectFile(`cypress/fixtures/saves/${calc.save}.sav`, {force: true})
         cy.get('#import').click()
 
         cy.fixture(`./texts/${calc.save}_save_paste.txt`).then((expectedContent) => {

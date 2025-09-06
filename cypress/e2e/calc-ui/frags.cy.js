@@ -41,7 +41,7 @@ for (let calc of calcs) {
       cy.get('.select2-search input:visible').first().type(`${calc.testTrainer}{enter}`)
 
       // import save
-      cy.get('#save-upload').selectFile(`cypress/fixtures/saves/${calc.save}.sav`, {force: true})
+      cy.get('#save-upload-g45').selectFile(`cypress/fixtures/saves/${calc.save}.sav`, {force: true})
       cy.get('#import').click()
 
       // Check that importing a save imports encounter data
