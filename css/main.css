@@ -906,7 +906,7 @@ table td {
     );
 }
 
-.trainer-pok.left-side.mb-ohkod.mb-ohkod:not(.ohko):not(.ohkod) {
+.trainer-pok.left-side.mb-ohkod.mb-ohko:not(.ohko):not(.ohkod) {
     background: repeating-linear-gradient(
       to right,
       rgba(80, 250, 123, 0.35) 0 50%,
