@@ -120,6 +120,10 @@ function performCalculations() {
 			$(resultLocations[1][i].damage).text($(resultLocations[1][i].damage).text()+ " (can double power)");
 		}
 
+		if (["Counter", "Mirror Coat", "Destiny Bond"].indexOf(p2.moves[i].name) != -1) {
+			$(resultLocations[1][i].damage).text($(resultLocations[1][i].damage).text()+ " (variable dmg)");
+		}
+
 
 		
 
