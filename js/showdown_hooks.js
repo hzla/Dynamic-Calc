@@ -355,6 +355,16 @@ function get_trainer_poks(trainer_name)
 }
 
 
+// killer matches offensive search
+// defender matches defensive search
+// ohko kills with min roll
+// mb-ohko max roll is an ohko
+
+// ohkod dies to a min roll
+// mb-ohkod dies to a max roll
+
+
+
 
 function box_rolls() {
     if (!parseInt(localStorage.boxrolls)) {
@@ -374,8 +384,8 @@ function box_rolls() {
         taken_max_roll=-1
     }
 
-    $('.killer').removeClass('killer')
-    $('.defender').removeClass('defender')
+    $('.player-poks .trainer-pok').removeClass('killer').removeClass('defender').removeClass('ohko').removeClass('mb-ohko').removeClass('ohkod').removeClass('mb-ohkod')
+
 
     var p1field = createField();
     var p2field = p1field.clone().swap();
@@ -426,6 +436,17 @@ function box_rolls() {
                 $(`.trainer-pok[data-id='${box[m]}']`).addClass('killer')
             }
 
+            if (dealt_min_roll == 10000  && taken_max_roll == -1) {
+                if (can_kill(player_dmg, p1hp)) {
+                    killers.push({"set": box[m], "move": player_results[j].move.originalName})
+                    $(`.trainer-pok[data-id='${box[m]}']`).addClass('ohko')
+                } else if (kill_count > 0) {
+                    $(`.trainer-pok[data-id='${box[m]}']`).addClass('mb-ohko')
+                }
+            }
+
+            
+
             opposing_dmg = opposing_results[j].damage
 
 
@@ -436,15 +457,22 @@ function box_rolls() {
                     $(`.trainer-pok[data-id='${box[m]}']`).addClass('defender')
                 }         
             }
+
+            if ((selected_move_index == 0 || j == selected_move_index - 1) && taken_max_roll == -1 && dealt_min_roll == 10000) {
+                can_topkill(opposing_dmg, monHp)
+                if (kill_count >= 16) {
+                    $(`.trainer-pok[data-id='${box[m]}']`).addClass('ohkod')  
+                } else if (kill_count > 0) {
+                    $(`.trainer-pok[data-id='${box[m]}']`).addClass('mb-ohkod')  
+                }
+            }
         }
     }
-
-
     return {"killers": killers, "defenders": defenders, "faster": faster}
     
 }
 
-// check if ai mon has >= 50% chance kills player
+// check if ai mon has >= 100% chance kills player
 function can_kill(damages, hp) {
     kill_count = 0
     for (n in damages) {

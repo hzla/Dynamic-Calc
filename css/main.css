@@ -833,6 +833,89 @@ table td {
     background: rgba(255, 85, 85, 0.4);
 }
 
+
+#ohko-label {
+    color: rgba(80, 250, 123, 0.8);
+}
+
+#ohkod-label {
+    color: rgba(255, 85, 85, 0.8);
+}
+
+#mb-ohko-label {
+    color: rgba(80, 250, 123, 0.35);
+}
+
+#mb-ohkod-label {
+    color: rgba(255, 85, 85, 0.35);
+}
+
+.trainer-pok.left-side.ohko {
+  background: rgba(80, 250, 123, 0.8);
+  background: linear-gradient(rgba(80, 250, 123, 0.8), rgba(80, 250, 123, 0.8));
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.trainer-pok.left-side.mb-ohko:not(.ohko) {
+      background: rgba(80, 250, 123, 0.35);
+      background: linear-gradient(rgba(80, 250, 123, 0.35), rgba(80, 250, 123, 0.35));
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+}
+
+.trainer-pok.left-side.ohkod {
+      background: rgba(255, 85, 85, 0.8);
+      background: linear-gradient(rgba(255, 85, 85, 0.8), rgba(255, 85, 85, 0.8));
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+      background-position: right; 
+}
+
+.trainer-pok.left-side.mb-ohkod:not(.ohkod) {
+      background: rgba(255, 85, 85, 0.35);
+      background: linear-gradient(rgba(255, 85, 85, 0.35), rgba(255, 85, 85, 0.35));
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+      background-position: right; 
+}
+
+
+
+.trainer-pok.left-side.ohkod.ohko {
+    background: repeating-linear-gradient(
+      to right,
+      rgba(80, 250, 123, 0.8) 0 50%,
+      rgba(255, 85, 85, 0.8) 50% 100%
+    );
+}
+
+.trainer-pok.left-side.mb-ohkod:not(.ohkod).ohko {
+    background: repeating-linear-gradient(
+      to right,
+      rgba(80, 250, 123, 0.8) 0 50%,
+      rgba(255, 85, 85, 0.35) 50% 100%
+    );
+}
+
+.trainer-pok.left-side.mb-ohko:not(.ohko).ohkod {
+    background: repeating-linear-gradient(
+      to right,
+      rgba(80, 250, 123, 0.35) 0 50%,
+      rgba(255, 85, 85, 0.8) 50% 100%
+    );
+}
+
+.trainer-pok.left-side.mb-ohkod.mb-ohkod:not(.ohko):not(.ohkod) {
+    background: repeating-linear-gradient(
+      to right,
+      rgba(80, 250, 123, 0.35) 0 50%,
+      rgba(255, 85, 85, 0.35) 50% 100%
+    );
+}
+
+
+
 .trainer-pok.left-side.defender {
     background: rgba(98, 114, 164, 1);
 }
@@ -907,8 +990,9 @@ table td {
 
 .trainer-pok-list .pokesprite.left-side, .pokesprite .trainer-pok.left-side {
     margin: 0px;
-    height: 65px;
+    height: 64px;
     width: auto;
+    margin-right: 1px;
 }
 
 .trainer-pok.right-side {
