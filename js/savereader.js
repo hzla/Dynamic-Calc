@@ -380,6 +380,10 @@ function parsePKM(chunk, is_party=false, offset=0) {
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
     ivs = getIVs(iv_value) 
 
+
+    console.log(mon_name)
+    console.log(ivs)
+
     let met_location
 
     if (baseGame == "Pt" || baseGame == "HGSS") {

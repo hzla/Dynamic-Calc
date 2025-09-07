@@ -255,7 +255,7 @@ $(document).on('change', '#save-upload', function(event) {
                             }
 
                             // get ivs 
-                            let ivs = getIVs(decrypted[misc_index + 1])
+                            let ivs = getIVsPkem(decrypted[misc_index + 1])
 
                             
 
@@ -309,7 +309,7 @@ $(document).on('change', '#save-upload', function(event) {
     }
 });
 
-function getIVs(ivValue) {
+function getIVsPkem(ivValue) {
 
     // Extract each stat using bitwise operations
     const hp = (ivValue >> 0) & 0x1F;         // 5 bits for HP
