@@ -87,7 +87,7 @@ Level: 9
 Modest Nature
 Ability: Reckless
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 26 Atk / 22 Def / 31 SpA / 29 SpD / 6 Spe
+IVs: 17 HP / 26 Atk / 22 Def / 29 SpA / 6 SpD / 31 Spe
 - Tackle
 - Growl
 - Quick Attack
@@ -147,7 +147,7 @@ Level: 9
 Bashful Nature
 Ability: Sand Veil
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 10 HP / 16 Atk / 14 Def / 14 SpA / 10 SpD / 20 Spe
+IVs: 10 HP / 16 Atk / 14 Def / 10 SpA / 20 SpD / 14 Spe
 - Growl
 - Defense Curl
 - Mud-Slap
@@ -171,7 +171,7 @@ Level: 21
 Naive Nature
 Ability: Hyper Cutter
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 20 Atk / 2 Def / 26 SpA / 20 SpD / 8 Spe
+IVs: 17 HP / 20 Atk / 2 Def / 20 SpA / 8 SpD / 26 Spe
 - Knock Off
 - Wing Attack
 - Sand Tomb
@@ -183,7 +183,7 @@ Level: 10
 Impish Nature
 Ability: Skill Link
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 8 HP / 31 Atk / 29 Def / 1 SpA / 7 SpD / 17 Spe
+IVs: 8 HP / 31 Atk / 29 Def / 7 SpA / 17 SpD / 1 Spe
 - Withdraw
 - Water Gun
 - Supersonic
@@ -195,7 +195,7 @@ Level: 12
 Quiet Nature
 Ability: Chlorophyll
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 3 HP / 14 Atk / 27 Def / 13 SpA / 1 SpD / 6 Spe
+IVs: 3 HP / 14 Atk / 27 Def / 1 SpA / 6 SpD / 13 Spe
 - Morning Sun
 - Tackle
 - Growth
@@ -219,7 +219,7 @@ Level: 12
 Timid Nature
 Ability: Compound Eyes
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 21 HP / 4 Atk / 7 Def / 10 SpA / 16 SpD / 15 Spe
+IVs: 21 HP / 4 Atk / 7 Def / 16 SpA / 15 SpD / 10 Spe
 - Sleep Powder
 - Silver Wind
 - Psybeam
@@ -243,7 +243,7 @@ Level: 16
 Naive Nature
 Ability: Natural Cure
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 13 HP / 1 Atk / 31 Def / 19 SpA / 14 SpD / 14 Spe
+IVs: 13 HP / 1 Atk / 31 Def / 14 SpA / 14 SpD / 19 Spe
 - Sing
 - Mist Ball
 - Fury Attack
@@ -279,7 +279,7 @@ Level: 10
 Lax Nature
 Ability: Soundproof
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 6 HP / 9 Atk / 21 Def / 16 SpA / 5 SpD / 23 Spe
+IVs: 6 HP / 9 Atk / 21 Def / 5 SpA / 23 SpD / 16 Spe
 - Howl
 - Mist Ball
 - Astonish
@@ -291,7 +291,7 @@ Level: 31
 Careful Nature
 Ability: Download
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 13 Atk / 28 Def / 19 SpA / 19 SpD / 13 Spe
+IVs: 17 HP / 13 Atk / 28 Def / 19 SpA / 13 SpD / 19 Spe
 - Recover
 - Charge Beam
 - Signal Beam
@@ -315,7 +315,7 @@ Level: 7
 Quirky Nature
 Ability: Synchronize
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 16 HP / 0 Atk / 15 Def / 30 SpA / 21 SpD / 17 Spe
+IVs: 16 HP / 0 Atk / 15 Def / 21 SpA / 17 SpD / 30 Spe
 - Growl
 - Confusion
 - Double Team
