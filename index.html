@@ -6,8 +6,9 @@
     <meta name="color-scheme" content="dark">
     <title>Dynamic Calc</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css?01" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c9705" />
-    <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c971" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?2f51c969e" />
+    <link type="text/css" rel="stylesheet" href="./css/encounters.css?2f51c970" />
+    <link type="text/css" rel="stylesheet" href="./css/settings-ui.css?2f51c970" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css?1" />
     <!-- Global site tag (gtag.js) - Google Analytics -->    
     <script>
@@ -109,12 +110,52 @@
         <img src="./img/menu.svg" id="open-menu">
 
         <div id="settings-menu">
-            <div id="sprite-toggle" class="menu-item">Toggle Sprite Icons</div>
-            <div id="toggle-boxroll" class="menu-item">Toggle Box Filter</div>
-            <div id="toggle-battle-notes" class="menu-item">Toggle Battle Notes</div>
-            <div id="show-mid" class="menu-item">Toggle Field/Import</div>
-            <div id="theme-toggle" class="menu-item">Toggle Layout</div>
-            <div id="ms-btn" class="menu-item">Mastersheet Mode</div>
+            <div id="sprite-toggle" class="menu-item">
+              <div class="menu-label">
+                Showdown Sprites
+              </div> 
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="toggle-boxroll" class="menu-item">
+              <div class="menu-label">
+                Box Filters
+              </div> 
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+             <div id="toggle-battle-notes" class="menu-item">
+              <div class="menu-label">
+                Battle Notes
+              </div> 
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="show-mid" class="menu-item">
+              <div class="menu-label">
+                Field/Import
+              </div> 
+              <label class="switch">
+                <input type="checkbox" checked="true">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="theme-toggle" class="menu-item">
+              <div class="menu-label">
+                Use New Layout
+              </div> 
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="ms-btn" class="menu-item">Go to Mastersheet</div>
         </div>
 
         <span class="title-text">

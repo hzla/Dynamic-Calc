@@ -31,33 +31,6 @@
     margin-top: 10px;
 }
 
-#ms-btn {
-/*    background: #bb86fc;
-    color: rgba(255,255,255,0.87);
-    width: 140px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 5px;
-    position: absolute;
-    left: 74px;
-    top: 6px;
-    cursor:  pointer;
-    display: none;*/
-}
-
-
-/*.mastersheet-wrapper #show-mid {
-    top:  252px;
-}
-
-.mastersheet-wrapper #show-ai {
-    top:  287px;
-}*/
-
-
-/**/
-
 .state {
     color: #bd93f9;
     text-decoration: underline;

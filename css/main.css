@@ -98,32 +98,6 @@ input[type="file"] {
     min-height: 50px;
 }
 
-#open-menu {
-    height:  40px;
-    cursor: pointer;
-}
-
-#settings-menu {
-    border: 2px solid #f1f1f1;
-    z-index: 100;
-    position: absolute;
-    top: 70px;
-    background: #181818;
-    width: 160px;
-    padding: 4px;
-    display: none;
-
-
-}
-
-.menu-item {
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-}
-
 .crit-text {
     color:  #FF5555;
 }
@@ -1081,9 +1055,6 @@ table td {
     display:  none !important;
 }
  
-
-
-
 .trainer-pok-list.opposing.no-switch .trainer-pok-container {
     border:  1px solid rgb(0,0,0,0) !important;
 

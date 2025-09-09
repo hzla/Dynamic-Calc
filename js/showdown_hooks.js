@@ -17,13 +17,14 @@ function init_calc() {
   partner_name = null
 
 
-  // local storage settings
+  // local storage settings defaults
   if (typeof localStorage.boxspriteindex === 'undefined') {
     localStorage.boxspriteindex = 1
   }
   if (typeof localStorage.themeIndex === 'undefined') {
     localStorage.themeIndex = 1
   }
+
   localStorage.toDelete = ""
 
   if (parseInt(localStorage.themeIndex) == 0) {
@@ -53,11 +54,28 @@ function init_calc() {
   if (localStorage.notes) {
     $('#battle-notes .notes-text').html(localStorage.notes);
   }
-  
+
+  setSettingsTogglesFromLocalStorage()
 }
 
-// Function to check if a local file exists and load it
-// Works with file:// protocol by using script loading attempt
+function setSettingsTogglesFromLocalStorage() {
+    if (sprite_style == "pokesprite") {
+        $('#sprite-toggle input').prop('checked', true)
+    }
+    if (localStorage.themeIndex == '1') {
+        $('#theme-toggle input').prop('checked', true)
+    }
+    if (localStorage.boxrolls == '1') {
+        $('#toggle-boxroll input').prop('checked', true)
+    }
+    if (localStorage.battlenotes == '1') {
+        $('#toggle-battle-notes input').prop('checked', true)
+    }
+}
+
+
+function cleanString(str) {str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()};
+
 function checkAndLoadScript(src, options = {}) {
     const {
         onLoad = null,
@@ -1389,7 +1407,7 @@ $(document).ready(function() {
    })
 
    $(document).on('click', '#open-menu, #settings-menu div', function() {
-        $('#settings-menu').toggle()
+        // $('#settings-menu').toggle()
    })
 
    $(document).on('keyup', '#search-box', filter_box)
