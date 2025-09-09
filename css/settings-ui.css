@@ -34,6 +34,10 @@
   height: 20px;
 }
 
+.poke-info label.switch {
+  width: 40px;
+}
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;

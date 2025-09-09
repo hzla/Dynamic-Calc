@@ -454,7 +454,7 @@ function box_rolls() {
                 $(`.trainer-pok[data-id='${box[m]}']`).addClass('killer')
             }
 
-            if (dealt_min_roll == 10000  && taken_max_roll == -1) {
+            if (dealt_min_roll == 10000  && taken_max_roll == -1 && $('#adv-boxrolls').prop('checked')) {
                 if (can_kill(player_dmg, p1hp)) {
                     killers.push({"set": box[m], "move": player_results[j].move.originalName})
                     $(`.trainer-pok[data-id='${box[m]}']`).addClass('ohko')
@@ -476,7 +476,7 @@ function box_rolls() {
                 }         
             }
 
-            if ((selected_move_index == 0 || j == selected_move_index - 1) && taken_max_roll == -1 && dealt_min_roll == 10000) {
+            if ((selected_move_index == 0 || j == selected_move_index - 1) && taken_max_roll == -1 && dealt_min_roll == 10000  && $('#adv-boxrolls').prop('checked')) {
                 can_topkill(opposing_dmg, monHp)
                 if (kill_count >= 16) {
                     $(`.trainer-pok[data-id='${box[m]}']`).addClass('ohkod')  
@@ -1623,7 +1623,7 @@ $(document).ready(function() {
         window.location.href = url;
    })
 
-   $(document).on('click', '#sprite-toggle label', function() {
+   $(document).on('click', '#sprite-toggle .slider', function() {
         toggleBoxSpriteStyle()
    })
 
@@ -1737,6 +1737,7 @@ $(document).ready(function() {
         } 
     })
 
+    $(document).on('change', '#adv-boxrolls', box_rolls)
 
     $(document).on('change', '.set-selector', function() {
         setTimeout(function() {

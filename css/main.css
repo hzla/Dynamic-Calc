@@ -109,9 +109,9 @@ input[type="file"] {
 
 #lvl-cap {
     padding:  4px;
-    width:  60px;
+    width:  80px;
     display: none;
-    height: 40px;
+    height: 32px;
     text-align: center;
     font-size: 22px;
 }
@@ -277,11 +277,11 @@ input[type="file"] {
 }
 
 .title-text {
-    line-height: 40px;
-    height:  40px;
+    line-height: 32px;
+    height:  32px;
     width: auto;
     position: absolute;
-    left: 80px;
+    left: 70px;
     top: -10px;
 }
 
