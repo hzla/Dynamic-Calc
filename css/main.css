@@ -111,6 +111,9 @@ input[type="file"] {
     padding:  4px;
     width:  60px;
     display: none;
+    height: 40px;
+    text-align: center;
+    font-size: 22px;
 }
 
 #reasoning {
