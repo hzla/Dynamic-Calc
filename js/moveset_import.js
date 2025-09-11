@@ -57,7 +57,7 @@ moveChanges = {
 		"Mist Ball": "Moonblast",
 		"Sacred Fire": "Mystical Fire",
 		"Sharpen": "Nuzzle",
-		"Submisson": "Play Rough",
+		"Submission": "Play Rough",
 		"Comet Punch": "Power-Up Punch",
 		"Egg Bomb": "Psychic Fangs",
 		"Smelling Salts": "Psyshield Bash",
