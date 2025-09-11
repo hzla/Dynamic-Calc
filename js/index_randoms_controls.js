@@ -308,7 +308,7 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 
 	}
 	if (displayProbabilities) {
-
+		mostRecentDisplayedResults = results
 		moveProbabilities = calculate_probabilities(results[1])
 	}
 	return results;

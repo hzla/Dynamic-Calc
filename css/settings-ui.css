@@ -1,7 +1,14 @@
 #open-menu {
     height:  50px;
     cursor: pointer;
+    transition: transform 0.4s ease, fill 0.3s ease;
 }
+
+#open-menu:hover {
+  transform: rotate(180deg);
+  fill: #f1f1f1;
+}
+
 
 #settings-menu {
     border: 2px solid #f1f1f1;
