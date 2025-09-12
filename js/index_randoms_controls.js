@@ -50,7 +50,7 @@ function performCalculations() {
 	p2.maxDamages = [];
 	
 
-	if ($('#SpeL').prop('checked')) {
+	if ($('#SpeL').prop('checked') && damageGen == 3) {
 		p1.stats.spe = Math.floor(p1.stats.spe * 1.1)
 		p1info.find(".sp .totalMod").css('color', '#bd93f9')
 	} else {

@@ -1304,6 +1304,14 @@ function createField() {
 	var isBadgeDef = [$("#DefL").prop("checked"), $("#DefR").prop("checked")];
 	var isBadgeSpeed = [$("#SpeL").prop("checked"), $("#SpeR").prop("checked")];
 
+	// guard against any misclicks
+	if (damageGen > 3) {
+		isBadgeAtk = [false, false]
+		isBadgeSpec = [false, false]
+		isBadgeDef = [false, false]
+		isBadgeSpeed = [false, false]
+	}
+
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], 
