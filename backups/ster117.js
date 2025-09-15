@@ -112956,7 +112956,7 @@ backup_data = {
         }
       }
     },
-    "Porygon Z": {
+    "Porygon-Z": {
       "Lvl 54 Team Rocket Grunt13 ": {
         "level": 54,
         "tr_id": 193,
@@ -122665,7 +122665,7 @@ backup_data = {
         }
       }
     },
-    "Ho Oh": {
+    "Ho-Oh": {
       "Lvl 100 Elite Four Karen2 ": {
         "level": 100,
         "tr_id": 705,
