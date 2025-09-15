@@ -1,1235 +1,4 @@
 backup_data = {
-  "order": {
-    "1": {
-      "id": 1,
-      "next": 63,
-      "prev": 269
-    },
-    "2": {
-      "id": 2,
-      "next": 3,
-      "prev": null
-    },
-    "3": {
-      "id": 3,
-      "next": 265,
-      "prev": 2
-    },
-    "5": {
-      "id": 5,
-      "next": 22,
-      "prev": 70
-    },
-    "7": {
-      "id": 7,
-      "next": 80,
-      "prev": 76
-    },
-    "8": {
-      "id": 8,
-      "next": 47,
-      "prev": 265
-    },
-    "9": {
-      "id": 9,
-      "next": 85,
-      "prev": 16
-    },
-    "10": {
-      "id": 10,
-      "next": 69,
-      "prev": 67
-    },
-    "11": {
-      "id": 11,
-      "next": 165,
-      "prev": 351
-    },
-    "12": {
-      "id": 12,
-      "next": 486,
-      "prev": 13
-    },
-    "13": {
-      "id": 13,
-      "next": 12,
-      "prev": 101
-    },
-    "16": {
-      "id": 16,
-      "next": 9,
-      "prev": 45
-    },
-    "17": {
-      "id": 17,
-      "next": 144,
-      "prev": 121
-    },
-    "18": {
-      "id": 18,
-      "next": 60,
-      "prev": 27
-    },
-    "19": {
-      "id": 19,
-      "next": 51,
-      "prev": 249
-    },
-    "20": {
-      "id": 20,
-      "next": 49,
-      "prev": 29
-    },
-    "21": {
-      "id": 21,
-      "next": 266,
-      "prev": 69
-    },
-    "22": {
-      "id": 22,
-      "next": 71,
-      "prev": 5
-    },
-    "23": {
-      "id": 23,
-      "next": 40,
-      "prev": 319
-    },
-    "25": {
-      "id": 25,
-      "next": 319,
-      "prev": 384
-    },
-    "26": {
-      "id": 26,
-      "next": 383,
-      "prev": 56
-    },
-    "27": {
-      "id": 27,
-      "next": 18,
-      "prev": 49
-    },
-    "28": {
-      "id": 28,
-      "next": 351,
-      "prev": 102
-    },
-    "29": {
-      "id": 29,
-      "next": 20,
-      "prev": 50
-    },
-    "30": {
-      "id": 30,
-      "next": 386,
-      "prev": 71
-    },
-    "31": {
-      "id": 31,
-      "next": 410,
-      "prev": 46
-    },
-    "32": {
-      "id": 32,
-      "next": 185,
-      "prev": 481
-    },
-    "33": {
-      "id": 33,
-      "next": 129,
-      "prev": 158
-    },
-    "34": {
-      "id": 34,
-      "next": 401,
-      "prev": 157
-    },
-    "35": {
-      "id": 35,
-      "next": 244,
-      "prev": 111
-    },
-    "37": {
-      "id": 37,
-      "next": 217,
-      "prev": 215
-    },
-    "39": {
-      "id": 39,
-      "next": 45,
-      "prev": 389
-    },
-    "40": {
-      "id": 40,
-      "next": 101,
-      "prev": 23
-    },
-    "43": {
-      "id": 43,
-      "next": 52,
-      "prev": 51
-    },
-    "45": {
-      "id": 45,
-      "next": 16,
-      "prev": 39
-    },
-    "46": {
-      "id": 46,
-      "next": 31,
-      "prev": 493
-    },
-    "47": {
-      "id": 47,
-      "next": 249,
-      "prev": 8
-    },
-    "49": {
-      "id": 49,
-      "next": 27,
-      "prev": 20
-    },
-    "50": {
-      "id": 50,
-      "next": 29,
-      "prev": 290
-    },
-    "51": {
-      "id": 51,
-      "next": 43,
-      "prev": 19
-    },
-    "52": {
-      "id": 52,
-      "next": 53,
-      "prev": 43
-    },
-    "53": {
-      "id": 53,
-      "next": 55,
-      "prev": 52
-    },
-    "54": {
-      "id": 54,
-      "next": 290,
-      "prev": 55
-    },
-    "55": {
-      "id": 55,
-      "next": 54,
-      "prev": 53
-    },
-    "56": {
-      "id": 56,
-      "next": 26,
-      "prev": 57
-    },
-    "57": {
-      "id": 57,
-      "next": 56,
-      "prev": 60
-    },
-    "60": {
-      "id": 60,
-      "next": 57,
-      "prev": 18
-    },
-    "62": {
-      "id": 62,
-      "next": 409,
-      "prev": 63
-    },
-    "63": {
-      "id": 63,
-      "next": 62,
-      "prev": 1
-    },
-    "66": {
-      "id": 66,
-      "next": 77,
-      "prev": 409
-    },
-    "67": {
-      "id": 67,
-      "next": 10,
-      "prev": 68
-    },
-    "68": {
-      "id": 68,
-      "next": 67,
-      "prev": 486
-    },
-    "69": {
-      "id": 69,
-      "next": 21,
-      "prev": 10
-    },
-    "70": {
-      "id": 70,
-      "next": 5,
-      "prev": 87
-    },
-    "71": {
-      "id": 71,
-      "next": 30,
-      "prev": 22
-    },
-    "72": {
-      "id": 72,
-      "next": 178,
-      "prev": 78
-    },
-    "73": {
-      "id": 73,
-      "next": 215,
-      "prev": 211
-    },
-    "74": {
-      "id": 74,
-      "next": 75,
-      "prev": 388
-    },
-    "75": {
-      "id": 75,
-      "next": 76,
-      "prev": 74
-    },
-    "76": {
-      "id": 76,
-      "next": 7,
-      "prev": 75
-    },
-    "77": {
-      "id": 77,
-      "next": 388,
-      "prev": 66
-    },
-    "78": {
-      "id": 78,
-      "next": 72,
-      "prev": 80
-    },
-    "80": {
-      "id": 80,
-      "next": 78,
-      "prev": 7
-    },
-    "81": {
-      "id": 81,
-      "next": 88,
-      "prev": 386
-    },
-    "82": {
-      "id": 82,
-      "next": 398,
-      "prev": 400
-    },
-    "85": {
-      "id": 85,
-      "next": 86,
-      "prev": 9
-    },
-    "86": {
-      "id": 86,
-      "next": 96,
-      "prev": 85
-    },
-    "87": {
-      "id": 87,
-      "next": 70,
-      "prev": 395
-    },
-    "88": {
-      "id": 88,
-      "next": 105,
-      "prev": 81
-    },
-    "89": {
-      "id": 89,
-      "next": 493,
-      "prev": 494
-    },
-    "90": {
-      "id": 90,
-      "next": 93,
-      "prev": 97
-    },
-    "92": {
-      "id": 92,
-      "next": 498,
-      "prev": 98
-    },
-    "93": {
-      "id": 93,
-      "next": 98,
-      "prev": 90
-    },
-    "94": {
-      "id": 94,
-      "next": 97,
-      "prev": 95
-    },
-    "95": {
-      "id": 95,
-      "next": 94,
-      "prev": 96
-    },
-    "96": {
-      "id": 96,
-      "next": 95,
-      "prev": 86
-    },
-    "97": {
-      "id": 97,
-      "next": 90,
-      "prev": 94
-    },
-    "98": {
-      "id": 98,
-      "next": 411,
-      "prev": 114
-    },
-    "101": {
-      "id": 101,
-      "next": 13,
-      "prev": 40
-    },
-    "102": {
-      "id": 102,
-      "next": 28,
-      "prev": 411
-    },
-    "104": {
-      "id": 104,
-      "next": 114,
-      "prev": 303
-    },
-    "105": {
-      "id": 105,
-      "next": 601,
-      "prev": 88
-    },
-    "106": {
-      "id": 106,
-      "next": 158,
-      "prev": 729
-    },
-    "107": {
-      "id": 107,
-      "next": 729,
-      "prev": 730
-    },
-    "108": {
-      "id": 108,
-      "next": 121,
-      "prev": 145
-    },
-    "110": {
-      "id": 110,
-      "next": 117,
-      "prev": 154
-    },
-    "111": {
-      "id": 111,
-      "next": 35,
-      "prev": 119
-    },
-    "112": {
-      "id": 112,
-      "next": 119,
-      "prev": 117
-    },
-    "114": {
-      "id": 114,
-      "next": 98,
-      "prev": 104
-    },
-    "115": {
-      "id": 115,
-      "next": 303,
-      "prev": 363
-    },
-    "117": {
-      "id": 117,
-      "next": 112,
-      "prev": 110
-    },
-    "119": {
-      "id": 119,
-      "next": 111,
-      "prev": 112
-    },
-    "120": {
-      "id": 120,
-      "next": 417,
-      "prev": 268
-    },
-    "121": {
-      "id": 121,
-      "next": 17,
-      "prev": 108
-    },
-    "122": {
-      "id": 122,
-      "next": 132,
-      "prev": 131
-    },
-    "123": {
-      "id": 123,
-      "next": 134,
-      "prev": 263
-    },
-    "124": {
-      "id": 124,
-      "next": 407,
-      "prev": 125
-    },
-    "125": {
-      "id": 125,
-      "next": 124,
-      "prev": 485
-    },
-    "129": {
-      "id": 129,
-      "next": 403,
-      "prev": 33
-    },
-    "130": {
-      "id": 130,
-      "next": 502,
-      "prev": 132
-    },
-    "131": {
-      "id": 131,
-      "next": 122,
-      "prev": 402
-    },
-    "132": {
-      "id": 132,
-      "next": 130,
-      "prev": 122
-    },
-    "134": {
-      "id": 134,
-      "next": 537,
-      "prev": 123
-    },
-    "137": {
-      "id": 137,
-      "next": 141,
-      "prev": 406
-    },
-    "138": {
-      "id": 138,
-      "next": 168,
-      "prev": 167
-    },
-    "141": {
-      "id": 141,
-      "next": 143,
-      "prev": 137
-    },
-    "143": {
-      "id": 143,
-      "next": 145,
-      "prev": 141
-    },
-    "144": {
-      "id": 144,
-      "next": 146,
-      "prev": 17
-    },
-    "145": {
-      "id": 145,
-      "next": 108,
-      "prev": 143
-    },
-    "146": {
-      "id": 146,
-      "next": 147,
-      "prev": 144
-    },
-    "147": {
-      "id": 147,
-      "next": 151,
-      "prev": 146
-    },
-    "151": {
-      "id": 151,
-      "next": 154,
-      "prev": 147
-    },
-    "154": {
-      "id": 154,
-      "next": 110,
-      "prev": 151
-    },
-    "156": {
-      "id": 156,
-      "next": 251,
-      "prev": 159
-    },
-    "157": {
-      "id": 157,
-      "next": 34,
-      "prev": 251
-    },
-    "158": {
-      "id": 158,
-      "next": 33,
-      "prev": 106
-    },
-    "159": {
-      "id": 159,
-      "next": 156,
-      "prev": 498
-    },
-    "160": {
-      "id": 160,
-      "next": 164,
-      "prev": 162
-    },
-    "161": {
-      "id": 161,
-      "next": 163,
-      "prev": 164
-    },
-    "162": {
-      "id": 162,
-      "next": 160,
-      "prev": 500
-    },
-    "163": {
-      "id": 163,
-      "next": 221,
-      "prev": 161
-    },
-    "164": {
-      "id": 164,
-      "next": 161,
-      "prev": 160
-    },
-    "165": {
-      "id": 165,
-      "next": 166,
-      "prev": 11
-    },
-    "166": {
-      "id": 166,
-      "next": 167,
-      "prev": 165
-    },
-    "167": {
-      "id": 167,
-      "next": 138,
-      "prev": 166
-    },
-    "168": {
-      "id": 168,
-      "next": 169,
-      "prev": 138
-    },
-    "169": {
-      "id": 169,
-      "next": 268,
-      "prev": 168
-    },
-    "170": {
-      "id": 170,
-      "next": 195,
-      "prev": 487
-    },
-    "171": {
-      "id": 171,
-      "next": 470,
-      "prev": 170
-    },
-    "174": {
-      "id": 174,
-      "next": 245,
-      "prev": 417
-    },
-    "178": {
-      "id": 178,
-      "next": 182,
-      "prev": 72
-    },
-    "180": {
-      "id": 180,
-      "next": 202,
-      "prev": 221
-    },
-    "181": {
-      "id": 181,
-      "next": 395,
-      "prev": 184
-    },
-    "182": {
-      "id": 182,
-      "next": 184,
-      "prev": 178
-    },
-    "184": {
-      "id": 184,
-      "next": 181,
-      "prev": 182
-    },
-    "185": {
-      "id": 185,
-      "next": 198,
-      "prev": 32
-    },
-    "186": {
-      "id": 186,
-      "next": 189,
-      "prev": 188
-    },
-    "187": {
-      "id": 187,
-      "next": 188,
-      "prev": 198
-    },
-    "188": {
-      "id": 188,
-      "next": 186,
-      "prev": 187
-    },
-    "189": {
-      "id": 189,
-      "next": 192,
-      "prev": 186
-    },
-    "190": {
-      "id": 190,
-      "next": 191,
-      "prev": 471
-    },
-    "191": {
-      "id": 191,
-      "next": 706,
-      "prev": 190
-    },
-    "192": {
-      "id": 192,
-      "next": 472,
-      "prev": 189
-    },
-    "193": {
-      "id": 193,
-      "next": 199,
-      "prev": 288
-    },
-    "195": {
-      "id": 195,
-      "next": 289,
-      "prev": 170
-    },
-    "196": {
-      "id": 196,
-      "next": 197,
-      "prev": 199
-    },
-    "197": {
-      "id": 197,
-      "next": 227,
-      "prev": 196
-    },
-    "198": {
-      "id": 198,
-      "next": 187,
-      "prev": 185
-    },
-    "199": {
-      "id": 199,
-      "next": 196,
-      "prev": 193
-    },
-    "202": {
-      "id": 202,
-      "next": 205,
-      "prev": 180
-    },
-    "205": {
-      "id": 205,
-      "next": 363,
-      "prev": 202
-    },
-    "207": {
-      "id": 207,
-      "next": 208,
-      "prev": 207
-    },
-    "208": {
-      "id": 208,
-      "next": 225,
-      "prev": 207
-    },
-    "211": {
-      "id": 211,
-      "next": 73,
-      "prev": 401
-    },
-    "212": {
-      "id": 212,
-      "next": 731,
-      "prev": 217
-    },
-    "215": {
-      "id": 215,
-      "next": 37,
-      "prev": 73
-    },
-    "216": {
-      "id": 216,
-      "next": 170,
-      "prev": 224
-    },
-    "217": {
-      "id": 217,
-      "next": 212,
-      "prev": 37
-    },
-    "218": {
-      "id": 218,
-      "next": 404,
-      "prev": 226
-    },
-    "219": {
-      "id": 219,
-      "next": 468,
-      "prev": 222
-    },
-    "221": {
-      "id": 221,
-      "next": 180,
-      "prev": 163
-    },
-    "222": {
-      "id": 222,
-      "next": 219,
-      "prev": 469
-    },
-    "223": {
-      "id": 223,
-      "next": 224,
-      "prev": 229
-    },
-    "224": {
-      "id": 224,
-      "next": 216,
-      "prev": 223
-    },
-    "225": {
-      "id": 225,
-      "next": 226,
-      "prev": 208
-    },
-    "226": {
-      "id": 226,
-      "next": 218,
-      "prev": 225
-    },
-    "227": {
-      "id": 227,
-      "next": 471,
-      "prev": 197
-    },
-    "229": {
-      "id": 229,
-      "next": 223,
-      "prev": 502
-    },
-    "244": {
-      "id": 244,
-      "next": 500,
-      "prev": 35
-    },
-    "245": {
-      "id": 245,
-      "next": 247,
-      "prev": 174
-    },
-    "246": {
-      "id": 246,
-      "next": 260,
-      "prev": 418
-    },
-    "247": {
-      "id": 247,
-      "next": 418,
-      "prev": 245
-    },
-    "249": {
-      "id": 249,
-      "next": 19,
-      "prev": 47
-    },
-    "251": {
-      "id": 251,
-      "next": 157,
-      "prev": 156
-    },
-    "260": {
-      "id": 260,
-      "next": 709,
-      "prev": 246
-    },
-    "263": {
-      "id": 263,
-      "next": 123,
-      "prev": 270
-    },
-    "265": {
-      "id": 265,
-      "next": 8,
-      "prev": 3
-    },
-    "266": {
-      "id": 266,
-      "next": 269,
-      "prev": 21
-    },
-    "267": {
-      "id": 267,
-      "next": 270,
-      "prev": 601
-    },
-    "268": {
-      "id": 268,
-      "next": 120,
-      "prev": 169
-    },
-    "269": {
-      "id": 269,
-      "next": 1,
-      "prev": 266
-    },
-    "270": {
-      "id": 270,
-      "next": 263,
-      "prev": 267
-    },
-    "272": {
-      "id": 272,
-      "next": 288,
-      "prev": 289
-    },
-    "288": {
-      "id": 288,
-      "next": 193,
-      "prev": 272
-    },
-    "289": {
-      "id": 289,
-      "next": 272,
-      "prev": 195
-    },
-    "290": {
-      "id": 290,
-      "next": 50,
-      "prev": 54
-    },
-    "303": {
-      "id": 303,
-      "next": 104,
-      "prev": 115
-    },
-    "319": {
-      "id": 319,
-      "next": 23,
-      "prev": 25
-    },
-    "351": {
-      "id": 351,
-      "next": 11,
-      "prev": 28
-    },
-    "363": {
-      "id": 363,
-      "next": 115,
-      "prev": 205
-    },
-    "383": {
-      "id": 383,
-      "next": 390,
-      "prev": 26
-    },
-    "384": {
-      "id": 384,
-      "next": 25,
-      "prev": 390
-    },
-    "386": {
-      "id": 386,
-      "next": 81,
-      "prev": 30
-    },
-    "388": {
-      "id": 388,
-      "next": 74,
-      "prev": 77
-    },
-    "389": {
-      "id": 389,
-      "next": 39,
-      "prev": 398
-    },
-    "390": {
-      "id": 390,
-      "next": 384,
-      "prev": 383
-    },
-    "395": {
-      "id": 395,
-      "next": 87,
-      "prev": 181
-    },
-    "398": {
-      "id": 398,
-      "next": 389,
-      "prev": 82
-    },
-    "400": {
-      "id": 400,
-      "next": 82,
-      "prev": 410
-    },
-    "401": {
-      "id": 401,
-      "next": 211,
-      "prev": 34
-    },
-    "402": {
-      "id": 402,
-      "next": 131,
-      "prev": 403
-    },
-    "403": {
-      "id": 403,
-      "next": 402,
-      "prev": 129
-    },
-    "404": {
-      "id": 404,
-      "next": 469,
-      "prev": 218
-    },
-    "406": {
-      "id": 406,
-      "next": 137,
-      "prev": 408
-    },
-    "407": {
-      "id": 407,
-      "next": 408,
-      "prev": 124
-    },
-    "408": {
-      "id": 408,
-      "next": 406,
-      "prev": 407
-    },
-    "409": {
-      "id": 409,
-      "next": 66,
-      "prev": 62
-    },
-    "410": {
-      "id": 410,
-      "next": 400,
-      "prev": 31
-    },
-    "411": {
-      "id": 411,
-      "next": 102,
-      "prev": 98
-    },
-    "417": {
-      "id": 417,
-      "next": 174,
-      "prev": 120
-    },
-    "418": {
-      "id": 418,
-      "next": 246,
-      "prev": 247
-    },
-    "468": {
-      "id": 468,
-      "next": 488,
-      "prev": 219
-    },
-    "469": {
-      "id": 469,
-      "next": 222,
-      "prev": 404
-    },
-    "470": {
-      "id": 470,
-      "next": 207,
-      "prev": 171
-    },
-    "471": {
-      "id": 471,
-      "next": 190,
-      "prev": 227
-    },
-    "472": {
-      "id": 472,
-      "next": 487,
-      "prev": 192
-    },
-    "478": {
-      "id": 478,
-      "next": 485,
-      "prev": 706
-    },
-    "479": {
-      "id": 479,
-      "next": 499,
-      "prev": 488
-    },
-    "480": {
-      "id": 480,
-      "next": 482,
-      "prev": 483
-    },
-    "481": {
-      "id": 481,
-      "next": 32,
-      "prev": 484
-    },
-    "482": {
-      "id": 482,
-      "next": 484,
-      "prev": 480
-    },
-    "483": {
-      "id": 483,
-      "next": 480,
-      "prev": 675
-    },
-    "484": {
-      "id": 484,
-      "next": 481,
-      "prev": 482
-    },
-    "485": {
-      "id": 485,
-      "next": 125,
-      "prev": 478
-    },
-    "486": {
-      "id": 486,
-      "next": 68,
-      "prev": 12
-    },
-    "487": {
-      "id": 487,
-      "next": 170,
-      "prev": 472
-    },
-    "488": {
-      "id": 488,
-      "next": 479,
-      "prev": 468
-    },
-    "493": {
-      "id": 493,
-      "next": 46,
-      "prev": 89
-    },
-    "494": {
-      "id": 494,
-      "next": 89,
-      "prev": 537
-    },
-    "498": {
-      "id": 498,
-      "next": 159,
-      "prev": 92
-    },
-    "499": {
-      "id": 499,
-      "next": 675,
-      "prev": 479
-    },
-    "500": {
-      "id": 500,
-      "next": 162,
-      "prev": 244
-    },
-    "502": {
-      "id": 502,
-      "next": 229,
-      "prev": 130
-    },
-    "537": {
-      "id": 537,
-      "next": 494,
-      "prev": 134
-    },
-    "601": {
-      "id": 601,
-      "next": 267,
-      "prev": 105
-    },
-    "675": {
-      "id": 675,
-      "next": 483,
-      "prev": 499
-    },
-    "706": {
-      "id": 706,
-      "next": 478,
-      "prev": 191
-    },
-    "707": {
-      "id": 707,
-      "prev": 708
-    },
-    "708": {
-      "id": 708,
-      "next": 707,
-      "prev": 711
-    },
-    "709": {
-      "id": 709,
-      "next": 710,
-      "prev": 260
-    },
-    "710": {
-      "id": 710,
-      "next": 711,
-      "prev": 709
-    },
-    "711": {
-      "id": 711,
-      "next": 708,
-      "prev": 710
-    },
-    "729": {
-      "id": 729,
-      "next": 106,
-      "prev": 107
-    },
-    "730": {
-      "id": 730,
-      "next": 107,
-      "prev": 732
-    },
-    "731": {
-      "id": 731,
-      "next": 732,
-      "prev": 212
-    },
-    "732": {
-      "id": 732,
-      "next": 730,
-      "prev": 731
-    }
-  },
   "moves": {
     "Pound": {
       "type": "Normal",
@@ -17914,7 +16683,7 @@ backup_data = {
         ]
       }
     },
-    "Typhlosion": {
+    "Typhlosn-S": {
       "types": [
         "Fire",
         "Ground"
@@ -18515,7 +17284,7 @@ backup_data = {
         ]
       }
     },
-    "Torterra": {
+    "Torterra-S": {
       "types": [
         "Grass",
         "Ground"
@@ -18532,116 +17301,100 @@ backup_data = {
         "learnset": [
           [
             1,
-            "Fissure"
+            "Conversion 2"
           ],
           [
             1,
-            "Head Smash"
+            "Tackle"
           ],
           [
             1,
-            "Frenzy Plant"
+            "Conversion"
           ],
           [
-            17,
-            "Magnitude"
+            3,
+            "Thunder Wave"
           ],
           [
-            18,
-            "Rock Tomb"
+            7,
+            "Psybeam"
           ],
           [
-            22,
-            "Bite"
+            11,
+            "Swift"
           ],
           [
-            25,
-            "Rock Slide"
-          ],
-          [
-            28,
+            15,
             "Body Slam"
           ],
           [
-            32,
-            "Leech Seed"
+            19,
+            "Shock Wave"
           ],
           [
-            35,
-            "Seed Bomb"
+            22,
+            "Recover"
+          ],
+          [
+            24,
+            "Magnet Rise"
+          ],
+          [
+            29,
+            "Signal Beam"
+          ],
+          [
+            34,
+            "Recycle"
           ],
           [
             38,
-            "Horn Drill"
+            "Discharge"
           ],
           [
             42,
-            "Synthesis"
+            "Tri Attack"
           ],
           [
-            45,
-            "Crunch"
+            46,
+            "Magic Coat"
           ],
           [
-            48,
-            "Petal Dance"
-          ],
-          [
-            51,
-            "Stone Edge"
-          ],
-          [
-            54,
-            "Giga Drain"
-          ],
-          [
-            57,
-            "Earthquake"
-          ],
-          [
-            60,
-            "Wood Hammer"
+            52,
+            "Zap Cannon"
           ]
         ],
         "tms": [
-          "Roar",
-          "Bullet Seed",
           "Hidden Power",
+          "Ice Beam",
+          "Blizzard",
           "Hyper Beam",
           "Protect",
-          "Giga Drain",
-          "Safeguard",
           "Frustration",
           "Solar Beam",
           "Iron Tail",
-          "Earthquake",
+          "Thunderbolt",
+          "Thunder",
           "Return",
-          "Dig",
-          "Rock Tomb",
+          "Psychic",
+          "Shadow Ball",
+          "Shock Wave",
+          "Aerial Ace",
           "Facade",
           "Secret Power",
           "Rest",
-          "Attract",
-          "Energy Ball",
-          "Fling",
-          "Explosion",
-          "Shadow Claw",
-          "Payback",
+          "Charge Beam",
+          "Recycle",
           "Giga Impact",
           "Flash",
-          "Stone Edge",
-          "Stealth Rock",
-          "Captivate",
-          "Rock Slide",
+          "Thunder Wave",
+          "Psych Up",
           "Sleep Talk",
           "Natural Gift",
-          "Grass Knot",
+          "Dream Eater",
           "Swagger",
           "Trick Room",
-          "Cut",
-          "Strength",
-          "Rock Smash",
-          "Rock Climb"
+          "Cut"
         ]
       }
     },
@@ -20683,6 +19436,124 @@ backup_data = {
         ]
       }
     },
+    "Typhlosion": {
+      "types": [
+        "Fire",
+        "Ground"
+      ],
+      "bs": {
+        "hp": 78,
+        "at": 74,
+        "df": 78,
+        "sa": 114,
+        "sd": 85,
+        "sp": 111
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Heat Wave"
+          ],
+          [
+            1,
+            "Leer"
+          ],
+          [
+            6,
+            "Smoke Screen"
+          ],
+          [
+            10,
+            "Ember"
+          ],
+          [
+            13,
+            "Quick Attack"
+          ],
+          [
+            20,
+            "Mud Shot"
+          ],
+          [
+            26,
+            "Extrasensory"
+          ],
+          [
+            32,
+            "Mud Bomb"
+          ],
+          [
+            38,
+            "Lava Plume"
+          ],
+          [
+            42,
+            "Earthquake"
+          ],
+          [
+            46,
+            "Power Gem"
+          ],
+          [
+            53,
+            "Flamethrower"
+          ],
+          [
+            57,
+            "Earth Power"
+          ],
+          [
+            67,
+            "Hyper Beam"
+          ],
+          [
+            75,
+            "Eruption"
+          ],
+          [
+            82,
+            "Blast Burn"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Roar",
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Frustration",
+          "Solar Beam",
+          "Earthquake",
+          "Return",
+          "Dig",
+          "Brick Break",
+          "Flamethrower",
+          "Fire Blast",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Overheat",
+          "Focus Blast",
+          "Fling",
+          "Will-O-Wisp",
+          "Shadow Claw",
+          "Giga Impact",
+          "Captivate",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Swagger",
+          "Cut",
+          "Strength",
+          "Rock Smash",
+          "Rock Climb"
+        ]
+      }
+    },
     "Totodile": {
       "types": [
         "Water"
@@ -22360,7 +21231,7 @@ backup_data = {
         ]
       }
     },
-    "Drapion": {
+    "Drapion-S": {
       "types": [
         "Poison",
         "Dark"
@@ -28140,7 +27011,7 @@ backup_data = {
         ]
       }
     },
-    "Weavile": {
+    "Weavile-S": {
       "types": [
         "Dark",
         "Ice"
@@ -29343,7 +28214,7 @@ backup_data = {
         ]
       }
     },
-    "Dusknoir": {
+    "Dusknoir-S": {
       "types": [
         "Ghost",
         "Fighting"
@@ -46134,6 +45005,136 @@ backup_data = {
         ]
       }
     },
+    "Torterra": {
+      "types": [
+        "Grass",
+        "Ground"
+      ],
+      "bs": {
+        "hp": 95,
+        "at": 109,
+        "df": 105,
+        "sa": 75,
+        "sd": 100,
+        "sp": 56
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Fissure"
+          ],
+          [
+            1,
+            "Head Smash"
+          ],
+          [
+            1,
+            "Frenzy Plant"
+          ],
+          [
+            17,
+            "Magnitude"
+          ],
+          [
+            18,
+            "Rock Tomb"
+          ],
+          [
+            22,
+            "Bite"
+          ],
+          [
+            25,
+            "Rock Slide"
+          ],
+          [
+            28,
+            "Body Slam"
+          ],
+          [
+            32,
+            "Leech Seed"
+          ],
+          [
+            35,
+            "Seed Bomb"
+          ],
+          [
+            38,
+            "Horn Drill"
+          ],
+          [
+            42,
+            "Synthesis"
+          ],
+          [
+            45,
+            "Crunch"
+          ],
+          [
+            48,
+            "Petal Dance"
+          ],
+          [
+            51,
+            "Stone Edge"
+          ],
+          [
+            54,
+            "Giga Drain"
+          ],
+          [
+            57,
+            "Earthquake"
+          ],
+          [
+            60,
+            "Wood Hammer"
+          ]
+        ],
+        "tms": [
+          "Roar",
+          "Bullet Seed",
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Giga Drain",
+          "Safeguard",
+          "Frustration",
+          "Solar Beam",
+          "Iron Tail",
+          "Earthquake",
+          "Return",
+          "Dig",
+          "Rock Tomb",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Energy Ball",
+          "Fling",
+          "Explosion",
+          "Shadow Claw",
+          "Payback",
+          "Giga Impact",
+          "Flash",
+          "Stone Edge",
+          "Stealth Rock",
+          "Captivate",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Grass Knot",
+          "Swagger",
+          "Trick Room",
+          "Cut",
+          "Strength",
+          "Rock Smash",
+          "Rock Climb"
+        ]
+      }
+    },
     "Chimchar": {
       "types": [
         "Fire"
@@ -51385,6 +50386,129 @@ backup_data = {
         ]
       }
     },
+    "Armaldo-S": {
+      "types": [
+        "Rock",
+        "Bug"
+      ],
+      "bs": {
+        "hp": 75,
+        "at": 125,
+        "df": 100,
+        "sa": 70,
+        "sd": 80,
+        "sp": 80
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Head Smash"
+          ],
+          [
+            1,
+            "Power Whip"
+          ],
+          [
+            4,
+            "Rollout"
+          ],
+          [
+            7,
+            "Rock Tomb"
+          ],
+          [
+            11,
+            "Bug Bite"
+          ],
+          [
+            14,
+            "Water Pulse"
+          ],
+          [
+            18,
+            "Metal Claw"
+          ],
+          [
+            21,
+            "Seismic Toss"
+          ],
+          [
+            24,
+            "Aerial Ace"
+          ],
+          [
+            28,
+            "X-Scissor"
+          ],
+          [
+            31,
+            "Rock Slide"
+          ],
+          [
+            32,
+            "Magnitude"
+          ],
+          [
+            36,
+            "Aqua Jet"
+          ],
+          [
+            40,
+            "Leech Life"
+          ],
+          [
+            44,
+            "Aqua Tail"
+          ],
+          [
+            48,
+            "Superpower"
+          ],
+          [
+            51,
+            "Earthquake"
+          ],
+          [
+            55,
+            "Stone Edge"
+          ]
+        ],
+        "tms": [
+          "Water Pulse",
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Frustration",
+          "Iron Tail",
+          "Earthquake",
+          "Return",
+          "Dig",
+          "Brick Break",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "False Swipe",
+          "Silver Wind",
+          "Giga Impact",
+          "Stone Edge",
+          "Stealth Rock",
+          "Captivate",
+          "Rock Slide",
+          "X-Scissor",
+          "Sleep Talk",
+          "Natural Gift",
+          "Swagger",
+          "Flash Cannon",
+          "Cut",
+          "Strength",
+          "Rock Smash"
+        ]
+      }
+    },
     "Chatot": {
       "types": [
         "Normal",
@@ -52624,6 +51748,145 @@ backup_data = {
         ]
       }
     },
+    "Drapion": {
+      "types": [
+        "Poison",
+        "Dark"
+      ],
+      "bs": {
+        "hp": 70,
+        "at": 100,
+        "df": 110,
+        "sa": 60,
+        "sd": 85,
+        "sp": 95
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Bite"
+          ],
+          [
+            1,
+            "Poison Sting"
+          ],
+          [
+            1,
+            "Leer"
+          ],
+          [
+            4,
+            "Knock Off"
+          ],
+          [
+            8,
+            "Bug Bite"
+          ],
+          [
+            12,
+            "Scary Face"
+          ],
+          [
+            16,
+            "Pin Missile"
+          ],
+          [
+            20,
+            "Aerial Ace"
+          ],
+          [
+            23,
+            "Poison Fang"
+          ],
+          [
+            26,
+            "X-Scissor"
+          ],
+          [
+            29,
+            "Slash"
+          ],
+          [
+            29,
+            "Night Slash"
+          ],
+          [
+            30,
+            "Thunder Fang"
+          ],
+          [
+            30,
+            "Ice Fang"
+          ],
+          [
+            30,
+            "Fire Fang"
+          ],
+          [
+            34,
+            "Rest"
+          ],
+          [
+            38,
+            "Crunch"
+          ],
+          [
+            42,
+            "Poison Tail"
+          ],
+          [
+            46,
+            "Earthquake"
+          ],
+          [
+            50,
+            "Cross Poison"
+          ]
+        ],
+        "tms": [
+          "Roar",
+          "Hidden Power",
+          "Taunt",
+          "Hyper Beam",
+          "Protect",
+          "Frustration",
+          "Iron Tail",
+          "Earthquake",
+          "Return",
+          "Dig",
+          "Shadow Ball",
+          "Brick Break",
+          "Sludge Bomb",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "False Swipe",
+          "Fling",
+          "Silver Wind",
+          "Payback",
+          "Giga Impact",
+          "Flash",
+          "Captivate",
+          "Dark Pulse",
+          "Rock Slide",
+          "X-Scissor",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Swagger",
+          "U-Turn",
+          "Cut",
+          "Strength",
+          "Rock Smash",
+          "Rock Climb"
+        ]
+      }
+    },
     "Croagunk": {
       "types": [
         "Poison",
@@ -53567,6 +52830,128 @@ backup_data = {
           "Strength",
           "Rock Smash",
           "Rock Climb"
+        ]
+      }
+    },
+    "Weavile": {
+      "types": [
+        "Dark",
+        "Ice"
+      ],
+      "bs": {
+        "hp": 70,
+        "at": 120,
+        "df": 65,
+        "sa": 45,
+        "sd": 85,
+        "sp": 125
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Knock Off"
+          ],
+          [
+            1,
+            "Taunt"
+          ],
+          [
+            8,
+            "Quick Attack"
+          ],
+          [
+            10,
+            "Bite"
+          ],
+          [
+            14,
+            "Faint Attack"
+          ],
+          [
+            17,
+            "Counter"
+          ],
+          [
+            21,
+            "Fury Attack"
+          ],
+          [
+            24,
+            "Ice Punch"
+          ],
+          [
+            28,
+            "Icy Wind"
+          ],
+          [
+            32,
+            "Double Hit"
+          ],
+          [
+            35,
+            "Crunch"
+          ],
+          [
+            38,
+            "Beat Up"
+          ],
+          [
+            42,
+            "Fake Out"
+          ],
+          [
+            45,
+            "Avalanche"
+          ],
+          [
+            49,
+            "Ice Shard"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Hidden Power",
+          "Taunt",
+          "Ice Beam",
+          "Blizzard",
+          "Hyper Beam",
+          "Protect",
+          "Frustration",
+          "Iron Tail",
+          "Return",
+          "Dig",
+          "Shadow Ball",
+          "Brick Break",
+          "Aerial Ace",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Snatch",
+          "Focus Blast",
+          "False Swipe",
+          "Fling",
+          "Embargo",
+          "Shadow Claw",
+          "Payback",
+          "Giga Impact",
+          "Avalanche",
+          "Psych Up",
+          "Captivate",
+          "Dark Pulse",
+          "X-Scissor",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Dream Eater",
+          "Swagger",
+          "Cut",
+          "Surf",
+          "Strength",
+          "Whirlpool",
+          "Rock Smash"
         ]
       }
     },
@@ -55476,6 +54861,153 @@ backup_data = {
         ]
       }
     },
+    "Dusknoir": {
+      "types": [
+        "Ghost",
+        "Fighting"
+      ],
+      "bs": {
+        "hp": 90,
+        "at": 115,
+        "df": 135,
+        "sa": 65,
+        "sd": 135,
+        "sp": 45
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Gravity"
+          ],
+          [
+            1,
+            "Shadow Force"
+          ],
+          [
+            6,
+            "Disable"
+          ],
+          [
+            9,
+            "Foresight"
+          ],
+          [
+            13,
+            "Night Shade"
+          ],
+          [
+            16,
+            "Teleport"
+          ],
+          [
+            19,
+            "Confuse Ray"
+          ],
+          [
+            22,
+            "Shadow Sneak"
+          ],
+          [
+            28,
+            "Shadow Claw"
+          ],
+          [
+            31,
+            "Curse"
+          ],
+          [
+            37,
+            "Fire Punch"
+          ],
+          [
+            37,
+            "Ice Punch"
+          ],
+          [
+            37,
+            "Thunder Punch"
+          ],
+          [
+            40,
+            "Mean Look"
+          ],
+          [
+            43,
+            "Shadow Punch"
+          ],
+          [
+            47,
+            "Leech Life"
+          ],
+          [
+            50,
+            "Sucker Punch"
+          ],
+          [
+            53,
+            "Hammer Arm"
+          ],
+          [
+            56,
+            "Earthquake"
+          ],
+          [
+            59,
+            "Superpower"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Hidden Power",
+          "Taunt",
+          "Ice Beam",
+          "Blizzard",
+          "Hyper Beam",
+          "Protect",
+          "Frustration",
+          "Earthquake",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Brick Break",
+          "Rock Tomb",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Skill Swap",
+          "Snatch",
+          "Focus Blast",
+          "Fling",
+          "Drain Punch",
+          "Will-O-Wisp",
+          "Embargo",
+          "Explosion",
+          "Shadow Claw",
+          "Payback",
+          "Recycle",
+          "Giga Impact",
+          "Flash",
+          "Thunder Wave",
+          "Psych Up",
+          "Captivate",
+          "Dark Pulse",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Dream Eater",
+          "Swagger",
+          "Trick Room",
+          "Cut",
+          "Strength",
+          "Rock Smash",
+          "Rock Climb"
+        ]
+      }
+    },
     "Froslass": {
       "types": [
         "Ice",
@@ -56904,6 +56436,137 @@ backup_data = {
         ]
       }
     },
+    "Lapras-S": {
+      "types": [
+        "Water",
+        "Dragon"
+      ],
+      "bs": {
+        "hp": 130,
+        "at": 75,
+        "df": 90,
+        "sa": 90,
+        "sd": 95,
+        "sp": 60
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Growl"
+          ],
+          [
+            1,
+            "Recover"
+          ],
+          [
+            1,
+            "Muddy Water"
+          ],
+          [
+            1,
+            "Hydro Cannon"
+          ],
+          [
+            1,
+            "Draco Meteor"
+          ],
+          [
+            1,
+            "Ancient Power"
+          ],
+          [
+            4,
+            "Mist"
+          ],
+          [
+            7,
+            "Confuse Ray"
+          ],
+          [
+            10,
+            "Ice Shard"
+          ],
+          [
+            14,
+            "Water Pulse"
+          ],
+          [
+            18,
+            "Body Slam"
+          ],
+          [
+            22,
+            "Horn Drill"
+          ],
+          [
+            27,
+            "Perish Song"
+          ],
+          [
+            32,
+            "Ice Beam"
+          ],
+          [
+            37,
+            "Brine"
+          ],
+          [
+            43,
+            "Dragon Pulse"
+          ],
+          [
+            49,
+            "Hydro Pump"
+          ],
+          [
+            52,
+            "Roar"
+          ],
+          [
+            55,
+            "Blizzard"
+          ]
+        ],
+        "tms": [
+          "Dragon Claw",
+          "Water Pulse",
+          "Roar",
+          "Hidden Power",
+          "Ice Beam",
+          "Blizzard",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Iron Tail",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Psychic",
+          "Shock Wave",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Brine",
+          "Dragon Pulse",
+          "Giga Impact",
+          "Avalanche",
+          "Captivate",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Cut",
+          "Surf",
+          "Strength",
+          "Whirlpool",
+          "Rock Smash",
+          "Waterfall"
+        ]
+      }
+    },
     "Hydreigon": {
       "types": [
         "Dark",
@@ -57025,7 +56688,1167 @@ backup_data = {
         "tms": []
       }
     },
-    "Alt Form": {
+    "Deoxys (a)": {
+      "types": [
+        "Psychic"
+      ],
+      "bs": {
+        "hp": 50,
+        "at": 150,
+        "df": 50,
+        "sa": 150,
+        "sd": 50,
+        "sp": 150
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Leer"
+          ],
+          [
+            1,
+            "Wrap"
+          ],
+          [
+            9,
+            "Night Shade"
+          ],
+          [
+            17,
+            "Teleport"
+          ],
+          [
+            25,
+            "Taunt"
+          ],
+          [
+            33,
+            "Pursuit"
+          ],
+          [
+            41,
+            "Psychic"
+          ],
+          [
+            49,
+            "Superpower"
+          ],
+          [
+            57,
+            "Psycho Shift"
+          ],
+          [
+            65,
+            "Zen Headbutt"
+          ],
+          [
+            73,
+            "Cosmic Power"
+          ],
+          [
+            81,
+            "Zap Cannon"
+          ],
+          [
+            89,
+            "Psycho Boost"
+          ],
+          [
+            97,
+            "Hyper Beam"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Water Pulse",
+          "Hidden Power",
+          "Ice Beam",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Solar Beam",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Brick Break",
+          "Shock Wave",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Skill Swap",
+          "Snatch",
+          "Focus Blast",
+          "Energy Ball",
+          "Fling",
+          "Charge Beam",
+          "Drain Punch",
+          "Recycle",
+          "Giga Impact",
+          "Flash",
+          "Avalanche",
+          "Thunder Wave",
+          "Stealth Rock",
+          "Psych Up",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Dream Eater",
+          "Grass Knot",
+          "Swagger",
+          "Flash Cannon",
+          "Trick Room",
+          "Cut",
+          "Strength",
+          "Rock Smash"
+        ]
+      }
+    },
+    "Deoxys (d)": {
+      "types": [
+        "Psychic"
+      ],
+      "bs": {
+        "hp": 50,
+        "at": 150,
+        "df": 50,
+        "sa": 150,
+        "sd": 50,
+        "sp": 150
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Leer"
+          ],
+          [
+            1,
+            "Wrap"
+          ],
+          [
+            9,
+            "Night Shade"
+          ],
+          [
+            17,
+            "Teleport"
+          ],
+          [
+            25,
+            "Knock Off"
+          ],
+          [
+            33,
+            "Spikes"
+          ],
+          [
+            41,
+            "Psychic"
+          ],
+          [
+            49,
+            "Snatch"
+          ],
+          [
+            57,
+            "Psycho Shift"
+          ],
+          [
+            65,
+            "Zen Headbutt"
+          ],
+          [
+            73,
+            "Iron Defense"
+          ],
+          [
+            73,
+            "Amnesia"
+          ],
+          [
+            81,
+            "Recover"
+          ],
+          [
+            89,
+            "Psycho Boost"
+          ],
+          [
+            97,
+            "Counter"
+          ],
+          [
+            97,
+            "Mirror Coat"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Water Pulse",
+          "Hidden Power",
+          "Ice Beam",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Solar Beam",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Brick Break",
+          "Shock Wave",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Skill Swap",
+          "Snatch",
+          "Focus Blast",
+          "Energy Ball",
+          "Fling",
+          "Charge Beam",
+          "Drain Punch",
+          "Recycle",
+          "Giga Impact",
+          "Flash",
+          "Avalanche",
+          "Thunder Wave",
+          "Stealth Rock",
+          "Psych Up",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Dream Eater",
+          "Grass Knot",
+          "Swagger",
+          "Flash Cannon",
+          "Trick Room",
+          "Cut",
+          "Strength",
+          "Rock Smash"
+        ]
+      }
+    },
+    "Deoxys (s)": {
+      "types": [
+        "Psychic"
+      ],
+      "bs": {
+        "hp": 50,
+        "at": 150,
+        "df": 50,
+        "sa": 150,
+        "sd": 50,
+        "sp": 150
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Leer"
+          ],
+          [
+            1,
+            "Wrap"
+          ],
+          [
+            9,
+            "Night Shade"
+          ],
+          [
+            17,
+            "Double Team"
+          ],
+          [
+            25,
+            "Knock Off"
+          ],
+          [
+            33,
+            "Pursuit"
+          ],
+          [
+            41,
+            "Psychic"
+          ],
+          [
+            49,
+            "Swift"
+          ],
+          [
+            57,
+            "Psycho Shift"
+          ],
+          [
+            65,
+            "Zen Headbutt"
+          ],
+          [
+            73,
+            "Agility"
+          ],
+          [
+            81,
+            "Recover"
+          ],
+          [
+            89,
+            "Psycho Boost"
+          ],
+          [
+            97,
+            "Extreme Speed"
+          ]
+        ],
+        "tms": [
+          "Focus Punch",
+          "Water Pulse",
+          "Hidden Power",
+          "Ice Beam",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Solar Beam",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Brick Break",
+          "Shock Wave",
+          "Rock Tomb",
+          "Aerial Ace",
+          "Torment",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Skill Swap",
+          "Snatch",
+          "Focus Blast",
+          "Energy Ball",
+          "Fling",
+          "Charge Beam",
+          "Drain Punch",
+          "Recycle",
+          "Giga Impact",
+          "Flash",
+          "Avalanche",
+          "Thunder Wave",
+          "Stealth Rock",
+          "Psych Up",
+          "Rock Slide",
+          "Sleep Talk",
+          "Natural Gift",
+          "Poison Jab",
+          "Dream Eater",
+          "Grass Knot",
+          "Swagger",
+          "Flash Cannon",
+          "Trick Room",
+          "Cut",
+          "Strength",
+          "Rock Smash"
+        ]
+      }
+    },
+    "Wormadam (s)": {
+      "types": [
+        "Bug",
+        "Ground"
+      ],
+      "bs": {
+        "hp": 80,
+        "at": 50,
+        "df": 110,
+        "sa": 110,
+        "sd": 90,
+        "sp": 36
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Tackle"
+          ],
+          [
+            10,
+            "Protect"
+          ],
+          [
+            15,
+            "Bug Bite"
+          ],
+          [
+            18,
+            "Hidden Power"
+          ],
+          [
+            20,
+            "Spider Web"
+          ],
+          [
+            23,
+            "Rock Tomb"
+          ],
+          [
+            26,
+            "Magnitude"
+          ],
+          [
+            29,
+            "Silver Wind"
+          ],
+          [
+            32,
+            "Psybeam"
+          ],
+          [
+            35,
+            "Signal Beam"
+          ],
+          [
+            38,
+            "Horn Drill"
+          ],
+          [
+            41,
+            "Psychic"
+          ],
+          [
+            44,
+            "Hyper Voice"
+          ],
+          [
+            47,
+            "Earth Power"
+          ]
+        ],
+        "tms": [
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Earthquake",
+          "Return",
+          "Dig",
+          "Psychic",
+          "Shadow Ball",
+          "Rock Tomb",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Skill Swap",
+          "Silver Wind",
+          "Giga Impact",
+          "Flash",
+          "Psych Up",
+          "Captivate",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "U-Turn",
+          "Trick Room",
+          "Cut"
+        ]
+      }
+    },
+    "Wormadam (t)": {
+      "types": [
+        "Bug",
+        "Steel"
+      ],
+      "bs": {
+        "hp": 60,
+        "at": 50,
+        "df": 100,
+        "sa": 110,
+        "sd": 100,
+        "sp": 36
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Tackle"
+          ],
+          [
+            10,
+            "Protect"
+          ],
+          [
+            15,
+            "Bug Bite"
+          ],
+          [
+            18,
+            "Hidden Power"
+          ],
+          [
+            20,
+            "Spider Web"
+          ],
+          [
+            23,
+            "Rock Tomb"
+          ],
+          [
+            26,
+            "Iron Head"
+          ],
+          [
+            29,
+            "Silver Wind"
+          ],
+          [
+            32,
+            "Psybeam"
+          ],
+          [
+            35,
+            "Signal Beam"
+          ],
+          [
+            38,
+            "Magnet Bomb"
+          ],
+          [
+            41,
+            "Psychic"
+          ],
+          [
+            44,
+            "Hyper Voice"
+          ],
+          [
+            47,
+            "Flash Cannon"
+          ]
+        ],
+        "tms": [
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Attract",
+          "Skill Swap",
+          "Silver Wind",
+          "Giga Impact",
+          "Flash",
+          "Gyro Ball",
+          "Stealth Rock",
+          "Psych Up",
+          "Captivate",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "U-Turn",
+          "Flash Cannon",
+          "Trick Room",
+          "Cut"
+        ]
+      }
+    },
+    "Giratina (o)": {
+      "types": [
+        "Ghost",
+        "Dragon"
+      ],
+      "bs": {
+        "hp": 150,
+        "at": 100,
+        "df": 120,
+        "sa": 100,
+        "sd": 120,
+        "sp": 90
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Dragon Breath"
+          ],
+          [
+            1,
+            "Scary Face"
+          ],
+          [
+            6,
+            "Ominous Wind"
+          ],
+          [
+            10,
+            "Ancient Power"
+          ],
+          [
+            15,
+            "Slash"
+          ],
+          [
+            19,
+            "Shadow Sneak"
+          ],
+          [
+            24,
+            "Destiny Bond"
+          ],
+          [
+            28,
+            "Dragon Claw"
+          ],
+          [
+            33,
+            "Earth Power"
+          ],
+          [
+            37,
+            "Aura Sphere"
+          ],
+          [
+            42,
+            "Shadow Claw"
+          ],
+          [
+            46,
+            "Shadow Force"
+          ]
+        ],
+        "tms": [
+          "Dragon Claw",
+          "Roar",
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Safeguard",
+          "Frustration",
+          "Iron Tail",
+          "Thunderbolt",
+          "Thunder",
+          "Earthquake",
+          "Return",
+          "Psychic",
+          "Shadow Ball",
+          "Shock Wave",
+          "Aerial Ace",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Steel Wing",
+          "Energy Ball",
+          "Charge Beam",
+          "Dragon Pulse",
+          "Will-O-Wisp",
+          "Silver Wind",
+          "Shadow Claw",
+          "Payback",
+          "Giga Impact",
+          "Stone Edge",
+          "Thunder Wave",
+          "Psych Up",
+          "Dark Pulse",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Cut",
+          "Fly",
+          "Strength",
+          "Rock Smash",
+          "Rock Climb"
+        ]
+      }
+    },
+    "Shaymin (s)": {
+      "types": [
+        "Grass",
+        "Flying"
+      ],
+      "bs": {
+        "hp": 100,
+        "at": 103,
+        "df": 75,
+        "sa": 120,
+        "sd": 75,
+        "sp": 127
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Splash"
+          ],
+          [
+            10,
+            "Magical Leaf"
+          ],
+          [
+            19,
+            "Leech Seed"
+          ],
+          [
+            28,
+            "Quick Attack"
+          ],
+          [
+            37,
+            "Sweet Scent"
+          ],
+          [
+            46,
+            "Natural Gift"
+          ],
+          [
+            55,
+            "Worry Seed"
+          ],
+          [
+            64,
+            "Air Slash"
+          ],
+          [
+            73,
+            "Energy Ball"
+          ],
+          [
+            82,
+            "Sweet Kiss"
+          ],
+          [
+            91,
+            "Leaf Storm"
+          ],
+          [
+            100,
+            "Seed Flare"
+          ]
+        ],
+        "tms": [
+          "Bullet Seed",
+          "Hidden Power",
+          "Hyper Beam",
+          "Protect",
+          "Giga Drain",
+          "Safeguard",
+          "Frustration",
+          "Solar Beam",
+          "Return",
+          "Psychic",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Energy Ball",
+          "Giga Impact",
+          "Flash",
+          "Psych Up",
+          "Sleep Talk",
+          "Natural Gift",
+          "Grass Knot",
+          "Swagger",
+          "Cut"
+        ]
+      }
+    },
+    "Rotom (heat)": {
+      "types": [
+        "Electric",
+        "Fire"
+      ],
+      "bs": {
+        "hp": 65,
+        "at": 50,
+        "df": 107,
+        "sa": 105,
+        "sd": 107,
+        "sp": 91
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Trick"
+          ],
+          [
+            1,
+            "Shadow Force"
+          ],
+          [
+            1,
+            "Thunder Wave"
+          ],
+          [
+            1,
+            "Thunder Shock"
+          ],
+          [
+            1,
+            "Astonish"
+          ],
+          [
+            8,
+            "Uproar"
+          ],
+          [
+            15,
+            "Hyper Voice"
+          ],
+          [
+            22,
+            "Shock Wave"
+          ],
+          [
+            29,
+            "Ominous Wind"
+          ],
+          [
+            36,
+            "Spider Web"
+          ],
+          [
+            43,
+            "Thunderbolt"
+          ],
+          [
+            50,
+            "Zap Cannon"
+          ]
+        ],
+        "tms": [
+          "Hidden Power",
+          "Protect",
+          "Frustration",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Shadow Ball",
+          "Shock Wave",
+          "Flamethrower",
+          "Fire Blast",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Snatch",
+          "Fling",
+          "Charge Beam",
+          "Will-O-Wisp",
+          "Flash",
+          "Thunder Wave",
+          "Psych Up",
+          "Dark Pulse",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Cut"
+        ]
+      }
+    },
+    "Rotom (wash)": {
+      "types": [
+        "Electric",
+        "Water"
+      ],
+      "bs": {
+        "hp": 65,
+        "at": 50,
+        "df": 107,
+        "sa": 105,
+        "sd": 107,
+        "sp": 91
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Trick"
+          ],
+          [
+            1,
+            "Shadow Force"
+          ],
+          [
+            1,
+            "Thunder Wave"
+          ],
+          [
+            1,
+            "Thunder Shock"
+          ],
+          [
+            1,
+            "Astonish"
+          ],
+          [
+            8,
+            "Uproar"
+          ],
+          [
+            15,
+            "Hyper Voice"
+          ],
+          [
+            22,
+            "Shock Wave"
+          ],
+          [
+            29,
+            "Ominous Wind"
+          ],
+          [
+            36,
+            "Spider Web"
+          ],
+          [
+            43,
+            "Thunderbolt"
+          ],
+          [
+            50,
+            "Zap Cannon"
+          ]
+        ],
+        "tms": [
+          "Water Pulse",
+          "Hidden Power",
+          "Protect",
+          "Frustration",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Shadow Ball",
+          "Shock Wave",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Snatch",
+          "Brine",
+          "Fling",
+          "Charge Beam",
+          "Will-O-Wisp",
+          "Flash",
+          "Thunder Wave",
+          "Psych Up",
+          "Dark Pulse",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Cut",
+          "Surf"
+        ]
+      }
+    },
+    "Rotom (frost)": {
+      "types": [
+        "Electric",
+        "Ice"
+      ],
+      "bs": {
+        "hp": 65,
+        "at": 50,
+        "df": 107,
+        "sa": 105,
+        "sd": 107,
+        "sp": 91
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Trick"
+          ],
+          [
+            1,
+            "Shadow Force"
+          ],
+          [
+            1,
+            "Thunder Wave"
+          ],
+          [
+            1,
+            "Thunder Shock"
+          ],
+          [
+            1,
+            "Astonish"
+          ],
+          [
+            8,
+            "Uproar"
+          ],
+          [
+            15,
+            "Hyper Voice"
+          ],
+          [
+            22,
+            "Shock Wave"
+          ],
+          [
+            29,
+            "Ominous Wind"
+          ],
+          [
+            36,
+            "Spider Web"
+          ],
+          [
+            43,
+            "Thunderbolt"
+          ],
+          [
+            50,
+            "Zap Cannon"
+          ]
+        ],
+        "tms": [
+          "Hidden Power",
+          "Ice Beam",
+          "Blizzard",
+          "Protect",
+          "Frustration",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Shadow Ball",
+          "Shock Wave",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Snatch",
+          "Fling",
+          "Charge Beam",
+          "Will-O-Wisp",
+          "Flash",
+          "Thunder Wave",
+          "Psych Up",
+          "Dark Pulse",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Cut"
+        ]
+      }
+    },
+    "Rotom (fan)": {
+      "types": [
+        "Electric",
+        "Flying"
+      ],
+      "bs": {
+        "hp": 65,
+        "at": 50,
+        "df": 107,
+        "sa": 105,
+        "sd": 107,
+        "sp": 91
+      },
+      "learnset_info": {
+        "learnset": [
+          [
+            1,
+            "Trick"
+          ],
+          [
+            1,
+            "Shadow Force"
+          ],
+          [
+            1,
+            "Thunder Wave"
+          ],
+          [
+            1,
+            "Thunder Shock"
+          ],
+          [
+            1,
+            "Astonish"
+          ],
+          [
+            8,
+            "Uproar"
+          ],
+          [
+            15,
+            "Hyper Voice"
+          ],
+          [
+            22,
+            "Shock Wave"
+          ],
+          [
+            29,
+            "Ominous Wind"
+          ],
+          [
+            36,
+            "Spider Web"
+          ],
+          [
+            43,
+            "Thunderbolt"
+          ],
+          [
+            50,
+            "Zap Cannon"
+          ]
+        ],
+        "tms": [
+          "Hidden Power",
+          "Protect",
+          "Frustration",
+          "Thunderbolt",
+          "Thunder",
+          "Return",
+          "Shadow Ball",
+          "Shock Wave",
+          "Facade",
+          "Secret Power",
+          "Rest",
+          "Snatch",
+          "Fling",
+          "Charge Beam",
+          "Will-O-Wisp",
+          "Flash",
+          "Thunder Wave",
+          "Psych Up",
+          "Dark Pulse",
+          "Sleep Talk",
+          "Natural Gift",
+          "Dream Eater",
+          "Swagger",
+          "Pluck",
+          "Cut"
+        ]
+      }
+    },
+    "Rotom (mow)": {
       "types": [
         "Electric",
         "Grass"
@@ -57148,7 +57971,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57177,7 +58000,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57206,7 +58029,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57235,7 +58058,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57264,7 +58087,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57293,7 +58116,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57322,7 +58145,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57351,7 +58174,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57380,7 +58203,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57409,7 +58232,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57438,7 +58261,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57467,7 +58290,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -57498,7 +58321,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57527,7 +58350,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57556,7 +58379,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57585,7 +58408,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57614,7 +58437,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57643,7 +58466,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57672,7 +58495,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57701,7 +58524,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57730,7 +58553,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57759,7 +58582,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57788,7 +58611,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57817,7 +58640,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57846,7 +58669,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57875,7 +58698,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57904,7 +58727,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57933,7 +58756,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57962,7 +58785,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -57991,7 +58814,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 3,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58049,7 +58872,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58078,7 +58901,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58107,7 +58930,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58136,7 +58959,7 @@ backup_data = {
           "Poison Fang"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58165,7 +58988,7 @@ backup_data = {
           "Haze"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58194,7 +59017,7 @@ backup_data = {
           "Haze"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58225,7 +59048,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58254,7 +59077,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58283,7 +59106,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58341,7 +59164,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58370,7 +59193,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58399,7 +59222,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 4,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58428,7 +59251,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 4,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58486,7 +59309,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58573,7 +59396,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58602,7 +59425,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58660,7 +59483,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58689,7 +59512,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58747,7 +59570,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58776,7 +59599,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58805,7 +59628,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58863,7 +59686,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -58923,7 +59746,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58952,7 +59775,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -58981,7 +59804,7 @@ backup_data = {
           "Bug Bite"
         ],
         "sub_index": 4,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59010,7 +59833,7 @@ backup_data = {
           "Fury Attack"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59039,7 +59862,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59068,7 +59891,7 @@ backup_data = {
           "Bug Bite"
         ],
         "sub_index": 4,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59097,7 +59920,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59126,7 +59949,7 @@ backup_data = {
           "Bug Bite"
         ],
         "sub_index": 4,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59155,7 +59978,7 @@ backup_data = {
           "Fury Attack"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59184,7 +60007,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59213,7 +60036,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59242,7 +60065,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59300,7 +60123,7 @@ backup_data = {
           "Metal Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59329,7 +60152,7 @@ backup_data = {
           "Metal Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59358,7 +60181,7 @@ backup_data = {
           "Metal Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -59449,7 +60272,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -59478,7 +60301,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -59509,7 +60332,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -59538,7 +60361,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -59569,7 +60392,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59598,7 +60421,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59627,7 +60450,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59656,7 +60479,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59687,7 +60510,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59716,7 +60539,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59745,7 +60568,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Shield Dust",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -59776,7 +60599,7 @@ backup_data = {
           "Headbutt"
         ],
         "sub_index": 0,
-        "ability": "Insomnia",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -59805,7 +60628,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 4,
-        "ability": "Insomnia",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -59834,7 +60657,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 5,
-        "ability": "Insomnia",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -59863,7 +60686,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 3,
-        "ability": "Insomnia",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -59894,7 +60717,7 @@ backup_data = {
           "Stun Spore"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -59952,7 +60775,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -59981,7 +60804,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -60010,7 +60833,7 @@ backup_data = {
           "Power Whip"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -60039,7 +60862,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 4,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -60070,7 +60893,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 2,
-        "ability": "Thick Fat",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -60099,7 +60922,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": "Thick Fat",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -60128,7 +60951,7 @@ backup_data = {
           "Outrage"
         ],
         "sub_index": 1,
-        "ability": "Thick Fat",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -60157,7 +60980,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 5,
-        "ability": "Thick Fat",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -60186,7 +61009,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 2,
-        "ability": "Thick Fat",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -60217,7 +61040,7 @@ backup_data = {
           "Helping Hand"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60246,7 +61069,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60275,7 +61098,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60304,7 +61127,7 @@ backup_data = {
           "Take Down"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60333,7 +61156,7 @@ backup_data = {
           "Flame Wheel"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60362,7 +61185,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -60393,7 +61216,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -60422,7 +61245,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 4,
-        "ability": "Natural Cure",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -60451,7 +61274,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -60509,7 +61332,7 @@ backup_data = {
           "Stun Spore"
         ],
         "sub_index": 5,
-        "ability": "Natural Cure",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -60569,7 +61392,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 3,
-        "ability": "Scrappy",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -60598,7 +61421,7 @@ backup_data = {
           "Brave Bird"
         ],
         "sub_index": 3,
-        "ability": "Scrappy",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -60627,7 +61450,7 @@ backup_data = {
           "Endeavor"
         ],
         "sub_index": 2,
-        "ability": "Scrappy",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -60658,7 +61481,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -60687,7 +61510,7 @@ backup_data = {
           "Drain Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -60716,7 +61539,7 @@ backup_data = {
           "Power Trick"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -60747,7 +61570,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 3,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -60776,7 +61599,7 @@ backup_data = {
           "Seismic Toss"
         ],
         "sub_index": 4,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -60805,7 +61628,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -60834,7 +61657,7 @@ backup_data = {
           "Swagger"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -60865,7 +61688,7 @@ backup_data = {
           "Thief"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -60894,7 +61717,7 @@ backup_data = {
           "Brave Bird"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -60925,7 +61748,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -60954,7 +61777,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -60983,7 +61806,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -61012,7 +61835,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -61041,7 +61864,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -61070,7 +61893,7 @@ backup_data = {
           "Hidden Power"
         ],
         "sub_index": 4,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -61101,7 +61924,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61130,7 +61953,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61159,7 +61982,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61188,7 +62011,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61217,7 +62040,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61246,7 +62069,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61275,7 +62098,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61304,7 +62127,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61333,7 +62156,7 @@ backup_data = {
           "Leer"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61362,7 +62185,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61391,7 +62214,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61420,7 +62243,7 @@ backup_data = {
           "Dragon Rage"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61449,7 +62272,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61478,7 +62301,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61507,7 +62330,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61536,7 +62359,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61565,7 +62388,7 @@ backup_data = {
           "Power Whip"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61594,7 +62417,7 @@ backup_data = {
           "Return"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61623,7 +62446,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61652,7 +62475,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61681,7 +62504,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61710,7 +62533,7 @@ backup_data = {
           "Bounce"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61739,7 +62562,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61768,7 +62591,7 @@ backup_data = {
           "Power Whip"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61797,7 +62620,7 @@ backup_data = {
           "Dragon Pulse"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61826,7 +62649,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -61917,7 +62740,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -61946,7 +62769,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 2,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -61977,7 +62800,7 @@ backup_data = {
           "Light Screen"
         ],
         "sub_index": 2,
-        "ability": "Tinted Lens",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -62006,7 +62829,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -62037,7 +62860,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -62066,7 +62889,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -62095,7 +62918,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -62124,7 +62947,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -62153,7 +62976,7 @@ backup_data = {
           "Mach Punch"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -62184,7 +63007,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 4,
-        "ability": "Adaptability",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -62215,7 +63038,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -62246,7 +63069,7 @@ backup_data = {
           "X-Scissor"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -62275,7 +63098,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 2,
-        "ability": "Blaze",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -62304,7 +63127,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -62333,7 +63156,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -62364,7 +63187,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Forecast",
         "evs": {
           "df": 0
         }
@@ -62393,7 +63216,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Forecast",
         "evs": {
           "df": 0
         }
@@ -62422,7 +63245,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Forecast",
         "evs": {
           "df": 0
         }
@@ -62451,7 +63274,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Forecast",
         "evs": {
           "df": 0
         }
@@ -62480,7 +63303,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Forecast",
         "evs": {
           "df": 0
         }
@@ -62511,7 +63334,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 3,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62540,7 +63363,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 1,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62569,7 +63392,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 0,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62598,7 +63421,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 4,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62627,7 +63450,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 1,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62656,7 +63479,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 3,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62685,7 +63508,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 3,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62714,7 +63537,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 1,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62772,7 +63595,7 @@ backup_data = {
           "Flare Blitz"
         ],
         "sub_index": 3,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62801,7 +63624,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 5,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62830,7 +63653,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 2,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62859,7 +63682,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 2,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -62890,7 +63713,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 4,
-        "ability": "Motor Drive",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -62919,7 +63742,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 1,
-        "ability": "Motor Drive",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -62948,7 +63771,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Pressure",
         "evs": {
           "df": 0
         }
@@ -62977,7 +63800,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 1,
-        "ability": "Motor Drive",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -63006,7 +63829,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Motor Drive",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -63035,7 +63858,7 @@ backup_data = {
           "Shadow Force"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Pressure",
         "evs": {
           "df": 0
         }
@@ -63064,7 +63887,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -63095,7 +63918,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 5,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63124,7 +63947,7 @@ backup_data = {
           "Wing Attack"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63153,7 +63976,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63182,7 +64005,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63211,7 +64034,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 4,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63240,7 +64063,7 @@ backup_data = {
           "Cross Poison"
         ],
         "sub_index": 5,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63269,7 +64092,7 @@ backup_data = {
           "Slam"
         ],
         "sub_index": 3,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63298,7 +64121,7 @@ backup_data = {
           "Wing Attack"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63327,7 +64150,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63356,7 +64179,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63414,7 +64237,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63443,7 +64266,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63472,7 +64295,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63501,7 +64324,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63530,7 +64353,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63559,7 +64382,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63588,7 +64411,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63617,7 +64440,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63646,7 +64469,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63675,7 +64498,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63704,7 +64527,7 @@ backup_data = {
           "Cross Poison"
         ],
         "sub_index": 5,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63791,7 +64614,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63820,7 +64643,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63849,7 +64672,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63878,7 +64701,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Inner Focus",
         "evs": {
           "df": 0
         }
@@ -63938,7 +64761,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -63967,7 +64790,7 @@ backup_data = {
           "Double Hit"
         ],
         "sub_index": 1,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -63996,7 +64819,7 @@ backup_data = {
           "Last Resort"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -64027,7 +64850,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -64058,7 +64881,7 @@ backup_data = {
           "Poison Tail"
         ],
         "sub_index": 1,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -64089,7 +64912,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 2,
-        "ability": "Solid Rock",
+        "ability": "Own Tempo",
         "evs": {
           "df": 0
         }
@@ -64149,7 +64972,7 @@ backup_data = {
           "Psybeam"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64178,7 +65001,7 @@ backup_data = {
           "Psybeam"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64207,7 +65030,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64236,7 +65059,7 @@ backup_data = {
           "Smoke Screen"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64265,7 +65088,7 @@ backup_data = {
           "Gyro Ball"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64294,7 +65117,7 @@ backup_data = {
           "Gyro Ball"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64323,7 +65146,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64352,7 +65175,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64381,7 +65204,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64410,7 +65233,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64439,7 +65262,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64468,7 +65291,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64497,7 +65320,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64526,7 +65349,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64555,7 +65378,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64584,7 +65407,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64613,7 +65436,7 @@ backup_data = {
           "Gyro Ball"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64642,7 +65465,7 @@ backup_data = {
           "Gyro Ball"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64671,7 +65494,7 @@ backup_data = {
           "Psybeam"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64700,7 +65523,7 @@ backup_data = {
           "Psybeam"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64729,7 +65552,7 @@ backup_data = {
           "Acid"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -64760,7 +65583,7 @@ backup_data = {
           "Thunder Shock"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64789,7 +65612,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64818,7 +65641,7 @@ backup_data = {
           "Feint Attack"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64847,7 +65670,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64876,7 +65699,7 @@ backup_data = {
           "Lava Plume"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64905,7 +65728,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64934,7 +65757,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64963,7 +65786,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -64992,7 +65815,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 2,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65021,7 +65844,7 @@ backup_data = {
           "Fire Spin"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65050,7 +65873,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65079,7 +65902,7 @@ backup_data = {
           "Thunder Shock"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65108,7 +65931,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65137,7 +65960,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65166,7 +65989,7 @@ backup_data = {
           "Lava Plume"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65195,7 +66018,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65224,7 +66047,7 @@ backup_data = {
           "Feint Attack"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -65255,7 +66078,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65284,7 +66107,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65313,7 +66136,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65342,7 +66165,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65371,7 +66194,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65400,7 +66223,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65429,7 +66252,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65458,7 +66281,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65487,7 +66310,7 @@ backup_data = {
           "Sludge"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65516,7 +66339,7 @@ backup_data = {
           "Lava Plume"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65545,7 +66368,7 @@ backup_data = {
           "Lava Plume"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65574,7 +66397,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65603,7 +66426,7 @@ backup_data = {
           "Assurance"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65632,7 +66455,7 @@ backup_data = {
           "Assurance"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65661,7 +66484,7 @@ backup_data = {
           "Thunder"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65690,7 +66513,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -65721,7 +66544,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65750,7 +66573,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 1,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65779,7 +66602,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65808,7 +66631,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 1,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65837,7 +66660,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 2,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65895,7 +66718,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Solid Rock",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -65955,7 +66778,7 @@ backup_data = {
           "Bounce"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -65984,7 +66807,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 1,
-        "ability": "Rough Skin",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -66013,7 +66836,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Rough Skin",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -66042,7 +66865,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 1,
-        "ability": "Rough Skin",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -66073,7 +66896,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -66102,7 +66925,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 0,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -66131,7 +66954,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 0,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -66160,7 +66983,7 @@ backup_data = {
           "Hydro Cannon"
         ],
         "sub_index": 1,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -66189,7 +67012,7 @@ backup_data = {
           "Hydro Cannon"
         ],
         "sub_index": 2,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -66220,7 +67043,7 @@ backup_data = {
           "Substitute"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66249,7 +67072,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66278,7 +67101,7 @@ backup_data = {
           "Solar Beam"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66307,7 +67130,7 @@ backup_data = {
           "Morning Sun"
         ],
         "sub_index": 2,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66336,7 +67159,7 @@ backup_data = {
           "Morning Sun"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66365,7 +67188,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 2,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66394,7 +67217,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66423,7 +67246,7 @@ backup_data = {
           "Overheat"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66659,7 +67482,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66688,7 +67511,7 @@ backup_data = {
           "Solar Beam"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66746,7 +67569,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66775,7 +67598,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66804,7 +67627,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66833,7 +67656,7 @@ backup_data = {
           "Razor Leaf"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66862,7 +67685,7 @@ backup_data = {
           "Razor Leaf"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66891,7 +67714,7 @@ backup_data = {
           "Solar Beam"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66920,7 +67743,7 @@ backup_data = {
           "Leaf Blade"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66949,7 +67772,7 @@ backup_data = {
           "Leaf Blade"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -66980,7 +67803,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 3,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67009,7 +67832,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 0,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67038,7 +67861,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 2,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67067,7 +67890,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 2,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67096,7 +67919,7 @@ backup_data = {
           "Overheat"
         ],
         "sub_index": 1,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67127,7 +67950,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -67156,7 +67979,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -67187,7 +68010,7 @@ backup_data = {
           "Water Sport"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67216,7 +68039,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67274,7 +68097,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67303,7 +68126,7 @@ backup_data = {
           "Mirror Coat"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67390,7 +68213,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67419,7 +68242,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 3,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67448,7 +68271,7 @@ backup_data = {
           "Yawn"
         ],
         "sub_index": 2,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67477,7 +68300,7 @@ backup_data = {
           "Haze"
         ],
         "sub_index": 2,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67506,7 +68329,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 3,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67535,7 +68358,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67564,7 +68387,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67622,7 +68445,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67651,7 +68474,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67680,7 +68503,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67709,7 +68532,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67738,7 +68561,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67767,7 +68590,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -67827,7 +68650,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Snow Cloak",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -67858,7 +68681,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 2,
-        "ability": "Thick Fat",
+        "ability": "Ice Body",
         "evs": {
           "df": 0
         }
@@ -67889,7 +68712,7 @@ backup_data = {
           "Rock Smash"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67918,7 +68741,7 @@ backup_data = {
           "Karate Chop"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -67949,7 +68772,7 @@ backup_data = {
           "Wing Attack"
         ],
         "sub_index": 1,
-        "ability": "Hyper Cutter",
+        "ability": "Poison Heal",
         "evs": {
           "df": 0
         }
@@ -67978,7 +68801,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Hyper Cutter",
+        "ability": "Poison Heal",
         "evs": {
           "df": 0
         }
@@ -68007,7 +68830,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Hyper Cutter",
+        "ability": "Poison Heal",
         "evs": {
           "df": 0
         }
@@ -68098,7 +68921,7 @@ backup_data = {
           "Dark Void"
         ],
         "sub_index": 3,
-        "ability": "Insomnia",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -68187,7 +69010,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -68216,7 +69039,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -68245,7 +69068,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -68305,7 +69128,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 1,
-        "ability": "Tinted Lens",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -68334,7 +69157,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Tinted Lens",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -68423,7 +69246,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Mold Breaker",
+        "ability": "Hyper Cutter",
         "evs": {
           "df": 0
         }
@@ -68452,7 +69275,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 3,
-        "ability": "Mold Breaker",
+        "ability": "Hyper Cutter",
         "evs": {
           "df": 0
         }
@@ -68483,7 +69306,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Hyper Cutter",
         "evs": {
           "df": 0
         }
@@ -68545,7 +69368,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 4,
-        "ability": "Guts",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -68632,7 +69455,7 @@ backup_data = {
           "Counter"
         ],
         "sub_index": 4,
-        "ability": "Guts",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -68692,7 +69515,7 @@ backup_data = {
           "Wing Attack"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Swarm",
         "evs": {
           "df": 0
         }
@@ -68723,7 +69546,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Soundproof",
         "evs": {
           "df": 0
         }
@@ -68752,7 +69575,7 @@ backup_data = {
           "Astonish"
         ],
         "sub_index": 1,
-        "ability": "Scrappy",
+        "ability": "Soundproof",
         "evs": {
           "df": 0
         }
@@ -68783,7 +69606,7 @@ backup_data = {
           "False Swipe"
         ],
         "sub_index": 2,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -68812,7 +69635,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 1,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -68841,7 +69664,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -68872,7 +69695,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 3,
-        "ability": "Trace",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -69108,7 +69931,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 2,
-        "ability": "Quick Feet",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -69139,7 +69962,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 2,
-        "ability": "Poison Heal",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -69199,7 +70022,7 @@ backup_data = {
           "Poison Powder"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69228,7 +70051,7 @@ backup_data = {
           "Ingrain"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69257,7 +70080,7 @@ backup_data = {
           "Sleep Powder"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69286,7 +70109,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69315,7 +70138,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 3,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69344,7 +70167,7 @@ backup_data = {
           "Stun Spore"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69373,7 +70196,7 @@ backup_data = {
           "Mega Drain"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -69404,7 +70227,7 @@ backup_data = {
           "Spite"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Serene Grace",
         "evs": {
           "df": 0
         }
@@ -69433,7 +70256,7 @@ backup_data = {
           "Sleep Talk"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Serene Grace",
         "evs": {
           "df": 0
         }
@@ -69462,7 +70285,7 @@ backup_data = {
           "Sleep Talk"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Serene Grace",
         "evs": {
           "df": 0
         }
@@ -69491,7 +70314,7 @@ backup_data = {
           "Sleep Talk"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Serene Grace",
         "evs": {
           "df": 0
         }
@@ -69522,7 +70345,7 @@ backup_data = {
           "Sandstorm"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -69551,7 +70374,7 @@ backup_data = {
           "Water Sport"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -69580,7 +70403,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -69640,7 +70463,7 @@ backup_data = {
           "Dig"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69669,7 +70492,7 @@ backup_data = {
           "Dig"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69698,7 +70521,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69727,7 +70550,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69785,7 +70608,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69814,7 +70637,7 @@ backup_data = {
           "Outrage"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69843,7 +70666,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69872,7 +70695,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69901,7 +70724,7 @@ backup_data = {
           "Iron Tail"
         ],
         "sub_index": 3,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -69930,7 +70753,7 @@ backup_data = {
           "Sandstorm"
         ],
         "sub_index": 3,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -70081,7 +70904,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -70110,7 +70933,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -70139,7 +70962,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -70168,7 +70991,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -70197,7 +71020,7 @@ backup_data = {
           "Slash"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -70317,7 +71140,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 1,
-        "ability": "Reckless",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -70348,7 +71171,7 @@ backup_data = {
           "Blaze Kick"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -70377,7 +71200,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -70406,7 +71229,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -70435,7 +71258,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -70642,7 +71465,7 @@ backup_data = {
           "Meteor Mash"
         ],
         "sub_index": 2,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70671,7 +71494,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 3,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70700,7 +71523,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70729,7 +71552,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70758,7 +71581,7 @@ backup_data = {
           "Meteor Mash"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70816,7 +71639,7 @@ backup_data = {
           "Meteor Mash"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70845,7 +71668,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70874,7 +71697,7 @@ backup_data = {
           "Bullet Punch"
         ],
         "sub_index": 2,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70903,7 +71726,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 3,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -70932,7 +71755,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -71166,7 +71989,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 4,
-        "ability": "Intimidate",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -71197,7 +72020,7 @@ backup_data = {
           "Hypnosis"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71226,7 +72049,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71255,7 +72078,7 @@ backup_data = {
           "Drain Punch"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71284,7 +72107,7 @@ backup_data = {
           "Destiny Bond"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71313,7 +72136,7 @@ backup_data = {
           "Destiny Bond"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71342,7 +72165,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71371,7 +72194,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71400,7 +72223,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71429,7 +72252,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71458,7 +72281,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71487,7 +72310,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71516,7 +72339,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71545,7 +72368,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71574,7 +72397,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71603,7 +72426,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71632,7 +72455,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71661,7 +72484,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71690,7 +72513,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71719,7 +72542,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71748,7 +72571,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71777,7 +72600,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71806,7 +72629,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71835,7 +72658,7 @@ backup_data = {
           "Destiny Bond"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71864,7 +72687,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71893,7 +72716,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71922,7 +72745,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -71953,7 +72776,7 @@ backup_data = {
           "Spider Web"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -71982,7 +72805,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -72011,7 +72834,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -72042,7 +72865,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 1,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -72071,7 +72894,7 @@ backup_data = {
           "Night Shade"
         ],
         "sub_index": 3,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -72100,7 +72923,7 @@ backup_data = {
           "Night Shade"
         ],
         "sub_index": 3,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -72131,7 +72954,7 @@ backup_data = {
           "Flame Wheel"
         ],
         "sub_index": 2,
-        "ability": "Early Bird",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -72218,7 +73041,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 0,
-        "ability": "Early Bird",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -72247,7 +73070,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": "Early Bird",
+        "ability": "Run Away",
         "evs": {
           "df": 0
         }
@@ -72278,7 +73101,7 @@ backup_data = {
           "Detect"
         ],
         "sub_index": 3,
-        "ability": "Compound Eyes",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -72307,7 +73130,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 4,
-        "ability": "Compound Eyes",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -72336,7 +73159,7 @@ backup_data = {
           "Silver Wind"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -72365,7 +73188,7 @@ backup_data = {
           "Supersonic"
         ],
         "sub_index": 2,
-        "ability": "Compound Eyes",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -72396,7 +73219,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -72425,7 +73248,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -72454,7 +73277,7 @@ backup_data = {
           "Memento"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -72514,7 +73337,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -72543,7 +73366,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -72572,7 +73395,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -72601,7 +73424,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -72630,7 +73453,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 3,
-        "ability": "Natural Cure",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -72661,7 +73484,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": "Download",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -72690,7 +73513,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 0,
-        "ability": "Download",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -72748,7 +73571,7 @@ backup_data = {
           "Feint Attack"
         ],
         "sub_index": 1,
-        "ability": "Download",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -72777,7 +73600,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Download",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -72806,7 +73629,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 0,
-        "ability": "Download",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -72837,7 +73660,7 @@ backup_data = {
           "Fire Punch"
         ],
         "sub_index": 3,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -72866,7 +73689,7 @@ backup_data = {
           "Double Slap"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -72895,7 +73718,7 @@ backup_data = {
           "Last Resort"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -72924,7 +73747,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -72953,7 +73776,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Skill Link",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -72984,7 +73807,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 4,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73042,7 +73865,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 2,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73071,7 +73894,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 1,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73100,7 +73923,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 1,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73129,7 +73952,7 @@ backup_data = {
           "Nasty Plot"
         ],
         "sub_index": 0,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73158,7 +73981,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 3,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -73247,7 +74070,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 2,
-        "ability": "Scrappy",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -73336,7 +74159,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 1,
-        "ability": "Unburden",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -73365,7 +74188,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 2,
-        "ability": "Unburden",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -73394,7 +74217,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Unburden",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -73454,7 +74277,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73483,7 +74306,7 @@ backup_data = {
           "Nasty Plot"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73512,7 +74335,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73541,7 +74364,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73570,7 +74393,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73599,7 +74422,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73628,7 +74451,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -73659,7 +74482,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 4,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73746,7 +74569,7 @@ backup_data = {
           "Ember"
         ],
         "sub_index": 0,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73775,7 +74598,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73804,7 +74627,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73833,7 +74656,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 1,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73862,7 +74685,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 2,
-        "ability": "Bad Dreams",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -73922,7 +74745,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 0,
-        "ability": "Snow Cloak",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -73951,7 +74774,7 @@ backup_data = {
           "Ice Shard"
         ],
         "sub_index": 0,
-        "ability": "Snow Cloak",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -74011,7 +74834,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74040,7 +74863,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74069,7 +74892,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74098,7 +74921,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74185,7 +75008,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74330,7 +75153,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74359,7 +75182,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74388,7 +75211,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74417,7 +75240,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74475,7 +75298,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74504,7 +75327,7 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74533,7 +75356,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 3,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -74597,7 +75420,7 @@ backup_data = {
         }
       }
     },
-    "Weavile": {
+    "Weavile-S": {
       "Lvl 49 Leader Pryce ": {
         "level": 49,
         "tr_id": 32,
@@ -74622,7 +75445,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74651,7 +75474,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74709,7 +75532,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74738,7 +75561,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74883,7 +75706,7 @@ backup_data = {
           "Ice Shard"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74912,7 +75735,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74941,7 +75764,7 @@ backup_data = {
           "Ice Shard"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -74972,7 +75795,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 3,
-        "ability": "Thick Fat",
+        "ability": "Ice Body",
         "evs": {
           "df": 0
         }
@@ -75030,7 +75853,7 @@ backup_data = {
           "Ice Shard"
         ],
         "sub_index": 2,
-        "ability": "Thick Fat",
+        "ability": "Ice Body",
         "evs": {
           "df": 0
         }
@@ -75059,7 +75882,7 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 0,
-        "ability": "Thick Fat",
+        "ability": "Ice Body",
         "evs": {
           "df": 0
         }
@@ -75090,7 +75913,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 4,
-        "ability": "Snow Cloak",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75119,7 +75942,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 1,
-        "ability": "Snow Cloak",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75148,7 +75971,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 0,
-        "ability": "Snow Cloak",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75177,7 +76000,7 @@ backup_data = {
           "Destiny Bond"
         ],
         "sub_index": 4,
-        "ability": "Snow Cloak",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75206,13 +76029,13 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 3,
-        "ability": "Snow Cloak",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
       }
     },
-    "Lapras": {
+    "Lapras-S": {
       "Lvl 49 Leader Pryce ": {
         "level": 49,
         "tr_id": 32,
@@ -75238,64 +76061,6 @@ backup_data = {
         ],
         "sub_index": 5,
         "ability": "Ice Body",
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 40 Lass Connie ": {
-        "level": 40,
-        "tr_id": 215,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "-",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Impish",
-        "moves": [
-          "Dragon Pulse",
-          "Recover",
-          "Icy Wind",
-          "Bubble Beam"
-        ],
-        "sub_index": 3,
-        "ability": "Shell Armor",
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 42 Swimmer♀ Nicole ": {
-        "level": 42,
-        "tr_id": 293,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "-",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Lonely",
-        "moves": [
-          "Horn Drill",
-          "Perish Song",
-          "Ice Beam",
-          "Brine"
-        ],
-        "sub_index": 2,
-        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -75328,93 +76093,6 @@ backup_data = {
         "evs": {
           "df": 0
         }
-      },
-      "Lvl 50 Boarder Bryce ": {
-        "level": 50,
-        "tr_id": 686,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "-",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Calm",
-        "moves": [
-          "Ice Beam",
-          "Brine",
-          "Dragon Pulse",
-          "Hydro Pump"
-        ],
-        "sub_index": 1,
-        "ability": "Shell Armor",
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 100 Champion Red2 ": {
-        "level": 100,
-        "tr_id": 701,
-        "ai": 135,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "Leftovers",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Jolly",
-        "moves": [
-          "Ice Beam",
-          "Dragon Pulse",
-          "Muddy Water",
-          "Perish Song"
-        ],
-        "sub_index": 5,
-        "ability": "Shell Armor",
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 56 Leader Misty ": {
-        "level": 56,
-        "tr_id": 721,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "None",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Naughty",
-        "moves": [
-          "Surf",
-          "Perish Song",
-          "Blizzard",
-          "Rain Dance"
-        ],
-        "sub_index": 2,
-        "ability": "Shell Armor",
-        "evs": {
-          "df": 0
-        }
       }
     },
     "Bronzong": {
@@ -75442,7 +76120,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75471,7 +76149,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75500,7 +76178,7 @@ backup_data = {
           "Flash Cannon"
         ],
         "sub_index": 0,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75529,7 +76207,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 2,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75558,7 +76236,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 3,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75618,7 +76296,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -75676,7 +76354,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -75705,7 +76383,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -75734,7 +76412,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -75763,7 +76441,7 @@ backup_data = {
           "Iron Tail"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -75823,7 +76501,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75852,7 +76530,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75881,7 +76559,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75910,7 +76588,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75939,7 +76617,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75968,7 +76646,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -75997,7 +76675,7 @@ backup_data = {
           "Rain Dance"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -76026,7 +76704,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -76084,7 +76762,7 @@ backup_data = {
           "Mirror Shot"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -76115,7 +76793,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 3,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76144,7 +76822,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76231,7 +76909,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 0,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76260,7 +76938,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76318,7 +76996,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 4,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76347,7 +77025,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 4,
-        "ability": "Torrent",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -76378,7 +77056,7 @@ backup_data = {
           "Cosmic Power"
         ],
         "sub_index": 4,
-        "ability": "Battle Armor",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -76407,7 +77085,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -76436,7 +77114,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -76467,7 +77145,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 5,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76496,7 +77174,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76525,7 +77203,7 @@ backup_data = {
           "Outrage"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76583,7 +77261,7 @@ backup_data = {
           "Iron Tail"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76612,7 +77290,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76641,7 +77319,7 @@ backup_data = {
           "Outrage"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76670,7 +77348,7 @@ backup_data = {
           "Outrage"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76699,7 +77377,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76728,7 +77406,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 3,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -76817,7 +77495,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -76875,7 +77553,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -76904,7 +77582,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -76933,7 +77611,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -76964,7 +77642,7 @@ backup_data = {
           "X-Scissor"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -76993,7 +77671,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77022,7 +77700,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77051,7 +77729,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77109,7 +77787,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77138,7 +77816,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77167,7 +77845,7 @@ backup_data = {
           "Reversal"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -77316,7 +77994,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 4,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77345,7 +78023,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 3,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77374,7 +78052,7 @@ backup_data = {
           "Volt Tackle"
         ],
         "sub_index": 2,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77403,7 +78081,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77432,7 +78110,7 @@ backup_data = {
           "Volt Tackle"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77519,7 +78197,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77577,7 +78255,7 @@ backup_data = {
           "Fire Blast"
         ],
         "sub_index": 3,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77606,7 +78284,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 5,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -77637,7 +78315,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 5,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77666,7 +78344,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77724,7 +78402,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 3,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77753,7 +78431,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77782,7 +78460,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77811,7 +78489,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77840,7 +78518,7 @@ backup_data = {
           "Hypnosis"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77869,7 +78547,7 @@ backup_data = {
           "Hypnosis"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77898,7 +78576,7 @@ backup_data = {
           "Substitute"
         ],
         "sub_index": 5,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -77929,7 +78607,7 @@ backup_data = {
           "Luster Purge"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -77960,7 +78638,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -77989,7 +78667,7 @@ backup_data = {
           "Dragon Claw"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78018,7 +78696,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78076,7 +78754,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78105,7 +78783,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78134,7 +78812,7 @@ backup_data = {
           "Cotton Spore"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78163,7 +78841,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78192,7 +78870,7 @@ backup_data = {
           "Cotton Spore"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78221,7 +78899,7 @@ backup_data = {
           "Charge"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78250,7 +78928,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78281,7 +78959,7 @@ backup_data = {
           "Fissure"
         ],
         "sub_index": 2,
-        "ability": "Reckless",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -78310,7 +78988,7 @@ backup_data = {
           "Dragon Rage"
         ],
         "sub_index": 1,
-        "ability": "Reckless",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -78339,7 +79017,7 @@ backup_data = {
           "Rock Polish"
         ],
         "sub_index": 5,
-        "ability": "Reckless",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -78399,7 +79077,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -78428,7 +79106,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -78457,7 +79135,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -78546,7 +79224,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78575,7 +79253,7 @@ backup_data = {
           "Thunder Shock"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78604,7 +79282,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78633,7 +79311,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 4,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78662,7 +79340,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78691,7 +79369,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 3,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78720,7 +79398,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 5,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78749,7 +79427,7 @@ backup_data = {
           "Charm"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78778,7 +79456,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78807,7 +79485,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78836,7 +79514,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78865,7 +79543,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78894,7 +79572,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -78925,7 +79603,7 @@ backup_data = {
           "Rain Dance"
         ],
         "sub_index": 1,
-        "ability": "Torrent",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -78954,7 +79632,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 0,
-        "ability": "Torrent",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -78983,7 +79661,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -79012,7 +79690,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -79072,7 +79750,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79101,7 +79779,7 @@ backup_data = {
           "Steel Wing"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79130,7 +79808,7 @@ backup_data = {
           "Feint Attack"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79159,7 +79837,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79217,7 +79895,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79246,7 +79924,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79275,7 +79953,7 @@ backup_data = {
           "Drill Peck"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79304,7 +79982,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79333,7 +80011,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79362,7 +80040,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79391,7 +80069,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 3,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79420,7 +80098,7 @@ backup_data = {
           "Steel Wing"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79449,7 +80127,7 @@ backup_data = {
           "Drill Peck"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79478,7 +80156,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79507,7 +80185,7 @@ backup_data = {
           "Drill Peck"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79536,7 +80214,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79565,7 +80243,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79594,7 +80272,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79623,7 +80301,7 @@ backup_data = {
           "Brave Bird"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -79683,7 +80361,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -79712,7 +80390,7 @@ backup_data = {
           "Metronome"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -79741,7 +80419,7 @@ backup_data = {
           "Psycho Boost"
         ],
         "sub_index": 2,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -79890,7 +80568,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -79919,7 +80597,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -79977,7 +80655,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80006,7 +80684,7 @@ backup_data = {
           "Water Pulse"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80093,7 +80771,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80122,7 +80800,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80151,7 +80829,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80180,7 +80858,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80209,7 +80887,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80238,7 +80916,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80267,7 +80945,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80296,7 +80974,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80325,7 +81003,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80354,7 +81032,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80383,7 +81061,7 @@ backup_data = {
           "Haze"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80412,7 +81090,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80441,7 +81119,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80470,7 +81148,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80499,7 +81177,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80528,7 +81206,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80557,7 +81235,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80586,7 +81264,7 @@ backup_data = {
           "Avalanche"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -80617,7 +81295,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -80733,7 +81411,7 @@ backup_data = {
           "Revenge"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -80762,7 +81440,7 @@ backup_data = {
           "Vital Throw"
         ],
         "sub_index": 3,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -80849,7 +81527,7 @@ backup_data = {
           "Dig"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -80878,7 +81556,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -80909,7 +81587,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -80938,7 +81616,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -80967,7 +81645,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -80996,7 +81674,7 @@ backup_data = {
           "Rock Polish"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81025,7 +81703,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81054,7 +81732,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81199,7 +81877,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81228,7 +81906,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81257,7 +81935,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81286,7 +81964,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81315,7 +81993,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81344,7 +82022,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81373,7 +82051,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81402,7 +82080,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81431,7 +82109,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81460,7 +82138,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81489,7 +82167,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81518,7 +82196,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81547,7 +82225,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81576,7 +82254,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81605,7 +82283,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81634,7 +82312,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81663,7 +82341,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81692,7 +82370,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81721,7 +82399,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81750,7 +82428,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81779,7 +82457,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81808,7 +82486,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81837,7 +82515,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -81868,7 +82546,7 @@ backup_data = {
           "Ember"
         ],
         "sub_index": 3,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -81897,7 +82575,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 2,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -81926,7 +82604,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 5,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -82042,7 +82720,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 3,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -82071,7 +82749,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 1,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -82100,7 +82778,7 @@ backup_data = {
           "Blaze Kick"
         ],
         "sub_index": 4,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -82160,7 +82838,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -82189,7 +82867,7 @@ backup_data = {
           "Power Whip"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -82218,7 +82896,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -82247,7 +82925,7 @@ backup_data = {
           "Low Kick"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Motor Drive",
         "evs": {
           "df": 0
         }
@@ -82278,7 +82956,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -82309,7 +82987,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Quick Feet",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -82340,7 +83018,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -82369,7 +83047,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -82400,7 +83078,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82429,7 +83107,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82458,7 +83136,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82487,7 +83165,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82516,7 +83194,7 @@ backup_data = {
           "Slack Off"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82545,7 +83223,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82603,7 +83281,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -82808,7 +83486,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -82837,7 +83515,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -82895,7 +83573,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -82924,7 +83602,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -82953,7 +83631,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -82982,7 +83660,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -83011,7 +83689,7 @@ backup_data = {
           "Facade"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -83040,7 +83718,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -83069,7 +83747,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -83129,7 +83807,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -83158,7 +83836,7 @@ backup_data = {
           "Cut"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -83187,7 +83865,7 @@ backup_data = {
           "Fury Swipes"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -83218,7 +83896,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83305,7 +83983,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83334,7 +84012,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83363,7 +84041,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83392,7 +84070,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83421,7 +84099,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83450,7 +84128,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83479,7 +84157,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83508,7 +84186,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83537,7 +84215,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83566,7 +84244,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83595,7 +84273,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83624,7 +84302,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83653,7 +84331,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83682,7 +84360,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83711,7 +84389,7 @@ backup_data = {
           "Swift"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83740,7 +84418,7 @@ backup_data = {
           "Discharge"
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -83771,7 +84449,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83800,7 +84478,7 @@ backup_data = {
           "Detect"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83829,7 +84507,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83858,7 +84536,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83887,7 +84565,7 @@ backup_data = {
           "Iron Tail"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83916,7 +84594,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -83974,7 +84652,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -84005,7 +84683,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84036,7 +84714,7 @@ backup_data = {
           "Cross Poison"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84065,7 +84743,7 @@ backup_data = {
           "Fury Attack"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84094,7 +84772,7 @@ backup_data = {
           "Cross Poison"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84123,7 +84801,7 @@ backup_data = {
           "Focus Energy"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84152,7 +84830,7 @@ backup_data = {
           "Bug Bite"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84181,7 +84859,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84210,7 +84888,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84239,7 +84917,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84268,7 +84946,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84297,7 +84975,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84326,7 +85004,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84355,7 +85033,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -84386,7 +85064,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84415,7 +85093,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84444,7 +85122,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84473,7 +85151,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84502,7 +85180,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84531,7 +85209,7 @@ backup_data = {
           "Safeguard"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84560,7 +85238,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84589,7 +85267,7 @@ backup_data = {
           "Stun Spore"
         ],
         "sub_index": 3,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84618,7 +85296,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84647,7 +85325,7 @@ backup_data = {
           "Tailwind"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84676,7 +85354,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84705,7 +85383,7 @@ backup_data = {
           "Tailwind"
         ],
         "sub_index": 3,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84734,7 +85412,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84763,7 +85441,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84792,7 +85470,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 3,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84821,7 +85499,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84850,7 +85528,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84879,7 +85557,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84908,7 +85586,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84937,7 +85615,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84966,7 +85644,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -84995,7 +85673,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 1,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85024,7 +85702,7 @@ backup_data = {
           "Bug Buzz"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85055,7 +85733,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -85084,7 +85762,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -85113,7 +85791,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -85142,7 +85820,7 @@ backup_data = {
           "Mimic"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -85173,7 +85851,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -85204,7 +85882,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": "Serene Grace",
+        "ability": "Super Luck",
         "evs": {
           "df": 0
         }
@@ -85235,7 +85913,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -85264,7 +85942,7 @@ backup_data = {
           "Drill Peck"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -85295,7 +85973,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85324,7 +86002,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85353,7 +86031,7 @@ backup_data = {
           "Leech Life"
         ],
         "sub_index": 0,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85382,7 +86060,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 1,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85411,7 +86089,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 0,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85440,7 +86118,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Shield Dust",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -85471,7 +86149,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -85502,7 +86180,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -85531,7 +86209,7 @@ backup_data = {
           "Trick Room"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -85883,7 +86561,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -85943,7 +86621,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": "Run Away",
+        "ability": "Shield Dust",
         "evs": {
           "df": 0
         }
@@ -85974,7 +86652,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -86003,7 +86681,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -86034,7 +86712,7 @@ backup_data = {
           "Camouflage"
         ],
         "sub_index": 1,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86063,7 +86741,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 2,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86092,7 +86770,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86121,7 +86799,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86150,7 +86828,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86179,7 +86857,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Natural Cure",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -86239,7 +86917,7 @@ backup_data = {
           "Mega Drain"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -86268,7 +86946,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -86297,7 +86975,7 @@ backup_data = {
           "Aromatherapy"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -86355,7 +87033,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -86386,7 +87064,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Compound Eyes",
         "evs": {
           "df": 0
         }
@@ -86415,7 +87093,7 @@ backup_data = {
           "Leech Life"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Compound Eyes",
         "evs": {
           "df": 0
         }
@@ -86475,7 +87153,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -86506,7 +87184,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -86537,7 +87215,7 @@ backup_data = {
           "Sweet Kiss"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -86566,7 +87244,7 @@ backup_data = {
           "Sweet Kiss"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -86595,7 +87273,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -86626,7 +87304,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 2,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86655,7 +87333,7 @@ backup_data = {
           "Hypnosis"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86684,7 +87362,7 @@ backup_data = {
           "Psycho Boost"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86713,7 +87391,7 @@ backup_data = {
           "Mist Ball"
         ],
         "sub_index": 2,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86742,7 +87420,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86771,7 +87449,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86800,7 +87478,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86829,7 +87507,7 @@ backup_data = {
           "Mist Ball"
         ],
         "sub_index": 1,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86858,7 +87536,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 2,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86887,7 +87565,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86916,7 +87594,7 @@ backup_data = {
           "Mist Ball"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86945,7 +87623,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -86974,7 +87652,7 @@ backup_data = {
           "Feather Dance"
         ],
         "sub_index": 1,
-        "ability": "Tinted Lens",
+        "ability": "Insomnia",
         "evs": {
           "df": 0
         }
@@ -87005,7 +87683,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87034,7 +87712,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87063,7 +87741,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 2,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87092,7 +87770,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87121,7 +87799,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 1,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87179,7 +87857,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Water Veil",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87210,7 +87888,7 @@ backup_data = {
           "Poison Tail"
         ],
         "sub_index": 1,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -87239,7 +87917,7 @@ backup_data = {
           "Helping Hand"
         ],
         "sub_index": 1,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -87268,7 +87946,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 3,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -87297,7 +87975,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 1,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -87328,7 +88006,7 @@ backup_data = {
           "Brine"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -87357,7 +88035,7 @@ backup_data = {
           "Clamp"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -87386,7 +88064,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -87415,7 +88093,7 @@ backup_data = {
           "Whirlpool"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -87446,7 +88124,7 @@ backup_data = {
           "Pin Missile"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87475,7 +88153,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87504,7 +88182,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87533,7 +88211,7 @@ backup_data = {
           "Pin Missile"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87562,7 +88240,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87591,7 +88269,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87620,7 +88298,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87649,7 +88327,7 @@ backup_data = {
           "Gunk Shot"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87678,7 +88356,7 @@ backup_data = {
           "Pin Missile"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87707,7 +88385,7 @@ backup_data = {
           "Minimize"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87736,7 +88414,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87765,7 +88443,7 @@ backup_data = {
           "Poison Fang"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87794,7 +88472,7 @@ backup_data = {
           "Dive"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -87825,7 +88503,7 @@ backup_data = {
           "Disable"
         ],
         "sub_index": 0,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87883,7 +88561,7 @@ backup_data = {
           "Mud Bomb"
         ],
         "sub_index": 2,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87912,7 +88590,7 @@ backup_data = {
           "Confusion"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87941,7 +88619,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -87972,7 +88650,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88001,7 +88679,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88030,7 +88708,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88059,7 +88737,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88088,7 +88766,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88117,7 +88795,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88146,7 +88824,7 @@ backup_data = {
           "Wake-Up Slap"
         ],
         "sub_index": 0,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88175,7 +88853,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88204,7 +88882,7 @@ backup_data = {
           "Wake-Up Slap"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88233,7 +88911,7 @@ backup_data = {
           "Wake-Up Slap"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -88264,7 +88942,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -88351,7 +89029,7 @@ backup_data = {
           "Flail"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -88380,7 +89058,7 @@ backup_data = {
           "Flail"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -88409,7 +89087,7 @@ backup_data = {
           "Rock Blast"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -88498,7 +89176,7 @@ backup_data = {
           "Reversal"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -88585,7 +89263,7 @@ backup_data = {
           "Vital Throw"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -88674,7 +89352,7 @@ backup_data = {
           "Stockpile"
         ],
         "sub_index": 3,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88703,7 +89381,7 @@ backup_data = {
           "Mud Bomb"
         ],
         "sub_index": 1,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88732,7 +89410,7 @@ backup_data = {
           "Super Fang"
         ],
         "sub_index": 2,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88761,7 +89439,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 1,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88790,7 +89468,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88819,7 +89497,7 @@ backup_data = {
           "Glare"
         ],
         "sub_index": 0,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88848,7 +89526,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88877,7 +89555,7 @@ backup_data = {
           "Spit Up"
         ],
         "sub_index": 0,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88906,7 +89584,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Clear Body",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -88937,7 +89615,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -88966,7 +89644,7 @@ backup_data = {
           "Surf"
         ],
         "sub_index": 4,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -88995,7 +89673,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -89024,7 +89702,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -89053,7 +89731,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -89084,7 +89762,7 @@ backup_data = {
           "Ember"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89113,7 +89791,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89171,7 +89849,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89229,7 +89907,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89258,7 +89936,7 @@ backup_data = {
           "Rollout"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89287,7 +89965,7 @@ backup_data = {
           "Discharge"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89345,7 +90023,7 @@ backup_data = {
           "Iron Defense"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89403,7 +90081,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89461,7 +90139,7 @@ backup_data = {
           "Magnet Rise"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89490,7 +90168,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 4,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89519,7 +90197,7 @@ backup_data = {
           "Charge"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -89579,7 +90257,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 2,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -89641,7 +90319,7 @@ backup_data = {
           "Leer"
         ],
         "sub_index": 0,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -89670,7 +90348,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 2,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -89699,7 +90377,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 2,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -89728,7 +90406,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 0,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -89759,7 +90437,7 @@ backup_data = {
           "Sand Attack"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -89788,7 +90466,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Arena Trap",
         "evs": {
           "df": 0
         }
@@ -89819,7 +90497,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -89848,7 +90526,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -89877,7 +90555,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -89906,7 +90584,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -89935,7 +90613,7 @@ backup_data = {
           "Bounce"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -90084,7 +90762,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -90113,7 +90791,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -90144,7 +90822,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 2,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -90173,7 +90851,7 @@ backup_data = {
           "Helping Hand"
         ],
         "sub_index": 0,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -90202,7 +90880,7 @@ backup_data = {
           "Dig"
         ],
         "sub_index": 2,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -90289,7 +90967,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 1,
-        "ability": "Hustle",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -90320,7 +90998,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 3,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -90349,7 +91027,7 @@ backup_data = {
           "Leer"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -90380,7 +91058,7 @@ backup_data = {
           "Poison Fang"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90438,7 +91116,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90496,7 +91174,7 @@ backup_data = {
           "Night Shade"
         ],
         "sub_index": 3,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90525,7 +91203,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 2,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90554,7 +91232,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90583,7 +91261,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90612,7 +91290,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90641,7 +91319,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 0,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90670,7 +91348,7 @@ backup_data = {
           "Night Shade"
         ],
         "sub_index": 3,
-        "ability": "Insomnia",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -90701,7 +91379,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Gluttony",
+        "ability": "Sand Veil",
         "evs": {
           "df": 0
         }
@@ -90730,7 +91408,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 0,
-        "ability": "Gluttony",
+        "ability": "Sand Veil",
         "evs": {
           "df": 0
         }
@@ -90759,7 +91437,7 @@ backup_data = {
           "Sandstorm"
         ],
         "sub_index": 0,
-        "ability": "Gluttony",
+        "ability": "Sand Veil",
         "evs": {
           "df": 0
         }
@@ -90790,7 +91468,7 @@ backup_data = {
           "Cut"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90848,7 +91526,7 @@ backup_data = {
           "X-Scissor"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90877,7 +91555,7 @@ backup_data = {
           "Aromatherapy"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90906,7 +91584,7 @@ backup_data = {
           "Aromatherapy"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90935,7 +91613,7 @@ backup_data = {
           "Aromatherapy"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90964,7 +91642,7 @@ backup_data = {
           "X-Scissor"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -90993,7 +91671,7 @@ backup_data = {
           "Slash"
         ],
         "sub_index": 1,
-        "ability": "Effect Spore",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -91024,7 +91702,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Filter",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -91053,7 +91731,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Filter",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -91082,7 +91760,7 @@ backup_data = {
           "Defend Order"
         ],
         "sub_index": 5,
-        "ability": "Filter",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -91113,7 +91791,7 @@ backup_data = {
           "Whirlwind"
         ],
         "sub_index": 1,
-        "ability": "Serene Grace",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -91142,7 +91820,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 1,
-        "ability": "Serene Grace",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -91173,7 +91851,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 2,
-        "ability": "Immunity",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -91202,7 +91880,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": "Immunity",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -91231,7 +91909,7 @@ backup_data = {
           "Sleep Talk"
         ],
         "sub_index": 3,
-        "ability": "Immunity",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -91262,7 +91940,7 @@ backup_data = {
           "Swift"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91291,7 +91969,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 4,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91320,7 +91998,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 2,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91349,7 +92027,7 @@ backup_data = {
           "Moonlight"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91378,7 +92056,7 @@ backup_data = {
           "Thunder"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91407,7 +92085,7 @@ backup_data = {
           "Metronome"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91436,7 +92114,7 @@ backup_data = {
           "Metronome"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91465,7 +92143,7 @@ backup_data = {
           "Calm Mind"
         ],
         "sub_index": 4,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -91496,7 +92174,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 2,
-        "ability": "Chlorophyll",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -91527,7 +92205,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91556,7 +92234,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91585,7 +92263,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91614,7 +92292,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91643,7 +92321,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91672,7 +92350,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91701,7 +92379,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91730,7 +92408,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91759,7 +92437,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91788,7 +92466,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91817,7 +92495,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91846,7 +92524,7 @@ backup_data = {
           ""
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91875,7 +92553,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91904,7 +92582,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91933,7 +92611,7 @@ backup_data = {
           ""
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91962,7 +92640,7 @@ backup_data = {
           ""
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -91991,7 +92669,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -92020,7 +92698,7 @@ backup_data = {
           ""
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -92049,7 +92727,7 @@ backup_data = {
           ""
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -92111,7 +92789,7 @@ backup_data = {
           "Feather Dance"
         ],
         "sub_index": 0,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92140,7 +92818,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 3,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92169,7 +92847,7 @@ backup_data = {
           "Shock Wave"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92198,7 +92876,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 3,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92227,7 +92905,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92256,7 +92934,7 @@ backup_data = {
           "Mirror Move"
         ],
         "sub_index": 5,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92314,7 +92992,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92343,7 +93021,7 @@ backup_data = {
           "Wing Attack"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92372,7 +93050,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 0,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92430,7 +93108,7 @@ backup_data = {
           "Return"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92459,7 +93137,7 @@ backup_data = {
           "Brave Bird"
         ],
         "sub_index": 0,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92488,7 +93166,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 1,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92517,7 +93195,7 @@ backup_data = {
           "Roost"
         ],
         "sub_index": 5,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92546,7 +93224,7 @@ backup_data = {
           "Steel Wing"
         ],
         "sub_index": 5,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92575,7 +93253,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 0,
-        "ability": "Huge Power",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -92606,7 +93284,7 @@ backup_data = {
           "Tailwind"
         ],
         "sub_index": 2,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -92635,7 +93313,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -92664,7 +93342,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 1,
-        "ability": "Swift Swim",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -92695,7 +93373,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92724,7 +93402,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92753,7 +93431,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92782,7 +93460,7 @@ backup_data = {
           "Egg Bomb"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92811,7 +93489,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92840,7 +93518,7 @@ backup_data = {
           "Trick Room"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92869,7 +93547,7 @@ backup_data = {
           "Dream Eater"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92898,7 +93576,7 @@ backup_data = {
           "Hypnosis"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92927,7 +93605,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92956,7 +93634,7 @@ backup_data = {
           "Wood Hammer"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -92985,7 +93663,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -93014,7 +93692,7 @@ backup_data = {
           "Trick Room"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -93045,7 +93723,7 @@ backup_data = {
           "Wish"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93074,7 +93752,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 2,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93132,7 +93810,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93161,7 +93839,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 2,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93190,7 +93868,7 @@ backup_data = {
           "Wish"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93219,7 +93897,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93248,7 +93926,7 @@ backup_data = {
           "Future Sight"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93277,7 +93955,7 @@ backup_data = {
           "Future Sight"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -93308,7 +93986,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -93337,7 +94015,7 @@ backup_data = {
           "Nasty Plot"
         ],
         "sub_index": 2,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -93366,7 +94044,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -93395,7 +94073,7 @@ backup_data = {
           "Dig"
         ],
         "sub_index": 2,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -93453,7 +94131,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 5,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -93513,7 +94191,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -93542,7 +94220,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Hyper Cutter",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -93571,7 +94249,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 0,
-        "ability": "Hyper Cutter",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -93600,7 +94278,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 1,
-        "ability": "Hyper Cutter",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -93631,7 +94309,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 0,
-        "ability": "Volt Absorb",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -93660,7 +94338,7 @@ backup_data = {
           "Psycho Cut"
         ],
         "sub_index": 1,
-        "ability": "Volt Absorb",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -93689,7 +94367,7 @@ backup_data = {
           "Sweet Kiss"
         ],
         "sub_index": 4,
-        "ability": "Volt Absorb",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -93720,7 +94398,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93749,7 +94427,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93778,7 +94456,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93807,7 +94485,7 @@ backup_data = {
           "Fire Punch"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93836,7 +94514,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93865,7 +94543,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93894,7 +94572,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93923,7 +94601,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -93983,7 +94661,7 @@ backup_data = {
           "Perish Song"
         ],
         "sub_index": 3,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94012,7 +94690,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94041,7 +94719,7 @@ backup_data = {
           "Gravity"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94070,7 +94748,7 @@ backup_data = {
           "Psycho Boost"
         ],
         "sub_index": 3,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94099,7 +94777,7 @@ backup_data = {
           "Disable"
         ],
         "sub_index": 1,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94128,7 +94806,7 @@ backup_data = {
           "Disable"
         ],
         "sub_index": 0,
-        "ability": "Unaware",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -94159,7 +94837,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 2,
-        "ability": "Shell Armor",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -94188,7 +94866,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 2,
-        "ability": "Shell Armor",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -94248,7 +94926,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 3,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94335,7 +95013,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94393,7 +95071,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94422,7 +95100,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94451,7 +95129,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94540,7 +95218,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 0,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94656,7 +95334,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94685,7 +95363,7 @@ backup_data = {
           "Iron Tail"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94714,7 +95392,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 3,
-        "ability": "Adaptability",
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
@@ -94745,7 +95423,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Shadow Tag",
+        "ability": "Pressure",
         "evs": {
           "df": 0
         }
@@ -94774,7 +95452,7 @@ backup_data = {
           "Pain Split"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Pressure",
         "evs": {
           "df": 0
         }
@@ -94805,7 +95483,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": "Blaze",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -94834,7 +95512,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 4,
-        "ability": "Blaze",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -94863,7 +95541,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 5,
-        "ability": "Blaze",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -94894,7 +95572,7 @@ backup_data = {
           "Ice Shard"
         ],
         "sub_index": 4,
-        "ability": "Snow Cloak",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -94925,7 +95603,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Solid Rock",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -94954,7 +95632,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Solid Rock",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -94983,7 +95661,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 3,
-        "ability": "Solid Rock",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95012,7 +95690,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 3,
-        "ability": "Solid Rock",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95041,7 +95719,7 @@ backup_data = {
           "Moonlight"
         ],
         "sub_index": 1,
-        "ability": "Solid Rock",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95072,7 +95750,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -95159,7 +95837,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -95188,7 +95866,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Shell Armor",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -95217,7 +95895,7 @@ backup_data = {
           "Fire Blast"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -95246,7 +95924,7 @@ backup_data = {
           "Tri Attack"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -95277,7 +95955,7 @@ backup_data = {
           "Spikes"
         ],
         "sub_index": 2,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95306,7 +95984,7 @@ backup_data = {
           "Flash Cannon"
         ],
         "sub_index": 0,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95335,7 +96013,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 1,
-        "ability": "Magnet Pull",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -95366,7 +96044,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 3,
-        "ability": "Thick Fat",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -95395,7 +96073,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 3,
-        "ability": "Thick Fat",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -95426,7 +96104,7 @@ backup_data = {
           "Fly"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95455,7 +96133,7 @@ backup_data = {
           "X-Scissor"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95484,7 +96162,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95513,7 +96191,7 @@ backup_data = {
           "Sunny Day"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95542,7 +96220,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95571,7 +96249,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95600,7 +96278,7 @@ backup_data = {
           "Cotton Spore"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95629,7 +96307,7 @@ backup_data = {
           "Cotton Spore"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95658,7 +96336,7 @@ backup_data = {
           "Worry Seed"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95687,7 +96365,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -95749,7 +96427,7 @@ backup_data = {
           "Slack Off"
         ],
         "sub_index": 2,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95778,7 +96456,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95807,7 +96485,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95836,7 +96514,7 @@ backup_data = {
           "Mud Bomb"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95865,7 +96543,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95894,7 +96572,7 @@ backup_data = {
           "Poison Jab"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -95925,7 +96603,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -95954,7 +96632,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -95983,7 +96661,7 @@ backup_data = {
           "Shock Wave"
         ],
         "sub_index": 3,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96012,7 +96690,7 @@ backup_data = {
           "Helping Hand"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96041,7 +96719,7 @@ backup_data = {
           "Sand Attack"
         ],
         "sub_index": 0,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96070,7 +96748,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 4,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96099,7 +96777,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 4,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96128,7 +96806,7 @@ backup_data = {
           "Double Kick"
         ],
         "sub_index": 1,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96157,7 +96835,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 3,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -96188,7 +96866,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -96217,7 +96895,7 @@ backup_data = {
           "Brine"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -96246,7 +96924,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -96275,7 +96953,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -96304,7 +96982,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -96335,7 +97013,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 1,
-        "ability": "Suction Cups",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -96393,7 +97071,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 3,
-        "ability": "Suction Cups",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -96422,7 +97100,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Suction Cups",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -96480,7 +97158,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 2,
-        "ability": "Suction Cups",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -96511,7 +97189,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -96540,7 +97218,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 3,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -96598,7 +97276,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -96656,7 +97334,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -96685,7 +97363,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -96743,7 +97421,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 3,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -97037,7 +97715,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -97066,7 +97744,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -97095,7 +97773,7 @@ backup_data = {
           "Stealth Rock"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Rain Dish",
         "evs": {
           "df": 0
         }
@@ -97126,7 +97804,7 @@ backup_data = {
           "Surf"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97155,7 +97833,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97184,7 +97862,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97213,7 +97891,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97242,7 +97920,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 3,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97329,7 +98007,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97358,7 +98036,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97387,7 +98065,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97416,7 +98094,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97445,7 +98123,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97474,7 +98152,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 2,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -97505,7 +98183,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -97563,7 +98241,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -97592,7 +98270,7 @@ backup_data = {
           "Drain Punch"
         ],
         "sub_index": 3,
-        "ability": "Sand Veil",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -97621,7 +98299,7 @@ backup_data = {
           "Swords Dance"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -97652,7 +98330,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97710,7 +98388,7 @@ backup_data = {
           "Mud Bomb"
         ],
         "sub_index": 2,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97768,7 +98446,7 @@ backup_data = {
           "Psych Up"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97797,7 +98475,7 @@ backup_data = {
           "Psych Up"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97826,7 +98504,7 @@ backup_data = {
           "Psych Up"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97855,7 +98533,7 @@ backup_data = {
           "Psych Up"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97884,7 +98562,7 @@ backup_data = {
           "Screech"
         ],
         "sub_index": 0,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97913,7 +98591,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97942,7 +98620,7 @@ backup_data = {
           "Psych Up"
         ],
         "sub_index": 3,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -97971,7 +98649,7 @@ backup_data = {
           "Screech"
         ],
         "sub_index": 0,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98000,7 +98678,7 @@ backup_data = {
           "Screech"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98029,7 +98707,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 0,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98058,7 +98736,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98087,7 +98765,7 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98116,7 +98794,7 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 1,
-        "ability": "Cloud Nine",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98147,7 +98825,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98176,7 +98854,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98205,7 +98883,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98265,7 +98943,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 1,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98294,7 +98972,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 2,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -98325,7 +99003,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 3,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98354,7 +99032,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98383,7 +99061,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98412,7 +99090,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 1,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98441,7 +99119,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 2,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98470,7 +99148,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 3,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98499,7 +99177,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": "Suction Cups",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -98530,7 +99208,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98559,7 +99237,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 3,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98588,7 +99266,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98617,7 +99295,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98646,7 +99324,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98675,7 +99353,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 5,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98704,7 +99382,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98733,7 +99411,7 @@ backup_data = {
           "Aqua Ring"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98762,7 +99440,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98791,7 +99469,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 3,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -98822,7 +99500,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -98880,7 +99558,7 @@ backup_data = {
           "Super Fang"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -98909,7 +99587,7 @@ backup_data = {
           "Scary Face"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -98938,7 +99616,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -98967,7 +99645,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -98996,7 +99674,7 @@ backup_data = {
           "Endeavor"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -99025,7 +99703,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -99056,7 +99734,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 1,
-        "ability": "Rough Skin",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -99087,7 +99765,7 @@ backup_data = {
           "Head Smash"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99116,7 +99794,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 4,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99145,7 +99823,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99174,7 +99852,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 1,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99203,7 +99881,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99232,7 +99910,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99290,7 +99968,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -99321,7 +99999,7 @@ backup_data = {
           "Flare Blitz"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -99379,7 +100057,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 3,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -99408,7 +100086,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 3,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -99437,7 +100115,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -99466,7 +100144,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -99789,7 +100467,7 @@ backup_data = {
           "Solar Beam"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99818,7 +100496,7 @@ backup_data = {
           "Dream Eater"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99847,7 +100525,7 @@ backup_data = {
           "Dream Eater"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99876,7 +100554,7 @@ backup_data = {
           "Egg Bomb"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99905,7 +100583,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99934,7 +100612,7 @@ backup_data = {
           "Grass Knot"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -99994,7 +100672,7 @@ backup_data = {
           "Fire Punch"
         ],
         "sub_index": 4,
-        "ability": "Sand Veil",
+        "ability": "Rough Skin",
         "evs": {
           "df": 0
         }
@@ -100023,7 +100701,7 @@ backup_data = {
           "Dragon Dance"
         ],
         "sub_index": 3,
-        "ability": "Sand Veil",
+        "ability": "Rough Skin",
         "evs": {
           "df": 0
         }
@@ -100052,7 +100730,7 @@ backup_data = {
           "Iron Head"
         ],
         "sub_index": 0,
-        "ability": "Sand Veil",
+        "ability": "Rough Skin",
         "evs": {
           "df": 0
         }
@@ -100081,7 +100759,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 3,
-        "ability": "Sand Veil",
+        "ability": "Rough Skin",
         "evs": {
           "df": 0
         }
@@ -100112,7 +100790,7 @@ backup_data = {
           "Icy Wind"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100141,7 +100819,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100170,7 +100848,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100230,7 +100908,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 1,
-        "ability": "Wonder Guard",
+        "ability": "Trace",
         "evs": {
           "df": 0
         }
@@ -100259,7 +100937,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": "Wonder Guard",
+        "ability": "Trace",
         "evs": {
           "df": 0
         }
@@ -100288,7 +100966,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": "Wonder Guard",
+        "ability": "Trace",
         "evs": {
           "df": 0
         }
@@ -100346,7 +101024,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 3,
-        "ability": "Wonder Guard",
+        "ability": "Trace",
         "evs": {
           "df": 0
         }
@@ -100377,7 +101055,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100406,7 +101084,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100435,7 +101113,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100464,7 +101142,7 @@ backup_data = {
           "Sandstorm"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100493,7 +101171,7 @@ backup_data = {
           "Swords Dance"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100522,7 +101200,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100551,7 +101229,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 3,
-        "ability": "Rock Head",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -100669,7 +101347,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Hyper Cutter",
         "evs": {
           "df": 0
         }
@@ -100698,7 +101376,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Hyper Cutter",
         "evs": {
           "df": 0
         }
@@ -100758,7 +101436,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 5,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100787,7 +101465,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100816,7 +101494,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 3,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100845,7 +101523,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100874,7 +101552,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100903,7 +101581,7 @@ backup_data = {
           "Baton Pass"
         ],
         "sub_index": 4,
-        "ability": "Technician",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -100934,7 +101612,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Soundproof",
         "evs": {
           "df": 0
         }
@@ -100963,7 +101641,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Soundproof",
         "evs": {
           "df": 0
         }
@@ -100994,7 +101672,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 3,
-        "ability": "Serene Grace",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -101023,7 +101701,7 @@ backup_data = {
           "Soft-Boiled"
         ],
         "sub_index": 4,
-        "ability": "Serene Grace",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -101052,7 +101730,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 4,
-        "ability": "Serene Grace",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -101288,7 +101966,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -101317,7 +101995,7 @@ backup_data = {
           "Air Cutter"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -101346,7 +102024,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -101377,7 +102055,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101406,7 +102084,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 3,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101435,7 +102113,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 5,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101464,7 +102142,7 @@ backup_data = {
           "Slash"
         ],
         "sub_index": 5,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101493,7 +102171,7 @@ backup_data = {
           "Slash"
         ],
         "sub_index": 5,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101522,7 +102200,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101551,7 +102229,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101580,7 +102258,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 5,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101609,7 +102287,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -101932,7 +102610,7 @@ backup_data = {
           "Fire Punch"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -101961,7 +102639,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -101990,7 +102668,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -102019,7 +102697,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Pure Power",
         "evs": {
           "df": 0
         }
@@ -102050,7 +102728,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -102079,7 +102757,7 @@ backup_data = {
           "Rock Climb"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -102108,7 +102786,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -102166,7 +102844,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 4,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -102195,7 +102873,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -102255,7 +102933,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 2,
-        "ability": "Reckless",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -102313,7 +102991,7 @@ backup_data = {
           "Flare Blitz"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -102516,7 +103194,7 @@ backup_data = {
           "Megahorn"
         ],
         "sub_index": 3,
-        "ability": "Reckless",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -102634,7 +103312,7 @@ backup_data = {
           "Charge"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102663,7 +103341,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102692,7 +103370,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102721,7 +103399,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102750,7 +103428,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102781,7 +103459,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102810,7 +103488,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102868,7 +103546,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102926,7 +103604,7 @@ backup_data = {
           "Light Screen"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -102984,7 +103662,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103042,7 +103720,7 @@ backup_data = {
           "Magnet Bomb"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103071,7 +103749,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103100,7 +103778,7 @@ backup_data = {
           "Light Screen"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103129,7 +103807,7 @@ backup_data = {
           "Rain Dance"
         ],
         "sub_index": 2,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103187,7 +103865,7 @@ backup_data = {
           "Magnet Rise"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103216,7 +103894,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103245,7 +103923,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 1,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103274,7 +103952,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 4,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103334,7 +104012,7 @@ backup_data = {
           "Swords Dance"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Wonder Guard",
         "evs": {
           "df": 0
         }
@@ -103363,7 +104041,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Wonder Guard",
         "evs": {
           "df": 0
         }
@@ -103392,7 +104070,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Wonder Guard",
         "evs": {
           "df": 0
         }
@@ -103421,7 +104099,7 @@ backup_data = {
           "Swords Dance"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Wonder Guard",
         "evs": {
           "df": 0
         }
@@ -103450,7 +104128,7 @@ backup_data = {
           "Swagger"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Wonder Guard",
         "evs": {
           "df": 0
         }
@@ -103481,7 +104159,7 @@ backup_data = {
           "Charge"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103510,7 +104188,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 0,
-        "ability": "Static",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -103541,7 +104219,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 1,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -103570,7 +104248,7 @@ backup_data = {
           "Fury Swipes"
         ],
         "sub_index": 1,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -103628,7 +104306,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 3,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -103657,7 +104335,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 1,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -103688,7 +104366,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -103717,7 +104395,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -103746,7 +104424,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 3,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
@@ -103833,13 +104511,13 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Shell Armor",
+        "ability": "Skill Link",
         "evs": {
           "df": 0
         }
       }
     },
-    "Torterra": {
+    "Torterra-S": {
       "Lvl 55 Ace Trainer Fran ": {
         "level": 55,
         "tr_id": 119,
@@ -103984,35 +104662,6 @@ backup_data = {
         "evs": {
           "df": 0
         }
-      },
-      "Lvl 48 [pk][mn] Trainer Lance2 ": {
-        "level": 48,
-        "tr_id": 675,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "Quick Claw",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Hasty",
-        "moves": [
-          "Wood Hammer",
-          "Zen Headbutt",
-          "Horn Drill",
-          "Head Smash"
-        ],
-        "sub_index": 4,
-        "ability": "Shell Armor",
-        "evs": {
-          "df": 0
-        }
       }
     },
     "Glaceon": {
@@ -104069,7 +104718,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 2,
-        "ability": "Ice Body",
+        "ability": "Snow Cloak",
         "evs": {
           "df": 0
         }
@@ -104100,7 +104749,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 3,
-        "ability": "Filter",
+        "ability": "Ice Body",
         "evs": {
           "df": 0
         }
@@ -104160,7 +104809,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -104189,7 +104838,7 @@ backup_data = {
           "Will-O-Wisp"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -104218,7 +104867,7 @@ backup_data = {
           "Light Screen"
         ],
         "sub_index": 0,
-        "ability": "Chlorophyll",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -104247,7 +104896,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 1,
-        "ability": "Chlorophyll",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -104278,7 +104927,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -104336,7 +104985,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -104365,7 +105014,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 3,
-        "ability": "Hyper Cutter",
+        "ability": "Keen Eye",
         "evs": {
           "df": 0
         }
@@ -104601,7 +105250,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104630,7 +105279,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104659,7 +105308,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104688,7 +105337,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104717,7 +105366,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104746,7 +105395,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104775,7 +105424,7 @@ backup_data = {
           "Avalanche"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104804,7 +105453,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Water Veil",
         "evs": {
           "df": 0
         }
@@ -104835,7 +105484,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -104864,7 +105513,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -104893,7 +105542,7 @@ backup_data = {
           "Submission"
         ],
         "sub_index": 4,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -104922,7 +105571,7 @@ backup_data = {
           "Psybeam"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -104980,7 +105629,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -105009,7 +105658,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -105038,7 +105687,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -105067,7 +105716,7 @@ backup_data = {
           "Rain Dance"
         ],
         "sub_index": 3,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -105125,7 +105774,7 @@ backup_data = {
           "Grass Knot"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Mold Breaker",
         "evs": {
           "df": 0
         }
@@ -105214,7 +105863,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Suction Cups",
+        "ability": "Sniper",
         "evs": {
           "df": 0
         }
@@ -105245,7 +105894,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105274,7 +105923,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105303,7 +105952,7 @@ backup_data = {
           "Bonemerang"
         ],
         "sub_index": 0,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105332,7 +105981,7 @@ backup_data = {
           "Bonemerang"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105361,7 +106010,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105390,7 +106039,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105419,7 +106068,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 5,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105450,7 +106099,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -105510,7 +106159,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Lightning Rod",
         "evs": {
           "df": 0
         }
@@ -105597,7 +106246,7 @@ backup_data = {
           "Avalanche"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Lightning Rod",
         "evs": {
           "df": 0
         }
@@ -105684,7 +106333,7 @@ backup_data = {
           "Hammer Arm"
         ],
         "sub_index": 1,
-        "ability": "Rock Head",
+        "ability": "Lightning Rod",
         "evs": {
           "df": 0
         }
@@ -105715,7 +106364,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105744,7 +106393,7 @@ backup_data = {
           "Morning Sun"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105773,7 +106422,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 4,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105802,7 +106451,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105831,7 +106480,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105860,7 +106509,7 @@ backup_data = {
           "Head Smash"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105889,7 +106538,7 @@ backup_data = {
           "Extreme Speed"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105918,7 +106567,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105947,7 +106596,7 @@ backup_data = {
           "Reversal"
         ],
         "sub_index": 2,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -105976,7 +106625,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106005,7 +106654,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 4,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106034,7 +106683,7 @@ backup_data = {
           "Morning Sun"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106063,7 +106712,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106092,7 +106741,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106123,7 +106772,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -106152,7 +106801,7 @@ backup_data = {
           "Ice Fang"
         ],
         "sub_index": 5,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -106181,7 +106830,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -106241,7 +106890,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Lightning Rod",
         "evs": {
           "df": 0
         }
@@ -106301,7 +106950,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 2,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -106359,7 +107008,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 1,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -106446,7 +107095,7 @@ backup_data = {
           "Double Team"
         ],
         "sub_index": 1,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -106475,7 +107124,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 1,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -106506,7 +107155,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106535,7 +107184,7 @@ backup_data = {
           "Leaf Blade"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106564,7 +107213,7 @@ backup_data = {
           "Gastro Acid"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106593,7 +107242,7 @@ backup_data = {
           "Acid"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106622,7 +107271,7 @@ backup_data = {
           "Acid"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106651,7 +107300,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -106887,7 +107536,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106916,7 +107565,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 3,
-        "ability": "Battle Armor",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106945,7 +107594,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -106974,7 +107623,7 @@ backup_data = {
           "Flare Blitz"
         ],
         "sub_index": 2,
-        "ability": "Battle Armor",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -107005,7 +107654,7 @@ backup_data = {
           "Shadow Force"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Pressure",
         "evs": {
           "df": 0
         }
@@ -107036,7 +107685,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 0,
-        "ability": "Tinted Lens",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -107065,7 +107714,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 3,
-        "ability": "Tinted Lens",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -107094,7 +107743,7 @@ backup_data = {
           "Gust"
         ],
         "sub_index": 3,
-        "ability": "Tinted Lens",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -107154,7 +107803,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 2,
-        "ability": "Steadfast",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -107183,7 +107832,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 4,
-        "ability": "Steadfast",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -107212,7 +107861,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 3,
-        "ability": "Steadfast",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -107299,7 +107948,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 5,
-        "ability": "Steadfast",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -107330,7 +107979,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Flower Gift",
         "evs": {
           "df": 0
         }
@@ -107359,7 +108008,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Flower Gift",
         "evs": {
           "df": 0
         }
@@ -107390,7 +108039,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107419,7 +108068,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107448,7 +108097,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107477,7 +108126,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107506,7 +108155,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107535,7 +108184,7 @@ backup_data = {
           "Calm Mind"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107564,7 +108213,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -107829,7 +108478,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 2,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -107916,7 +108565,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -107945,7 +108594,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108003,7 +108652,7 @@ backup_data = {
           "Fire Punch"
         ],
         "sub_index": 0,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108032,7 +108681,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 3,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108061,7 +108710,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 4,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108090,7 +108739,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108119,7 +108768,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Insomnia",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -108150,7 +108799,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 1,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108179,7 +108828,7 @@ backup_data = {
           "Night Slash"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108208,7 +108857,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108237,7 +108886,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108266,7 +108915,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108295,7 +108944,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108324,7 +108973,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108353,7 +109002,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 3,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108382,7 +109031,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108411,7 +109060,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 0,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108440,7 +109089,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 2,
-        "ability": "Rough Skin",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -108500,7 +109149,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 3,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108529,7 +109178,7 @@ backup_data = {
           "Rage"
         ],
         "sub_index": 1,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108558,7 +109207,7 @@ backup_data = {
           "Slam"
         ],
         "sub_index": 0,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108587,7 +109236,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 0,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108616,7 +109265,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 0,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108645,7 +109294,7 @@ backup_data = {
           "Swagger"
         ],
         "sub_index": 4,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108674,7 +109323,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 1,
-        "ability": "Limber",
+        "ability": "Vital Spirit",
         "evs": {
           "df": 0
         }
@@ -108705,7 +109354,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108734,7 +109383,7 @@ backup_data = {
           "Drain Punch"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108763,7 +109412,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108792,7 +109441,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108821,7 +109470,7 @@ backup_data = {
           "Earth Power"
         ],
         "sub_index": 4,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108850,7 +109499,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 1,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108879,7 +109528,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108908,7 +109557,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108937,7 +109586,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108966,7 +109615,7 @@ backup_data = {
           "Sunny Day"
         ],
         "sub_index": 1,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -108995,7 +109644,7 @@ backup_data = {
           "Moonlight"
         ],
         "sub_index": 2,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -109024,7 +109673,7 @@ backup_data = {
           "Petal Dance"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -109144,7 +109793,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109173,7 +109822,7 @@ backup_data = {
           "Bullet Punch"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109202,7 +109851,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 3,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109260,7 +109909,7 @@ backup_data = {
           "Wake-Up Slap"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109318,7 +109967,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 5,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109405,7 +110054,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "No Guard",
         "evs": {
           "df": 0
         }
@@ -109465,7 +110114,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -109523,7 +110172,7 @@ backup_data = {
           "Sucker Punch"
         ],
         "sub_index": 3,
-        "ability": "Guts",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -109552,7 +110201,7 @@ backup_data = {
           "Stone Edge"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -109583,7 +110232,7 @@ backup_data = {
           "Aerial Ace"
         ],
         "sub_index": 3,
-        "ability": "Reckless",
+        "ability": "Unburden",
         "evs": {
           "df": 0
         }
@@ -109641,7 +110290,7 @@ backup_data = {
           "High Jump Kick"
         ],
         "sub_index": 1,
-        "ability": "Reckless",
+        "ability": "Unburden",
         "evs": {
           "df": 0
         }
@@ -109670,7 +110319,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 3,
-        "ability": "Reckless",
+        "ability": "Unburden",
         "evs": {
           "df": 0
         }
@@ -109699,7 +110348,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 3,
-        "ability": "Reckless",
+        "ability": "Unburden",
         "evs": {
           "df": 0
         }
@@ -109759,7 +110408,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 4,
-        "ability": "Inner Focus",
+        "ability": "Iron Fist",
         "evs": {
           "df": 0
         }
@@ -109848,7 +110497,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 2,
-        "ability": "Vital Spirit",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -109877,7 +110526,7 @@ backup_data = {
           "Reversal"
         ],
         "sub_index": 1,
-        "ability": "Vital Spirit",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -109908,7 +110557,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -109939,7 +110588,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 0,
-        "ability": "Ice Body",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -109970,7 +110619,7 @@ backup_data = {
           "Dream Eater"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Bad Dreams",
         "evs": {
           "df": 0
         }
@@ -109999,7 +110648,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Bad Dreams",
         "evs": {
           "df": 0
         }
@@ -110030,7 +110679,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Drizzle",
         "evs": {
           "df": 0
         }
@@ -110090,7 +110739,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -110121,7 +110770,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -110150,7 +110799,7 @@ backup_data = {
           "Destiny Bond"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -110179,7 +110828,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -110208,7 +110857,7 @@ backup_data = {
           "Encore"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
@@ -110237,13 +110886,13 @@ backup_data = {
           "Encore"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Shadow Tag",
         "evs": {
           "df": 0
         }
       }
     },
-    "Dusknoir": {
+    "Dusknoir-S": {
       "Lvl 63 [pk][mn] Trainer Buck ": {
         "level": 63,
         "tr_id": 167,
@@ -110268,7 +110917,7 @@ backup_data = {
           "Thunder Punch"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110297,7 +110946,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 3,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110326,7 +110975,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110355,7 +111004,7 @@ backup_data = {
           "Curse"
         ],
         "sub_index": 4,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110384,7 +111033,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 3,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110442,7 +111091,7 @@ backup_data = {
           "Payback"
         ],
         "sub_index": 1,
-        "ability": "Iron Fist",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110589,7 +111238,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 1,
-        "ability": "No Guard",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -110618,7 +111267,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 2,
-        "ability": "No Guard",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -110647,7 +111296,7 @@ backup_data = {
           "Confuse Ray"
         ],
         "sub_index": 5,
-        "ability": "No Guard",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -110678,7 +111327,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110707,7 +111356,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -110767,7 +111416,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Torrent",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -110825,7 +111474,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 1,
-        "ability": "Torrent",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -110854,13 +111503,13 @@ backup_data = {
           "Yawn"
         ],
         "sub_index": 4,
-        "ability": "Torrent",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
       }
     },
-    "Drapion": {
+    "Drapion-S": {
       "Lvl 55 Hall Matron Argenta ": {
         "level": 55,
         "tr_id": 170,
@@ -111005,35 +111654,6 @@ backup_data = {
         "evs": {
           "df": 0
         }
-      },
-      "Lvl 55 Leader Janine2 ": {
-        "level": 55,
-        "tr_id": 724,
-        "ai": 7,
-        "battle_type": "Singles",
-        "reward_item": "",
-        "form": "",
-        "item": "None",
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "nature": "Impish",
-        "moves": [
-          "Cross Poison",
-          "Confuse Ray",
-          "Crunch",
-          "Swords Dance"
-        ],
-        "sub_index": 5,
-        "ability": "Battle Armor",
-        "evs": {
-          "df": 0
-        }
       }
     },
     "Chimecho": {
@@ -111061,7 +111681,7 @@ backup_data = {
           "Flash Cannon"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -111090,7 +111710,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -111119,7 +111739,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -111148,7 +111768,7 @@ backup_data = {
           "Thunder Wave"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -111179,7 +111799,7 @@ backup_data = {
           "Me First"
         ],
         "sub_index": 1,
-        "ability": "Own Tempo",
+        "ability": "Cloud Nine",
         "evs": {
           "df": 0
         }
@@ -111208,7 +111828,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Own Tempo",
+        "ability": "Cloud Nine",
         "evs": {
           "df": 0
         }
@@ -111237,7 +111857,7 @@ backup_data = {
           "Me First"
         ],
         "sub_index": 1,
-        "ability": "Own Tempo",
+        "ability": "Cloud Nine",
         "evs": {
           "df": 0
         }
@@ -111268,7 +111888,7 @@ backup_data = {
           "Karate Chop"
         ],
         "sub_index": 3,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -111297,7 +111917,7 @@ backup_data = {
           "Fury Swipes"
         ],
         "sub_index": 2,
-        "ability": "Overgrow",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -111328,7 +111948,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 4,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111357,7 +111977,7 @@ backup_data = {
           "Brave Bird"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111386,7 +112006,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111415,7 +112035,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111444,7 +112064,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111475,7 +112095,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111504,7 +112124,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111533,7 +112153,7 @@ backup_data = {
           "Cross Chop"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111562,7 +112182,7 @@ backup_data = {
           "Fissure"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111593,7 +112213,7 @@ backup_data = {
           "Quick Attack"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111622,7 +112242,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111651,7 +112271,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -111682,7 +112302,7 @@ backup_data = {
           "Drain Punch"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -111711,7 +112331,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -111740,7 +112360,7 @@ backup_data = {
           "Natural Gift"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -111769,7 +112389,7 @@ backup_data = {
           "Lucky Chant"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -111798,7 +112418,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -111829,7 +112449,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Aftermath",
         "evs": {
           "df": 0
         }
@@ -111858,7 +112478,7 @@ backup_data = {
           "Gunk Shot"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Aftermath",
         "evs": {
           "df": 0
         }
@@ -111889,7 +112509,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 2,
-        "ability": "Unaware",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -111918,7 +112538,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 3,
-        "ability": "Unaware",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -111978,7 +112598,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Sand Veil",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -112007,7 +112627,7 @@ backup_data = {
           "Slack Off"
         ],
         "sub_index": 3,
-        "ability": "Sand Veil",
+        "ability": "Filter",
         "evs": {
           "df": 0
         }
@@ -112038,7 +112658,7 @@ backup_data = {
           "Iron Head"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112067,7 +112687,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112096,7 +112716,7 @@ backup_data = {
           "Facade"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112125,7 +112745,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112154,7 +112774,7 @@ backup_data = {
           "Fire Blast"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112183,7 +112803,7 @@ backup_data = {
           "Fire Spin"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112212,7 +112832,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 1,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112241,7 +112861,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112270,7 +112890,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 2,
-        "ability": "Guts",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -112301,7 +112921,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 3,
-        "ability": "Download",
+        "ability": "Trace",
         "evs": {
           "df": 0
         }
@@ -112361,7 +112981,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 3,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112390,7 +113010,7 @@ backup_data = {
           "Psycho Boost"
         ],
         "sub_index": 5,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112419,7 +113039,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 3,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112448,7 +113068,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 0,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112477,7 +113097,7 @@ backup_data = {
           "Psycho Boost"
         ],
         "sub_index": 5,
-        "ability": "Download",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112508,7 +113128,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 0,
-        "ability": "Water Absorb",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -112537,7 +113157,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 2,
-        "ability": "Water Absorb",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -112568,7 +113188,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Serene Grace",
         "evs": {
           "df": 0
         }
@@ -112599,7 +113219,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 2,
-        "ability": "Snow Cloak",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -112754,7 +113374,7 @@ backup_data = {
           "Yawn"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112783,7 +113403,7 @@ backup_data = {
           "Crush Claw"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Adaptability",
         "evs": {
           "df": 0
         }
@@ -112814,7 +113434,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -112930,7 +113550,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -112959,7 +113579,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -112988,7 +113608,7 @@ backup_data = {
           "Bubble Beam"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -113048,7 +113668,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 1,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -113077,7 +113697,7 @@ backup_data = {
           "Hyper Voice"
         ],
         "sub_index": 0,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -113108,7 +113728,7 @@ backup_data = {
           "Sing"
         ],
         "sub_index": 1,
-        "ability": "Normalize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -113168,7 +113788,7 @@ backup_data = {
           "Synthesis"
         ],
         "sub_index": 0,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113197,7 +113817,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 2,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113226,7 +113846,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 1,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113313,7 +113933,7 @@ backup_data = {
           "Solar Beam"
         ],
         "sub_index": 1,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113342,7 +113962,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 1,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113371,7 +113991,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 1,
-        "ability": "Solar Power",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113402,7 +114022,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113431,7 +114051,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113460,7 +114080,7 @@ backup_data = {
           "Protect"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113489,7 +114109,7 @@ backup_data = {
           "Aura Sphere"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113518,7 +114138,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113547,7 +114167,7 @@ backup_data = {
           "Calm Mind"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113576,7 +114196,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113605,7 +114225,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -113634,7 +114254,154 @@ backup_data = {
           "Astonish"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Levitate",
+        "evs": {
+          "df": 0
+        }
+      }
+    },
+    "Lapras": {
+      "Lvl 40 Lass Connie ": {
+        "level": 40,
+        "tr_id": 215,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "-",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Impish",
+        "moves": [
+          "Dragon Pulse",
+          "Recover",
+          "Icy Wind",
+          "Bubble Beam"
+        ],
+        "sub_index": 3,
+        "ability": "Shell Armor",
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 42 Swimmer♀ Nicole ": {
+        "level": 42,
+        "tr_id": 293,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "-",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Lonely",
+        "moves": [
+          "Horn Drill",
+          "Perish Song",
+          "Ice Beam",
+          "Brine"
+        ],
+        "sub_index": 2,
+        "ability": "Shell Armor",
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 50 Boarder Bryce ": {
+        "level": 50,
+        "tr_id": 686,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "-",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Calm",
+        "moves": [
+          "Ice Beam",
+          "Brine",
+          "Dragon Pulse",
+          "Hydro Pump"
+        ],
+        "sub_index": 1,
+        "ability": "Shell Armor",
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 100 Champion Red2 ": {
+        "level": 100,
+        "tr_id": 701,
+        "ai": 135,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "Leftovers",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Jolly",
+        "moves": [
+          "Ice Beam",
+          "Dragon Pulse",
+          "Muddy Water",
+          "Perish Song"
+        ],
+        "sub_index": 5,
+        "ability": "Shell Armor",
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 56 Leader Misty ": {
+        "level": 56,
+        "tr_id": 721,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "None",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Naughty",
+        "moves": [
+          "Surf",
+          "Perish Song",
+          "Blizzard",
+          "Rain Dance"
+        ],
+        "sub_index": 2,
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -113665,7 +114432,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 2,
-        "ability": "Levitate",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -113754,7 +114521,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": "Hydration",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -113785,7 +114552,7 @@ backup_data = {
           "Iron Head"
         ],
         "sub_index": 3,
-        "ability": " ",
+        "ability": "Huge Power",
         "evs": {
           "df": 0
         }
@@ -113816,7 +114583,7 @@ backup_data = {
           "Leech Life"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -113874,7 +114641,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 0,
-        "ability": "Compound Eyes",
+        "ability": "Tinted Lens",
         "evs": {
           "df": 0
         }
@@ -113905,7 +114672,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 3,
-        "ability": "Trace",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -113936,7 +114703,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -113965,7 +114732,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 3,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -113994,7 +114761,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114052,7 +114819,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114081,7 +114848,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114110,7 +114877,7 @@ backup_data = {
           "Rock Tomb"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114139,7 +114906,7 @@ backup_data = {
           "Explosion"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114168,7 +114935,7 @@ backup_data = {
           "Self-Destruct"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114197,7 +114964,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114226,7 +114993,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114255,7 +115022,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 0,
-        "ability": "Adaptability",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -114344,7 +115111,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 5,
-        "ability": "Shadow Tag",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -114373,7 +115140,7 @@ backup_data = {
           "Shadow Sneak"
         ],
         "sub_index": 0,
-        "ability": "Shadow Tag",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -114402,7 +115169,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 5,
-        "ability": "Shadow Tag",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -114431,7 +115198,7 @@ backup_data = {
           "Fake Out"
         ],
         "sub_index": 2,
-        "ability": "Shadow Tag",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -114462,7 +115229,7 @@ backup_data = {
           "Taunt"
         ],
         "sub_index": 0,
-        "ability": "Sticky Hold",
+        "ability": "Liquid Ooze",
         "evs": {
           "df": 0
         }
@@ -114491,13 +115258,13 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Liquid Ooze",
         "evs": {
           "df": 0
         }
       }
     },
-    "Typhlosion": {
+    "Typhlosn-S": {
       "Lvl 48 Team Rocket Grunt29 ": {
         "level": 48,
         "tr_id": 225,
@@ -114930,7 +115697,7 @@ backup_data = {
           "Shadow Claw"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Poison Heal",
         "evs": {
           "df": 0
         }
@@ -114959,7 +115726,7 @@ backup_data = {
           "Tailwind"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Poison Heal",
         "evs": {
           "df": 0
         }
@@ -115019,7 +115786,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115048,7 +115815,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115077,7 +115844,7 @@ backup_data = {
           "Morning Sun"
         ],
         "sub_index": 3,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115106,7 +115873,7 @@ backup_data = {
           "Calm Mind"
         ],
         "sub_index": 1,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115135,7 +115902,7 @@ backup_data = {
           "Helping Hand"
         ],
         "sub_index": 4,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115193,7 +115960,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 0,
-        "ability": "Magic Guard",
+        "ability": "Synchronize",
         "evs": {
           "df": 0
         }
@@ -115253,7 +116020,7 @@ backup_data = {
           "Aqua Tail"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -115282,7 +116049,7 @@ backup_data = {
           "Avalanche"
         ],
         "sub_index": 0,
-        "ability": "Rock Head",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -115311,7 +116078,7 @@ backup_data = {
           "Blizzard"
         ],
         "sub_index": 2,
-        "ability": "Rock Head",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -115371,7 +116138,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115400,7 +116167,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115429,7 +116196,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115458,7 +116225,7 @@ backup_data = {
           "Power Gem"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115487,7 +116254,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115516,7 +116283,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115545,7 +116312,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115574,7 +116341,7 @@ backup_data = {
           "Role Play"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115603,7 +116370,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -115634,7 +116401,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -115663,7 +116430,7 @@ backup_data = {
           ""
         ],
         "sub_index": 1,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -115692,7 +116459,7 @@ backup_data = {
           "Magnitude"
         ],
         "sub_index": 0,
-        "ability": "Sticky Hold",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -115723,7 +116490,7 @@ backup_data = {
           "Future Sight"
         ],
         "sub_index": 0,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -115781,7 +116548,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Heatproof",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -115841,7 +116608,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 0,
-        "ability": "Mold Breaker",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -115870,7 +116637,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 2,
-        "ability": "Mold Breaker",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -115899,7 +116666,7 @@ backup_data = {
           "Fire Blast"
         ],
         "sub_index": 1,
-        "ability": "Mold Breaker",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -115930,7 +116697,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 0,
-        "ability": "Guts",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116019,7 +116786,7 @@ backup_data = {
           "Substitute"
         ],
         "sub_index": 2,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116048,7 +116815,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 2,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116106,7 +116873,7 @@ backup_data = {
           "Healing Wish"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116135,7 +116902,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116164,7 +116931,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116193,7 +116960,7 @@ backup_data = {
           "Encore"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116222,7 +116989,7 @@ backup_data = {
           "(No Move)"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116251,7 +117018,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": "Filter",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -116282,7 +117049,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 0,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116311,7 +117078,7 @@ backup_data = {
           "Hydro Pump"
         ],
         "sub_index": 1,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116340,7 +117107,7 @@ backup_data = {
           "Aurora Beam"
         ],
         "sub_index": 0,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116369,7 +117136,7 @@ backup_data = {
           "Avalanche"
         ],
         "sub_index": 0,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116398,7 +117165,7 @@ backup_data = {
           "Horn Drill"
         ],
         "sub_index": 1,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116427,7 +117194,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 1,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -116458,7 +117225,7 @@ backup_data = {
           "Mist Ball"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -116487,7 +117254,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -116609,7 +117376,7 @@ backup_data = {
           "Octazooka"
         ],
         "sub_index": 1,
-        "ability": "Sniper",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -116725,7 +117492,7 @@ backup_data = {
           "Waterfall"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -116783,7 +117550,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Sniper",
+        "ability": "Poison Point",
         "evs": {
           "df": 0
         }
@@ -116843,7 +117610,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 5,
-        "ability": "Flash Fire",
+        "ability": "Drought",
         "evs": {
           "df": 0
         }
@@ -116903,7 +117670,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 5,
-        "ability": "Drizzle",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -116932,7 +117699,7 @@ backup_data = {
           "Ancient Power"
         ],
         "sub_index": 5,
-        "ability": "Drizzle",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -116963,7 +117730,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 2,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -116992,7 +117759,7 @@ backup_data = {
           "Signal Beam"
         ],
         "sub_index": 5,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117021,7 +117788,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117050,7 +117817,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117079,7 +117846,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117108,7 +117875,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117137,7 +117904,7 @@ backup_data = {
           "Ember"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117166,7 +117933,7 @@ backup_data = {
           "Water Sport"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117224,7 +117991,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117253,7 +118020,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117282,7 +118049,7 @@ backup_data = {
           "Reflect"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117311,7 +118078,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117340,7 +118107,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 1,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117369,7 +118136,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117398,7 +118165,7 @@ backup_data = {
           "Hyper Beam"
         ],
         "sub_index": 4,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117427,7 +118194,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 0,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117518,7 +118285,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 2,
-        "ability": "Clear Body",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -117547,7 +118314,7 @@ backup_data = {
           "Dragon Rush"
         ],
         "sub_index": 4,
-        "ability": "Clear Body",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -117607,7 +118374,7 @@ backup_data = {
           "Heat Wave"
         ],
         "sub_index": 5,
-        "ability": "Synchronize",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -117874,7 +118641,7 @@ backup_data = {
           "Aqua Jet"
         ],
         "sub_index": 4,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -117903,7 +118670,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 5,
-        "ability": "Battle Armor",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -117934,7 +118701,7 @@ backup_data = {
           "Water Gun"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -117963,7 +118730,7 @@ backup_data = {
           "Water Gun"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -117992,7 +118759,7 @@ backup_data = {
           "Water Gun"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -118021,7 +118788,7 @@ backup_data = {
           "Water Gun"
         ],
         "sub_index": 2,
-        "ability": "Sniper",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -118168,7 +118935,7 @@ backup_data = {
           "Lava Plume"
         ],
         "sub_index": 3,
-        "ability": "Water Absorb",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -118199,7 +118966,7 @@ backup_data = {
           "Flame Wheel"
         ],
         "sub_index": 0,
-        "ability": "Blaze",
+        "ability": "Speed Boost",
         "evs": {
           "df": 0
         }
@@ -118230,7 +118997,7 @@ backup_data = {
           "Ice Punch"
         ],
         "sub_index": 1,
-        "ability": "Torrent",
+        "ability": "Swift Swim",
         "evs": {
           "df": 0
         }
@@ -118261,7 +119028,7 @@ backup_data = {
           "Leer"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -118290,7 +119057,7 @@ backup_data = {
           "Leer"
         ],
         "sub_index": 0,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -118319,7 +119086,7 @@ backup_data = {
           "Pursuit"
         ],
         "sub_index": 1,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -118348,7 +119115,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 3,
-        "ability": "Flash Fire",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -118439,7 +119206,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": "Hydration",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -118468,7 +119235,7 @@ backup_data = {
           "Focus Blast"
         ],
         "sub_index": 3,
-        "ability": "Hydration",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -118499,7 +119266,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118528,7 +119295,7 @@ backup_data = {
           "Toxic"
         ],
         "sub_index": 0,
-        "ability": "Effect Spore",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118588,7 +119355,7 @@ backup_data = {
           "Synthesis"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118617,7 +119384,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118646,7 +119413,7 @@ backup_data = {
           "Leech Seed"
         ],
         "sub_index": 1,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118675,7 +119442,7 @@ backup_data = {
           "Sunny Day"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118704,7 +119471,7 @@ backup_data = {
           "Giga Drain"
         ],
         "sub_index": 0,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118733,7 +119500,7 @@ backup_data = {
           "Energy Ball"
         ],
         "sub_index": 2,
-        "ability": "Technician",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -118764,7 +119531,7 @@ backup_data = {
           "Thunder Fang"
         ],
         "sub_index": 2,
-        "ability": "Volt Absorb",
+        "ability": "Intimidate",
         "evs": {
           "df": 0
         }
@@ -118795,7 +119562,7 @@ backup_data = {
           "Bounce"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -118824,7 +119591,7 @@ backup_data = {
           "Double Kick"
         ],
         "sub_index": 0,
-        "ability": "Reckless",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -118855,7 +119622,7 @@ backup_data = {
           "Attract"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -118886,7 +119653,7 @@ backup_data = {
           "Dragon Rage"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -118915,7 +119682,7 @@ backup_data = {
           "Fire Spin"
         ],
         "sub_index": 1,
-        "ability": "Blaze",
+        "ability": "Solar Power",
         "evs": {
           "df": 0
         }
@@ -118946,7 +119713,7 @@ backup_data = {
           "Zen Headbutt"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -118975,7 +119742,7 @@ backup_data = {
           "Bite"
         ],
         "sub_index": 2,
-        "ability": "Torrent",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -119006,7 +119773,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -119037,7 +119804,7 @@ backup_data = {
           "Karate Chop"
         ],
         "sub_index": 2,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119066,7 +119833,7 @@ backup_data = {
           "Brick Break"
         ],
         "sub_index": 2,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119095,7 +119862,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119153,7 +119920,7 @@ backup_data = {
           "Double-Edge"
         ],
         "sub_index": 0,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119182,7 +119949,7 @@ backup_data = {
           "Drill Peck"
         ],
         "sub_index": 1,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119211,7 +119978,7 @@ backup_data = {
           "Close Combat"
         ],
         "sub_index": 0,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119240,7 +120007,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 0,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119269,7 +120036,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 1,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119298,7 +120065,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 2,
-        "ability": "Intimidate",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
@@ -119360,7 +120127,7 @@ backup_data = {
           "Slack Off"
         ],
         "sub_index": 3,
-        "ability": "Battle Armor",
+        "ability": "Solid Rock",
         "evs": {
           "df": 0
         }
@@ -119420,7 +120187,7 @@ backup_data = {
           ""
         ],
         "sub_index": 0,
-        "ability": "Early Bird",
+        "ability": "Swarm",
         "evs": {
           "df": 0
         }
@@ -119482,7 +120249,7 @@ backup_data = {
           "Extrasensory"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -119511,7 +120278,7 @@ backup_data = {
           "Captivate"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -119540,7 +120307,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -119569,7 +120336,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -119600,7 +120367,7 @@ backup_data = {
           "Fire Fang"
         ],
         "sub_index": 2,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -119631,7 +120398,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -119662,7 +120429,7 @@ backup_data = {
           "Knock Off"
         ],
         "sub_index": 1,
-        "ability": "Hyper Cutter",
+        "ability": "Shed Skin",
         "evs": {
           "df": 0
         }
@@ -119691,7 +120458,7 @@ backup_data = {
           "Dark Pulse"
         ],
         "sub_index": 0,
-        "ability": "Hyper Cutter",
+        "ability": "Shed Skin",
         "evs": {
           "df": 0
         }
@@ -119720,7 +120487,7 @@ backup_data = {
           "Glare"
         ],
         "sub_index": 2,
-        "ability": "Hyper Cutter",
+        "ability": "Shed Skin",
         "evs": {
           "df": 0
         }
@@ -119751,7 +120518,7 @@ backup_data = {
           "Roar"
         ],
         "sub_index": 1,
-        "ability": "Ice Body",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -119811,7 +120578,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -119842,7 +120609,7 @@ backup_data = {
           "Flash Cannon"
         ],
         "sub_index": 0,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -120049,7 +120816,7 @@ backup_data = {
           "Night Slash"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120078,7 +120845,7 @@ backup_data = {
           "Feint Attack"
         ],
         "sub_index": 1,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120107,7 +120874,7 @@ backup_data = {
           "Crunch"
         ],
         "sub_index": 3,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120194,7 +120961,7 @@ backup_data = {
           "Night Slash"
         ],
         "sub_index": 1,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120223,7 +120990,7 @@ backup_data = {
           "Superpower"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120252,7 +121019,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Quick Feet",
+        "ability": "Guts",
         "evs": {
           "df": 0
         }
@@ -120283,7 +121050,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 1,
-        "ability": "Battle Armor",
+        "ability": "Quick Feet",
         "evs": {
           "df": 0
         }
@@ -120312,7 +121079,7 @@ backup_data = {
           "Earthquake"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Quick Feet",
         "evs": {
           "df": 0
         }
@@ -120341,7 +121108,7 @@ backup_data = {
           "Endure"
         ],
         "sub_index": 0,
-        "ability": "Battle Armor",
+        "ability": "Quick Feet",
         "evs": {
           "df": 0
         }
@@ -120610,7 +121377,7 @@ backup_data = {
           "Vine Whip"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -120639,7 +121406,7 @@ backup_data = {
           "Seed Bomb"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Flash Fire",
         "evs": {
           "df": 0
         }
@@ -120670,7 +121437,7 @@ backup_data = {
           "Water Sport"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -120730,7 +121497,7 @@ backup_data = {
           "Psychic"
         ],
         "sub_index": 1,
-        "ability": "Rain Dish",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -120759,7 +121526,7 @@ backup_data = {
           "Slack Off"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -120788,7 +121555,7 @@ backup_data = {
           "Trick Room"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -120819,7 +121586,7 @@ backup_data = {
           "Shadow Punch"
         ],
         "sub_index": 2,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -120850,7 +121617,7 @@ backup_data = {
           "Headbutt"
         ],
         "sub_index": 0,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -120879,7 +121646,7 @@ backup_data = {
           "Headbutt"
         ],
         "sub_index": 1,
-        "ability": "Marvel Scale",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -120972,7 +121739,7 @@ backup_data = {
           "Magic Coat"
         ],
         "sub_index": 0,
-        "ability": "Thick Fat",
+        "ability": "Magic Guard",
         "evs": {
           "df": 0
         }
@@ -121003,7 +121770,7 @@ backup_data = {
           "Body Slam"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Soundproof",
         "evs": {
           "df": 0
         }
@@ -121156,7 +121923,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -121185,7 +121952,7 @@ backup_data = {
           "Shadow Ball"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -121214,7 +121981,7 @@ backup_data = {
           "Trick Room"
         ],
         "sub_index": 0,
-        "ability": "Scrappy",
+        "ability": "Technician",
         "evs": {
           "df": 0
         }
@@ -121274,7 +122041,7 @@ backup_data = {
           "Sludge Bomb"
         ],
         "sub_index": 0,
-        "ability": "Sticky Hold",
+        "ability": "Liquid Ooze",
         "evs": {
           "df": 0
         }
@@ -121367,7 +122134,7 @@ backup_data = {
           "Spore"
         ],
         "sub_index": 0,
-        "ability": "Poison Heal",
+        "ability": "Effect Spore",
         "evs": {
           "df": 0
         }
@@ -121429,7 +122196,7 @@ backup_data = {
           "Air Slash"
         ],
         "sub_index": 0,
-        "ability": "Rain Dish",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -121491,7 +122258,7 @@ backup_data = {
           "Charge Beam"
         ],
         "sub_index": 1,
-        "ability": "Motor Drive",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -121522,7 +122289,7 @@ backup_data = {
           "Counter"
         ],
         "sub_index": 0,
-        "ability": "Slow Start",
+        "ability": "Truant",
         "evs": {
           "df": 0
         }
@@ -121553,7 +122320,7 @@ backup_data = {
           "Leaf Storm"
         ],
         "sub_index": 0,
-        "ability": "Filter",
+        "ability": "Chlorophyll",
         "evs": {
           "df": 0
         }
@@ -121584,7 +122351,7 @@ backup_data = {
           "Rock Slide"
         ],
         "sub_index": 1,
-        "ability": "Lightning Rod",
+        "ability": "Rock Head",
         "evs": {
           "df": 0
         }
@@ -121615,7 +122382,7 @@ backup_data = {
           "Thunder Shock"
         ],
         "sub_index": 0,
-        "ability": "No Guard",
+        "ability": "Flame Body",
         "evs": {
           "df": 0
         }
@@ -121646,7 +122413,7 @@ backup_data = {
           "Discharge"
         ],
         "sub_index": 1,
-        "ability": "Water Absorb",
+        "ability": "Volt Absorb",
         "evs": {
           "df": 0
         }
@@ -121683,6 +122450,37 @@ backup_data = {
         }
       }
     },
+    "Torterra": {
+      "Lvl 48 [pk][mn] Trainer Lance2 ": {
+        "level": 48,
+        "tr_id": 675,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "Quick Claw",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Hasty",
+        "moves": [
+          "Wood Hammer",
+          "Zen Headbutt",
+          "Horn Drill",
+          "Head Smash"
+        ],
+        "sub_index": 4,
+        "ability": "Shell Armor",
+        "evs": {
+          "df": 0
+        }
+      }
+    },
     "Lickilicky": {
       "Lvl 53 Ace Trainer Salma ": {
         "level": 53,
@@ -121708,7 +122506,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 1,
-        "ability": "Own Tempo",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -121737,7 +122535,7 @@ backup_data = {
           "Thunderbolt"
         ],
         "sub_index": 1,
-        "ability": "Own Tempo",
+        "ability": "Thick Fat",
         "evs": {
           "df": 0
         }
@@ -121768,7 +122566,7 @@ backup_data = {
           "Recover"
         ],
         "sub_index": 3,
-        "ability": "Thick Fat",
+        "ability": "Marvel Scale",
         "evs": {
           "df": 0
         }
@@ -121799,7 +122597,7 @@ backup_data = {
           "U-turn"
         ],
         "sub_index": 2,
-        "ability": " ",
+        "ability": "Natural Cure",
         "evs": {
           "df": 0
         }
@@ -121830,7 +122628,7 @@ backup_data = {
           "Muddy Water"
         ],
         "sub_index": 2,
-        "ability": "Damp",
+        "ability": "Hydration",
         "evs": {
           "df": 0
         }
@@ -121923,7 +122721,7 @@ backup_data = {
           "Rest"
         ],
         "sub_index": 5,
-        "ability": " ",
+        "ability": "Water Absorb",
         "evs": {
           "df": 0
         }
@@ -121954,7 +122752,7 @@ backup_data = {
           "Cosmic Power"
         ],
         "sub_index": 1,
-        "ability": " ",
+        "ability": "Levitate",
         "evs": {
           "df": 0
         }
@@ -122016,7 +122814,7 @@ backup_data = {
           "Slam"
         ],
         "sub_index": 2,
-        "ability": "Iron Fist",
+        "ability": "Clear Body",
         "evs": {
           "df": 0
         }
@@ -122047,7 +122845,38 @@ backup_data = {
           "Sunny Day"
         ],
         "sub_index": 0,
-        "ability": "Early Bird",
+        "ability": "Chlorophyll",
+        "evs": {
+          "df": 0
+        }
+      }
+    },
+    "Drapion": {
+      "Lvl 55 Leader Janine2 ": {
+        "level": 55,
+        "tr_id": 724,
+        "ai": 7,
+        "battle_type": "Singles",
+        "reward_item": "",
+        "form": "",
+        "item": "None",
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "nature": "Impish",
+        "moves": [
+          "Cross Poison",
+          "Confuse Ray",
+          "Crunch",
+          "Swords Dance"
+        ],
+        "sub_index": 5,
+        "ability": "Battle Armor",
         "evs": {
           "df": 0
         }
