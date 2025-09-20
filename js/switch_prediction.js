@@ -322,7 +322,7 @@ function get_next_in_g4() {
                     isSE = true
                 }           
             }
-            
+
 
             if (p1.ability == 'Levitate' && mov_data["type"] == "Ground") {
                 isSE = false
