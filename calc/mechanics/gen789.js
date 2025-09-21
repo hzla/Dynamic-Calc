@@ -685,7 +685,7 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
     var resistedKnockOffDamage = (!defender.item || (0, util_2.isQPActive)(defender, field)) ||
         (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
         (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
-        (defender.name.includes('Giratina-Origin') && defender.item.includes('Griseous')) ||
+        (defender.named('Giratina-Origin') && defender.item.includes('Griseous')) ||
         (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
         (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
         (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
@@ -694,9 +694,9 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         defender.item.includes(' Z') ||
         (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
         (defender.named('Zamazenta') && defender.hasItem('Rusted Shield')) ||
-        (defender.name.includes('Ogerpon-Cornerstone') && defender.hasItem('Cornerstone Mask')) ||
-        (defender.name.includes('Ogerpon-Hearthflame') && defender.hasItem('Hearthflame Mask')) ||
-        (defender.name.includes('Ogerpon-Wellspring') && defender.hasItem('Wellspring Mask')) ||
+        (defender.named('Ogerpon-Cornerstone') && defender.hasItem('Cornerstone Mask')) ||
+        (defender.named('Ogerpon-Hearthflame') && defender.hasItem('Hearthflame Mask')) ||
+        (defender.named('Ogerpon-Wellspring') && defender.hasItem('Wellspring Mask')) ||
         (defender.named('Venomicon-Epilogue') && defender.hasItem('Vile Vial'));
     if (!resistedKnockOffDamage && defender.item) {
         var item = gen.items.get((0, util_1.toID)(defender.item));

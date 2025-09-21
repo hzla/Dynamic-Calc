@@ -4,7 +4,7 @@ a img {
 }
 .wrapper * {
     box-sizing: content-box;
-/*    max-width: 1980px;*/
+   max-width: 1980px;
     
  }
 
