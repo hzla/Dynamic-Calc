@@ -280,6 +280,38 @@ $("#p1 .ability, #p2 .ability").bind("keyup change", function () {
 
 });
 
+// === Player box refresh control ===
+(function () {
+  // Mark the player box as needing a refresh only when its filters change.
+  window.__boxDirty = false;
+
+  window.markBoxDirty = function () {
+    window.__boxDirty = true;
+  };
+
+  const debounced = (fn, ms) => {
+    let t;
+    return () => { clearTimeout(t); t = setTimeout(fn, ms); };
+  };
+
+  window.maybeRefreshPlayerBox = function () {
+    // Only refresh if the filter panel is visible AND something actually changed.
+    if (!$('#player-poks-filter:visible').length) return;
+    if (!window.__boxDirty) return;
+    window.__boxDirty = false;
+    box_rolls();
+  };
+
+  // When the user actually changes the player box filters, mark dirty and refresh (debounced)
+  const triggerRefresh = debounced(() => {
+    window.markBoxDirty();
+    window.maybeRefreshPlayerBox();
+  }, 100);
+
+  // Any input under the filter UI counts (text, selects, checkboxes, radios, ranges)
+  $(document).on('input change keyup', '#player-poks-filter :input', triggerRefresh);
+})();
+
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
 function autosetWeather(ability, i) {
@@ -646,19 +678,22 @@ function get_switchin_score(myPoke, oppPoke, myField, oppField) {
 // auto-update set details on select
 
 function refresh_next_in() {
-	var next_poks = get_next_in()
+	const next_poks = get_next_in();
 
 	if (damageGen < 8 && !TITLE.includes("Lumi")) {
-        $("#p2 .evs, #p2 .ev-label").hide()
+        $("#p2 .evs, #p2 .ev-label").hide();
     }
 
-	var trpok_html = ""
-	var myField = createField()
-	var oppField = myField.clone().swap();
-	for (i in next_poks ) {
-		var your_pok_info = $("#p1");
-		var myPoke = createPokemon(your_pok_info)
-		var oppPoke = createPokemon(next_poks[i][0])
+	let trpok_html = "";
+	// Build the field objects once per refresh
+	const myField = createField();
+	const oppField = myField.clone().swap();
+
+	// Build the player's Pokémon once per refresh (reused for each candidate)
+	const myPoke = createPokemon($("#p1"));
+
+	for (let i in next_poks) {
+		const oppPoke = createPokemon(next_poks[i][0]);
 		var score = get_switchin_score(myPoke, oppPoke, myField, oppField)
 		if (next_poks[i][0].includes($('input.opposing').val()) && noSwitch != "1"){
 			continue
@@ -832,9 +867,10 @@ $(".set-selector").change(function () {
 
 		$('#p2 .poke-sprite').attr('src', `./img/${trainerSprites}/${pokesprite.replace("-glitched", "")}.${suffix}`)
 
-		if ($('#player-poks-filter:visible').length > 0) {
-	       box_rolls() 
-	    } 
+		// if ($('#player-poks-filter:visible').length > 0) {
+	    //    box_rolls() 
+	    // } 
+		maybeRefreshPlayerBox(); // only refresh if filters asked for it
 
 	} else {
 		if (SETDEX_BW) {
@@ -1997,8 +2033,25 @@ $(document).ready(function () {
 	});
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	
-	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(refresh_next_in(), 0);
-	});
+	(function() {
+	let calcTick = 0;
+	const debouncedRefresh = (() => {
+		let t;
+		return () => {
+		const myTick = ++calcTick;
+		clearTimeout(t);
+		t = setTimeout(() => {
+			// if another tick happened during the wait, skip this run
+			if (myTick !== calcTick) return;
+			refresh_next_in();
+		}, 60); // ~1 frame @ 60hz; raise to 100–150ms if you want even fewer recalcs
+		};
+	})();
+
+	$(document).on("change keyup", ".calc-trigger", debouncedRefresh);
+	$("#p1 .max, #p2 .max").on("change", debouncedRefresh);
+	$(".nature").on("keyup change", debouncedRefresh);
+	$(".set-selector").on("change", debouncedRefresh);
+	})();
 	
 });

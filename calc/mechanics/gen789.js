@@ -686,11 +686,11 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
         (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
         (defender.named('Giratina-Origin') && defender.item.includes('Griseous')) ||
-        (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-        (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
+        (defender.named('Arceus') && defender.item.includes('Plate')) ||
+        (defender.named('Genesect') && defender.item.includes('Drive')) ||
         (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
         (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
-        (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
+        (defender.named('Silvally') && defender.item.includes('Memory')) ||
         defender.item.includes(' Z') ||
         (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
         (defender.named('Zamazenta') && defender.hasItem('Rusted Shield')) ||
@@ -886,9 +886,9 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
             attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
             move.hasType('Psychic', 'Dragon')) ||
         attacker.item && move.hasType((0, items_1.getItemBoostType)(attacker.item)) ||
-        (attacker.name.includes('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
-        (attacker.name.includes('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
-        (attacker.name.includes('Ogerpon-Wellspring') && attacker.hasItem('Wellspring Mask'))) {
+        (attacker.named('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
+        (attacker.named('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
+        (attacker.named('Ogerpon-Wellspring') && attacker.hasItem('Wellspring Mask'))) {
         bpMods.push(4915);
         desc.attackerItem = attacker.item;
     }
