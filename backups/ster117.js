@@ -64358,7 +64358,7 @@ backup_data = {
           "df": 0
         }
       },
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -64374,7 +64374,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Quirky",
+        "nature": "Bashful",
         "moves": [
           "Cross Poison",
           "Heat Wave",
@@ -74576,7 +74576,7 @@ backup_data = {
           "df": 0
         }
       },
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -74592,7 +74592,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Hardy",
+        "nature": "Timid",
         "moves": [
           "Flamethrower",
           "Psychic",
@@ -100035,7 +100035,7 @@ backup_data = {
           "df": 0
         }
       },
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -100051,7 +100051,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Quirky",
+        "nature": "Modest",
         "moves": [
           "Mach Punch",
           "Thunder Punch",
@@ -103874,7 +103874,7 @@ backup_data = {
           "df": 0
         }
       },
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -103890,7 +103890,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Naughty",
+        "nature": "Calm",
         "moves": [
           "Thunderbolt",
           "Flash Cannon",
@@ -105141,7 +105141,7 @@ backup_data = {
           "df": 0
         }
       },
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -105157,7 +105157,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Quiet",
+        "nature": "Hasty",
         "moves": [
           "Sludge Bomb",
           "Leaf Storm",
@@ -122705,7 +122705,7 @@ backup_data = {
       }
     },
     "Suicune": {
-      "Lvl 54 Executive Proton2 ": {
+      "Lvl 56 Executive Proton2 ": {
         "level": 54,
         "tr_id": 706,
         "ai": 7,
@@ -122721,7 +122721,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Modest",
+        "nature": "Hardy",
         "moves": [
           "Calm Mind",
           "Surf",
