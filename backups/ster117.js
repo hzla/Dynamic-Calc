@@ -64359,7 +64359,7 @@ backup_data = {
         }
       },
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
@@ -74577,7 +74577,7 @@ backup_data = {
         }
       },
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
@@ -100036,7 +100036,7 @@ backup_data = {
         }
       },
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
@@ -103875,7 +103875,7 @@ backup_data = {
         }
       },
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
@@ -105142,7 +105142,7 @@ backup_data = {
         }
       },
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
@@ -122706,7 +122706,7 @@ backup_data = {
     },
     "Suicune": {
       "Lvl 56 Executive Proton2 ": {
-        "level": 54,
+        "level": 56,
         "tr_id": 706,
         "ai": 7,
         "battle_type": "Singles",
