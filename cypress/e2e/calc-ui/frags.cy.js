@@ -47,7 +47,7 @@ for (let calc of calcs) {
       // Check that importing a save imports encounter data
       
       // Select Grotle
-      cy.get("[data-id='Grotle (My Box)']").click()
+      cy.get("[data-id='Grotle (My Box)']").first().click()
 
       // Click Ampharos sprite
       cy.get('#p2 .poke-sprite').click()

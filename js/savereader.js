@@ -12,6 +12,7 @@ document.getElementById('save-upload-g45').addEventListener('change', function(e
         const reader = new FileReader();
         saveFileName = $('#save-upload-g45').val().split("\\").pop()
         savExt = saveFileName.slice(-3)
+        currentParty = []
 
         if (baseGame == "Pt") {
             partyCountOffset = 0x9C
@@ -379,11 +380,6 @@ function parsePKM(chunk, is_party=false, offset=0) {
 
     var iv_value = (decryptedData[move_data_offset + 9] << 16) | (decryptedData[move_data_offset + 8]  & 0xFFFF)
     ivs = getIVs(iv_value) 
-
-
-    console.log(mon_name)
-    console.log(ivs)
-
     let met_location
 
     if (baseGame == "Pt" || baseGame == "HGSS") {
@@ -405,6 +401,7 @@ function parsePKM(chunk, is_party=false, offset=0) {
     if (is_party) {
         partyMons[mon_name] = decryptedBattleStats.length - 1
         partyPIDs.push(pv)
+        currentParty.push(mon_name)
         partyExpTables.push(sav_pok_growths[decryptedData[mon_data_offset]])
         partyExpIndexes.push(mon_data_offset + 4)
         partyMovesIndexes.push(move_data_offset)

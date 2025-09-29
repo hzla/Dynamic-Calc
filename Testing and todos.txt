@@ -1,0 +1,16 @@
+Switch Preview TODO
+ai doesn't see status or weather when counting hits to ko player
+
+
+Calc todo
+
+bad odds switch info
+
+
+
+
+Switch In AI Bugs
+
+Choiced Prio moves aren't seen as prio
+
+parental bond damage is not seen??

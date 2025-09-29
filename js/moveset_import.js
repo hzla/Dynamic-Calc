@@ -873,16 +873,16 @@ function addSets(pokes, name) {
 	var currentRow;
 	var currentPoke;
 	var addedpokes = 0;
-	currentParty = []
+	// currentParty = []
 	for (var i = 0; i < rows.length; i++) {
 		var item = false
-		if (rows[i].split(" |Party")[1]) {
-			if (rows[i].includes("@")) {
-				item = rows[i].split("@")[1].trim()
-			}
-			rows[i] = rows[i].split(" |Party")[0]
-			currentParty.push(rows[i])
-		}
+		// if (rows[i].split(" |Party")[1]) {
+		// 	if (rows[i].includes("@")) {
+		// 		item = rows[i].split("@")[1].trim()
+		// 	}
+		// 	rows[i] = rows[i].split(" |Party")[0]
+		// 	currentParty.push(rows[i])
+		// }
 
 
 		currentRow = rows[i].split(/[()@]/);

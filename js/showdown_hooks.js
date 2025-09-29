@@ -15,6 +15,7 @@ function init_calc() {
   pokChanges = {}
   calcing = false
   partner_name = null
+  currentParty = []
 
 
   // local storage settings defaults
@@ -594,6 +595,8 @@ function displayParty() {
     if (currentParty.length > 0) {
         $('.player-party').css('display', 'flex')
         $('#clear-party').css('display', 'inline-block')
+
+        $('.player-party').html("")
 
         if (saveUploaded) {
             $('#edge').css('display', 'inline-block')
