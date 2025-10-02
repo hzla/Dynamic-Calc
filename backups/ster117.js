@@ -79518,7 +79518,7 @@ backup_data = {
           "Rain Dance"
         ],
         "sub_index": 1,
-        "ability": "Adaptability",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -79547,7 +79547,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 0,
-        "ability": "Adaptability",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -79576,7 +79576,7 @@ backup_data = {
           "Ice Beam"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
@@ -79605,7 +79605,7 @@ backup_data = {
           "Draco Meteor"
         ],
         "sub_index": 2,
-        "ability": "Adaptability",
+        "ability": "Shell Armor",
         "evs": {
           "df": 0
         }
