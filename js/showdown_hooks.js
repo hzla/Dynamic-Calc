@@ -565,6 +565,9 @@ function get_current_learnset() {
     for (let i = 0; i < current_learnset["learnset"].length; i++) {
         var lvl = current_learnset["learnset"][i][0]
         var mv_name = current_learnset["learnset"][i][1]
+        if (moveChanges[TITLE] && moveChanges[TITLE][mv_name]) {
+            mv_name = moveChanges[TITLE][mv_name]
+        }
         ls_html += `<div class='ls-row'><div class='ls-level'>${lvl}</div><div class='ls-name'>${mv_name}</div></div>`
     }
     $(".lvl-up-moves").html(ls_html)
@@ -998,6 +1001,9 @@ function loadDataSource(data) {
     if (TITLE.includes("Sterling")) {
         delete moves.Barrage["multihit"]
         delete MOVES_BY_ID[g].barrage["multihit"]
+
+        moves.Clamp["multihit"] = [2,5]
+        MOVES_BY_ID[g].clamp["multihit"] = [2,5]
 
         MOVES_BY_ID[g].avalanche.target = 'allAdjacentFoes'
         moves.Avalanche.target = 'allAdjacentFoes'
