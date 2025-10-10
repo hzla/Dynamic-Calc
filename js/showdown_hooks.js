@@ -403,7 +403,7 @@ function box_rolls() {
         taken_max_roll=-1
     }
 
-    $('.player-poks .trainer-pok').removeClass('killer').removeClass('defender').removeClass('ohko').removeClass('mb-ohko').removeClass('ohkod').removeClass('mb-ohkod')
+    $('.player-poks .trainer-pok, .player-party .trainer-pok').removeClass('killer').removeClass('defender').removeClass('ohko').removeClass('mb-ohko').removeClass('ohkod').removeClass('mb-ohkod').removeClass('faster')
 
 
     var p1field = createField();
