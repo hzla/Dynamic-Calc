@@ -16,9 +16,9 @@ function importEncounters() {
 	  if (!currentEncounters[speciesName] && setData["My Box"]) {
 		// console.log(currentEncounters)s
 	  	  	
-	  	delete setData["My Box"].moves
-	  	delete setData["My Box"].isCustomSet
-	  	delete setData["My Box"].level
+	  	// delete setData["My Box"].moves
+	  	// delete setData["My Box"].isCustomSet
+	  	// delete setData["My Box"].level
 
 
 	  	let encounter = {setData: setData, fragCount: 0, frags: [], prevoFragCount: 0, alive: true}
