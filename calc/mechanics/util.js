@@ -286,7 +286,7 @@ if (damageGen != 8 && damageGen != 7) {
     exports.checkIntimidate = checkIntimidate;
     function checkDownload(source, target, wonderRoomActive) {
         var _a;
-        if (source.hasAbility('Download')) {
+        if (source.hasAbility('Download') && source.abilityOn) {
             var def = target.stats.def;
             var spd = target.stats.spd;
             if (wonderRoomActive)

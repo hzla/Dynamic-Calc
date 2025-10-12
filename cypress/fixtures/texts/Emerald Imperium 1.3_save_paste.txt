@@ -1,0 +1,363 @@
+Chikorita
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Overgrow
+- Tackle
+- Growl
+- None
+- None
+Met: FALLARBOR TOWN
+
+Bulbasaur
+Level: 56
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Overgrow
+- Tackle
+- None
+- None
+- None
+Met: ROUTE 113
+
+Delibird
+Level: 56
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Hustle
+- Present
+- None
+- None
+- None
+Met: ROUTE 111
+
+Emboar @ Sitrus Berry
+Level: 56
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Bull Rush
+- Heat Crash
+- Hammer Arm
+- Sucker Punch
+- Flame Charge
+Met: FALLARBOR TOWN
+
+Marowak-Alola @ Thick Club
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Lightning Rod
+- Flame Wheel
+- Shadow Bone
+- Bonemerang
+- Fling
+Met: RUSTURF TUNNEL
+
+Toxapex @ Sitrus Berry
+Level: 56
+Careful Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Regenerator
+- Venoshock
+- Peck
+- Poison Jab
+- Venom Drench
+Met: ROUTE 107
+
+Kingambit @ Eviolite
+Level: 56
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Supreme Overlord
+- Iron Head
+- Sucker Punch
+- Kowtow Cleave
+- Brick Break
+Met: ROUTE 112
+
+Bronzong @ Leftovers
+Level: 56
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 30 Spe / 30 SpA / 31 SpD
+Ability: Levitate
+- Hypnosis
+- Spin Out
+- Gyro Ball
+- Psychic
+Met: GRANITE CAVE
+
+Slowbro @ Slowbronite
+Level: 56
+Calm Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Regenerator
+- Teleport
+- Psychic
+- Slack Off
+- Water Pulse
+Met: PETALBURG CITY
+
+Staraptor @ Sitrus Berry
+Level: 56
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Intimidate
+- Take Down
+- Endeavor
+- Close Combat
+- Dual Wingbeat
+Met: ROUTE 104
+
+Luxray @ Luxrite
+Level: 56
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Guts
+- Crunch
+- Thunder Fang
+- Charge
+- Ice Fang
+Met: ROUTE 101
+
+t (Azumarill) @ Sitrus Berry
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Sap Sipper
+- Play Rough
+- Aqua Jet
+- Aqua Tail
+- Covet
+Met: ROUTE 106
+
+Bellossom @ Fairy Feather
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Chlorophyll
+- Moonblast
+- Growth
+- Mega Drain
+- Leaf Storm
+Met: ROUTE 103
+
+Zebstrika
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Lightning Rod
+- Tail Whip
+- Shock Wave
+- Spark
+- Flame Charge
+Met: ROUTE 110
+
+Froslass @ Oran Berry
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Stakeout
+- Detect
+- Frost Breath
+- Icy Wind
+- Ominous Wind
+Met: ROUTE 102
+
+Swanna @ Charcoal
+Level: 56
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Frisk
+- Water Gun
+- Roost
+- Defog
+- Air Slash
+Met: DEWFORD TOWN
+
+Araquanid @ Sitrus Berry
+Level: 56
+Careful Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Water Bubble
+- Liquidation
+- Icy Wind
+- Infestation
+- Leech Life
+Met: SLATEPORT CITY
+
+Rapidash-Galar
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Flash Fire
+- Heal Pulse
+- Will-O-Wisp
+- Covet
+- Fire Lash
+Met: FIERY PATH
+
+Raticate
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Guts
+- Zen Headbutt
+- Hyper Fang
+- Stomping Tantrum
+- Crunch
+Met: ROUTE 102
+
+Swellow
+Level: 56
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Guts
+- Quick Guard
+- Facade
+- Dual Wingbeat
+- Aerial Ace
+Met: ROUTE 118
+
+Kangaskhan
+Level: 56
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Early Bird
+- Double Hit
+- Rage
+- Mega Punch
+- Chip Away
+Met: MIRAGE TOWER
+
+Meowscarada
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Overgrow
+- Night Slash
+- Tail Whip
+- Leafage
+- Bite
+Met: FALLARBOR TOWN
+
+Cacturne @ Coba Berry
+Level: 56
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Water Absorb
+- Growth
+- Spiky Shield
+- Mega Drain
+- Payback
+Met: ROUTE 111
+
+Hatterene
+Level: 56
+Relaxed Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Magic Bounce
+- Psychic
+- Psyshock
+- Life Dew
+- Dazzling Gleam
+Met: ROUTE 115
+
+Pinsir
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Hyper Cutter
+- X-Scissor
+- Storm Throw
+- Revenge
+- Vital Throw
+Met: ROUTE 117
+
+Falinks
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Battle Armor
+- Detect
+- Tackle
+- None
+- None
+Met: ROUTE 111
+
+Alakazam @ Alakazite
+Level: 56
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Synchronize
+- Psyshock
+- Hidden Power
+- Psychic
+- Energy Ball
+Met: ROUTE 116
+
+Inteleon @ Scope Lens
+Level: 56
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 30 SpA / 31 SpD
+Ability: Sniper
+- U-turn
+- Hidden Power
+- Aqua Jet
+- Snipe Shot
+Met: LITTLEROOT TOWN
+
+Aegislash
+Level: 56
+Calm Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Stance Change
+- Kings Shield
+- Night Slash
+- Smart Strike
+- Retaliate
+Met: JAGGED PASS
+
+Exeggutor @ Miracle Seed
+Level: 56
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Chlorophyll
+- Giga Drain
+- Reflect
+- Psychic
+- Leech Seed
+Met: PETALBURG WOODS
+
+Overqwil @ Sitrus Berry
+Level: 56
+Careful Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Intimidate
+- Barb Barrage
+- Spikes
+- Fell Stinger
+- Toxic Spikes
+Met: ROUTE 109
+
+Drifblim
+Level: 56
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Aftermath
+- Gust
+- Focus Energy
+- Hex
+- Ominous Wind
+Met: ROUTE 113
+
+Sneasel
+Level: 56
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 Spe / 31 SpA / 31 SpD
+Ability: Frisk
+- Icy Wind
+- Fury Swipes
+- Agility
+- Metal Claw
+Met: ROUTE 114
+
