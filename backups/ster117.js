@@ -57065,7 +57065,7 @@ backup_data = {
         ]
       }
     },
-    "Wormadam-S": {
+    "Wormadam-Sandy": {
       "types": [
         "Bug",
         "Ground"
@@ -57169,7 +57169,7 @@ backup_data = {
         ]
       }
     },
-    "Wormadam-T": {
+    "Wormadam-Trash": {
       "types": [
         "Bug",
         "Steel"
