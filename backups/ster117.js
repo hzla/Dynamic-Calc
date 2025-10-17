@@ -56688,7 +56688,7 @@ backup_data = {
         "tms": []
       }
     },
-    "Deoxys-A": {
+    "Deoxys-Attack": {
       "types": [
         "Psychic"
       ],
@@ -56811,7 +56811,7 @@ backup_data = {
         ]
       }
     },
-    "Deoxys-D": {
+    "Deoxys-Defense": {
       "types": [
         "Psychic"
       ],
@@ -56942,7 +56942,7 @@ backup_data = {
         ]
       }
     },
-    "Deoxys-S": {
+    "Deoxys-Speed": {
       "types": [
         "Psychic"
       ],
@@ -57273,7 +57273,7 @@ backup_data = {
         ]
       }
     },
-    "Giratina-O": {
+    "Giratina-Origin": {
       "types": [
         "Ghost",
         "Dragon"
@@ -57382,7 +57382,7 @@ backup_data = {
         ]
       }
     },
-    "Shaymin-S": {
+    "Shaymin-Sky": {
       "types": [
         "Grass",
         "Flying"
