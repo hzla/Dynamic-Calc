@@ -750,6 +750,14 @@ table td {
     border: 1px solid #bb86fc;
 }
 
+#redux-lvl {
+    color: #bb86fc;
+    font-size: 12px;
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+}
+
 #edge {
     line-height: 20px;
     margin-right: 10px;
