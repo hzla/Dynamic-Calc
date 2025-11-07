@@ -75996,7 +75996,7 @@ backup_data = {
           "sd": 31,
           "sp": 31
         },
-        "nature": "Adamant",
+        "nature": "Jolly",
         "moves": [
           "Thunderbolt",
           "Blizzard",
