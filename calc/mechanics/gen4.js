@@ -414,6 +414,11 @@ function calculateDPP(gen, attacker, defender, move, field) {
         defense = Math.floor(defense * 1.5);
         desc.defenderItem = defender.item;
     }
+    else if ((defender.hasItem('Eviolite') && ((_a = gen.species.get((0, util_1.toID)(defender.name))) === null || _a === void 0 ? void 0 : _a.nfe)) ||
+        (!isPhysical && defender.hasItem('Assault Vest'))) {
+        defense = Math.floor(defense * 1.5);
+        desc.defenderItem = defender.item;
+    }
     else if ((defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !isPhysical) ||
         (defender.hasItem('Metal Powder') && defender.named('Ditto') && isPhysical)) {
         defense *= 2;
