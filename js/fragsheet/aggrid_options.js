@@ -1,6 +1,6 @@
 params = new URLSearchParams(window.location.search);
 SOURCES = {
-    "9aa37533b7c000992d92": "Blaze Black/Volt White",
+   "9aa37533b7c000992d92": "Blaze Black/Volt White",
    "04770c9a89687b02a9f5": "Blaze Black 2/Volt White 2 Original",
    "945a33720dbd6bc04488": "Blaze Black 2/Volt White 2 Redux 1.4",
    "da1eedc0e39ea07b75bf": "Vintage White",
