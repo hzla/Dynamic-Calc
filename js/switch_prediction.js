@@ -392,7 +392,7 @@ function get_next_in_g4() {
                 dmg = dmg / 2
             }
 
-            dmg = Math.min(dmg, currentHp)
+            
 
             if (dmg > highestDamage && results[n].move.name != "Sonic Boom" && results[n].move.name != "Dragon Rage" && results[n].move.name != "Night Shade" && results[n].move.name != "Seismic Toss" ) {
                 if (moves[results[n].move.name]['multihit']) {
