@@ -101587,7 +101587,7 @@ backup_data = {
           "Flamethrower"
         ],
         "sub_index": 0,
-        "ability": "Soundproof",
+        "ability": "Scrappy",
         "evs": {
           "df": 0
         }
