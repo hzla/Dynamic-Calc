@@ -302,7 +302,7 @@ function get_next_in_g4() {
                     isSE = true
                 }
 
-                if (damageGen == 4 && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp".includes(player_pok)){
+                if (damageGen == 4 && mov_data["type"] == "Electric" && "Gastrodon,Swampert,Whishcash,Quagsire,Marshtomp,Gliscor".includes(player_pok)){
                     isSE = true
                 }
 
