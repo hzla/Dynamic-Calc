@@ -28,7 +28,8 @@ backupFiles = {
 	"Garbage Gold Deluxe": "garbgold",
 	"Azure Platinum": "azure",
 	"Sterling Silver 1.17": "ster117",
-	"Rose Gold": "rg"
+	"Rose Gold": "rg",
+	"Vintage White Plus": "vwplus"
 }
 
 

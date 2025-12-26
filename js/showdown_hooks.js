@@ -1217,7 +1217,8 @@ $(document).ready(function() {
     "0d8b65ba6796bf2b3d4c": "White 2 Kaizo",
     "bb8579a3798fd63b429d": "Royal Saphire",
     "0a37ed78da4e6078ed52": "Garbage Gold Deluxe",
-    "rosegold": "Rose Gold"
+    "rosegold": "Rose Gold",
+    "vwplus": "Vintage White Plus"
     }
 
     MASTERSHEETS = {
