@@ -1309,11 +1309,18 @@ $(document).ready(function() {
    TITLE = SOURCES[params.get('data')] || "NONE"
    
    if (backupFiles[TITLE]) {
+        if (TITLE == "Vintage White Plus") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=vwplus"
+        }
+
+
         checkAndLoadScript(`./backups/${backupFiles[TITLE]}.js`, {
                 onLoad: (src) => {
                     npoint_data = backup_data
                     loadDataSource(npoint_data)
                     final_type_chart = construct_type_chart()
+
+
 
                     if (mechanics == "hge") {
                         initHGE()
