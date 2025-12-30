@@ -170,11 +170,11 @@ $(document).on('change', '#save-upload', function(event) {
                             let abilitySlot = 0
 
 
-                            abilitySlot = decrypted[misc_index + 2] & 96 >> 5
+                            abilitySlot = (decrypted[misc_index + 2] & 96) >> 5
+
 
                             if (TITLE.includes("scrambled")) {
                                 abilitySlot = (decrypted[misc_index + 2] >> 29) & 0b11
-               
                             }
 
 
