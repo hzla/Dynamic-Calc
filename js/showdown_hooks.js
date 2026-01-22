@@ -1218,7 +1218,8 @@ $(document).ready(function() {
     "bb8579a3798fd63b429d": "Royal Saphire",
     "0a37ed78da4e6078ed52": "Garbage Gold Deluxe",
     "rosegold": "Rose Gold",
-    "vwplus": "Vintage White Plus"
+    "vwplus": "Vintage White Plus",
+    "6e2c17e2d1e82f56b448": "Navy Saphire"
     }
 
     MASTERSHEETS = {

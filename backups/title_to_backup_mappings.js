@@ -29,7 +29,8 @@ backupFiles = {
 	"Azure Platinum": "azure",
 	"Sterling Silver 1.17": "ster117",
 	"Rose Gold": "rg",
-	"Vintage White Plus": "vwplus"
+	"Vintage White Plus": "vwplus",
+	"Navy Saphire": "navy"
 }
 
 
