@@ -292,7 +292,7 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field, displayProbabilities=t
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
-		if (p2.moves[i] == "(No Move)" || p2.moves[i].name == "Smokescreen") {
+		if (p2.moves[i] == "(No Move)") {
 			p2.moves[i].name = "Growl"
 			p2.moves[i].category = "Status"
 		} else {
