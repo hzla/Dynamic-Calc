@@ -424,7 +424,7 @@ $(".move-selector").change(function () {
 		var pokeObj = $(this).closest(".poke-info");
 		var pokemon = createPokemon(pokeObj);
 
-		if ( TITLE.includes("Sterling") || TITLE.includes("Ancestral") || TITLE.includes("Maximum") || damageGen >= 7) {
+		if ( TITLE.includes("Sterling") || TITLE.includes("Ancestral") || TITLE.includes("Maximum")) {
 			trueHP = false
 		} else {
 			trueHP = true
