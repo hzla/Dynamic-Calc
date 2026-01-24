@@ -867,7 +867,6 @@ function loadDataSource(data) {
 
     if (TITLE == "Pokemon Colors") initColors();
 
-
     for (move in moves) {
 
         var move_id = move.replace(/-|,|'|’| /g, "").toLowerCase()
@@ -947,6 +946,11 @@ function loadDataSource(data) {
             MOVES_BY_ID[8][move.replace(/-|,|'|’| /g, "").toLowerCase()] = jsonMoves[move]
         }
     }
+
+
+
+
+
 
     jsonPoks = data["poks"]
     var jsonPok 
