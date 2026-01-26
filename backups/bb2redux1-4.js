@@ -171770,7 +171770,7 @@ backup_data = {
         "tr_id": 358,
         "nature": "Careful",
         "sprite": "trainer_sprites/colress.png",
-        "ability": "Levitate",
+        "ability": "Motor Drive",
         "sub_index": 1,
         "battle_type": "Singles",
         "reward_item": "None"
