@@ -1318,6 +1318,10 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=vwplus"
         }
 
+        if (TITLE == "Renegade Platinum") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
+        }
+
 
         checkAndLoadScript(`./backups/${backupFiles[TITLE]}.js`, {
                 onLoad: (src) => {
