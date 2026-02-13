@@ -1322,6 +1322,14 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
         }
 
+        if (TITLE == "Fire Red Omega") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=fro"
+        }
+
+        if (TITLE == "Emerald Kaizo") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=ek"
+        }
+
 
         checkAndLoadScript(`./backups/${backupFiles[TITLE]}.js`, {
                 onLoad: (src) => {
