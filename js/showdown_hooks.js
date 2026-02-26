@@ -415,7 +415,7 @@ function box_rolls() {
     var p1speed = parseInt($('.total.totalMod')[1].innerHTML)
 
     if (p1.ability == "Intimidate") {
-        p1.ability = "Minus"
+        p1.ability = "Honey Gather"
     }
 
     var killers = []
@@ -428,7 +428,7 @@ function box_rolls() {
         var monSpeed = mon.rawStats.spe
 
         if (mon.ability == "Intimidate") {
-            mon.ability = "Minus"
+            mon.ability = "Honey Gather"
         }
 
         if (monSpeed > p1speed) {
