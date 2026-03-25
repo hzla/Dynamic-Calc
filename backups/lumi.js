@@ -9765,8 +9765,8 @@ backup_data = {
             },
             "otherFormes":
             [
-                "Sandy Cloak",
-                "Trash Cloak"
+                "Sandy",
+                "Trash"
             ],
             "baseSpecies": "Burmy"
         },
@@ -9794,8 +9794,8 @@ backup_data = {
             "gender": "F",
             "otherFormes":
             [
-                "Sandy Cloak",
-                "Trash Cloak"
+                "Sandy",
+                "Trash"
             ],
             "baseSpecies": "Wormadam"
         },
@@ -13318,7 +13318,7 @@ backup_data = {
             "weightkg": 608,
             "baseSpecies": "Deoxys"
         },
-        "Burmy Sandy Cloak":
+        "Burmy Sandy":
         {
             "bs":
             {
@@ -13336,7 +13336,7 @@ backup_data = {
             "weightkg": 34,
             "baseSpecies": "Burmy"
         },
-        "Burmy Trash Cloak":
+        "Burmy Trash":
         {
             "bs":
             {
@@ -81449,7 +81449,7 @@ backup_data = {
                 "sub_index": 1
             }
         },
-        "Wormadam Trash Cloak":
+        "Wormadam-Trash":
         {
             "Lvl 52 Byron |Team 1|":
             {
@@ -83492,7 +83492,7 @@ backup_data = {
             "Lvl 51 Skier Lexie":
             {
                 "level": 51,
-                "ability": "Snow Cloak",
+                "ability": "Snow",
                 "nature": "Serious",
                 "ivs":
                 {
@@ -91076,7 +91076,7 @@ backup_data = {
                 "sub_index": 2
             }
         },
-        "Wormadam Sandy Cloak":
+        "Wormadam-Sandy":
         {
             "Lvl 71 Aaron |Team 4|":
             {
