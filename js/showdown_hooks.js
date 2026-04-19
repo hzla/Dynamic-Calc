@@ -1322,6 +1322,10 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
         }
 
+        if (TITLE == "Sacred Gold/Storm Silver") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=sgss"
+        }
+
         if (TITLE == "Sterling Silver 1.17") {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=sterlingsilver"
         }
