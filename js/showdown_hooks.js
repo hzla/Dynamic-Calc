@@ -1322,6 +1322,10 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
         }
 
+        if (TITLE == "Blaze Black/Volt White") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=9aa37533b7c000992d92&gen=5&types=5&view=calculator"
+        }
+
         if (TITLE == "Sacred Gold/Storm Silver") {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=sgss"
         }
