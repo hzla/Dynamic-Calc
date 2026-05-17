@@ -1322,6 +1322,14 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
         }
 
+        if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=bb2redux&gen=8&challengeMode=true&types=6&view=calculator"
+        }
+
+        if (TITLE == "Photonic Sun/Prismatic Moon") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=pspm&dmgGen=7&gen=7&types=6&view=calculator"
+        }
+
         if (TITLE == "Blaze Black/Volt White") {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=9aa37533b7c000992d92&gen=5&types=5&view=calculator"
         }
