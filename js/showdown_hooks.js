@@ -1322,6 +1322,10 @@ $(document).ready(function() {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=renegadeplatinum"
         }
 
+        if (TITLE == "Vintage White") {
+            location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=vw&gen=8&dmgGen=5&types=5&view=calculator"
+        }
+
         if (TITLE == "Blaze Black 2/Volt White 2 Redux") {
             location.href = "https://hzla.github.io/Dynamic-Calc-Decomps/?data=bb2redux&gen=8&challengeMode=true&types=6&view=calculator"
         }
